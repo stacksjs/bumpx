@@ -1,0 +1,36 @@
+name: Development Environment Setup
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: Environment to set up
+        required: true
+        default: development
+        type: choice
+        options:
+          - development
+          - testing
+          - production
+
+jobs:
+  setup-dev:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install development dependencies
+        uses: stacksjs/launchpad-installer@v1
+        # Automatically detects project dependencies
+        # from package.json, requirements.txt, etc.
+
+      - name: Run development tasks
+        run: |
+          # Now we can run development commands
+          # All required tools are available in PATH
+          node --version
+          bun --version
+          bun run dev
