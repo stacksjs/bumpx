@@ -14,13 +14,14 @@
     "url": "https://github.com/stacksjs/bumpx/issues"
   },
   "keywords": [
-    "homebrew",
-    "package manager",
-    "bin manager",
-    "pkgx",
-    "pkgm",
-    "bun",
-    "package"
+    "version",
+    "bump",
+    "semver",
+    "release",
+    "git",
+    "npm",
+    "package",
+    "cli"
   ],
   "exports": {
     ".": {
@@ -61,10 +62,7 @@
     "prepublishOnly": "bun --bun run build && bun run compile:all && bun run zip",
     "test": "bun test"
   },
-  "dependencies": {
-    "bunfig": "^0.10.0",
-    "cac": "^6.7.14"
-  },
+  "dependencies": {},
   "devDependencies": {
     "bun-plugin-dtsx": "^0.21.12"
   },

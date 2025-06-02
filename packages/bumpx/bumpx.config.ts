@@ -1,49 +1,39 @@
-import type { bumpxConfig } from './src/types'
+import type { VersionBumpOptions } from './src/types'
+import { defineConfig } from './src/config'
 
-export const defaultConfig: bumpxConfig = {
-  // Set to true for additional log information
-  verbose: false,
+const config: VersionBumpOptions = defineConfig({
+  // Git options
+  commit: true,
+  tag: true,
+  push: true,
+  sign: false,
+  noGitCheck: false,
+  noVerify: false,
 
-  // Path where binaries should be installed
-  // Defaults to /usr/local if writable, otherwise ~/.local
-  installationPath: '/usr/local',
+  // Execution options
+  install: false,
+  ignoreScripts: false,
 
-  // Sudo password for installations requiring sudo
-  // Can also be specified in .env file as SUDO_PASSWORD
-  sudoPassword: '',
+  // UI options
+  confirm: true,
+  quiet: false,
 
-  // Enable dev-aware installations
-  // When true, packages installed to /usr/local with dev package present
-  // will be dev-aware (will respect the current dev environment)
-  devAware: true,
+  // Advanced options
+  all: false,
+  recursive: false,
+  printCommits: false,
 
-  // Auto-elevate with sudo when needed
-  autoSudo: true,
+  // Example execute commands
+  // execute: ['npm run build', 'npm run test'],
 
-  // Max installation retries on failure
-  maxRetries: 3,
+  // Example custom commit message
+  // commit: 'chore: release v{version}',
 
-  // Timeout for pkgx operations in milliseconds
-  timeout: 60000, // 60 seconds
+  // Example custom tag format
+  // tag: 'v{version}',
 
-  // Whether to symlink versions (e.g., create v1 symlink for v1.2.3)
-  symlinkVersions: true,
-
-  // Whether to force reinstall if already installed
-  forceReinstall: false,
-
-  // Default path for shims
-  shimPath: '~/.local/bin',
-
-  // Whether to automatically add shim path to the system PATH
-  autoAddToPath: true,
-}
-
-/**
- * bumpx configuration
- *
- * This file configures how bumpx installs and manages packages.
- */
-const config: bumpxConfig = defaultConfig
+  // Example preid for prereleases
+  // preid: 'beta'
+})
 
 export default config

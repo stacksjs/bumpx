@@ -8,206 +8,192 @@
 
 # bumpx
 
-> A lightweight package manager built on top of pkgx to simplify package installation and management. _Similar to Homebrew, but faster._
+> A fast, dependency-free version bumping tool similar to bumpp and version-bump-prompt, built with Bun.
 
 ## Features
 
-bumpx offers a streamlined approach to package management with these key features:
-
-- 📦 **[Package Management](https://github.com/stacksjs/bumpx/tree/main/docs/features/package-management.md)** — Install and manage packages efficiently
-- 🔧 **Auto-updates** — Configure automatic updates
-- 🔌 **[PATH Integration](https://github.com/stacksjs/bumpx/tree/main/docs/features/path-management.md)** — Automatically ensures installation directories are maintained in your PATH
-- 🔄 **[Executable Shims](https://github.com/stacksjs/bumpx/tree/main/docs/features/shim-creation.md)** — Create executable shims for packages automatically
-- 💻 **CLI & Library** — Programmatically or manually manage your dependencies using the CLI or library
-- 🪟 **Cross-platform** — Full support for macOS, Linux, and Windows systems
-
-## Why bumpx?
-
-Traditional package managers like Homebrew have limitations:
-
-- **Slow installations** — Installing or updating can take minutes
-- **Dependency chains** — Updating one package triggers unwanted updates
-- **Environment conflicts** — Different projects need different versions
-- **PATH management** — Manual PATH configuration is error-prone
-- **Platform inconsistency** — Different systems need different approaches
-
-bumpx solves these by providing:
-
-- **Fast installations** — Leverage pkgx for efficient package management
-- **Isolated packages** — Install only what you need without conflicts
-- **Automatic PATH management** — Tools are available immediately
-- **Consistent interface** — Same commands work everywhere
-- **Dev environments** — Project-specific development environment support
-
-[Read more about why we created bumpx](https://github.com/stacksjs/bumpx/tree/main/docs/why.md)
+- 🚀 **Zero dependencies** - Built using only Node.js built-ins and Bun tooling
+- 📦 **Semver compliant** - Supports all semantic versioning release types
+- 🔄 **Monorepo support** - Recursive bumping with `--recursive` flag
+- 🎯 **Git integration** - Automatic commit, tag, and push
+- ⚡ **Fast execution** - Compiled binary for instant startup
+- 🛠 **Highly configurable** - Config file and CLI options
+- 🎨 **Interactive prompts** - Choose version increment interactively
+- 🔧 **Custom commands** - Execute scripts before git operations
 
 ## Installation
 
-bumpx is available through multiple package managers:
-
 ```bash
-# Install with Bun (recommended)
-bun add -g @stacksjs/bumpx
-
-# Or with npm
+# Install globally
 npm install -g @stacksjs/bumpx
 
-# Or with yarn
-yarn global add @stacksjs/bumpx
-
-# Or with pnpm
-pnpm add -g @stacksjs/bumpx
+# Or use with npx
+npx @stacksjs/bumpx patch
 ```
 
-See [Installation Guide](https://github.com/stacksjs/bumpx/tree/main/docs/install.md) for more options.
+## Usage
 
-## Quick Start
-
-### Install packages
+### Basic Usage
 
 ```bash
-# Install packages
-bumpx install node python
+# Bump patch version (1.0.0 → 1.0.1)
+bumpx patch
 
-# Use the shorthand
-bumpx i node@22
+# Bump minor version (1.0.0 → 1.1.0)
+bumpx minor
+
+# Bump major version (1.0.0 → 2.0.0)
+bumpx major
+
+# Bump to specific version
+bumpx 1.2.3
+
+# Interactive version selection
+bumpx prompt
 ```
 
-### Create shims
+### Prerelease Versions
 
 ```bash
-# Create shims for executables
-bumpx shim node@22 typescript@5.7
+# Bump to prerelease
+bumpx prepatch --preid beta  # 1.0.0 → 1.0.1-beta.0
+bumpx preminor --preid alpha # 1.0.0 → 1.1.0-alpha.0
+bumpx premajor --preid rc    # 1.0.0 → 2.0.0-rc.0
 
-# Specify custom path
-bumpx shim --path ~/bin node@22
+# Increment prerelease
+bumpx prerelease  # 1.0.1-beta.0 → 1.0.1-beta.1
 ```
 
-### Install pkgx
+### Git Integration
 
 ```bash
-# Install pkgx itself
-bumpx pkgx
+# Disable git operations
+bumpx patch --no-commit --no-tag --no-push
 
-# Force reinstall
-bumpx pkgx --force
+# Custom commit message
+bumpx patch --commit "chore: release v{version}"
+
+# Custom tag name
+bumpx patch --tag "v{version}"
+
+# Sign commits and tags
+bumpx patch --sign
+
+# Skip git hooks
+bumpx patch --no-verify
 ```
 
-### Install dev package
+### Monorepo Support
 
 ```bash
-# Install the dev package
-bumpx dev
+# Bump all package.json files recursively
+bumpx patch --recursive
 
-# With customization
-bumpx dev --path ~/bin
+# Bump specific files
+bumpx patch package.json packages/*/package.json
 ```
 
-### Install Bun
+### Advanced Options
 
 ```bash
-# Install Bun directly
-bumpx bun
+# Execute custom commands
+bumpx patch --execute "npm run build" --execute "npm test"
 
-# Install specific version
-bumpx bun --version 1.2.14
-```
+# Install dependencies after bump
+bumpx patch --install
 
-### Configure auto-updates
+# Skip confirmation prompts
+bumpx patch --yes
 
-```bash
-# Check current auto-update status
-bumpx autoupdate
+# Print recent commits
+bumpx patch --print-commits
 
-# Enable auto-updates
-bumpx autoupdate:enable
-
-# Disable auto-updates
-bumpx autoupdate:disable
-```
-
-### List installed packages
-
-```bash
-# List all installed packages
-bumpx list
-# or
-bumpx ls
+# Skip git status check
+bumpx patch --no-git-check
 ```
 
 ## Configuration
 
-bumpx can be configured via a config file (`bumpx.config.ts`, `.bumpxrc`, etc.) or through command-line options.
+Create a `bumpx.config.ts` file in your project root:
 
-Example configuration:
+```typescript
+import { defineConfig } from '@stacksjs/bumpx'
 
-```ts
-import type { bumpxConfig } from '@stacksjs/bumpx'
+export default defineConfig({
+  // Git options
+  commit: true,
+  tag: true,
+  push: true,
+  sign: false,
 
-const config: bumpxConfig = {
-  // Enable verbose logging
-  verbose: true,
+  // Execution options
+  install: false,
+  execute: ['npm run build', 'npm run test'],
 
-  // Installation path for binaries
-  installationPath: '/usr/local',
+  // UI options
+  confirm: true,
+  quiet: false,
 
-  // Auto-elevate with sudo when needed
-  autoSudo: true,
+  // Advanced options
+  recursive: false,
+  printCommits: true
+})
+```
 
-  // Retry settings
-  maxRetries: 3,
-  timeout: 60000,
+You can also use JSON configuration in `.bumpxrc` or `package.json`:
 
-  // Version handling
-  symlinkVersions: true,
-  forceReinstall: false,
-
-  // PATH management
-  shimPath: '~/.local/bin',
-  autoAddToPath: true,
+```json
+{
+  "bumpx": {
+    "commit": true,
+    "tag": true,
+    "push": true,
+    "execute": ["npm run build"]
+  }
 }
-
-export default config
 ```
 
-See [Configuration Guide](https://github.com/stacksjs/bumpx/tree/main/docs/config.md) for all options.
+## CLI Options
 
-## GitHub Action
+| Option | Alias | Description | Default |
+|--------|-------|-------------|---------|
+| `--preid` | | ID for prerelease | |
+| `--all` | | Include all files | `false` |
+| `--no-git-check` | | Skip git status check | |
+| `--commit [msg]` | `-c` | Create git commit | `true` |
+| `--no-commit` | | Skip git commit | |
+| `--tag [name]` | `-t` | Create git tag | `true` |
+| `--no-tag` | | Skip git tag | |
+| `--push` | `-p` | Push to remote | `true` |
+| `--no-push` | | Skip git push | |
+| `--sign` | | Sign commits and tags | `false` |
+| `--install` | | Run npm install | `false` |
+| `--execute` | `-x` | Execute command | |
+| `--recursive` | `-r` | Bump recursively | `false` |
+| `--yes` | `-y` | Skip confirmation | `false` |
+| `--quiet` | `-q` | Quiet mode | `false` |
+| `--no-verify` | | Skip git hooks | `false` |
+| `--ignore-scripts` | | Ignore npm scripts | `false` |
+| `--current-version` | | Override current version | |
+| `--print-commits` | | Show recent commits | `false` |
 
-bumpx provides a GitHub Action for CI/CD workflows:
+## Library Usage
 
-```yaml
-- name: Install Dependencies
-  uses: stacksjs/bumpx-installer@v1
-  with:
-    packages: node@22 typescript@5.7 bun@1.2.14
+You can also use bumpx programmatically:
+
+```typescript
+import { versionBump } from '@stacksjs/bumpx'
+
+await versionBump({
+  release: 'patch',
+  commit: true,
+  tag: true,
+  push: true,
+  progress: ({ event, newVersion }) => {
+    console.log(`${event}: ${newVersion}`)
+  }
+})
 ```
-
-See [GitHub Action Documentation](https://github.com/stacksjs/bumpx/tree/main/packages/action/README.md) for details.
-
-## Advanced Usage
-
-Explore advanced topics in our documentation:
-
-- [Custom Shims](https://github.com/stacksjs/bumpx/tree/main/docs/advanced/custom-shims.md)
-- [Cross-platform Compatibility](https://github.com/stacksjs/bumpx/tree/main/docs/advanced/cross-platform.md)
-- [Performance Optimization](https://github.com/stacksjs/bumpx/tree/main/docs/advanced/performance.md)
-- [API Reference](https://github.com/stacksjs/bumpx/tree/main/docs/api/reference.md)
-
-## Comparing to Alternatives
-
-### vs Homebrew
-
-- **Speed**: Significantly faster installations
-- **Isolation**: Changes to one package don't affect others
-- **Less disk space**: Only install what you need
-
-### vs Manual Installation
-
-- **Simplicity**: Single command to install complex tools
-- **PATH management**: No need to manually edit shell config files
-- **Version control**: Easily install specific versions
-- **Consistency**: Same experience across all platforms
 
 ## Changelog
 
