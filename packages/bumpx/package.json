@@ -2,7 +2,7 @@
   "name": "@stacksjs/bumpx",
   "type": "module",
   "version": "0.0.0",
-  "description": "Like Homebrew, but faster.",
+  "description": "Automatically bump your versions.",
   "author": "Chris Breuer <chris@stacksjs.org>",
   "license": "MIT",
   "homepage": "https://github.com/stacksjs/bumpx#readme",
