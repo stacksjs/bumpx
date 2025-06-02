@@ -105,12 +105,72 @@ bumpx patch --install
 # Skip confirmation prompts
 bumpx patch --yes
 
+# CI mode (non-interactive, quiet)
+bumpx patch --ci
+
 # Print recent commits
 bumpx patch --print-commits
 
 # Skip git status check
 bumpx patch --no-git-check
 ```
+
+## CI/CD Integration
+
+bumpx is designed to work seamlessly in CI/CD environments:
+
+### Quick CI Usage
+
+```bash
+# CI mode - automatically non-interactive
+bumpx patch --ci
+
+# Or with explicit flags
+bumpx patch --yes --quiet
+
+# Auto-detect CI environment
+export CI=true
+bumpx patch  # Automatically enables CI mode
+```
+
+### GitHub Actions Example
+
+```yaml
+name: Release
+on:
+  workflow_dispatch:
+    inputs:
+      release_type:
+        description: Release type
+        required: true
+        default: patch
+        type: choice
+        options: [patch, minor, major]
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - uses: oven-sh/setup-bun@v1
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Configure git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Version bump and release
+        run: bunx bumpx ${{ github.event.inputs.release_type }} --ci
+```
+
+For more CI/CD examples and configurations, see [CI.md](./CI.md).
 
 ## Configuration
 
@@ -172,6 +232,7 @@ You can also use JSON configuration in `.bumpxrc` or `package.json`:
 | `--recursive` | `-r` | Bump recursively | `false` |
 | `--yes` | `-y` | Skip confirmation | `false` |
 | `--quiet` | `-q` | Quiet mode | `false` |
+| `--ci` | | CI mode (sets --yes --quiet) | `false` |
 | `--no-verify` | | Skip git hooks | `false` |
 | `--ignore-scripts` | | Ignore npm scripts | `false` |
 | `--current-version` | | Override current version | |

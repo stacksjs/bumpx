@@ -18,6 +18,7 @@ export const bumpConfigDefaults: BumpxConfig = {
   // UI options
   confirm: true,
   quiet: false,
+  ci: false,
 
   // Advanced options
   all: false,

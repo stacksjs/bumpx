@@ -179,11 +179,22 @@ async function parseArgs(): Promise<ParsedArgs> {
       .option('--no-verify', 'Skip git verification')
       .option('--ignore-scripts', `Ignore scripts`)
       .option('-q, --quiet', 'Quiet mode')
+      .option('--ci', 'CI mode (non-interactive, sets --yes --quiet --no-git-check)')
       .option('--current-version <version>', 'Current version')
       .option('--print-commits', 'Print recent commits')
       .option('-x, --execute <command>', 'Commands to execute after version bumps')
 
     const { options: args, files, release } = cli.parse()
+
+    // Handle CI mode - override other settings for non-interactive operation
+    const isCiMode = args.ci || process.env.CI === 'true'
+    const ciOverrides = isCiMode
+      ? {
+          confirm: false, // Skip confirmation in CI
+          quiet: true, // Reduce output in CI
+          noGitCheck: false, // Keep git check in CI for safety
+        }
+      : {}
 
     const options = await loadBumpConfig({
       preid: args.preid,
@@ -203,7 +214,9 @@ async function parseArgs(): Promise<ParsedArgs> {
       printCommits: args.printCommits,
       recursive: args.recursive,
       quiet: args.quiet,
+      ci: isCiMode,
       release,
+      ...ciOverrides,
     })
 
     return {

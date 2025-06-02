@@ -1,0 +1,106 @@
+# Template: Copy this to .github/workflows/release.yml in your project
+
+name: Release
+
+# Trigger the workflow manually or on pushes to main
+on:
+  workflow_dispatch:
+    inputs:
+      release_type:
+        description: 'Release type'
+        required: true
+        default: 'patch'
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
+          - prepatch
+          - preminor
+          - premajor
+          - prerelease
+      preid:
+        description: 'Prerelease identifier (for prerelease types)'
+        required: false
+        type: string
+        default: 'beta'
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/**'
+      - 'package.json'
+      - 'packages/*/package.json'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Run tests
+        run: bun test
+        # Comment out if you don't have tests yet
+
+      - name: Build project
+        run: bun run build
+        # Comment out if you don't have a build script
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      # Manual release (when triggered via workflow_dispatch)
+      - name: Release (Manual)
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          if [ -n "${{ github.event.inputs.preid }}" ]; then
+            bunx @stacksjs/bumpx ${{ github.event.inputs.release_type }} --preid ${{ github.event.inputs.preid }} --ci
+          else
+            bunx @stacksjs/bumpx ${{ github.event.inputs.release_type }} --ci
+          fi
+
+      # Automatic patch release (when code is pushed to main)
+      - name: Release (Auto Patch)
+        if: github.event_name == 'push'
+        run: bunx @stacksjs/bumpx patch --ci
+
+      # Optional: Publish to NPM
+      # Uncomment and configure if you want to publish to NPM
+      # - name: Publish to NPM
+      #   run: npm publish --provenance --access public
+      #   env:
+      #     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      # Optional: Create GitHub Release
+      # Uncomment if you want GitHub releases
+      # - name: Get version
+      #   id: get_version
+      #   run: echo "version=$(node -p "require('./package.json').version")" >> $GITHUB_OUTPUT
+      #
+      # - name: Create GitHub Release
+      #   uses: actions/create-release@v1
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   with:
+      #     tag_name: v${{ steps.get_version.outputs.version }}
+      #     release_name: Release v${{ steps.get_version.outputs.version }}
+      #     draft: false
+      #     prerelease: ${{ contains(github.event.inputs.release_type, 'pre') }}

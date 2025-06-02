@@ -23,6 +23,7 @@ export interface VersionBumpOptions {
   // UI options
   confirm?: boolean
   quiet?: boolean
+  ci?: boolean
   progress?: ProgressCallback
 
   // Advanced options
