@@ -1,0 +1,54 @@
+{
+  "name": "bumpx",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Like Homebrew, but faster.",
+  "author": "Chris Breuer <chris@stacksjs.org>",
+  "license": "MIT",
+  "homepage": "https://github.com/stacksjs/bumpx#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stacksjs/bumpx.git"
+  },
+  "bugs": {
+    "url": "https://github.com/stacksjs/bumpx/issues"
+  },
+  "keywords": ["homebrew", "pkgx", "bun", "package"],
+  "scripts": {
+    "build": "for dir in packages/*; do if [ -f \"$dir/package.json\" ]; then echo \"Building $dir\" && bun run --cwd $dir build; fi; done",
+    "lint": "bunx --bun eslint .",
+    "lint:fix": "bunx --bun eslint . --fix",
+    "fresh": "bunx rimraf node_modules/ bun.lock && bun i",
+    "changelog": "bunx changelogen --output CHANGELOG.md",
+    "release": "bun run changelog && bunx bumpp -r --all",
+    "test": "bun test",
+    "dev:docs": "bun --bun vitepress dev docs",
+    "build:docs": "bun --bun vitepress build docs",
+    "preview:docs": "bun --bun vitepress preview docs",
+    "typecheck": "bun --bun tsc --noEmit"
+  },
+  "dependencies": {
+    "ts-pkgx": "^0.2.1"
+  },
+  "devDependencies": {
+    "@stacksjs/docs": "^0.70.23",
+    "@stacksjs/eslint-config": "^4.14.0-beta.3",
+    "@types/bun": "^1.2.15",
+    "bumpp": "^10.1.1",
+    "bun-plugin-dtsx": "^0.21.12",
+    "changelogen": "^0.6.1",
+    "lint-staged": "^15.5.2",
+    "simple-git-hooks": "^2.13.0",
+    "typescript": "^5.8.3"
+  },
+  "overrides": {
+    "unconfig": "0.3.10"
+  },
+  "lint-staged": {
+    "*.{js,ts}": "bunx --bun eslint . --fix"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
+}
