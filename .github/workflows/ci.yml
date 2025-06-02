@@ -82,7 +82,7 @@ jobs:
 
       - name: Install pkgx
         run: |
-          ./launchpad pkgx --verbose
+          ./bumpx pkgx --verbose
           echo "$HOME/.local/bin" >> $GITHUB_PATH
 
       - name: Unit Test
@@ -112,4 +112,4 @@ jobs:
         run: bun run build
 
       - name: Publish Commit
-        run: bunx pkg-pr-new publish './packages/action' './packages/launchpad'
+        run: bunx pkg-pr-new publish './packages/action' './packages/bumpx'

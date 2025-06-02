@@ -1,10 +1,10 @@
 # Custom Shims
 
-Beyond the basic shim creation functionality, Launchpad allows for advanced shim customization for more complex scenarios.
+Beyond the basic shim creation functionality, bumpx allows for advanced shim customization for more complex scenarios.
 
 ## Manual Shim Creation
 
-If you need more control over your shims than the standard `launchpad shim` command provides, you can create them manually:
+If you need more control over your shims than the standard `bumpx shim` command provides, you can create them manually:
 
 ```bash
 # Create a directory for your shims if it doesn't exist
@@ -22,7 +22,7 @@ chmod +x ~/.local/bin/custom-node
 
 ## Shim Templates
 
-Launchpad's shims generally follow this template:
+bumpx's shims generally follow this template:
 
 ```sh
 #!/usr/bin/env -S pkgx -q! [package]@[version]

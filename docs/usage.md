@@ -1,10 +1,10 @@
 # Basic Usage
 
-Launchpad provides a simple yet powerful command-line interface for managing packages and development environments. This guide covers the most common operations.
+bumpx provides a simple yet powerful command-line interface for managing packages and development environments. This guide covers the most common operations.
 
 ## Command Overview
 
-Here are the main commands available in Launchpad:
+Here are the main commands available in bumpx:
 
 | Command | Description |
 |---------|-------------|
@@ -19,7 +19,7 @@ Here are the main commands available in Launchpad:
 | `zsh` | Install Zsh shell |
 | `bootstrap` | Install all essential tools at once |
 | `list` or `ls` | List installed packages |
-| `uninstall` | Complete removal of Launchpad and all packages |
+| `uninstall` | Complete removal of bumpx and all packages |
 | `env:list` or `env:ls` | List all development environments |
 | `env:clean` | Clean up unused development environments |
 | `env:inspect` | Inspect a specific development environment |
@@ -37,21 +37,21 @@ Install one or more packages using the `install` or `i` command:
 
 ```bash
 # Install a single package (defaults to /usr/local if writable)
-launchpad install node@22
+bumpx install node@22
 
 # Install multiple packages
-launchpad install python@3.12 ruby@3.3
+bumpx install python@3.12 ruby@3.3
 
 # Short form
-launchpad i go
+bumpx i go
 
 # Install to a specific location
-launchpad install --path ~/my-packages node
+bumpx install --path ~/my-packages node
 ```
 
 ### Installation Locations
 
-Launchpad provides flexible installation options:
+bumpx provides flexible installation options:
 
 - **Default behavior**: Installs to `/usr/local` if writable, otherwise to `~/.local`
 - **System-wide installation**: The default behavior already installs system-wide to `/usr/local`
@@ -60,13 +60,13 @@ Launchpad provides flexible installation options:
 
 ```bash
 # Examples of different installation methods
-launchpad install node                    # Installs to /usr/local (default)
-launchpad install node --system           # Same as above (redundant flag)
-launchpad install node --path /opt/tools  # Custom directory
-launchpad install node --path ~/.local    # Force user directory
+bumpx install node                    # Installs to /usr/local (default)
+bumpx install node --system           # Same as above (redundant flag)
+bumpx install node --path /opt/tools  # Custom directory
+bumpx install node --path ~/.local    # Force user directory
 ```
 
-**Permission Handling**: When installing to `/usr/local` without sufficient permissions, Launchpad will:
+**Permission Handling**: When installing to `/usr/local` without sufficient permissions, bumpx will:
 - Detect the permission issue
 - Prompt you interactively (if in a terminal)
 - Offer to re-run with `sudo` automatically
@@ -74,26 +74,26 @@ launchpad install node --path ~/.local    # Force user directory
 
 ## Removing Packages
 
-Remove specific packages while keeping the rest of your Launchpad setup intact:
+Remove specific packages while keeping the rest of your bumpx setup intact:
 
 ```bash
 # Remove a single package
-launchpad remove python
+bumpx remove python
 
 # Remove multiple packages
-launchpad rm node python ruby
+bumpx rm node python ruby
 
 # Remove a specific version
-launchpad remove node@22
+bumpx remove node@22
 
 # Preview what would be removed without actually removing it
-launchpad remove python --dry-run
+bumpx remove python --dry-run
 
 # Remove without confirmation prompts
-launchpad remove python --force
+bumpx remove python --force
 
 # Remove with verbose output showing all files
-launchpad remove python --verbose
+bumpx remove python --verbose
 ```
 
 The `remove` command intelligently finds and removes:
@@ -104,7 +104,7 @@ The `remove` command intelligently finds and removes:
 
 ## Development Environment Management
 
-Launchpad provides powerful project-specific environment management:
+bumpx provides powerful project-specific environment management:
 
 ### Auto-Activation with Shell Integration
 
@@ -112,7 +112,7 @@ Set up shell integration to automatically activate environments when entering pr
 
 ```bash
 # Add to your shell configuration
-echo 'eval "$(launchpad dev:shellcode)"' >> ~/.zshrc
+echo 'eval "$(bumpx dev:shellcode)"' >> ~/.zshrc
 
 # Reload your shell
 source ~/.zshrc
@@ -131,16 +131,16 @@ cd ../          # → Automatically deactivates
 
 ```bash
 # Generate environment script for current directory
-launchpad dev:dump
+bumpx dev:dump
 
 # Generate environment script for specific directory
-launchpad dev:dump /path/to/project
+bumpx dev:dump /path/to/project
 
 # Preview packages without generating script
-launchpad dev:dump --dryrun
+bumpx dev:dump --dryrun
 
 # Generate script with verbose output
-launchpad dev:dump --verbose
+bumpx dev:dump --verbose
 ```
 
 ### Project-Specific Dependencies
@@ -166,14 +166,14 @@ Supported dependency file formats:
 ### Environment Isolation
 
 Each project gets its own isolated environment:
-- Project-specific installation directory: `~/.local/share/launchpad/envs/{project-hash}/`
+- Project-specific installation directory: `~/.local/share/bumpx/envs/{project-hash}/`
 - Isolated PATH and environment variables
 - Binary stubs with environment isolation
 - Automatic cleanup when leaving project directory
 
 ## Environment Management
 
-Launchpad provides comprehensive tools for managing development environments with human-readable identifiers.
+bumpx provides comprehensive tools for managing development environments with human-readable identifiers.
 
 ### Listing Environments
 
@@ -181,16 +181,16 @@ View all your development environments:
 
 ```bash
 # List all environments in a table format
-launchpad env:list
+bumpx env:list
 
 # Show detailed information including hashes
-launchpad env:list --verbose
+bumpx env:list --verbose
 
 # Output as JSON for scripting
-launchpad env:list --format json
+bumpx env:list --format json
 
 # Simple format for quick overview
-launchpad env:ls --format simple
+bumpx env:ls --format simple
 ```
 
 **Example Output:**
@@ -213,13 +213,13 @@ Get detailed information about a specific environment:
 
 ```bash
 # Basic inspection
-launchpad env:inspect working-test_208a31ec
+bumpx env:inspect working-test_208a31ec
 
 # Detailed inspection with directory structure
-launchpad env:inspect final-project_7db6cf06 --verbose
+bumpx env:inspect final-project_7db6cf06 --verbose
 
 # Show binary stub contents
-launchpad env:inspect dummy_6d7cf1d6 --show-stubs
+bumpx env:inspect dummy_6d7cf1d6 --show-stubs
 ```
 
 **Example Output:**
@@ -229,7 +229,7 @@ launchpad env:inspect dummy_6d7cf1d6 --show-stubs
 📋 Basic Information:
   Project Name: working-test
   Hash: working-test_208a31ec
-  Path: /Users/user/.local/share/launchpad/envs/working-test_208a31ec
+  Path: /Users/user/.local/share/bumpx/envs/working-test_208a31ec
   Size: 324M
   Created: 5/30/2025, 6:38:08 PM
 
@@ -257,19 +257,19 @@ Automatically clean up unused or failed environments:
 
 ```bash
 # Preview what would be cleaned
-launchpad env:clean --dry-run
+bumpx env:clean --dry-run
 
 # Clean environments older than 30 days (default)
-launchpad env:clean
+bumpx env:clean
 
 # Clean environments older than 7 days
-launchpad env:clean --older-than 7
+bumpx env:clean --older-than 7
 
 # Force cleanup without confirmation
-launchpad env:clean --force
+bumpx env:clean --force
 
 # Verbose cleanup with details
-launchpad env:clean --verbose
+bumpx env:clean --verbose
 ```
 
 **Cleanup Criteria:**
@@ -283,18 +283,18 @@ Remove individual environments by their hash:
 
 ```bash
 # Remove with confirmation
-launchpad env:remove dummy_6d7cf1d6
+bumpx env:remove dummy_6d7cf1d6
 
 # Force removal without confirmation
-launchpad env:remove minimal_3a5dc15d --force
+bumpx env:remove minimal_3a5dc15d --force
 
 # Verbose removal showing details
-launchpad env:remove working-test_208a31ec --verbose
+bumpx env:remove working-test_208a31ec --verbose
 ```
 
 ### Environment Hash Format
 
-Launchpad uses human-readable hash identifiers for environments:
+bumpx uses human-readable hash identifiers for environments:
 
 **Format:** `{project-name}_{8-char-hex-hash}`
 
@@ -323,16 +323,16 @@ Keep your dependencies up to date with the `env:update` command:
 
 ```bash
 # Check for available updates
-launchpad env:update --check-only
+bumpx env:update --check-only
 
 # Preview what would be updated
-launchpad env:update --dry-run
+bumpx env:update --dry-run
 
 # Apply updates interactively
-launchpad env:update
+bumpx env:update
 
 # Apply updates without confirmation
-launchpad env:update --force
+bumpx env:update --force
 ```
 
 The update command:
@@ -369,7 +369,7 @@ The update command:
 🤔 Apply 2 update(s)? (y/N):
 ```
 
-After updating, run `launchpad dev:on` to activate the updated environment.
+After updating, run `bumpx dev:on` to activate the updated environment.
 
 ## Bootstrap Setup
 
@@ -381,13 +381,13 @@ Get everything you need with one command:
 
 ```bash
 # Install all essential tools (defaults to /usr/local)
-launchpad bootstrap
+bumpx bootstrap
 
 # Verbose bootstrap showing all operations
-launchpad bootstrap --verbose
+bumpx bootstrap --verbose
 
 # Force reinstall everything
-launchpad bootstrap --force
+bumpx bootstrap --force
 ```
 
 ### Customized Bootstrap
@@ -396,36 +396,36 @@ Control what gets installed:
 
 ```bash
 # Skip specific components
-launchpad bootstrap --skip-pkgx
-launchpad bootstrap --skip-bun
-launchpad bootstrap --skip-shell-integration
+bumpx bootstrap --skip-pkgx
+bumpx bootstrap --skip-bun
+bumpx bootstrap --skip-shell-integration
 
 # Custom installation path (override default /usr/local)
-launchpad bootstrap --path ~/.local
+bumpx bootstrap --path ~/.local
 
 # Disable automatic PATH modification
-launchpad bootstrap --no-auto-path
+bumpx bootstrap --no-auto-path
 ```
 
 ## Complete System Cleanup
 
-For complete removal of Launchpad and all installed packages:
+For complete removal of bumpx and all installed packages:
 
 ```bash
 # Remove everything with confirmation
-launchpad uninstall
+bumpx uninstall
 
 # Preview what would be removed
-launchpad uninstall --dry-run
+bumpx uninstall --dry-run
 
 # Remove everything without prompts
-launchpad uninstall --force
+bumpx uninstall --force
 
 # Remove only packages but keep shell integration
-launchpad uninstall --keep-shell-integration
+bumpx uninstall --keep-shell-integration
 
 # Remove only shell integration but keep packages
-launchpad uninstall --keep-packages
+bumpx uninstall --keep-packages
 ```
 
 The `uninstall` command removes:
@@ -442,10 +442,10 @@ Shims are lightweight executable scripts that point to the actual binaries. They
 
 ```bash
 # Create shims for a package
-launchpad shim node
+bumpx shim node
 
 # Create shims with a custom path
-launchpad shim --path ~/bin typescript
+bumpx shim --path ~/bin typescript
 ```
 
 ## Installing the Dev Package
@@ -454,60 +454,60 @@ The `dev` command provides a convenient way to install the `dev` package, which 
 
 ```bash
 # Install dev
-launchpad dev
+bumpx dev
 
 # Force reinstall
-launchpad dev --force
+bumpx dev --force
 
 # Specify installation path
-launchpad dev --path ~/bin
+bumpx dev --path ~/bin
 ```
 
 ## Installing pkgx
 
-If you don't have pkgx installed, Launchpad can install it for you:
+If you don't have pkgx installed, bumpx can install it for you:
 
 ```bash
 # Install pkgx
-launchpad pkgx
+bumpx pkgx
 
 # Force reinstall
-launchpad pkgx --force
+bumpx pkgx --force
 ```
 
 ## Installing Bun
 
-Launchpad provides a dedicated command for installing Bun directly from GitHub releases:
+bumpx provides a dedicated command for installing Bun directly from GitHub releases:
 
 ```bash
 # Install latest Bun version
-launchpad bun
+bumpx bun
 
 # Install specific version
-launchpad bun --version 1.0.0
+bumpx bun --version 1.0.0
 
 # Specify installation path
-launchpad bun --path ~/bin
+bumpx bun --path ~/bin
 ```
 
 The `bun` command automatically detects your platform, downloads the appropriate binary, and adds it to your PATH.
 
 ## Installing Zsh
 
-Launchpad provides a dedicated command for installing the Zsh shell:
+bumpx provides a dedicated command for installing the Zsh shell:
 
 ```bash
 # Install zsh
-launchpad zsh
+bumpx zsh
 
 # Force reinstall
-launchpad zsh --force
+bumpx zsh --force
 
 # Specify installation path
-launchpad zsh --path ~/bin
+bumpx zsh --path ~/bin
 ```
 
-After installation, Launchpad provides instructions for making zsh your default shell:
+After installation, bumpx provides instructions for making zsh your default shell:
 
 ```bash
 # Make zsh your default shell
@@ -520,13 +520,13 @@ Control how pkgx handles updates:
 
 ```bash
 # Check current auto-update status
-launchpad autoupdate
+bumpx autoupdate
 
 # Enable auto-updates
-launchpad autoupdate:enable
+bumpx autoupdate:enable
 
 # Disable auto-updates
-launchpad autoupdate:disable
+bumpx autoupdate:disable
 ```
 
 ## Listing Installed Packages
@@ -535,10 +535,10 @@ View what packages are currently installed:
 
 ```bash
 # List all installed packages
-launchpad list
+bumpx list
 
 # Or use the shorthand
-launchpad ls
+bumpx ls
 ```
 
 ## Common Options
@@ -560,7 +560,7 @@ Most commands support these options:
 
 ### Using Environment Isolation
 
-Launchpad automatically provides environment isolation for each project:
+bumpx automatically provides environment isolation for each project:
 
 ```bash
 # Each project gets its own environment
@@ -570,8 +570,8 @@ cd ../project-b/ # → Uses node@22, python@3.12
 
 ### Choosing Between Remove and Uninstall
 
-- Use `remove` when you want to uninstall specific packages while keeping your Launchpad setup
-- Use `uninstall` when you want to completely remove Launchpad and start fresh
+- Use `remove` when you want to uninstall specific packages while keeping your bumpx setup
+- Use `uninstall` when you want to completely remove bumpx and start fresh
 
 ### Using Dry-Run Mode
 
@@ -579,13 +579,13 @@ Always preview major changes before executing them:
 
 ```bash
 # Preview package removal
-launchpad remove python --dry-run
+bumpx remove python --dry-run
 
 # Preview complete system cleanup
-launchpad uninstall --dry-run
+bumpx uninstall --dry-run
 
 # Preview environment setup
-launchpad dev:dump --dryrun
+bumpx dev:dump --dryrun
 ```
 
 ### Version Management
@@ -594,27 +594,27 @@ Remove specific versions while keeping others:
 
 ```bash
 # List installed packages to see versions
-launchpad list
+bumpx list
 
 # Remove only a specific version
-launchpad remove node@20
+bumpx remove node@20
 
 # Keep node@22 installed
 ```
 
 ## Using PATH Integration
 
-By default, Launchpad automatically adds shim directories to your PATH. You can disable this behavior:
+By default, bumpx automatically adds shim directories to your PATH. You can disable this behavior:
 
 ```bash
-launchpad shim node --no-auto-path
+bumpx shim node --no-auto-path
 ```
 
 ## Working with Dependencies
 
 ### Dependency File Formats
 
-Launchpad supports multiple dependency file formats:
+bumpx supports multiple dependency file formats:
 
 ```yaml
 # dependencies.yaml
@@ -661,8 +661,8 @@ env:
 For detailed information about any command:
 
 ```bash
-launchpad help
-launchpad <command> --help
+bumpx help
+bumpx <command> --help
 ```
 
 ## Troubleshooting
@@ -673,7 +673,7 @@ If automatic environment activation isn't working:
 
 1. Ensure shell integration is set up:
    ```bash
-   echo 'eval "$(launchpad dev:shellcode)"' >> ~/.zshrc
+   echo 'eval "$(bumpx dev:shellcode)"' >> ~/.zshrc
    source ~/.zshrc
    ```
 
@@ -686,7 +686,7 @@ If packages fail to install:
 
 1. Check your internet connection
 2. Verify the package name and version exist
-3. Try with verbose output: `launchpad install --verbose package-name`
+3. Try with verbose output: `bumpx install --verbose package-name`
 4. Check if you have write permissions to the installation directory
 
 ### Permission Issues
@@ -704,4 +704,4 @@ If shell integration isn't working:
 1. Verify your shell is supported (bash or zsh)
 2. Check that the shell integration code was added correctly
 3. Reload your shell configuration
-4. Try generating new shell code: `launchpad dev:shellcode`
+4. Try generating new shell code: `bumpx dev:shellcode`

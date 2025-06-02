@@ -17,17 +17,17 @@ export async function run(): Promise<void> {
     // Get inputs
     const inputs: ActionInputs = {
       packages: core.getInput('packages', { required: false }) || '',
-      configPath: core.getInput('config-path', { required: false }) || 'launchpad.config.ts',
+      configPath: core.getInput('config-path', { required: false }) || 'bumpx.config.ts',
     }
 
-    core.info('Starting Launchpad Installer')
+    core.info('Starting bumpx Installer')
     core.info(`Context: ${JSON.stringify(github.context)}`)
 
     // Setup Bun
     await setupBun()
 
-    // Install launchpad
-    await installLaunchpad()
+    // Install bumpx
+    await installbumpx()
 
     // Install pkgx
     await installPkgx()
@@ -40,7 +40,7 @@ export async function run(): Promise<void> {
       await installProjectDependencies(inputs.configPath)
     }
 
-    core.info('Launchpad installation completed successfully')
+    core.info('bumpx installation completed successfully')
   }
   catch (error) {
     core.setFailed(error instanceof Error ? error.message : String(error))
@@ -85,16 +85,16 @@ async function setupBun(): Promise<void> {
 }
 
 /**
- * Install launchpad using Bun
+ * Install bumpx using Bun
  */
-async function installLaunchpad(): Promise<void> {
-  core.info('Installing launchpad...')
-  await exec.exec('bun', ['install', '-g', 'launchpad'])
-  core.info('launchpad installation completed')
+async function installbumpx(): Promise<void> {
+  core.info('Installing bumpx...')
+  await exec.exec('bun', ['install', '-g', 'bumpx'])
+  core.info('bumpx installation completed')
 }
 
 /**
- * Install pkgx using launchpad
+ * Install pkgx using bumpx
  */
 async function installPkgx(): Promise<void> {
   core.info('Installing pkgx...')
@@ -102,12 +102,12 @@ async function installPkgx(): Promise<void> {
   const options = {
     env: {
       ...process.env,
-      LAUNCHPAD_VERBOSE: 'true',
+      bumpx_VERBOSE: 'true',
       CONTEXT: JSON.stringify(github.context),
     },
   }
 
-  await exec.exec('launchpad', ['pkgx', '--verbose'], options)
+  await exec.exec('bumpx', ['pkgx', '--verbose'], options)
   core.info('pkgx installation completed')
 }
 
@@ -120,13 +120,13 @@ async function installSpecifiedPackages(packages: string): Promise<void> {
   const options = {
     env: {
       ...process.env,
-      LAUNCHPAD_VERBOSE: 'true',
+      bumpx_VERBOSE: 'true',
       CONTEXT: JSON.stringify(github.context),
     },
   }
 
   const args = ['install', '--verbose', ...packages.split(' ')]
-  await exec.exec('launchpad', args, options)
+  await exec.exec('bumpx', args, options)
 
   core.info('Package installation completed')
 }
@@ -140,7 +140,7 @@ async function installProjectDependencies(configPath: string): Promise<void> {
   const options = {
     env: {
       ...process.env,
-      LAUNCHPAD_VERBOSE: 'true',
+      bumpx_VERBOSE: 'true',
       CONTEXT: JSON.stringify(github.context),
     },
   }
@@ -150,7 +150,7 @@ async function installProjectDependencies(configPath: string): Promise<void> {
   if (dependencies.length > 0) {
     core.info(`Found dependencies: ${dependencies.join(', ')}`)
     const args = ['install', '--verbose', ...dependencies]
-    await exec.exec('launchpad', args, options)
+    await exec.exec('bumpx', args, options)
     core.info('Project dependencies installation completed')
   }
   else {

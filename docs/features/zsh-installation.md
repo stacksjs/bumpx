@@ -1,13 +1,13 @@
 # Zsh Installation
 
-Launchpad provides a dedicated command for installing the Zsh shell, making it easy to get a modern shell environment set up on any system.
+bumpx provides a dedicated command for installing the Zsh shell, making it easy to get a modern shell environment set up on any system.
 
 ## Quick Start
 
 Install zsh with a single command:
 
 ```bash
-launchpad zsh
+bumpx zsh
 ```
 
 This will:
@@ -22,43 +22,43 @@ This will:
 
 ```bash
 # Install zsh with default settings
-launchpad zsh
+bumpx zsh
 ```
 
 ### Custom Installation Path
 
 ```bash
 # Install to a specific directory
-launchpad zsh --path ~/my-shell
+bumpx zsh --path ~/my-shell
 
 # Install to a system directory
-launchpad zsh --path /usr/local
+bumpx zsh --path /usr/local
 ```
 
 ### Force Reinstallation
 
 ```bash
 # Force reinstall even if zsh is already installed
-launchpad zsh --force
+bumpx zsh --force
 ```
 
 ### Disable Auto-PATH
 
 ```bash
 # Install without automatically adding to PATH
-launchpad zsh --no-auto-path
+bumpx zsh --no-auto-path
 ```
 
 ### Verbose Output
 
 ```bash
 # See detailed installation information
-launchpad zsh --verbose
+bumpx zsh --verbose
 ```
 
 ## Making Zsh Your Default Shell
 
-After installation, you'll want to make zsh your default shell. Launchpad provides helpful instructions after installation:
+After installation, you'll want to make zsh your default shell. bumpx provides helpful instructions after installation:
 
 ### Using the Installed Zsh
 
@@ -116,7 +116,7 @@ If you encounter permission issues:
 
 ```bash
 # Use sudo if installing to system directories
-sudo launchpad zsh --path /usr/local
+sudo bumpx zsh --path /usr/local
 ```
 
 ### PATH Issues
@@ -153,7 +153,7 @@ If `chsh` doesn't work:
 
 | Method | Pros | Cons |
 |--------|------|------|
-| **Launchpad** | Simple, cross-platform, automatic PATH management | Requires pkgx |
+| **bumpx** | Simple, cross-platform, automatic PATH management | Requires pkgx |
 | **Package Manager** | System integration | Platform-specific, may need sudo |
 | **From Source** | Latest features | Complex, time-consuming |
 
@@ -165,19 +165,19 @@ You can install zsh to different paths for testing:
 
 ```bash
 # Install stable version
-launchpad zsh --path ~/zsh-stable
+bumpx zsh --path ~/zsh-stable
 
 # Install to another location for testing
-launchpad zsh --path ~/zsh-test --force
+bumpx zsh --path ~/zsh-test --force
 ```
 
 ### Integration with Development Environments
 
-Zsh works great with Launchpad's dev-aware installations:
+Zsh works great with bumpx's dev-aware installations:
 
 ```bash
 # Install dev package for project-specific environments
-launchpad dev
+bumpx dev
 
 # Use zsh in your development workflow
 cd your-project

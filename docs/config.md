@@ -1,22 +1,22 @@
 # Configuration
 
-Launchpad can be configured using a configuration file or through command-line options. This guide explains all available configuration options and how to use them.
+bumpx can be configured using a configuration file or through command-line options. This guide explains all available configuration options and how to use them.
 
 ## Configuration File
 
-Launchpad looks for configuration in these locations (in order of precedence):
+bumpx looks for configuration in these locations (in order of precedence):
 
-1. `.launchpad.json` or `launchpad.config.ts` in the current directory
-2. `~/.launchpadrc` or `~/.config/launchpad/config.json` in your home directory
+1. `.bumpx.json` or `bumpx.config.ts` in the current directory
+2. `~/.bumpxrc` or `~/.config/bumpx/config.json` in your home directory
 
-Example configuration file (`launchpad.config.ts`):
+Example configuration file (`bumpx.config.ts`):
 
 ```ts
-import type { LaunchpadConfig } from 'launchpad'
+import type { bumpxConfig } from 'bumpx'
 import os from 'node:os'
 import path from 'node:path'
 
-const config: LaunchpadConfig = {
+const config: bumpxConfig = {
   // Enable verbose logging (default: false)
   verbose: true,
 
@@ -52,7 +52,7 @@ const config: LaunchpadConfig = {
 export default config
 ```
 
-JavaScript format (`.launchpadrc`):
+JavaScript format (`.bumpxrc`):
 
 ```json
 {
@@ -102,24 +102,24 @@ JavaScript format (`.launchpadrc`):
 
 ## Environment Variables
 
-You can also configure Launchpad using environment variables:
+You can also configure bumpx using environment variables:
 
 | Environment Variable | Description |
 |----------------------|-------------|
-| `LAUNCHPAD_VERBOSE` | Enable verbose logging |
-| `LAUNCHPAD_INSTALL_PATH` | Set installation path |
-| `LAUNCHPAD_SHIM_PATH` | Set shim path |
-| `LAUNCHPAD_AUTO_SUDO` | Enable/disable auto sudo |
-| `LAUNCHPAD_AUTO_ADD_PATH` | Enable/disable auto PATH modification |
-| `LAUNCHPAD_ENV_BASE_DIR` | Set base directory for project environments |
-| `LAUNCHPAD_AUTO_ACTIVATE_ENV` | Enable/disable automatic environment activation |
-| `LAUNCHPAD_SHOW_ENV_MESSAGES` | Enable/disable environment activation messages |
-| `LAUNCHPAD_ENV_CLEANUP_DAYS` | Default age threshold for environment cleanup |
+| `bumpx_VERBOSE` | Enable verbose logging |
+| `bumpx_INSTALL_PATH` | Set installation path |
+| `bumpx_SHIM_PATH` | Set shim path |
+| `bumpx_AUTO_SUDO` | Enable/disable auto sudo |
+| `bumpx_AUTO_ADD_PATH` | Enable/disable auto PATH modification |
+| `bumpx_ENV_BASE_DIR` | Set base directory for project environments |
+| `bumpx_AUTO_ACTIVATE_ENV` | Enable/disable automatic environment activation |
+| `bumpx_SHOW_ENV_MESSAGES` | Enable/disable environment activation messages |
+| `bumpx_ENV_CLEANUP_DAYS` | Default age threshold for environment cleanup |
 
 Example:
 
 ```bash
-LAUNCHPAD_VERBOSE=true LAUNCHPAD_INSTALL_PATH=~/apps launchpad install node@22
+bumpx_VERBOSE=true bumpx_INSTALL_PATH=~/apps bumpx install node@22
 ```
 
 ## Command-Line Overrides
@@ -128,34 +128,34 @@ Options specified on the command line take precedence over configuration files:
 
 ```bash
 # Override installation path
-launchpad install --path ~/custom-path node@22
+bumpx install --path ~/custom-path node@22
 
 # Force reinstallation
-launchpad shim --force node
+bumpx shim --force node
 
 # Disable auto PATH modification
-launchpad dev --no-auto-path
+bumpx dev --no-auto-path
 
 # Install specific Bun version
-launchpad bun --version 1.0.0
+bumpx bun --version 1.0.0
 
 # Bootstrap with custom options
-launchpad bootstrap --skip-bun --verbose
+bumpx bootstrap --skip-bun --verbose
 
 # Remove packages with dry-run preview
-launchpad remove python --dry-run
+bumpx remove python --dry-run
 
 # Complete removal without confirmation
-launchpad uninstall --force
+bumpx uninstall --force
 
 # Keep specific components during uninstall
-launchpad uninstall --keep-shell-integration
+bumpx uninstall --keep-shell-integration
 
 # Generate environment script with options
-launchpad dev:dump --verbose --dryrun
+bumpx dev:dump --verbose --dryrun
 
 # Quiet installation
-launchpad install --quiet node@22
+bumpx install --quiet node@22
 ```
 
 ## Development Environment Configuration
@@ -178,10 +178,10 @@ env:
 
 ### Global Environment Configuration
 
-Set global environment defaults in your Launchpad config:
+Set global environment defaults in your bumpx config:
 
 ```ts
-const config: LaunchpadConfig = {
+const config: bumpxConfig = {
   // Global environment variables for all projects
   globalEnv: {
     EDITOR: 'code',
@@ -201,9 +201,9 @@ const config: LaunchpadConfig = {
 Configure how project environments are isolated:
 
 ```ts
-const config: LaunchpadConfig = {
+const config: bumpxConfig = {
   // Base directory for project environments
-  envBaseDir: path.join(os.homedir(), '.local', 'share', 'launchpad', 'envs'),
+  envBaseDir: path.join(os.homedir(), '.local', 'share', 'bumpx', 'envs'),
 
   // Whether to automatically activate environments when entering directories
   autoActivateEnv: true,
@@ -244,7 +244,7 @@ const config: LaunchpadConfig = {
 Configure how binary stubs are created:
 
 ```ts
-const config: LaunchpadConfig = {
+const config: bumpxConfig = {
   // Template for binary stub scripts
   stubTemplate: `#!/bin/sh
 # Custom stub template
@@ -262,7 +262,7 @@ exec "{binary}" "$@"
 Configure package resolution behavior:
 
 ```ts
-const config: LaunchpadConfig = {
+const config: bumpxConfig = {
   // Custom package registry URLs
   registries: [
     'https://pkgx.sh/packages',
@@ -282,7 +282,7 @@ const config: LaunchpadConfig = {
 Configure different installation paths for different types of packages:
 
 ```ts
-const config: LaunchpadConfig = {
+const config: bumpxConfig = {
   // Default installation path (can be overridden with --system or --path)
   installationPath: '/usr/local', // Set to always use /usr/local
 
@@ -305,7 +305,7 @@ const config: LaunchpadConfig = {
 ### macOS Configuration
 
 ```ts
-const config: LaunchpadConfig = {
+const config: bumpxConfig = {
   // Use Homebrew paths when available
   useHomebrewPaths: true,
 
@@ -320,7 +320,7 @@ const config: LaunchpadConfig = {
 ### Linux Configuration
 
 ```ts
-const config: LaunchpadConfig = {
+const config: bumpxConfig = {
   // Linux-specific paths
   linuxBinaryPaths: [
     '/usr/local/bin',
@@ -336,10 +336,10 @@ const config: LaunchpadConfig = {
 ### Windows Configuration
 
 ```ts
-const config: LaunchpadConfig = {
+const config: bumpxConfig = {
   // Windows-specific paths
   windowsBinaryPaths: [
-    'C:\\Program Files\\Launchpad\\bin',
+    'C:\\Program Files\\bumpx\\bin',
     '%USERPROFILE%\\.local\\bin',
   ],
 
@@ -355,7 +355,7 @@ const config: LaunchpadConfig = {
 Enable configuration debugging:
 
 ```bash
-LAUNCHPAD_DEBUG_CONFIG=true launchpad version
+bumpx_DEBUG_CONFIG=true bumpx version
 ```
 
 ### Configuration Validation
@@ -363,13 +363,13 @@ LAUNCHPAD_DEBUG_CONFIG=true launchpad version
 Validate your configuration:
 
 ```bash
-launchpad config:validate
+bumpx config:validate
 ```
 
 ### Configuration Location
 
-Find where Launchpad is loading configuration from:
+Find where bumpx is loading configuration from:
 
 ```bash
-launchpad config:show
+bumpx config:show
 ```

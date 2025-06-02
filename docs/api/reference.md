@@ -1,6 +1,6 @@
 # API Reference
 
-This document provides detailed information about Launchpad's API for developers who want to integrate with or extend Launchpad.
+This document provides detailed information about bumpx's API for developers who want to integrate with or extend bumpx.
 
 ## Core Modules
 
@@ -163,7 +163,7 @@ interface Installation {
 
 ```typescript
 /**
- * Remove specific packages while keeping Launchpad installation
+ * Remove specific packages while keeping bumpx installation
  * @param packages Array of package names/specs to remove
  * @param options Removal options
  * @returns Promise resolving to removal results
@@ -174,7 +174,7 @@ async function removePackages(
 ): Promise<RemovalResult[]>
 
 /**
- * Complete system cleanup - remove Launchpad and all packages
+ * Complete system cleanup - remove bumpx and all packages
  * @param options Cleanup options
  * @returns Promise resolving to cleanup results
  */
@@ -258,19 +258,19 @@ function shell_escape(str: string): string
 
 ```typescript
 /**
- * Load Launchpad configuration from various sources
+ * Load bumpx configuration from various sources
  * @returns Merged configuration object
  */
-function loadConfig(): LaunchpadConfig
+function loadConfig(): bumpxConfig
 
 /**
  * Validate configuration object
  * @param config Configuration to validate
  * @returns Array of validation errors (empty if valid)
  */
-function validateConfig(config: LaunchpadConfig): string[]
+function validateConfig(config: bumpxConfig): string[]
 
-interface LaunchpadConfig {
+interface bumpxConfig {
   verbose?: boolean
   installationPath?: string
   shimPath?: string
@@ -308,7 +308,7 @@ function isInPath(directory: string): boolean
 function platform_data_home_default(): string
 
 /**
- * Find dev command (launchpad or fallback)
+ * Find dev command (bumpx or fallback)
  * @returns Path to dev command executable
  */
 function findDevCommand(): string
@@ -349,7 +349,7 @@ const DEPENDENCY_FILES: readonly string[]
 ### Basic Package Installation
 
 ```typescript
-import { install, install_prefix } from 'launchpad'
+import { install, install_prefix } from 'bumpx'
 
 // Install packages to default location
 const installedFiles = await install(['node@22', 'python@3.12'], install_prefix().string)
@@ -359,7 +359,7 @@ console.log('Installed files:', installedFiles)
 ### Environment Setup
 
 ```typescript
-import { dump, shellcode } from 'launchpad/dev'
+import { dump, shellcode } from 'bumpx/dev'
 
 // Generate shell integration code
 const shellCode = shellcode()
@@ -372,7 +372,7 @@ await dump('/path/to/project', { dryrun: false, quiet: false })
 ### Configuration Management
 
 ```typescript
-import { loadConfig, validateConfig } from 'launchpad/config'
+import { loadConfig, validateConfig } from 'bumpx/config'
 
 // Load current configuration
 const config = loadConfig()
@@ -388,7 +388,7 @@ if (errors.length > 0) {
 ### Package Management
 
 ```typescript
-import { list, removePackages } from 'launchpad'
+import { list, removePackages } from 'bumpx'
 
 // List installed packages
 const packages = await list('/usr/local')
@@ -405,7 +405,7 @@ console.log('Removal results:', results)
 ### Environment Isolation
 
 ```typescript
-import { createBinaryStubs, generateProjectHash, getProjectEnvDir } from 'launchpad/env'
+import { createBinaryStubs, generateProjectHash, getProjectEnvDir } from 'bumpx/env'
 
 // Generate hash for project
 const projectPath = '/home/user/my-project'
@@ -450,10 +450,10 @@ catch (error) {
 
 ## Events and Hooks
 
-Launchpad provides hooks for monitoring operations:
+bumpx provides hooks for monitoring operations:
 
 ```typescript
-import { on } from 'launchpad/events'
+import { on } from 'bumpx/events'
 
 // Listen for package installation events
 on('package:install:start', (packageName) => {
@@ -479,7 +479,7 @@ on('env:deactivate', (projectPath) => {
 Install one or more packages using pkgx with automatic PATH management.
 
 ```bash
-launchpad install [packages...] [options]
+bumpx install [packages...] [options]
 ```
 
 **Aliases:** `i`
@@ -497,19 +497,19 @@ launchpad install [packages...] [options]
 **Examples:**
 ```bash
 # Install Node.js (defaults to /usr/local)
-launchpad install node@22
+bumpx install node@22
 
 # Install multiple packages
-launchpad install python@3.12 go@1.21
+bumpx install python@3.12 go@1.21
 
 # System-wide installation (same as default)
-launchpad install node@22 --system
+bumpx install node@22 --system
 
 # Custom installation path
-launchpad install python@3.12 --path ~/tools
+bumpx install python@3.12 --path ~/tools
 
 # Force reinstall
-launchpad install --force node@22
+bumpx install --force node@22
 ```
 
 ### Environment List Command
@@ -517,7 +517,7 @@ launchpad install --force node@22
 List all development environments with readable hash identifiers.
 
 ```bash
-launchpad env:list [options]
+bumpx env:list [options]
 ```
 
 **Aliases:** `env:ls`
@@ -529,16 +529,16 @@ launchpad env:list [options]
 **Examples:**
 ```bash
 # List all environments in table format
-launchpad env:list
+bumpx env:list
 
 # Show detailed information with hashes
-launchpad env:list --verbose
+bumpx env:list --verbose
 
 # Output as JSON for scripting
-launchpad env:list --format json
+bumpx env:list --format json
 
 # Simple format for quick overview
-launchpad env:ls --format simple
+bumpx env:ls --format simple
 ```
 
 ### Environment Clean Command
@@ -546,7 +546,7 @@ launchpad env:ls --format simple
 Clean up unused development environments automatically.
 
 ```bash
-launchpad env:clean [options]
+bumpx env:clean [options]
 ```
 
 **Options:**
@@ -558,13 +558,13 @@ launchpad env:clean [options]
 **Examples:**
 ```bash
 # Preview what would be cleaned
-launchpad env:clean --dry-run
+bumpx env:clean --dry-run
 
 # Clean environments older than 7 days
-launchpad env:clean --older-than 7 --force
+bumpx env:clean --older-than 7 --force
 
 # Interactive cleanup with details
-launchpad env:clean --verbose
+bumpx env:clean --verbose
 ```
 
 ### Environment Inspect Command
@@ -572,7 +572,7 @@ launchpad env:clean --verbose
 Inspect a specific development environment in detail.
 
 ```bash
-launchpad env:inspect <hash> [options]
+bumpx env:inspect <hash> [options]
 ```
 
 **Arguments:**
@@ -585,10 +585,10 @@ launchpad env:inspect <hash> [options]
 **Examples:**
 ```bash
 # Basic environment inspection
-launchpad env:inspect working-test_208a31ec
+bumpx env:inspect working-test_208a31ec
 
 # Detailed inspection with stub contents
-launchpad env:inspect final-project_7db6cf06 --verbose --show-stubs
+bumpx env:inspect final-project_7db6cf06 --verbose --show-stubs
 ```
 
 ### Environment Remove Command
@@ -596,7 +596,7 @@ launchpad env:inspect final-project_7db6cf06 --verbose --show-stubs
 Remove a specific development environment.
 
 ```bash
-launchpad env:remove <hash> [options]
+bumpx env:remove <hash> [options]
 ```
 
 **Arguments:**
@@ -609,15 +609,15 @@ launchpad env:remove <hash> [options]
 **Examples:**
 ```bash
 # Remove environment with confirmation
-launchpad env:remove dummy_6d7cf1d6
+bumpx env:remove dummy_6d7cf1d6
 
 # Force removal without confirmation
-launchpad env:remove minimal_3a5dc15d --force
+bumpx env:remove minimal_3a5dc15d --force
 ```
 
 ## Environment Hash Format
 
-Launchpad uses a human-readable hash format for environment directories:
+bumpx uses a human-readable hash format for environment directories:
 
 **Format:** `{project-name}_{8-char-hex-hash}`
 

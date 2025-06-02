@@ -1,10 +1,10 @@
 # Environment Management
 
-Launchpad provides powerful environment management capabilities that automatically isolate project dependencies and provide tools for managing these environments. This guide covers all aspects of environment management, from automatic activation to manual cleanup.
+bumpx provides powerful environment management capabilities that automatically isolate project dependencies and provide tools for managing these environments. This guide covers all aspects of environment management, from automatic activation to manual cleanup.
 
 ## Overview
 
-Environment management in Launchpad consists of two main components:
+Environment management in bumpx consists of two main components:
 
 1. **Automatic Environment Isolation** - Project-specific environments that activate when you enter a directory
 2. **Environment Management Tools** - CLI commands for listing, inspecting, cleaning, and removing environments
@@ -13,10 +13,10 @@ Environment management in Launchpad consists of two main components:
 
 ### How It Works
 
-When you enter a directory containing dependency files (like `dependencies.yaml`), Launchpad automatically:
+When you enter a directory containing dependency files (like `dependencies.yaml`), bumpx automatically:
 
 1. **Generates a unique environment hash** based on the project path
-2. **Creates an isolated environment directory** at `~/.local/share/launchpad/envs/{hash}/`
+2. **Creates an isolated environment directory** at `~/.local/share/bumpx/envs/{hash}/`
 3. **Installs project-specific packages** to the isolated environment
 4. **Modifies PATH** to prioritize the project's binaries
 5. **Sets up environment variables** as specified in the dependency file
@@ -24,7 +24,7 @@ When you enter a directory containing dependency files (like `dependencies.yaml`
 
 ### Environment Hash Format
 
-Launchpad uses a human-readable hash format for environment directories:
+bumpx uses a human-readable hash format for environment directories:
 
 **Format:** `{project-name}_{8-char-hex-hash}`
 
@@ -41,7 +41,7 @@ Launchpad uses a human-readable hash format for environment directories:
 
 ### Supported Dependency Files
 
-Launchpad automatically detects these dependency files:
+bumpx automatically detects these dependency files:
 
 - `dependencies.yaml` / `dependencies.yml`
 - `pkgx.yaml` / `pkgx.yml`
@@ -66,7 +66,7 @@ To enable automatic environment activation, add shell integration:
 
 ```bash
 # Add to your shell configuration
-echo 'eval "$(launchpad dev:shellcode)"' >> ~/.zshrc
+echo 'eval "$(bumpx dev:shellcode)"' >> ~/.zshrc
 
 # Reload your shell
 source ~/.zshrc
@@ -87,16 +87,16 @@ The `env:list` command shows all your development environments:
 
 ```bash
 # Basic listing
-launchpad env:list
+bumpx env:list
 
 # Detailed view with hashes
-launchpad env:list --verbose
+bumpx env:list --verbose
 
 # JSON output for scripting
-launchpad env:list --format json
+bumpx env:list --format json
 
 # Simple format
-launchpad env:ls --format simple
+bumpx env:ls --format simple
 ```
 
 **Output formats:**
@@ -142,13 +142,13 @@ The `env:inspect` command provides detailed information about a specific environ
 
 ```bash
 # Basic inspection
-launchpad env:inspect working-test_208a31ec
+bumpx env:inspect working-test_208a31ec
 
 # Detailed inspection with directory structure
-launchpad env:inspect final-project_7db6cf06 --verbose
+bumpx env:inspect final-project_7db6cf06 --verbose
 
 # Show binary stub contents
-launchpad env:inspect dummy_6d7cf1d6 --show-stubs
+bumpx env:inspect dummy_6d7cf1d6 --show-stubs
 ```
 
 **Example output:**
@@ -158,7 +158,7 @@ launchpad env:inspect dummy_6d7cf1d6 --show-stubs
 📋 Basic Information:
   Project Name: working-test
   Hash: working-test_208a31ec
-  Path: /Users/user/.local/share/launchpad/envs/working-test_208a31ec
+  Path: /Users/user/.local/share/bumpx/envs/working-test_208a31ec
   Size: 324M
   Created: 5/30/2025, 6:38:08 PM
   Modified: 5/30/2025, 6:38:12 PM
@@ -199,19 +199,19 @@ The `env:clean` command automatically removes unused or problematic environments
 
 ```bash
 # Preview what would be cleaned
-launchpad env:clean --dry-run
+bumpx env:clean --dry-run
 
 # Clean with default settings (30 days old)
-launchpad env:clean
+bumpx env:clean
 
 # Clean environments older than 7 days
-launchpad env:clean --older-than 7
+bumpx env:clean --older-than 7
 
 # Force cleanup without confirmation
-launchpad env:clean --force
+bumpx env:clean --force
 
 # Verbose cleanup with details
-launchpad env:clean --verbose
+bumpx env:clean --verbose
 ```
 
 **Cleanup criteria:**
@@ -248,13 +248,13 @@ The `env:remove` command removes individual environments:
 
 ```bash
 # Remove with confirmation
-launchpad env:remove dummy_6d7cf1d6
+bumpx env:remove dummy_6d7cf1d6
 
 # Force removal without confirmation
-launchpad env:remove minimal_3a5dc15d --force
+bumpx env:remove minimal_3a5dc15d --force
 
 # Verbose removal showing details
-launchpad env:remove working-test_208a31ec --verbose
+bumpx env:remove working-test_208a31ec --verbose
 ```
 
 **Example output:**
@@ -274,7 +274,7 @@ launchpad env:remove working-test_208a31ec --verbose
 Each environment has a standardized directory structure:
 
 ```
-~/.local/share/launchpad/envs/{project-name}_{hash}/
+~/.local/share/bumpx/envs/{project-name}_{hash}/
 ├── bin/           # Executable binaries and stubs
 ├── sbin/          # System binaries
 ├── pkgs/          # Package installations
@@ -287,7 +287,7 @@ Each environment has a standardized directory structure:
 
 ### Binary Stubs
 
-Launchpad creates isolated binary stubs that:
+bumpx creates isolated binary stubs that:
 
 - **Set up environment variables** before executing the real binary
 - **Restore original environment** after execution
@@ -336,19 +336,19 @@ exec "/path/to/real/python" "$@"
 ### Troubleshooting
 
 **Environment not activating:**
-1. Check shell integration: `echo 'eval "$(launchpad dev:shellcode)"' >> ~/.zshrc`
+1. Check shell integration: `echo 'eval "$(bumpx dev:shellcode)"' >> ~/.zshrc`
 2. Verify dependency file exists and has correct syntax
 3. Reload shell configuration: `source ~/.zshrc`
 
 **Package installation failures:**
 1. Check internet connectivity
 2. Verify package names and versions exist in pkgx
-3. Use `launchpad dev:dump --verbose` for detailed error information
+3. Use `bumpx dev:dump --verbose` for detailed error information
 
 **Hash collisions (rare):**
 1. Different projects with same name get different hashes based on full path
 2. If collision occurs, rename one of the project directories
-3. Remove old environment: `launchpad env:remove {hash}`
+3. Remove old environment: `bumpx env:remove {hash}`
 
 ## Advanced Usage
 
@@ -360,10 +360,10 @@ Use JSON output for automation:
 #!/bin/bash
 # Clean up environments larger than 100MB
 
-envs=$(launchpad env:list --format json)
+envs=$(bumpx env:list --format json)
 echo "$envs" | jq -r '.[] | select(.size | test("^[0-9]+[0-9][0-9]M|^[0-9]+G")) | .hash' | while read hash; do
   echo "Removing large environment: $hash"
-  launchpad env:remove "$hash" --force
+  bumpx env:remove "$hash" --force
 done
 ```
 
@@ -375,7 +375,7 @@ Clean up environments in CI pipelines:
 # GitHub Actions example
 - name: Clean old environments
   run: |
-    launchpad env:clean --older-than 1 --force
+    bumpx env:clean --older-than 1 --force
 ```
 
 ### Monitoring Environment Usage
@@ -384,5 +384,5 @@ Track environment disk usage:
 
 ```bash
 # Show environments sorted by size
-launchpad env:list --format json | jq -r 'sort_by(.size) | reverse | .[] | "\(.projectName): \(.size)"'
+bumpx env:list --format json | jq -r 'sort_by(.size) | reverse | .[] | "\(.projectName): \(.size)"'
 ```

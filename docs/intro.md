@@ -1,24 +1,24 @@
-<p align="center"><img src="https://github.com/stacksjs/launchpad/blob/main/.github/art/cover.jpg?raw=true" alt="Social Card of Launchpad"></p>
+<p align="center"><img src="https://github.com/stacksjs/bumpx/blob/main/.github/art/cover.jpg?raw=true" alt="Social Card of bumpx"></p>
 
 # Introduction
 
 > A lightweight package manager built on top of pkgx to simplify package installation and management.
 
-## What is Launchpad?
+## What is bumpx?
 
-Launchpad serves as an alternative to package managers like Homebrew, focusing on:
+bumpx serves as an alternative to package managers like Homebrew, focusing on:
 
 - A consistent and simple CLI interface
 - Automatic PATH management
 - Easy installation of development tools
 - Cross-platform support
 
-At its core, Launchpad leverages pkgx, a next-generation package runner that allows you to use packages without installing them. Launchpad extends this functionality with convenient commands, better management of executables, and improved integration with your development workflow.
+At its core, bumpx leverages pkgx, a next-generation package runner that allows you to use packages without installing them. bumpx extends this functionality with convenient commands, better management of executables, and improved integration with your development workflow.
 
 ## Key Features
 
 - 📦 **Package Management** — Install and manage packages directly using pkgx
-- 🗑️ **Package Removal** — Remove specific packages or completely uninstall Launchpad
+- 🗑️ **Package Removal** — Remove specific packages or completely uninstall bumpx
 - 🔄 **Executable Shims** — Create executable shims for packages automatically
 - 🌍 **Environment Isolation** — Project-specific environments with automatic activation/deactivation
 - 🎯 **Bootstrap Setup** — One-command setup of essential development tooling
@@ -29,30 +29,30 @@ At its core, Launchpad leverages pkgx, a next-generation package runner that all
 
 ## How It Works
 
-Launchpad works by managing the installation of pkgx and creating shims (executable scripts) that automatically run the correct versions of your tools. It can:
+bumpx works by managing the installation of pkgx and creating shims (executable scripts) that automatically run the correct versions of your tools. It can:
 
 - Figure out required system or project dependencies and install them
 - Provide project-specific environment isolation with automatic dependency activation/deactiviation
 - Configure automatic updates and PATH modifications
 
-Whether you're setting up a new development machine, working on multiple projects with different tooling requirements, or just want a cleaner way to manage your packages, Launchpad offers a streamlined experience for modern developers with complete environment isolation.
+Whether you're setting up a new development machine, working on multiple projects with different tooling requirements, or just want a cleaner way to manage your packages, bumpx offers a streamlined experience for modern developers with complete environment isolation.
 
 ## Quick Example
 
-Here's a simple example of how to use Launchpad:
+Here's a simple example of how to use bumpx:
 
 ```bash
-# Install Launchpad
-bun add -g @stacksjs/launchpad
+# Install bumpx
+bun add -g @stacksjs/bumpx
 
 # Bootstrap everything you need at once
-launchpad bootstrap
+bumpx bootstrap
 
 # Or install individual packages
-launchpad install node@22
+bumpx install node@22
 
 # Set up automatic environment activation
-echo 'eval "$(launchpad dev:shellcode)"' >> ~/.zshrc
+echo 'eval "$(bumpx dev:shellcode)"' >> ~/.zshrc
 source ~/.zshrc
 
 # Create a project with dependencies
@@ -70,10 +70,10 @@ EOF
 # ✅ Environment activated for /path/to/my-project
 
 # Install Zsh shell
-launchpad zsh
+bumpx zsh
 
 # Create shims for Node.js
-launchpad shim node
+bumpx shim node
 
 # Now 'node' and 'zsh' are available in your PATH
 node --version
@@ -84,17 +84,17 @@ cd ..
 # 🔄 dev environment deactivated
 
 # Remove specific packages when no longer needed
-launchpad remove node
+bumpx remove node
 
 # Or completely uninstall everything
-launchpad uninstall
+bumpx uninstall
 ```
 
-With just a few commands, you've set up a complete development environment with automatic project-specific isolation. Launchpad handles all the complexity for you, and you can easily clean up when you're done.
+With just a few commands, you've set up a complete development environment with automatic project-specific isolation. bumpx handles all the complexity for you, and you can easily clean up when you're done.
 
-## Why Choose Launchpad?
+## Why Choose bumpx?
 
-Launchpad offers several advantages over traditional package managers:
+bumpx offers several advantages over traditional package managers:
 
 - **Speed**: Installing packages is significantly faster
 - **Isolation**: Changes to one package don't affect others
@@ -104,18 +104,18 @@ Launchpad offers several advantages over traditional package managers:
 
 ## Next Steps
 
-Ready to get started with Launchpad? Check out these guides:
+Ready to get started with bumpx? Check out these guides:
 
-- [Installation Guide](./install.md) — Install Launchpad on your system
+- [Installation Guide](./install.md) — Install bumpx on your system
 - [Basic Usage](./usage.md) — Learn the basic commands
-- [Configuration](./config.md) — Customize Launchpad to your needs
-- [Why Launchpad?](./why.md) — More details on the advantages of Launchpad
+- [Configuration](./config.md) — Customize bumpx to your needs
+- [Why bumpx?](./why.md) — More details on the advantages of bumpx
 
 ## Community
 
 For help, discussion about best practices, or any other conversation that would benefit from being searchable:
 
-[Discussions on GitHub](https://github.com/stacksjs/launchpad/discussions)
+[Discussions on GitHub](https://github.com/stacksjs/bumpx/discussions)
 
 For casual chit-chat with others using this package:
 
@@ -139,11 +139,11 @@ We would like to extend our thanks to the following sponsors for funding Stacks 
 - [Max Howell](https://github.com/mxcl) - for creating [pkgx](https://github.com/pkgxdev/pkgx) and [Homebrew](https://github.com/Homebrew/brew)
 - [pkgm](https://github.com/pkgxdev/pkgm) & [dev](https://github.com/pkgxdev/dev) - for the initial project inspiration
 - [Chris Breuer](https://github.com/chrisbbreuer)
-- [All Contributors](https://github.com/stacksjs/launchpad/graphs/contributors)
+- [All Contributors](https://github.com/stacksjs/bumpx/graphs/contributors)
 
 ## License
 
-The MIT License (MIT). Please see [LICENSE](https://github.com/stacksjs/launchpad/tree/main/LICENSE.md) for more information.
+The MIT License (MIT). Please see [LICENSE](https://github.com/stacksjs/bumpx/tree/main/LICENSE.md) for more information.
 
 Made with 💙
 

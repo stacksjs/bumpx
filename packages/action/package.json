@@ -1,20 +1,20 @@
 {
-  "name": "launchpad-installer",
+  "name": "bumpx-installer",
   "version": "1.0.0",
-  "description": "GitHub Action to install packages using Launchpad.",
+  "description": "GitHub Action to install packages using bumpx.",
   "author": "Stacks.js <hello@stacks.js.org>",
   "license": "MIT",
-  "homepage": "https://github.com/stacksjs/launchpad#readme",
+  "homepage": "https://github.com/stacksjs/bumpx#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/stacksjs/launchpad.git"
+    "url": "git+https://github.com/stacksjs/bumpx.git"
   },
   "bugs": {
-    "url": "https://github.com/stacksjs/launchpad/issues"
+    "url": "https://github.com/stacksjs/bumpx/issues"
   },
   "keywords": [
     "github-action",
-    "launchpad",
+    "bumpx",
     "pkgx",
     "package-manager",
     "ci-cd",
@@ -23,7 +23,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "bin": {
-    "launchpad-installer": "dist/index.js"
+    "bumpx-installer": "dist/index.js"
   },
   "scripts": {
     "build": "bun run build.ts",

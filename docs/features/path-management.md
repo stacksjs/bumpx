@@ -1,24 +1,24 @@
 # PATH Management
 
-Launchpad includes automatic PATH management to ensure that installed packages and tools are accessible from your terminal.
+bumpx includes automatic PATH management to ensure that installed packages and tools are accessible from your terminal.
 
 ## How PATH Management Works
 
-When you install packages or create shims with Launchpad, the binaries are typically placed in directories like `/usr/local/bin` or `~/.local/bin`. For these binaries to be accessible from anywhere in your terminal, these directories need to be in your PATH environment variable.
+When you install packages or create shims with bumpx, the binaries are typically placed in directories like `/usr/local/bin` or `~/.local/bin`. For these binaries to be accessible from anywhere in your terminal, these directories need to be in your PATH environment variable.
 
-Launchpad can automatically:
+bumpx can automatically:
 1. Check if the relevant directories are in your PATH
 2. Add them to your shell configuration files if they're not
 3. Provide instructions for sourcing your updated configuration
 
 ## Automatic PATH Updates
 
-By default, Launchpad will automatically update your PATH when needed:
+By default, bumpx will automatically update your PATH when needed:
 
 ```bash
 # This will add the shim directory to PATH if it's not already there
-launchpad shim node
-launchpad dev
+bumpx shim node
+bumpx dev
 ```
 
 ## Disabling Automatic PATH Updates
@@ -27,10 +27,10 @@ If you prefer to manage your PATH yourself, you can disable automatic updates:
 
 ```bash
 # Disable for a specific command
-launchpad shim --no-auto-path node
+bumpx shim --no-auto-path node
 
 # Or in your configuration
-# ~/.launchpadrc or launchpad.config.ts
+# ~/.bumpxrc or bumpx.config.ts
 {
   "autoAddToPath": false
 }
@@ -38,7 +38,7 @@ launchpad shim --no-auto-path node
 
 ## Supported Shell Configuration Files
 
-Launchpad looks for and modifies these shell configuration files (in order of precedence):
+bumpx looks for and modifies these shell configuration files (in order of precedence):
 
 1. `~/.zshrc` - for Zsh users
 2. `~/.bashrc` - for Bash users
@@ -47,7 +47,7 @@ Launchpad looks for and modifies these shell configuration files (in order of pr
 The changes made look like:
 
 ```sh
-# Added by launchpad
+# Added by bumpx
 export PATH="/home/user/.local/bin:$PATH"
 ```
 
@@ -55,11 +55,11 @@ export PATH="/home/user/.local/bin:$PATH"
 
 ### Unix-like Systems (macOS, Linux)
 
-On Unix-like systems, Launchpad modifies shell configuration files directly.
+On Unix-like systems, bumpx modifies shell configuration files directly.
 
 ### Windows
 
-On Windows, Launchpad cannot directly modify the PATH. Instead, it provides instructions for adding directories to your PATH:
+On Windows, bumpx cannot directly modify the PATH. Instead, it provides instructions for adding directories to your PATH:
 
 ```powershell
 [System.Environment]::SetEnvironmentVariable('PATH', $env:PATH + ';C:\path\to\shims', [System.EnvironmentVariableTarget]::Machine)
@@ -77,7 +77,7 @@ source ~/.zshrc
 source ~/.bashrc  # or ~/.bash_profile
 ```
 
-Launchpad will provide these instructions when it updates your PATH.
+bumpx will provide these instructions when it updates your PATH.
 
 ## Verifying PATH Configuration
 

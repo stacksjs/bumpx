@@ -3,7 +3,7 @@
 layout: home
 
 hero:
-  name: "Launchpad"
+  name: "bumpx"
   text: "Modern Package Manager"
   tagline: "Simplify package installation and management, similar to Homebrew."
   image: /images/logo-white.png
@@ -13,7 +13,7 @@ hero:
       link: /intro
     - theme: alt
       text: View on GitHub
-      link: https://github.com/stacksjs/launchpad
+      link: https://github.com/stacksjs/bumpx
 
 features:
   - title: "Package Management"

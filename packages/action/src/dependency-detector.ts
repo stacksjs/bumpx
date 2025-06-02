@@ -368,10 +368,10 @@ function sniffDirectory(dirPath: SimplePath): { pkgs: PackageRequirement[], env:
         case 'pkgx.yaml':
         case '.pkgx.yml':
         case '.pkgx.yaml':
-        case 'launchpad.yml':
-        case 'launchpad.yaml':
-        case '.launchpad.yml':
-        case '.launchpad.yaml':
+        case 'bumpx.yml':
+        case 'bumpx.yaml':
+        case '.bumpx.yml':
+        case '.bumpx.yaml':
         case 'dependencies.yml':
         case 'dependencies.yaml':
         case '.dependencies.yml':
@@ -449,7 +449,7 @@ export async function detectProjectDependencies(_configPath?: string): Promise<s
 }
 
 /**
- * Convert full package names to simple names for launchpad install
+ * Convert full package names to simple names for bumpx install
  */
 function convertPackageName(fullName: string): string {
   // Manual mapping for packages

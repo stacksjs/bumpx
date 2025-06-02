@@ -1,13 +1,13 @@
 # Cross-platform Compatibility
 
-Launchpad is designed to work seamlessly across different operating systems. This guide explains how Launchpad handles platform-specific nuances and how to optimize your usage for cross-platform scenarios.
+bumpx is designed to work seamlessly across different operating systems. This guide explains how bumpx handles platform-specific nuances and how to optimize your usage for cross-platform scenarios.
 
 ## Platform Detection
 
-Launchpad automatically detects the operating system it's running on and adjusts its behavior accordingly:
+bumpx automatically detects the operating system it's running on and adjusts its behavior accordingly:
 
 ```typescript
-// Example of how Launchpad detects platforms internally
+// Example of how bumpx detects platforms internally
 import { platform } from 'node:os'
 
 const isWindows = platform() === 'win32'
@@ -19,7 +19,7 @@ const isLinux = platform() === 'linux'
 
 ### Windows Path Differences
 
-On Windows, paths use backslashes (`\`) rather than forward slashes (`/`). Launchpad normalizes paths internally:
+On Windows, paths use backslashes (`\`) rather than forward slashes (`/`). bumpx normalizes paths internally:
 
 ```typescript
 // Example of path normalization
@@ -31,10 +31,10 @@ const normalizedPath = path.normalize('/usr/local/bin')
 
 ### Home Directory Resolution
 
-Launchpad resolves the `~` symbol to the user's home directory across all platforms:
+bumpx resolves the `~` symbol to the user's home directory across all platforms:
 
 ```typescript
-// Launchpad's internal approach
+// bumpx's internal approach
 const homePath = process.env.HOME || process.env.USERPROFILE || '~'
 ```
 
@@ -46,7 +46,7 @@ Each platform uses different shells by default:
 - **macOS**: Zsh (newer versions) or Bash (older versions)
 - **Linux**: Bash, Zsh, or others
 
-Launchpad adapts its PATH modification strategies accordingly.
+bumpx adapts its PATH modification strategies accordingly.
 
 ## File System Permissions
 
@@ -55,7 +55,7 @@ Permission handling differs by platform:
 - **Unix-like Systems** (macOS, Linux): Uses Unix permissions (rwx)
 - **Windows**: Uses ACLs (Access Control Lists)
 
-When creating shims, Launchpad sets the appropriate permissions:
+When creating shims, bumpx sets the appropriate permissions:
 
 ```typescript
 // On Unix-like systems
@@ -72,7 +72,7 @@ Elevated privileges are required for certain operations, and the approach varies
 - **Unix-like Systems**: Uses `sudo`
 - **Windows**: Requires running as Administrator
 
-Launchpad's auto-sudo feature automatically adapts to the platform.
+bumpx's auto-sudo feature automatically adapts to the platform.
 
 ## Platform-specific Example: PATH Management
 
@@ -100,7 +100,7 @@ Different platforms use different file extensions for executables:
 - **Unix-like Systems**: No extension required (permissions matter)
 - **Windows**: `.exe`, `.bat`, `.cmd`, etc.
 
-Launchpad handles these differences when creating and detecting executables.
+bumpx handles these differences when creating and detecting executables.
 
 ## Platform-specific Installation Paths
 
@@ -112,15 +112,15 @@ Default installation paths vary by platform:
 
 ## Integration with pkgx
 
-pkgx itself is cross-platform, and Launchpad leverages this to provide a consistent experience across operating systems.
+pkgx itself is cross-platform, and bumpx leverages this to provide a consistent experience across operating systems.
 
 ## Testing Across Platforms
 
-When developing with Launchpad, it's good practice to test on multiple platforms:
+When developing with bumpx, it's good practice to test on multiple platforms:
 
 ```bash
 # Basic testing on Unix-like systems
-launchpad install node@22
+bumpx install node@22
 node --version
 
 # Verify shim creation
@@ -129,7 +129,7 @@ ls -la ~/.local/bin/node
 
 ```powershell
 # Basic testing on Windows
-launchpad install node@22
+bumpx install node@22
 node --version
 
 # Verify shim creation
@@ -138,7 +138,7 @@ dir $env:USERPROFILE\.local\bin\node.exe
 
 ## Cross-platform CI/CD Integration
 
-For CI/CD pipelines, you can use Launchpad consistently across platforms:
+For CI/CD pipelines, you can use bumpx consistently across platforms:
 
 ```yaml
 # Example GitHub Actions workflow
@@ -150,8 +150,8 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
-      - name: Install Launchpad
-        run: npm install -g launchpad
-      - name: Install dependencies with Launchpad
-        run: launchpad install node@22 python@3.12
+      - name: Install bumpx
+        run: npm install -g bumpx
+      - name: Install dependencies with bumpx
+        run: bumpx install node@22 python@3.12
 ```

@@ -1,4 +1,4 @@
-# Why Launchpad?
+# Why bumpx?
 
 ## The Problem
 
@@ -12,7 +12,7 @@ Package management on modern systems can be frustrating for several reasons:
 
 ## The Solution
 
-Launchpad is a CLI and TypeScript library designed to solve these problems by providing:
+bumpx is a CLI and TypeScript library designed to solve these problems by providing:
 
 - **Fast installations**: Leveraging the power of pkgx for efficient package management
 - **Flexible installation locations**: Support for system-wide (`/usr/local`) and user-local (`~/.local`) installations
@@ -47,21 +47,21 @@ Launchpad is a CLI and TypeScript library designed to solve these problems by pr
 
 ## The Developer Experience
 
-Launchpad is built with the developer experience in mind. It provides a clean, intuitive interface for managing packages and development environments, with sensible defaults that Just Work™ while still offering flexibility for advanced use cases.
+bumpx is built with the developer experience in mind. It provides a clean, intuitive interface for managing packages and development environments, with sensible defaults that Just Work™ while still offering flexibility for advanced use cases.
 
 ```bash
 # Install Node.js in seconds
-launchpad install node@22
+bumpx install node@22
 
 # Create a dedicated environment for a project
-launchpad dev
+bumpx dev
 
 # Manage pkgx itself
-launchpad pkgx
+bumpx pkgx
 ```
 
 ## Why Now?
 
-As software development becomes increasingly complex, the tools we use to manage our environments should become simpler. Launchpad represents a modern approach to package management that embraces isolation, speed, and cross-platform compatibility. This software is by the team that created Stacks.js, and in order to automated the onboarding process, we needed a better package manager.
+As software development becomes increasingly complex, the tools we use to manage our environments should become simpler. bumpx represents a modern approach to package management that embraces isolation, speed, and cross-platform compatibility. This software is by the team that created Stacks.js, and in order to automated the onboarding process, we needed a better package manager.
 
-By building on top of pkgx and focusing on the developer experience, Launchpad provides a powerful yet intuitive solution for managing packages and development environments in a way that's sustainable for the future of software development.
+By building on top of pkgx and focusing on the developer experience, bumpx provides a powerful yet intuitive solution for managing packages and development environments in a way that's sustainable for the future of software development.

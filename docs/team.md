@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Meet the Team
-description: The people behind Launchpad
+description: The people behind bumpx
 sidebar: false
 ---
 
@@ -19,14 +19,14 @@ import { core, contributors } from './_data/team'
   <VPTeamPageTitle>
     <template #title>Meet the Team</template>
     <template #lead>
-      Launchpad is developed and maintained by a dedicated team passionate about creating better developer tools.
+      bumpx is developed and maintained by a dedicated team passionate about creating better developer tools.
     </template>
   </VPTeamPageTitle>
   <VPTeamMembers :members="core" />
   <VPTeamPageSection>
     <template #title>Contributors</template>
     <template #lead>
-      Thank you to all the amazing people who have contributed to Launchpad.
+      Thank you to all the amazing people who have contributed to bumpx.
     </template>
     <template #members>
       <VPTeamMembers size="small" :members="contributors" />

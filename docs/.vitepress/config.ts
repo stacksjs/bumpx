@@ -21,7 +21,7 @@ const nav = [
   { text: 'News', link: 'https://stacksjs.org/news' },
   {
     text: 'Changelog',
-    link: 'https://github.com/stacksjs/launchpad/blob/main/CHANGELOG.md',
+    link: 'https://github.com/stacksjs/bumpx/blob/main/CHANGELOG.md',
   },
   // { text: 'Blog', link: 'https://updates.ow3.org' },
   {
@@ -82,12 +82,12 @@ const sidebar = [
   { text: 'API Reference', link: '/api/reference' },
 ]
 const description = 'A lightweight package manager built on top of pkgx to simplify package installation and management.'
-const title = 'Launchpad | A lightweight package manager'
+const title = 'bumpx | A lightweight package manager'
 
 export default withPwa(
   defineConfig({
     lang: 'en-US',
-    title: 'Launchpad',
+    title: 'bumpx',
     description,
     metaChunk: true,
     cleanUrls: true,
@@ -102,7 +102,7 @@ export default withPwa(
       ['meta', { name: 'author', content: 'Stacks.js, Inc.' }],
       ['meta', {
         name: 'tags',
-        content: 'launchpad, stacksjs, pkgx, pkgm, dev, package manager, homebrew alternative',
+        content: 'bumpx, stacksjs, pkgx, pkgm, dev, package manager, homebrew alternative',
       }],
 
       ['meta', { property: 'og:type', content: 'website' }],
@@ -110,9 +110,9 @@ export default withPwa(
       ['meta', { property: 'og:title', content: title }],
       ['meta', { property: 'og:description', content: description }],
 
-      ['meta', { property: 'og:site_name', content: 'Launchpad' }],
+      ['meta', { property: 'og:site_name', content: 'bumpx' }],
       ['meta', { property: 'og:image', content: './images/og-image.jpg' }],
-      ['meta', { property: 'og:url', content: 'https://launchpad.sh/' }],
+      ['meta', { property: 'og:url', content: 'https://bumpx.sh/' }],
       // ['script', { 'src': 'https://cdn.usefathom.com/script.js', 'data-site': '', 'data-spa': 'auto', 'defer': '' }],
       ...analyticsHead,
     ],
@@ -130,7 +130,7 @@ export default withPwa(
       sidebar,
 
       editLink: {
-        pattern: 'https://github.com/stacksjs/launchpad/edit/main/docs/:path',
+        pattern: 'https://github.com/stacksjs/bumpx/edit/main/docs/:path',
         text: 'Edit this page on GitHub',
       },
 
@@ -142,7 +142,7 @@ export default withPwa(
       socialLinks: [
         { icon: 'twitter', link: 'https://twitter.com/stacksjs' },
         { icon: 'bluesky', link: 'https://bsky.app/profile/chrisbreuer.dev' },
-        { icon: 'github', link: 'https://github.com/stacksjs/launchpad' },
+        { icon: 'github', link: 'https://github.com/stacksjs/bumpx' },
         { icon: 'discord', link: 'https://discord.gg/stacksjs' },
       ],
 

@@ -1,13 +1,13 @@
 # Contributing Guide
 
-Thank you for your interest in contributing to the Launchpad Installer! This document provides guidelines and instructions for contributing.
+Thank you for your interest in contributing to the bumpx Installer! This document provides guidelines and instructions for contributing.
 
 ## Development Setup
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/stacksjs/launchpad.git
-   cd launchpad/packages/action
+   git clone https://github.com/stacksjs/bumpx.git
+   cd bumpx/packages/action
    ```
 
 2. **Install dependencies:**

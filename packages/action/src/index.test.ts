@@ -9,7 +9,7 @@ describe('Dependency Detection - All File Types', () => {
 
   beforeEach(() => {
     // Create a temporary test directory
-    testDir = fs.mkdtempSync(path.join(os.tmpdir(), 'launchpad-action-test-'))
+    testDir = fs.mkdtempSync(path.join(os.tmpdir(), 'bumpx-action-test-'))
     process.chdir(testDir)
   })
 
@@ -328,7 +328,7 @@ description = "A pixi project"`
     })
   })
 
-  describe('pkgx/launchpad configuration files', () => {
+  describe('pkgx/bumpx configuration files', () => {
     it('should detect pkgx.yml', () => {
       const pkgxYml = `dependencies:
   - nodejs.org@18
@@ -361,34 +361,34 @@ description = "A pixi project"`
       expect(fs.existsSync('.pkgx.yaml')).toBe(true)
     })
 
-    it('should detect launchpad.yml', () => {
-      const launchpadYml = `dependencies:
+    it('should detect bumpx.yml', () => {
+      const bumpxYml = `dependencies:
   - nodejs.org@18
   - bun.sh@1`
-      fs.writeFileSync('launchpad.yml', launchpadYml)
-      expect(fs.existsSync('launchpad.yml')).toBe(true)
+      fs.writeFileSync('bumpx.yml', bumpxYml)
+      expect(fs.existsSync('bumpx.yml')).toBe(true)
     })
 
-    it('should detect launchpad.yaml', () => {
-      const launchpadYaml = `dependencies:
+    it('should detect bumpx.yaml', () => {
+      const bumpxYaml = `dependencies:
   - nodejs.org@18
   - bun.sh@1`
-      fs.writeFileSync('launchpad.yaml', launchpadYaml)
-      expect(fs.existsSync('launchpad.yaml')).toBe(true)
+      fs.writeFileSync('bumpx.yaml', bumpxYaml)
+      expect(fs.existsSync('bumpx.yaml')).toBe(true)
     })
 
-    it('should detect .launchpad.yml', () => {
-      const launchpadYml = `dependencies:
+    it('should detect .bumpx.yml', () => {
+      const bumpxYml = `dependencies:
   - nodejs.org@18`
-      fs.writeFileSync('.launchpad.yml', launchpadYml)
-      expect(fs.existsSync('.launchpad.yml')).toBe(true)
+      fs.writeFileSync('.bumpx.yml', bumpxYml)
+      expect(fs.existsSync('.bumpx.yml')).toBe(true)
     })
 
-    it('should detect .launchpad.yaml', () => {
-      const launchpadYaml = `dependencies:
+    it('should detect .bumpx.yaml', () => {
+      const bumpxYaml = `dependencies:
   - nodejs.org@18`
-      fs.writeFileSync('.launchpad.yaml', launchpadYaml)
-      expect(fs.existsSync('.launchpad.yaml')).toBe(true)
+      fs.writeFileSync('.bumpx.yaml', bumpxYaml)
+      expect(fs.existsSync('.bumpx.yaml')).toBe(true)
     })
 
     it('should detect dependencies.yml', () => {

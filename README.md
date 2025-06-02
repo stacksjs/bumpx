@@ -6,13 +6,13 @@
 <!-- [![npm downloads][npm-downloads-src]][npm-downloads-href] -->
 <!-- [![Codecov][codecov-src]][codecov-href] -->
 
-# launchpad
+# bumpx
 
 > A modern dependency manager for your system and projects. Effortlessly manage development tools, runtime environments, and project dependencies with automatic environment isolation. _Think Homebrew meets project-aware dependency management._
 
-## What is Launchpad?
+## What is bumpx?
 
-Launchpad is a comprehensive dependency management solution that bridges the gap between system-wide package management and project-specific environments. Whether you're setting up a new development machine, managing system tools, or working on projects with specific dependency requirements, Launchpad provides a unified interface for all your dependency needs.
+bumpx is a comprehensive dependency management solution that bridges the gap between system-wide package management and project-specific environments. Whether you're setting up a new development machine, managing system tools, or working on projects with specific dependency requirements, bumpx provides a unified interface for all your dependency needs.
 
 **System Management:**
 - Install and manage development tools system-wide
@@ -26,11 +26,11 @@ Launchpad is a comprehensive dependency management solution that bridges the gap
 - Version-specific tool installation
 - Seamless switching between project contexts
 
-At its core, Launchpad leverages pkgx's powerful package ecosystem while adding intelligent management, environment isolation, and developer-friendly workflows.
+At its core, bumpx leverages pkgx's powerful package ecosystem while adding intelligent management, environment isolation, and developer-friendly workflows.
 
 ## Features
 
-Launchpad transforms how you manage dependencies across your entire development workflow:
+bumpx transforms how you manage dependencies across your entire development workflow:
 
 ### System-Wide Dependency Management
 - 📦 **Global Tool Installation** — Install development tools and runtimes system-wide with automatic PATH management
@@ -51,7 +51,7 @@ Launchpad transforms how you manage dependencies across your entire development 
 - 🔄 **Auto-Updates** — Configure automatic updates for your dependency management tools
 - 🎛️ **Flexible Configuration** — Customize behavior through config files or command-line options
 
-## Why Launchpad?
+## Why bumpx?
 
 Modern development requires managing dependencies at multiple levels - from system tools to project-specific requirements. Traditional approaches fall short:
 
@@ -67,38 +67,38 @@ Modern development requires managing dependencies at multiple levels - from syst
 - ❌ **Version drift** — Hard to maintain consistent tool versions
 - ❌ **Platform differences** — Different setup procedures for each OS
 
-**Launchpad's Solution:**
+**bumpx's Solution:**
 - ✅ **Unified Management** — Single tool for both system and project dependencies
 - ✅ **Automatic Isolation** — Project environments activate automatically
 - ✅ **Fast Operations** — Efficient package management with intelligent caching
 - ✅ **Consistent Experience** — Same commands and behavior across all platforms
 - ✅ **Smart Defaults** — Sensible installation paths and configuration out of the box
 
-[Read more about why we created Launchpad](https://github.com/stacksjs/launchpad/tree/main/docs/why.md)
+[Read more about why we created bumpx](https://github.com/stacksjs/bumpx/tree/main/docs/why.md)
 
 ## Installation
 
-Get started with Launchpad through your preferred package manager:
+Get started with bumpx through your preferred package manager:
 
 ```bash
 # Install with Bun (recommended)
-bun add -g @stacksjs/launchpad
+bun add -g @stacksjs/bumpx
 
 # Or with npm
-npm install -g @stacksjs/launchpad
+npm install -g @stacksjs/bumpx
 
 # Or with yarn
-yarn global add @stacksjs/launchpad
+yarn global add @stacksjs/bumpx
 
 # Or with pnpm
-pnpm add -g @stacksjs/launchpad
+pnpm add -g @stacksjs/bumpx
 ```
 
-See [Installation Guide](https://github.com/stacksjs/launchpad/tree/main/docs/install.md) for more options.
+See [Installation Guide](https://github.com/stacksjs/bumpx/tree/main/docs/install.md) for more options.
 
 ## Quick Start
 
-Launchpad is designed to handle both system setup and project management seamlessly! 🎯
+bumpx is designed to handle both system setup and project management seamlessly! 🎯
 
 ### System Setup (First Time)
 
@@ -106,13 +106,13 @@ Bootstrap your development environment with everything you need:
 
 ```bash
 # Complete system setup - installs to /usr/local by default
-./launchpad bootstrap
+./bumpx bootstrap
 
 # Or for a custom installation path
-./launchpad bootstrap --path ~/.local --verbose
+./bumpx bootstrap --path ~/.local --verbose
 
 # Skip specific components if needed
-./launchpad bootstrap --skip-bun --skip-shell-integration
+./bumpx bootstrap --skip-bun --skip-shell-integration
 ```
 
 The bootstrap command sets up your entire development foundation:
@@ -128,19 +128,19 @@ Install and manage development tools across your entire system:
 
 ```bash
 # Install essential development tools system-wide
-launchpad install node python go rust
+bumpx install node python go rust
 
 # Install specific versions
-launchpad install node@22 python@3.12
+bumpx install node@22 python@3.12
 
 # Install to /usr/local (default system-wide location)
-launchpad install typescript --system
+bumpx install typescript --system
 
 # Or specify any custom path
-launchpad install docker --path /opt/tools
+bumpx install docker --path /opt/tools
 
 # Use shorthand for quick installs
-launchpad i node@22 typescript@5.7
+bumpx i node@22 typescript@5.7
 ```
 
 **Smart Installation Behavior:**
@@ -151,7 +151,7 @@ launchpad i node@22 typescript@5.7
 
 ### Project Environment Management
 
-Launchpad automatically manages project-specific dependencies:
+bumpx automatically manages project-specific dependencies:
 
 ```bash
 # Create a project with dependencies
@@ -186,16 +186,16 @@ Manage your project environments with human-readable identifiers:
 
 ```bash
 # List all development environments
-launchpad env:list
+bumpx env:list
 
 # Inspect a specific environment
-launchpad env:inspect my-project_1a2b3c4d
+bumpx env:inspect my-project_1a2b3c4d
 
 # Clean up old or failed environments
-launchpad env:clean --dry-run
+bumpx env:clean --dry-run
 
 # Remove a specific environment
-launchpad env:remove old-project_5e6f7g8h --force
+bumpx env:remove old-project_5e6f7g8h --force
 ```
 
 **Environment Hash Format:** `{project-name}_{8-char-hex}`
@@ -209,44 +209,44 @@ Remove packages and manage your installation:
 
 ```bash
 # Remove specific system tools
-launchpad remove node python
+bumpx remove node python
 
 # Remove project-specific versions
-launchpad rm node@22
+bumpx rm node@22
 
 # See what would be removed
-launchpad remove python --dry-run
+bumpx remove python --dry-run
 
 # Complete system cleanup
-launchpad uninstall
+bumpx uninstall
 ```
 
 ### Advanced Operations
 
 ```bash
 # Create executable shims
-launchpad shim node@22 typescript@5.7
+bumpx shim node@22 typescript@5.7
 
 # List all installed packages
-launchpad list
+bumpx list
 
 # Configure auto-updates
-launchpad autoupdate:enable
+bumpx autoupdate:enable
 
 # Install additional tools
-launchpad pkgx    # Install pkgx itself
-launchpad dev     # Install dev environment tools
-launchpad bun     # Install Bun runtime
+bumpx pkgx    # Install pkgx itself
+bumpx dev     # Install dev environment tools
+bumpx bun     # Install Bun runtime
 ```
 
 ## Configuration
 
-Customize Launchpad's behavior for your system and projects:
+Customize bumpx's behavior for your system and projects:
 
 ```ts
-import type { LaunchpadConfig } from '@stacksjs/launchpad'
+import type { bumpxConfig } from '@stacksjs/bumpx'
 
-const config: LaunchpadConfig = {
+const config: bumpxConfig = {
   // System-wide installation preferences
   installationPath: '/usr/local', // Default system location
   autoSudo: true, // Auto-elevate when needed
@@ -268,30 +268,30 @@ const config: LaunchpadConfig = {
 export default config
 ```
 
-See [Configuration Guide](https://github.com/stacksjs/launchpad/tree/main/docs/config.md) for all options.
+See [Configuration Guide](https://github.com/stacksjs/bumpx/tree/main/docs/config.md) for all options.
 
 ## GitHub Action
 
-Integrate Launchpad into your CI/CD workflows:
+Integrate bumpx into your CI/CD workflows:
 
 ```yaml
 - name: Setup Development Environment
-  uses: stacksjs/launchpad-installer@v1
+  uses: stacksjs/bumpx-installer@v1
   with:
     packages: node@22 typescript@5.7 bun@1.2.14
 ```
 
-See [GitHub Action Documentation](https://github.com/stacksjs/launchpad/tree/main/packages/action/README.md) for details.
+See [GitHub Action Documentation](https://github.com/stacksjs/bumpx/tree/main/packages/action/README.md) for details.
 
 ## Advanced Usage
 
 Explore advanced dependency management topics:
 
-- [Project Environment Configuration](https://github.com/stacksjs/launchpad/tree/main/docs/features/package-management.md)
-- [Custom Shims and Tool Management](https://github.com/stacksjs/launchpad/tree/main/docs/advanced/custom-shims.md)
-- [Cross-platform Compatibility](https://github.com/stacksjs/launchpad/tree/main/docs/advanced/cross-platform.md)
-- [Performance Optimization](https://github.com/stacksjs/launchpad/tree/main/docs/advanced/performance.md)
-- [API Reference](https://github.com/stacksjs/launchpad/tree/main/docs/api/reference.md)
+- [Project Environment Configuration](https://github.com/stacksjs/bumpx/tree/main/docs/features/package-management.md)
+- [Custom Shims and Tool Management](https://github.com/stacksjs/bumpx/tree/main/docs/advanced/custom-shims.md)
+- [Cross-platform Compatibility](https://github.com/stacksjs/bumpx/tree/main/docs/advanced/cross-platform.md)
+- [Performance Optimization](https://github.com/stacksjs/bumpx/tree/main/docs/advanced/performance.md)
+- [API Reference](https://github.com/stacksjs/bumpx/tree/main/docs/api/reference.md)
 
 ## Comparing to Alternatives
 
@@ -318,7 +318,7 @@ Explore advanced dependency management topics:
 
 ## Changelog
 
-Please see our [releases](https://github.com/stackjs/launchpad/releases) page for information on changes.
+Please see our [releases](https://github.com/stackjs/bumpx/releases) page for information on changes.
 
 ## Contributing
 
@@ -328,7 +328,7 @@ Please see [CONTRIBUTING](.github/CONTRIBUTING.md) for details.
 
 For help or discussion:
 
-- [Discussions on GitHub](https://github.com/stacksjs/launchpad/discussions)
+- [Discussions on GitHub](https://github.com/stacksjs/bumpx/discussions)
 - [Join the Stacks Discord Server](https://discord.gg/stacksjs)
 
 ## Postcardware
@@ -342,7 +342,7 @@ Our address: Stacks.js, 12665 Village Ln #2306, Playa Vista, CA 90094, United St
 - [Max Howell](https://github.com/mxcl) - for creating [pkgx](https://github.com/pkgxdev/pkgx) and [Homebrew](https://github.com/Homebrew/brew)
 - [pkgm](https://github.com/pkgxdev/pkgm) & [dev](https://github.com/pkgxdev/dev) - thanks for the inspiration
 - [Chris Breuer](https://github.com/chrisbbreuer)
-- [All Contributors](https://github.com/stacksjs/launchpad/graphs/contributors)
+- [All Contributors](https://github.com/stacksjs/bumpx/graphs/contributors)
 
 ## Sponsors
 
@@ -358,10 +358,10 @@ The MIT License (MIT). Please see [LICENSE](LICENSE.md) for more information.
 Made with 💙
 
 <!-- Badges -->
-[npm-version-src]: https://img.shields.io/npm/v/@stacksjs/launchpad?style=flat-square
-[npm-version-href]: https://npmjs.com/package/@stacksjs/launchpad
-[github-actions-src]: https://img.shields.io/github/actions/workflow/status/stacksjs/launchpad/ci.yml?style=flat-square&branch=main
-[github-actions-href]: https://github.com/stacksjs/launchpad/actions?query=workflow%3Aci
+[npm-version-src]: https://img.shields.io/npm/v/@stacksjs/bumpx?style=flat-square
+[npm-version-href]: https://npmjs.com/package/@stacksjs/bumpx
+[github-actions-src]: https://img.shields.io/github/actions/workflow/status/stacksjs/bumpx/ci.yml?style=flat-square&branch=main
+[github-actions-href]: https://github.com/stacksjs/bumpx/actions?query=workflow%3Aci
 
-<!-- [codecov-src]: https://img.shields.io/codecov/c/gh/stacksjs/launchpad/main?style=flat-square
-[codecov-href]: https://codecov.io/gh/stacksjs/launchpad -->
+<!-- [codecov-src]: https://img.shields.io/codecov/c/gh/stacksjs/bumpx/main?style=flat-square
+[codecov-href]: https://codecov.io/gh/stacksjs/bumpx -->
