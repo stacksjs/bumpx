@@ -147,7 +147,6 @@ Ready to streamline your version management? Check out these guides:
 - [Installation Guide](./install.md) — Install bumpx on your system
 - [Basic Usage](./usage.md) — Learn the essential commands
 - [Configuration](./config.md) — Customize bumpx for your workflow
-- [Why bumpx?](./why.md) — Detailed comparison with other tools
 - [Git Integration](./features/git-integration.md) — Automate your Git workflows
 - [Monorepo Support](./features/monorepo-support.md) — Manage multiple packages
 
