@@ -68,16 +68,16 @@ module.exports = {
 **Alternative config directory locations:**
 ```bash
 # In .config directory
-.config/bumpx.config.ts
-.config/bumpx.config.js
-.config/bumpx.config.mjs
-.config/bumpx.config.cjs
+.config/bumpx.ts
+.config/bumpx.js
+.config/bumpx.mjs
+.config/bumpx.cjs
 
 # In config directory
-config/bumpx.config.ts
-config/bumpx.config.js
-config/bumpx.config.mjs
-config/bumpx.config.cjs
+config/bumpx.ts
+config/bumpx.js
+config/bumpx.mjs
+config/bumpx.cjs
 ```
 
 ### Global Configuration
