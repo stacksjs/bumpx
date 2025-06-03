@@ -200,7 +200,7 @@ export default defineConfig({
 })
 ```
 
-You can also use JSON configuration in `.bumpxrc` or `package.json`:
+You can also use JSON configuration in `package.json`:
 
 ```json
 {
