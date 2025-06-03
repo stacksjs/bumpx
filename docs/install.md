@@ -1,6 +1,6 @@
 # Installation
 
-Installing `bumpx` is easy. You can install it using your package manager of choice, or build it from source.
+Installing `bumpx` is simple and straightforward. Choose your preferred package manager to get started with the modern version bumping tool.
 
 ## Package Managers
 
@@ -42,50 +42,23 @@ yarn add -D bumpx
 
 :::
 
-## First-Time Setup
+## Quick Start
 
-bumpx is designed to "just work" right out of the box! When you run bumpx for the first time, it will automatically detect what's missing and offer to set everything up.
-
-### Automatic Bootstrap
-
-Just run any bumpx command and it will offer to bootstrap automatically:
+After installation, you can immediately start using bumpx:
 
 ```sh
-# Any command will trigger the welcome screen if needed
-./bumpx list
-# → Shows welcome message and offers to install pkgx, configure PATH, and set up shell integration
+# Check current version
+bumpx --version
 
-# Or manually run the complete setup
-./bumpx bootstrap
+# Basic version bump
+bumpx patch
+
+# Version bump with git commit
+bumpx minor --commit --tag
+
+# Interactive version selection
+bumpx prompt
 ```
-
-### Manual Bootstrap
-
-For more control over the setup process:
-
-```sh
-# Install everything you need in one command (defaults to /usr/local)
-./bumpx bootstrap
-
-# Verbose output showing all operations
-./bumpx bootstrap --verbose
-
-# Skip specific components
-./bumpx bootstrap --skip-bun --skip-shell-integration
-
-# Custom installation path (override default /usr/local)
-./bumpx bootstrap --path ~/.local
-
-# Force reinstall everything
-./bumpx bootstrap --force
-```
-
-The bootstrap command will:
-- ✅ Install pkgx (package manager)
-- ✅ Install Bun (JavaScript runtime)
-- ✅ Configure your PATH
-- ✅ Set up shell integration for auto-activation
-- ✅ Provide clear next steps
 
 ## From Source
 
@@ -106,74 +79,141 @@ bun run build
 bun link
 ```
 
-## Dependencies
+## System Requirements
 
-bumpx requires the following:
+bumpx requires:
 
-- Node.js 16+ or Bun 1.0+
-- pkgx (will be automatically installed if not present)
+- **Node.js 16+** or **Bun 1.0+**
+- **Git** (for version control operations)
+- A project with a `package.json` file (or other version files)
 
-## Verifying Installation
+## Verification
 
-After installation, you can verify that bumpx is installed correctly by running:
+Verify your installation:
 
 ```sh
-bumpx version
+# Check bumpx version
+bumpx --version
+
+# Test with dry run
+bumpx patch --dry-run
+
+# Check help
+bumpx --help
 ```
 
-You should see the current version of bumpx displayed in your terminal.
+## Global vs Local Installation
 
-## Post-Installation
+### Global Installation (Recommended)
 
-### Shell Integration
-
-If you didn't use the bootstrap command, you can manually set up shell integration:
+Install globally to use bumpx across all your projects:
 
 ```sh
-# Add shell integration to your shell config
-echo 'eval "$(bumpx dev:shellcode)"' >> ~/.zshrc
-
-# Or for bash
-echo 'eval "$(bumpx dev:shellcode)"' >> ~/.bashrc
-
-# Reload your shell
-source ~/.zshrc  # or ~/.bashrc
+npm install -g bumpx
 ```
 
-### PATH Configuration
+Benefits:
+- Available in any project directory
+- Single installation for all projects
+- Easy to update
 
-Ensure the installation directories are in your PATH:
+### Local Installation (Per Project)
+
+Install as a development dependency for project-specific usage:
 
 ```sh
-# Check if bumpx directories are in PATH
-echo $PATH | grep -E "(\.local/bin|\.local/sbin)"
+npm install --save-dev bumpx
+```
 
-# If not, the bootstrap command will add them automatically
-./bumpx bootstrap
+Then use with npx or add to package.json scripts:
+
+```sh
+# Using npx
+npx bumpx patch
+
+# Or add to package.json scripts
+{
+  "scripts": {
+    "release": "bumpx patch --commit --tag --push"
+  }
+}
+```
+
+## Platform Support
+
+bumpx works on all major platforms:
+
+- **macOS** (Intel and Apple Silicon)
+- **Linux** (Ubuntu, CentOS, Alpine, etc.)
+- **Windows** (Windows 10/11, WSL)
+
+## Updating
+
+Keep bumpx up to date:
+
+```sh
+# Update global installation
+npm update -g bumpx
+
+# Update local installation
+npm update bumpx
 ```
 
 ## Uninstalling
 
-If you need to completely remove bumpx:
+Remove bumpx when no longer needed:
 
 ```sh
-# Remove everything (with confirmation)
-bumpx uninstall
+# Remove global installation
+npm uninstall -g bumpx
 
-# Preview what would be removed
-bumpx uninstall --dry-run
-
-# Force removal without prompts
-bumpx uninstall --force
-
-# Keep packages but remove shell integration
-bumpx uninstall --keep-packages
+# Remove local installation
+npm uninstall bumpx
 ```
+
+## Troubleshooting
+
+### Common Issues
+
+**Command not found:**
+```sh
+# Check if globally installed packages are in PATH
+echo $PATH | grep npm
+
+# Reinstall globally
+npm install -g bumpx
+```
+
+**Permission errors (macOS/Linux):**
+```sh
+# Use a Node version manager (recommended)
+# Or configure npm to use a different directory
+npm config set prefix ~/.local
+export PATH=~/.local/bin:$PATH
+```
+
+**Git not found:**
+```sh
+# Install Git
+# macOS: xcode-select --install
+# Ubuntu: sudo apt install git
+# Windows: https://git-scm.com/download/win
+```
+
+### Getting Help
+
+If you encounter issues:
+
+1. Check the [troubleshooting guide](/advanced/cross-platform)
+2. Search [existing issues](https://github.com/stacksjs/bumpx/issues)
+3. Create a [new issue](https://github.com/stacksjs/bumpx/issues/new)
+4. Join our [Discord community](https://discord.gg/stacksjs)
 
 ## Next Steps
 
 After installation, you might want to:
 
 - [Configure bumpx](/config) to customize your setup
-- [Learn about basic usage](/usage) to start managing packages
-- [Set up package management](/features/package-management) for your development workflow
+- [Learn about basic usage](/usage) to start version bumping
+- [Explore Git integration](/features/git-integration) for automated workflows
+- [Set up monorepo support](/features/monorepo-support) for multi-package projects

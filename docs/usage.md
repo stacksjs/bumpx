@@ -349,5 +349,7 @@ git log --oneline -5
 ## Next Steps
 
 - [Configuration Guide](./config.md) - Set up default options and aliases
-- [Features Overview](./features/package-management.md) - Explore advanced features
+- [Version Bumping Features](./features/version-bumping.md) - Explore semantic versioning capabilities
+- [Git Integration](./features/git-integration.md) - Learn about Git workflow automation
+- [Monorepo Support](./features/monorepo-support.md) - Manage multiple packages
 - [Advanced Usage](./advanced/cross-platform.md) - Cross-platform considerations
