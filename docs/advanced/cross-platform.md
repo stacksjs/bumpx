@@ -15,7 +15,7 @@ bumpx officially supports:
 All platforms require:
 - Node.js 16+ or Bun 1.0+
 - Git (for version control operations)
-- NPM, Yarn, or PNPM (for package management)
+- NPM, Yarn, or PNPM (for dependency installation)
 
 ## Installation Differences
 

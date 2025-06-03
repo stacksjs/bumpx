@@ -385,59 +385,62 @@ const commitMessage = config.message || 'chore: bump version to %s'
 
 ## GitHub Action API
 
-### Action Inputs
+### GitHub Actions Integration
+
+bumpx can be easily integrated into GitHub Actions workflows:
 
 ```yaml
-- uses: stacksjs/bumpx@v1
-  with:
-    # Package management
-    packages: 'node@20 typescript@latest'
-    config-path: 'bumpx.config.ts'
+# .github/workflows/release.yml
+name: Release
 
-    # Installation options
-    install-bun: true
-    install-pkgx: true
-    bumpx-version: 'latest'
+on:
+  push:
+    branches: [main]
 
-    # Execution options
-    working-directory: '.'
-    timeout: 600
-    verbose: false
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
 
-    # Environment
-    env-vars: |
-      {
-        "NODE_ENV": "production",
-        "CI": "true"
-      }
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
 
-    # Caching
-    cache: true
-    cache-key: 'bumpx-packages'
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install bumpx
+        run: npm install -g bumpx
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Bump version and release
+        run: bumpx patch --commit --tag --push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
-### Action Outputs
+### Environment Variables for CI/CD
+
+Configure bumpx behavior using environment variables:
 
 ```yaml
-steps:
-  - id: bumpx
-    uses: stacksjs/bumpx@v1
-    with:
-      packages: 'node@20'
-
-  - name: Use outputs
-    run: |
-      echo "Success: ${{ steps.bumpx.outputs.success }}"
-      echo "Version: ${{ steps.bumpx.outputs.bumpx-version }}"
-      echo "Installed: ${{ steps.bumpx.outputs.packages-installed }}"
+env:
+  BUMPX_COMMIT: true
+  BUMPX_TAG: true
+  BUMPX_PUSH: true
+  BUMPX_MESSAGE: "chore: release v%s [skip ci]"
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
-
-**Available Outputs:**
-- `success` - Whether the action completed successfully
-- `bumpx-version` - Version of bumpx that was installed
-- `packages-installed` - Number of packages successfully installed
-- `packages-failed` - Number of packages that failed to install
-- `total-time` - Total execution time in milliseconds
 
 ## Environment Variables
 

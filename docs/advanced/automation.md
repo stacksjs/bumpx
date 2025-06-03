@@ -195,12 +195,12 @@ jobs:
           docker push myapp:${{ needs.release.outputs.version }}
 ```
 
-### Using the bumpx GitHub Action
+### Using bumpx in GitHub Actions
 
-Use the official bumpx GitHub Action:
+Integrate bumpx directly in your GitHub Actions workflows:
 
 ```yaml
-# .github/workflows/bumpx.yml
+# .github/workflows/release.yml
 name: Version Management
 
 on:
@@ -212,20 +212,31 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      - name: Bump version with bumpx
-        uses: stacksjs/bumpx@v1
         with:
-          packages: node@20 typescript@latest
-          config-path: bumpx.config.ts
-          install-bun: true
-          install-pkgx: true
-          working-directory: .
-          env-vars: |
-            {
-              "NODE_ENV": "production",
-              "CI": "true"
-            }
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install bumpx
+        run: npm install -g bumpx
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Bump version
+        run: bumpx patch --commit --tag --push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
 ## GitLab CI Integration

@@ -2,114 +2,154 @@
 
 # Introduction
 
-> A lightweight package manager built on top of pkgx to simplify package installation and management.
+> A powerful, modern version bumping tool with comprehensive Git integration and monorepo support.
 
 ## What is bumpx?
 
-bumpx serves as an alternative to package managers like Homebrew, focusing on:
+bumpx is a next-generation version management tool that simplifies the process of bumping versions across your projects. It focuses on:
 
-- A consistent and simple CLI interface
-- Automatic PATH management
-- Easy installation of development tools
-- Cross-platform support
+- **Semantic versioning** with full semver compliance
+- **Git workflow automation** with commits, tags, and pushing
+- **Multi-file version management** across different file types
+- **Monorepo support** with flexible versioning strategies
+- **Cross-platform compatibility** on macOS, Linux, and Windows
 
-At its core, bumpx leverages pkgx, a next-generation package runner that allows you to use packages without installing them. bumpx extends this functionality with convenient commands, better management of executables, and improved integration with your development workflow.
+Whether you're managing a single package or a complex monorepo, bumpx provides the tools you need to automate your release process with confidence and consistency.
 
 ## Key Features
 
-- 📦 **Package Management** — Install and manage packages directly using pkgx
-- 🗑️ **Package Removal** — Remove specific packages or completely uninstall bumpx
-- 🔄 **Executable Shims** — Create executable shims for packages automatically
-- 🌍 **Environment Isolation** — Project-specific environments with automatic activation/deactivation
-- 🎯 **Bootstrap Setup** — One-command setup of essential development tooling
-- 🔧 **Auto-updates** — Configure automatic updates for pkgx
-- 🔌 **PATH Integration** — Automatically add installation directories to your PATH
-- 🪟 **Cross-platform** — Support for macOS, Linux, and Windows systems
-- 🔒 **Smart Installation** — Automatic fallback to system package managers when needed
+- 🔢 **Semantic Versioning** — Full support for patch, minor, major, and prerelease versions
+- 🔄 **Git Integration** — Automated commits, tags, signing, and push operations
+- 📦 **Multi-File Support** — Update versions across package.json, VERSION files, and source code
+- 🏗️ **Monorepo Ready** — Independent or synchronized versioning for multiple packages
+- 🌐 **Cross-Platform** — Consistent behavior on macOS, Linux, and Windows
+- 🚀 **CI/CD Integration** — Built-in support for GitHub Actions and other CI platforms
+- 🎯 **Interactive Mode** — Guided version selection with commit history context
+- 🔍 **Dry Run Mode** — Preview changes before applying them
+- ⚡ **Fast & Reliable** — Efficient file processing with comprehensive error handling
 
 ## How It Works
 
-bumpx works by managing the installation of pkgx and creating shims (executable scripts) that automatically run the correct versions of your tools. It can:
+bumpx automates your entire version bumping workflow:
 
-- Figure out required system or project dependencies and install them
-- Provide project-specific environment isolation with automatic dependency activation/deactiviation
-- Configure automatic updates and PATH modifications
+1. **Detects current versions** across your project files
+2. **Calculates new versions** based on semantic versioning rules
+3. **Updates all relevant files** with intelligent pattern matching
+4. **Creates Git commits and tags** with customizable messages
+5. **Pushes changes** to your remote repository
+6. **Runs post-bump scripts** for builds, tests, or deployments
 
-Whether you're setting up a new development machine, working on multiple projects with different tooling requirements, or just want a cleaner way to manage your packages, bumpx offers a streamlined experience for modern developers with complete environment isolation.
+All of this happens in a single command, with full transparency and control over each step.
 
 ## Quick Example
 
-Here's a simple example of how to use bumpx:
+Here's how simple version bumping becomes with bumpx:
 
 ```bash
 # Install bumpx
-bun add -g @stacksjs/bumpx
+npm install -g bumpx
 
-# Bootstrap everything you need at once
-bumpx bootstrap
+# Basic version bump
+bumpx patch
+# 1.0.0 → 1.0.1
 
-# Or install individual packages
-bumpx install node@22
+# Version bump with Git workflow
+bumpx minor --commit --tag --push
+# 1.0.1 → 1.1.0, creates commit and tag, pushes to remote
 
-# Set up automatic environment activation
-echo 'eval "$(bumpx dev:shellcode)"' >> ~/.zshrc
-source ~/.zshrc
+# Interactive version selection
+bumpx prompt --commits
+# Shows recent commits and version options
 
-# Create a project with dependencies
-mkdir my-project && cd my-project
-cat > dependencies.yaml << EOF
-dependencies:
-  - node@22
-  - python@3.12
-env:
-  NODE_ENV: development
-  PROJECT_NAME: my-project
-EOF
+# Monorepo version management
+bumpx patch --recursive
+# Updates all packages in your monorepo
 
-# Environment automatically activates when you enter the directory
-# ✅ Environment activated for /path/to/my-project
+# Custom files and post-bump actions
+bumpx major --files "package.json,VERSION.txt,src/version.ts" \
+           --commit --tag \
+           --execute "npm run build && npm test"
 
-# Install Zsh shell
-bumpx zsh
+# Prerelease versions
+bumpx prerelease --preid beta --commit --tag
+# 1.1.0 → 1.1.1-beta.0
 
-# Create shims for Node.js
-bumpx shim node
-
-# Now 'node' and 'zsh' are available in your PATH
-node --version
-zsh --version
-
-# Environment automatically deactivates when you leave
-cd ..
-# 🔄 dev environment deactivated
-
-# Remove specific packages when no longer needed
-bumpx remove node
-
-# Or completely uninstall everything
-bumpx uninstall
+# Dry run to preview changes
+bumpx minor --dry-run --verbose
+# Shows what would be changed without making changes
 ```
 
-With just a few commands, you've set up a complete development environment with automatic project-specific isolation. bumpx handles all the complexity for you, and you can easily clean up when you're done.
+## Configuration
+
+Configure bumpx to match your workflow:
+
+```typescript
+// bumpx.config.ts
+export default {
+  commit: true,
+  tag: true,
+  push: false,
+  message: 'chore: release v%s',
+  tagMessage: 'Release v%s',
+  execute: 'npm run build && npm test'
+}
+```
+
+Or in package.json:
+
+```json
+{
+  "bumpx": {
+    "commit": true,
+    "tag": true,
+    "message": "chore: release v%s"
+  }
+}
+```
 
 ## Why Choose bumpx?
 
-bumpx offers several advantages over traditional package managers:
+bumpx offers significant advantages over manual version management and other tools:
 
-- **Speed**: Installing packages is significantly faster
-- **Isolation**: Changes to one package don't affect others
-- **Simplicity**: Clean, consistent interface across platforms
-- **Integration**: Automatic PATH management and environment configuration
-- **Flexibility**: Works with project-specific development environments
+- **Comprehensive**: Handles files, Git operations, and post-bump actions
+- **Reliable**: Extensive validation and error handling prevent mistakes
+- **Flexible**: Works with any project structure or workflow
+- **Fast**: Efficient processing even for large monorepos
+- **Modern**: Built with TypeScript and modern Node.js features
+- **Well-documented**: Extensive guides and examples
+
+## Real-World Scenarios
+
+### Single Package Release
+```bash
+bumpx patch --commit --tag --push
+```
+
+### Feature Release with Testing
+```bash
+bumpx minor --commit --tag --execute "npm run build && npm test" --push
+```
+
+### Monorepo Synchronized Release
+```bash
+bumpx major --recursive --current-version 1.0.0 --commit --tag
+```
+
+### CI/CD Automation
+```bash
+bumpx patch --commit --tag --push --no-verify --execute "npm run deploy"
+```
 
 ## Next Steps
 
-Ready to get started with bumpx? Check out these guides:
+Ready to streamline your version management? Check out these guides:
 
 - [Installation Guide](./install.md) — Install bumpx on your system
-- [Basic Usage](./usage.md) — Learn the basic commands
-- [Configuration](./config.md) — Customize bumpx to your needs
-- [Why bumpx?](./why.md) — More details on the advantages of bumpx
+- [Basic Usage](./usage.md) — Learn the essential commands
+- [Configuration](./config.md) — Customize bumpx for your workflow
+- [Why bumpx?](./why.md) — Detailed comparison with other tools
+- [Git Integration](./features/git-integration.md) — Automate your Git workflows
+- [Monorepo Support](./features/monorepo-support.md) — Manage multiple packages
 
 ## Community
 
@@ -123,7 +163,7 @@ For casual chit-chat with others using this package:
 
 ## Postcardware
 
-“Software that is free, but hopes for a postcard.” We love receiving postcards from around the world showing where Stacks is being used! We showcase them on our website too.
+"Software that is free, but hopes for a postcard." We love receiving postcards from around the world showing where Stacks is being used! We showcase them on our website too.
 
 Our address: Stacks.js, 12665 Village Ln #2306, Playa Vista, CA 90094
 
