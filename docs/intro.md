@@ -6,7 +6,7 @@
 
 ## What is bumpx?
 
-bumpx is a next-generation version management tool that simplifies the process of bumping versions across your projects. It focuses on:
+bumpx is a version management tool that simplifies the process of bumping versions across your projects. It focuses on:
 
 - **Semantic versioning** with full semver compliance
 - **Git workflow automation** with commits, tags, and pushing

@@ -177,12 +177,25 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
           }
           else {
             // For non-JSON files, try to extract version from content
-            // This is a simplified approach - in practice, you might need more sophisticated parsing
             const fs = await import('node:fs')
             const content = fs.readFileSync(filePath, 'utf-8')
-            const versionMatch = content.match(/(?:version|Version):\s*(\d+\.\d+\.\d+(?:-[a-z0-9.-]+)?(?:\+[a-z0-9.-]+)?)/)
-            if (versionMatch) {
-              fileCurrentVersion = versionMatch[1]
+
+            // Try multiple patterns to extract version
+            const patterns = [
+              // version: 1.2.3 (with optional quotes)
+              /version\s*:\s*['"]?(\d+\.\d+\.\d+(?:-[a-z0-9.-]+)?(?:\+[a-z0-9.-]+)?)['"]?/i,
+              // VERSION = '1.2.3' (with optional quotes)
+              /version\s*=\s*['"]?(\d+\.\d+\.\d+(?:-[a-z0-9.-]+)?(?:\+[a-z0-9.-]+)?)['"]?/i,
+              // Just a version number on its own line (for VERSION.txt files)
+              /^(\d+\.\d+\.\d+(?:-[a-z0-9.-]+)?(?:\+[a-z0-9.-]+)?)$/m,
+            ]
+
+            for (const pattern of patterns) {
+              const match = content.match(pattern)
+              if (match) {
+                fileCurrentVersion = match[1]
+                break
+              }
             }
           }
 
