@@ -11,7 +11,7 @@ const analyticsHead: HeadConfig[] = [
     'script',
     {
       'src': 'https://cdn.usefathom.com/script.js',
-      'data-site': 'SULRKVYD',
+      'data-site': 'PPQCJNSG',
       'defer': '',
     },
   ],
