@@ -702,12 +702,13 @@ env:
   GITHUB_TOKEN: ${{ secrets.FINE_GRAINED_PAT }}
   NPM_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
 
-# Configure git with token
-- name: Configure git authentication
-  run: |
-    git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
-    git config user.name "github-actions[bot]"
-    git config user.email "github-actions[bot]@users.noreply.github.com"
+steps:
+  # Configure git with token
+  - name: Configure git authentication
+    run: |
+      git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+      git config user.name "github-actions[bot]"
+      git config user.email "github-actions[bot]@users.noreply.github.com"
 ```
 
 ### Signed Releases

@@ -305,7 +305,7 @@ bumpx looks for configuration files in this order:
 
 ```json
 {
-  "execute": "npm run build && npm run test"
+  "execute": "bun run build && bun run test"
 }
 ```
 
@@ -390,7 +390,7 @@ For automated releases in CI environments:
   "tag": true,
   "push": true,
   "noVerify": true,
-  "execute": "npm run build && npm run test:ci",
+  "execute": "bun run build && bun run test:ci",
   "message": "chore(release): v%s [skip ci]"
 }
 ```
@@ -475,7 +475,7 @@ export default {
     'package.json',
     'package-lock.json'
   ],
-  execute: 'npm run build && npm run test'
+  execute: 'bun run build && bun run test'
 }
 ```
 
@@ -504,7 +504,7 @@ For users migrating from `bumpp`:
   "commit": true,
   "tag": true,
   "push": true,
-  "execute": "npm run build",
+  "execute": "bun run build",
   "message": "chore: release v%s"
 }
 ```

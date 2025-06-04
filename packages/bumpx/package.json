@@ -62,7 +62,6 @@
     "prepublishOnly": "bun --bun run build && bun run compile:all && bun run zip",
     "test": "bun test"
   },
-  "dependencies": {},
   "devDependencies": {
     "bun-plugin-dtsx": "^0.21.12"
   },

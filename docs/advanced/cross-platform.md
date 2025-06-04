@@ -291,36 +291,6 @@ steps:
 
 ## Package Managers
 
-### NPM
-
-Works consistently across platforms:
-
-```bash
-# All platforms
-npm install -g bumpx
-npm run release
-```
-
-### Yarn
-
-Cross-platform Yarn usage:
-
-```bash
-# All platforms
-yarn global add bumpx
-yarn release
-```
-
-### PNPM
-
-Platform-agnostic PNPM:
-
-```bash
-# All platforms
-pnpm add -g bumpx
-pnpm release
-```
-
 ### Bun
 
 Native cross-platform support:
@@ -559,9 +529,9 @@ apk add --no-cache git nodejs npm
 ```json
 {
   "scripts": {
-    "prerelease": "npm test && npm run build",
+    "prerelease": "bun test && bun run build",
     "release": "bumpx patch --commit --tag --push",
-    "postrelease": "npm publish"
+    "postrelease": "bun publish"
   },
   "bumpx": {
     "commit": true,

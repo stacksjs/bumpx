@@ -2,7 +2,7 @@ import { afterEach, beforeEach, describe, expect, it, mock } from 'bun:test'
 import { existsSync, mkdirSync, rmSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
-import { bumpConfigDefaults, defineConfig, loadBumpConfig } from '../src/config'
+import { defaultConfig as bumpConfigDefaults, defineConfig, loadBumpConfig } from '../src/config'
 
 // Mock bunfig module
 const mockLoadConfig = mock(() => Promise.resolve(bumpConfigDefaults))

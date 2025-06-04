@@ -182,10 +182,10 @@ Run custom commands after version bump:
 
 ```bash
 # Run npm scripts after bump
-bumpx patch --commit --execute "npm run build"
+bumpx patch --commit --execute "bun run build"
 
 # Multiple commands
-bumpx minor --execute "npm run build && npm run test"
+bumpx minor --execute "bun run build && bun run test"
 
 # Install dependencies after bump
 bumpx patch --install
@@ -206,7 +206,7 @@ bumpx patch --commit --tag --push
 Release with documentation update:
 
 ```bash
-bumpx minor --commit --tag --execute "npm run build:docs" --push
+bumpx minor --commit --tag --execute "bun run build:docs" --push
 ```
 
 ### Major Release
@@ -215,7 +215,7 @@ Comprehensive major version release:
 
 ```bash
 # Interactive selection with full git workflow
-bumpx prompt --commits --commit --tag --sign --push --execute "npm run build"
+bumpx prompt --commits --commit --tag --sign --push --execute "bun run build"
 ```
 
 ### Prerelease Testing

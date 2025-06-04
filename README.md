@@ -8,7 +8,7 @@
 
 # bumpx
 
-> A fast, dependency-free version bumping tool similar to bumpp and version-bump-prompt, built with & for Bun.
+> A fast, dependency-free version bumping tool similar to bumpp and version-bump-prompt, built for Bun.
 
 ## Features
 
@@ -97,7 +97,7 @@ bumpx patch package.json packages/*/package.json
 
 ```bash
 # Execute custom commands
-bumpx patch --execute "npm run build" --execute "npm test"
+bumpx patch --execute "bun run build" --execute "bun test"
 
 # Install dependencies after bump
 bumpx patch --install
@@ -188,7 +188,7 @@ export default defineConfig({
 
   // Execution options
   install: false,
-  execute: ['npm run build', 'npm run test'],
+  execute: ['bun run build', 'bun run test'],
 
   // UI options
   confirm: true,
@@ -208,7 +208,7 @@ You can also use JSON configuration in `package.json`:
     "commit": true,
     "tag": true,
     "push": true,
-    "execute": ["npm run build"]
+    "execute": ["bun run build"]
   }
 }
 ```

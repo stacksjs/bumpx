@@ -20,8 +20,8 @@ describe('bumpx exports', () => {
     expect(bumpx.ExitCode).toBeDefined()
 
     // Check config defaults
-    expect(bumpx.bumpConfigDefaults).toBeDefined()
-    expect(typeof bumpx.bumpConfigDefaults).toBe('object')
+    expect(bumpx.defaultConfig).toBeDefined()
+    expect(typeof bumpx.defaultConfig).toBe('object')
   })
 
   it('should have proper enum values', async () => {
@@ -40,15 +40,15 @@ describe('bumpx exports', () => {
   })
 
   it('should export configuration defaults with expected values', async () => {
-    const { bumpConfigDefaults } = await import('../src/index')
+    const { defaultConfig } = await import('../src/index')
 
-    expect(bumpConfigDefaults.commit).toBe(true)
-    expect(bumpConfigDefaults.tag).toBe(true)
-    expect(bumpConfigDefaults.push).toBe(true)
-    expect(bumpConfigDefaults.sign).toBe(false)
-    expect(bumpConfigDefaults.confirm).toBe(true)
-    expect(bumpConfigDefaults.quiet).toBe(false)
-    expect(bumpConfigDefaults.recursive).toBe(false)
+    expect(defaultConfig.commit).toBe(true)
+    expect(defaultConfig.tag).toBe(true)
+    expect(defaultConfig.push).toBe(true)
+    expect(defaultConfig.sign).toBe(false)
+    expect(defaultConfig.confirm).toBe(true)
+    expect(defaultConfig.quiet).toBe(false)
+    expect(defaultConfig.recursive).toBe(false)
   })
 
   it('should have working utility functions', async () => {

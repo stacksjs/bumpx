@@ -68,7 +68,7 @@ bumpx patch --recursive
 # Custom files and post-bump actions
 bumpx major --files "package.json,VERSION.txt,src/version.ts" \
            --commit --tag \
-           --execute "npm run build && npm test"
+           --execute "bun run build && bun test"
 
 # Prerelease versions
 bumpx prerelease --preid beta --commit --tag
@@ -91,7 +91,7 @@ export default {
   push: false,
   message: 'chore: release v%s',
   tagMessage: 'Release v%s',
-  execute: 'npm run build && npm test'
+  execute: 'bun run build && bun test'
 }
 ```
 
@@ -127,7 +127,7 @@ bumpx patch --commit --tag --push
 
 ### Feature Release with Testing
 ```bash
-bumpx minor --commit --tag --execute "npm run build && npm test" --push
+bumpx minor --commit --tag --execute "bun run build && bun test" --push
 ```
 
 ### Monorepo Synchronized Release
@@ -137,7 +137,7 @@ bumpx major --recursive --current-version 1.0.0 --commit --tag
 
 ### CI/CD Automation
 ```bash
-bumpx patch --commit --tag --push --no-verify --execute "npm run deploy"
+bumpx patch --commit --tag --push --no-verify --execute "bun run deploy"
 ```
 
 ## Next Steps

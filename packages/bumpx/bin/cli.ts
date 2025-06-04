@@ -1,7 +1,7 @@
 import type { ParsedArgs, VersionBumpProgress } from '../src/types'
 import process from 'node:process'
 import { version } from '../package.json'
-import { bumpConfigDefaults, loadBumpConfig } from '../src/config'
+import { defaultConfig as bumpConfigDefaults, loadBumpConfig } from '../src/config'
 import { ExitCode, ProgressEvent } from '../src/types'
 import { colors, executeCommand, isReleaseType, isValidVersion, symbols } from '../src/utils'
 import { versionBump } from '../src/version-bump'

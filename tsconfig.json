@@ -13,6 +13,12 @@
       ],
       "@stacksjs/bumpx/*": [
         "./packages/bumpx/src/*"
+      ],
+      "@stacksjs/logsmith": [
+        "./packages/logsmith/src"
+      ],
+      "@stacksjs/logsmith/*": [
+        "./packages/logsmith/src/*"
       ]
     },
     "resolveJsonModule": true,

@@ -2,7 +2,7 @@ import { afterEach, beforeEach, describe, expect, it } from 'bun:test'
 import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
-import { bumpConfigDefaults } from '../src/config'
+import { defaultConfig as bumpConfigDefaults } from '../src/config'
 import { incrementVersion, isReleaseType, isValidVersion, SemVer } from '../src/utils'
 import { versionBump } from '../src/version-bump'
 
