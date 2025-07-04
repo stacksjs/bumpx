@@ -71,10 +71,10 @@ bumpx prerelease  # 1.0.1-beta.0 → 1.0.1-beta.1
 bumpx patch --no-commit --no-tag --no-push
 
 # Custom commit message
-bumpx patch --commit "chore: release v{version}"
+bumpx patch --commit-message "chore: release v%s"
 
-# Custom tag name
-bumpx patch --tag "v{version}"
+# Custom tag message
+bumpx patch --tag-message "Release v%s"
 
 # Sign commits and tags
 bumpx patch --sign
@@ -97,7 +97,7 @@ bumpx patch package.json packages/*/package.json
 
 ```bash
 # Execute custom commands
-bumpx patch --execute "bun run build" --execute "bun test"
+bumpx patch --execute "bun run build && bun run test"
 
 # Install dependencies after bump
 bumpx patch --install
@@ -170,7 +170,7 @@ jobs:
         run: bunx bumpx ${{ github.event.inputs.release_type }} --ci
 ```
 
-For more CI/CD examples and configurations, see [CI.md](./CI.md).
+For more CI/CD examples and configurations, see [Automation & CI/CD](./docs/advanced/automation.md).
 
 ## Configuration
 
@@ -180,7 +180,7 @@ Create a `bumpx.config.ts` file in your project root:
 import { defineConfig } from '@stacksjs/bumpx'
 
 export default defineConfig({
-  // Git options
+  // Git options (these are the defaults)
   commit: true,
   tag: true,
   push: true,
@@ -196,7 +196,7 @@ export default defineConfig({
 
   // Advanced options
   recursive: false,
-  printCommits: true
+  printCommits: false
 })
 ```
 
@@ -208,7 +208,7 @@ You can also use JSON configuration in `package.json`:
     "commit": true,
     "tag": true,
     "push": true,
-    "execute": ["bun run build"]
+    "execute": "bun run build"
   }
 }
 ```
