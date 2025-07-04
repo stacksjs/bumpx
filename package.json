@@ -1,5 +1,5 @@
 {
-  "name": "bumpx",
+  "name": "@stacksjs/bumpx",
   "type": "module",
   "version": "0.0.0",
   "private": true,
