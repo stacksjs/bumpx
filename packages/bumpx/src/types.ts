@@ -10,6 +10,7 @@ export interface VersionBumpOptions {
   // Git options
   commit?: boolean | string
   tag?: boolean | string
+  tagMessage?: string
   push?: boolean
   sign?: boolean
   noGitCheck?: boolean
@@ -23,13 +24,22 @@ export interface VersionBumpOptions {
   // UI options
   confirm?: boolean
   quiet?: boolean
+  verbose?: boolean
   ci?: boolean
+  dryRun?: boolean
   progress?: ProgressCallback
 
   // Advanced options
   all?: boolean
   recursive?: boolean
   printCommits?: boolean
+
+  // Enhanced Monorepo Support
+  workspace?: boolean
+  include?: string[]
+  exclude?: string[]
+  updateDependencies?: boolean
+  workspaceRoot?: string
 }
 
 export interface BumpxConfig extends VersionBumpOptions {
@@ -76,6 +86,7 @@ export interface PackageJson {
   devDependencies?: Record<string, string>
   peerDependencies?: Record<string, string>
   optionalDependencies?: Record<string, string>
+  workspaces?: string[] | { packages: string[] }
   [key: string]: any
 }
 
@@ -91,4 +102,25 @@ export enum ExitCode {
   Success = 0,
   InvalidArgument = 1,
   FatalError = 2,
+}
+
+export interface WorkspaceInfo {
+  name: string
+  version: string
+  path: string
+  packageJson: PackageJson
+  isPrivate?: boolean
+}
+
+export interface WorkspaceConfig {
+  packages: string[]
+  nohoist?: string[]
+}
+
+export interface MonorepoInfo {
+  isMonorepo: boolean
+  workspaceRoot?: string
+  packages: WorkspaceInfo[]
+  workspaceConfig?: WorkspaceConfig
+  packageManager?: 'npm' | 'yarn' | 'pnpm' | 'bun'
 }

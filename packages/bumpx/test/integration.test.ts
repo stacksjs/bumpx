@@ -8,15 +8,17 @@ import { versionBump } from '../src/version-bump'
 
 describe('Integration Tests', () => {
   let tempDir: string
+  let originalCwd: string
 
   beforeEach(() => {
+    originalCwd = process.cwd()
     tempDir = join(tmpdir(), `bumpx-integration-test-${Date.now()}`)
     mkdirSync(tempDir, { recursive: true })
     process.chdir(tempDir)
   })
 
   afterEach(() => {
-    process.chdir('/') // Change back to root to avoid cleanup issues
+    process.chdir(originalCwd)
     if (existsSync(tempDir)) {
       rmSync(tempDir, { recursive: true, force: true })
     }

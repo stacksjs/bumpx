@@ -1,5 +1,4 @@
 import type { BumpxConfig, VersionBumpOptions } from './types'
-// @ts-expect-error - bunfig types have an issue atm but functionality works properly
 import { loadConfig } from 'bunfig'
 
 export const defaultConfig: BumpxConfig = {
@@ -29,34 +28,22 @@ export const defaultConfig: BumpxConfig = {
 /**
  * Load bumpx configuration with overrides
  */
-export async function loadBumpConfig(overrides: Partial<VersionBumpOptions> = {}): Promise<VersionBumpOptions> {
-  const loadedConfig = await loadConfig({
+// eslint-disable-next-line antfu/no-top-level-await
+export const config: BumpxConfig = await loadConfig({
+  name: 'bumpx',
+  defaultConfig,
+})
+
+/**
+ * Load bumpx configuration with overrides
+ */
+export async function loadBumpConfig(overrides?: Partial<BumpxConfig>): Promise<BumpxConfig> {
+  const loaded = await loadConfig({
     name: 'bumpx',
     defaultConfig,
   })
 
-  // Only keep the properties we expect
-  const config: BumpxConfig = {
-    commit: loadedConfig.commit ?? defaultConfig.commit,
-    tag: loadedConfig.tag ?? defaultConfig.tag,
-    push: loadedConfig.push ?? defaultConfig.push,
-    sign: loadedConfig.sign ?? defaultConfig.sign,
-    noGitCheck: loadedConfig.noGitCheck ?? defaultConfig.noGitCheck,
-    noVerify: loadedConfig.noVerify ?? defaultConfig.noVerify,
-    install: loadedConfig.install ?? defaultConfig.install,
-    ignoreScripts: loadedConfig.ignoreScripts ?? defaultConfig.ignoreScripts,
-    confirm: loadedConfig.confirm ?? defaultConfig.confirm,
-    quiet: loadedConfig.quiet ?? defaultConfig.quiet,
-    ci: loadedConfig.ci ?? defaultConfig.ci,
-    all: loadedConfig.all ?? defaultConfig.all,
-    recursive: loadedConfig.recursive ?? defaultConfig.recursive,
-    printCommits: loadedConfig.printCommits ?? defaultConfig.printCommits,
-  }
-
-  return {
-    ...config,
-    ...overrides,
-  }
+  return { ...loaded, ...overrides }
 }
 
 /**

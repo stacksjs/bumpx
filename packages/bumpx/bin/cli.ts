@@ -1,254 +1,40 @@
-import type { ParsedArgs, VersionBumpProgress } from '../src/types'
+import type { BumpxConfig, ParsedArgs, VersionBumpProgress } from '../src/types'
 import process from 'node:process'
+import { CAC } from 'cac'
 import { version } from '../package.json'
 import { defaultConfig as bumpConfigDefaults, loadBumpConfig } from '../src/config'
 import { ExitCode, ProgressEvent } from '../src/types'
 import { colors, executeCommand, isReleaseType, isValidVersion, symbols } from '../src/utils'
 import { versionBump } from '../src/version-bump'
 
-/**
- * Simple CAC-like CLI parser (avoiding dependencies)
- */
-class SimpleCLI {
-  private commands: Map<string, any> = new Map()
-  private globalOptions: any = {}
-  private program = {
-    name: 'bumpx',
-    version,
-  }
+const cli = new CAC('bumpx')
 
-  command(name: string, description: string) {
-    const cmd = {
-      name,
-      description,
-      options: new Map(),
-      action: null as any,
-      examples: [] as string[],
-    }
-    this.commands.set(name, cmd)
-    return {
-      option: (flags: string, description: string, config?: any) => {
-        cmd.options.set(flags, { description, config })
-        return this
-      },
-      example: (example: string) => {
-        cmd.examples.push(example)
-        return this
-      },
-      action: (fn: any) => {
-        cmd.action = fn
-        return this
-      },
-    }
-  }
-
-  option(flags: string, description: string, config?: any) {
-    this.globalOptions[flags] = { description, config }
-    return this
-  }
-
-  version(v: string) {
-    this.program.version = v
-    return this
-  }
-
-  help() {
-    console.log(`\n${this.program.name} v${this.program.version}`)
-    console.log('\nUsage:')
-    console.log(`  ${this.program.name} [options] [release]`)
-    console.log(`  ${this.program.name} [release] [...files]`)
-    console.log(`  ${this.program.name} update [packages...] [options]`)
-    console.log('\nCommands:')
-    console.log('  update                   Update package.json dependencies using Bun')
-    console.log('\nOptions:')
-
-    Object.entries(this.globalOptions).forEach(([flags, info]: [string, any]) => {
-      console.log(`  ${flags.padEnd(20)} ${info.description}`)
-    })
-
-    console.log('\nExamples:')
-    console.log('  bumpx patch')
-    console.log('  bumpx minor --no-git-check')
-    console.log('  bumpx major --no-push')
-    console.log('  bumpx 1.2.3')
-    console.log('  bumpx --recursive')
-    console.log('  bumpx update')
-    console.log('  bumpx update --latest')
-    console.log('  bumpx update react typescript')
-    console.log('  bumpx update react --latest')
-    console.log('')
-    return this
-  }
-
-  parse(argv = process.argv) {
-    const args = argv.slice(2)
-    const options: any = {}
-    const files: string[] = []
-    let release: string | undefined
-    let command: string | undefined
-
-    // Check if first argument is a command
-    if (args.length > 0 && args[0] === 'update') {
-      command = args.shift()!
-    }
-
-    for (let i = 0; i < args.length; i++) {
-      const arg = args[i]
-
-      if (arg === '--help' || arg === '-h') {
-        this.help()
-        process.exit(0)
-      }
-
-      if (arg === '--version' || arg === '-v') {
-        console.log(this.program.version)
-        process.exit(0)
-      }
-
-      if (arg.startsWith('--')) {
-        const key = arg.slice(2)
-        if (key.startsWith('no-')) {
-          const realKey = key.slice(3).replace(/-([a-z])/g, (_, letter) => letter.toUpperCase())
-          options[realKey] = false
-        }
-        else {
-          const realKey = key.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase())
-          if (i + 1 < args.length && !args[i + 1].startsWith('-')) {
-            options[realKey] = args[++i]
-          }
-          else {
-            options[realKey] = true
-          }
-        }
-      }
-      else if (arg.startsWith('-')) {
-        const flags = arg.slice(1)
-        for (const flag of flags) {
-          switch (flag) {
-            case 'c':
-              options.commit = true
-              break
-            case 't':
-              options.tag = true
-              break
-            case 'p':
-              options.push = true
-              break
-            case 'y':
-              options.yes = true
-              break
-            case 'r':
-              options.recursive = true
-              break
-            case 'q':
-              options.quiet = true
-              break
-            case 'x':
-              if (i + 1 < args.length) {
-                options.execute = args[++i]
-              }
-              break
-          }
-        }
-      }
-      else {
-        // Positional argument
-        if (command === 'update') {
-          // For update command, all remaining args are package names
-          files.push(arg)
-        }
-        else if (!release && (isReleaseType(arg) || isValidVersion(arg) || arg === 'prompt')) {
-          release = arg
-        }
-        else {
-          files.push(arg)
-        }
-      }
-    }
-
-    return { options, files, release, command }
-  }
-}
-
-/**
- * Parse command line arguments
- */
-async function parseArgs(): Promise<ParsedArgs> {
-  try {
-    const cli = new SimpleCLI()
-
-    cli
-      .version(version)
-      .option('--preid <preid>', 'ID for prerelease')
-      .option('--all', `Include all files (default: ${bumpConfigDefaults.all})`)
-      .option('--no-git-check', `Skip git check`)
-      .option('-c, --commit [msg]', 'Commit message', { default: true })
-      .option('--no-commit', 'Skip commit')
-      .option('-t, --tag [tag]', 'Tag name', { default: true })
-      .option('--no-tag', 'Skip tag')
-      .option('--sign', 'Sign commit and tag')
-      .option('--install', `Run 'npm install' after bumping version`)
-      .option('-p, --push', `Push to remote (default: ${bumpConfigDefaults.push})`)
-      .option('-y, --yes', `Skip confirmation (default: ${!bumpConfigDefaults.confirm})`)
-      .option('-r, --recursive', `Bump package.json files recursively`)
-      .option('--no-verify', 'Skip git verification')
-      .option('--ignore-scripts', `Ignore scripts`)
-      .option('-q, --quiet', 'Quiet mode')
-      .option('--ci', 'CI mode (non-interactive, sets --yes --quiet --no-git-check)')
-      .option('--current-version <version>', 'Current version')
-      .option('--print-commits', 'Print recent commits')
-      .option('-x, --execute <command>', 'Commands to execute after version bumps')
-      .option('--latest', 'Update to latest version (for update command)')
-
-    const { options: args, files, release, command } = cli.parse()
-
-    // Handle CI mode - override other settings for non-interactive operation
-    const isCiMode = args.ci || process.env.CI === 'true'
-    const ciOverrides = isCiMode
-      ? {
-          confirm: false, // Skip confirmation in CI
-          quiet: true, // Reduce output in CI
-          noGitCheck: false, // Keep git check in CI for safety
-        }
-      : {}
-
-    const options = await loadBumpConfig({
-      preid: args.preid,
-      commit: args.commit !== undefined ? args.commit : undefined,
-      tag: args.tag !== undefined ? args.tag : undefined,
-      sign: args.sign,
-      push: args.push,
-      all: args.all,
-      noGitCheck: args.noGitCheck,
-      confirm: !args.yes,
-      noVerify: !args.verify,
-      install: args.install,
-      files,
-      ignoreScripts: args.ignoreScripts,
-      currentVersion: args.currentVersion,
-      execute: args.execute,
-      printCommits: args.printCommits,
-      recursive: args.recursive,
-      quiet: args.quiet,
-      ci: isCiMode,
-      release,
-      ...ciOverrides,
-    })
-
-    return {
-      help: args.help,
-      version: args.version,
-      quiet: args.quiet,
-      command,
-      files,
-      latest: args.latest,
-      options,
-    }
-  }
-  catch (error) {
-    console.error(`Error parsing arguments: ${error}`)
-    process.exit(ExitCode.InvalidArgument)
-  }
+// Define CLI options interface to match CAC's naming conventions
+interface CLIOptions {
+  preid?: string
+  all?: boolean
+  gitCheck?: boolean
+  commit?: boolean
+  commitMessage?: string
+  tag?: boolean
+  tagName?: string
+  tagMessage?: string
+  sign?: boolean
+  install?: boolean
+  push?: boolean
+  yes?: boolean
+  recursive?: boolean
+  verify?: boolean
+  ignoreScripts?: boolean
+  quiet?: boolean
+  dryRun?: boolean
+  ci?: boolean
+  currentVersion?: string
+  printCommits?: boolean
+  execute?: string
+  latest?: boolean
+  files?: string
+  verbose?: boolean
 }
 
 /**
@@ -350,46 +136,195 @@ function errorHandler(error: Error): never {
   }
 
   console.error(colors.red(`${symbols.error} ${message}`))
+
+  // Use more specific exit codes based on error type
+  if (message.includes('No package.json files found')
+    || message.includes('Failed to read')
+    || message.includes('Invalid release type')
+    || message.includes('invalid command')
+    || message.includes('Invalid')
+    || message.includes('Release type or version must be specified')
+    || message.includes('Could not determine')
+    || message.includes('working tree is not clean')) {
+    process.exit(ExitCode.InvalidArgument)
+  }
+
   process.exit(ExitCode.FatalError)
 }
 
 /**
- * Main CLI entry point
+ * Parse and prepare config from CLI options
  */
-async function main(): Promise<void> {
-  try {
-    // Setup global error handlers
-    process.on('uncaughtException', errorHandler)
-    process.on('unhandledRejection', errorHandler)
+async function prepareConfig(release: string | undefined, files: string[] | undefined, options: CLIOptions): Promise<BumpxConfig> {
+  // Handle CI mode - override other settings for non-interactive operation
+  const isCiMode = options.ci || process.env.CI === 'true'
+  const ciOverrides = isCiMode
+    ? {
+        confirm: false, // Skip confirmation in CI
+        quiet: true, // Reduce output in CI
+        noGitCheck: false, // Keep git check in CI for safety
+      }
+    : {}
 
-    // Parse command-line arguments
-    const { help, version: showVersion, quiet, command, files, latest, options } = await parseArgs()
+  // Handle --files flag which can be comma-separated
+  let finalFiles = files
+  if (options.files) {
+    finalFiles = options.files.split(',').map((f: string) => f.trim())
+  }
 
-    if (help || showVersion) {
-      // Will be handled by CLI parser
-      process.exit(ExitCode.Success)
-    }
-    else if (command === 'update') {
-      // Handle update command
-      const packages = files || []
-      await updateDependencies(packages, { ...options, latest })
-    }
-    else {
-      if (!options.all && !options.noGitCheck) {
+  // Only pass CLI arguments that were explicitly provided, let config file fill in the rest
+  const cliOverrides: Partial<BumpxConfig> = {}
+
+  if (options.preid !== undefined)
+    cliOverrides.preid = options.preid
+  if (options.commit !== undefined)
+    cliOverrides.commit = options.commit
+  if (options.commitMessage !== undefined)
+    cliOverrides.commit = options.commitMessage
+  if (options.tag !== undefined)
+    cliOverrides.tag = options.tag
+  if (options.tagName !== undefined)
+    cliOverrides.tag = options.tagName
+  if (options.tagMessage !== undefined)
+    cliOverrides.tagMessage = options.tagMessage
+  if (options.sign !== undefined)
+    cliOverrides.sign = options.sign
+  if (options.push !== undefined)
+    cliOverrides.push = options.push
+  if (options.all !== undefined)
+    cliOverrides.all = options.all
+  if (options.gitCheck === false) {
+    cliOverrides.noGitCheck = true
+    // When --no-git-check is used, disable all git operations
+    cliOverrides.commit = false
+    cliOverrides.tag = false
+    cliOverrides.push = false
+  }
+  if (options.yes !== undefined)
+    cliOverrides.confirm = !options.yes
+  if (options.verify === false)
+    cliOverrides.noVerify = true
+  if (options.install !== undefined)
+    cliOverrides.install = options.install
+  if (finalFiles !== undefined)
+    cliOverrides.files = finalFiles
+  if (options.ignoreScripts !== undefined)
+    cliOverrides.ignoreScripts = options.ignoreScripts
+  if (options.currentVersion !== undefined)
+    cliOverrides.currentVersion = options.currentVersion
+  if (options.execute !== undefined)
+    cliOverrides.execute = options.execute
+  if (options.printCommits !== undefined)
+    cliOverrides.printCommits = options.printCommits
+  if (options.recursive !== undefined)
+    cliOverrides.recursive = options.recursive
+  if (options.quiet !== undefined)
+    cliOverrides.quiet = options.quiet
+  if (options.dryRun !== undefined)
+    cliOverrides.dryRun = options.dryRun
+  if (options.verbose !== undefined)
+    cliOverrides.verbose = options.verbose
+  if (isCiMode)
+    cliOverrides.ci = true
+  if (release !== undefined)
+    cliOverrides.release = release
+
+  return await loadBumpConfig({
+    ...cliOverrides,
+    ...ciOverrides,
+  })
+}
+
+// Main version bump command (default)
+cli
+  .command('[release] [...files]', 'Bump version of package.json files')
+  .option('--preid <preid>', 'ID for prerelease')
+  .option('--all', `Include all files (default: ${bumpConfigDefaults.all})`)
+  .option('--no-git-check', 'Skip git check')
+  .option('-c, --commit', 'Create git commit')
+  .option('--commit-message <msg>', 'Custom commit message')
+  .option('-t, --tag', 'Create git tag')
+  .option('--tag-name <name>', 'Custom tag name')
+  .option('--tag-message <message>', 'Tag message')
+  .option('--sign', 'Sign commit and tag')
+  .option('--install', 'Run \'npm install\' after bumping version')
+  .option('-p, --push', `Push to remote (default: ${bumpConfigDefaults.push})`)
+  .option('-y, --yes', `Skip confirmation (default: ${!bumpConfigDefaults.confirm})`)
+  .option('-r, --recursive', 'Bump package.json files recursively')
+  .option('--no-verify', 'Skip git verification')
+  .option('--ignore-scripts', 'Ignore scripts')
+  .option('-q, --quiet', 'Quiet mode')
+  .option('--dry-run', 'Show what would be changed without making changes')
+  .option('--ci', 'CI mode (non-interactive, sets --yes --quiet --no-git-check)')
+  .option('--current-version <version>', 'Current version')
+  .option('--print-commits', 'Print recent commits')
+  .option('-x, --execute <command>', 'Commands to execute after version bumps')
+  .option('--files <files>', 'Comma-separated list of files to update')
+  .option('--verbose', 'Enable verbose output')
+  .example('bumpx patch')
+  .example('bumpx minor --no-git-check')
+  .example('bumpx major --no-push')
+  .example('bumpx 1.2.3')
+  .example('bumpx --recursive')
+  .action(async (release: string | undefined, files: string[] | undefined, options: CLIOptions) => {
+    try {
+      if (!release && (!files || files.length === 0)) {
+        // No release type and no files specified - show help
+        cli.outputHelp()
+        process.exit(ExitCode.Success)
+      }
+
+      // Validate release type before proceeding
+      if (release && !isReleaseType(release) && !isValidVersion(release) && release !== 'prompt') {
+        throw new Error(`Invalid release type or version: ${release}`)
+      }
+
+      const config = await prepareConfig(release, files, options)
+
+      if (!config.all && !config.noGitCheck) {
         await checkGitStatus()
       }
 
-      if (!quiet) {
-        options.progress = options.progress || progress
+      if (!options.quiet) {
+        config.progress = config.progress || progress
       }
 
-      await versionBump(options)
+      await versionBump(config)
     }
-  }
-  catch (error) {
-    errorHandler(error as Error)
-  }
-}
+    catch (error) {
+      errorHandler(error as Error)
+    }
+  })
 
-// Run the CLI
-main().catch(errorHandler)
+// Update command
+cli
+  .command('update [packages...]', 'Update package.json dependencies using Bun')
+  .option('--latest', 'Update to latest version')
+  .option('-q, --quiet', 'Quiet mode')
+  .example('bumpx update')
+  .example('bumpx update --latest')
+  .example('bumpx update react typescript')
+  .example('bumpx update react --latest')
+  .action(async (packages: string[] = [], options: { latest?: boolean, quiet?: boolean }) => {
+    try {
+      await updateDependencies(packages, options)
+    }
+    catch (error) {
+      errorHandler(error as Error)
+    }
+  })
+
+// Version command
+cli
+  .command('version', 'Show the version of bumpx')
+  .action(() => {
+    console.log(version)
+  })
+
+// Setup global error handlers
+process.on('uncaughtException', errorHandler)
+process.on('unhandledRejection', errorHandler)
+
+cli.version(version)
+cli.help()
+cli.parse()

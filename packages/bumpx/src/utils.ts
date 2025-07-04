@@ -1,5 +1,5 @@
 import type { FileInfo, PackageJson, ReleaseType } from './types'
-import { execSync } from 'node:child_process'
+import { execSync, spawnSync } from 'node:child_process'
 import { existsSync, readFileSync, writeFileSync } from 'node:fs'
 import { readdir, stat } from 'node:fs/promises'
 import { join } from 'node:path'
@@ -155,8 +155,26 @@ export async function findPackageJsonFiles(dir: string = process.cwd(), recursiv
   if (recursive) {
     try {
       const entries = await readdir(dir)
+      const excludedDirs = new Set([
+        'node_modules',
+        'dist',
+        'coverage',
+        'lib',
+        'out',
+        'target',
+        '.git',
+        '.svn',
+        '.hg',
+        '.next',
+        '.nuxt',
+        '.output',
+        '.vercel',
+        '.netlify',
+      ])
+
       for (const entry of entries) {
-        if (entry.startsWith('.') || entry === 'node_modules')
+        // Skip hidden directories and common build/output directories
+        if (entry.startsWith('.') || excludedDirs.has(entry))
           continue
 
         const fullPath = join(dir, entry)
@@ -257,12 +275,24 @@ function escapeRegExp(string: string): string {
 /**
  * Execute git command
  */
-export function executeGit(args: string[]): string {
+export function executeGit(args: string[], cwd?: string): string {
   try {
-    return execSync(`git ${args.join(' ')}`, {
+    // Use spawnSync for proper argument handling
+    const result = spawnSync('git', args, {
       encoding: 'utf-8',
       stdio: ['pipe', 'pipe', 'pipe'],
-    }).trim()
+      cwd: cwd || process.cwd(),
+    })
+
+    if (result.error) {
+      throw result.error
+    }
+
+    if (result.status !== 0) {
+      throw new Error(result.stderr || 'Git command failed')
+    }
+
+    return result.stdout.trim()
   }
   catch (error: any) {
     throw new Error(`Git command failed: git ${args.join(' ')}\n${error.message}`)
@@ -272,8 +302,8 @@ export function executeGit(args: string[]): string {
 /**
  * Check git status
  */
-export function checkGitStatus(): void {
-  const status = executeGit(['status', '--porcelain'])
+export function checkGitStatus(cwd?: string): void {
+  const status = executeGit(['status', '--porcelain'], cwd)
   if (status.trim()) {
     throw new Error(`Git working tree is not clean:\n${status}`)
   }
@@ -282,49 +312,55 @@ export function checkGitStatus(): void {
 /**
  * Get current git branch
  */
-export function getCurrentBranch(): string {
-  return executeGit(['rev-parse', '--abbrev-ref', 'HEAD'])
+export function getCurrentBranch(cwd?: string): string {
+  return executeGit(['rev-parse', '--abbrev-ref', 'HEAD'], cwd)
 }
 
 /**
  * Create git commit
  */
-export function createGitCommit(message: string, sign: boolean = false, noVerify: boolean = false): void {
+export function createGitCommit(message: string, sign: boolean = false, noVerify: boolean = false, cwd?: string): void {
   const args = ['commit', '-m', message]
   if (sign)
     args.push('--signoff')
   if (noVerify)
     args.push('--no-verify')
 
-  executeGit(args)
+  executeGit(args, cwd)
 }
 
 /**
  * Create git tag
  */
-export function createGitTag(tag: string, sign: boolean = false): void {
-  const args = ['tag', tag]
+export function createGitTag(tag: string, sign: boolean = false, message?: string, cwd?: string): void {
+  const args = ['tag']
+  if (message) {
+    args.push('-a', tag, '-m', message)
+  }
+  else {
+    args.push(tag)
+  }
   if (sign)
     args.push('--sign')
 
-  executeGit(args)
+  executeGit(args, cwd)
 }
 
 /**
  * Push to git remote
  */
-export function pushToRemote(tags: boolean = true): void {
-  executeGit(['push'])
+export function pushToRemote(tags: boolean = true, cwd?: string): void {
+  executeGit(['push'], cwd)
   if (tags) {
-    executeGit(['push', '--tags'])
+    executeGit(['push', '--tags'], cwd)
   }
 }
 
 /**
  * Get recent commits for display
  */
-export function getRecentCommits(count: number = 10): string[] {
-  const output = executeGit(['log', `--oneline`, `-${count}`])
+export function getRecentCommits(count: number = 10, cwd?: string): string[] {
+  const output = executeGit(['log', `--oneline`, `-${count}`], cwd)
   return output.split('\n').filter(line => line.trim())
 }
 

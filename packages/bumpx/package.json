@@ -67,5 +67,8 @@
   },
   "lint-staged": {
     "*.{js,ts}": "bunx --bun eslint . --fix"
+  },
+  "dependencies": {
+    "cac": "^6.7.14"
   }
 }
