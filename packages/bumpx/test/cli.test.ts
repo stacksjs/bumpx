@@ -59,8 +59,8 @@ describe('CLI Integration Tests', () => {
         cmdArgs = args
       }
       else if (isBuiltJS) {
-        // Built JS - run with node
-        command = 'node'
+        // Built JS - run with bun
+        command = 'bun'
         cmdArgs = [bumpxBin, ...args]
       }
       else if (isSourceTS) {
