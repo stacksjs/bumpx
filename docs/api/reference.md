@@ -12,6 +12,8 @@ Complete reference documentation for bumpx commands, options, and programmatic A
 bumpx <release-type> [options]
 ```
 
+
+
 **Release Types:**
 - `patch` - Bug fixes (1.0.0 → 1.0.1)
 - `minor` - New features (1.0.0 → 1.1.0)
@@ -23,29 +25,36 @@ bumpx <release-type> [options]
 - `<version>` - Specific version (e.g., "2.1.0")
 - `prompt` - Interactive version selection
 
+**Utility Commands:**
+- `version` - Show bumpx version
+
 #### Global Options
 
 | Option | Type | Default | Description |
 |--------|------|---------|-------------|
-| `--files` | `string[]` | `["package.json"]` | Files to update |
+| `--files` | `string` | Auto-detected | Comma-separated files to update |
 | `--current-version` | `string` | Auto-detected | Override current version |
-| `--preid` | `string` | `"alpha"` | Prerelease identifier |
-| `--commit` | `boolean` | `false` | Create git commit |
-| `--tag` | `boolean` | `false` | Create git tag |
-| `--push` | `boolean` | `false` | Push to remote |
+| `--preid` | `string` | `undefined` | Prerelease identifier |
+| `--commit` | `boolean` | `true` | Create git commit |
+| `--commit-message` | `string` | Custom message | Commit message template |
+| `--tag` | `boolean` | `true` | Create git tag |
+| `--tag-name` | `string` | Custom name | Custom tag name |
+| `--tag-message` | `string` | Custom message | Tag message template |
+| `--push` | `boolean` | `true` | Push to remote |
 | `--sign` | `boolean` | `false` | Sign commits and tags |
-| `--message` | `string` | `"chore: bump version to %s"` | Commit message template |
-| `--tag-message` | `string` | `"v%s"` | Tag message template |
 | `--no-git-check` | `boolean` | `false` | Skip git status check |
 | `--no-verify` | `boolean` | `false` | Skip git hooks |
 | `--recursive` | `boolean` | `false` | Find files recursively |
-| `--all` | `boolean` | `false` | Allow uncommitted changes |
+| `--all` | `boolean` | `false` | Include all files |
 | `--install` | `boolean` | `false` | Run npm install after bump |
-| `--execute` | `string` | `""` | Command to run after bump |
+| `--ignore-scripts` | `boolean` | `false` | Ignore npm scripts |
+| `--execute` | `string` | `undefined` | Command to run after bump |
 | `--dry-run` | `boolean` | `false` | Show changes without applying |
 | `--verbose` | `boolean` | `false` | Verbose output |
-| `--commits` | `boolean` | `false` | Show recent commits |
-| `--config` | `string` | `bumpx.config.ts` | Configuration file path |
+| `--quiet` | `boolean` | `false` | Quiet output |
+| `--yes` | `boolean` | `false` | Skip confirmation |
+| `--ci` | `boolean` | `false` | CI mode (non-interactive) |
+| `--print-commits` | `boolean` | `false` | Show recent commits |
 
 ### Command Examples
 
@@ -116,6 +125,8 @@ bumpx major --commit --tag \
   --execute "npm run build && npm run test && npm publish"
 ```
 
+
+
 ## Programmatic API
 
 ### JavaScript/TypeScript API
@@ -155,37 +166,38 @@ await versionBump({
 
 ```typescript
 interface VersionBumpOptions {
-  // Version configuration
-  release: string | ReleaseType
-  currentVersion?: string
+  // Core options
+  release?: string | ReleaseType
   preid?: string
-
-  // File configuration
+  currentVersion?: string
   files?: string[]
-  recursive?: boolean
 
-  // Git configuration
-  commit?: boolean
-  tag?: boolean
+  // Git options
+  commit?: boolean | string
+  tag?: boolean | string
+  tagMessage?: string
   push?: boolean
   sign?: boolean
-  message?: string
-  tagMessage?: string
   noGitCheck?: boolean
   noVerify?: boolean
-  all?: boolean
 
-  // Post-bump actions
+  // Execution options
   install?: boolean
-  execute?: string
+  ignoreScripts?: boolean
+  execute?: string | string[]
 
-  // Output configuration
+  // UI options
+  confirm?: boolean
+  quiet?: boolean
   verbose?: boolean
+  ci?: boolean
   dryRun?: boolean
-  printCommits?: boolean
+  progress?: ProgressCallback
 
-  // Progress callback
-  progress?: (event: ProgressEvent) => void
+  // Advanced options
+  all?: boolean
+  recursive?: boolean
+  printCommits?: boolean
 }
 
 type ReleaseType =
@@ -197,27 +209,30 @@ type ReleaseType =
   | 'prepatch'
   | 'prerelease'
 
-interface ProgressEvent {
-  event: ProgressEventType
+interface VersionBumpProgress {
+  event: ProgressEvent
+  script?: string
   updatedFiles: string[]
   skippedFiles: string[]
   newVersion: string
-  oldVersion: string
+  oldVersion?: string
 }
 
-enum ProgressEventType {
-  FileUpdated = 'file-updated',
-  FileSkipped = 'file-skipped',
-  GitCommit = 'git-commit',
-  GitTag = 'git-tag',
-  GitPush = 'git-push'
+enum ProgressEvent {
+  FileUpdated = 'fileUpdated',
+  FileSkipped = 'fileSkipped',
+  GitCommit = 'gitCommit',
+  GitTag = 'gitTag',
+  GitPush = 'gitPush',
+  NpmScript = 'npmScript',
+  Execute = 'execute'
 }
 ```
 
 #### Progress Tracking
 
 ```typescript
-import { versionBump, ProgressEventType } from '@stacksjs/bumpx'
+import { versionBump, ProgressEvent } from '@stacksjs/bumpx'
 
 await versionBump({
   release: 'patch',
@@ -225,13 +240,13 @@ await versionBump({
   verbose: true,
   progress: (event) => {
     switch (event.event) {
-      case ProgressEventType.FileUpdated:
+      case ProgressEvent.FileUpdated:
         console.log(`Updated: ${event.updatedFiles.join(', ')}`)
         break
-      case ProgressEventType.GitCommit:
+      case ProgressEvent.GitCommit:
         console.log(`Committed version ${event.newVersion}`)
         break
-      case ProgressEventType.GitTag:
+      case ProgressEvent.GitTag:
         console.log(`Tagged version ${event.newVersion}`)
         break
     }

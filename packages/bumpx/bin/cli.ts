@@ -32,7 +32,6 @@ interface CLIOptions {
   currentVersion?: string
   printCommits?: boolean
   execute?: string
-  latest?: boolean
   files?: string
   verbose?: boolean
 }
@@ -69,48 +68,6 @@ function progress({ event, script, updatedFiles, skippedFiles, newVersion }: Ver
     case ProgressEvent.Execute:
       console.log(colors.green(`${symbols.success} Execute ${script}`))
       break
-  }
-}
-
-/**
- * Update dependencies using Bun
- */
-async function updateDependencies(packages: string[] = [], options: any = {}): Promise<void> {
-  try {
-    console.log(colors.blue(`${symbols.info} Updating dependencies using Bun...`))
-
-    // Build bun update command
-    const bunArgs = ['update']
-
-    // Add --latest flag if specified
-    if (options.latest) {
-      bunArgs.push('--latest')
-    }
-
-    // Add specific packages if provided
-    if (packages.length > 0) {
-      bunArgs.push(...packages)
-      console.log(colors.blue(`${symbols.info} Updating packages: ${packages.join(', ')}`))
-    }
-    else {
-      console.log(colors.blue(`${symbols.info} Updating all dependencies`))
-    }
-
-    // Execute bun update command
-    const command = `bun ${bunArgs.join(' ')}`
-    console.log(colors.gray(`${symbols.info} Executing: ${command}`))
-
-    const output = executeCommand(command)
-
-    if (!options.quiet && output) {
-      console.log(output)
-    }
-
-    console.log(colors.green(`${symbols.success} Dependencies updated successfully`))
-  }
-  catch (error) {
-    console.error(colors.red(`${symbols.error} Failed to update dependencies: ${error instanceof Error ? error.message : String(error)}`))
-    process.exit(ExitCode.FatalError)
   }
 }
 
@@ -295,23 +252,7 @@ cli
     }
   })
 
-// Update command
-cli
-  .command('update [packages...]', 'Update package.json dependencies using Bun')
-  .option('--latest', 'Update to latest version')
-  .option('-q, --quiet', 'Quiet mode')
-  .example('bumpx update')
-  .example('bumpx update --latest')
-  .example('bumpx update react typescript')
-  .example('bumpx update react --latest')
-  .action(async (packages: string[] = [], options: { latest?: boolean, quiet?: boolean }) => {
-    try {
-      await updateDependencies(packages, options)
-    }
-    catch (error) {
-      errorHandler(error as Error)
-    }
-  })
+
 
 // Version command
 cli

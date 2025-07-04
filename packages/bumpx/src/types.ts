@@ -75,7 +75,6 @@ export interface ParsedArgs {
   quiet?: boolean
   command?: string
   files?: string[]
-  latest?: boolean
   options: VersionBumpOptions
 }
 

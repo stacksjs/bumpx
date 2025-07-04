@@ -14,17 +14,18 @@ Create a configuration file in your project root for project-specific defaults. 
 export default {
   commit: true,
   tag: true,
-  push: false,
-  sign: true,
-  message: 'chore: release v%s',
-  tagMessage: 'Release v%s',
-  files: ['package.json', 'package-lock.json'],
-  preid: 'alpha',
+  push: true,
+  sign: false,
   noGitCheck: false,
   noVerify: false,
-  recursive: false,
   install: false,
-  execute: ''
+  ignoreScripts: false,
+  confirm: true,
+  quiet: false,
+  ci: false,
+  all: false,
+  recursive: false,
+  printCommits: false
 }
 ```
 
@@ -33,17 +34,18 @@ export default {
 module.exports = {
   commit: true,
   tag: true,
-  push: false,
-  sign: true,
-  message: 'chore: release v%s',
-  tagMessage: 'Release v%s',
-  files: ['package.json', 'package-lock.json'],
-  preid: 'alpha',
+  push: true,
+  sign: false,
   noGitCheck: false,
   noVerify: false,
-  recursive: false,
   install: false,
-  execute: ''
+  ignoreScripts: false,
+  confirm: true,
+  quiet: false,
+  ci: false,
+  all: false,
+  recursive: false,
+  printCommits: false
 }
 ```
 
@@ -55,12 +57,10 @@ module.exports = {
   "bumpx": {
     "commit": true,
     "tag": true,
-    "push": false,
-    "sign": true,
-    "message": "chore: release v%s",
-    "tagMessage": "Release v%s",
-    "files": ["package.json", "package-lock.json"],
-    "preid": "alpha"
+    "push": true,
+    "sign": false,
+    "install": false,
+    "recursive": false
   }
 }
 ```
@@ -141,7 +141,7 @@ bumpx looks for configuration files in this order:
 ### Version Control
 
 #### `commit` (boolean)
-- **Default:** `false`
+- **Default:** `true`
 - **Description:** Automatically create a git commit after version bump
 - **CLI:** `--commit` / `--no-commit`
 
@@ -152,7 +152,7 @@ bumpx looks for configuration files in this order:
 ```
 
 #### `tag` (boolean)
-- **Default:** `false`
+- **Default:** `true`
 - **Description:** Create a git tag after version bump
 - **CLI:** `--tag` / `--no-tag`
 
@@ -163,7 +163,7 @@ bumpx looks for configuration files in this order:
 ```
 
 #### `push` (boolean)
-- **Default:** `false`
+- **Default:** `true`
 - **Description:** Push commits and tags to remote repository
 - **CLI:** `--push` / `--no-push`
 
@@ -187,9 +187,9 @@ bumpx looks for configuration files in this order:
 ### Messages
 
 #### `message` (string)
-- **Default:** `"chore: bump version to %s"`
+- **Default:** `undefined` (uses "chore: bump version to %s")
 - **Description:** Git commit message template (use %s for version)
-- **CLI:** `--message`
+- **CLI:** `--commit-message`
 
 ```json
 {
@@ -198,7 +198,7 @@ bumpx looks for configuration files in this order:
 ```
 
 #### `tagMessage` (string)
-- **Default:** `"v%s"`
+- **Default:** `undefined` (uses "v%s")
 - **Description:** Git tag message template (use %s for version)
 - **CLI:** `--tag-message`
 
@@ -240,7 +240,7 @@ bumpx looks for configuration files in this order:
 ### Version Configuration
 
 #### `preid` (string)
-- **Default:** `"alpha"`
+- **Default:** `undefined` (uses "alpha" when needed)
 - **Description:** Prerelease identifier for prerelease versions
 - **CLI:** `--preid`
 
@@ -298,9 +298,20 @@ bumpx looks for configuration files in this order:
 }
 ```
 
-#### `execute` (string)
-- **Default:** `""`
-- **Description:** Command to run after version bump
+#### `ignoreScripts` (boolean)
+- **Default:** `false`
+- **Description:** Ignore npm scripts when installing
+- **CLI:** `--ignore-scripts`
+
+```json
+{
+  "ignoreScripts": true
+}
+```
+
+#### `execute` (string | string[])
+- **Default:** `undefined`
+- **Description:** Command(s) to run after version bump
 - **CLI:** `--execute`
 
 ```json
@@ -309,16 +320,57 @@ bumpx looks for configuration files in this order:
 }
 ```
 
+Or with multiple commands:
+
+```json
+{
+  "execute": ["bun run build", "bun run test"]
+}
+```
+
 ### Output Control
 
 #### `verbose` (boolean)
 - **Default:** `false`
 - **Description:** Enable verbose output
-- **CLI:** `--verbose` / `--quiet`
+- **CLI:** `--verbose`
 
 ```json
 {
   "verbose": true
+}
+```
+
+#### `quiet` (boolean)
+- **Default:** `false`
+- **Description:** Reduce output (opposite of verbose)
+- **CLI:** `--quiet`
+
+```json
+{
+  "quiet": true
+}
+```
+
+#### `confirm` (boolean)
+- **Default:** `true`
+- **Description:** Ask for confirmation before proceeding
+- **CLI:** `--yes` (to skip confirmation)
+
+```json
+{
+  "confirm": false
+}
+```
+
+#### `ci` (boolean)
+- **Default:** `false`
+- **Description:** CI mode (non-interactive, sets confirm: false, quiet: true)
+- **CLI:** `--ci`
+
+```json
+{
+  "ci": true
 }
 ```
 
@@ -330,6 +382,28 @@ bumpx looks for configuration files in this order:
 ```json
 {
   "dryRun": true
+}
+```
+
+#### `printCommits` (boolean)
+- **Default:** `false`
+- **Description:** Show recent commits before version bump
+- **CLI:** `--print-commits`
+
+```json
+{
+  "printCommits": true
+}
+```
+
+#### `all` (boolean)
+- **Default:** `false`
+- **Description:** Include all files (advanced option)
+- **CLI:** `--all`
+
+```json
+{
+  "all": true
 }
 ```
 
@@ -351,7 +425,7 @@ export BUMPX_VERBOSE=true
 
 ### Basic Release Workflow
 
-For a simple release workflow with automatic git operations:
+For a simple release workflow with automatic git operations (these are actually the defaults):
 
 ```json
 {
@@ -386,14 +460,14 @@ For automated releases in CI environments:
 
 ```json
 {
-  "commit": true,
-  "tag": true,
-  "push": true,
+  "ci": true,
   "noVerify": true,
   "execute": "bun run build && bun run test:ci",
   "message": "chore(release): v%s [skip ci]"
 }
 ```
+
+Note: `ci: true` automatically sets `confirm: false` and `quiet: true` for non-interactive operation.
 
 ### Development Workflow
 

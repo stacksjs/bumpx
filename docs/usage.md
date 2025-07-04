@@ -59,7 +59,7 @@ Use interactive mode to choose your version:
 bumpx prompt
 
 # Shows recent commits for context
-bumpx prompt --commits
+bumpx prompt --print-commits
 ```
 
 ## File Operations
@@ -158,10 +158,10 @@ Monitor the bump process in detail:
 bumpx patch --verbose
 
 # Show recent commits for context
-bumpx minor --commits
+bumpx minor --print-commits
 
 # Combination of both
-bumpx major --verbose --commits
+bumpx major --verbose --print-commits
 ```
 
 ### Dry Run
@@ -215,7 +215,7 @@ Comprehensive major version release:
 
 ```bash
 # Interactive selection with full git workflow
-bumpx prompt --commits --commit --tag --sign --push --execute "bun run build"
+bumpx prompt --print-commits --commit --tag --sign --push --execute "bun run build"
 ```
 
 ### Prerelease Testing
@@ -252,7 +252,7 @@ Set default options in your shell profile:
 # Add to ~/.zshrc or ~/.bashrc
 alias bump-patch='bumpx patch --commit --tag'
 alias bump-minor='bumpx minor --commit --tag --push'
-alias bump-major='bumpx major --prompt --commits --commit --tag --push'
+alias bump-major='bumpx major --prompt --print-commits --commit --tag --push'
 ```
 
 ### Project Configuration

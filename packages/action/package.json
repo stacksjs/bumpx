@@ -1,7 +1,7 @@
 {
-  "name": "bumpx-installer",
+  "name": "bumpx-action",
   "version": "0.1.1",
-  "description": "GitHub Action to install packages using bumpx.",
+  "description": "GitHub Action for bumpx version bumping tool.",
   "author": "Stacks.js <hello@stacks.js.org>",
   "license": "MIT",
   "homepage": "https://github.com/stacksjs/bumpx#readme",
@@ -15,15 +15,15 @@
   "keywords": [
     "github-action",
     "bumpx",
-    "pkgx",
-    "package-manager",
+    "version-bump",
+    "semver",
     "ci-cd",
-    "installer"
+    "release"
   ],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "bin": {
-    "bumpx-installer": "dist/index.js"
+    "bumpx-action": "dist/index.js"
   },
   "scripts": {
     "build": "bun run build.ts",

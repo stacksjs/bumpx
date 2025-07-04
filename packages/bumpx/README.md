@@ -180,7 +180,7 @@ Create a `bumpx.config.ts` file in your project root:
 import { defineConfig } from '@stacksjs/bumpx'
 
 export default defineConfig({
-  // Git options
+  // Git options (these are the defaults)
   commit: true,
   tag: true,
   push: true,
@@ -196,7 +196,7 @@ export default defineConfig({
 
   // Advanced options
   recursive: false,
-  printCommits: true
+  printCommits: false
 })
 ```
 
