@@ -4,7 +4,7 @@ import { CAC } from 'cac'
 import { version } from '../package.json'
 import { defaultConfig as bumpConfigDefaults, loadBumpConfig } from '../src/config'
 import { ExitCode, ProgressEvent } from '../src/types'
-import { colors, executeCommand, isReleaseType, isValidVersion, symbols } from '../src/utils'
+import { colors, isReleaseType, isValidVersion, symbols } from '../src/utils'
 import { versionBump } from '../src/version-bump'
 
 const cli = new CAC('bumpx')
@@ -251,8 +251,6 @@ cli
       errorHandler(error as Error)
     }
   })
-
-
 
 // Version command
 cli
