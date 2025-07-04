@@ -1,4 +1,23 @@
 
+## v0.1.0...main
+
+[compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.0...main)
+
+### 🏡 Chore
+
+- Wip ([8a9522b](https://github.com/stacksjs/bumpx/commit/8a9522b))
+- Wip ([014fbfd](https://github.com/stacksjs/bumpx/commit/014fbfd))
+- Wip ([9dbc03b](https://github.com/stacksjs/bumpx/commit/9dbc03b))
+- Wip ([3b381b8](https://github.com/stacksjs/bumpx/commit/3b381b8))
+- Wip ([8be41c5](https://github.com/stacksjs/bumpx/commit/8be41c5))
+- Wip ([7942b43](https://github.com/stacksjs/bumpx/commit/7942b43))
+- Wip ([381efcf](https://github.com/stacksjs/bumpx/commit/381efcf))
+- Wip ([b18b1f0](https://github.com/stacksjs/bumpx/commit/b18b1f0))
+
+### ❤️ Contributors
+
+- Chris ([@chrisbbreuer](https://github.com/chrisbbreuer))
+
 ## ...main
 
 
