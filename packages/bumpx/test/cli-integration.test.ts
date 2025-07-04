@@ -17,7 +17,18 @@ describe('CLI Integration Tests', () => {
     // Get the path to the bumpx binary - use built version if available, fallback to source
     const builtBin = join(__dirname, '..', 'dist', 'bin', 'cli.js')
     const sourceBin = join(__dirname, '..', 'bin', 'cli.ts')
-    bumpxBin = existsSync(builtBin) ? builtBin : sourceBin
+    const compiledBin = join(__dirname, '..', 'bin', 'bumpx')
+
+    // Priority: compiled binary > built JS > source TS
+    if (existsSync(compiledBin)) {
+      bumpxBin = compiledBin
+    }
+    else if (existsSync(builtBin)) {
+      bumpxBin = builtBin
+    }
+    else {
+      bumpxBin = sourceBin
+    }
 
     process.chdir(tempDir)
   })
@@ -31,7 +42,12 @@ describe('CLI Integration Tests', () => {
 
   const runCLI = (args: string[]): Promise<{ code: number, stdout: string, stderr: string }> => {
     return new Promise((resolve) => {
-      const child = spawn('bun', [bumpxBin, ...args], {
+      // If it's the compiled binary, run it directly; otherwise use bun
+      const isCompiledBinary = bumpxBin.endsWith('bumpx') && !bumpxBin.endsWith('.ts') && !bumpxBin.endsWith('.js')
+      const command = isCompiledBinary ? bumpxBin : 'bun'
+      const cmdArgs = isCompiledBinary ? args : [bumpxBin, ...args]
+
+      const child = spawn(command, cmdArgs, {
         cwd: tempDir,
         stdio: 'pipe',
       })
