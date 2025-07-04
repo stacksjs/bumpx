@@ -38,7 +38,6 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
     ignoreScripts: _ignoreScripts,
     execute,
     progress,
-    all,
     recursive,
     printCommits,
     dryRun,
@@ -54,7 +53,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
     }
 
     // Check git status unless disabled
-    if (!all && !noGitCheck) {
+    if (!noGitCheck) {
       checkGitStatus(process.cwd())
     }
 

@@ -14,8 +14,10 @@ describe('CLI Integration Tests', () => {
     tempDir = join(tmpdir(), `bumpx-cli-test-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`)
     mkdirSync(tempDir, { recursive: true })
 
-    // Get the path to the bumpx binary
-    bumpxBin = join(__dirname, '..', 'bin', 'cli.ts')
+    // Get the path to the bumpx binary - use built version if available, fallback to source
+    const builtBin = join(__dirname, '..', 'dist', 'bin', 'cli.js')
+    const sourceBin = join(__dirname, '..', 'bin', 'cli.ts')
+    bumpxBin = existsSync(builtBin) ? builtBin : sourceBin
 
     process.chdir(tempDir)
   })

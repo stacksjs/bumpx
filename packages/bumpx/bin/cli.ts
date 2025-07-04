@@ -281,7 +281,7 @@ cli
 
       const config = await prepareConfig(release, files, options)
 
-      if (!config.all && !config.noGitCheck) {
+      if (!config.noGitCheck) {
         await checkGitStatus()
       }
 
