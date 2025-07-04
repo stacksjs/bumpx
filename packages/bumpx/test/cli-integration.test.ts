@@ -74,15 +74,6 @@ describe('CLI Integration Tests', () => {
         cmdArgs = [bumpxBin, ...args]
       }
 
-      // Debug logging for CI
-      if (process.env.CI) {
-        console.error(`[DEBUG] Binary path: ${bumpxBin}`)
-        console.error(`[DEBUG] Binary type: compiled=${isCompiledBinary}, js=${isBuiltJS}, ts=${isSourceTS}`)
-        console.error(`[DEBUG] Command: ${command}`)
-        console.error(`[DEBUG] Args: ${JSON.stringify(cmdArgs)}`)
-        console.error(`[DEBUG] Binary exists: ${existsSync(bumpxBin)}`)
-      }
-
       const child = spawn(command, cmdArgs, {
         cwd: tempDir,
         stdio: 'pipe',
@@ -100,11 +91,6 @@ describe('CLI Integration Tests', () => {
       })
 
       child.on('close', (code) => {
-        if (process.env.CI && code !== 0) {
-          console.error(`[DEBUG] Exit code: ${code}`)
-          console.error(`[DEBUG] Stdout: ${stdout}`)
-          console.error(`[DEBUG] Stderr: ${stderr}`)
-        }
         resolve({ code: code || 0, stdout, stderr })
       })
     })
