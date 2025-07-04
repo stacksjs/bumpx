@@ -1,4 +1,4 @@
-import type { BumpxConfig, ParsedArgs, VersionBumpProgress } from '../src/types'
+import type { BumpxConfig, VersionBumpProgress } from '../src/types'
 import process from 'node:process'
 import { CAC } from 'cac'
 import { version } from '../package.json'
