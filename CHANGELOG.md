@@ -8,6 +8,23 @@
 - Wip ([8af43f5](https://github.com/stacksjs/bumpx/commit/8af43f5))
 - Wip ([22648be](https://github.com/stacksjs/bumpx/commit/22648be))
 - Wip ([99ae854](https://github.com/stacksjs/bumpx/commit/99ae854))
+- Wip ([fb80cbe](https://github.com/stacksjs/bumpx/commit/fb80cbe))
+- Wip ([82a7fcd](https://github.com/stacksjs/bumpx/commit/82a7fcd))
+
+### ❤️ Contributors
+
+- Adelino Ngomacha <Adelinob335@gmail.com>
+- Chris ([@chrisbbreuer](https://github.com/chrisbbreuer))
+
+## v0.1.1...main
+
+[compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.1...main)
+
+### 🏡 Chore
+
+- Wip ([8af43f5](https://github.com/stacksjs/bumpx/commit/8af43f5))
+- Wip ([22648be](https://github.com/stacksjs/bumpx/commit/22648be))
+- Wip ([99ae854](https://github.com/stacksjs/bumpx/commit/99ae854))
 - Wip ([b594d93](https://github.com/stacksjs/bumpx/commit/b594d93))
 - Bump version to 0.1.2 ([b29e065](https://github.com/stacksjs/bumpx/commit/b29e065))
 - Bump version to 0.1.3 ([396795f](https://github.com/stacksjs/bumpx/commit/396795f))
