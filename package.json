@@ -1,7 +1,7 @@
 {
   "name": "@stacksjs/bumpx",
   "type": "module",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": true,
   "description": "Like Homebrew, but faster.",
   "author": "Chris Breuer <chris@stacksjs.org>",
@@ -14,7 +14,12 @@
   "bugs": {
     "url": "https://github.com/stacksjs/bumpx/issues"
   },
-  "keywords": ["homebrew", "pkgx", "bun", "package"],
+  "keywords": [
+    "homebrew",
+    "pkgx",
+    "bun",
+    "package"
+  ],
   "scripts": {
     "build": "for dir in packages/*; do if [ -f \"$dir/package.json\" ]; then echo \"Building $dir\" && bun run --cwd $dir build; fi; done",
     "lint": "bunx --bun eslint .",

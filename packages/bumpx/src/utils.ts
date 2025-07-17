@@ -385,9 +385,16 @@ export function executeCommand(command: string, cwd?: string): string {
  */
 export function prompt(question: string): Promise<string> {
   return new Promise((resolve) => {
-    process.stdout.write(`${question} `)
-    process.stdin.once('data', (data) => {
-      resolve(data.toString().trim())
+    const readline = require('node:readline')
+    
+    const rl = readline.createInterface({
+      input: process.stdin,
+      output: process.stdout,
+    })
+    
+    rl.question(`${question} `, (answer: string) => {
+      rl.close()
+      resolve(answer.trim())
     })
   })
 }
