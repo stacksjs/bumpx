@@ -1,4 +1,16 @@
 
+## v0.1.2...main
+
+[compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.2...main)
+
+### 🚀 Enhancements
+
+- Add CLI entrypoint ([3e50bc2](https://github.com/stacksjs/bumpx/commit/3e50bc2))
+
+### ❤️ Contributors
+
+- Adelino Ngomacha <Adelinob335@gmail.com>
+
 ## v0.1.1...main
 
 [compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.1...main)
