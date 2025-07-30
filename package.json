@@ -20,6 +20,9 @@
     "bun",
     "package"
   ],
+  "bin": {
+    "bumpx": "./dist/bin/cli.js"
+  },
   "scripts": {
     "build": "for dir in packages/*; do if [ -f \"$dir/package.json\" ]; then echo \"Building $dir\" && bun run --cwd $dir build; fi; done",
     "lint": "bunx --bun eslint .",
