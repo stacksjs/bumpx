@@ -21,6 +21,7 @@
     "package"
   ],
   "bin": {
+    "@stacksjs/bumpx": "./dist/bin/cli.js",
     "bumpx": "./dist/bin/cli.js"
   },
   "scripts": {
