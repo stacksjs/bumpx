@@ -1,13 +1,15 @@
 import type { BumpxConfig, VersionBumpProgress } from '../src/types'
 import process from 'node:process'
-import { CAC } from 'cac'
+import { CLI } from '@stacksjs/clapp'
+// import { CAC } from 'cac'
 import { version } from '../package.json'
 import { defaultConfig as bumpConfigDefaults, loadBumpConfig } from '../src/config'
 import { ExitCode, ProgressEvent } from '../src/types'
 import { colors, isReleaseType, isValidVersion, symbols } from '../src/utils'
 import { versionBump } from '../src/version-bump'
 
-const cli = new CAC('bumpx')
+// const cli = new CAC('bumpx')
+const cli = new CLI('bumpx')
 
 // Define CLI options interface to match CAC's naming conventions
 interface CLIOptions {
