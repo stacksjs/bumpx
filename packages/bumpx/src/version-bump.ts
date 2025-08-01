@@ -514,7 +514,7 @@ async function promptForVersion(currentVersion: string, preid?: string): Promise
   const customV = await text({
     message: 'Enter the new version number:',
     placeholder: `${currentVersion}`,
-    validate: value => value.length > 0 || 'Version is Required',
+    // validate: value => value.length > 0 || 'Version is Required',
   })
 
   const framework = await select({
