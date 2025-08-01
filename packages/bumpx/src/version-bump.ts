@@ -531,6 +531,8 @@ async function promptForVersion(currentVersion: string, preid?: string): Promise
 
   console.log(`selected Option: ${framework}`)
 
+  console.log(`shouldCreate: ${framework === 'custom' ? 'true' : 'false'}`)
+
   const answer = await prompt('Your choice (number or custom version):')
 
   const choice = Number.parseInt(answer, 10)
