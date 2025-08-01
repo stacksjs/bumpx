@@ -2,7 +2,7 @@
 import type { FileInfo, VersionBumpOptions } from './types'
 import { resolve } from 'node:path'
 import process from 'node:process'
-import { select } from '@stacksjs/clapp'
+import { confirm, select } from '@stacksjs/clapp'
 import { ProgressEvent } from './types'
 import {
   checkGitStatus,
@@ -508,7 +508,7 @@ async function promptForVersion(currentVersion: string, preid?: string): Promise
   }))
   suggestionsOptions.push({
     value: 'custom',
-    label: 'custom',
+    label: 'custom ...',
   })
 
   const framework = await select({
@@ -517,12 +517,19 @@ async function promptForVersion(currentVersion: string, preid?: string): Promise
   })
   console.log(`You chose: ${framework}`)
 
+  // Confirm creation
+  const shouldCreate = await confirm({
+    message: `Are you sure that want to update version to ${framework}`,
+  })
+
   console.log(colors.blue('Select version increment:'))
   suggestions.forEach((suggestion, index) => {
     console.log(colors.gray(`  ${index + 1}. ${suggestion.type}: ${colors.bold(suggestion.version)}`))
   })
   console.log(colors.gray(`  ${suggestions.length + 1}. custom: enter custom version`))
   console.log()
+
+  console.log(`selected Option: ${framework}`)
 
   const answer = await prompt('Your choice (number or custom version):')
 
