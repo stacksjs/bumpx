@@ -2,7 +2,6 @@
 import type { FileInfo, VersionBumpOptions } from './types'
 import { resolve } from 'node:path'
 import process from 'node:process'
-import { select, text } from '@stacksjs/clapp'
 import { ProgressEvent } from './types'
 import {
   checkGitStatus,
@@ -485,6 +484,15 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
  * Prompt user for version selection
  */
 async function promptForVersion(currentVersion: string, preid?: string): Promise<string> {
+  // Dynamic import to avoid top-level import issues
+  const clappModule: any = await import('@stacksjs/clapp')
+  const select = clappModule.select || clappModule.default?.select || clappModule.CLI?.select
+  const text = clappModule.text || clappModule.default?.text || clappModule.CLI?.text
+
+  if (!select || !text) {
+    throw new Error('Unable to import interactive prompt functions from @stacksjs/clapp')
+  }
+
   console.log(colors.blue(`Current version: ${colors.bold(currentVersion)}\n`))
 
   const releaseTypes = ['patch', 'minor', 'major', 'prepatch', 'preminor', 'premajor', 'prerelease']
