@@ -2,7 +2,7 @@
 import type { FileInfo, VersionBumpOptions } from './types'
 import { resolve } from 'node:path'
 import process from 'node:process'
-import { confirm, select } from '@stacksjs/clapp'
+import { confirm, select, text } from '@stacksjs/clapp'
 import { ProgressEvent } from './types'
 import {
   checkGitStatus,
@@ -509,6 +509,12 @@ async function promptForVersion(currentVersion: string, preid?: string): Promise
   suggestionsOptions.push({
     value: 'custom',
     label: 'custom ...',
+  })
+
+  const customV = await text({
+    message: 'Enter the new version number:',
+    placeholder: `${currentVersion}`,
+    validate: value => value.length > 0 || 'Version is Required',
   })
 
   const framework = await select({
