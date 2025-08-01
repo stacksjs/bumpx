@@ -502,21 +502,18 @@ async function promptForVersion(currentVersion: string, preid?: string): Promise
     }
   })
 
-  const options = suggestions.map(suggestion => ({
+  const suggestionsOptions = suggestions.map(suggestion => ({
     value: suggestion.type,
     label: `${suggestion.type} ${colors.bold(suggestion.version)}`,
-  })).push({
+  }))
+  suggestionsOptions.push({
     value: 'custom',
     label: 'custom',
   })
 
   const framework = await select({
     message: 'Choose an option:',
-    options: [
-      { value: 'vue', label: 'Vue.js' },
-      { value: 'react', label: 'React' },
-      { value: 'svelte', label: 'Svelte' },
-    ],
+    options: suggestionsOptions,
   })
   console.log(`You chose: ${framework}`)
 
