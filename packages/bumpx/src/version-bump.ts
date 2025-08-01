@@ -503,7 +503,7 @@ async function promptForVersion(currentVersion: string, preid?: string): Promise
   })
 
   const suggestionsOptions = suggestions.map(suggestion => ({
-    value: suggestion.type,
+    value: suggestion.version,
     label: `${suggestion.type} ${colors.bold(suggestion.version)}`,
   }))
   suggestionsOptions.push({
