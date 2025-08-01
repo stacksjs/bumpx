@@ -2,7 +2,7 @@
 import type { FileInfo, VersionBumpOptions } from './types'
 import { resolve } from 'node:path'
 import process from 'node:process'
-import { confirm, select, text } from '@stacksjs/clapp'
+import { select, text } from '@stacksjs/clapp'
 import { ProgressEvent } from './types'
 import {
   checkGitStatus,
@@ -485,8 +485,6 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
  * Prompt user for version selection
  */
 async function promptForVersion(currentVersion: string, preid?: string): Promise<string> {
-  const { prompt } = await import('./utils')
-
   console.log(colors.blue(`Current version: ${colors.bold(currentVersion)}\n`))
 
   const releaseTypes = ['patch', 'minor', 'major', 'prepatch', 'preminor', 'premajor', 'prerelease']
@@ -510,50 +508,18 @@ async function promptForVersion(currentVersion: string, preid?: string): Promise
     value: 'custom',
     label: 'custom ...',
   })
-  const framework = await select({
+  const selectedOption = await select({
     message: 'Choose an option:',
     options: suggestionsOptions,
   })
 
-  const customV = await text({
-    message: 'Enter the new version number:',
-    placeholder: `${currentVersion}`,
-    validate: (value: string) => {
-      if (value.length < 1)
-        return 'Version is Required'
-    },
-  })
-
-  console.log(`You chose: ${framework}`)
-
-  // Confirm creation
-  // const shouldCreate = await confirm({
-  //   message: `Are you sure that want to update version to ${framework}`,
-  // })
-
-  console.log(colors.blue('Select version increment:'))
-  suggestions.forEach((suggestion, index) => {
-    console.log(colors.gray(`  ${index + 1}. ${suggestion.type}: ${colors.bold(suggestion.version)}`))
-  })
-  console.log(colors.gray(`  ${suggestions.length + 1}. custom: enter custom version`))
-  console.log()
-
-  console.log(`selected Option: ${framework}`)
-
-  console.log(`shouldCreate: ${framework === 'custom' ? 'true' : 'false'}`)
-
-  const answer = await prompt('Your choice (number or custom version):')
-
-  const choice = Number.parseInt(answer, 10)
-  if (choice >= 1 && choice <= suggestions.length) {
-    return suggestions[choice - 1].version
+  if (selectedOption === 'custom') {
+    const customV = await text({
+      message: 'Enter the new version number:',
+      placeholder: `${currentVersion}`,
+    })
+    return customV.trim()
   }
-  else if (choice === suggestions.length + 1) {
-    const customVersion = await prompt('Enter custom version:')
-    return customVersion.trim()
-  }
-  else {
-    // Try to parse as custom version
-    return answer.trim()
-  }
+
+  return selectedOption.trim()
 }
