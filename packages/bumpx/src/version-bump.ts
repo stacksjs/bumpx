@@ -2,6 +2,7 @@
 import type { FileInfo, VersionBumpOptions } from './types'
 import { resolve } from 'node:path'
 import process from 'node:process'
+import { select } from '@stacksjs/clapp'
 import { ProgressEvent } from './types'
 import {
   checkGitStatus,
@@ -500,6 +501,21 @@ async function promptForVersion(currentVersion: string, preid?: string): Promise
       // Skip invalid combinations
     }
   })
+
+  const options = suggestions.map(suggestion => ({
+    value: `suggestion.type`,
+    // label: `${suggestion.type} ${colors.bold(suggestion.version)}`,
+    label: `suggestion.version`,
+  })).push({
+    value: 'custom',
+    label: 'custom ...',
+  })
+
+  const framework = await select({
+    message: 'Choose an option:',
+    options,
+  })
+  console.log(`You chose: ${framework}`)
 
   console.log(colors.blue('Select version increment:'))
   suggestions.forEach((suggestion, index) => {
