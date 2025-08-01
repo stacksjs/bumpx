@@ -510,23 +510,26 @@ async function promptForVersion(currentVersion: string, preid?: string): Promise
     value: 'custom',
     label: 'custom ...',
   })
-
-  const customV = await text({
-    message: 'Enter the new version number:',
-    placeholder: `${currentVersion}`,
-    // validate: value => value.length > 0 || 'Version is Required',
-  })
-
   const framework = await select({
     message: 'Choose an option:',
     options: suggestionsOptions,
   })
+
+  const customV = await text({
+    message: 'Enter the new version number:',
+    placeholder: `${currentVersion}`,
+    validate: (value: string) => {
+      if (value.length < 1)
+        return 'Version is Required'
+    },
+  })
+
   console.log(`You chose: ${framework}`)
 
   // Confirm creation
-  const shouldCreate = await confirm({
-    message: `Are you sure that want to update version to ${framework}`,
-  })
+  // const shouldCreate = await confirm({
+  //   message: `Are you sure that want to update version to ${framework}`,
+  // })
 
   console.log(colors.blue('Select version increment:'))
   suggestions.forEach((suggestion, index) => {
