@@ -391,7 +391,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
       }
     }
     else if (commit && updatedFiles.length > 0 && dryRun) {
-      let commitMessage = typeof commit === 'string' ? commit : `chore: bump version to ${lastNewVersion || 'unknown'}`
+      let commitMessage = typeof commit === 'string' ? commit : `chore: release version to ${lastNewVersion || 'unknown'}`
       if (typeof commit === 'string' && lastNewVersion) {
         commitMessage = commitMessage.replace(/\{version\}/g, lastNewVersion).replace(/%s/g, lastNewVersion)
       }
