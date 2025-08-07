@@ -69,6 +69,6 @@
   "type": "module",
   "types": "./dist/index.d.ts",
   "dependencies": {
-    "@stacksjs/clapp": "0.1.4"
+    "@stacksjs/clapp": "^0.1.14"
   }
 }

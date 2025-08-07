@@ -40,7 +40,7 @@
         "bumpx": "./dist/bin/cli.js",
       },
       "dependencies": {
-        "@stacksjs/clapp": "0.1.4",
+        "@stacksjs/clapp": "^0.1.14",
       },
       "devDependencies": {
         "bun-plugin-dtsx": "^0.21.12",
@@ -543,7 +543,7 @@
 
     "@stacksjs/bumpx": ["@stacksjs/bumpx@workspace:packages/bumpx"],
 
-    "@stacksjs/clapp": ["@stacksjs/clapp@0.1.4", "", { "bin": { "clapp": "dist/bin/clapp.js" } }, "sha512-MemWfx5LRohGFXqtInMdazNlL1d9bn4NApy9dR9ZMVCNuLAUwcifMatLnQskP2L/YhyMJ3jtHcxz5DPkqanqgw=="],
+    "@stacksjs/clapp": ["@stacksjs/clapp@0.1.14", "", { "bin": { "clapp": "dist/bin/cli.js", "@stacksjs/clapp": "dist/bin/cli.js" } }, "sha512-OXjogboooesJFU8qY5+kHszu0PRktejvZRqXqdzfre4FJ4M04O1DMt9wCrEH2yaY5MeBaru4FyGgxLkYPV0gRA=="],
 
     "@stacksjs/cli": ["@stacksjs/cli@0.70.23", "", {}, "sha512-pbu6xESAtRIppcEQlhmRq0yZa1lnYAwtQHh7DmfDcUgVjvahQGe7PXoX+m2dhdFDRthFIVuLeHvrAf1JYv/JOQ=="],
 
