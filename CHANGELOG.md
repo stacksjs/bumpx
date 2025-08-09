@@ -1,4 +1,17 @@
 
+## v0.1.4...main
+
+[compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.4...main)
+
+### 🏡 Chore
+
+- Remove test ([7c20ecc](https://github.com/stacksjs/bumpx/commit/7c20ecc))
+- Update bun version on release ([ee74886](https://github.com/stacksjs/bumpx/commit/ee74886))
+
+### ❤️ Contributors
+
+- Adelino Ngomacha <Adelinob335@gmail.com>
+
 ## v0.1.3...main
 
 [compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.3...main)
