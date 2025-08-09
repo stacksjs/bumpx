@@ -1,36 +1,18 @@
 {
   "name": "@stacksjs/bumpx",
+  "type": "module",
   "version": "0.1.3",
+  "description": "Automatically bump your versions.",
   "author": "Chris Breuer <chris@stacksjs.org>",
+  "license": "MIT",
+  "homepage": "https://github.com/stacksjs/bumpx#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/stacksjs/bumpx.git"
   },
-  "module": "./dist/src/index.js",
-  "devDependencies": {
-    "bun-plugin-dtsx": "^0.21.12"
-  },
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/src/index.js"
-    },
-    "./*": {
-      "import": "./dist/*"
-    }
-  },
-  "bin": {
-    "bumpx": "./dist/bin/cli.js"
-  },
   "bugs": {
     "url": "https://github.com/stacksjs/bumpx/issues"
   },
-  "description": "Automatically bump your versions.",
-  "files": [
-    "README.md",
-    "dist"
-  ],
-  "homepage": "https://github.com/stacksjs/bumpx#readme",
   "keywords": [
     "version",
     "bump",
@@ -41,10 +23,24 @@
     "package",
     "cli"
   ],
-  "license": "MIT",
-  "lint-staged": {
-    "*.{js,ts}": "bunx --bun eslint . --fix"
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/src/index.js"
+    },
+    "./*": {
+      "import": "./dist/*"
+    }
   },
+  "module": "./dist/src/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "bumpx": "./dist/bin/cli.js"
+  },
+  "files": [
+    "README.md",
+    "dist"
+  ],
   "scripts": {
     "build": "bun --bun build.ts && bun run compile",
     "compile": "bun build ./bin/cli.ts --compile --minify --outfile bin/bumpx",
@@ -66,9 +62,13 @@
     "prepublishOnly": "bun --bun run build && bun run compile:all && bun run zip",
     "test": "bun test"
   },
-  "type": "module",
-  "types": "./dist/index.d.ts",
   "dependencies": {
-    "@stacksjs/clapp": "^0.1.14"
+    "@stacksjs/clapp": "^0.1.16"
+  },
+  "devDependencies": {
+    "bun-plugin-dtsx": "^0.21.12"
+  },
+  "lint-staged": {
+    "*.{js,ts}": "bunx --bun eslint . --fix"
   }
 }

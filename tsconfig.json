@@ -39,6 +39,7 @@
   "exclude": [
     "**/dist/**",
     "**/node_modules/**",
-    "**/*.d.ts"
+    "**/*.d.ts",
+    "buddy-bot.config.ts"
   ]
 }

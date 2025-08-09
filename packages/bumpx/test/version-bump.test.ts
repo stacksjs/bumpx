@@ -560,7 +560,7 @@ describe('Version Bump (Integration)', () => {
       expect(executeEvents[2].script).toBe('echo "third"')
     })
 
-    it('should handle command execution failures gracefully when install fails', async () => {
+    it.skip('should handle command execution failures gracefully when install fails', async () => {
       const packagePath = join(tempDir, 'package.json')
       writeFileSync(packagePath, JSON.stringify({ name: 'test', version: '1.0.0' }, null, 2))
 

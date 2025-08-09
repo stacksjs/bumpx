@@ -6,8 +6,11 @@
       "devDependencies": {
         "@stacksjs/docs": "^0.70.23",
         "@stacksjs/eslint-config": "^4.14.0-beta.3",
+        "@stacksjs/gitlint": "^0.1.5",
+        "@stacksjs/logsmith": "^0.1.2",
         "@types/bun": "^1.2.15",
         "bumpp": "^10.1.1",
+        "bun-git-hooks": "^0.2.19",
         "bun-plugin-dtsx": "^0.9.5",
         "bunfig": "^0.10.1",
         "changelogen": "^0.6.1",
@@ -40,7 +43,7 @@
         "bumpx": "./dist/bin/cli.js",
       },
       "dependencies": {
-        "@stacksjs/clapp": "^0.1.14",
+        "@stacksjs/clapp": "^0.1.16",
       },
       "devDependencies": {
         "bun-plugin-dtsx": "^0.21.12",
@@ -543,7 +546,7 @@
 
     "@stacksjs/bumpx": ["@stacksjs/bumpx@workspace:packages/bumpx"],
 
-    "@stacksjs/clapp": ["@stacksjs/clapp@0.1.14", "", { "bin": { "clapp": "dist/bin/cli.js", "@stacksjs/clapp": "dist/bin/cli.js" } }, "sha512-OXjogboooesJFU8qY5+kHszu0PRktejvZRqXqdzfre4FJ4M04O1DMt9wCrEH2yaY5MeBaru4FyGgxLkYPV0gRA=="],
+    "@stacksjs/clapp": ["@stacksjs/clapp@0.1.16", "", { "bin": { "clapp": "dist/bin/cli.js", "@stacksjs/clapp": "dist/bin/cli.js" } }, "sha512-BDmYu9Rk/HHIVc4vQjgQO6MzXNMJvPG6ZGiiEAPQT8EAidx3/6S6O7kyY2UdfJSksiCd5SKFK+WYd1uAs88BrQ=="],
 
     "@stacksjs/cli": ["@stacksjs/cli@0.70.23", "", {}, "sha512-pbu6xESAtRIppcEQlhmRq0yZa1lnYAwtQHh7DmfDcUgVjvahQGe7PXoX+m2dhdFDRthFIVuLeHvrAf1JYv/JOQ=="],
 
@@ -557,7 +560,11 @@
 
     "@stacksjs/eslint-plugin": ["@stacksjs/eslint-plugin@0.2.4", "", { "dependencies": { "@stacksjs/eslint-config": "^4.10.2-beta.1", "@typescript-eslint/utils": "^8.27.0", "@unocss/config": "66.0.0", "@unocss/core": "66.0.0", "magic-string": "^0.30.17", "synckit": "^0.10.0", "unocss": "^66.0.0" } }, "sha512-cPCi9eTeXIXI6RTNvK1QmUFNpT3aTnhLsBXpuD8hs8d+2CSn7mNZBZDn61+Se6nzy3Ot/grKc4uua3uD/+m1cQ=="],
 
+    "@stacksjs/gitlint": ["@stacksjs/gitlint@0.1.5", "", { "bin": { "gitlint": "dist/bin/cli.js" } }, "sha512-5nSr6PN8/cRPdIz9Cj65Dh12N9gR7BPtJzR3rnqhAgpm5q0ihjmVTTybFQqigMcYuRpt2qX4HenV7YXuFOYScw=="],
+
     "@stacksjs/logging": ["@stacksjs/logging@0.70.23", "", {}, "sha512-rm/XGj7z+one5mQqwrgxRq/ulusyz2eWVe3QUP3/V9kKkDtEhI9tnmx4PLvVQZbxJgsVzcZeuyJ12OfxfpKFdg=="],
+
+    "@stacksjs/logsmith": ["@stacksjs/logsmith@0.1.2", "", { "dependencies": { "bunfig": "^0.10.1" }, "bin": { "@stacksjs/logsmith": "dist/bin/cli.js", "logsmith": "dist/bin/cli.js" } }, "sha512-ITZV51JUAuIWfuUZRgbHb2HMFEwcVl5XOQduzcWJI9zPjRyiGcdWEYcHVLYO2m8v7W6EDAWb9bkUH6W6zf6kcg=="],
 
     "@stacksjs/path": ["@stacksjs/path@0.70.23", "", {}, "sha512-HqgtHcnhIVGahTR2OdzZxe0iSZwR+yKm/kwCeyjQHkW5hBhPrwcpuuVvIrJDoZ2CusC/vS7hSr5U6L8BEU+0vw=="],
 
@@ -838,6 +845,8 @@
     "bumpp": ["bumpp@10.1.1", "", { "dependencies": { "ansis": "^4.0.0", "args-tokenizer": "^0.3.0", "c12": "^3.0.3", "cac": "^6.7.14", "escalade": "^3.2.0", "jsonc-parser": "^3.3.1", "package-manager-detector": "^1.3.0", "semver": "^7.7.2", "tinyexec": "^1.0.1", "tinyglobby": "^0.2.13", "yaml": "^2.8.0" }, "bin": { "bumpp": "bin/bumpp.mjs" } }, "sha512-69ejE1J5O5qDN3oRu2jRas1nQmi5zEYepjzbYPpi1znuDnp+zZ9Yezsf/nYauWeoMNALQ5toniNGET05Txj2cQ=="],
 
     "bumpx-action": ["bumpx-action@workspace:packages/action"],
+
+    "bun-git-hooks": ["bun-git-hooks@0.2.19", "", { "bin": { "git-hooks": "dist/bin/cli.js", "bun-git-hooks": "dist/bin/cli.js" } }, "sha512-h+YfI+/hCojKadnC9kfk71suZsjdgKShv82+bHp6UiHwH+XDyqavfAUt4NQTGRcIq7dSo2Mfh0QgCiAkCJOl8w=="],
 
     "bun-plugin-dtsx": ["bun-plugin-dtsx@0.9.5", "", { "dependencies": { "@stacksjs/dtsx": "0.9.4" } }, "sha512-PMGr8kna2C7rbN5NFKW+nqj8TyXjs05Yh2QM7Xjp9PN1/cJMyZML3JJAJT0Ne/6eOYCcubmLM91r+Rix/cqn8Q=="],
 
