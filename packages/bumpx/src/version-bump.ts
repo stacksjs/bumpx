@@ -344,7 +344,9 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
     if (install && !dryRun) {
       console.log(colors.blue('Installing dependencies...'))
       try {
-        executeCommand('npm install')
+        // Prefer running install in the directory of the first updated file
+        const installCwd = updatedFiles.length > 0 ? resolve(updatedFiles[0], '..') : process.cwd()
+        executeCommand('npm install', installCwd)
         if (progress && lastNewVersion && lastOldVersion) {
           progress({
             event: ProgressEvent.NpmScript,

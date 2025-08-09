@@ -103,7 +103,8 @@ function errorHandler(error: Error): never {
     || message.includes('Invalid')
     || message.includes('Release type or version must be specified')
     || message.includes('Could not determine')
-    || message.includes('working tree is not clean')) {
+    || message.includes('working tree is not clean')
+    || message.includes('Unknown option')) {
     process.exit(ExitCode.InvalidArgument)
   }
 
@@ -197,7 +198,7 @@ cli
   .command('[release] [...files]', 'Bump version of package.json files')
   .option('--preid <preid>', 'ID for prerelease')
   .option('--all', `Include all files (default: ${bumpConfigDefaults.all})`)
-  .option('--no-git-check', 'Skip git check')
+  .option('--no-git-check, --git-check, --gitCheck', 'Toggle git check')
   .option('-c, --commit', 'Create git commit')
   .option('--commit-message <msg>', 'Custom commit message')
   .option('-t, --tag', 'Create git tag')
@@ -258,13 +259,6 @@ cli
   .command('version', 'Show the version of bumpx')
   .action(() => {
     console.log(version)
-  })
-
-// Add a default command (empty name) that shows help
-cli
-  .command('', 'Show help information')
-  .action(() => {
-    cli.outputHelp()
   })
 
 // Setup global error handlers

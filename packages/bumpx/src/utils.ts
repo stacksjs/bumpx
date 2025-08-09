@@ -370,21 +370,10 @@ export function getRecentCommits(count: number = 10, cwd?: string): string[] {
  */
 export function executeCommand(command: string, cwd?: string): string {
   try {
-    const timeoutMs = Number(process.env.BUMPX_CMD_TIMEOUT_MS || '5000')
     return execSync(command, {
       encoding: 'utf-8',
       stdio: ['pipe', 'pipe', 'pipe'],
       cwd: cwd || process.cwd(),
-      timeout: Number.isFinite(timeoutMs) && timeoutMs > 0 ? timeoutMs : undefined,
-      killSignal: 'SIGKILL',
-      env: {
-        ...process.env,
-        CI: process.env.CI || '1',
-        npm_config_fund: 'false',
-        npm_config_audit: 'false',
-        npm_config_progress: 'false',
-        npm_config_yes: 'true',
-      },
     }).trim()
   }
   catch (error: any) {
