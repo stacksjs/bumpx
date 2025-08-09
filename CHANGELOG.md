@@ -1,4 +1,20 @@
 
+## v0.1.5...main
+
+[compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.5...main)
+
+### 🏡 Chore
+
+- Update bun version on tests ([7908eeb](https://github.com/stacksjs/bumpx/commit/7908eeb))
+- Wip ([11451e0](https://github.com/stacksjs/bumpx/commit/11451e0))
+- Wip ([b12fd05](https://github.com/stacksjs/bumpx/commit/b12fd05))
+- Update tests ([802ac19](https://github.com/stacksjs/bumpx/commit/802ac19))
+- Wip ([bf145ac](https://github.com/stacksjs/bumpx/commit/bf145ac))
+
+### ❤️ Contributors
+
+- Adelino Ngomacha <Adelinob335@gmail.com>
+
 ## v0.1.4...main
 
 [compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.4...main)
