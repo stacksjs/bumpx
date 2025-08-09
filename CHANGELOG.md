@@ -1,4 +1,33 @@
 
+## v0.1.3...main
+
+[compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.3...main)
+
+### 🏡 Chore
+
+- Add buddy-bot ([eda4b91](https://github.com/stacksjs/bumpx/commit/eda4b91))
+- Add cli entry bin ([5304eb2](https://github.com/stacksjs/bumpx/commit/5304eb2))
+- Wip ([9afad7c](https://github.com/stacksjs/bumpx/commit/9afad7c))
+- Wip ([caf46f5](https://github.com/stacksjs/bumpx/commit/caf46f5))
+- Wip ([074fb08](https://github.com/stacksjs/bumpx/commit/074fb08))
+- Wip ([da23677](https://github.com/stacksjs/bumpx/commit/da23677))
+- Wip ([1d359c0](https://github.com/stacksjs/bumpx/commit/1d359c0))
+- Wip ([9f23fd2](https://github.com/stacksjs/bumpx/commit/9f23fd2))
+- Wip ([f0d337c](https://github.com/stacksjs/bumpx/commit/f0d337c))
+- Wip ([36298ec](https://github.com/stacksjs/bumpx/commit/36298ec))
+- Wip ([2a273f5](https://github.com/stacksjs/bumpx/commit/2a273f5))
+- Wip ([0c89d31](https://github.com/stacksjs/bumpx/commit/0c89d31))
+- Update to clapp ([f1505fb](https://github.com/stacksjs/bumpx/commit/f1505fb))
+- Improve code ([08fa818](https://github.com/stacksjs/bumpx/commit/08fa818))
+- Update commit message ([f81a4df](https://github.com/stacksjs/bumpx/commit/f81a4df))
+- Update commit message ([3f0d435](https://github.com/stacksjs/bumpx/commit/3f0d435))
+- Update clapp version ([7a62425](https://github.com/stacksjs/bumpx/commit/7a62425))
+- Wip ([00c02b6](https://github.com/stacksjs/bumpx/commit/00c02b6))
+
+### ❤️ Contributors
+
+- Adelino Ngomacha <Adelinob335@gmail.com>
+
 ## v0.1.2...main
 
 [compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.2...main)
