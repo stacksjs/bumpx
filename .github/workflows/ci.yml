@@ -86,7 +86,7 @@ jobs:
         run: bun run build
 
       - name: Unit Test
-        run: bun test
+        run: bun test --verbose
 
   publish-commit:
     runs-on: ubuntu-latest
