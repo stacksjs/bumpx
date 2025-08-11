@@ -178,9 +178,6 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
       if (dryRun) {
         console.log(colors.blue('\n[DRY RUN] Would bump versions independently for each file:\n'))
       }
-      else {
-        console.log(colors.blue('\nBumping versions independently for each file:\n'))
-      }
 
       for (const filePath of filesToUpdate) {
         try {
@@ -460,15 +457,15 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
       count === 1 ? `${count} ${singular}` : `${count} ${plural}`
 
     if (dryRun) {
-      console.log(colors.green(`\n${symbols.success} [DRY RUN] Would bump version${lastNewVersion ? ` to ${lastNewVersion}` : 's'}`))
+      console.log(colors.gray(`\n${symbols.success} [DRY RUN] Would bump version${lastNewVersion ? ` to ${lastNewVersion}` : 's'}`))
       if (updatedFiles.length > 0) {
-        console.log(colors.green(`${symbols.success} Would update ${pluralize(updatedFiles.length, 'file')}`))
+        console.log(colors.gray(`${symbols.success} Would update ${pluralize(updatedFiles.length, 'file')}`))
       }
     }
     else {
-      console.log(colors.green(`\n${symbols.success} Successfully bumped version${lastNewVersion ? ` to ${lastNewVersion}` : 's'}`))
+      console.log(colors.gray(`\n${symbols.success} Successfully bumped version${lastNewVersion ? ` to ${lastNewVersion}` : 's'}`))
       if (updatedFiles.length > 0) {
-        console.log(colors.green(`${symbols.success} Updated ${pluralize(updatedFiles.length, 'file')}`))
+        console.log(colors.gray(`${symbols.success} Updated ${pluralize(updatedFiles.length, 'file')}`))
       }
     }
 

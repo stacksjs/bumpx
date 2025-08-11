@@ -43,7 +43,7 @@ interface CLIOptions {
 function progress({ event, script, updatedFiles, skippedFiles, newVersion }: VersionBumpProgress): void {
   switch (event) {
     case ProgressEvent.FileUpdated:
-      console.log(colors.green(`${symbols.success} Updated ${updatedFiles[updatedFiles.length - 1]} to ${newVersion}`))
+      console.log(colors.gray(`${symbols.success} Updated ${updatedFiles[updatedFiles.length - 1]} to ${newVersion}`))
       break
 
     case ProgressEvent.FileSkipped:
@@ -51,15 +51,15 @@ function progress({ event, script, updatedFiles, skippedFiles, newVersion }: Ver
       break
 
     case ProgressEvent.GitCommit:
-      console.log(colors.green(`${symbols.success} Git commit`))
+      console.log(colors.gray(`${symbols.success} Git commit`))
       break
 
     case ProgressEvent.GitTag:
-      console.log(colors.green(`${symbols.success} Git tag`))
+      console.log(colors.gray(`${symbols.success} Git tag`))
       break
 
     case ProgressEvent.GitPush:
-      console.log(colors.green(`${symbols.success} Git push`))
+      console.log(colors.gray(`${symbols.success} Git push`))
       break
 
     case ProgressEvent.NpmScript:
