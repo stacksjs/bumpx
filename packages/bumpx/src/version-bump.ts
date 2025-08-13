@@ -370,7 +370,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
       executeCommand(`git ${gitAddArgs.join(' ')}`)
 
       // Create commit
-      let commitMessage = typeof commit === 'string' ? commit : `chore: release version to ${lastNewVersion || 'unknown'}`
+      let commitMessage = typeof commit === 'string' ? commit : `chore: release ${lastNewVersion || 'unknown'}`
 
       // Replace template variables in commit message
       if (typeof commit === 'string' && lastNewVersion) {
@@ -390,7 +390,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
       }
     }
     else if (commit && updatedFiles.length > 0 && dryRun) {
-      let commitMessage = typeof commit === 'string' ? commit : `chore: release version to ${lastNewVersion || 'unknown'}`
+      let commitMessage = typeof commit === 'string' ? commit : `chore: release ${lastNewVersion || 'unknown'}`
       if (typeof commit === 'string' && lastNewVersion) {
         commitMessage = commitMessage.replace(/\{version\}/g, lastNewVersion).replace(/%s/g, lastNewVersion)
       }
