@@ -1,4 +1,17 @@
 
+## v0.1.6...main
+
+[compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.6...main)
+
+### 🏡 Chore
+
+- Wip ([9e782aa](https://github.com/stacksjs/bumpx/commit/9e782aa))
+- Update release commit message ([3f051c0](https://github.com/stacksjs/bumpx/commit/3f051c0))
+
+### ❤️ Contributors
+
+- Adelino Ngomacha <Adelinob335@gmail.com>
+
 ## v0.1.5...main
 
 [compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.5...main)
