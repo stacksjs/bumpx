@@ -1,4 +1,18 @@
 
+## release-1.0.1...main
+
+[compare changes](https://github.com/stacksjs/bumpx/compare/release-1.0.1...main)
+
+### 🏡 Chore
+
+- Wip ([51b62ff](https://github.com/stacksjs/bumpx/commit/51b62ff))
+- Add recursive version bumpin support ([94b2ae9](https://github.com/stacksjs/bumpx/commit/94b2ae9))
+- Update docs ([bd55677](https://github.com/stacksjs/bumpx/commit/bd55677))
+
+### ❤️ Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
 ## v0.1.6...main
 
 [compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.6...main)
