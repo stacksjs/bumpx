@@ -1,3 +1,3 @@
 ## Stargazers
 
-[![Stargazers](https://starchart.cc/stacksjs/ts-starter.svg?variant=adaptive)](https://starchart.cc/stacksjs/ts-starter)
+[![Stargazers](https://starchart.cc/stacksjs/bumpx.svg?variant=adaptive)](https://starchart.cc/stacksjs/bumpx)

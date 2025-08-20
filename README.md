@@ -85,12 +85,20 @@ bumpx patch --no-verify
 
 ### Monorepo Support
 
+bumpx now has **first-class workspace support** with automatic workspace detection:
+
 ```bash
-# Bump all package.json files recursively
+# Bump all workspace packages (recursive is now default)
+bumpx patch
+
+# Explicitly use recursive mode (detects workspaces automatically)
 bumpx patch --recursive
 
 # Bump specific files
 bumpx patch package.json packages/*/package.json
+
+# Synchronized versioning across all workspace packages
+bumpx patch --current-version 1.0.0
 ```
 
 ### Advanced Options
@@ -195,7 +203,7 @@ export default defineConfig({
   quiet: false,
 
   // Advanced options
-  recursive: false,
+  recursive: true,
   printCommits: false
 })
 ```
@@ -229,7 +237,7 @@ You can also use JSON configuration in `package.json`:
 | `--sign` | | Sign commits and tags | `false` |
 | `--install` | | Run npm install | `false` |
 | `--execute` | `-x` | Execute command | |
-| `--recursive` | `-r` | Bump recursively | `false` |
+| `--recursive` | `-r` | Bump recursively | `true` |
 | `--yes` | `-y` | Skip confirmation | `false` |
 | `--quiet` | `-q` | Quiet mode | `false` |
 | `--ci` | | CI mode (sets --yes --quiet) | `false` |

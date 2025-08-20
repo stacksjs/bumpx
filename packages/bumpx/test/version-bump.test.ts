@@ -1225,8 +1225,8 @@ describe('Version Bump (Integration)', () => {
       writeFileSync(packagePath, JSON.stringify({ name: 'test', version: '1.0.0' }, null, 2))
 
       // Make file readonly to force an error
-      const fs = require('node:fs')
-      fs.chmodSync(packagePath, 0o444)
+      const { chmodSync } = await import('node:fs')
+      chmodSync(packagePath, 0o444)
 
       try {
         await versionBump({
@@ -1247,7 +1247,8 @@ describe('Version Bump (Integration)', () => {
       }
       finally {
         // Restore permissions
-        fs.chmodSync(packagePath, 0o644)
+        const { chmodSync } = await import('node:fs')
+        chmodSync(packagePath, 0o644)
       }
     })
   })
@@ -1305,8 +1306,8 @@ describe('Version Bump (Integration)', () => {
       writeFileSync(packagePath2, JSON.stringify({ name: 'test2', version: '1.0.0' }, null, 2))
 
       // Make second file readonly to force it to be skipped due to error
-      const fs = require('node:fs')
-      fs.chmodSync(packagePath2, 0o444)
+      const { chmodSync } = await import('node:fs')
+      chmodSync(packagePath2, 0o444)
 
       await versionBump({
         release: 'patch',
@@ -1324,7 +1325,8 @@ describe('Version Bump (Integration)', () => {
       expect(updatedEvents.length).toBeGreaterThan(0)
 
       // Restore permissions
-      fs.chmodSync(packagePath2, 0o644)
+      const { chmodSync: restoreChmod } = await import('node:fs')
+      restoreChmod(packagePath2, 0o644)
     })
   })
 

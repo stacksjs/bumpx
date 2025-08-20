@@ -79,16 +79,19 @@ bumpx minor --files packages/*/package.json
 bumpx patch --files VERSION.txt,README.md
 ```
 
-### Recursive Updates
+### Workspace & Recursive Updates
 
-Update all package.json files in subdirectories:
+bumpx now includes automatic workspace detection and recursive updates by default:
 
 ```bash
-# Update all package.json files recursively
-bumpx patch --recursive
+# Update all workspace packages (automatic detection)
+bumpx patch
+
+# Explicitly disable recursive mode
+bumpx patch --no-recursive
 
 # Show what would be updated without making changes
-bumpx patch --recursive --dry-run
+bumpx patch --dry-run
 ```
 
 ### Current Version Override
@@ -99,8 +102,8 @@ When working with multiple packages that should share the same version:
 # Set a common starting version for all files
 bumpx patch --current-version 1.2.3
 
-# Useful for monorepos with synchronized versions
-bumpx minor --current-version 2.0.0 --recursive
+# Useful for monorepos with synchronized versions (recursive is default)
+bumpx minor --current-version 2.0.0
 ```
 
 ## Git Integration
@@ -232,14 +235,14 @@ bumpx prerelease --preid beta --commit --tag --push
 
 ### Monorepo Management
 
-Update all packages in a monorepo:
+Update all packages in a monorepo with automatic workspace detection:
 
 ```bash
-# Synchronized version across all packages
-bumpx patch --recursive --current-version 1.0.0 --commit --tag
+# Synchronized version across all packages (recursive is default)
+bumpx patch --current-version 1.0.0 --commit --tag
 
-# Independent versioning
-bumpx patch --recursive --commit
+# Independent versioning (each package bumps from its current version)
+bumpx patch --commit
 ```
 
 ## Configuration
@@ -260,6 +263,7 @@ alias bump-major='bumpx major --prompt --print-commits --commit --tag --push'
 Create a configuration file in your project. bumpx supports multiple formats:
 
 **TypeScript configuration:**
+
 ```typescript
 // bumpx.config.ts
 export default {
@@ -273,6 +277,7 @@ export default {
 ```
 
 **JavaScript configuration:**
+
 ```javascript
 // bumpx.config.js
 module.exports = {
@@ -286,6 +291,7 @@ module.exports = {
 ```
 
 **Package.json configuration:**
+
 ```json
 {
   "name": "my-project",
@@ -305,6 +311,7 @@ module.exports = {
 ### Common Issues
 
 **Dirty working directory:**
+
 ```bash
 # Allow dirty working directory
 bumpx patch --no-git-check
@@ -315,6 +322,7 @@ bumpx patch --commit
 ```
 
 **No package.json found:**
+
 ```bash
 # Specify files explicitly
 bumpx patch --files ./package.json
@@ -324,6 +332,7 @@ ls -la package.json
 ```
 
 **Git authentication issues:**
+
 ```bash
 # Ensure git credentials are set up
 git config --global user.name "Your Name"

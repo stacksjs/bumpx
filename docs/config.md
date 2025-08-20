@@ -9,6 +9,7 @@ bumpx offers flexible configuration options to customize its behavior for your p
 Create a configuration file in your project root for project-specific defaults. bumpx supports multiple configuration file formats:
 
 **TypeScript/JavaScript configuration files:**
+
 ```typescript
 // bumpx.config.ts
 export default {
@@ -24,7 +25,7 @@ export default {
   quiet: false,
   ci: false,
   all: false,
-  recursive: false,
+  recursive: true,
   printCommits: false
 }
 ```
@@ -44,12 +45,13 @@ module.exports = {
   quiet: false,
   ci: false,
   all: false,
-  recursive: false,
+  recursive: true,
   printCommits: false
 }
 ```
 
 **Package.json configuration:**
+
 ```json
 {
   "name": "my-project",
@@ -66,6 +68,7 @@ module.exports = {
 ```
 
 **Alternative config directory locations:**
+
 ```bash
 # In .config directory
 .config/bumpx.ts
@@ -141,6 +144,7 @@ bumpx looks for configuration files in this order:
 ### Version Control
 
 #### `commit` (boolean)
+
 - **Default:** `true`
 - **Description:** Automatically create a git commit after version bump
 - **CLI:** `--commit` / `--no-commit`
@@ -152,6 +156,7 @@ bumpx looks for configuration files in this order:
 ```
 
 #### `tag` (boolean)
+
 - **Default:** `true`
 - **Description:** Create a git tag after version bump
 - **CLI:** `--tag` / `--no-tag`
@@ -163,6 +168,7 @@ bumpx looks for configuration files in this order:
 ```
 
 #### `push` (boolean)
+
 - **Default:** `true`
 - **Description:** Push commits and tags to remote repository
 - **CLI:** `--push` / `--no-push`
@@ -174,6 +180,7 @@ bumpx looks for configuration files in this order:
 ```
 
 #### `sign` (boolean)
+
 - **Default:** `false`
 - **Description:** Sign git commits and tags with GPG
 - **CLI:** `--sign` / `--no-sign`
@@ -187,6 +194,7 @@ bumpx looks for configuration files in this order:
 ### Messages
 
 #### `message` (string)
+
 - **Default:** `undefined` (uses "chore: bump version to %s")
 - **Description:** Git commit message template (use %s for version)
 - **CLI:** `--commit-message`
@@ -198,6 +206,7 @@ bumpx looks for configuration files in this order:
 ```
 
 #### `tagMessage` (string)
+
 - **Default:** `undefined` (uses "v%s")
 - **Description:** Git tag message template (use %s for version)
 - **CLI:** `--tag-message`
@@ -211,6 +220,7 @@ bumpx looks for configuration files in this order:
 ### File Operations
 
 #### `files` (string[])
+
 - **Default:** `["package.json"]`
 - **Description:** List of files to update with new version
 - **CLI:** `--files`
@@ -227,8 +237,9 @@ bumpx looks for configuration files in this order:
 ```
 
 #### `recursive` (boolean)
-- **Default:** `false`
-- **Description:** Search for package.json files in subdirectories
+
+- **Default:** `true`
+- **Description:** Search for package.json files in subdirectories with workspace detection
 - **CLI:** `--recursive` / `--no-recursive`
 
 ```json
@@ -240,6 +251,7 @@ bumpx looks for configuration files in this order:
 ### Version Configuration
 
 #### `preid` (string)
+
 - **Default:** `undefined` (uses "alpha" when needed)
 - **Description:** Prerelease identifier for prerelease versions
 - **CLI:** `--preid`
@@ -251,6 +263,7 @@ bumpx looks for configuration files in this order:
 ```
 
 #### `currentVersion` (string)
+
 - **Default:** Auto-detected from files
 - **Description:** Override the current version for all files
 - **CLI:** `--current-version`
@@ -264,6 +277,7 @@ bumpx looks for configuration files in this order:
 ### Git Behavior
 
 #### `noGitCheck` (boolean)
+
 - **Default:** `false`
 - **Description:** Skip git status check (allows dirty working directory)
 - **CLI:** `--no-git-check`
@@ -275,6 +289,7 @@ bumpx looks for configuration files in this order:
 ```
 
 #### `noVerify` (boolean)
+
 - **Default:** `false`
 - **Description:** Skip git hooks when committing
 - **CLI:** `--no-verify`
@@ -288,6 +303,7 @@ bumpx looks for configuration files in this order:
 ### Post-Bump Actions
 
 #### `install` (boolean)
+
 - **Default:** `false`
 - **Description:** Run `npm install` after version bump
 - **CLI:** `--install` / `--no-install`
@@ -299,6 +315,7 @@ bumpx looks for configuration files in this order:
 ```
 
 #### `ignoreScripts` (boolean)
+
 - **Default:** `false`
 - **Description:** Ignore npm scripts when installing
 - **CLI:** `--ignore-scripts`
@@ -310,6 +327,7 @@ bumpx looks for configuration files in this order:
 ```
 
 #### `execute` (string | string[])
+
 - **Default:** `undefined`
 - **Description:** Command(s) to run after version bump
 - **CLI:** `--execute`
@@ -331,6 +349,7 @@ Or with multiple commands:
 ### Output Control
 
 #### `verbose` (boolean)
+
 - **Default:** `false`
 - **Description:** Enable verbose output
 - **CLI:** `--verbose`
@@ -342,6 +361,7 @@ Or with multiple commands:
 ```
 
 #### `quiet` (boolean)
+
 - **Default:** `false`
 - **Description:** Reduce output (opposite of verbose)
 - **CLI:** `--quiet`
@@ -353,6 +373,7 @@ Or with multiple commands:
 ```
 
 #### `confirm` (boolean)
+
 - **Default:** `true`
 - **Description:** Ask for confirmation before proceeding
 - **CLI:** `--yes` (to skip confirmation)
@@ -364,6 +385,7 @@ Or with multiple commands:
 ```
 
 #### `ci` (boolean)
+
 - **Default:** `false`
 - **Description:** CI mode (non-interactive, sets confirm: false, quiet: true)
 - **CLI:** `--ci`
@@ -375,6 +397,7 @@ Or with multiple commands:
 ```
 
 #### `dryRun` (boolean)
+
 - **Default:** `false`
 - **Description:** Show what would be done without making changes
 - **CLI:** `--dry-run`
@@ -386,6 +409,7 @@ Or with multiple commands:
 ```
 
 #### `printCommits` (boolean)
+
 - **Default:** `false`
 - **Description:** Show recent commits before version bump
 - **CLI:** `--print-commits`
@@ -397,6 +421,7 @@ Or with multiple commands:
 ```
 
 #### `all` (boolean)
+
 - **Default:** `false`
 - **Description:** Include all files (advanced option)
 - **CLI:** `--all`
@@ -613,6 +638,7 @@ bumpx patch --dry-run --verbose
 ### Common Configuration Issues
 
 **Config not loading:**
+
 ```bash
 # Check config file syntax (for TypeScript/JavaScript files)
 npx tsc --noEmit bumpx.config.ts
@@ -622,6 +648,7 @@ bumpx patch --config ./my-config.ts
 ```
 
 **Git operations failing:**
+
 ```bash
 # Check git configuration
 git config --list | grep user
@@ -632,6 +659,7 @@ git commit --allow-empty -m "test commit"
 ```
 
 **File patterns not working:**
+
 ```bash
 # Test file patterns
 ls -la package.json packages/*/package.json

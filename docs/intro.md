@@ -61,9 +61,9 @@ bumpx minor --commit --tag --push
 bumpx prompt --commits
 # Shows recent commits and version options
 
-# Monorepo version management
-bumpx patch --recursive
-# Updates all packages in your monorepo
+# Monorepo version management (automatic workspace detection)
+bumpx patch
+# Updates all workspace packages in your monorepo
 
 # Custom files and post-bump actions
 bumpx major --files "package.json,VERSION.txt,src/version.ts" \
@@ -121,21 +121,25 @@ bumpx offers significant advantages over manual version management and other too
 ## Real-World Scenarios
 
 ### Single Package Release
+
 ```bash
 bumpx patch --commit --tag --push
 ```
 
 ### Feature Release with Testing
+
 ```bash
 bumpx minor --commit --tag --execute "bun run build && bun test" --push
 ```
 
 ### Monorepo Synchronized Release
+
 ```bash
-bumpx major --recursive --current-version 1.0.0 --commit --tag
+bumpx major --current-version 1.0.0 --commit --tag
 ```
 
 ### CI/CD Automation
+
 ```bash
 bumpx patch --commit --tag --push --no-verify --execute "bun run deploy"
 ```

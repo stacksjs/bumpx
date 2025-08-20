@@ -15,17 +15,27 @@ bumpx handles these scenarios with sophisticated detection and management capabi
 
 ## Package Discovery
 
-### Automatic Detection
+### Automatic Workspace Detection
 
-bumpx automatically finds all package.json files in your monorepo:
+bumpx now includes **first-class workspace support** with automatic detection from your `workspaces` field in package.json:
 
 ```bash
-# Find and update all packages recursively
+# Automatic workspace detection (recursive is now default)
+bumpx patch
+
+# Explicit recursive mode with workspace detection
 bumpx patch --recursive
 
 # See what packages would be updated
-bumpx patch --recursive --dry-run --verbose
+bumpx patch --dry-run --verbose
 ```
+
+bumpx intelligently detects workspace configurations from:
+
+- **NPM workspaces**: `"workspaces": ["packages/*"]`
+- **Yarn workspaces**: `"workspaces": { "packages": ["packages/*"] }`
+- **PNPM workspaces**: Automatically works with `pnpm-workspace.yaml`
+- **Fallback**: Traditional recursive directory scanning
 
 ### Manual Package Selection
 
@@ -68,6 +78,7 @@ bumpx minor --recursive --verbose
 ```
 
 **Example Output:**
+
 ```
 📦 packages/core/package.json: 1.2.3 → 1.3.0
 📦 packages/cli/package.json: 2.1.0 → 2.2.0
@@ -87,6 +98,7 @@ bumpx 2.0.0 --recursive
 ```
 
 **Example Output:**
+
 ```
 📦 packages/core/package.json: 1.2.3 → 2.0.0
 📦 packages/cli/package.json: 2.1.0 → 2.0.0
@@ -532,6 +544,7 @@ Or in each package's package.json:
 ### Common Issues
 
 **Version conflicts:**
+
 ```bash
 # Check for version mismatches
 find packages -name "package.json" -exec jq '.version' {} \; | sort | uniq -c
@@ -541,6 +554,7 @@ bumpx patch --recursive --current-version 1.0.0
 ```
 
 **Missing packages:**
+
 ```bash
 # Verify package discovery
 bumpx patch --recursive --dry-run --verbose
@@ -550,6 +564,7 @@ ls packages/*/package.json
 ```
 
 **Build failures:**
+
 ```bash
 # Test build before release
 npm run build --workspaces || exit 1
@@ -557,6 +572,7 @@ bumpx patch --recursive --commit
 ```
 
 **Dependency issues:**
+
 ```bash
 # Update all dependencies after version bump
 npm update

@@ -12,9 +12,8 @@ Complete reference documentation for bumpx commands, options, and programmatic A
 bumpx <release-type> [options]
 ```
 
-
-
 **Release Types:**
+
 - `patch` - Bug fixes (1.0.0 → 1.0.1)
 - `minor` - New features (1.0.0 → 1.1.0)
 - `major` - Breaking changes (1.0.0 → 2.0.0)
@@ -26,6 +25,7 @@ bumpx <release-type> [options]
 - `prompt` - Interactive version selection
 
 **Utility Commands:**
+
 - `version` - Show bumpx version
 
 #### Global Options
@@ -44,7 +44,7 @@ bumpx <release-type> [options]
 | `--sign` | `boolean` | `false` | Sign commits and tags |
 | `--no-git-check` | `boolean` | `false` | Skip git status check |
 | `--no-verify` | `boolean` | `false` | Skip git hooks |
-| `--recursive` | `boolean` | `false` | Find files recursively |
+| `--recursive` | `boolean` | `true` | Find files recursively with workspace detection |
 | `--all` | `boolean` | `false` | Include all files |
 | `--install` | `boolean` | `false` | Run npm install after bump |
 | `--ignore-scripts` | `boolean` | `false` | Ignore npm scripts |
@@ -124,8 +124,6 @@ bumpx minor --commit --execute "npm run build && npm test"
 bumpx major --commit --tag \
   --execute "npm run build && npm run test && npm publish"
 ```
-
-
 
 ## Programmatic API
 

@@ -10,34 +10,34 @@ Choose your preferred package manager:
 
 ```sh [npm]
 # Install globally
-npm install -g bumpx
+npm install -g @stacksjs/bumpx
 
 # Or install as a development dependency
-npm install --save-dev bumpx
+npm install --save-dev @stacksjs/bumpx
 ```
 
 ```sh [bun]
 # Install globally
-bun add -g bumpx
+bun add -g @stacksjs/bumpx
 
 # Or install as a development dependency
-bun add -d bumpx
+bun add -d @stacksjs/bumpx
 ```
 
 ```sh [pnpm]
 # Install globally
-pnpm add -g bumpx
+pnpm add -g @stacksjs/bumpx
 
 # Or install as a development dependency
-pnpm add -D bumpx
+pnpm add -D @stacksjs/bumpx
 ```
 
 ```sh [yarn]
 # Install globally
-yarn global add bumpx
+yarn global add @stacksjs/bumpx
 
 # Or install as a development dependency
-yarn add -D bumpx
+yarn add -D @stacksjs/bumpx
 ```
 
 :::
@@ -113,6 +113,7 @@ npm install -g bumpx
 ```
 
 Benefits:
+
 - Available in any project directory
 - Single installation for all projects
 - Easy to update
@@ -129,12 +130,12 @@ Then use with npx or add to package.json scripts:
 
 ```sh
 # Using npx
-npx bumpx patch
+npx @stacksjs/bumpx patch
 
 # Or add to package.json scripts
 {
   "scripts": {
-    "release": "bumpx patch --commit --tag --push"
+    "release": "@stacksjs/bumpx patch --commit --tag --push"
   }
 }
 ```
@@ -153,10 +154,10 @@ Keep bumpx up to date:
 
 ```sh
 # Update global installation
-npm update -g bumpx
+npm update -g @stacksjs/bumpx
 
 # Update local installation
-npm update bumpx
+npm update @stacksjs/bumpx
 ```
 
 ## Uninstalling
@@ -165,10 +166,10 @@ Remove bumpx when no longer needed:
 
 ```sh
 # Remove global installation
-npm uninstall -g bumpx
+npm uninstall -g @stacksjs/bumpx
 
 # Remove local installation
-npm uninstall bumpx
+npm uninstall @stacksjs/bumpx
 ```
 
 ## Troubleshooting
@@ -176,15 +177,17 @@ npm uninstall bumpx
 ### Common Issues
 
 **Command not found:**
+
 ```sh
 # Check if globally installed packages are in PATH
 echo $PATH | grep npm
 
 # Reinstall globally
-npm install -g bumpx
+npm install -g @stacksjs/bumpx
 ```
 
 **Permission errors (macOS/Linux):**
+
 ```sh
 # Use a Node version manager (recommended)
 # Or configure npm to use a different directory
@@ -193,6 +196,7 @@ export PATH=~/.local/bin:$PATH
 ```
 
 **Git not found:**
+
 ```sh
 # Install Git
 # macOS: xcode-select --install
