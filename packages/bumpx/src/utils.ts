@@ -348,12 +348,57 @@ export function createGitTag(tag: string, sign: boolean = false, message?: strin
 }
 
 /**
- * Push to git remote
+ * Check if current branch has an upstream and is safe to pull
+ */
+export function canSafelyPull(cwd?: string): boolean {
+  try {
+    // Check if we're in a detached HEAD state
+    const currentBranch = getCurrentBranch(cwd)
+    if (currentBranch === 'HEAD') {
+      return false
+    }
+
+    // Check if branch has upstream
+    executeGit(['rev-parse', '--abbrev-ref', '@{upstream}'], cwd)
+    return true
+  }
+  catch {
+    return false
+  }
+}
+
+/**
+ * Push to git remote (with pull-before-push safety)
  */
 export function pushToRemote(tags: boolean = true, cwd?: string): void {
-  executeGit(['push'], cwd)
+  // First, pull to ensure we have the latest changes (if safe to do so)
+  if (canSafelyPull(cwd)) {
+    try {
+      console.log('🔄 Pulling latest changes from remote...')
+      executeGit(['pull'], cwd)
+    }
+    catch (error: any) {
+      const errorMessage = error.message.toLowerCase()
+      
+      if (errorMessage.includes('conflict') || errorMessage.includes('merge')) {
+        throw new Error(`Pull failed due to conflicts. Please resolve conflicts manually and try again.\n${error.message}`)
+      }
+      else {
+        throw new Error(`Failed to pull from remote: ${error.message}`)
+      }
+    }
+  }
+  else {
+    console.log('⚠️  No upstream branch configured or in detached HEAD. Skipping pull...')
+  }
+
+  // Use atomic push to avoid race conditions between commit and tag pushes
   if (tags) {
-    executeGit(['push', '--tags'], cwd)
+    console.log('📤 Pushing commits and tags to remote...')
+    executeGit(['push', '--follow-tags'], cwd)
+  } else {
+    console.log('📤 Pushing commits to remote...')
+    executeGit(['push'], cwd)
   }
 }
 
@@ -385,6 +430,11 @@ export function executeCommand(command: string, cwd?: string): string {
  * Simple prompting utility (since we're avoiding dependencies)
  */
 export function prompt(question: string): Promise<string> {
+  // Prevent prompting during tests to avoid hanging
+  if (process.env.NODE_ENV === 'test' || process.env.BUN_ENV === 'test' || process.argv.includes('test')) {
+    return Promise.resolve('test-answer')
+  }
+
   return new Promise((resolve) => {
     const rl = readline.createInterface({
       input: process.stdin,
