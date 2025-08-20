@@ -9,6 +9,7 @@ import {
   createGitCommit,
   createGitTag,
   executeCommand,
+  findAllPackageFiles,
   findPackageJsonFiles,
   getRecentCommits,
   incrementVersion,
@@ -64,7 +65,8 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
       filesToUpdate = files.map(file => resolve(file))
     }
     else if (recursive) {
-      filesToUpdate = await findPackageJsonFiles(process.cwd(), true)
+      // Use workspace-aware discovery when recursive is enabled
+      filesToUpdate = await findAllPackageFiles(process.cwd(), true)
     }
     else {
       filesToUpdate = await findPackageJsonFiles(process.cwd(), false)

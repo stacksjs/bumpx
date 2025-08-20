@@ -39,7 +39,7 @@ describe('Config', () => {
       expect(bumpConfigDefaults.quiet).toBe(false)
       expect(bumpConfigDefaults.ci).toBe(false)
       expect(bumpConfigDefaults.all).toBe(false)
-      expect(bumpConfigDefaults.recursive).toBe(false)
+      expect(bumpConfigDefaults.recursive).toBe(true)
       expect(bumpConfigDefaults.printCommits).toBe(false)
     })
 

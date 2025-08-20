@@ -195,6 +195,107 @@ export async function findPackageJsonFiles(dir: string = process.cwd(), recursiv
 }
 
 /**
+ * Get workspace packages from package.json workspaces field
+ */
+export async function getWorkspacePackages(rootDir: string = process.cwd()): Promise<string[]> {
+  try {
+    const rootPackageJsonPath = join(rootDir, 'package.json')
+    if (!existsSync(rootPackageJsonPath)) {
+      return []
+    }
+
+    const rootPackageJson = readPackageJson(rootPackageJsonPath)
+    if (!rootPackageJson.workspaces) {
+      return []
+    }
+
+    // Handle both array format and object format
+    const workspacePatterns = Array.isArray(rootPackageJson.workspaces) 
+      ? rootPackageJson.workspaces 
+      : rootPackageJson.workspaces.packages || []
+
+    const workspacePackages: string[] = []
+
+    for (const pattern of workspacePatterns) {
+      // Simple pattern matching for common cases like "packages/*"
+      if (pattern.endsWith('/*')) {
+        const baseDir = pattern.slice(0, -2) // Remove /*
+        const fullBaseDir = join(rootDir, baseDir)
+        
+        if (existsSync(fullBaseDir)) {
+          try {
+            const entries = await readdir(fullBaseDir)
+            for (const entry of entries) {
+              if (entry.startsWith('.')) continue // Skip hidden directories
+              
+              const entryPath = join(fullBaseDir, entry)
+              const stats = await stat(entryPath)
+              if (stats.isDirectory()) {
+                const packageJsonPath = join(entryPath, 'package.json')
+                if (existsSync(packageJsonPath)) {
+                  workspacePackages.push(packageJsonPath)
+                }
+              }
+            }
+          }
+          catch {
+            // Ignore errors reading directory
+          }
+        }
+      } else {
+        // Handle exact paths like "packages/specific-package"
+        const packageJsonPath = join(rootDir, pattern, 'package.json')
+        if (existsSync(packageJsonPath)) {
+          workspacePackages.push(packageJsonPath)
+        }
+      }
+    }
+
+    return workspacePackages
+  }
+  catch (error) {
+    console.warn(`Warning: Failed to get workspace packages: ${error}`)
+    return []
+  }
+}
+
+/**
+ * Find all package.json files, prioritizing workspace-aware discovery
+ */
+export async function findAllPackageFiles(dir: string = process.cwd(), recursive: boolean = false): Promise<string[]> {
+  const packageFiles: string[] = []
+  
+  // Always include the root package.json
+  const rootPackageJsonPath = join(dir, 'package.json')
+  if (existsSync(rootPackageJsonPath)) {
+    packageFiles.push(rootPackageJsonPath)
+  }
+
+  if (recursive) {
+    // First try workspace-aware discovery
+    const workspacePackages = await getWorkspacePackages(dir)
+    if (workspacePackages.length > 0) {
+      // Use workspace-defined packages
+      for (const packagePath of workspacePackages) {
+        if (!packageFiles.includes(packagePath)) {
+          packageFiles.push(packagePath)
+        }
+      }
+    } else {
+      // Fallback to recursive directory search
+      const recursivePackages = await findPackageJsonFiles(dir, true)
+      for (const packagePath of recursivePackages) {
+        if (!packageFiles.includes(packagePath)) {
+          packageFiles.push(packagePath)
+        }
+      }
+    }
+  }
+
+  return packageFiles
+}
+
+/**
  * Read and parse package.json file
  */
 export function readPackageJson(filePath: string): PackageJson {

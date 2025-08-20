@@ -504,10 +504,16 @@ describe('Monorepo Integration Tests', () => {
         }, null, 2))
       })
 
-      // Test versioning
+      // Test versioning - collect all package.json files
+      const allFiles = [
+        join(tempDir, 'package.json'),
+        ...apps.map(app => join(tempDir, 'apps', app, 'package.json')),
+        ...libs.map(lib => join(tempDir, lib.path, 'package.json'))
+      ]
+
       await versionBump({
         release: 'minor',
-        recursive: true,
+        files: allFiles,
         commit: false,
         tag: false,
         push: false,

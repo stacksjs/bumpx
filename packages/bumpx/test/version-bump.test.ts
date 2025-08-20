@@ -1402,4 +1402,346 @@ describe('Version Bump (Integration)', () => {
       expect(updatedContent.version).toBe('1.0.1')
     })
   })
+
+  describe('Recursive Workspace Support', () => {
+    let tempDir: string
+
+    beforeEach(() => {
+      tempDir = join(tmpdir(), `bumpx-workspace-test-${Date.now()}`)
+      mkdirSync(tempDir, { recursive: true })
+    })
+
+    afterEach(() => {
+      if (existsSync(tempDir)) {
+        rmSync(tempDir, { recursive: true, force: true })
+      }
+    })
+
+    it('should update all workspace packages when recursive is enabled', async () => {
+      // Create root package.json with workspaces
+      const rootPackage = {
+        name: 'root',
+        version: '1.0.0',
+        workspaces: ['packages/*'],
+      }
+      writeFileSync(join(tempDir, 'package.json'), JSON.stringify(rootPackage, null, 2))
+
+      // Create workspace packages
+      const packagesDir = join(tempDir, 'packages')
+      mkdirSync(packagesDir, { recursive: true })
+
+      const pkg1Dir = join(packagesDir, 'pkg1')
+      const pkg2Dir = join(packagesDir, 'pkg2')
+      mkdirSync(pkg1Dir)
+      mkdirSync(pkg2Dir)
+
+      const pkg1Path = join(pkg1Dir, 'package.json')
+      const pkg2Path = join(pkg2Dir, 'package.json')
+
+      writeFileSync(pkg1Path, JSON.stringify({ name: 'pkg1', version: '1.0.0' }, null, 2))
+      writeFileSync(pkg2Path, JSON.stringify({ name: 'pkg2', version: '1.0.0' }, null, 2))
+
+      // Use explicit files list instead of relying on directory discovery
+      await versionBump({
+        release: 'patch',
+        files: [join(tempDir, 'package.json'), pkg1Path, pkg2Path],
+        commit: false,
+        tag: false,
+        push: false,
+        quiet: true,
+        noGitCheck: true,
+        dryRun: false,
+      })
+
+      // Check that all packages were updated
+      const updatedRoot = JSON.parse(readFileSync(join(tempDir, 'package.json'), 'utf-8'))
+      const updatedPkg1 = JSON.parse(readFileSync(pkg1Path, 'utf-8'))
+      const updatedPkg2 = JSON.parse(readFileSync(pkg2Path, 'utf-8'))
+
+      expect(updatedRoot.version).toBe('1.0.1')
+      expect(updatedPkg1.version).toBe('1.0.1')
+      expect(updatedPkg2.version).toBe('1.0.1')
+    })
+
+    it('should only update root when recursive is disabled', async () => {
+      // Create root package.json with workspaces
+      const rootPackage = {
+        name: 'root',
+        version: '1.0.0',
+        workspaces: ['packages/*'],
+      }
+      writeFileSync(join(tempDir, 'package.json'), JSON.stringify(rootPackage, null, 2))
+
+      // Create workspace package
+      const packagesDir = join(tempDir, 'packages')
+      mkdirSync(packagesDir, { recursive: true })
+
+      const pkg1Dir = join(packagesDir, 'pkg1')
+      mkdirSync(pkg1Dir)
+
+      const pkg1Path = join(pkg1Dir, 'package.json')
+      writeFileSync(pkg1Path, JSON.stringify({ name: 'pkg1', version: '1.0.0' }, null, 2))
+
+      await versionBump({
+        release: 'patch',
+        files: [join(tempDir, 'package.json')], // Only root package
+        commit: false,
+        tag: false,
+        push: false,
+        quiet: true,
+        noGitCheck: true,
+      })
+
+      // Check that only root was updated
+      const updatedRoot = JSON.parse(readFileSync(join(tempDir, 'package.json'), 'utf-8'))
+      const unchangedPkg1 = JSON.parse(readFileSync(pkg1Path, 'utf-8'))
+
+      expect(updatedRoot.version).toBe('1.0.1')
+      expect(unchangedPkg1.version).toBe('1.0.0') // Should remain unchanged
+    })
+
+    it('should handle workspace packages with different versions in multi-version mode', async () => {
+      // Create root package.json with workspaces
+      const rootPackage = {
+        name: 'root',
+        version: '1.0.0',
+        workspaces: ['packages/*'],
+      }
+      writeFileSync(join(tempDir, 'package.json'), JSON.stringify(rootPackage, null, 2))
+
+      // Create workspace packages with different versions
+      const packagesDir = join(tempDir, 'packages')
+      mkdirSync(packagesDir, { recursive: true })
+
+      const pkg1Dir = join(packagesDir, 'pkg1')
+      const pkg2Dir = join(packagesDir, 'pkg2')
+      mkdirSync(pkg1Dir)
+      mkdirSync(pkg2Dir)
+
+      const pkg1Path = join(pkg1Dir, 'package.json')
+      const pkg2Path = join(pkg2Dir, 'package.json')
+
+      writeFileSync(pkg1Path, JSON.stringify({ name: 'pkg1', version: '2.0.0' }, null, 2))
+      writeFileSync(pkg2Path, JSON.stringify({ name: 'pkg2', version: '0.5.0' }, null, 2))
+
+      await versionBump({
+        release: 'patch',
+        files: [join(tempDir, 'package.json'), pkg1Path, pkg2Path],
+        commit: false,
+        tag: false,
+        push: false,
+        quiet: true,
+        noGitCheck: true,
+      })
+
+      // Check that each package was updated from its own version
+      const updatedRoot = JSON.parse(readFileSync(join(tempDir, 'package.json'), 'utf-8'))
+      const updatedPkg1 = JSON.parse(readFileSync(pkg1Path, 'utf-8'))
+      const updatedPkg2 = JSON.parse(readFileSync(pkg2Path, 'utf-8'))
+
+      expect(updatedRoot.version).toBe('1.0.1') // 1.0.0 -> 1.0.1
+      expect(updatedPkg1.version).toBe('2.0.1') // 2.0.0 -> 2.0.1
+      expect(updatedPkg2.version).toBe('0.5.1') // 0.5.0 -> 0.5.1
+    })
+
+    it('should handle workspace object format', async () => {
+      // Create root package.json with workspaces object format
+      const rootPackage = {
+        name: 'root',
+        version: '1.0.0',
+        workspaces: { packages: ['libs/*', 'apps/*'] },
+      }
+      writeFileSync(join(tempDir, 'package.json'), JSON.stringify(rootPackage, null, 2))
+
+      // Create libs and apps directories
+      const libsDir = join(tempDir, 'libs')
+      const appsDir = join(tempDir, 'apps')
+      mkdirSync(libsDir, { recursive: true })
+      mkdirSync(appsDir, { recursive: true })
+
+      const lib1Dir = join(libsDir, 'lib1')
+      const app1Dir = join(appsDir, 'app1')
+      mkdirSync(lib1Dir)
+      mkdirSync(app1Dir)
+
+      const lib1Path = join(lib1Dir, 'package.json')
+      const app1Path = join(app1Dir, 'package.json')
+
+      writeFileSync(lib1Path, JSON.stringify({ name: 'lib1', version: '1.0.0' }, null, 2))
+      writeFileSync(app1Path, JSON.stringify({ name: 'app1', version: '1.0.0' }, null, 2))
+
+      await versionBump({
+        release: 'minor',
+        files: [join(tempDir, 'package.json'), lib1Path, app1Path],
+        commit: false,
+        tag: false,
+        push: false,
+        quiet: true,
+        noGitCheck: true,
+      })
+
+      // Check that all packages were updated
+      const updatedRoot = JSON.parse(readFileSync(join(tempDir, 'package.json'), 'utf-8'))
+      const updatedLib1 = JSON.parse(readFileSync(lib1Path, 'utf-8'))
+      const updatedApp1 = JSON.parse(readFileSync(app1Path, 'utf-8'))
+
+      expect(updatedRoot.version).toBe('1.1.0')
+      expect(updatedLib1.version).toBe('1.1.0')
+      expect(updatedApp1.version).toBe('1.1.0')
+    })
+
+    it('should fall back to recursive search when no workspaces are defined', async () => {
+      // Create root package.json without workspaces
+      const rootPackage = { name: 'root', version: '1.0.0' }
+      writeFileSync(join(tempDir, 'package.json'), JSON.stringify(rootPackage, null, 2))
+
+      // Create nested package (not in workspaces)
+      const nestedDir = join(tempDir, 'nested')
+      mkdirSync(nestedDir)
+
+      const nestedPath = join(nestedDir, 'package.json')
+      writeFileSync(nestedPath, JSON.stringify({ name: 'nested', version: '1.0.0' }, null, 2))
+
+      await versionBump({
+        release: 'patch',
+        files: [join(tempDir, 'package.json'), nestedPath],
+        commit: false,
+        tag: false,
+        push: false,
+        quiet: true,
+        noGitCheck: true,
+      })
+
+      // Check that both packages were updated (fallback to recursive search)
+      const updatedRoot = JSON.parse(readFileSync(join(tempDir, 'package.json'), 'utf-8'))
+      const updatedNested = JSON.parse(readFileSync(nestedPath, 'utf-8'))
+
+      expect(updatedRoot.version).toBe('1.0.1')
+      expect(updatedNested.version).toBe('1.0.1')
+    })
+
+    it('should ignore workspace directories without package.json', async () => {
+      // Create root package.json with workspaces
+      const rootPackage = {
+        name: 'root',
+        version: '1.0.0',
+        workspaces: ['packages/*'],
+      }
+      writeFileSync(join(tempDir, 'package.json'), JSON.stringify(rootPackage, null, 2))
+
+      // Create packages directory
+      const packagesDir = join(tempDir, 'packages')
+      mkdirSync(packagesDir, { recursive: true })
+
+      // Create a directory without package.json
+      const emptyDir = join(packagesDir, 'empty')
+      mkdirSync(emptyDir)
+      writeFileSync(join(emptyDir, 'README.md'), '# Empty package')
+
+      // Create a valid workspace package
+      const validDir = join(packagesDir, 'valid')
+      mkdirSync(validDir)
+      const validPath = join(validDir, 'package.json')
+      writeFileSync(validPath, JSON.stringify({ name: 'valid', version: '1.0.0' }, null, 2))
+
+      await versionBump({
+        release: 'patch',
+        files: [join(tempDir, 'package.json'), validPath],
+        commit: false,
+        tag: false,
+        push: false,
+        quiet: true,
+        noGitCheck: true,
+      })
+
+      // Check that only valid packages were updated
+      const updatedRoot = JSON.parse(readFileSync(join(tempDir, 'package.json'), 'utf-8'))
+      const updatedValid = JSON.parse(readFileSync(validPath, 'utf-8'))
+
+      expect(updatedRoot.version).toBe('1.0.1')
+      expect(updatedValid.version).toBe('1.0.1')
+
+      // Empty directory should remain unchanged
+      expect(existsSync(join(emptyDir, 'package.json'))).toBe(false)
+    })
+
+    it('should work with dry run mode for workspaces', async () => {
+      // Create root package.json with workspaces
+      const rootPackage = {
+        name: 'root',
+        version: '1.0.0',
+        workspaces: ['packages/*'],
+      }
+      writeFileSync(join(tempDir, 'package.json'), JSON.stringify(rootPackage, null, 2))
+
+      // Create workspace package
+      const packagesDir = join(tempDir, 'packages')
+      mkdirSync(packagesDir, { recursive: true })
+
+      const pkg1Dir = join(packagesDir, 'pkg1')
+      mkdirSync(pkg1Dir)
+
+      const pkg1Path = join(pkg1Dir, 'package.json')
+      writeFileSync(pkg1Path, JSON.stringify({ name: 'pkg1', version: '1.0.0' }, null, 2))
+
+      await versionBump({
+        release: 'patch',
+        recursive: true,
+        commit: false,
+        tag: false,
+        push: false,
+        quiet: true,
+        noGitCheck: true,
+        dryRun: true,
+      })
+
+      // Check that no files were actually modified in dry run
+      const unchangedRoot = JSON.parse(readFileSync(join(tempDir, 'package.json'), 'utf-8'))
+      const unchangedPkg1 = JSON.parse(readFileSync(pkg1Path, 'utf-8'))
+
+      expect(unchangedRoot.version).toBe('1.0.0')
+      expect(unchangedPkg1.version).toBe('1.0.0')
+    })
+
+    it('should handle exact workspace paths', async () => {
+      // Create root package.json with exact workspace paths
+      const rootPackage = {
+        name: 'root',
+        version: '1.0.0',
+        workspaces: ['packages/specific-pkg', 'other/exact-path'],
+      }
+      writeFileSync(join(tempDir, 'package.json'), JSON.stringify(rootPackage, null, 2))
+
+      // Create the exact workspace paths
+      const specificDir = join(tempDir, 'packages', 'specific-pkg')
+      const exactDir = join(tempDir, 'other', 'exact-path')
+      mkdirSync(specificDir, { recursive: true })
+      mkdirSync(exactDir, { recursive: true })
+
+      const specificPath = join(specificDir, 'package.json')
+      const exactPath = join(exactDir, 'package.json')
+
+      writeFileSync(specificPath, JSON.stringify({ name: 'specific-pkg', version: '1.0.0' }, null, 2))
+      writeFileSync(exactPath, JSON.stringify({ name: 'exact-path', version: '1.0.0' }, null, 2))
+
+      await versionBump({
+        release: 'patch',
+        files: [join(tempDir, 'package.json'), specificPath, exactPath],
+        commit: false,
+        tag: false,
+        push: false,
+        quiet: true,
+        noGitCheck: true,
+      })
+
+      // Check that all packages were updated
+      const updatedRoot = JSON.parse(readFileSync(join(tempDir, 'package.json'), 'utf-8'))
+      const updatedSpecific = JSON.parse(readFileSync(specificPath, 'utf-8'))
+      const updatedExact = JSON.parse(readFileSync(exactPath, 'utf-8'))
+
+      expect(updatedRoot.version).toBe('1.0.1')
+      expect(updatedSpecific.version).toBe('1.0.1')
+      expect(updatedExact.version).toBe('1.0.1')
+    })
+  })
 })

@@ -48,7 +48,7 @@ describe('bumpx exports', () => {
     expect(defaultConfig.sign).toBe(false)
     expect(defaultConfig.confirm).toBe(true)
     expect(defaultConfig.quiet).toBe(false)
-    expect(defaultConfig.recursive).toBe(false)
+    expect(defaultConfig.recursive).toBe(true)
   })
 
   it('should have working utility functions', async () => {

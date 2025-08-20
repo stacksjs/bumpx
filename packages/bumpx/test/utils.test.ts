@@ -10,9 +10,11 @@ import {
   createGitTag,
   executeCommand,
   executeGit,
+  findAllPackageFiles,
   findPackageJsonFiles,
   getCurrentBranch,
   getRecentCommits,
+  getWorkspacePackages,
   incrementVersion,
   isReleaseType,
   isValidVersion,
@@ -1170,6 +1172,235 @@ describe('Advanced Error Handling', () => {
       expect(updated.version).toBe('1.1.0')
       expect(updated.nested.deeply.version).toBe('1.0.0') // Should remain unchanged
       expect(updated.array[0].version).toBe('1.0.0') // Should remain unchanged
+    })
+  })
+
+  describe('Workspace Support', () => {
+    let tempDir: string
+
+    beforeEach(() => {
+      tempDir = join(tmpdir(), `bumpx-workspace-test-${Date.now()}`)
+      mkdirSync(tempDir, { recursive: true })
+    })
+
+    afterEach(() => {
+      if (existsSync(tempDir)) {
+        rmSync(tempDir, { recursive: true, force: true })
+      }
+    })
+
+    describe('getWorkspacePackages', () => {
+      it('should return empty array when no package.json exists', async () => {
+        const packages = await getWorkspacePackages(tempDir)
+        expect(packages).toEqual([])
+      })
+
+      it('should return empty array when package.json has no workspaces', async () => {
+        const rootPackage = { name: 'root', version: '1.0.0' }
+        writeFileSync(join(tempDir, 'package.json'), JSON.stringify(rootPackage))
+        
+        const packages = await getWorkspacePackages(tempDir)
+        expect(packages).toEqual([])
+      })
+
+      it('should detect workspace packages with array format', async () => {
+        // Create root package.json with workspaces
+        const rootPackage = { 
+          name: 'root', 
+          version: '1.0.0',
+          workspaces: ['packages/*'] 
+        }
+        writeFileSync(join(tempDir, 'package.json'), JSON.stringify(rootPackage))
+
+        // Create packages directory and workspace packages
+        const packagesDir = join(tempDir, 'packages')
+        mkdirSync(packagesDir, { recursive: true })
+
+        const pkg1Dir = join(packagesDir, 'pkg1')
+        const pkg2Dir = join(packagesDir, 'pkg2')
+        mkdirSync(pkg1Dir)
+        mkdirSync(pkg2Dir)
+
+        writeFileSync(join(pkg1Dir, 'package.json'), JSON.stringify({ name: 'pkg1', version: '1.0.0' }))
+        writeFileSync(join(pkg2Dir, 'package.json'), JSON.stringify({ name: 'pkg2', version: '1.0.0' }))
+
+        const packages = await getWorkspacePackages(tempDir)
+        expect(packages).toHaveLength(2)
+        expect(packages).toContain(join(pkg1Dir, 'package.json'))
+        expect(packages).toContain(join(pkg2Dir, 'package.json'))
+      })
+
+      it('should detect workspace packages with object format', async () => {
+        // Create root package.json with workspaces object format
+        const rootPackage = { 
+          name: 'root', 
+          version: '1.0.0',
+          workspaces: { packages: ['libs/*', 'apps/*'] }
+        }
+        writeFileSync(join(tempDir, 'package.json'), JSON.stringify(rootPackage))
+
+        // Create libs and apps directories
+        const libsDir = join(tempDir, 'libs')
+        const appsDir = join(tempDir, 'apps')
+        mkdirSync(libsDir, { recursive: true })
+        mkdirSync(appsDir, { recursive: true })
+
+        const lib1Dir = join(libsDir, 'lib1')
+        const app1Dir = join(appsDir, 'app1')
+        mkdirSync(lib1Dir)
+        mkdirSync(app1Dir)
+
+        writeFileSync(join(lib1Dir, 'package.json'), JSON.stringify({ name: 'lib1', version: '1.0.0' }))
+        writeFileSync(join(app1Dir, 'package.json'), JSON.stringify({ name: 'app1', version: '1.0.0' }))
+
+        const packages = await getWorkspacePackages(tempDir)
+        expect(packages).toHaveLength(2)
+        expect(packages).toContain(join(lib1Dir, 'package.json'))
+        expect(packages).toContain(join(app1Dir, 'package.json'))
+      })
+
+      it('should handle exact workspace paths', async () => {
+        // Create root package.json with exact workspace paths
+        const rootPackage = { 
+          name: 'root', 
+          version: '1.0.0',
+          workspaces: ['packages/specific-pkg'] 
+        }
+        writeFileSync(join(tempDir, 'package.json'), JSON.stringify(rootPackage))
+
+        // Create the exact workspace path
+        const specificDir = join(tempDir, 'packages', 'specific-pkg')
+        mkdirSync(specificDir, { recursive: true })
+        writeFileSync(join(specificDir, 'package.json'), JSON.stringify({ name: 'specific-pkg', version: '1.0.0' }))
+
+        const packages = await getWorkspacePackages(tempDir)
+        expect(packages).toHaveLength(1)
+        expect(packages).toContain(join(specificDir, 'package.json'))
+      })
+
+      it('should ignore directories without package.json', async () => {
+        const rootPackage = { 
+          name: 'root', 
+          version: '1.0.0',
+          workspaces: ['packages/*'] 
+        }
+        writeFileSync(join(tempDir, 'package.json'), JSON.stringify(rootPackage))
+
+        const packagesDir = join(tempDir, 'packages')
+        mkdirSync(packagesDir, { recursive: true })
+
+        // Create a directory without package.json
+        const emptyDir = join(packagesDir, 'empty')
+        mkdirSync(emptyDir)
+
+        // Create a directory with package.json
+        const validDir = join(packagesDir, 'valid')
+        mkdirSync(validDir)
+        writeFileSync(join(validDir, 'package.json'), JSON.stringify({ name: 'valid', version: '1.0.0' }))
+
+        const packages = await getWorkspacePackages(tempDir)
+        expect(packages).toHaveLength(1)
+        expect(packages).toContain(join(validDir, 'package.json'))
+      })
+
+      it('should skip hidden directories', async () => {
+        const rootPackage = { 
+          name: 'root', 
+          version: '1.0.0',
+          workspaces: ['packages/*'] 
+        }
+        writeFileSync(join(tempDir, 'package.json'), JSON.stringify(rootPackage))
+
+        const packagesDir = join(tempDir, 'packages')
+        mkdirSync(packagesDir, { recursive: true })
+
+        // Create a hidden directory (should be skipped)
+        const hiddenDir = join(packagesDir, '.hidden')
+        mkdirSync(hiddenDir)
+        writeFileSync(join(hiddenDir, 'package.json'), JSON.stringify({ name: 'hidden', version: '1.0.0' }))
+
+        // Create a normal directory
+        const normalDir = join(packagesDir, 'normal')
+        mkdirSync(normalDir)
+        writeFileSync(join(normalDir, 'package.json'), JSON.stringify({ name: 'normal', version: '1.0.0' }))
+
+        const packages = await getWorkspacePackages(tempDir)
+        expect(packages).toHaveLength(1)
+        expect(packages).toContain(join(normalDir, 'package.json'))
+        expect(packages).not.toContain(join(hiddenDir, 'package.json'))
+      })
+    })
+
+    describe('findAllPackageFiles', () => {
+      it('should include root package.json when not recursive', async () => {
+        const rootPackage = { name: 'root', version: '1.0.0' }
+        writeFileSync(join(tempDir, 'package.json'), JSON.stringify(rootPackage))
+
+        const files = await findAllPackageFiles(tempDir, false)
+        expect(files).toHaveLength(1)
+        expect(files).toContain(join(tempDir, 'package.json'))
+      })
+
+      it('should use workspace discovery when recursive and workspaces exist', async () => {
+        // Create root with workspaces
+        const rootPackage = { 
+          name: 'root', 
+          version: '1.0.0',
+          workspaces: ['packages/*'] 
+        }
+        writeFileSync(join(tempDir, 'package.json'), JSON.stringify(rootPackage))
+
+        // Create workspace packages
+        const packagesDir = join(tempDir, 'packages')
+        mkdirSync(packagesDir, { recursive: true })
+
+        const pkg1Dir = join(packagesDir, 'pkg1')
+        mkdirSync(pkg1Dir)
+        writeFileSync(join(pkg1Dir, 'package.json'), JSON.stringify({ name: 'pkg1', version: '1.0.0' }))
+
+        const files = await findAllPackageFiles(tempDir, true)
+        expect(files).toHaveLength(2) // root + 1 workspace
+        expect(files).toContain(join(tempDir, 'package.json'))
+        expect(files).toContain(join(pkg1Dir, 'package.json'))
+      })
+
+      it('should fallback to recursive discovery when no workspaces exist', async () => {
+        // Create root without workspaces
+        const rootPackage = { name: 'root', version: '1.0.0' }
+        writeFileSync(join(tempDir, 'package.json'), JSON.stringify(rootPackage))
+
+        // Create nested package (not in workspaces)
+        const nestedDir = join(tempDir, 'nested')
+        mkdirSync(nestedDir)
+        writeFileSync(join(nestedDir, 'package.json'), JSON.stringify({ name: 'nested', version: '1.0.0' }))
+
+        const files = await findAllPackageFiles(tempDir, true)
+        expect(files).toHaveLength(2) // root + nested
+        expect(files).toContain(join(tempDir, 'package.json'))
+        expect(files).toContain(join(nestedDir, 'package.json'))
+      })
+
+      it('should avoid duplicates when combining root and workspace packages', async () => {
+        // Create root with self-referencing workspace pattern
+        const rootPackage = { 
+          name: 'root', 
+          version: '1.0.0',
+          workspaces: ['.', 'packages/*'] // Include root in workspaces
+        }
+        writeFileSync(join(tempDir, 'package.json'), JSON.stringify(rootPackage))
+
+        // Create workspace package
+        const packagesDir = join(tempDir, 'packages')
+        mkdirSync(packagesDir, { recursive: true })
+        const pkg1Dir = join(packagesDir, 'pkg1')
+        mkdirSync(pkg1Dir)
+        writeFileSync(join(pkg1Dir, 'package.json'), JSON.stringify({ name: 'pkg1', version: '1.0.0' }))
+
+        const files = await findAllPackageFiles(tempDir, true)
+        expect(files).toHaveLength(2) // Should not duplicate root
+        expect(files).toContain(join(tempDir, 'package.json'))
+        expect(files).toContain(join(pkg1Dir, 'package.json'))
+      })
     })
   })
 })
