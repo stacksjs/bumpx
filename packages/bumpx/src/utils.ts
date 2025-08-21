@@ -210,8 +210,8 @@ export async function getWorkspacePackages(rootDir: string = process.cwd()): Pro
     }
 
     // Handle both array format and object format
-    const workspacePatterns = Array.isArray(rootPackageJson.workspaces) 
-      ? rootPackageJson.workspaces 
+    const workspacePatterns = Array.isArray(rootPackageJson.workspaces)
+      ? rootPackageJson.workspaces
       : rootPackageJson.workspaces.packages || []
 
     const workspacePackages: string[] = []
@@ -221,13 +221,14 @@ export async function getWorkspacePackages(rootDir: string = process.cwd()): Pro
       if (pattern.endsWith('/*')) {
         const baseDir = pattern.slice(0, -2) // Remove /*
         const fullBaseDir = join(rootDir, baseDir)
-        
+
         if (existsSync(fullBaseDir)) {
           try {
             const entries = await readdir(fullBaseDir)
             for (const entry of entries) {
-              if (entry.startsWith('.')) continue // Skip hidden directories
-              
+              if (entry.startsWith('.'))
+                continue // Skip hidden directories
+
               const entryPath = join(fullBaseDir, entry)
               const stats = await stat(entryPath)
               if (stats.isDirectory()) {
@@ -242,7 +243,8 @@ export async function getWorkspacePackages(rootDir: string = process.cwd()): Pro
             // Ignore errors reading directory
           }
         }
-      } else {
+      }
+      else {
         // Handle exact paths like "packages/specific-package"
         const packageJsonPath = join(rootDir, pattern, 'package.json')
         if (existsSync(packageJsonPath)) {
@@ -264,7 +266,7 @@ export async function getWorkspacePackages(rootDir: string = process.cwd()): Pro
  */
 export async function findAllPackageFiles(dir: string = process.cwd(), recursive: boolean = false): Promise<string[]> {
   const packageFiles: string[] = []
-  
+
   // Always include the root package.json
   const rootPackageJsonPath = join(dir, 'package.json')
   if (existsSync(rootPackageJsonPath)) {
@@ -281,7 +283,8 @@ export async function findAllPackageFiles(dir: string = process.cwd(), recursive
           packageFiles.push(packagePath)
         }
       }
-    } else {
+    }
+    else {
       // Fallback to recursive directory search
       const recursivePackages = await findPackageJsonFiles(dir, true)
       for (const packagePath of recursivePackages) {
@@ -475,12 +478,12 @@ export function pushToRemote(tags: boolean = true, cwd?: string): void {
   // First, pull to ensure we have the latest changes (if safe to do so)
   if (canSafelyPull(cwd)) {
     try {
-      console.log('🔄 Pulling latest changes from remote...')
+      // Pull latest changes from remote
       executeGit(['pull'], cwd)
     }
     catch (error: any) {
       const errorMessage = error.message.toLowerCase()
-      
+
       if (errorMessage.includes('conflict') || errorMessage.includes('merge')) {
         throw new Error(`Pull failed due to conflicts. Please resolve conflicts manually and try again.\n${error.message}`)
       }
@@ -490,15 +493,16 @@ export function pushToRemote(tags: boolean = true, cwd?: string): void {
     }
   }
   else {
-    console.log('⚠️  No upstream branch configured or in detached HEAD. Skipping pull...')
+    console.warn('⚠️  No upstream branch configured or in detached HEAD. Skipping pull...')
   }
 
   // Use atomic push to avoid race conditions between commit and tag pushes
   if (tags) {
-    console.log('📤 Pushing commits and tags to remote...')
+    // Pushing commits and tags to remote
     executeGit(['push', '--follow-tags'], cwd)
-  } else {
-    console.log('📤 Pushing commits to remote...')
+  }
+  else {
+    // Pushing commits to remote
     executeGit(['push'], cwd)
   }
 }

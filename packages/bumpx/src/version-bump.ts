@@ -104,7 +104,8 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
         if (dryRun) {
           // In dry run mode, just simulate a patch increment to avoid interactive prompts
           newVersion = incrementVersion(currentVersion, 'patch', preid)
-        } else {
+        }
+        else {
           newVersion = await promptForVersion(currentVersion, preid)
         }
       }
@@ -244,7 +245,8 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
             if (dryRun) {
               // In dry run mode, just simulate a patch increment to avoid interactive prompts
               fileNewVersion = incrementVersion(fileCurrentVersion, 'patch', preid)
-            } else {
+            }
+            else {
               fileNewVersion = await promptForVersion(fileCurrentVersion, preid)
             }
           }
@@ -550,7 +552,7 @@ async function promptForVersion(currentVersion: string, preid?: string): Promise
 
     return selectedOption.trim()
   }
-  catch (error) {
+  catch {
     // Fallback to patch increment if prompt fails
     console.warn('Warning: Interactive prompt failed, defaulting to patch increment')
     return incrementVersion(currentVersion, 'patch', preid)

@@ -508,7 +508,7 @@ describe('Monorepo Integration Tests', () => {
       const allFiles = [
         join(tempDir, 'package.json'),
         ...apps.map(app => join(tempDir, 'apps', app, 'package.json')),
-        ...libs.map(lib => join(tempDir, lib.path, 'package.json'))
+        ...libs.map(lib => join(tempDir, lib.path, 'package.json')),
       ]
 
       await versionBump({
