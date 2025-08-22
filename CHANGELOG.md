@@ -1,4 +1,28 @@
 
+## v0.1.10...main
+
+[compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.10...main)
+
+### 🏡 Chore
+
+- Wip ([faa282e](https://github.com/stacksjs/bumpx/commit/faa282e))
+
+### ❤️ Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+## v0.1.10...main
+
+[compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.10...main)
+
+### 🏡 Chore
+
+- Wip ([faa282e](https://github.com/stacksjs/bumpx/commit/faa282e))
+
+### ❤️ Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
 ## v0.1.9...v0.1.9
 
 [compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.9...v0.1.9)
