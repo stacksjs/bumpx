@@ -42,8 +42,8 @@ describe('bumpx exports', () => {
   it('should export configuration defaults with expected values', async () => {
     const { defaultConfig } = await import('../src/index')
 
-    expect(defaultConfig.commit).toBe(false)
-    expect(defaultConfig.tag).toBe(false)
+    expect(defaultConfig.commit).toBe(true)
+    expect(defaultConfig.tag).toBe(true)
     expect(defaultConfig.push).toBe(false)
     expect(defaultConfig.sign).toBe(false)
     expect(defaultConfig.confirm).toBe(true)

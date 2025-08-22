@@ -189,8 +189,8 @@ import { defineConfig } from '@stacksjs/bumpx'
 
 export default defineConfig({
   // Git options (these are the defaults)
-  commit: false,
-  tag: false,
+  commit: true,
+  tag: true,
   push: false,
   sign: false,
 

@@ -464,7 +464,7 @@ export default {
       // Add package.json but don't commit (dirty working directory)
       await runGit(['add', 'package.json'])
 
-      const result = await runCLI(['patch'])
+      const result = await runCLI(['patch', '--tag', '--no-commit'])
 
       expect(result.code).toBe(1)
       expect(result.stderr).toContain('working tree is not clean')

@@ -2,10 +2,10 @@ import type { VersionBumpOptions } from './src/types'
 import { defineConfig } from './src/config'
 
 const config: VersionBumpOptions = defineConfig({
-  // Git options
+  // Git options (these match the new defaults)
   commit: true,
   tag: true,
-  push: true,
+  push: false,
   sign: false,
   noGitCheck: false,
   noVerify: false,
@@ -20,7 +20,7 @@ const config: VersionBumpOptions = defineConfig({
 
   // Advanced options
   all: false,
-  recursive: false,
+  recursive: true, // Updated to match new default
   printCommits: false,
 
   // Example execute commands

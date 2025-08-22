@@ -54,7 +54,8 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
     }
 
     // Check git status unless disabled
-    if (!noGitCheck) {
+    // Skip git status check if commit is enabled (we'll commit the dirty tree)
+    if (!noGitCheck && (tag || push) && !commit) {
       checkGitStatus(process.cwd())
     }
 
@@ -379,9 +380,8 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
 
     // Git operations
     if (commit && updatedFiles.length > 0 && !dryRun) {
-      // Stage updated files
-      const gitAddArgs = ['add', ...updatedFiles]
-      executeCommand(`git ${gitAddArgs.join(' ')}`)
+      // Stage all changes (existing dirty files + version updates)
+      executeCommand('git add -A')
 
       // Create commit
       let commitMessage = typeof commit === 'string' ? commit : `chore: release ${lastNewVersion || 'unknown'}`

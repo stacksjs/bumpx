@@ -3,9 +3,9 @@ import { loadConfig } from 'bunfig'
 
 export const defaultConfig: BumpxConfig = {
   // Git options
-  commit: false,
-  tag: false,
-  push: false,
+  commit: true,
+  tag: true,
+  push: false, // Keep push false for safety
   sign: false,
   noGitCheck: false,
   noVerify: false,

@@ -59,6 +59,7 @@
     "zip:darwin-arm64": "zip -j bin/bumpx-darwin-arm64.zip bin/bumpx-darwin-arm64",
     "lint": "bunx --bun eslint .",
     "lint:fix": "bunx --bun eslint . --fix",
+    "typecheck": "bunx tsc --noEmit",
     "prepublishOnly": "bun --bun run build && bun run compile:all && bun run zip",
     "test": "bun test"
   },

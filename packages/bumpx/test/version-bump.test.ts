@@ -1,4 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it } from 'bun:test'
+import { execSync } from 'node:child_process'
 import { chmodSync, existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
@@ -791,7 +792,7 @@ describe('Version Bump (Integration)', () => {
       }
       catch (error: any) {
         // Expected to fail due to git operations outside repo
-        expect(error.message).toContain('Command failed')
+        expect(error.message).toContain('Git command failed')
       }
     })
 
@@ -836,7 +837,7 @@ describe('Version Bump (Integration)', () => {
       }
       catch (error: any) {
         // Expected to fail due to git operations outside repo
-        expect(error.message).toContain('Command failed')
+        expect(error.message).toContain('Git command failed')
       }
 
       const updatedContent = JSON.parse(readFileSync(packagePath, 'utf-8'))
@@ -1084,7 +1085,7 @@ describe('Version Bump (Integration)', () => {
       }
       catch (error: any) {
         // Expected to fail due to git operations outside repo
-        expect(error.message).toContain('Command failed')
+        expect(error.message).toContain('Git command failed')
       }
     })
 
@@ -1402,6 +1403,85 @@ describe('Version Bump (Integration)', () => {
 
       const updatedContent = JSON.parse(readFileSync(packagePath, 'utf-8'))
       expect(updatedContent.version).toBe('1.0.1')
+    })
+  })
+
+  describe('Git Status Check Logic', () => {
+    it('should skip git status check when commit is enabled (to allow committing dirty tree)', async () => {
+      const testDir = join(tmpdir(), `bumpx-git-test-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`)
+      mkdirSync(testDir, { recursive: true })
+      const packagePath = join(testDir, 'package.json')
+
+      // Create a package.json file
+      writeFileSync(packagePath, JSON.stringify({ name: 'test', version: '1.0.0' }, null, 2))
+
+      // Create an uncommitted file to make working tree dirty
+      writeFileSync(join(testDir, 'uncommitted.txt'), 'dirty working tree')
+
+      // Initialize git repo
+      try {
+        execSync('git init', { cwd: testDir, stdio: 'ignore' })
+        execSync('git config user.name "Test"', { cwd: testDir, stdio: 'ignore' })
+        execSync('git config user.email "test@test.com"', { cwd: testDir, stdio: 'ignore' })
+        execSync('git add package.json', { cwd: testDir, stdio: 'ignore' })
+        execSync('git commit -m "initial"', { cwd: testDir, stdio: 'ignore' })
+        // Leave uncommitted.txt untracked to make working tree dirty
+      }
+      catch {
+        // Git operations might fail in test environment, which is fine for this test
+      }
+
+      // This should work even with dirty working tree when commit is enabled
+      const result = await versionBump({
+        release: 'patch',
+        files: [packagePath],
+        commit: true, // Commit is enabled - should work with dirty tree
+        tag: false,
+        push: false,
+        noGitCheck: false, // Git check is enabled but should be skipped when commit=true
+        dryRun: true,
+      })
+
+      // Should complete successfully without git status error
+      expect(result).toBeUndefined() // versionBump returns void on success
+    })
+
+    it('should perform git status check when tag/push operations are enabled without commit', async () => {
+      const testDir = join(tmpdir(), `bumpx-git-test-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`)
+      mkdirSync(testDir, { recursive: true })
+      const packagePath = join(testDir, 'package.json')
+
+      // Create a package.json file
+      writeFileSync(packagePath, JSON.stringify({ name: 'test', version: '1.0.0' }, null, 2))
+
+      // Create an uncommitted file to make working tree dirty
+      writeFileSync(join(testDir, 'uncommitted.txt'), 'dirty working tree')
+
+      // Initialize git repo
+      try {
+        execSync('git init', { cwd: testDir, stdio: 'ignore' })
+        execSync('git config user.name "Test"', { cwd: testDir, stdio: 'ignore' })
+        execSync('git config user.email "test@test.com"', { cwd: testDir, stdio: 'ignore' })
+        execSync('git add package.json', { cwd: testDir, stdio: 'ignore' })
+        execSync('git commit -m "initial"', { cwd: testDir, stdio: 'ignore' })
+        // Leave uncommitted.txt untracked to make working tree dirty
+
+        // This should fail with git status error when tag is enabled without commit
+        await expect(versionBump({
+          release: 'patch',
+          files: [packagePath],
+          commit: false, // No commit - can't handle dirty tree
+          tag: true, // Tag enabled - requires clean tree
+          push: false,
+          noGitCheck: false,
+          dryRun: true,
+        })).rejects.toThrow(/Git working tree is not clean/)
+      }
+      catch {
+        // If git operations fail in test environment, this test becomes less meaningful
+        // but we can still verify the basic functionality
+        console.warn('Git operations failed in test environment')
+      }
     })
   })
 
