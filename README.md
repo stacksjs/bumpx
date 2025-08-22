@@ -189,9 +189,9 @@ import { defineConfig } from '@stacksjs/bumpx'
 
 export default defineConfig({
   // Git options (these are the defaults)
-  commit: true,
-  tag: true,
-  push: true,
+  commit: false,
+  tag: false,
+  push: false,
   sign: false,
 
   // Execution options
@@ -228,11 +228,11 @@ You can also use JSON configuration in `package.json`:
 | `--preid` | | ID for prerelease | |
 | `--all` | | Include all files | `false` |
 | `--no-git-check` | | Skip git status check | |
-| `--commit [msg]` | `-c` | Create git commit | `true` |
+| `--commit [msg]` | `-c` | Create git commit | `false` |
 | `--no-commit` | | Skip git commit | |
-| `--tag [name]` | `-t` | Create git tag | `true` |
+| `--tag [name]` | `-t` | Create git tag | `false` |
 | `--no-tag` | | Skip git tag | |
-| `--push` | `-p` | Push to remote | `true` |
+| `--push` | `-p` | Push to remote | `false` |
 | `--no-push` | | Skip git push | |
 | `--sign` | | Sign commits and tags | `false` |
 | `--install` | | Run npm install | `false` |

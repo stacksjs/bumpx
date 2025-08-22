@@ -13,9 +13,9 @@ Create a configuration file in your project root for project-specific defaults. 
 ```typescript
 // bumpx.config.ts
 export default {
-  commit: true,
-  tag: true,
-  push: true,
+  commit: false,
+  tag: false,
+  push: false,
   sign: false,
   noGitCheck: false,
   noVerify: false,
@@ -33,9 +33,9 @@ export default {
 ```javascript
 // bumpx.config.js
 module.exports = {
-  commit: true,
-  tag: true,
-  push: true,
+  commit: false,
+  tag: false,
+  push: false,
   sign: false,
   noGitCheck: false,
   noVerify: false,
@@ -57,9 +57,9 @@ module.exports = {
   "name": "my-project",
   "version": "1.0.0",
   "bumpx": {
-    "commit": true,
-    "tag": true,
-    "push": true,
+    "commit": false,
+    "tag": false,
+    "push": false,
     "sign": false,
     "install": false,
     "recursive": false

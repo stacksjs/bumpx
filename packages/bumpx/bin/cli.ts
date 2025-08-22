@@ -73,17 +73,6 @@ function progress({ event, script, updatedFiles, skippedFiles, newVersion }: Ver
 }
 
 /**
- * Check git status
- */
-async function checkGitStatus() {
-  const { executeGit } = await import('../src/utils')
-  const status = executeGit(['status', '--porcelain'])
-  if (status.trim()) {
-    throw new Error(`Git working tree is not clean:\n${status}`)
-  }
-}
-
-/**
  * Error handler
  */
 function errorHandler(error: Error): never {
@@ -158,8 +147,13 @@ async function prepareConfig(release: string | undefined, files: string[] | unde
     cliOverrides.tag = false
     cliOverrides.push = false
   }
-  if (options.yes !== undefined)
+  if (options.yes !== undefined) {
     cliOverrides.confirm = !options.yes
+    // If --yes is used and commit/tag operations are enabled, skip git checks for smoother workflow
+    if (options.yes && (cliOverrides.commit !== false || (cliOverrides.commit === undefined && bumpConfigDefaults.commit))) {
+      cliOverrides.noGitCheck = true
+    }
+  }
   if (options.verify === false)
     cliOverrides.noVerify = true
   if (options.install !== undefined)
@@ -238,10 +232,6 @@ cli
       }
 
       const config = await prepareConfig(release, files, options)
-
-      if (!config.noGitCheck) {
-        await checkGitStatus()
-      }
 
       if (!options.quiet) {
         config.progress = config.progress || progress

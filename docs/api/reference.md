@@ -35,12 +35,12 @@ bumpx <release-type> [options]
 | `--files` | `string` | Auto-detected | Comma-separated files to update |
 | `--current-version` | `string` | Auto-detected | Override current version |
 | `--preid` | `string` | `undefined` | Prerelease identifier |
-| `--commit` | `boolean` | `true` | Create git commit |
+| `--commit` | `boolean` | `false` | Create git commit |
 | `--commit-message` | `string` | Custom message | Commit message template |
-| `--tag` | `boolean` | `true` | Create git tag |
+| `--tag` | `boolean` | `false` | Create git tag |
 | `--tag-name` | `string` | Custom name | Custom tag name |
 | `--tag-message` | `string` | Custom message | Tag message template |
-| `--push` | `boolean` | `true` | Push to remote |
+| `--push` | `boolean` | `false` | Push to remote |
 | `--sign` | `boolean` | `false` | Sign commits and tags |
 | `--no-git-check` | `boolean` | `false` | Skip git status check |
 | `--no-verify` | `boolean` | `false` | Skip git hooks |

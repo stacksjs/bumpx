@@ -1,4 +1,12 @@
 
+## v0.1.9...v0.1.9
+
+[compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.9...v0.1.9)
+
+## v0.1.9...v0.1.9
+
+[compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.9...v0.1.9)
+
 ## v0.1.8...v0.1.8
 
 [compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.8...v0.1.8)

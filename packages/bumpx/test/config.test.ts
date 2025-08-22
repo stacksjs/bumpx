@@ -27,9 +27,9 @@ describe('Config', () => {
 
   describe('bumpConfigDefaults', () => {
     it('should have correct default values', () => {
-      expect(bumpConfigDefaults.commit).toBe(true)
-      expect(bumpConfigDefaults.tag).toBe(true)
-      expect(bumpConfigDefaults.push).toBe(true)
+      expect(bumpConfigDefaults.commit).toBe(false)
+      expect(bumpConfigDefaults.tag).toBe(false)
+      expect(bumpConfigDefaults.push).toBe(false)
       expect(bumpConfigDefaults.sign).toBe(false)
       expect(bumpConfigDefaults.noGitCheck).toBe(false)
       expect(bumpConfigDefaults.noVerify).toBe(false)
@@ -63,9 +63,9 @@ describe('Config', () => {
 
     it('should have conservative defaults for safety', () => {
       // Git operations are enabled by default (safe for most workflows)
-      expect(bumpConfigDefaults.commit).toBe(true)
-      expect(bumpConfigDefaults.tag).toBe(true)
-      expect(bumpConfigDefaults.push).toBe(true)
+      expect(bumpConfigDefaults.commit).toBe(false)
+      expect(bumpConfigDefaults.tag).toBe(false)
+      expect(bumpConfigDefaults.push).toBe(false)
 
       // Signing is disabled by default (not everyone has GPG configured)
       expect(bumpConfigDefaults.sign).toBe(false)
@@ -172,7 +172,7 @@ describe('Config', () => {
       expect(config.recursive).toBe(true)
 
       // Should preserve other defaults
-      expect(config.push).toBe(true)
+      expect(config.push).toBe(false)
       expect(config.sign).toBe(false)
       expect(config.install).toBe(false)
     })
