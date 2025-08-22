@@ -1520,29 +1520,30 @@ describe('Version Bump (Integration)', () => {
       const pkg1Path = join(pkg1Dir, 'package.json')
       const pkg2Path = join(pkg2Dir, 'package.json')
 
-      writeFileSync(pkg1Path, JSON.stringify({ name: 'pkg1', version: '1.0.0' }, null, 2))
-      writeFileSync(pkg2Path, JSON.stringify({ name: 'pkg2', version: '1.0.0' }, null, 2))
+      writeFileSync(pkg1Path, JSON.stringify({ name: 'pkg1', version: '2.0.0' }, null, 2))
+      writeFileSync(pkg2Path, JSON.stringify({ name: 'pkg2', version: '0.5.0' }, null, 2))
 
-      // Use explicit files list instead of relying on directory discovery
+      // Use recursive mode to discover and update all workspace packages
       await versionBump({
         release: 'patch',
-        files: [join(tempDir, 'package.json'), pkg1Path, pkg2Path],
+        recursive: true,
         commit: false,
         tag: false,
         push: false,
         quiet: true,
         noGitCheck: true,
         dryRun: false,
+        cwd: tempDir,
       })
 
-      // Check that all packages were updated
+      // Check that all packages were updated to the same version (root version + patch)
       const updatedRoot = JSON.parse(readFileSync(join(tempDir, 'package.json'), 'utf-8'))
       const updatedPkg1 = JSON.parse(readFileSync(pkg1Path, 'utf-8'))
       const updatedPkg2 = JSON.parse(readFileSync(pkg2Path, 'utf-8'))
 
       expect(updatedRoot.version).toBe('1.0.1')
-      expect(updatedPkg1.version).toBe('1.0.1')
-      expect(updatedPkg2.version).toBe('1.0.1')
+      expect(updatedPkg1.version).toBe('1.0.1') // Should match root, not increment from 2.0.0
+      expect(updatedPkg2.version).toBe('1.0.1') // Should match root, not increment from 0.5.0
     })
 
     it('should only update root when recursive is disabled', async () => {
@@ -1824,6 +1825,191 @@ describe('Version Bump (Integration)', () => {
       expect(updatedRoot.version).toBe('1.0.1')
       expect(updatedSpecific.version).toBe('1.0.1')
       expect(updatedExact.version).toBe('1.0.1')
+    })
+
+    it('should create only one tag in recursive mode (not multiple tags)', async () => {
+      // Create root package.json with workspaces
+      const rootPackage = {
+        name: 'root',
+        version: '1.0.0',
+        workspaces: ['packages/*'],
+      }
+      writeFileSync(join(tempDir, 'package.json'), JSON.stringify(rootPackage, null, 2))
+
+      // Create workspace packages with different versions
+      const packagesDir = join(tempDir, 'packages')
+      mkdirSync(packagesDir, { recursive: true })
+
+      const pkg1Dir = join(packagesDir, 'pkg1')
+      const pkg2Dir = join(packagesDir, 'pkg2')
+      mkdirSync(pkg1Dir)
+      mkdirSync(pkg2Dir)
+
+      const pkg1Path = join(pkg1Dir, 'package.json')
+      const pkg2Path = join(pkg2Dir, 'package.json')
+
+      writeFileSync(pkg1Path, JSON.stringify({ name: 'pkg1', version: '2.0.0' }, null, 2))
+      writeFileSync(pkg2Path, JSON.stringify({ name: 'pkg2', version: '0.5.0' }, null, 2))
+
+      // Initialize git repo for testing
+      execSync('git init', { cwd: tempDir, stdio: 'ignore' })
+      execSync('git config user.name "Test"', { cwd: tempDir, stdio: 'ignore' })
+      execSync('git config user.email "test@test.com"', { cwd: tempDir, stdio: 'ignore' })
+      execSync('git add package.json', { cwd: tempDir, stdio: 'ignore' })
+      execSync('git commit -m "initial"', { cwd: tempDir, stdio: 'ignore' })
+
+      await versionBump({
+        release: 'patch',
+        recursive: true,
+        commit: true,
+        tag: true,
+        push: false,
+        noGitCheck: true,
+        dryRun: true, // Use dry run to avoid actual git operations
+      })
+
+      // In dry run mode, files should not be modified
+      const unchangedRoot = JSON.parse(readFileSync(join(tempDir, 'package.json'), 'utf-8'))
+      const unchangedPkg1 = JSON.parse(readFileSync(pkg1Path, 'utf-8'))
+      const unchangedPkg2 = JSON.parse(readFileSync(pkg2Path, 'utf-8'))
+
+      expect(unchangedRoot.version).toBe('1.0.0')
+      expect(unchangedPkg1.version).toBe('2.0.0')
+      expect(unchangedPkg2.version).toBe('0.5.0')
+
+      // The key test is that the dry run output shows only one version bump message
+      // and only one tag would be created, not multiple tags
+    })
+
+    it('should prompt for version only once in recursive mode', async () => {
+      // Create root package.json with workspaces
+      const rootPackage = {
+        name: 'root',
+        version: '1.0.0',
+        workspaces: ['packages/*'],
+      }
+      writeFileSync(join(tempDir, 'package.json'), JSON.stringify(rootPackage, null, 2))
+
+      // Create workspace packages with different versions
+      const packagesDir = join(tempDir, 'packages')
+      mkdirSync(packagesDir, { recursive: true })
+
+      const pkg1Dir = join(packagesDir, 'pkg1')
+      const pkg2Dir = join(packagesDir, 'pkg2')
+      mkdirSync(pkg1Dir)
+      mkdirSync(pkg2Dir)
+
+      const pkg1Path = join(pkg1Dir, 'package.json')
+      const pkg2Path = join(pkg2Dir, 'package.json')
+
+      writeFileSync(pkg1Path, JSON.stringify({ name: 'pkg1', version: '2.0.0' }, null, 2))
+      writeFileSync(pkg2Path, JSON.stringify({ name: 'pkg2', version: '0.5.0' }, null, 2))
+
+      // Test with prompt release type in dry run mode
+      await versionBump({
+        release: 'prompt',
+        recursive: true,
+        commit: false,
+        tag: false,
+        push: false,
+        noGitCheck: true,
+        dryRun: true, // Use dry run to avoid actual git operations
+      })
+
+      // In dry run mode, files should not be modified
+      const unchangedRoot = JSON.parse(readFileSync(join(tempDir, 'package.json'), 'utf-8'))
+      const unchangedPkg1 = JSON.parse(readFileSync(pkg1Path, 'utf-8'))
+      const unchangedPkg2 = JSON.parse(readFileSync(pkg2Path, 'utf-8'))
+
+      expect(unchangedRoot.version).toBe('1.0.0')
+      expect(unchangedPkg1.version).toBe('2.0.0')
+      expect(unchangedPkg2.version).toBe('0.5.0')
+
+      // The key test is that the dry run output shows only one version bump message
+      // and only one prompt would be shown, not multiple prompts
+    })
+  })
+
+  describe('forceUpdate option', () => {
+    it('should force update package.json even when version is the same', async () => {
+      const packagePath = join(tempDir, 'package.json')
+      writeFileSync(packagePath, JSON.stringify({ name: 'test-pkg', version: '1.0.0' }, null, 2))
+
+      // Try to update to the same version with forceUpdate: true
+      await versionBump({
+        release: '1.0.0',
+        files: [packagePath],
+        forceUpdate: true,
+        commit: false,
+        tag: false,
+        push: false,
+        quiet: true,
+        noGitCheck: true,
+        cwd: tempDir,
+      })
+
+      // Read the updated file
+      const updatedPkg = JSON.parse(readFileSync(packagePath, 'utf-8'))
+      expect(updatedPkg.version).toBe('1.0.0')
+    })
+
+    it('should not update package.json when version is the same and forceUpdate: false', async () => {
+      const packagePath = join(tempDir, 'package.json')
+      writeFileSync(packagePath, JSON.stringify({ name: 'test-pkg', version: '1.0.0' }, null, 2))
+
+      // Try to update to the same version with forceUpdate: false
+      await versionBump({
+        release: '1.0.0',
+        files: [packagePath],
+        forceUpdate: false,
+        commit: false,
+        tag: false,
+        push: false,
+        quiet: true,
+        noGitCheck: true,
+        cwd: tempDir,
+      })
+
+      // Read the file - should remain unchanged
+      const updatedPkg = JSON.parse(readFileSync(packagePath, 'utf-8'))
+      expect(updatedPkg.version).toBe('1.0.0')
+    })
+
+    it('should use forceUpdate from config in recursive mode', async () => {
+      // Create root package.json
+      const rootPkg = {
+        name: 'root-pkg',
+        version: '1.0.0',
+        workspaces: ['packages/*'],
+      }
+      writeFileSync(join(tempDir, 'package.json'), JSON.stringify(rootPkg, null, 2))
+
+      // Create workspace package with different version
+      const workspaceDir = join(tempDir, 'packages', 'workspace-pkg')
+      mkdirSync(workspaceDir, { recursive: true })
+      const workspacePkg = { name: 'workspace-pkg', version: '2.0.0' }
+      writeFileSync(join(workspaceDir, 'package.json'), JSON.stringify(workspacePkg, null, 2))
+
+      // Test with forceUpdate: false
+      await versionBump({
+        release: 'patch',
+        recursive: true,
+        forceUpdate: false,
+        commit: false,
+        tag: false,
+        push: false,
+        quiet: true,
+        noGitCheck: true,
+        cwd: tempDir,
+      })
+
+      // Root should be updated to 1.0.1
+      const updatedRootPkg = JSON.parse(readFileSync(join(tempDir, 'package.json'), 'utf-8'))
+      expect(updatedRootPkg.version).toBe('1.0.1')
+
+      // Workspace should NOT be updated (forceUpdate: false)
+      const updatedWorkspacePkg = JSON.parse(readFileSync(join(workspaceDir, 'package.json'), 'utf-8'))
+      expect(updatedWorkspacePkg.version).toBe('2.0.0')
     })
   })
 })

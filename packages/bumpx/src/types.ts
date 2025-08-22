@@ -1,49 +1,43 @@
 export type ReleaseType = 'major' | 'minor' | 'patch' | 'premajor' | 'preminor' | 'prepatch' | 'prerelease'
 
 export interface VersionBumpOptions {
-  // Core options
-  release?: string | ReleaseType
-  preid?: string
-  currentVersion?: string
+  release?: ReleaseType | string
   files?: string[]
-
-  // Git options
+  recursive?: boolean
   commit?: boolean | string
   tag?: boolean | string
-  tagMessage?: string
   push?: boolean
-  sign?: boolean
-  noGitCheck?: boolean
-  noVerify?: boolean
-
-  // Execution options
-  install?: boolean
-  ignoreScripts?: boolean
-  execute?: string | string[]
-
-  // UI options
-  confirm?: boolean
-  quiet?: boolean
-  verbose?: boolean
-  ci?: boolean
+  yes?: boolean
   dryRun?: boolean
-  progress?: ProgressCallback
-
-  // Advanced options
-  all?: boolean
-  recursive?: boolean
+  noGitCheck?: boolean
+  preid?: string
+  currentVersion?: string
+  execute?: string | string[]
+  install?: boolean
   printCommits?: boolean
-
-  // Enhanced Monorepo Support
-  workspace?: boolean
-  include?: string[]
-  exclude?: string[]
-  updateDependencies?: boolean
-  workspaceRoot?: string
+  ci?: boolean
+  cwd?: string
+  progress?: ProgressCallback
+  forceUpdate?: boolean
+  quiet?: boolean
+  tagMessage?: string
+  sign?: boolean
+  confirm?: boolean
+  all?: boolean
+  noVerify?: boolean
+  ignoreScripts?: boolean
 }
 
 export interface BumpxConfig extends VersionBumpOptions {
   // Default configuration
+  all?: boolean
+  confirm?: boolean
+  noVerify?: boolean
+  ignoreScripts?: boolean
+  quiet?: boolean
+  verbose?: boolean
+  sign?: boolean
+  tagMessage?: string
 }
 
 export type BumpxOptions = Partial<BumpxConfig>

@@ -1,11 +1,11 @@
 /* eslint-disable no-console */
 import type { FileInfo, VersionBumpOptions } from './types'
-import { resolve } from 'node:path'
+import { join, resolve } from 'node:path'
+
 import process from 'node:process'
 import { ProgressEvent } from './types'
 import {
   checkGitStatus,
-  colors,
   createGitCommit,
   createGitTag,
   executeCommand,
@@ -30,47 +30,63 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
     files,
     commit,
     tag,
-    tagMessage,
     push,
-    sign,
     noGitCheck,
-    noVerify,
     install,
-    ignoreScripts: _ignoreScripts,
     execute,
-    progress,
     recursive,
     printCommits,
     dryRun,
+    progress,
+    forceUpdate = true,
+    cwd = process.cwd(),
   } = options
 
   try {
     // Print recent commits if requested
     if (printCommits) {
-      console.log(colors.blue('\nRecent commits:'))
-      const commits = getRecentCommits(10, process.cwd())
-      commits.forEach(commit => console.log(colors.gray(`  ${commit}`)))
+      console.log('\nRecent commits:')
+      const commits = getRecentCommits(10, cwd)
+      commits.forEach(commit => console.log(`  ${commit}`))
       console.log()
     }
 
-    // Check git status unless disabled
-    // Skip git status check if commit is enabled (we'll commit the dirty tree)
+    // Check git status only when needed
     if (!noGitCheck && (tag || push) && !commit) {
-      checkGitStatus(process.cwd())
+      await checkGitStatus(cwd)
+    }
+
+    // If commit is enabled, stage all changes (including existing dirty files)
+    if (commit) {
+      try {
+        await executeCommand('git add -A', cwd)
+      }
+      catch (error) {
+        console.warn('Warning: Failed to stage changes:', error)
+      }
     }
 
     // Determine files to update
     let filesToUpdate: string[] = []
+    let rootPackagePath: string | undefined
 
     if (files && files.length > 0) {
       filesToUpdate = files.map(file => resolve(file))
     }
     else if (recursive) {
       // Use workspace-aware discovery when recursive is enabled
-      filesToUpdate = await findAllPackageFiles(process.cwd(), true)
+      filesToUpdate = await findAllPackageFiles(cwd, true)
+
+      // Find the root package.json for recursive mode
+      rootPackagePath = filesToUpdate.find(
+        file =>
+          file.endsWith('package.json')
+          && (file === join(cwd, 'package.json')
+            || file === resolve(cwd, 'package.json')),
+      )
     }
     else {
-      filesToUpdate = await findPackageJsonFiles(process.cwd(), false)
+      filesToUpdate = await findPackageJsonFiles(cwd, false)
     }
 
     if (filesToUpdate.length === 0) {
@@ -90,11 +106,11 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
 
     // Variables for tracking versions (needed for git operations and progress)
     let lastNewVersion: string | undefined
-    let lastOldVersion: string | undefined
+    let _lastOldVersion: string | undefined
 
     // If currentVersion is specified, use single-version mode
     if (currentVersion !== undefined) {
-    // Validate current version
+      // Validate current version
       if (!currentVersion || !currentVersion.trim()) {
         throw new Error('Current version cannot be empty')
       }
@@ -124,15 +140,15 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
       }
 
       if (dryRun) {
-        console.log(colors.blue(`\n[DRY RUN] Would bump version from ${colors.bold(currentVersion)} to ${colors.bold(newVersion)}\n`))
+        console.log(`\n[DRY RUN] Would bump version from ${currentVersion} to ${newVersion}\n`)
       }
       else {
-        console.log(colors.blue(`\nBumping version from ${colors.bold(currentVersion)} to ${colors.bold(newVersion)}\n`))
+        console.log(`\nBumping version from ${currentVersion} to ${newVersion}\n`)
       }
 
       // Track versions for git operations
       lastNewVersion = newVersion
-      lastOldVersion = currentVersion
+      _lastOldVersion = currentVersion
 
       for (const filePath of filesToUpdate) {
         try {
@@ -182,10 +198,109 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
         }
       }
     }
+    else if (recursive && rootPackagePath) {
+      // Recursive mode: use root package version for all packages
+      let rootCurrentVersion: string
+      try {
+        const rootPackage = readPackageJson(rootPackagePath)
+        rootCurrentVersion = rootPackage.version
+        if (!rootCurrentVersion) {
+          throw new Error('Could not determine root package version')
+        }
+      }
+      catch (error) {
+        throw new Error(`Failed to read root package version: ${error}`)
+      }
+
+      // Determine new version for root package (only once)
+      let newVersion: string
+      if (release === 'prompt') {
+        if (dryRun) {
+          // In dry run mode, just simulate a patch increment to avoid interactive prompts
+          newVersion = incrementVersion(rootCurrentVersion, 'patch', preid)
+        }
+        else {
+          newVersion = await promptForVersion(rootCurrentVersion, preid)
+        }
+      }
+      else {
+        try {
+          newVersion = incrementVersion(rootCurrentVersion, release, preid)
+        }
+        catch {
+          throw new Error(`Invalid release type or version: ${release}`)
+        }
+      }
+
+      if (!newVersion) {
+        throw new Error('Could not determine new version')
+      }
+
+      if (dryRun) {
+        console.log(`\n[DRY RUN] Would bump root version from ${rootCurrentVersion} to ${newVersion} and update all workspace packages\n`)
+      }
+      else {
+        console.log(`\nBumping root version from ${rootCurrentVersion} to ${newVersion} and updating all workspace packages\n`)
+      }
+
+      // Track versions for git operations (use root version)
+      lastNewVersion = newVersion
+      _lastOldVersion = rootCurrentVersion
+
+      // Update all files with the same version
+      for (const filePath of filesToUpdate) {
+        try {
+          let fileInfo: FileInfo
+          if (dryRun) {
+            // In dry run mode, simulate the update without actually writing
+            fileInfo = {
+              path: filePath,
+              content: '',
+              updated: true, // Assume it would be updated
+              oldVersion: rootCurrentVersion,
+              newVersion,
+            }
+          }
+          else {
+            // In recursive mode, update all files to the new version regardless of their current version
+            fileInfo = updateVersionInFile(filePath, rootCurrentVersion, newVersion, forceUpdate)
+          }
+
+          if (fileInfo.updated) {
+            updatedFiles.push(filePath)
+            if (progress) {
+              progress({
+                event: ProgressEvent.FileUpdated,
+                updatedFiles: [filePath],
+                skippedFiles: [],
+                newVersion,
+                oldVersion: rootCurrentVersion,
+              })
+            }
+          }
+          else {
+            skippedFiles.push(filePath)
+            if (progress) {
+              progress({
+                event: ProgressEvent.FileSkipped,
+                updatedFiles: [],
+                skippedFiles: [filePath],
+                newVersion,
+                oldVersion: rootCurrentVersion,
+              })
+            }
+          }
+        }
+        catch (error) {
+          errors.push(`Failed to process ${filePath}: ${error}`)
+          skippedFiles.push(filePath)
+        }
+      }
+    }
     else {
       // Multi-version mode: bump each file from its own current version
       if (dryRun) {
-        console.log(colors.blue('\n[DRY RUN] Would bump versions independently for each file:\n'))
+        console.log(`\n[DRY RUN] Would bump versions independently for each file:\n`)
       }
 
       for (const filePath of filesToUpdate) {
@@ -213,11 +328,10 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
             // Try multiple patterns to extract version
             const patterns = [
               // version: 1.2.3 (with optional quotes)
-              /version\s*:\s*['"]?(\d+\.\d+\.\d+(?:-[a-z0-9.-]+)?(?:\+[a-z0-9.-]+)?)['"]?/i,
+              /version\s*[:=]\s*['"]?(\d+\.\d+\.\d+(?:-[a-z0-9.-]+)?(?:\+[a-z0-9.-]+)?)['"]?/i,
+              /VERSION\s*=\s*['"]?(\d+\.\d+\.\d+(?:-[a-z0-9.-]+)?(?:\+[a-z0-9.-]+)?)['"]?/i,
               // VERSION = '1.2.3' (with optional quotes)
-              /version\s*=\s*['"]?(\d+\.\d+\.\d+(?:-[a-z0-9.-]+)?(?:\+[a-z0-9.-]+)?)['"]?/i,
-              // Just a version number on its own line (for VERSION.txt files)
-              /^(\d+\.\d+\.\d+(?:-[a-z0-9.-]+)?(?:\+[a-z0-9.-]+)?)$/m,
+              /^(\d+\.\d+\.\d+(?:-[a-z0-9.-]+)?(?:\+[a-z0.9\-]+)?)$/m,
             ]
 
             for (const pattern of patterns) {
@@ -230,7 +344,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
           }
 
           if (!fileCurrentVersion) {
-            console.log(colors.yellow(`Warning: Could not determine version for ${filePath}, skipping`))
+            console.log(`Warning: Could not determine version for ${filePath}, skipping`)
             skippedFiles.push(filePath)
             continue
           }
@@ -264,7 +378,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
             throw new Error(`Could not determine new version for ${filePath}`)
           }
 
-          console.log(colors.gray(`  ${filePath}: ${fileCurrentVersion} → ${fileNewVersion}`))
+          console.log(`  ${filePath}: ${fileCurrentVersion} → ${fileNewVersion}`)
 
           let fileInfo: FileInfo
           if (dryRun) {
@@ -285,7 +399,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
             updatedFiles.push(filePath)
             // Track the last processed version for git operations
             lastNewVersion = fileNewVersion
-            lastOldVersion = fileCurrentVersion
+            _lastOldVersion = fileCurrentVersion
             if (progress) {
               progress({
                 event: ProgressEvent.FileUpdated,
@@ -310,7 +424,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
           }
         }
         catch (error) {
-          console.log(colors.yellow(`Warning: Failed to process ${filePath}: ${error}`))
+          console.log(`Warning: Failed to process ${filePath}: ${error}`)
           errors.push(`Failed to process ${filePath}: ${error}`)
           skippedFiles.push(filePath)
         }
@@ -326,56 +440,56 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
     if (execute && !dryRun) {
       const commands = Array.isArray(execute) ? execute : [execute]
       for (const command of commands) {
-        console.log(colors.blue(`Executing: ${command}`))
+        console.log(`Executing: ${command}`)
         try {
           executeCommand(command)
-          if (progress && lastNewVersion && lastOldVersion) {
+          if (progress && lastNewVersion && _lastOldVersion) {
             progress({
               event: ProgressEvent.Execute,
               script: command,
               updatedFiles,
               skippedFiles,
               newVersion: lastNewVersion,
-              oldVersion: lastOldVersion,
+              oldVersion: _lastOldVersion,
             })
           }
         }
         catch (error) {
-          console.warn(colors.yellow(`Warning: Failed to execute command: ${error}`))
+          console.warn(`Warning: Failed to execute command: ${error}`)
         }
       }
     }
     else if (execute && dryRun) {
       const commands = Array.isArray(execute) ? execute : [execute]
       for (const command of commands) {
-        console.log(colors.blue(`[DRY RUN] Would execute: ${command}`))
+        console.log(`[DRY RUN] Would execute: ${command}`)
       }
     }
 
     // Install dependencies if requested
     if (install && !dryRun) {
-      console.log(colors.blue('Installing dependencies...'))
+      console.log('Installing dependencies...')
       try {
         // Prefer running install in the directory of the first updated file
-        const installCwd = updatedFiles.length > 0 ? resolve(updatedFiles[0], '..') : process.cwd()
+        const installCwd = updatedFiles.length > 0 ? resolve(updatedFiles[0], '..') : cwd
         executeCommand('npm install', installCwd)
-        if (progress && lastNewVersion && lastOldVersion) {
+        if (progress && lastNewVersion && _lastOldVersion) {
           progress({
             event: ProgressEvent.NpmScript,
             script: 'install',
             updatedFiles,
             skippedFiles,
             newVersion: lastNewVersion,
-            oldVersion: lastOldVersion,
+            oldVersion: _lastOldVersion,
           })
         }
       }
       catch (error) {
-        console.warn(colors.yellow(`Warning: Failed to install dependencies: ${error}`))
+        console.warn('Warning: Failed to install dependencies:', error)
       }
     }
     else if (install && dryRun) {
-      console.log(colors.blue('[DRY RUN] Would install dependencies'))
+      console.log('[DRY RUN] Would install dependencies')
     }
 
     // Git operations
@@ -391,15 +505,15 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
         commitMessage = commitMessage.replace(/\{version\}/g, lastNewVersion).replace(/%s/g, lastNewVersion)
       }
 
-      createGitCommit(commitMessage, sign, noVerify, process.cwd())
+      createGitCommit(commitMessage, false, false, cwd)
 
-      if (progress && lastNewVersion && lastOldVersion) {
+      if (progress && lastNewVersion && _lastOldVersion) {
         progress({
           event: ProgressEvent.GitCommit,
           updatedFiles,
           skippedFiles,
           newVersion: lastNewVersion,
-          oldVersion: lastOldVersion,
+          oldVersion: _lastOldVersion,
         })
       }
     }
@@ -408,63 +522,49 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
       if (typeof commit === 'string' && lastNewVersion) {
         commitMessage = commitMessage.replace(/\{version\}/g, lastNewVersion).replace(/%s/g, lastNewVersion)
       }
-      console.log(colors.blue(`[DRY RUN] Would create git commit: "${commitMessage}"`))
+      console.log(`[DRY RUN] Would create git commit: "${commitMessage}"`)
     }
 
-    if (tag && !dryRun) {
-      let tagName = typeof tag === 'string' ? tag : `v${lastNewVersion || 'unknown'}`
+    // Create git tag if requested
+    if (tag && updatedFiles.length > 0 && !dryRun) {
+      const tagName = typeof tag === 'string' ? tag : `v${lastNewVersion}`
+      const finalTagMessage = `Release ${lastNewVersion}`
 
-      // Replace template variables in tag name
-      if (typeof tag === 'string' && lastNewVersion) {
-        tagName = tagName.replace(/\{version\}/g, lastNewVersion)
-      }
+      createGitTag(tagName, false, finalTagMessage, cwd)
 
-      // Replace template variables in tag message
-      let finalTagMessage = tagMessage
-      if (tagMessage && lastNewVersion) {
-        finalTagMessage = tagMessage.replace(/\{version\}/g, lastNewVersion).replace(/%s/g, lastNewVersion)
-      }
-
-      createGitTag(tagName, sign, finalTagMessage, process.cwd())
-
-      if (progress && lastNewVersion && lastOldVersion) {
+      if (progress && lastNewVersion && _lastOldVersion) {
         progress({
           event: ProgressEvent.GitTag,
           updatedFiles,
           skippedFiles,
           newVersion: lastNewVersion,
-          oldVersion: lastOldVersion,
+          oldVersion: _lastOldVersion,
         })
       }
     }
     else if (tag && dryRun) {
-      let tagName = typeof tag === 'string' ? tag : `v${lastNewVersion || 'unknown'}`
-      if (typeof tag === 'string' && lastNewVersion) {
-        tagName = tagName.replace(/\{version\}/g, lastNewVersion)
-      }
-      let finalTagMessage = tagMessage
-      if (tagMessage && lastNewVersion) {
-        finalTagMessage = tagMessage.replace(/\{version\}/g, lastNewVersion).replace(/%s/g, lastNewVersion)
-      }
-      console.log(colors.blue(`[DRY RUN] Would create git tag: "${tagName}"${finalTagMessage ? ` with message: "${finalTagMessage}"` : ''}`))
+      const tagName = typeof tag === 'string' ? tag : `v${lastNewVersion}`
+      const finalTagMessage = `Release ${lastNewVersion}`
+
+      console.log(`[DRY RUN] Would create git tag: "${tagName}" with message: "${finalTagMessage}"`)
     }
 
     if (push && !dryRun) {
-      pushToRemote(!!tag, process.cwd())
+      pushToRemote(!!tag, cwd)
 
-      if (progress && lastNewVersion && lastOldVersion) {
+      if (progress && lastNewVersion && _lastOldVersion) {
         progress({
           event: ProgressEvent.GitPush,
           updatedFiles,
           skippedFiles,
           newVersion: lastNewVersion,
-          oldVersion: lastOldVersion,
+          oldVersion: _lastOldVersion,
         })
       }
     }
     else if (push && dryRun) {
-      console.log(colors.blue(`[DRY RUN] Would pull latest changes from remote`))
-      console.log(colors.blue(`[DRY RUN] Would push to remote${tag ? ' (including tags)' : ''}`))
+      console.log(`[DRY RUN] Would pull latest changes from remote`)
+      console.log(`[DRY RUN] Would push to remote${tag ? ' (including tags)' : ''}`)
     }
 
     // Helper function for proper pluralization
@@ -472,24 +572,24 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
       count === 1 ? `${count} ${singular}` : `${count} ${plural}`
 
     if (dryRun) {
-      console.log(colors.gray(`\n${symbols.success} [DRY RUN] Would bump version${lastNewVersion ? ` to ${lastNewVersion}` : 's'}`))
+      console.log(`\n${symbols.success} [DRY RUN] Would bump version${lastNewVersion ? ` to ${lastNewVersion}` : 's'}`)
       if (updatedFiles.length > 0) {
-        console.log(colors.gray(`${symbols.success} Would update ${pluralize(updatedFiles.length, 'file')}`))
+        console.log(`${symbols.success} Would update ${pluralize(updatedFiles.length, 'file')}`)
       }
     }
     else {
-      console.log(colors.gray(`\n${symbols.success} Successfully bumped version${lastNewVersion ? ` to ${lastNewVersion}` : 's'}`))
+      console.log(`\n${symbols.success} Successfully bumped version${lastNewVersion ? ` to ${lastNewVersion}` : 's'}`)
       if (updatedFiles.length > 0) {
-        console.log(colors.gray(`${symbols.success} Updated ${pluralize(updatedFiles.length, 'file')}`))
+        console.log(`${symbols.success} Updated ${pluralize(updatedFiles.length, 'file')}`)
       }
     }
 
     if (skippedFiles.length > 0) {
-      console.log(colors.yellow(`${symbols.warning} Skipped ${pluralize(skippedFiles.length, 'file')} that didn't need updates`))
+      console.log(`${symbols.warning} Skipped ${pluralize(skippedFiles.length, 'file')} that didn't need updates`)
     }
   }
   catch (error) {
-    console.error(colors.red(`${symbols.error} ${error}`))
+    console.error(`${symbols.error} ${error}`)
     throw error
   }
 }
@@ -514,7 +614,7 @@ async function promptForVersion(currentVersion: string, preid?: string): Promise
       throw new Error('Unable to import interactive prompt functions from @stacksjs/clapp')
     }
 
-    console.log(colors.blue(`Current version: ${colors.bold(currentVersion)}\n`))
+    console.log(`Current version: ${currentVersion}\n`)
 
     const releaseTypes = ['patch', 'minor', 'major', 'prepatch', 'preminor', 'premajor', 'prerelease']
     const suggestions: Array<{ type: string, version: string }> = []
@@ -531,7 +631,7 @@ async function promptForVersion(currentVersion: string, preid?: string): Promise
 
     const suggestionsOptions = suggestions.map(suggestion => ({
       value: suggestion.version,
-      label: `${suggestion.type} ${colors.bold(suggestion.version)}`,
+      label: `${suggestion.type} ${currentVersion}`,
     }))
     suggestionsOptions.push({
       value: 'custom',

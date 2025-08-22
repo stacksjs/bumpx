@@ -1,4 +1,46 @@
 
+## release-{version}...main
+
+[compare changes](https://github.com/stacksjs/bumpx/compare/release-{version}...main)
+
+### 🏡 Chore
+
+- Release 1.0.1 ([6700bf3](https://github.com/stacksjs/bumpx/commit/6700bf3))
+- Release 1.0.1 ([3bd7a64](https://github.com/stacksjs/bumpx/commit/3bd7a64))
+- Release 1.0.1 ([7f4a1d4](https://github.com/stacksjs/bumpx/commit/7f4a1d4))
+- Release 1.0.1 ([a36fa97](https://github.com/stacksjs/bumpx/commit/a36fa97))
+- Release 1.0.1 ([8411825](https://github.com/stacksjs/bumpx/commit/8411825))
+- Release 1.0.1 ([9e00422](https://github.com/stacksjs/bumpx/commit/9e00422))
+- Release 1.0.1 ([0abb4b5](https://github.com/stacksjs/bumpx/commit/0abb4b5))
+
+### ❤️ Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+## v0.1.10...main
+
+[compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.10...main)
+
+### 🏡 Chore
+
+- Wip ([faa282e](https://github.com/stacksjs/bumpx/commit/faa282e))
+
+### ❤️ Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+## v0.1.10...main
+
+[compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.10...main)
+
+### 🏡 Chore
+
+- Wip ([faa282e](https://github.com/stacksjs/bumpx/commit/faa282e))
+
+### ❤️ Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
 ## v0.1.9...v0.1.9
 
 [compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.9...v0.1.9)

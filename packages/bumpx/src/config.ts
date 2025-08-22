@@ -23,6 +23,7 @@ export const defaultConfig: BumpxConfig = {
   all: false,
   recursive: true,
   printCommits: false,
+  forceUpdate: true,
 }
 
 /**

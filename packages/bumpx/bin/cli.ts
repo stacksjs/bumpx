@@ -35,6 +35,7 @@ interface CLIOptions {
   execute?: string
   files?: string
   verbose?: boolean
+  forceUpdate?: boolean
 }
 
 /**
@@ -180,6 +181,8 @@ async function prepareConfig(release: string | undefined, files: string[] | unde
     cliOverrides.ci = true
   if (release !== undefined)
     cliOverrides.release = release
+  if (options.forceUpdate !== undefined)
+    cliOverrides.forceUpdate = options.forceUpdate
 
   return await loadBumpConfig({
     ...cliOverrides,
@@ -213,6 +216,7 @@ cli
   .option('-x, --execute <command>', 'Commands to execute after version bumps')
   .option('--files <files>', 'Comma-separated list of files to update')
   .option('--verbose', 'Enable verbose output')
+  .option('--force-update', 'Force update even if version is the same')
   .example('bumpx patch')
   .example('bumpx minor --no-git-check')
   .example('bumpx major --no-push')

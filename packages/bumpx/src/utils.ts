@@ -327,7 +327,7 @@ export function writePackageJson(filePath: string, packageJson: PackageJson): vo
 /**
  * Update version in a file (supports various file types)
  */
-export function updateVersionInFile(filePath: string, oldVersion: string, newVersion: string): FileInfo {
+export function updateVersionInFile(filePath: string, oldVersion: string, newVersion: string, forceUpdate: boolean = false): FileInfo {
   try {
     const content = readFileSync(filePath, 'utf-8')
     const isPackageJson = filePath.endsWith('package.json')
@@ -337,7 +337,7 @@ export function updateVersionInFile(filePath: string, oldVersion: string, newVer
 
     if (isPackageJson) {
       const packageJson = JSON.parse(content)
-      if (packageJson.version === oldVersion) {
+      if (packageJson.version === oldVersion || forceUpdate) {
         packageJson.version = newVersion
         newContent = `${JSON.stringify(packageJson, null, 2)}\n`
         updated = true
