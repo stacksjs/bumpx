@@ -9,7 +9,7 @@ const config: BuddyBotConfig = {
   },
   dashboard: {
     enabled: true,
-    title: 'Dependency Updates Dashboard',
+    title: 'Dependency Dashboard',
     // issueNumber: undefined, // Auto-generated
   },
   workflows: {
@@ -27,6 +27,10 @@ const config: BuddyBotConfig = {
     ignore: [
       // Add packages to ignore here
       // Example: '@types/node', 'eslint'
+    ],
+    ignorePaths: [
+      // Add file/directory paths to ignore using glob patterns
+      // Example: 'packages/test-*/**', '**/*test-envs/**', 'apps/legacy/**'
     ],
   },
   verbose: false,
