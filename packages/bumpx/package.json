@@ -68,8 +68,5 @@
   },
   "devDependencies": {
     "bun-plugin-dtsx": "^0.21.12"
-  },
-  "lint-staged": {
-    "*.{js,ts}": "bunx --bun eslint . --fix"
   }
 }
