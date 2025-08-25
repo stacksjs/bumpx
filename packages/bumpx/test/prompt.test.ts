@@ -1,4 +1,4 @@
-import { afterEach, beforeEach, describe, expect, it, mock } from 'bun:test'
+import { afterEach, beforeEach, describe, expect, it } from 'bun:test'
 import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
@@ -13,7 +13,7 @@ describe('Interactive Prompt Tests', () => {
     tempDir = join(tmpdir(), `bumpx-prompt-test-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`)
     mkdirSync(tempDir, { recursive: true })
     process.chdir(tempDir)
-    
+
     // Set test environment to prevent actual prompting
     process.env.NODE_ENV = 'test'
   })
@@ -584,7 +584,7 @@ describe('Interactive Prompt Tests', () => {
 
       const updatedPackage = JSON.parse(readFileSync(packagePath, 'utf-8'))
       expect(updatedPackage.version).toBe('0.1.14')
-      
+
       // Verify that the file was actually updated (not rolled back)
       expect(updatedPackage.version).not.toBe('0.1.13')
     })

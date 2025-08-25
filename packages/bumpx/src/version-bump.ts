@@ -628,14 +628,14 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
       console.log('Rollback completed. No changes were made.')
       throw error
     }
-    
+
     // For other errors, attempt rollback if we've made changes
     if (hasStartedUpdates && fileBackups.size > 0) {
       console.log('\nRolling back changes due to error...')
       await rollbackChanges(fileBackups)
       console.log('Rollback completed due to error.')
     }
-    
+
     console.error(`${symbols.error} ${error}`)
     throw error
   }
@@ -699,7 +699,7 @@ async function promptForVersion(currentVersion: string, preid?: string): Promise
       value: 'custom',
       label: 'custom ...',
     })
-    
+
     try {
       const selectedOption = await select({
         message: 'Choose an option:',
@@ -718,10 +718,10 @@ async function promptForVersion(currentVersion: string, preid?: string): Promise
     }
     catch (promptError: any) {
       // Check if this is a cancellation/interruption
-      if (promptError.message?.includes('cancelled') || 
-          promptError.message?.includes('interrupted') ||
-          promptError.message?.includes('SIGINT') ||
-          promptError.message?.includes('SIGTERM')) {
+      if (promptError.message?.includes('cancelled')
+        || promptError.message?.includes('interrupted')
+        || promptError.message?.includes('SIGINT')
+        || promptError.message?.includes('SIGTERM')) {
         throw new Error('Version bump cancelled by user')
       }
       throw promptError
@@ -732,7 +732,7 @@ async function promptForVersion(currentVersion: string, preid?: string): Promise
     if (error.message === 'Version bump cancelled by user') {
       throw error
     }
-    
+
     // For other errors, provide a helpful message
     console.warn('Warning: Interactive prompt failed')
     throw new Error(`Failed to get version selection: ${error.message}`)
