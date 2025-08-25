@@ -42,6 +42,10 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
     cwd = process.cwd(),
   } = options
 
+  // Backup system for rollback on cancellation
+  const fileBackups = new Map<string, { content: string, version: string }>()
+  let hasStartedUpdates = false
+
   try {
     // Print recent commits if requested
     if (printCommits) {
@@ -150,6 +154,20 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
       lastNewVersion = newVersion
       _lastOldVersion = currentVersion
 
+      // Create backups of all files before updating
+      for (const filePath of filesToUpdate) {
+        try {
+          const fs = await import('node:fs')
+          const content = fs.readFileSync(filePath, 'utf-8')
+          const packageJson = JSON.parse(content)
+          fileBackups.set(filePath, { content, version: packageJson.version })
+        }
+        catch (error) {
+          console.warn(`Warning: Could not backup ${filePath}: ${error}`)
+        }
+      }
+      hasStartedUpdates = true
+
       for (const filePath of filesToUpdate) {
         try {
           let fileInfo: FileInfo
@@ -246,6 +264,20 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
       // Track versions for git operations (use root version)
       lastNewVersion = newVersion
       _lastOldVersion = rootCurrentVersion
+
+      // Create backups of all files before updating
+      for (const filePath of filesToUpdate) {
+        try {
+          const fs = await import('node:fs')
+          const content = fs.readFileSync(filePath, 'utf-8')
+          const packageJson = JSON.parse(content)
+          fileBackups.set(filePath, { content, version: packageJson.version })
+        }
+        catch (error) {
+          console.warn(`Warning: Could not backup ${filePath}: ${error}`)
+        }
+      }
+      hasStartedUpdates = true
 
       // Update all files with the same version
       for (const filePath of filesToUpdate) {
@@ -589,8 +621,38 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
     }
   }
   catch (error) {
+    // If we've started updates and this is a cancellation, rollback changes
+    if (hasStartedUpdates && error instanceof Error && error.message === 'Version bump cancelled by user') {
+      console.log('\nRolling back changes due to cancellation...')
+      await rollbackChanges(fileBackups)
+      console.log('Rollback completed. No changes were made.')
+      throw error
+    }
+    
+    // For other errors, attempt rollback if we've made changes
+    if (hasStartedUpdates && fileBackups.size > 0) {
+      console.log('\nRolling back changes due to error...')
+      await rollbackChanges(fileBackups)
+      console.log('Rollback completed due to error.')
+    }
+    
     console.error(`${symbols.error} ${error}`)
     throw error
+  }
+}
+
+/**
+ * Rollback file changes to their original state
+ */
+async function rollbackChanges(fileBackups: Map<string, { content: string, version: string }>): Promise<void> {
+  for (const [filePath, backup] of fileBackups) {
+    try {
+      const fs = await import('node:fs')
+      fs.writeFileSync(filePath, backup.content, 'utf-8')
+    }
+    catch (rollbackError) {
+      console.warn(`Warning: Failed to rollback ${filePath}: ${rollbackError}`)
+    }
   }
 }
 
@@ -631,30 +693,48 @@ async function promptForVersion(currentVersion: string, preid?: string): Promise
 
     const suggestionsOptions = suggestions.map(suggestion => ({
       value: suggestion.version,
-      label: `${suggestion.type} ${currentVersion}`,
+      label: `${suggestion.type} ${suggestion.version}`,
     }))
     suggestionsOptions.push({
       value: 'custom',
       label: 'custom ...',
     })
-    const selectedOption = await select({
-      message: 'Choose an option:',
-      options: suggestionsOptions,
-    })
-
-    if (selectedOption === 'custom') {
-      const customV = await text({
-        message: 'Enter the new version number:',
-        placeholder: `${currentVersion}`,
+    
+    try {
+      const selectedOption = await select({
+        message: 'Choose an option:',
+        options: suggestionsOptions,
       })
-      return customV.trim()
-    }
 
-    return selectedOption.trim()
+      if (selectedOption === 'custom') {
+        const customV = await text({
+          message: 'Enter the new version number:',
+          placeholder: `${currentVersion}`,
+        })
+        return customV.trim()
+      }
+
+      return selectedOption.trim()
+    }
+    catch (promptError: any) {
+      // Check if this is a cancellation/interruption
+      if (promptError.message?.includes('cancelled') || 
+          promptError.message?.includes('interrupted') ||
+          promptError.message?.includes('SIGINT') ||
+          promptError.message?.includes('SIGTERM')) {
+        throw new Error('Version bump cancelled by user')
+      }
+      throw promptError
+    }
   }
-  catch {
-    // Fallback to patch increment if prompt fails
-    console.warn('Warning: Interactive prompt failed, defaulting to patch increment')
-    return incrementVersion(currentVersion, 'patch', preid)
+  catch (error: any) {
+    // Don't fallback to patch increment on cancellation - let the error propagate
+    if (error.message === 'Version bump cancelled by user') {
+      throw error
+    }
+    
+    // For other errors, provide a helpful message
+    console.warn('Warning: Interactive prompt failed')
+    throw new Error(`Failed to get version selection: ${error.message}`)
   }
 }
