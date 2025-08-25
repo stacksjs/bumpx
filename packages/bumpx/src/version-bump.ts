@@ -558,8 +558,12 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
     }
 
     // Create git tag if requested
-    if (tag && updatedFiles.length > 0 && !dryRun) {
-      const tagName = typeof tag === 'string' ? tag : `v${lastNewVersion}`
+    if (tag && updatedFiles.length > 0 && !dryRun && lastNewVersion) {
+      let tagName = typeof tag === 'string' ? tag : `v${lastNewVersion}`
+      // Process template variables in tag name
+      if (typeof tag === 'string') {
+        tagName = tagName.replace(/\{version\}/g, lastNewVersion).replace(/%s/g, lastNewVersion)
+      }
       const finalTagMessage = `Release ${lastNewVersion}`
 
       createGitTag(tagName, false, finalTagMessage, cwd)
@@ -574,8 +578,12 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
         })
       }
     }
-    else if (tag && dryRun) {
-      const tagName = typeof tag === 'string' ? tag : `v${lastNewVersion}`
+    else if (tag && dryRun && lastNewVersion) {
+      let tagName = typeof tag === 'string' ? tag : `v${lastNewVersion}`
+      // Process template variables in tag name
+      if (typeof tag === 'string') {
+        tagName = tagName.replace(/\{version\}/g, lastNewVersion).replace(/%s/g, lastNewVersion)
+      }
       const finalTagMessage = `Release ${lastNewVersion}`
 
       console.log(`[DRY RUN] Would create git tag: "${tagName}" with message: "${finalTagMessage}"`)
