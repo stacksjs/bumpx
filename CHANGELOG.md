@@ -10,6 +10,12 @@
 
 - Adelino Ngomacha <adelinob335@gmail.com>
 
+[Compare changes](https://github.com/stacksjs/bumpx/compare/release-{version}...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
 ## v0.1.10...main
 
 [compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.10...main)
