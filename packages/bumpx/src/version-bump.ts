@@ -45,6 +45,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
   // Backup system for rollback on cancellation
   const fileBackups = new Map<string, { content: string, version: string }>()
   let hasStartedUpdates = false
+  let hasStartedGitOperations = false
 
   try {
     // Print recent commits if requested
@@ -526,6 +527,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
 
     // Git operations
     if (commit && updatedFiles.length > 0 && !dryRun) {
+      hasStartedGitOperations = true
       // Stage all changes (existing dirty files + version updates)
       executeCommand('git add -A')
 
@@ -632,7 +634,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
     // If we've started updates and this is a cancellation, rollback changes
     if (hasStartedUpdates && error instanceof Error && error.message === 'Version bump cancelled by user') {
       console.log('\nRolling back changes due to cancellation...')
-      await rollbackChanges(fileBackups)
+      await rollbackChanges(fileBackups, hasStartedGitOperations)
       console.log('Rollback completed. No changes were made.')
       throw error
     }
@@ -640,7 +642,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
     // For other errors, attempt rollback if we've made changes
     if (hasStartedUpdates && fileBackups.size > 0) {
       console.log('\nRolling back changes due to error...')
-      await rollbackChanges(fileBackups)
+      await rollbackChanges(fileBackups, hasStartedGitOperations)
       console.log('Rollback completed due to error.')
     }
 
@@ -650,9 +652,22 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
 }
 
 /**
- * Rollback file changes to their original state
+ * Rollback file changes to their original state and unstage Git changes
  */
-async function rollbackChanges(fileBackups: Map<string, { content: string, version: string }>): Promise<void> {
+async function rollbackChanges(fileBackups: Map<string, { content: string, version: string }>, hasStartedGitOperations: boolean = false): Promise<void> {
+  // First, unstage any staged changes if Git operations were started
+  if (hasStartedGitOperations) {
+    try {
+      const { executeGit } = await import('./utils')
+      executeGit(['reset', 'HEAD'], process.cwd())
+      console.log('Unstaged all Git changes')
+    }
+    catch (unstageError) {
+      console.warn(`Warning: Failed to unstage Git changes: ${unstageError}`)
+    }
+  }
+
+  // Then restore file contents to their original state
   for (const [filePath, backup] of fileBackups) {
     try {
       const fs = await import('node:fs')
