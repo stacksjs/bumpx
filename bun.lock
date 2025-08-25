@@ -4,13 +4,13 @@
     "": {
       "name": "bumpx",
       "devDependencies": {
-        "@stacksjs/bumpx": "^0.1.13",
+        "@stacksjs/bumpx": "^0.1.17",
         "@stacksjs/docs": "^0.70.23",
         "@stacksjs/eslint-config": "^4.14.0-beta.3",
         "@stacksjs/gitlint": "^0.1.5",
         "@stacksjs/logsmith": "^0.1.8",
         "@types/bun": "^1.2.15",
-        "buddy-bot": "^0.8.8",
+        "buddy-bot": "^0.8.9",
         "bun-git-hooks": "^0.2.19",
         "bun-plugin-dtsx": "^0.9.5",
         "bunfig": "^0.10.1",
@@ -19,7 +19,7 @@
     },
     "packages/action": {
       "name": "bumpx-action",
-      "version": "0.1.13",
+      "version": "0.1.17",
       "bin": {
         "bumpx-action": "dist/index.js",
       },
@@ -36,7 +36,7 @@
     },
     "packages/bumpx": {
       "name": "@stacksjs/bumpx",
-      "version": "0.1.13",
+      "version": "0.1.17",
       "bin": {
         "bumpx": "./dist/bin/cli.js",
       },
@@ -846,7 +846,7 @@
 
     "browserslist": ["browserslist@4.24.4", "", { "dependencies": { "caniuse-lite": "^1.0.30001688", "electron-to-chromium": "^1.5.73", "node-releases": "^2.0.19", "update-browserslist-db": "^1.1.1" }, "bin": { "browserslist": "cli.js" } }, "sha512-KDi1Ny1gSePi1vm0q4oxSF8b4DR44GF4BbmS2YdhPLOEqd8pDviZOGH/GsmRwoWJ2+5Lr085X7naowMwKHDG1A=="],
 
-    "buddy-bot": ["buddy-bot@0.8.8", "", { "dependencies": { "@types/prompts": "^2.4.9", "bunfig": "^0.10.1", "cac": "6.7.14", "prompts": "^2.4.2", "ts-pkgx": "0.4.38" }, "bin": { "buddy-bot": "dist/bin/cli.js" } }, "sha512-anRmoD/AUsKlre0wHbpvsxRK7MOFC7R+nKBipNGK31nEC+ZenVOuoZYu6jaII2q3hnOSqzakP6zglZy/0SrHkw=="],
+    "buddy-bot": ["buddy-bot@0.8.9", "", { "dependencies": { "@types/prompts": "^2.4.9", "bunfig": "^0.10.1", "cac": "6.7.14", "prompts": "^2.4.2", "ts-pkgx": "0.4.38" }, "bin": { "buddy-bot": "dist/bin/cli.js" } }, "sha512-X6JmnlBxTUYfmLB/L9HHGDhAc3pSnSopMQ8pv78rpzLyYqhuJmO5tHKin9LaPefGbJAL2A3xZTBJ2+CTLksKoA=="],
 
     "buffer": ["buffer@5.7.1", "", { "dependencies": { "base64-js": "^1.3.1", "ieee754": "^1.1.13" } }, "sha512-EHcyIPBQ4BSGlvjB16k5KgAJ27CIsHY/2JBmCRReo48y9rQ3MaUzWX3KVlBa4U7MyX02HdVj0K7C3WaB3ju7FQ=="],
 
