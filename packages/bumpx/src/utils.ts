@@ -520,10 +520,18 @@ export function getRecentCommits(count: number = 10, cwd?: string): string[] {
  */
 export function executeCommand(command: string, cwd?: string): string {
   try {
+    // Add a safe timeout in CI to prevent long-hanging commands (e.g., npm install)
+    // Can be overridden via BUMPX_CMD_TIMEOUT_MS env var
+    const timeoutMs = process.env.BUMPX_CMD_TIMEOUT_MS
+      ? Number.parseInt(process.env.BUMPX_CMD_TIMEOUT_MS, 10)
+      : (process.env.CI ? 4000 : undefined)
+
     return execSync(command, {
       encoding: 'utf-8',
       stdio: ['pipe', 'pipe', 'pipe'],
       cwd: cwd || process.cwd(),
+      // Only set timeout when defined (Node rejects undefined)
+      ...(timeoutMs !== undefined ? { timeout: timeoutMs } : {}),
     }).trim()
   }
   catch (error: any) {
