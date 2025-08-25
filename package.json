@@ -61,7 +61,7 @@
         "*.{js,ts,json,yaml,yml}": "bun lint:fix"
       }
     },
-    "commit-msg": "bunx gitlint --edit $1"
+    "commit-msg": "bunx gitlint --edit .git/COMMIT_EDITMSG"
   },
   "workspaces": [
     "packages/*"
