@@ -1,3 +1,14 @@
+[Compare changes](https://github.com/stacksjs/bumpx/compare/release-{version}...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/release-{version}...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
 
 ## v0.1.10...main
 
@@ -221,7 +232,6 @@
 
 ## ...main
 
-
 ### 🏡 Chore
 
 - Initial commit ([64bd050](https://github.com/stacksjs/bumpx/commit/64bd050))
@@ -240,4 +250,3 @@
 ### ❤️ Contributors
 
 - Chris ([@chrisbbreuer](https://github.com/chrisbbreuer))
-
