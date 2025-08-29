@@ -111,7 +111,7 @@ describe('Changelog Generation', () => {
       })
 
       // Verify changelog generation was attempted even with commit disabled
-      expect(mockExecSync).toHaveBeenCalledWith('bunx logsmith --output CHANGELOG.md --from v1.0.0 --to v1.0.1', tempDir)
+      expect(mockExecSync).toHaveBeenCalledWith('bunx logsmith --output CHANGELOG.md --from v1.0.0 --to HEAD', tempDir)
 
       // Verify no changelog commit was made since commit is disabled
       const commitCalls = mockSpawnSync.mock.calls.filter((call: any) =>
@@ -137,7 +137,7 @@ describe('Changelog Generation', () => {
       })
 
       // Verify changelog generation was attempted even with tag disabled
-      expect(mockExecSync).toHaveBeenCalledWith('bunx logsmith --output CHANGELOG.md --from v1.0.0 --to v1.0.1', tempDir)
+      expect(mockExecSync).toHaveBeenCalledWith('bunx logsmith --output CHANGELOG.md --from v1.0.0 --to HEAD', tempDir)
     })
 
     it('should generate changelog and commit it when commit is enabled', async () => {
@@ -164,6 +164,27 @@ describe('Changelog Generation', () => {
 
       // Verify single commit was created (no separate changelog commit)
       expect(mockSpawnSync).toHaveBeenCalledWith(['commit', '-m', 'chore: release v1.0.1'], tempDir)
+    })
+
+    it('should handle tag fallback to HEAD when tag does not exist', async () => {
+      const packagePath = join(tempDir, 'package.json')
+      writeFileSync(packagePath, JSON.stringify({ name: 'test', version: '1.0.0' }, null, 2))
+
+      await versionBump({
+        release: 'patch',
+        files: [packagePath],
+        commit: true,
+        tag: true,
+        push: false,
+        changelog: true,
+        quiet: true,
+        noGitCheck: true,
+        cwd: tempDir,
+      })
+
+      // Verify changelog generation was attempted with version range
+      // Since the tag v1.0.1 doesn't exist yet, it should fall back to HEAD
+      expect(mockExecSync).toHaveBeenCalledWith('bunx logsmith --output CHANGELOG.md --from v1.0.0 --to HEAD', tempDir)
     })
   })
 
@@ -394,7 +415,7 @@ describe('Changelog Generation', () => {
       })
 
       // Verify changelog generation was attempted in root directory with version range
-      expect(mockExecSync).toHaveBeenCalledWith('bunx logsmith --output CHANGELOG.md --from v1.0.0 --to v1.0.1', tempDir)
+      expect(mockExecSync).toHaveBeenCalledWith('bunx logsmith --output CHANGELOG.md --from v1.0.0 --to HEAD', tempDir)
     })
   })
 

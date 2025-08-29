@@ -716,12 +716,48 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
  * Generate changelog using @stacksjs/logsmith
  */
 async function generateChangelog(cwd: string, fromVersion?: string, toVersion?: string): Promise<void> {
+  const fs = await import('node:fs')
+  const path = await import('node:path')
+  const { executeGit } = await import('./utils')
+
+  const changelogPath = path.join(cwd, 'CHANGELOG.md')
+  let existingContent = ''
+
+  // Read existing changelog content if it exists
+  if (fs.existsSync(changelogPath)) {
+    try {
+      existingContent = fs.readFileSync(changelogPath, 'utf-8')
+      // Ensure there's a proper separator if content exists
+      if (existingContent.trim() && !existingContent.endsWith('\n\n')) {
+        existingContent += '\n\n'
+      }
+    }
+    catch (error) {
+      console.warn('Warning: Could not read existing CHANGELOG.md:', error)
+    }
+  }
+
+  // Check if the desired tag exists, otherwise use HEAD
+  let actualToVersion = toVersion
+  if (toVersion && toVersion !== 'HEAD') {
+    try {
+      // Check if the tag exists
+      await executeGit(['rev-parse', '--verify', toVersion], cwd)
+      // Tag exists, use it
+    }
+    catch {
+      // Tag doesn't exist, use HEAD instead
+      console.warn(`Warning: Tag ${toVersion} doesn't exist yet, using HEAD for changelog generation`)
+      actualToVersion = 'HEAD'
+    }
+  }
+
   try {
     // Dynamic import to avoid top-level import issues
     const logsmithModule: any = await import('@stacksjs/logsmith')
-    const generateChangelog = logsmithModule.generateChangelog || logsmithModule.default?.generateChangelog
+    const generateChangelogFn = logsmithModule.generateChangelog || logsmithModule.default?.generateChangelog
 
-    if (!generateChangelog) {
+    if (!generateChangelogFn) {
       throw new Error('Unable to import generateChangelog from @stacksjs/logsmith')
     }
 
@@ -735,11 +771,29 @@ async function generateChangelog(cwd: string, fromVersion?: string, toVersion?: 
     if (fromVersion) {
       options.from = fromVersion
     }
-    if (toVersion) {
-      options.to = toVersion
+    if (actualToVersion) {
+      options.to = actualToVersion
     }
 
-    await generateChangelog(options)
+    await generateChangelogFn(options)
+
+    // Read the newly generated content
+    let newContent = ''
+    if (fs.existsSync(changelogPath)) {
+      newContent = fs.readFileSync(changelogPath, 'utf-8')
+    }
+
+    // If we have existing content, prepend it to the new content
+    if (existingContent.trim()) {
+      // Check if the new content already contains some of the existing content
+      // to avoid duplication
+      if (!newContent.includes(existingContent.trim())) {
+        newContent = existingContent + newContent
+      }
+    }
+
+    // Write the combined content back to the file
+    fs.writeFileSync(changelogPath, newContent, 'utf-8')
   }
   catch (error: any) {
     // If logsmith is not available or fails, try using the CLI command as fallback
@@ -751,11 +805,29 @@ async function generateChangelog(cwd: string, fromVersion?: string, toVersion?: 
       if (fromVersion) {
         command += ` --from ${fromVersion}`
       }
-      if (toVersion) {
-        command += ` --to ${toVersion}`
+      if (actualToVersion) {
+        command += ` --to ${actualToVersion}`
       }
 
       executeCommand(command, cwd)
+
+      // Read the newly generated content
+      let newContent = ''
+      if (fs.existsSync(changelogPath)) {
+        newContent = fs.readFileSync(changelogPath, 'utf-8')
+      }
+
+      // If we have existing content, prepend it to the new content
+      if (existingContent.trim()) {
+        // Check if the new content already contains some of the existing content
+        // to avoid duplication
+        if (!newContent.includes(existingContent.trim())) {
+          newContent = existingContent + newContent
+        }
+      }
+
+      // Write the combined content back to the file
+      fs.writeFileSync(changelogPath, newContent, 'utf-8')
     }
     catch (fallbackError) {
       throw new Error(`Changelog generation failed: ${error.message}. Fallback also failed: ${fallbackError}`)
