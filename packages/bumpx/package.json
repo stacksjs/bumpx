@@ -64,7 +64,8 @@
     "test": "bun test"
   },
   "dependencies": {
-    "@stacksjs/clapp": "^0.1.16"
+    "@stacksjs/clapp": "^0.1.16",
+    "@stacksjs/logsmith": "^0.1.8"
   },
   "devDependencies": {
     "bun-plugin-dtsx": "^0.21.12"

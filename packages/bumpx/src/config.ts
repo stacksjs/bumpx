@@ -24,6 +24,7 @@ export const defaultConfig: BumpxConfig = {
   recursive: true,
   printCommits: false,
   forceUpdate: true,
+  changelog: true, // Enable changelog generation by default
 }
 
 /**

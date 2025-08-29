@@ -26,6 +26,7 @@ export interface VersionBumpOptions {
   all?: boolean
   noVerify?: boolean
   ignoreScripts?: boolean
+  changelog?: boolean
 }
 
 export interface BumpxConfig extends VersionBumpOptions {
@@ -50,6 +51,7 @@ export enum ProgressEvent {
   GitPush = 'gitPush',
   NpmScript = 'npmScript',
   Execute = 'execute',
+  ChangelogGenerated = 'changelogGenerated',
 }
 
 export interface VersionBumpProgress {

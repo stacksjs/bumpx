@@ -36,6 +36,7 @@ interface CLIOptions {
   files?: string
   verbose?: boolean
   forceUpdate?: boolean
+  changelog?: boolean
 }
 
 /**
@@ -68,7 +69,11 @@ function progress({ event, script, updatedFiles, skippedFiles, newVersion }: Ver
       break
 
     case ProgressEvent.Execute:
-      console.log(colors.green(`${symbols.success} Execute ${script}`))
+      console.log(colors.gray(`${symbols.success} Execute ${script}`))
+      break
+
+    case ProgressEvent.ChangelogGenerated:
+      console.log(colors.gray(`${symbols.success} Generated changelog`))
       break
   }
 }
@@ -229,6 +234,8 @@ async function prepareConfig(release: string | undefined, files: string[] | unde
     cliOverrides.release = release
   if (options.forceUpdate !== undefined)
     cliOverrides.forceUpdate = options.forceUpdate
+  if (options.changelog !== undefined)
+    cliOverrides.changelog = options.changelog
 
   const loaded = await loadBumpConfig({
     ...cliOverrides,
@@ -284,6 +291,8 @@ cli
   .option('--files <files>', 'Comma-separated list of files to update')
   .option('--verbose', 'Enable verbose output')
   .option('--force-update', 'Force update even if version is the same')
+  .option('--changelog', `Generate changelog (default: ${bumpConfigDefaults.changelog})`)
+  .option('--no-changelog', 'Skip changelog generation')
   .example('bumpx patch')
   .example('bumpx minor --no-git-check')
   .example('bumpx major --no-push')

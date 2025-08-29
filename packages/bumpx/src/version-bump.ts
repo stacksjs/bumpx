@@ -41,6 +41,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
     forceUpdate = true,
     tagMessage,
     cwd,
+    changelog = true,
   } = options
 
   // Backup system for rollback on cancellation
@@ -596,6 +597,45 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
       console.log(`[DRY RUN] Would create git tag: "${tagName}" with message: "${finalTagMessage}"`)
     }
 
+    // Generate changelog based on the specified conditions:
+    // - Generate if changelog flag is enabled
+    // - Generate even if commit is false (just generate changelog)
+    // - Generate even if tag is false (just generate changelog)
+    // - Don't generate if changelog flag is explicitly disabled
+    if (changelog && lastNewVersion && !dryRun) {
+      try {
+        await generateChangelog(effectiveCwd)
+
+        if (progress && _lastOldVersion) {
+          progress({
+            event: ProgressEvent.ChangelogGenerated,
+            updatedFiles,
+            skippedFiles,
+            newVersion: lastNewVersion,
+            oldVersion: _lastOldVersion,
+          })
+        }
+
+        // If we have commit enabled, commit the changelog changes
+        if (commit) {
+          try {
+            const { executeGit } = await import('./utils')
+            executeGit(['add', 'CHANGELOG.md'], effectiveCwd)
+            createGitCommit(`docs: update changelog for v${lastNewVersion}`, false, false, effectiveCwd)
+          }
+          catch (error) {
+            console.warn('Warning: Failed to commit changelog:', error)
+          }
+        }
+      }
+      catch (error) {
+        console.warn(`Warning: Changelog generation failed: ${error}`)
+      }
+    }
+    else if (changelog && dryRun) {
+      console.log('[DRY RUN] Would generate changelog')
+    }
+
     if (push && !dryRun) {
       pushToRemote(!!tag, effectiveCwd)
 
@@ -653,6 +693,37 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
 
     console.error(`${symbols.error} ${error}`)
     throw error
+  }
+}
+
+/**
+ * Generate changelog using @stacksjs/logsmith
+ */
+async function generateChangelog(cwd: string): Promise<void> {
+  try {
+    // Dynamic import to avoid top-level import issues
+    const logsmithModule: any = await import('@stacksjs/logsmith')
+    const generateChangelog = logsmithModule.generateChangelog || logsmithModule.default?.generateChangelog
+
+    if (!generateChangelog) {
+      throw new Error('Unable to import generateChangelog from @stacksjs/logsmith')
+    }
+
+    // Generate changelog with logsmith
+    await generateChangelog({
+      output: 'CHANGELOG.md',
+      cwd,
+    })
+  }
+  catch (error: any) {
+    // If logsmith is not available or fails, try using the CLI command as fallback
+    try {
+      const { executeCommand } = await import('./utils')
+      executeCommand('bunx logsmith --output CHANGELOG.md', cwd)
+    }
+    catch (fallbackError) {
+      throw new Error(`Changelog generation failed: ${error.message}. Fallback also failed: ${fallbackError}`)
+    }
   }
 }
 
