@@ -184,10 +184,17 @@ async function prepareConfig(release: string | undefined, files: string[] | unde
   if (options.forceUpdate !== undefined)
     cliOverrides.forceUpdate = options.forceUpdate
 
-  return await loadBumpConfig({
+  const loaded = await loadBumpConfig({
     ...cliOverrides,
     ...ciOverrides,
   })
+
+  // If no release and no files were provided, default to a safe 'patch' release
+  if (!loaded.release && (!files || files.length === 0)) {
+    loaded.release = 'patch'
+  }
+
+  return loaded
 }
 
 // Main version bump command (default)
@@ -225,12 +232,6 @@ cli
   .example('bumpx --recursive')
   .action(async (release: string | undefined, files: string[] | undefined, options: CLIOptions) => {
     try {
-      if (!release && (!files || files.length === 0)) {
-        // No release type and no files specified - show help
-        cli.outputHelp()
-        process.exit(ExitCode.Success)
-      }
-
       // Validate release type before proceeding
       if (release && !isReleaseType(release) && !isValidVersion(release) && release !== 'prompt') {
         throw new Error(`Invalid release type or version: ${release}`)
