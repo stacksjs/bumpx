@@ -27,6 +27,7 @@ export interface VersionBumpOptions {
   noVerify?: boolean
   ignoreScripts?: boolean
   changelog?: boolean
+  forceCli?: boolean
 }
 
 export interface BumpxConfig extends VersionBumpOptions {
