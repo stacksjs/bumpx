@@ -1,7 +1,7 @@
 {
   "name": "@stacksjs/bumpx",
   "type": "module",
-  "version": "0.1.17",
+  "version": "0.1.18",
   "private": true,
   "description": "Like Homebrew, but faster.",
   "author": "Chris Breuer <chris@stacksjs.org>",
@@ -31,7 +31,7 @@
     "lint:fix": "bunx --bun eslint . --fix",
     "changelog": "bunx logsmith --verbose",
     "changelog:generate": "bunx logsmith --output CHANGELOG.md",
-    "release": "bun run changelog:generate && bunx bumpx prompt --recursive",
+    "release": "bun run changelog:generate && ./bumpx -r --push",
     "postinstall": "bunx git-hooks",
     "test": "bun test",
     "dev:docs": "bun --bun vitepress dev docs",
@@ -46,10 +46,10 @@
     "@stacksjs/gitlint": "^0.1.5",
     "@stacksjs/logsmith": "^0.1.8",
     "@types/bun": "^1.2.15",
-    "buddy-bot": "^0.8.9",
+    "buddy-bot": "^0.8.10",
     "bun-git-hooks": "^0.2.19",
-    "bun-plugin-dtsx": "^0.21.12",
-    "bunfig": "^0.10.1",
+    "bun-plugin-dtsx": "0.21.12",
+    "bunfig": "^0.14.1",
     "typescript": "^5.8.3"
   },
   "overrides": {
