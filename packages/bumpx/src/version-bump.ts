@@ -567,7 +567,42 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
       console.log(`[DRY RUN] Would create git commit: "${commitMessage}"`)
     }
 
-    // Create git tag if requested
+    // Generate changelog AFTER commit creation (if enabled)
+    if (changelog && lastNewVersion && !dryRun) {
+      try {
+        // Generate changelog with specific version range (using HEAD since tag doesn't exist yet)
+        const fromVersion = _lastOldVersion ? `v${_lastOldVersion}` : undefined
+        const toVersion = 'HEAD' // Use HEAD since tag doesn't exist yet
+
+        await generateChangelog(effectiveCwd, fromVersion, toVersion)
+
+        // Amend the changelog to the existing commit
+        const { executeGit } = await import('./utils')
+        executeGit(['add', 'CHANGELOG.md'], effectiveCwd)
+        executeGit(['commit', '--amend', '--no-edit'], effectiveCwd)
+
+        if (progress && _lastOldVersion) {
+          progress({
+            event: ProgressEvent.ChangelogGenerated,
+            updatedFiles,
+            skippedFiles,
+            newVersion: lastNewVersion,
+            oldVersion: _lastOldVersion,
+          })
+        }
+      }
+      catch (error) {
+        console.warn('Warning: Failed to generate changelog:', error)
+      }
+    }
+    else if (changelog && lastNewVersion && dryRun) {
+      const fromVersion = _lastOldVersion ? `v${_lastOldVersion}` : undefined
+      const toVersion = `v${lastNewVersion}`
+      const versionRange = fromVersion ? `from ${fromVersion} to ${toVersion}` : `up to ${toVersion}`
+      console.log(`[DRY RUN] Would generate changelog ${versionRange} and amend to commit`)
+    }
+
+    // Create git tag AFTER changelog generation (if requested)
     if (tag && updatedFiles.length > 0 && !dryRun && lastNewVersion) {
       const tagName = typeof tag === 'string'
         ? tag.replace('{version}', lastNewVersion).replace('%s', lastNewVersion)
@@ -597,19 +632,15 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
       console.log(`[DRY RUN] Would create git tag: "${tagName}" with message: "${finalTagMessage}"`)
     }
 
-    // Generate changelog AFTER tag creation and amend to commit (if enabled and commit was made)
-    if (changelog && commit && updatedFiles.length > 0 && lastNewVersion && !dryRun) {
+    // Handle changelog generation for cases where commit is disabled
+    // This allows users to generate changelog without committing
+    if (changelog && !commit && lastNewVersion && !dryRun) {
       try {
-        // Generate changelog with specific version range (now tag should exist)
+        // Generate changelog with specific version range
         const fromVersion = _lastOldVersion ? `v${_lastOldVersion}` : undefined
         const toVersion = `v${lastNewVersion}`
 
         await generateChangelog(effectiveCwd, fromVersion, toVersion)
-
-        // Amend the changelog to the existing commit
-        const { executeGit } = await import('./utils')
-        executeGit(['add', 'CHANGELOG.md'], effectiveCwd)
-        executeGit(['commit', '--amend', '--no-edit'], effectiveCwd)
 
         if (progress && _lastOldVersion) {
           progress({
@@ -624,12 +655,6 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
       catch (error) {
         console.warn('Warning: Failed to generate changelog:', error)
       }
-    }
-    else if (changelog && commit && updatedFiles.length > 0 && lastNewVersion && dryRun) {
-      const fromVersion = _lastOldVersion ? `v${_lastOldVersion}` : undefined
-      const toVersion = `v${lastNewVersion}`
-      const versionRange = fromVersion ? `from ${fromVersion} to ${toVersion}` : `up to ${toVersion}`
-      console.log(`[DRY RUN] Would generate changelog ${versionRange} and amend to commit`)
     }
 
     if (push && !dryRun) {
@@ -711,6 +736,8 @@ async function generateChangelog(cwd: string, fromVersion?: string, toVersion?: 
       if (existingContent.trim() && !existingContent.endsWith('\n\n')) {
         existingContent += '\n\n'
       }
+      // Remove the "# Changelog" header from existing content to avoid duplication
+      existingContent = existingContent.replace(/^# Changelog\s*\n/, '')
     }
     catch (error) {
       console.warn('Warning: Could not read existing CHANGELOG.md:', error)
