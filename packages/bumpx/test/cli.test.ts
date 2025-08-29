@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it } from 'bun:test'
-import { execSync, spawn, spawnSync } from 'node:child_process'
+import { execSync } from 'node:child_process'
 import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
@@ -43,6 +43,18 @@ describe('CLI Integration Tests', () => {
     }
   })
 
+  // Build a sandboxed Git environment to strictly confine all git operations
+  const sandboxEnv = (cwd: string) => ({
+    ...process.env,
+    GIT_DIR: join(cwd, '.git'),
+    GIT_WORK_TREE: cwd,
+    HOME: cwd,
+    HUSKY: '0',
+    // Prevent git from walking above the tmp root and block interactive prompts
+    GIT_CEILING_DIRECTORIES: tmpdir(),
+    GIT_TERMINAL_PROMPT: '0',
+  })
+
   const runCLI = (args: string[]): Promise<{ code: number, stdout: string, stderr: string }> => {
     return new Promise((resolve) => {
       // Determine execution method based on binary type
@@ -74,49 +86,31 @@ describe('CLI Integration Tests', () => {
         cmdArgs = [bumpxBin, ...args]
       }
 
-      const child = spawn(command, cmdArgs, {
+      const decoder = new TextDecoder()
+      const res = Bun.spawnSync([command, ...cmdArgs], {
         cwd: tempDir,
-        stdio: 'pipe',
+        stdout: 'pipe',
+        stderr: 'pipe',
+        env: sandboxEnv(tempDir),
       })
-
-      let stdout = ''
-      let stderr = ''
-
-      child.stdout?.on('data', (data) => {
-        stdout += data.toString()
-      })
-
-      child.stderr?.on('data', (data) => {
-        stderr += data.toString()
-      })
-
-      child.on('close', (code) => {
-        resolve({ code: code || 0, stdout, stderr })
+      resolve({
+        code: res.exitCode,
+        stdout: decoder.decode(res.stdout),
+        stderr: decoder.decode(res.stderr),
       })
     })
   }
 
   const runGit = (args: string[]): Promise<{ code: number, stdout: string, stderr: string }> => {
     return new Promise((resolve) => {
-      const child = spawn('git', args, {
+      const decoder = new TextDecoder()
+      const res = Bun.spawnSync(['git', ...args], {
         cwd: tempDir,
-        stdio: 'pipe',
+        stdout: 'pipe',
+        stderr: 'pipe',
+        env: sandboxEnv(tempDir),
       })
-
-      let stdout = ''
-      let stderr = ''
-
-      child.stdout?.on('data', (data) => {
-        stdout += data.toString()
-      })
-
-      child.stderr?.on('data', (data) => {
-        stderr += data.toString()
-      })
-
-      child.on('close', (code) => {
-        resolve({ code: code || 0, stdout, stderr })
-      })
+      resolve({ code: res.exitCode, stdout: decoder.decode(res.stdout), stderr: decoder.decode(res.stderr) })
     })
   }
 
@@ -694,29 +688,18 @@ export default {
       writeFileSync(join(tempDir, 'CHANGELOG.md'), '# Changelog\n\nSome changes...')
 
       try {
-        execSync('git init', { cwd: tempDir, stdio: 'ignore' })
-        execSync('git config user.name "Test User"', { cwd: tempDir, stdio: 'ignore' })
-        execSync('git config user.email "test@example.com"', { cwd: tempDir, stdio: 'ignore' })
-        execSync('git add package.json', { cwd: tempDir, stdio: 'ignore' })
-        execSync('git commit -m "Initial commit"', { cwd: tempDir, stdio: 'ignore' })
+        execSync('git init', { cwd: tempDir, stdio: 'ignore', env: sandboxEnv(tempDir) })
+        execSync('git config user.name "Test User"', { cwd: tempDir, stdio: 'ignore', env: sandboxEnv(tempDir) })
+        execSync('git config user.email "test@example.com"', { cwd: tempDir, stdio: 'ignore', env: sandboxEnv(tempDir) })
+        execSync('git add package.json', { cwd: tempDir, stdio: 'ignore', env: sandboxEnv(tempDir) })
+        execSync('git commit -m "Initial commit"', { cwd: tempDir, stdio: 'ignore', env: sandboxEnv(tempDir) })
 
         // Leave CHANGELOG.md uncommitted to simulate dirty working tree
 
-        // This should work with --yes even though working tree is dirty
-        const result = spawnSync('node', [
-          bumpxBin,
-          'patch',
-          '--yes',
-          '--commit',
-          '--no-push',
-          '--dry-run',
-        ], {
-          cwd: tempDir,
-          encoding: 'utf-8',
-          stdio: 'pipe',
-        })
+        // This should work with --yes even though working tree is dirty (dry-run)
+        const result = await runCLI(['patch', '--yes', '--commit', '--no-push', '--dry-run'])
 
-        expect(result.status).toBe(0)
+        expect(result.code).toBe(0)
         expect(result.stdout).toMatch(/Would bump version/)
         expect(result.stdout).toMatch(/Would create git commit/)
         expect(result.stderr).not.toMatch(/Git working tree is not clean/)

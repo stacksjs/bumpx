@@ -1,11 +1,11 @@
-import type { VersionBumpOptions } from './src/types'
-import { defineConfig } from './src/config'
+import type { VersionBumpOptions } from './packages/bumpx/src/types'
+import { defineConfig } from './packages/bumpx/src/config'
 
 const config: VersionBumpOptions = defineConfig({
   // Git options
   commit: true,
   tag: true,
-  push: false,
+  push: true,
   sign: false,
   noGitCheck: false,
   noVerify: false,

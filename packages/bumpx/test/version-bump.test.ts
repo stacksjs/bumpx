@@ -14,6 +14,12 @@ describe('Version Bump (Integration)', () => {
     tempDir = join(tmpdir(), `bumpx-version-test-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`)
     mkdirSync(tempDir, { recursive: true })
     progressEvents = []
+
+    // Sandbox Git for all tests in this file to prevent any prompts or traversal
+    process.env.HUSKY = '0'
+    process.env.GIT_TERMINAL_PROMPT = '0'
+    process.env.GIT_CEILING_DIRECTORIES = tmpdir()
+    process.env.HOME = tempDir
   })
 
   afterEach(() => {
