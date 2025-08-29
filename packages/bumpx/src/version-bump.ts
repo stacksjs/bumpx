@@ -527,6 +527,36 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
       console.log('[DRY RUN] Would install dependencies')
     }
 
+    // Generate changelog BEFORE committing (if enabled)
+    if (changelog && lastNewVersion && !dryRun) {
+      try {
+        // Generate changelog with specific version range
+        const fromVersion = _lastOldVersion ? `v${_lastOldVersion}` : undefined
+        const toVersion = `v${lastNewVersion}`
+
+        await generateChangelog(effectiveCwd, fromVersion, toVersion)
+
+        if (progress && _lastOldVersion) {
+          progress({
+            event: ProgressEvent.ChangelogGenerated,
+            updatedFiles,
+            skippedFiles,
+            newVersion: lastNewVersion,
+            oldVersion: _lastOldVersion,
+          })
+        }
+      }
+      catch (error) {
+        console.warn('Warning: Failed to generate changelog:', error)
+      }
+    }
+    else if (changelog && lastNewVersion && dryRun) {
+      const fromVersion = _lastOldVersion ? `v${_lastOldVersion}` : undefined
+      const toVersion = `v${lastNewVersion}`
+      const versionRange = fromVersion ? `from ${fromVersion} to ${toVersion}` : `up to ${toVersion}`
+      console.log(`[DRY RUN] Would generate changelog ${versionRange}`)
+    }
+
     // Git operations
     if (commit && updatedFiles.length > 0 && !dryRun) {
       hasStartedGitOperations = true
@@ -595,36 +625,6 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
         ? tagMessage.replace('{version}', lastNewVersion).replace('%s', lastNewVersion)
         : `Release ${lastNewVersion}`
       console.log(`[DRY RUN] Would create git tag: "${tagName}" with message: "${finalTagMessage}"`)
-    }
-
-    // Generate changelog AFTER tag creation (if enabled)
-    if (changelog && lastNewVersion && !dryRun) {
-      try {
-        // Generate changelog with specific version range
-        const fromVersion = _lastOldVersion ? `v${_lastOldVersion}` : undefined
-        const toVersion = `v${lastNewVersion}`
-
-        await generateChangelog(effectiveCwd, fromVersion, toVersion)
-
-        if (progress && _lastOldVersion) {
-          progress({
-            event: ProgressEvent.ChangelogGenerated,
-            updatedFiles,
-            skippedFiles,
-            newVersion: lastNewVersion,
-            oldVersion: _lastOldVersion,
-          })
-        }
-      }
-      catch (error) {
-        console.warn('Warning: Failed to generate changelog:', error)
-      }
-    }
-    else if (changelog && lastNewVersion && dryRun) {
-      const fromVersion = _lastOldVersion ? `v${_lastOldVersion}` : undefined
-      const toVersion = `v${lastNewVersion}`
-      const versionRange = fromVersion ? `from ${fromVersion} to ${toVersion}` : `up to ${toVersion}`
-      console.log(`[DRY RUN] Would generate changelog ${versionRange}`)
     }
 
     // Handle changelog generation for cases where commit is disabled
