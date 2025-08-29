@@ -159,36 +159,40 @@ describe('Changelog Generation', () => {
       // Verify changelog generation was attempted
       expect(mockExecSync).toHaveBeenCalledWith('bunx logsmith --output CHANGELOG.md', tempDir)
 
-      // Verify changelog file was staged
-      expect(mockSpawnSync).toHaveBeenCalledWith(['add', 'CHANGELOG.md'], tempDir)
+      // Verify all files were staged together (no separate changelog staging)
+      expect(mockSpawnSync).toHaveBeenCalledWith(['add', '-A'], tempDir)
 
-      // Verify changelog commit was made
-      expect(mockSpawnSync).toHaveBeenCalledWith(['commit', '-m', 'docs: update changelog for v1.0.1'], tempDir)
+      // Verify single commit was created (no separate changelog commit)
+      expect(mockSpawnSync).toHaveBeenCalledWith(['commit', '-m', 'chore: release v1.0.1'], tempDir)
     })
   })
 
   describe('Changelog Generation Order', () => {
-    it('should generate changelog after tag creation but before push', async () => {
+    it('should generate changelog before commit and tag creation', async () => {
       const packagePath = join(tempDir, 'package.json')
       writeFileSync(packagePath, JSON.stringify({ name: 'test', version: '1.0.0' }, null, 2))
 
       const executionOrder: string[] = []
 
+      // Mock git operations to track execution order
       mockSpawnSync.mockImplementation((args: string[]) => {
-        if (args.includes('tag'))
+        if (args[0] === 'commit') {
+          executionOrder.push('commit')
+        }
+        else if (args[0] === 'tag') {
           executionOrder.push('tag')
-        if (args.includes('push'))
+        }
+        else if (args[0] === 'push') {
           executionOrder.push('push')
-        if (args.includes('commit') && args.includes('chore: release'))
-          executionOrder.push('version-commit')
-        if (args.includes('commit') && args.includes('docs: update changelog'))
-          executionOrder.push('changelog-commit')
-        return ''
+        }
+        return { status: 0, stdout: '', stderr: '' }
       })
 
+      // Mock changelog generation
       mockExecSync.mockImplementation((command: string) => {
-        if (command.includes('logsmith'))
+        if (command.includes('logsmith')) {
           executionOrder.push('changelog-generation')
+        }
         return ''
       })
 
@@ -204,19 +208,21 @@ describe('Changelog Generation', () => {
         cwd: tempDir,
       })
 
-      // Verify execution order: tag -> changelog-generation -> push
-      // The changelog commit might not be captured in this specific test setup
-      expect(executionOrder).toContain('tag')
+      // Verify execution order: changelog-generation -> commit -> tag -> push
       expect(executionOrder).toContain('changelog-generation')
+      expect(executionOrder).toContain('commit')
+      expect(executionOrder).toContain('tag')
       expect(executionOrder).toContain('push')
 
-      // Verify tag comes before changelog generation
-      const tagIndex = executionOrder.indexOf('tag')
+      // Verify changelog generation comes before commit
       const changelogIndex = executionOrder.indexOf('changelog-generation')
+      const commitIndex = executionOrder.indexOf('commit')
+      const tagIndex = executionOrder.indexOf('tag')
       const pushIndex = executionOrder.indexOf('push')
 
-      expect(tagIndex).toBeLessThan(changelogIndex)
-      expect(changelogIndex).toBeLessThan(pushIndex)
+      expect(changelogIndex).toBeLessThan(commitIndex)
+      expect(commitIndex).toBeLessThan(tagIndex)
+      expect(tagIndex).toBeLessThan(pushIndex)
     })
   })
 
@@ -313,53 +319,13 @@ describe('Changelog Generation', () => {
 
       // Verify warning was logged
       expect(consoleSpy).toHaveBeenCalledWith(
-        expect.stringContaining('Warning: Changelog generation failed:'),
+        expect.stringContaining('Warning: Failed to generate changelog:'),
+        expect.any(Error),
       )
 
       // Verify version bump still succeeded despite changelog failure
       const updatedContent = JSON.parse(readFileSync(packagePath, 'utf-8'))
       expect(updatedContent.version).toBe('1.0.1')
-
-      consoleSpy.mockRestore()
-    })
-
-    it('should handle changelog commit failures gracefully', async () => {
-      const packagePath = join(tempDir, 'package.json')
-      writeFileSync(packagePath, JSON.stringify({ name: 'test', version: '1.0.0' }, null, 2))
-
-      // Mock changelog commit to fail but allow other git operations
-      mockSpawnSync.mockImplementation((args: string[]) => {
-        if (args.includes('commit') && args.includes('docs: update changelog')) {
-          throw new Error('Commit failed')
-        }
-        if (args.includes('add') && args.includes('CHANGELOG.md')) {
-          throw new Error('Add failed')
-        }
-        return ''
-      })
-
-      const consoleSpy = spyOn(console, 'warn').mockImplementation(() => {})
-
-      await versionBump({
-        release: 'patch',
-        files: [packagePath],
-        commit: true,
-        tag: true,
-        push: false,
-        changelog: true,
-        quiet: true,
-        noGitCheck: true,
-        cwd: tempDir,
-      })
-
-      // Verify warning was logged (the exact message may vary)
-      expect(consoleSpy).toHaveBeenCalledWith(
-        expect.stringContaining('Warning: Failed to commit changelog:'),
-        expect.any(Error),
-      )
-
-      // Verify changelog generation was still attempted
-      expect(mockExecSync).toHaveBeenCalledWith('bunx logsmith --output CHANGELOG.md', tempDir)
 
       consoleSpy.mockRestore()
     })

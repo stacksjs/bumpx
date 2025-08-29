@@ -518,14 +518,13 @@ describe('Git Operations (Integration)', () => {
         noGitCheck: true,
       })
 
-      // Verify execution order: execute commands -> commit -> tag -> changelog -> changelog-commit -> pull -> push
+      // Verify execution order: execute commands -> changelog -> commit -> tag -> pull -> push
       expect(executionOrder).toEqual([
         'execute:echo "pre-commit"',
         'execute:echo "build"',
-        'commit',
-        'tag',
         'execute:bunx logsmith --output CHANGELOG.md',
         'commit',
+        'tag',
         'pull',
         'push',
       ])
