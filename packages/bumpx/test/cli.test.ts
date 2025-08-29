@@ -396,11 +396,12 @@ export default {
   commit: false,
   tag: false,
   push: false,
-  noGitCheck: true
+  noGitCheck: true,
+  recursive: false
 }
 `)
 
-      const result = await runCLI(['patch'])
+      const result = await runCLI(['patch', '--no-git-check'])
 
       expect(result.code).toBe(0)
       expect(result.stdout).toContain('1.0.1')
