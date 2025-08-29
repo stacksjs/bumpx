@@ -74,6 +74,49 @@ function progress({ event, script, updatedFiles, skippedFiles, newVersion }: Ver
 }
 
 /**
+ * Prompt user for confirmation when using -r --all
+ */
+async function promptForRecursiveAll(): Promise<boolean> {
+  // Prevent prompting during tests to avoid hanging
+  if (process.env.NODE_ENV === 'test' || process.env.BUN_ENV === 'test' || process.argv.includes('test')) {
+    return true // Auto-confirm in test mode
+  }
+
+  try {
+    // Dynamic import to avoid top-level import issues
+    const clappModule: any = await import('@stacksjs/clapp')
+    const confirm = clappModule.confirm || clappModule.default?.confirm || clappModule.CLI?.confirm
+
+    if (!confirm) {
+      throw new Error('Unable to import confirmation prompt from @stacksjs/clapp')
+    }
+
+    console.log('\n⚠️  You are about to recursively update ALL packages in the workspace.')
+    console.log('This will commit, tag, and push the changes to the remote repository.')
+
+    const shouldProceed = await confirm({
+      message: 'Do you want to continue?',
+      initial: false,
+    })
+
+    return shouldProceed
+  }
+  catch (error: any) {
+    // Check if this is a cancellation/interruption
+    if (error.message?.includes('cancelled')
+      || error.message?.includes('interrupted')
+      || error.message?.includes('SIGINT')
+      || error.message?.includes('SIGTERM')) {
+      return false
+    }
+
+    // For other errors, default to not proceeding for safety
+    console.warn('Warning: Interactive prompt failed, defaulting to cancel for safety')
+    return false
+  }
+}
+
+/**
  * Error handler
  */
 function errorHandler(error: Error): never {
@@ -119,6 +162,9 @@ async function prepareConfig(release: string | undefined, files: string[] | unde
   if (options.files) {
     finalFiles = options.files.split(',').map((f: string) => f.trim())
   }
+
+  // Check for -r --all combination that requires special prompting
+  const isRecursiveAll = options.recursive && options.all
 
   // Only pass CLI arguments that were explicitly provided, let config file fill in the rest
   const cliOverrides: Partial<BumpxConfig> = {}
@@ -192,6 +238,18 @@ async function prepareConfig(release: string | undefined, files: string[] | unde
   // If no release and no files were provided, default to a safe 'patch' release
   if (!loaded.release && (!files || files.length === 0)) {
     loaded.release = 'patch'
+  }
+
+  // Handle -r --all combination with special prompting
+  if (isRecursiveAll && loaded.confirm && !isCiMode && !options.yes) {
+    const shouldProceed = await promptForRecursiveAll()
+    if (!shouldProceed) {
+      throw new Error('Operation cancelled by user')
+    }
+    // After confirmation, ensure commit, tag, and push are enabled
+    loaded.commit = loaded.commit !== false ? true : loaded.commit
+    loaded.tag = loaded.tag !== false ? true : loaded.tag
+    loaded.push = loaded.push !== false ? true : loaded.push
   }
 
   return loaded
