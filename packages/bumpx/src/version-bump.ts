@@ -530,7 +530,11 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
     // Generate changelog before committing (if enabled)
     if (changelog && lastNewVersion && !dryRun) {
       try {
-        await generateChangelog(effectiveCwd)
+        // Generate changelog with specific version range
+        const fromVersion = _lastOldVersion ? `v${_lastOldVersion}` : undefined
+        const toVersion = `v${lastNewVersion}`
+
+        await generateChangelog(effectiveCwd, fromVersion, toVersion)
 
         if (progress && _lastOldVersion) {
           progress({
@@ -547,7 +551,10 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
       }
     }
     else if (changelog && lastNewVersion && dryRun) {
-      console.log('[DRY RUN] Would generate changelog')
+      const fromVersion = _lastOldVersion ? `v${_lastOldVersion}` : undefined
+      const toVersion = `v${lastNewVersion}`
+      const versionRange = fromVersion ? `from ${fromVersion} to ${toVersion}` : `up to ${toVersion}`
+      console.log(`[DRY RUN] Would generate changelog ${versionRange}`)
     }
 
     // Git operations
@@ -624,7 +631,11 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
     // This allows users to generate changelog without committing
     if (changelog && !commit && lastNewVersion && !dryRun) {
       try {
-        await generateChangelog(effectiveCwd)
+        // Generate changelog with specific version range
+        const fromVersion = _lastOldVersion ? `v${_lastOldVersion}` : undefined
+        const toVersion = `v${lastNewVersion}`
+
+        await generateChangelog(effectiveCwd, fromVersion, toVersion)
 
         if (progress && _lastOldVersion) {
           progress({
@@ -704,7 +715,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
 /**
  * Generate changelog using @stacksjs/logsmith
  */
-async function generateChangelog(cwd: string): Promise<void> {
+async function generateChangelog(cwd: string, fromVersion?: string, toVersion?: string): Promise<void> {
   try {
     // Dynamic import to avoid top-level import issues
     const logsmithModule: any = await import('@stacksjs/logsmith')
@@ -715,16 +726,36 @@ async function generateChangelog(cwd: string): Promise<void> {
     }
 
     // Generate changelog with logsmith
-    await generateChangelog({
+    const options: any = {
       output: 'CHANGELOG.md',
       cwd,
-    })
+    }
+
+    // Add version range if specified
+    if (fromVersion) {
+      options.from = fromVersion
+    }
+    if (toVersion) {
+      options.to = toVersion
+    }
+
+    await generateChangelog(options)
   }
   catch (error: any) {
     // If logsmith is not available or fails, try using the CLI command as fallback
     try {
       const { executeCommand } = await import('./utils')
-      executeCommand('bunx logsmith --output CHANGELOG.md', cwd)
+      let command = 'bunx logsmith --output CHANGELOG.md'
+
+      // Add version range parameters to CLI command
+      if (fromVersion) {
+        command += ` --from ${fromVersion}`
+      }
+      if (toVersion) {
+        command += ` --to ${toVersion}`
+      }
+
+      executeCommand(command, cwd)
     }
     catch (fallbackError) {
       throw new Error(`Changelog generation failed: ${error.message}. Fallback also failed: ${fallbackError}`)

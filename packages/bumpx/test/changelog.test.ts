@@ -67,8 +67,8 @@ describe('Changelog Generation', () => {
         cwd: tempDir,
       })
 
-      // Verify changelog generation was attempted
-      expect(mockExecSync).toHaveBeenCalledWith('bunx logsmith --output CHANGELOG.md', tempDir)
+      // Verify changelog generation was attempted with version range
+      expect(mockExecSync).toHaveBeenCalledWith('bunx logsmith --output CHANGELOG.md --from v1.0.0 --to v1.0.1', tempDir)
     })
 
     it('should not generate changelog when flag is disabled', async () => {
@@ -111,7 +111,7 @@ describe('Changelog Generation', () => {
       })
 
       // Verify changelog generation was attempted even with commit disabled
-      expect(mockExecSync).toHaveBeenCalledWith('bunx logsmith --output CHANGELOG.md', tempDir)
+      expect(mockExecSync).toHaveBeenCalledWith('bunx logsmith --output CHANGELOG.md --from v1.0.0 --to v1.0.1', tempDir)
 
       // Verify no changelog commit was made since commit is disabled
       const commitCalls = mockSpawnSync.mock.calls.filter((call: any) =>
@@ -137,7 +137,7 @@ describe('Changelog Generation', () => {
       })
 
       // Verify changelog generation was attempted even with tag disabled
-      expect(mockExecSync).toHaveBeenCalledWith('bunx logsmith --output CHANGELOG.md', tempDir)
+      expect(mockExecSync).toHaveBeenCalledWith('bunx logsmith --output CHANGELOG.md --from v1.0.0 --to v1.0.1', tempDir)
     })
 
     it('should generate changelog and commit it when commit is enabled', async () => {
@@ -156,8 +156,8 @@ describe('Changelog Generation', () => {
         cwd: tempDir,
       })
 
-      // Verify changelog generation was attempted
-      expect(mockExecSync).toHaveBeenCalledWith('bunx logsmith --output CHANGELOG.md', tempDir)
+      // Verify changelog generation was attempted with version range
+      expect(mockExecSync).toHaveBeenCalledWith('bunx logsmith --output CHANGELOG.md --from v1.0.0 --to v1.0.1', tempDir)
 
       // Verify all files were staged together (no separate changelog staging)
       expect(mockSpawnSync).toHaveBeenCalledWith(['add', '-A'], tempDir)
@@ -393,8 +393,8 @@ describe('Changelog Generation', () => {
         cwd: tempDir,
       })
 
-      // Verify changelog generation was attempted in root directory
-      expect(mockExecSync).toHaveBeenCalledWith('bunx logsmith --output CHANGELOG.md', tempDir)
+      // Verify changelog generation was attempted in root directory with version range
+      expect(mockExecSync).toHaveBeenCalledWith('bunx logsmith --output CHANGELOG.md --from v1.0.0 --to v1.0.1', tempDir)
     })
   })
 

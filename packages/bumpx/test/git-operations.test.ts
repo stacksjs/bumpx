@@ -522,7 +522,7 @@ describe('Git Operations (Integration)', () => {
       expect(executionOrder).toEqual([
         'execute:echo "pre-commit"',
         'execute:echo "build"',
-        'execute:bunx logsmith --output CHANGELOG.md',
+        'execute:bunx logsmith --output CHANGELOG.md --from v1.0.0 --to v1.0.1',
         'commit',
         'tag',
         'pull',
