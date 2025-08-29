@@ -110,7 +110,7 @@ describe('Changelog Generation', () => {
         cwd: tempDir,
       })
 
-      // Verify changelog generation was attempted even with commit disabled
+      // Verify changelog generation was attempted even with commit disabled (using HEAD)
       expect(mockExecSync).toHaveBeenCalledWith('bunx logsmith --output CHANGELOG.md --from v1.0.0 --to HEAD', tempDir)
 
       // Verify no changelog commit was made since commit is disabled
@@ -136,7 +136,7 @@ describe('Changelog Generation', () => {
         cwd: tempDir,
       })
 
-      // Verify changelog generation was attempted even with tag disabled
+      // Verify changelog generation was attempted even with tag disabled (using HEAD)
       expect(mockExecSync).toHaveBeenCalledWith('bunx logsmith --output CHANGELOG.md --from v1.0.0 --to HEAD', tempDir)
     })
 
@@ -156,8 +156,8 @@ describe('Changelog Generation', () => {
         cwd: tempDir,
       })
 
-      // Verify changelog generation was attempted with version range
-      expect(mockExecSync).toHaveBeenCalledWith('bunx logsmith --output CHANGELOG.md --from v1.0.0 --to v1.0.1', tempDir)
+      // Verify changelog generation was attempted with version range (using HEAD since tag doesn't exist yet)
+      expect(mockExecSync).toHaveBeenCalledWith('bunx logsmith --output CHANGELOG.md --from v1.0.0 --to HEAD', tempDir)
 
       // Verify all files were staged together (no separate changelog staging)
       expect(mockSpawnSync).toHaveBeenCalledWith(['add', '-A'], tempDir)
@@ -165,10 +165,7 @@ describe('Changelog Generation', () => {
       // Verify single commit was created (no separate changelog commit)
       expect(mockSpawnSync).toHaveBeenCalledWith(['commit', '-m', 'chore: release v1.0.1'], tempDir)
 
-      // Verify changelog was generated after commit and amended
-      expect(mockExecSync).toHaveBeenCalledWith('bunx logsmith --output CHANGELOG.md --from v1.0.0 --to v1.0.1', tempDir)
-
-      // Verify changelog was staged and commit was amended
+      // Verify changelog was amended to the commit
       expect(mockSpawnSync).toHaveBeenCalledWith(['add', 'CHANGELOG.md'], tempDir)
       expect(mockSpawnSync).toHaveBeenCalledWith(['commit', '--amend', '--no-edit'], tempDir)
     })
@@ -189,8 +186,8 @@ describe('Changelog Generation', () => {
         cwd: tempDir,
       })
 
-      // Verify changelog generation was attempted with version range (after tag exists)
-      expect(mockExecSync).toHaveBeenCalledWith('bunx logsmith --output CHANGELOG.md --from v1.0.0 --to v1.0.1', tempDir)
+      // Verify changelog generation was attempted with version range (using HEAD since tag doesn't exist yet)
+      expect(mockExecSync).toHaveBeenCalledWith('bunx logsmith --output CHANGELOG.md --from v1.0.0 --to HEAD', tempDir)
 
       // Verify changelog was amended to the commit
       expect(mockSpawnSync).toHaveBeenCalledWith(['add', 'CHANGELOG.md'], tempDir)
@@ -245,27 +242,27 @@ describe('Changelog Generation', () => {
         cwd: tempDir,
       })
 
-      // Verify execution order: commit -> tag -> changelog-generation -> add-changelog -> amend -> push
+      // Verify execution order: commit -> changelog-generation -> add-changelog -> amend -> tag -> push
       expect(executionOrder).toContain('commit')
-      expect(executionOrder).toContain('tag')
       expect(executionOrder).toContain('changelog-generation')
       expect(executionOrder).toContain('add-changelog')
       expect(executionOrder).toContain('amend')
+      expect(executionOrder).toContain('tag')
       expect(executionOrder).toContain('push')
 
       // Verify correct order
       const commitIndex = executionOrder.indexOf('commit')
-      const tagIndex = executionOrder.indexOf('tag')
       const changelogIndex = executionOrder.indexOf('changelog-generation')
       const addChangelogIndex = executionOrder.indexOf('add-changelog')
       const amendIndex = executionOrder.indexOf('amend')
+      const tagIndex = executionOrder.indexOf('tag')
       const pushIndex = executionOrder.indexOf('push')
 
-      expect(commitIndex).toBeLessThan(tagIndex)
-      expect(tagIndex).toBeLessThan(changelogIndex)
+      expect(commitIndex).toBeLessThan(changelogIndex)
       expect(changelogIndex).toBeLessThan(addChangelogIndex)
       expect(addChangelogIndex).toBeLessThan(amendIndex)
-      expect(amendIndex).toBeLessThan(pushIndex)
+      expect(amendIndex).toBeLessThan(tagIndex)
+      expect(tagIndex).toBeLessThan(pushIndex)
     })
   })
 
@@ -436,7 +433,7 @@ describe('Changelog Generation', () => {
         cwd: tempDir,
       })
 
-      // Verify changelog generation was attempted in root directory with version range
+      // Verify changelog generation was attempted in root directory with version range (using HEAD)
       expect(mockExecSync).toHaveBeenCalledWith('bunx logsmith --output CHANGELOG.md --from v1.0.0 --to HEAD', tempDir)
     })
   })

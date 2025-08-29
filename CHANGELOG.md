@@ -1,4 +1,11 @@
 # Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+
 [Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
 
 ### Contributors
