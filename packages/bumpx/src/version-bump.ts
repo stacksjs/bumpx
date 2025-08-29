@@ -527,40 +527,10 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
       console.log('[DRY RUN] Would install dependencies')
     }
 
-    // Generate changelog BEFORE committing (if enabled)
-    if (changelog && lastNewVersion && !dryRun) {
-      try {
-        // Generate changelog with specific version range
-        const fromVersion = _lastOldVersion ? `v${_lastOldVersion}` : undefined
-        const toVersion = `v${lastNewVersion}`
-
-        await generateChangelog(effectiveCwd, fromVersion, toVersion)
-
-        if (progress && _lastOldVersion) {
-          progress({
-            event: ProgressEvent.ChangelogGenerated,
-            updatedFiles,
-            skippedFiles,
-            newVersion: lastNewVersion,
-            oldVersion: _lastOldVersion,
-          })
-        }
-      }
-      catch (error) {
-        console.warn('Warning: Failed to generate changelog:', error)
-      }
-    }
-    else if (changelog && lastNewVersion && dryRun) {
-      const fromVersion = _lastOldVersion ? `v${_lastOldVersion}` : undefined
-      const toVersion = `v${lastNewVersion}`
-      const versionRange = fromVersion ? `from ${fromVersion} to ${toVersion}` : `up to ${toVersion}`
-      console.log(`[DRY RUN] Would generate changelog ${versionRange}`)
-    }
-
     // Git operations
     if (commit && updatedFiles.length > 0 && !dryRun) {
       hasStartedGitOperations = true
-      // Stage all changes (existing dirty files + version updates + changelog)
+      // Stage all changes (existing dirty files + version updates)
       try {
         const { executeGit } = await import('./utils')
         executeGit(['add', '-A'], effectiveCwd)
@@ -627,15 +597,19 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
       console.log(`[DRY RUN] Would create git tag: "${tagName}" with message: "${finalTagMessage}"`)
     }
 
-    // Handle changelog generation for cases where commit is disabled
-    // This allows users to generate changelog without committing
-    if (changelog && !commit && lastNewVersion && !dryRun) {
+    // Generate changelog AFTER tag creation and amend to commit (if enabled and commit was made)
+    if (changelog && commit && updatedFiles.length > 0 && lastNewVersion && !dryRun) {
       try {
-        // Generate changelog with specific version range
+        // Generate changelog with specific version range (now tag should exist)
         const fromVersion = _lastOldVersion ? `v${_lastOldVersion}` : undefined
         const toVersion = `v${lastNewVersion}`
 
         await generateChangelog(effectiveCwd, fromVersion, toVersion)
+
+        // Amend the changelog to the existing commit
+        const { executeGit } = await import('./utils')
+        executeGit(['add', 'CHANGELOG.md'], effectiveCwd)
+        executeGit(['commit', '--amend', '--no-edit'], effectiveCwd)
 
         if (progress && _lastOldVersion) {
           progress({
@@ -650,6 +624,12 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
       catch (error) {
         console.warn('Warning: Failed to generate changelog:', error)
       }
+    }
+    else if (changelog && commit && updatedFiles.length > 0 && lastNewVersion && dryRun) {
+      const fromVersion = _lastOldVersion ? `v${_lastOldVersion}` : undefined
+      const toVersion = `v${lastNewVersion}`
+      const versionRange = fromVersion ? `from ${fromVersion} to ${toVersion}` : `up to ${toVersion}`
+      console.log(`[DRY RUN] Would generate changelog ${versionRange} and amend to commit`)
     }
 
     if (push && !dryRun) {

@@ -164,9 +164,16 @@ describe('Changelog Generation', () => {
 
       // Verify single commit was created (no separate changelog commit)
       expect(mockSpawnSync).toHaveBeenCalledWith(['commit', '-m', 'chore: release v1.0.1'], tempDir)
+
+      // Verify changelog was generated after commit and amended
+      expect(mockExecSync).toHaveBeenCalledWith('bunx logsmith --output CHANGELOG.md --from v1.0.0 --to v1.0.1', tempDir)
+
+      // Verify changelog was staged and commit was amended
+      expect(mockSpawnSync).toHaveBeenCalledWith(['add', 'CHANGELOG.md'], tempDir)
+      expect(mockSpawnSync).toHaveBeenCalledWith(['commit', '--amend', '--no-edit'], tempDir)
     })
 
-    it('should handle tag fallback to HEAD when tag does not exist', async () => {
+    it('should generate changelog after commit and amend it when commit is enabled', async () => {
       const packagePath = join(tempDir, 'package.json')
       writeFileSync(packagePath, JSON.stringify({ name: 'test', version: '1.0.0' }, null, 2))
 
@@ -182,14 +189,17 @@ describe('Changelog Generation', () => {
         cwd: tempDir,
       })
 
-      // Verify changelog generation was attempted with version range
-      // Since the tag v1.0.1 doesn't exist yet, it should fall back to HEAD
-      expect(mockExecSync).toHaveBeenCalledWith('bunx logsmith --output CHANGELOG.md --from v1.0.0 --to HEAD', tempDir)
+      // Verify changelog generation was attempted with version range (after tag exists)
+      expect(mockExecSync).toHaveBeenCalledWith('bunx logsmith --output CHANGELOG.md --from v1.0.0 --to v1.0.1', tempDir)
+
+      // Verify changelog was amended to the commit
+      expect(mockSpawnSync).toHaveBeenCalledWith(['add', 'CHANGELOG.md'], tempDir)
+      expect(mockSpawnSync).toHaveBeenCalledWith(['commit', '--amend', '--no-edit'], tempDir)
     })
   })
 
   describe('Changelog Generation Order', () => {
-    it('should generate changelog before commit and tag creation', async () => {
+    it('should generate changelog after commit and tag creation, then amend to commit', async () => {
       const packagePath = join(tempDir, 'package.json')
       writeFileSync(packagePath, JSON.stringify({ name: 'test', version: '1.0.0' }, null, 2))
 
@@ -197,14 +207,20 @@ describe('Changelog Generation', () => {
 
       // Mock git operations to track execution order
       mockSpawnSync.mockImplementation((args: string[]) => {
-        if (args[0] === 'commit') {
+        if (args[0] === 'commit' && !args.includes('--amend')) {
           executionOrder.push('commit')
+        }
+        else if (args[0] === 'commit' && args.includes('--amend')) {
+          executionOrder.push('amend')
         }
         else if (args[0] === 'tag') {
           executionOrder.push('tag')
         }
         else if (args[0] === 'push') {
           executionOrder.push('push')
+        }
+        else if (args[0] === 'add' && args.includes('CHANGELOG.md')) {
+          executionOrder.push('add-changelog')
         }
         return { status: 0, stdout: '', stderr: '' }
       })
@@ -229,21 +245,27 @@ describe('Changelog Generation', () => {
         cwd: tempDir,
       })
 
-      // Verify execution order: changelog-generation -> commit -> tag -> push
-      expect(executionOrder).toContain('changelog-generation')
+      // Verify execution order: commit -> tag -> changelog-generation -> add-changelog -> amend -> push
       expect(executionOrder).toContain('commit')
       expect(executionOrder).toContain('tag')
+      expect(executionOrder).toContain('changelog-generation')
+      expect(executionOrder).toContain('add-changelog')
+      expect(executionOrder).toContain('amend')
       expect(executionOrder).toContain('push')
 
-      // Verify changelog generation comes before commit
-      const changelogIndex = executionOrder.indexOf('changelog-generation')
+      // Verify correct order
       const commitIndex = executionOrder.indexOf('commit')
       const tagIndex = executionOrder.indexOf('tag')
+      const changelogIndex = executionOrder.indexOf('changelog-generation')
+      const addChangelogIndex = executionOrder.indexOf('add-changelog')
+      const amendIndex = executionOrder.indexOf('amend')
       const pushIndex = executionOrder.indexOf('push')
 
-      expect(changelogIndex).toBeLessThan(commitIndex)
       expect(commitIndex).toBeLessThan(tagIndex)
-      expect(tagIndex).toBeLessThan(pushIndex)
+      expect(tagIndex).toBeLessThan(changelogIndex)
+      expect(changelogIndex).toBeLessThan(addChangelogIndex)
+      expect(addChangelogIndex).toBeLessThan(amendIndex)
+      expect(amendIndex).toBeLessThan(pushIndex)
     })
   })
 
