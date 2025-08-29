@@ -495,6 +495,12 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
         console.warn(`Warning: Command execution failed: ${error}`)
       }
     }
+    else if (execute && dryRun) {
+      const commands = Array.isArray(execute) ? execute : [execute]
+      for (const command of commands) {
+        console.log(`[DRY RUN] Would execute: ${command}`)
+      }
+    }
 
     // Install dependencies if requested
     if (install && !dryRun) {

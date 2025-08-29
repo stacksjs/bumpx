@@ -53,7 +53,7 @@ describe('Integration Tests', () => {
     it('should have sensible defaults', () => {
       expect(bumpConfigDefaults.commit).toBe(true)
       expect(bumpConfigDefaults.tag).toBe(true)
-      expect(bumpConfigDefaults.push).toBe(false)
+      expect(bumpConfigDefaults.push).toBe(true)
       expect(bumpConfigDefaults.confirm).toBe(true)
       expect(bumpConfigDefaults.quiet).toBe(false)
       expect(bumpConfigDefaults.ci).toBe(false)

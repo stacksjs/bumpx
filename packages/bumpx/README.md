@@ -67,7 +67,10 @@ bumpx prerelease  # 1.0.1-beta.0 → 1.0.1-beta.1
 ### Git Integration
 
 ```bash
-# Disable git operations
+# Default behavior: commit, tag, and push (all enabled by default)
+bumpx patch
+
+# Disable specific git operations
 bumpx patch --no-commit --no-tag --no-push
 
 # Custom commit message

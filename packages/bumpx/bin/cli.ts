@@ -211,6 +211,7 @@ cli
   .option('--sign', 'Sign commit and tag')
   .option('--install', 'Run \'npm install\' after bumping version')
   .option('-p, --push', `Push to remote (default: ${bumpConfigDefaults.push})`)
+  .option('--no-push', 'Skip pushing to remote')
   .option('-r, --recursive', `Update all packages in the workspace (default: ${bumpConfigDefaults.recursive})`)
   .option('--no-recursive', 'Disable recursive package updates')
   .option('-y, --yes', `Skip confirmation (default: ${!bumpConfigDefaults.confirm})`)

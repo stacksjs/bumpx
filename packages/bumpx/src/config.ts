@@ -5,7 +5,7 @@ export const defaultConfig: BumpxConfig = {
   // Git options
   commit: true,
   tag: true,
-  push: false, // Keep push false for safety
+  push: true, // Enable push by default for complete workflow
   sign: false,
   noGitCheck: false,
   noVerify: false,

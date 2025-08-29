@@ -44,7 +44,7 @@ describe('bumpx exports', () => {
 
     expect(defaultConfig.commit).toBe(true)
     expect(defaultConfig.tag).toBe(true)
-    expect(defaultConfig.push).toBe(false)
+    expect(defaultConfig.push).toBe(true)
     expect(defaultConfig.sign).toBe(false)
     expect(defaultConfig.confirm).toBe(true)
     expect(defaultConfig.quiet).toBe(false)

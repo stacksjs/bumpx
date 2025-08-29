@@ -5,7 +5,7 @@ const config: VersionBumpOptions = defineConfig({
   // Git options
   commit: true,
   tag: true,
-  push: false,
+  push: true,
   sign: false,
   noGitCheck: false,
   noVerify: false,
