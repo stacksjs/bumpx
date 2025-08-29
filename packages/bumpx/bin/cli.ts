@@ -84,7 +84,7 @@ function progress({ event, script, updatedFiles, skippedFiles, newVersion }: Ver
 async function promptForRecursiveAll(): Promise<boolean> {
   // Prevent prompting during tests to avoid hanging
   if (process.env.NODE_ENV === 'test' || process.env.BUN_ENV === 'test' || process.argv.includes('test')) {
-    return true // Auto-confirm in test mode
+    return true
   }
 
   try {
