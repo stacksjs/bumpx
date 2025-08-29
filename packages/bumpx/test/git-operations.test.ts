@@ -1,10 +1,9 @@
 import { afterEach, beforeEach, describe, expect, it, spyOn } from 'bun:test'
-import { execSync } from 'node:child_process'
 import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
-import { versionBump } from '../src/version-bump'
 import * as utils from '../src/utils'
+import { versionBump } from '../src/version-bump'
 
 describe('Git Operations (Integration)', () => {
   let tempDir: string
@@ -14,24 +13,33 @@ describe('Git Operations (Integration)', () => {
   beforeEach(() => {
     tempDir = join(tmpdir(), `bumpx-git-test-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`)
     mkdirSync(tempDir, { recursive: true })
-    
+
     // Mock git operations to avoid actual git commands in tests
-    mockSpawnSync = spyOn(utils, 'executeGit').mockImplementation((args: string[], cwd?: string) => {
+    mockSpawnSync = spyOn(utils, 'executeGit').mockImplementation((args: string[], _cwd?: string) => {
       // Simulate successful git operations
-      if (args.includes('status')) return ''
-      if (args.includes('pull')) return 'Already up to date.'
-      if (args.includes('push')) return 'Everything up-to-date'
-      if (args.includes('commit')) return 'Commit successful'
-      if (args.includes('tag')) return 'Tag created'
-      if (args.includes('add')) return 'Files staged'
+      if (args.includes('status'))
+        return ''
+      if (args.includes('pull'))
+        return 'Already up to date.'
+      if (args.includes('push'))
+        return 'Everything up-to-date'
+      if (args.includes('commit'))
+        return 'Commit successful'
+      if (args.includes('tag'))
+        return 'Tag created'
+      if (args.includes('add'))
+        return 'Files staged'
       return ''
     })
 
-    mockExecSync = spyOn(utils, 'executeCommand').mockImplementation((command: string, cwd?: string) => {
+    mockExecSync = spyOn(utils, 'executeCommand').mockImplementation((command: string, _cwd?: string) => {
       // Mock npm install and other commands
-      if (command.includes('npm install')) return 'Dependencies installed'
-      if (command.includes('git add')) return 'Files staged'
-      if (command.includes('echo')) return command.replace('echo ', '').replace(/"/g, '')
+      if (command.includes('npm install'))
+        return 'Dependencies installed'
+      if (command.includes('git add'))
+        return 'Files staged'
+      if (command.includes('echo'))
+        return command.replace('echo ', '').replace(/"/g, '')
       return ''
     })
   })
@@ -78,8 +86,8 @@ describe('Git Operations (Integration)', () => {
       })
 
       // Verify push was NOT called
-      const pushCalls = mockSpawnSync.mock.calls.filter((call: any) => 
-        call[0] && call[0].includes && call[0].includes('push')
+      const pushCalls = mockSpawnSync.mock.calls.filter((call: any) =>
+        call[0] && call[0].includes && call[0].includes('push'),
       )
       expect(pushCalls.length).toBe(0)
     })
@@ -127,8 +135,8 @@ describe('Git Operations (Integration)', () => {
       })
 
       // Verify pull was NOT called but push was
-      const pullCalls = mockSpawnSync.mock.calls.filter((call: any) => 
-        call[0] && call[0].includes && call[0].includes('pull')
+      const pullCalls = mockSpawnSync.mock.calls.filter((call: any) =>
+        call[0] && call[0].includes && call[0].includes('pull'),
       )
       expect(pullCalls.length).toBe(0)
       expect(mockSpawnSync).toHaveBeenCalledWith(['push', '--follow-tags'], tempDir)
@@ -307,7 +315,7 @@ describe('Git Operations (Integration)', () => {
 
       // Verify command was executed
       expect(mockExecSync).toHaveBeenCalledWith('echo "test command"', expect.any(String))
-      
+
       // Verify commit happened after execute (actual format includes 'v' prefix)
       expect(mockSpawnSync).toHaveBeenCalledWith(['commit', '-m', 'chore: release v1.0.1'], expect.any(String))
     })
@@ -387,14 +395,14 @@ describe('Git Operations (Integration)', () => {
       })
 
       // Command should not be executed, but dry run message should be shown
-      const executeCalls = mockExecSync.mock.calls.filter((call: any) => 
-        call[0] && call[0].includes('echo "test"')
+      const executeCalls = mockExecSync.mock.calls.filter((call: any) =>
+        call[0] && call[0].includes('echo "test"'),
       )
       expect(executeCalls.length).toBe(0)
-      
+
       // Check that dry run message was logged
-      const dryRunCalls = consoleSpy.mock.calls.filter((call: any) => 
-        call[0] && call[0].includes('[DRY RUN] Would execute: echo "test"')
+      const dryRunCalls = consoleSpy.mock.calls.filter((call: any) =>
+        call[0] && call[0].includes('[DRY RUN] Would execute: echo "test"'),
       )
       expect(dryRunCalls.length).toBe(1)
 
@@ -459,14 +467,14 @@ describe('Git Operations (Integration)', () => {
       })
 
       // Verify no git operations were performed
-      const commitCalls = mockSpawnSync.mock.calls.filter((call: any) => 
-        call[0] && call[0].includes && call[0].includes('commit')
+      const commitCalls = mockSpawnSync.mock.calls.filter((call: any) =>
+        call[0] && call[0].includes && call[0].includes('commit'),
       )
-      const tagCalls = mockSpawnSync.mock.calls.filter((call: any) => 
-        call[0] && call[0].includes && call[0].includes('tag')
+      const tagCalls = mockSpawnSync.mock.calls.filter((call: any) =>
+        call[0] && call[0].includes && call[0].includes('tag'),
       )
-      const pushCalls = mockSpawnSync.mock.calls.filter((call: any) => 
-        call[0] && call[0].includes && call[0].includes('push')
+      const pushCalls = mockSpawnSync.mock.calls.filter((call: any) =>
+        call[0] && call[0].includes && call[0].includes('push'),
       )
 
       expect(commitCalls.length).toBe(0)
@@ -481,17 +489,21 @@ describe('Git Operations (Integration)', () => {
       writeFileSync(packagePath, JSON.stringify({ name: 'test', version: '1.0.0' }, null, 2))
 
       const executionOrder: string[] = []
-      
+
       mockExecSync.mockImplementation((command: string) => {
         executionOrder.push(`execute:${command}`)
         return ''
       })
 
       mockSpawnSync.mockImplementation((args: string[]) => {
-        if (args.includes('commit')) executionOrder.push('commit')
-        if (args.includes('tag')) executionOrder.push('tag')
-        if (args.includes('push')) executionOrder.push('push')
-        if (args.includes('pull')) executionOrder.push('pull')
+        if (args.includes('commit'))
+          executionOrder.push('commit')
+        if (args.includes('tag'))
+          executionOrder.push('tag')
+        if (args.includes('push'))
+          executionOrder.push('push')
+        if (args.includes('pull'))
+          executionOrder.push('pull')
         return ''
       })
 
@@ -513,7 +525,7 @@ describe('Git Operations (Integration)', () => {
         'commit',
         'tag',
         'pull',
-        'push'
+        'push',
       ])
     })
 
