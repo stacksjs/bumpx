@@ -1,11 +1,9 @@
-import { afterEach, beforeEach, describe, expect, it, spyOn } from 'bun:test'
+import { afterEach, beforeEach, describe, expect, it } from 'bun:test'
 import { existsSync, mkdirSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 
 // Mock the CLI module before importing
-const mockPromptForRecursiveAll = spyOn({}, 'promptForRecursiveAll' as any).mockResolvedValue(true)
-const mockVersionBump = spyOn({}, 'versionBump' as any).mockResolvedValue(undefined)
 
 describe('CLI Recursive All Prompt', () => {
   let tempDir: string
@@ -33,9 +31,6 @@ describe('CLI Recursive All Prompt', () => {
     else {
       delete process.env.NODE_ENV
     }
-
-    mockPromptForRecursiveAll.mockClear()
-    mockVersionBump.mockClear()
   })
 
   describe('CLI Flag Combinations', () => {
