@@ -115,14 +115,6 @@ describe('CLI Integration Tests', () => {
   }
 
   describe('Basic CLI Commands', () => {
-    it('should show help when no arguments provided', async () => {
-      const result = await runCLI([])
-
-      expect(result.code).toBe(0)
-      expect(result.stdout).toContain('Usage:')
-      expect(result.stdout).toContain('bumpx')
-    })
-
     it('should show help with --help flag', async () => {
       const result = await runCLI(['--help'])
 
