@@ -1,7 +1,7 @@
 {
   "name": "@stacksjs/bumpx",
   "type": "module",
-  "version": "0.1.17",
+  "version": "0.1.33",
   "description": "Automatically bump your versions.",
   "author": "Chris Breuer <chris@stacksjs.org>",
   "license": "MIT",
@@ -64,7 +64,9 @@
     "test": "bun test"
   },
   "dependencies": {
-    "@stacksjs/clapp": "^0.1.16"
+    "@stacksjs/clapp": "^0.1.18",
+    "@stacksjs/logsmith": "^0.1.15",
+    "bunfig": "^0.14.1"
   },
   "devDependencies": {
     "bun-plugin-dtsx": "^0.21.12"
