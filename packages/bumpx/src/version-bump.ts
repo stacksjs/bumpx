@@ -40,7 +40,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
     printCommits,
     dryRun,
     progress,
-    forceUpdate = false,
+    forceUpdate,
     tagMessage,
     cwd,
     changelog = true,
@@ -183,24 +183,24 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
           // First, check if the file actually contains the expected current version
           const originalContent = readFileSync(filePath, 'utf-8')
           let shouldUpdate = false
-          
+
           if (filePath.endsWith('.json')) {
             try {
               const packageJson = JSON.parse(originalContent)
-              shouldUpdate = packageJson.version === currentVersion || forceUpdate
+              shouldUpdate = packageJson.version === currentVersion || (forceUpdate === true)
             } catch {
               // If JSON parsing fails, skip this file
               shouldUpdate = false
             }
           } else {
             // For non-JSON files, check if the current version exists in the content
-            shouldUpdate = originalContent.includes(currentVersion) || forceUpdate
+            shouldUpdate = originalContent.includes(currentVersion) || (forceUpdate === true)
           }
 
           let fileInfo: FileInfo
           if (shouldUpdate) {
             // Always call updateVersionInFile to ensure mocks are triggered in tests
-            fileInfo = updateVersionInFile(filePath, currentVersion, newVersion, forceUpdate)
+            fileInfo = updateVersionInFile(filePath, currentVersion, newVersion, forceUpdate || false)
             // If in dry run mode, restore the original content after the operation
             if (dryRun) {
               writeFileSync(filePath, originalContent, 'utf-8')
@@ -414,7 +414,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
           let fileInfo: FileInfo
           // Create a backup of the file content before modification
           const originalContent = readFileSync(filePath, 'utf-8')
-          
+
           // In recursive mode, we need to get each file's current version for proper tracking
           let fileCurrentVersion = rootCurrentVersion
           if (filePath.endsWith('.json')) {
@@ -425,10 +425,14 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
               fileCurrentVersion = rootCurrentVersion
             }
           }
-          
+
           // Always call updateVersionInFile to ensure mocks are triggered in tests
-          // In recursive mode, respect the forceUpdate setting
-          fileInfo = updateVersionInFile(filePath, fileCurrentVersion, newVersion, forceUpdate)
+          // In recursive mode, default to forcing updates unless explicitly set to false
+          const shouldForceInRecursive = forceUpdate === undefined ? true : forceUpdate
+
+          // When forceUpdate is false, only update files that match the root version
+          const versionToMatch = shouldForceInRecursive ? fileCurrentVersion : rootCurrentVersion
+          fileInfo = updateVersionInFile(filePath, versionToMatch, newVersion, shouldForceInRecursive)
           // If in dry run mode, restore the original content after the operation
           if (dryRun) {
             writeFileSync(filePath, originalContent, 'utf-8')
