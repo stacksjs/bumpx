@@ -163,6 +163,23 @@ describe('CLI Integration Tests', () => {
     it('should bump patch version', async () => {
       const result = await runCLI(['patch', '--no-git-check', '--no-commit', '--no-tag', '--no-push'])
 
+      // Debug output for CI failures
+      if (result.code !== 0) {
+        console.log('=== CLI FAILURE DEBUG ===')
+        console.log('Exit code:', result.code)
+        console.log('STDOUT:', result.stdout)
+        console.log('STDERR:', result.stderr)
+        console.log('Command:', 'bun', bumpxBin, 'patch', '--no-git-check', '--no-commit', '--no-tag', '--no-push')
+        console.log('Binary path:', bumpxBin)
+        console.log('Binary exists:', existsSync(bumpxBin))
+        console.log('Working directory:', tempDir)
+        console.log('Package.json exists:', existsSync(join(tempDir, 'package.json')))
+        if (existsSync(join(tempDir, 'package.json'))) {
+          console.log('Package.json content:', readFileSync(join(tempDir, 'package.json'), 'utf-8'))
+        }
+        console.log('========================')
+      }
+
       expect(result.code).toBe(0)
       expect(result.stdout).toContain('1.0.0')
       expect(result.stdout).toContain('1.0.1')
