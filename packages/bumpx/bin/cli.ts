@@ -132,7 +132,10 @@ function errorHandler(error: Error): never {
     message += `\n\n${error.stack || ''}`
   }
 
-  console.error(colors.red(`${symbols.error} ${message}`))
+  // Avoid duplicating error messages if the message already contains the error symbol
+  if (!message.includes(symbols.error)) {
+    console.error(colors.red(`${symbols.error} ${message}`))
+  }
 
   // Use more specific exit codes based on error type
   if (message.includes('No package.json files found')
@@ -243,9 +246,10 @@ async function prepareConfig(release: string | undefined, files: string[] | unde
     ...ciOverrides,
   })
 
-  // If no release and no files were provided, default to a safe 'patch' release
+  // If no release was provided, always show the prompt by default
+  // This gives users the chance to choose their version type
   if (!loaded.release && (!files || files.length === 0)) {
-    loaded.release = 'patch'
+    loaded.release = 'prompt'
   }
 
   // Handle -r --all combination with special prompting
@@ -328,16 +332,13 @@ cli
 
 // Setup global error handlers
 process.on('uncaughtException', (error) => {
-  console.error('Uncaught Exception:', error)
+  console.error('Uncaught Exception:')
   errorHandler(error)
 })
 process.on('unhandledRejection', (reason) => {
-  console.error('Unhandled Rejection:', reason)
+  console.error('Unhandled Rejection:')
   errorHandler(reason instanceof Error ? reason : new Error(String(reason)))
 })
-
-process.on('uncaughtException', errorHandler)
-process.on('unhandledRejection', errorHandler)
 
 cli.version(version)
 cli.help()
