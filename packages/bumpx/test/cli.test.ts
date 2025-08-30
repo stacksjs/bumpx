@@ -19,9 +19,9 @@ describe('CLI Integration Tests', () => {
     const sourceBin = join(__dirname, '..', 'bin', 'cli.ts')
     const compiledBin = join(__dirname, '..', 'bin', 'bumpx')
 
-    // In CI, prioritize built JS version; locally prefer compiled binary for speed
-    if (process.env.CI && existsSync(builtBin)) {
-      bumpxBin = builtBin
+    // Always use source TS in CI to avoid binary execution issues
+    if (process.env.CI) {
+      bumpxBin = sourceBin
     }
     else if (existsSync(compiledBin)) {
       bumpxBin = compiledBin
@@ -57,33 +57,29 @@ describe('CLI Integration Tests', () => {
 
   const runCLI = (args: string[]): Promise<{ code: number, stdout: string, stderr: string }> => {
     return new Promise((resolve) => {
-      // Determine execution method based on binary type
-      const isCompiledBinary = bumpxBin.endsWith('bumpx') && !bumpxBin.endsWith('.ts') && !bumpxBin.endsWith('.js')
-      const isBuiltJS = bumpxBin.endsWith('.js')
-      const isSourceTS = bumpxBin.endsWith('.ts')
-
+      // Always use bun for CI compatibility, determine method for local
       let command: string
       let cmdArgs: string[]
-
-      if (isCompiledBinary) {
-        // Standalone binary - run directly
-        command = bumpxBin
-        cmdArgs = args
-      }
-      else if (isBuiltJS) {
-        // Built JS - run with bun
-        command = 'bun'
-        cmdArgs = [bumpxBin, ...args]
-      }
-      else if (isSourceTS) {
-        // Source TS - run with bun
+      
+      if (process.env.CI) {
+        // Always use bun with source TS in CI
         command = 'bun'
         cmdArgs = [bumpxBin, ...args]
       }
       else {
-        // Default fallback
-        command = 'bun'
-        cmdArgs = [bumpxBin, ...args]
+        // Local environment - use appropriate method
+        const isCompiledBinary = bumpxBin.endsWith('bumpx') && !bumpxBin.endsWith('.ts') && !bumpxBin.endsWith('.js')
+        
+        if (isCompiledBinary) {
+          // Standalone binary - run directly
+          command = bumpxBin
+          cmdArgs = args
+        }
+        else {
+          // JS/TS files - run with bun
+          command = 'bun'
+          cmdArgs = [bumpxBin, ...args]
+        }
       }
 
       const decoder = new TextDecoder()
