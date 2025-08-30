@@ -48,12 +48,22 @@ describe('Changelog Generation', () => {
     }
     mockSpawnSync.mockRestore()
     mockExecSync.mockRestore()
+    spyOn(console, 'log').mockRestore()
+    spyOn(console, 'warn').mockRestore()
   })
 
   describe('Changelog Flag Behavior', () => {
     it('should generate changelog when flag is enabled (default)', async () => {
-      const packagePath = join(tempDir, 'package.json')
-      writeFileSync(packagePath, JSON.stringify({ name: 'test', version: '1.0.0' }, null, 2))
+      const fixtureDir = join(__dirname, 'fixtures', 'changelog-generation')
+      const outputDir = join(__dirname, 'output', 'changelog-generation')
+      const packagePath = join(outputDir, 'package.json')
+
+      // Create output directory
+      mkdirSync(outputDir, { recursive: true })
+
+      // Copy fixture to output directory
+      const fixturePackage = readFileSync(join(fixtureDir, 'package.json'), 'utf-8')
+      writeFileSync(packagePath, fixturePackage)
 
       await versionBump({
         release: 'patch',
@@ -61,18 +71,19 @@ describe('Changelog Generation', () => {
         commit: true,
         tag: true,
         push: false,
-        changelog: true, // Explicitly enabled
+        changelog: true,
         quiet: true,
         noGitCheck: true,
-        cwd: tempDir,
-        forceCli: true, // Force CLI usage in test
+        cwd: outputDir,
       })
 
-      // Verify changelog generation was attempted (check that the function completed successfully)
-      // Since we can't easily mock the module import, we check that no errors occurred
-      // and the version bump completed successfully
-      const updatedContent = JSON.parse(readFileSync(packagePath, 'utf-8'))
-      expect(updatedContent.version).toBe('1.0.1')
+      // Verify changelog file was created
+      const changelogPath = join(outputDir, 'CHANGELOG.md')
+      expect(existsSync(changelogPath)).toBe(true)
+
+      // Verify package.json was updated
+      const updatedPackage = JSON.parse(readFileSync(packagePath, 'utf-8'))
+      expect(updatedPackage.version).toBe('1.0.1')
     })
 
     it('should not generate changelog when flag is disabled', async () => {
@@ -99,8 +110,16 @@ describe('Changelog Generation', () => {
     })
 
     it('should generate changelog with commit disabled', async () => {
-      const packagePath = join(tempDir, 'package.json')
-      writeFileSync(packagePath, JSON.stringify({ name: 'test', version: '1.0.0' }, null, 2))
+      const fixtureDir = join(__dirname, 'fixtures', 'changelog-generation')
+      const outputDir = join(__dirname, 'output', 'changelog-generation', 'commit-disabled')
+      const packagePath = join(outputDir, 'package.json')
+
+      // Create output directory
+      mkdirSync(outputDir, { recursive: true })
+
+      // Copy fixture to output directory
+      const fixturePackage = readFileSync(join(fixtureDir, 'package.json'), 'utf-8')
+      writeFileSync(packagePath, fixturePackage)
 
       await versionBump({
         release: 'patch',
@@ -111,16 +130,16 @@ describe('Changelog Generation', () => {
         changelog: true,
         quiet: true,
         noGitCheck: true,
-        cwd: tempDir,
-        forceCli: true, // Force CLI usage in test
+        cwd: outputDir,
       })
 
       // Verify version bump completed successfully
-      const updatedContent = JSON.parse(readFileSync(packagePath, 'utf-8'))
-      expect(updatedContent.version).toBe('1.0.1')
+      const updatedPackage = JSON.parse(readFileSync(packagePath, 'utf-8'))
+      expect(updatedPackage.version).toBe('1.0.1')
 
-      // Note: In test mode, some git operations may still occur for changelog generation
-      // The important thing is that the version bump completed successfully
+      // Verify changelog file was created
+      const changelogPath = join(outputDir, 'CHANGELOG.md')
+      expect(existsSync(changelogPath)).toBe(true)
     })
 
     it('should generate changelog with tag disabled', async () => {
