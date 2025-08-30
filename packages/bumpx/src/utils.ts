@@ -422,6 +422,19 @@ export function getCurrentBranch(cwd?: string): string {
 }
 
 /**
+ * Check if the current directory is a Git repository
+ */
+export function isGitRepository(cwd?: string): boolean {
+  try {
+    const result = executeGit(['rev-parse', '--is-inside-work-tree'], cwd)
+    return result.trim() === 'true'
+  }
+  catch {
+    return false
+  }
+}
+
+/**
  * Create git commit
  */
 export function createGitCommit(message: string, sign: boolean = false, noVerify: boolean = false, cwd?: string): void {

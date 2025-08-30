@@ -160,6 +160,7 @@ async function prepareConfig(release: string | undefined, files: string[] | unde
     ? {
         confirm: false, // Skip confirmation in CI
         quiet: true, // Reduce output in CI
+        noGitCheck: true, // Avoid git status checks in CI
       }
     : {}
 

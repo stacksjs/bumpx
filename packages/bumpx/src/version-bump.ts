@@ -12,6 +12,7 @@ import {
   findAllPackageFiles,
   findPackageJsonFiles,
   getRecentCommits,
+  isGitRepository,
   incrementVersion,
   pushToRemote,
   readPackageJson,
@@ -55,7 +56,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
 
   try {
     // Print recent commits if requested
-    if (printCommits && !dryRun) {
+    if (printCommits && !dryRun && isGitRepository(effectiveCwd)) {
       try {
         const recentCommits = getRecentCommits(5, effectiveCwd)
         if (recentCommits.length > 0) {
@@ -568,7 +569,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
     }
 
     // Generate changelog AFTER commit creation (if enabled)
-    if (changelog && lastNewVersion && !dryRun) {
+    if (changelog && lastNewVersion && !dryRun && isGitRepository(effectiveCwd)) {
       try {
         // Generate changelog with specific version range (using HEAD since tag doesn't exist yet)
         const fromVersion = _lastOldVersion ? `v${_lastOldVersion}` : undefined
@@ -634,7 +635,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
 
     // Handle changelog generation for cases where commit is disabled
     // This allows users to generate changelog without committing
-    if (changelog && !commit && lastNewVersion && !dryRun) {
+    if (changelog && !commit && lastNewVersion && !dryRun && isGitRepository(effectiveCwd)) {
       try {
         // Generate changelog with specific version range
         const fromVersion = _lastOldVersion ? `v${_lastOldVersion}` : undefined
