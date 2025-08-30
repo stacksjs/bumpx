@@ -428,9 +428,9 @@ export function updateVersionInFile(filePath: string, oldVersion: string, newVer
       const hasOldVersion = content.includes(oldVersion)
       
       if (hasOldVersion || forceUpdate) {
-        // Only replace if we found the old version or force update is enabled
-        const versionRegex = new RegExp(`\\b${escapeRegExp(oldVersion)}\\b`, 'g')
-        newContent = content.replace(versionRegex, newVersion)
+        // Replace all instances of the old version with the new version
+        // Use a global replace to catch all occurrences including @version patterns
+        newContent = content.replace(new RegExp(escapeRegExp(oldVersion), 'g'), newVersion)
         updated = newContent !== content || forceUpdate
       }
     }

@@ -242,6 +242,10 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
           }
         }
         catch (error) {
+          // For permission errors and other critical file system errors, throw immediately
+          if (error instanceof Error && (error.message.includes('EACCES') || error.message.includes('permission denied'))) {
+            throw error
+          }
           errors.push(`Failed to process ${filePath}: ${error}`)
           skippedFiles.push(filePath)
         }
