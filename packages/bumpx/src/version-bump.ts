@@ -243,7 +243,13 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
         }
         catch (error) {
           // For permission errors and other critical file system errors, throw immediately
-          if (error instanceof Error && (error.message.includes('EACCES') || error.message.includes('permission denied'))) {
+          if (error instanceof Error && (
+            error.message.includes('EACCES') || 
+            error.message.includes('permission denied') ||
+            error.message.includes('EPERM') ||
+            (error as any).code === 'EACCES' ||
+            (error as any).code === 'EPERM'
+          )) {
             throw error
           }
           errors.push(`Failed to process ${filePath}: ${error}`)
@@ -468,6 +474,16 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
           }
         }
         catch (error) {
+          // For permission errors and other critical file system errors, throw immediately
+          if (error instanceof Error && (
+            error.message.includes('EACCES') || 
+            error.message.includes('permission denied') ||
+            error.message.includes('EPERM') ||
+            (error as any).code === 'EACCES' ||
+            (error as any).code === 'EPERM'
+          )) {
+            throw error
+          }
           errors.push(`Failed to process ${filePath}: ${error}`)
           skippedFiles.push(filePath)
         }
@@ -594,6 +610,16 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
           }
         }
         catch (error) {
+          // For permission errors and other critical file system errors, throw immediately
+          if (error instanceof Error && (
+            error.message.includes('EACCES') || 
+            error.message.includes('permission denied') ||
+            error.message.includes('EPERM') ||
+            (error as any).code === 'EACCES' ||
+            (error as any).code === 'EPERM'
+          )) {
+            throw error
+          }
           console.log(`Warning: Failed to process ${filePath}: ${error}`)
           errors.push(`Failed to process ${filePath}: ${error}`)
           skippedFiles.push(filePath)
