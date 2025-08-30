@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, spyOn } from 'bun:test'
-import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
+import { existsSync, mkdirSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import * as utils from '../src/utils'
@@ -12,6 +12,7 @@ describe('Recursive All Prompt Integration', () => {
   let mockConfirm: any
   let mockIsGitRepo: any
   let mockGitTagExists: any
+  let mockUpdateVersionInFile: any
 
   beforeEach(() => {
     tempDir = join(tmpdir(), `bumpx-recursive-all-test-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`)
@@ -19,12 +20,12 @@ describe('Recursive All Prompt Integration', () => {
 
     // Mock isGitRepository to return true so git operations will execute
     mockIsGitRepo = spyOn(utils, 'isGitRepository').mockReturnValue(true)
-    
+
     // Mock gitTagExists to always return false (no existing tags)
     mockGitTagExists = spyOn(utils, 'gitTagExists').mockReturnValue(false)
-    
+
     // Mock file system operations to prevent real file modifications
-    spyOn(utils, 'updateVersionInFile').mockImplementation((filePath: string, oldVersion: string, newVersion: string) => ({
+    mockUpdateVersionInFile = spyOn(utils, 'updateVersionInFile').mockImplementation((filePath: string, oldVersion: string, newVersion: string, _forceUpdate: boolean = false) => ({
       path: filePath,
       content: `{"name":"test","version":"${newVersion}"}`,
       updated: true,
@@ -70,6 +71,7 @@ describe('Recursive All Prompt Integration', () => {
     mockConfirm.mockRestore()
     mockIsGitRepo.mockRestore()
     mockGitTagExists.mockRestore()
+    mockUpdateVersionInFile.mockRestore()
   })
 
   describe('Recursive All Workflow', () => {
@@ -111,7 +113,7 @@ describe('Recursive All Prompt Integration', () => {
         dryRun: true, // Add dry run to prevent actual file modifications
       })
 
-      // Since we're using dryRun and mocked updateVersionInFile, 
+      // Since we're using dryRun and mocked updateVersionInFile,
       // we verify the mock was called with correct parameters
       expect(utils.updateVersionInFile).toHaveBeenCalled()
 

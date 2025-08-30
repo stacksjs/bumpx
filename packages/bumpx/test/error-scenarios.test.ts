@@ -30,9 +30,11 @@ describe('Error Scenarios and Edge Cases', () => {
       writeFileSync(packagePath, JSON.stringify({ name: 'test', version: '1.0.0' }, null, 2))
 
       // Make file read-only (simulate permission error)
-      chmodSync(packagePath, 0o444)
+      // Use the most restrictive permissions to ensure it fails on all systems
+      chmodSync(packagePath, 0o000)
 
       try {
+        // Explicitly expect a permission error
         await expect(versionBump({
           release: 'patch',
           files: [packagePath],
@@ -40,7 +42,7 @@ describe('Error Scenarios and Edge Cases', () => {
           tag: false,
           push: false,
           noGitCheck: true,
-        })).rejects.toThrow()
+        })).rejects.toThrow(/permission|EACCES|EPERM/)
       }
       finally {
         // Restore permissions for cleanup

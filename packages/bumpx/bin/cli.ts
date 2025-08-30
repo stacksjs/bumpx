@@ -1,6 +1,12 @@
 #!/usr/bin/env node
 import type { BumpxConfig, VersionBumpProgress } from '../src/types'
 import process from 'node:process'
+import { CLI } from '@stacksjs/clapp'
+import { version } from '../package.json'
+import { defaultConfig as bumpConfigDefaults, loadBumpConfig } from '../src/config'
+import { ExitCode, ProgressEvent } from '../src/types'
+import { colors, isReleaseType, isValidVersion, symbols } from '../src/utils'
+import { versionBump } from '../src/version-bump'
 
 // Set up global user interrupt flag for handling SIGINT (Ctrl+C)
 export const userInterrupted = { value: false }
@@ -13,13 +19,6 @@ process.on('SIGINT', () => {
   // Exit with success code - this was an intentional cancellation
   process.exit(0)
 })
-
-import { CLI } from '@stacksjs/clapp'
-import { version } from '../package.json'
-import { defaultConfig as bumpConfigDefaults, loadBumpConfig } from '../src/config'
-import { ExitCode, ProgressEvent } from '../src/types'
-import { colors, isReleaseType, isValidVersion, symbols } from '../src/utils'
-import { versionBump } from '../src/version-bump'
 
 const cli = new CLI('bumpx')
 
@@ -140,7 +139,7 @@ async function promptForRecursiveAll(): Promise<boolean> {
  */
 function errorHandler(error: Error): never {
   let message = error.message || String(error)
-  
+
   // Prevent duplicate error handling
   // This happens when errors get caught and re-thrown
   const handledSymbol = Symbol.for('bumpx.errorHandled')
@@ -150,8 +149,8 @@ function errorHandler(error: Error): never {
   (error as any)[handledSymbol] = true
 
   // Handle cancellation and user interruption gracefully
-  if (message === 'Version bump cancelled by user' || 
-      message === 'Operation cancelled by user') {
+  if (message === 'Version bump cancelled by user'
+    || message === 'Operation cancelled by user') {
     // Exit cleanly for user cancellations
     process.exit(0)
   }

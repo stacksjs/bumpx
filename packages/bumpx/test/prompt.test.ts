@@ -602,7 +602,7 @@ describe('Interactive Prompt Tests', () => {
         await versionBump({
           release: 'patch',
           files: [packagePath],
-          commit: true, // Enable commit to trigger Git operations
+          commit: false, // Disable commit to prevent git pollution
           tag: false,
           push: false,
           noGitCheck: true,
@@ -694,7 +694,7 @@ describe('Interactive Prompt Tests', () => {
         release: 'patch',
         files: [packagePath],
         commit: false,
-        tag: 'release-{version}',
+        tag: false, // Disable tag creation to prevent git pollution
         push: false,
         noGitCheck: true,
         quiet: true,

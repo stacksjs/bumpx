@@ -1,12 +1,131 @@
+/* eslint-disable no-console */
 import type { FileInfo, PackageJson, ReleaseType } from './types'
 import { execSync, spawnSync } from 'node:child_process'
 import { existsSync, readFileSync, writeFileSync } from 'node:fs'
-import readline from 'node:readline'
-import { readFile, readdir, stat } from 'node:fs/promises'
+import { readdir, readFile, stat } from 'node:fs/promises'
 import { join, relative } from 'node:path'
-import { SemVer } from 'semver'
+import process from 'node:process'
+import readline from 'node:readline'
 
-export { SemVer }
+/**
+ * Custom SemVer implementation to handle version parsing and manipulation
+ */
+export class SemVer {
+  major: number
+  minor: number
+  patch: number
+  prerelease: string[]
+  build: string[]
+  version: string
+
+  constructor(version: string) {
+    // Remove v prefix if present
+    if (version.startsWith('v')) {
+      version = version.slice(1)
+    }
+
+    const semverRegex = /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-z-][0-9a-z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-z-][0-9a-z-]*))*))?(?:\+([0-9a-z-]+(?:\.[0-9a-z-]+)*))?$/i
+    const match = version.match(semverRegex)
+
+    if (!match) {
+      throw new Error(`Invalid version: ${version}`)
+    }
+
+    this.major = Number.parseInt(match[1], 10)
+    this.minor = Number.parseInt(match[2], 10)
+    this.patch = Number.parseInt(match[3], 10)
+    this.prerelease = match[4] ? match[4].split('.') : []
+    this.build = match[5] ? match[5].split('.') : []
+    this.version = version
+  }
+
+  /**
+   * Increment version based on release type
+   */
+  inc(release: string, preid?: string): SemVer {
+    const newVersion = { ...this }
+
+    switch (release) {
+      case 'major':
+        newVersion.major++
+        newVersion.minor = 0
+        newVersion.patch = 0
+        newVersion.prerelease = []
+        newVersion.build = [] // Clear build metadata on increment
+        break
+      case 'minor':
+        newVersion.minor++
+        newVersion.patch = 0
+        newVersion.prerelease = []
+        newVersion.build = [] // Clear build metadata on increment
+        break
+      case 'patch':
+        newVersion.patch++
+        newVersion.prerelease = []
+        newVersion.build = [] // Clear build metadata on increment
+        break
+      case 'premajor':
+        newVersion.major++
+        newVersion.minor = 0
+        newVersion.patch = 0
+        newVersion.prerelease = [preid || 'alpha', '0']
+        newVersion.build = [] // Clear build metadata on increment
+        break
+      case 'preminor':
+        newVersion.minor++
+        newVersion.patch = 0
+        newVersion.prerelease = [preid || 'alpha', '0']
+        newVersion.build = [] // Clear build metadata on increment
+        break
+      case 'prepatch':
+        newVersion.patch++
+        newVersion.prerelease = [preid || 'alpha', '0']
+        newVersion.build = [] // Clear build metadata on increment
+        break
+      case 'prerelease':
+        if (newVersion.prerelease.length === 0) {
+          // For non-prerelease versions, increment patch and add prerelease identifier
+          newVersion.patch++
+          newVersion.prerelease = [preid || 'alpha', '0']
+        }
+        else {
+          let id = 0
+          // If last item is numeric, increment it
+          const lastId = newVersion.prerelease[newVersion.prerelease.length - 1]
+          if (/^\d+$/.test(lastId)) {
+            id = Number.parseInt(lastId, 10) + 1
+            newVersion.prerelease[newVersion.prerelease.length - 1] = String(id)
+          }
+          else {
+            // Otherwise add a numeric identifier
+            newVersion.prerelease.push('0')
+          }
+        }
+        newVersion.build = [] // Clear build metadata on increment
+        break
+      default:
+        throw new Error(`Invalid release type: ${release}`)
+    }
+
+    // Update version string
+    let versionStr = `${newVersion.major}.${newVersion.minor}.${newVersion.patch}`
+    if (newVersion.prerelease.length > 0) {
+      versionStr += `-${newVersion.prerelease.join('.')}`
+    }
+    // Build metadata is intentionally not included in the new version
+
+    return new SemVer(versionStr)
+  }
+
+  toString(): string {
+    // Return version without build metadata as per SemVer spec for comparison
+    let versionStr = `${this.major}.${this.minor}.${this.patch}`
+    if (this.prerelease.length > 0) {
+      versionStr += `-${this.prerelease.join('.')}`
+    }
+    return versionStr
+  }
+}
 
 /**
  * Load gitignore patterns from .gitignore file
@@ -23,7 +142,8 @@ async function loadGitignorePatterns(dir: string): Promise<string[]> {
       .split('\n')
       .map(line => line.trim())
       .filter(line => line && !line.startsWith('#'))
-  } catch {
+  }
+  catch {
     return []
   }
 }
@@ -39,12 +159,13 @@ function shouldIgnorePath(fullPath: string, rootDir: string, patterns: string[])
     if (pattern.endsWith('/')) {
       // Directory pattern
       const dirPattern = pattern.slice(0, -1)
-      if (relativePath === dirPattern || relativePath.startsWith(dirPattern + '/')) {
+      if (relativePath === dirPattern || relativePath.startsWith(`${dirPattern}/`)) {
         return true
       }
-    } else {
+    }
+    else {
       // File or directory pattern
-      if (relativePath === pattern || relativePath.includes('/' + pattern)) {
+      if (relativePath === pattern || relativePath.includes(`/${pattern}`)) {
         return true
       }
       // Wildcard support for basic patterns
@@ -293,12 +414,12 @@ export function writePackageJson(filePath: string, packageJson: PackageJson): vo
 /**
  * Update version in a file (supports various file types)
  */
-export function updateVersionInFile(filePath: string, oldVersion: string, newVersion: string, forceUpdate: boolean = false): FileInfo {
+export function updateVersionInFile(filePath: string, oldVersion: string, newVersion: string, forceUpdate: boolean = false, dryRun: boolean = false): FileInfo {
   try {
     const content = readFileSync(filePath, 'utf-8')
     const isPackageJson = filePath.endsWith('package.json')
 
-    let newContent: string
+    let newContent: string = content
     let updated = false
 
     if (isPackageJson) {
@@ -308,18 +429,62 @@ export function updateVersionInFile(filePath: string, oldVersion: string, newVer
         newContent = `${JSON.stringify(packageJson, null, 2)}\n`
         updated = true
       }
-      else {
-        newContent = content
-      }
     }
     else {
-      // For other files, try to replace version strings
-      const versionRegex = new RegExp(`\\b${escapeRegExp(oldVersion)}\\b`, 'g')
-      newContent = content.replace(versionRegex, newVersion)
-      updated = newContent !== content
+      // For non-package.json files, replace version strings in content
+      if (process.env.BUMPX_DEBUG_README) {
+        console.log('[bumpx][debug] File path check:', { filePath, isReadme: filePath.toLowerCase().includes('readme') })
+      }
+      if (filePath.toLowerCase().includes('readme')) {
+        // Be careful with README files
+        let result = content
+        let changed = false
+
+        // 1) Replace all occurrences of the old version first (this handles most cases)
+        if (content.includes(oldVersion) || forceUpdate) {
+          result = result.replace(new RegExp(`\\b${escapeRegExp(oldVersion)}\\b`, 'g'), newVersion)
+          if (process.env.BUMPX_DEBUG_README) {
+            console.log('[bumpx][debug] Global replacement done:', { oldVersion, newVersion, hasOldVersion: content.includes(oldVersion) })
+          }
+        }
+
+        // 2) Restore changelog headers (### vX.Y.Z) to keep history intact
+        const restoreChangelogHeader = new RegExp(`^###\\s+v${escapeRegExp(newVersion)}(.*)$`, 'gm')
+        const beforeRestore = result
+        result = result.replace(restoreChangelogHeader, `### v${oldVersion}$1`)
+        if (process.env.BUMPX_DEBUG_README && beforeRestore !== result) {
+          console.log('[bumpx][debug] Changelog header restored')
+        }
+
+        changed = result !== content
+        newContent = result
+        updated = changed || forceUpdate
+
+        if (process.env.BUMPX_DEBUG_README) {
+          // Emit minimal diff-like info for debugging in tests
+          console.log('[bumpx][debug] README update:', {
+            file: filePath,
+            changed,
+            oldLen: content.length,
+            newLen: newContent.length,
+          })
+          // Show the specific install lines before/after for clarity
+          const beforeInstall = content.split('\n').filter(l => /npm\s+(?:install|i)\s+/.test(l)).join('\n')
+          const afterInstall = newContent.split('\n').filter(l => /npm\s+(?:install|i)\s+/.test(l)).join('\n')
+          if (beforeInstall || afterInstall) {
+            console.log(`[bumpx][debug] install lines before:\n${beforeInstall}`)
+            console.log(`[bumpx][debug] install lines after:\n${afterInstall}`)
+          }
+        }
+      }
+      else if (content.includes(oldVersion) || forceUpdate) {
+        // For other non-JSON files, replace with word boundaries to avoid partial matches
+        newContent = content.replace(new RegExp(`\\b${escapeRegExp(oldVersion)}\\b`, 'g'), newVersion)
+        updated = newContent !== content || forceUpdate
+      }
     }
 
-    if (updated) {
+    if (updated && !dryRun) {
       writeFileSync(filePath, newContent, 'utf-8')
     }
 
@@ -421,7 +586,8 @@ export function gitTagExists(tag: string, cwd?: string): boolean {
     // Use show-ref to check if tag exists
     executeGit(['show-ref', '--tags', '--quiet', '--verify', `refs/tags/${tag}`], cwd)
     return true
-  } catch {
+  }
+  catch {
     return false
   }
 }
@@ -455,15 +621,24 @@ export function canSafelyPull(cwd?: string): boolean {
   try {
     // Check if we're in a detached HEAD state
     const currentBranch = getCurrentBranch(cwd)
+
+    // Explicitly check for HEAD which indicates detached state
     if (currentBranch === 'HEAD') {
       return false
     }
 
     // Check if branch has upstream
-    executeGit(['rev-parse', '--abbrev-ref', '@{upstream}'], cwd)
-    return true
+    try {
+      executeGit(['rev-parse', '--abbrev-ref', '@{upstream}'], cwd)
+      return true
+    }
+    catch {
+      // No upstream branch
+      return false
+    }
   }
   catch {
+    // Any error in getting the current branch means we can't safely pull
     return false
   }
 }

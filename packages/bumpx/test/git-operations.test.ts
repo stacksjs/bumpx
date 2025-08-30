@@ -10,6 +10,7 @@ describe('Git Operations (Integration)', () => {
   let mockSpawnSync: any
   let mockExecSync: any
   let mockIsGitRepo: any
+  let mockGitTagExists: any
 
   beforeEach(() => {
     tempDir = join(tmpdir(), `bumpx-git-test-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`)
@@ -17,6 +18,9 @@ describe('Git Operations (Integration)', () => {
 
     // Mock isGitRepository to return true so git operations will execute
     mockIsGitRepo = spyOn(utils, 'isGitRepository').mockReturnValue(true)
+
+    // Mock gitTagExists to prevent real git tag checks that pollute global state
+    mockGitTagExists = spyOn(utils, 'gitTagExists').mockReturnValue(false)
 
     // Mock git operations to avoid actual git commands in tests
     mockSpawnSync = spyOn(utils, 'executeGit').mockImplementation((args: string[], _cwd?: string) => {
@@ -55,6 +59,7 @@ describe('Git Operations (Integration)', () => {
     mockSpawnSync.mockRestore()
     mockExecSync.mockRestore()
     mockIsGitRepo.mockRestore()
+    mockGitTagExists.mockRestore()
   })
 
   describe('Push Functionality', () => {
