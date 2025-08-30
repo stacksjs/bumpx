@@ -194,10 +194,6 @@ async function prepareConfig(release: string | undefined, files: string[] | unde
     cliOverrides.all = options.all
   if (options.gitCheck === false) {
     cliOverrides.noGitCheck = true
-    // When --no-git-check is used, disable all git operations
-    cliOverrides.commit = false
-    cliOverrides.tag = false
-    cliOverrides.push = false
   }
   if (options.yes !== undefined) {
     cliOverrides.confirm = !options.yes
@@ -269,8 +265,10 @@ cli
   .option('--all', `Include all files (default: ${bumpConfigDefaults.all})`)
   .option('--no-git-check, --git-check, --gitCheck', 'Toggle git check')
   .option('-c, --commit', 'Create git commit')
+  .option('--no-commit', 'Skip git commit')
   .option('--commit-message <msg>', 'Custom commit message')
   .option('-t, --tag', 'Create git tag')
+  .option('--no-tag', 'Skip git tag')
   .option('--tag-name <name>', 'Custom tag name')
   .option('--tag-message <message>', 'Tag message')
   .option('--sign', 'Sign commit and tag')
