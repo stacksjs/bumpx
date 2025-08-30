@@ -24,7 +24,7 @@ describe('Recursive All Prompt Integration', () => {
     mockGitTagExists = spyOn(utils, 'gitTagExists').mockReturnValue(false)
     
     // Mock file system operations to prevent real file modifications
-    spyOn(utils, 'updateVersionInFile').mockImplementation((filePath: string, oldVersion: string, newVersion: string) => ({
+    spyOn(utils, 'updateVersionInFile').mockImplementation((filePath: string, oldVersion: string, newVersion: string, forceUpdate: boolean = false) => ({
       path: filePath,
       content: `{"name":"test","version":"${newVersion}"}`,
       updated: true,

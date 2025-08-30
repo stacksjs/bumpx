@@ -4,9 +4,123 @@ import { existsSync, readFileSync, writeFileSync } from 'node:fs'
 import readline from 'node:readline'
 import { readFile, readdir, stat } from 'node:fs/promises'
 import { join, relative } from 'node:path'
-import { SemVer } from 'semver'
+/**
+ * Custom SemVer implementation to handle version parsing and manipulation
+ */
+export class SemVer {
+  major: number
+  minor: number
+  patch: number
+  prerelease: string[]
+  build: string[]
+  version: string
 
-export { SemVer }
+  constructor(version: string) {
+    // Remove v prefix if present
+    if (version.startsWith('v')) {
+      version = version.slice(1)
+    }
+
+    const semverRegex = /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$/
+    const match = version.match(semverRegex)
+
+    if (!match) {
+      throw new Error(`Invalid version: ${version}`)
+    }
+
+    this.major = parseInt(match[1], 10)
+    this.minor = parseInt(match[2], 10)
+    this.patch = parseInt(match[3], 10)
+    this.prerelease = match[4] ? match[4].split('.') : []
+    this.build = match[5] ? match[5].split('.') : []
+    this.version = version
+  }
+
+  /**
+   * Increment version based on release type
+   */
+  inc(release: string, preid?: string): SemVer {
+    const newVersion = { ...this }
+    
+    switch (release) {
+      case 'major':
+        newVersion.major++
+        newVersion.minor = 0
+        newVersion.patch = 0
+        newVersion.prerelease = []
+        newVersion.build = [] // Clear build metadata on increment
+        break
+      case 'minor':
+        newVersion.minor++
+        newVersion.patch = 0
+        newVersion.prerelease = []
+        newVersion.build = [] // Clear build metadata on increment
+        break
+      case 'patch':
+        newVersion.patch++
+        newVersion.prerelease = []
+        newVersion.build = [] // Clear build metadata on increment
+        break
+      case 'premajor':
+        newVersion.major++
+        newVersion.minor = 0
+        newVersion.patch = 0
+        newVersion.prerelease = [preid || 'alpha', '0']
+        newVersion.build = [] // Clear build metadata on increment
+        break
+      case 'preminor':
+        newVersion.minor++
+        newVersion.patch = 0
+        newVersion.prerelease = [preid || 'alpha', '0']
+        newVersion.build = [] // Clear build metadata on increment
+        break
+      case 'prepatch':
+        newVersion.patch++
+        newVersion.prerelease = [preid || 'alpha', '0']
+        newVersion.build = [] // Clear build metadata on increment
+        break
+      case 'prerelease':
+        if (newVersion.prerelease.length === 0) {
+          // For non-prerelease versions, increment patch and add prerelease identifier
+          newVersion.patch++
+          newVersion.prerelease = [preid || 'alpha', '0']
+        } else {
+          let id = 0
+          // If last item is numeric, increment it
+          const lastId = newVersion.prerelease[newVersion.prerelease.length - 1]
+          if (/^\d+$/.test(lastId)) {
+            id = parseInt(lastId, 10) + 1
+            newVersion.prerelease[newVersion.prerelease.length - 1] = String(id)
+          } else {
+            // Otherwise add a numeric identifier
+            newVersion.prerelease.push('0')
+          }
+        }
+        newVersion.build = [] // Clear build metadata on increment
+        break
+      default:
+        throw new Error(`Invalid release type: ${release}`)
+    }
+
+    // Update version string
+    let versionStr = `${newVersion.major}.${newVersion.minor}.${newVersion.patch}`
+    if (newVersion.prerelease.length > 0) {
+      versionStr += `-${newVersion.prerelease.join('.')}`
+    }
+    // Build metadata is intentionally not included in the new version
+    
+    return new SemVer(versionStr)
+  }
+
+  toString(): string {
+    // Return version without build metadata as per SemVer spec for comparison
+    let versionStr = `${this.major}.${this.minor}.${this.patch}`
+    if (this.prerelease.length > 0) {
+      versionStr += `-${this.prerelease.join('.')}`
+    }
+    return versionStr
+  }
+}
 
 /**
  * Load gitignore patterns from .gitignore file
@@ -293,12 +407,12 @@ export function writePackageJson(filePath: string, packageJson: PackageJson): vo
 /**
  * Update version in a file (supports various file types)
  */
-export function updateVersionInFile(filePath: string, oldVersion: string, newVersion: string, forceUpdate: boolean = false): FileInfo {
+export function updateVersionInFile(filePath: string, oldVersion: string, newVersion: string, forceUpdate: boolean = false, dryRun: boolean = false): FileInfo {
   try {
     const content = readFileSync(filePath, 'utf-8')
     const isPackageJson = filePath.endsWith('package.json')
 
-    let newContent: string
+    let newContent: string = content
     let updated = false
 
     if (isPackageJson) {
@@ -308,18 +422,42 @@ export function updateVersionInFile(filePath: string, oldVersion: string, newVer
         newContent = `${JSON.stringify(packageJson, null, 2)}\n`
         updated = true
       }
-      else {
-        newContent = content
-      }
     }
     else {
-      // For other files, try to replace version strings
+      // For non-package.json files, we need a more comprehensive approach to replace all version instances
+      
+      // 1. Replace all exact matches with word boundaries
       const versionRegex = new RegExp(`\\b${escapeRegExp(oldVersion)}\\b`, 'g')
-      newContent = content.replace(versionRegex, newVersion)
+      newContent = newContent.replace(versionRegex, newVersion)
+      
+      // 2. Handle versions with build metadata
+      const oldVersionCore = oldVersion.split('+')[0]
+      const buildMetaRegex = new RegExp(`\\b${escapeRegExp(oldVersionCore)}\\+(\\w+(?:\\.\\w+)*)\\b`, 'g')
+      newContent = newContent.replace(buildMetaRegex, (match, buildMeta) => {
+        return `${newVersion}+${buildMeta}`
+      })
+      
+      // 3. Handle various version reference patterns
+      // This ensures we catch all references to the version in text
+      
+      // Handle exact version without build metadata
+      const exactOldVersion = oldVersion.split('+')[0] // Version without build metadata
+      newContent = newContent.replace(new RegExp(escapeRegExp(exactOldVersion), 'g'), newVersion)
+      
+      // Handle version references with 'version' keyword
+      const versionKeywordPattern = new RegExp(`version\\s+${escapeRegExp(oldVersion)}`, 'gi')
+      newContent = newContent.replace(versionKeywordPattern, `version ${newVersion}`)
+      
+      // Handle references with surrounding text
+      const referencePattern = new RegExp(`(\\w+\\s+)${escapeRegExp(oldVersion)}(\\s+\\w+)`, 'g')
+      newContent = newContent.replace(referencePattern, (match, prefix, suffix) => {
+        return `${prefix}${newVersion}${suffix}`
+      })
+      
       updated = newContent !== content
     }
 
-    if (updated) {
+    if (updated && !dryRun) {
       writeFileSync(filePath, newContent, 'utf-8')
     }
 
@@ -455,15 +593,23 @@ export function canSafelyPull(cwd?: string): boolean {
   try {
     // Check if we're in a detached HEAD state
     const currentBranch = getCurrentBranch(cwd)
+    
+    // Explicitly check for HEAD which indicates detached state
     if (currentBranch === 'HEAD') {
       return false
     }
 
     // Check if branch has upstream
-    executeGit(['rev-parse', '--abbrev-ref', '@{upstream}'], cwd)
-    return true
+    try {
+      executeGit(['rev-parse', '--abbrev-ref', '@{upstream}'], cwd)
+      return true
+    } catch {
+      // No upstream branch
+      return false
+    }
   }
-  catch {
+  catch (error) {
+    // Any error in getting the current branch means we can't safely pull
     return false
   }
 }

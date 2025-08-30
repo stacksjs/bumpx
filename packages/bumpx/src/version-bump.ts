@@ -181,15 +181,11 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
       for (const filePath of filesToUpdate) {
         try {
           let fileInfo: FileInfo
+          // Always call updateVersionInFile to ensure mocks are triggered in tests
+          // Pass dryRun flag to prevent actual file modifications
           if (dryRun) {
-            // In dry run mode, simulate the update without actually writing
-            fileInfo = {
-              path: filePath,
-              content: '',
-              updated: true, // Assume it would be updated
-              oldVersion: currentVersion,
-              newVersion,
-            }
+            // In dry run mode, we still call the function but prevent actual file writes
+            fileInfo = updateVersionInFile(filePath, currentVersion, newVersion, forceUpdate, true)
           }
           else {
             fileInfo = updateVersionInFile(filePath, currentVersion, newVersion)
@@ -393,15 +389,11 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
       for (const filePath of filesToUpdate) {
         try {
           let fileInfo: FileInfo
+          // Always call updateVersionInFile to ensure mocks are triggered in tests
+          // Pass dryRun flag to prevent actual file modifications
           if (dryRun) {
-            // In dry run mode, simulate the update without actually writing
-            fileInfo = {
-              path: filePath,
-              content: '',
-              updated: true, // Assume it would be updated
-              oldVersion: rootCurrentVersion,
-              newVersion,
-            }
+            // In dry run mode, we still call the function but prevent actual file writes
+            fileInfo = updateVersionInFile(filePath, rootCurrentVersion, newVersion, forceUpdate, true)
           }
           else {
             // In recursive mode, update all files to the new version regardless of their current version
@@ -523,15 +515,11 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
           console.log(`  ${filePath}: ${fileCurrentVersion} → ${fileNewVersion}`)
 
           let fileInfo: FileInfo
+          // Always call updateVersionInFile to ensure mocks are triggered in tests
+          // Pass dryRun flag to prevent actual file modifications
           if (dryRun) {
-            // In dry run mode, simulate the update without actually writing
-            fileInfo = {
-              path: filePath,
-              content: '',
-              updated: true, // Assume it would be updated
-              oldVersion: fileCurrentVersion,
-              newVersion: fileNewVersion,
-            }
+            // In dry run mode, we still call the function but prevent actual file writes
+            fileInfo = updateVersionInFile(filePath, fileCurrentVersion, fileNewVersion, forceUpdate, true)
           }
           else {
             fileInfo = updateVersionInFile(filePath, fileCurrentVersion, fileNewVersion)
