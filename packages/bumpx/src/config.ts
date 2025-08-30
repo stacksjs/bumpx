@@ -33,12 +33,8 @@ export const defaultConfig: BumpxConfig = {
 let _config: BumpxConfig | undefined
 
 export async function getConfig(): Promise<BumpxConfig> {
-  if (!_config) {
-    _config = await loadConfig({
-      name: 'bumpx',
-      defaultConfig,
-    })
-  }
+  if (!_config)
+    _config = await loadBumpConfig()
   return _config
 }
 
@@ -49,12 +45,31 @@ export const config: BumpxConfig = defaultConfig
  * Load bumpx configuration with overrides
  */
 export async function loadBumpConfig(overrides?: Partial<BumpxConfig>): Promise<BumpxConfig> {
-  const loaded = await loadConfig({
+  // 1) Load from bumpx.config.* via bunfig
+  const fileConfig = await loadConfig({
     name: 'bumpx',
     defaultConfig,
   })
 
-  return { ...loaded, ...overrides }
+  // 2) Load from package.json "bumpx" key (if present)
+  let packageConfig: Partial<BumpxConfig> = {}
+  try {
+    const fs = await import('node:fs')
+    const path = await import('node:path')
+    const pkgPath = path.join(process.cwd(), 'package.json')
+    if (fs.existsSync(pkgPath)) {
+      const raw = fs.readFileSync(pkgPath, 'utf-8')
+      const pkg = JSON.parse(raw)
+      if (pkg && typeof pkg.bumpx === 'object' && pkg.bumpx !== null)
+        packageConfig = pkg.bumpx as Partial<BumpxConfig>
+    }
+  }
+  catch {
+    // Silently ignore package.json read/parse errors here; they are handled elsewhere during actual bump
+  }
+
+  // 3) Merge with precedence: default < fileConfig < package.json < overrides
+  return { ...defaultConfig, ...fileConfig, ...packageConfig, ...overrides }
 }
 
 /**

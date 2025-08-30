@@ -15,28 +15,20 @@ describe('CLI Integration Tests', () => {
     tempDir = join(tmpdir(), `bumpx-cli-test-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`)
     mkdirSync(tempDir, { recursive: true })
 
-    // Get the path to the bumpx binary - prefer built JS in CI, otherwise use what's available
+    // Resolve bumpx entry for tests: prefer current source over compiled binary
+    // Order: built JS -> source TS -> compiled binary (fallback)
     const builtBin = join(__dirname, '..', 'dist', 'bin', 'cli.js')
     const sourceBin = join(__dirname, '..', 'bin', 'cli.ts')
     const compiledBin = join(__dirname, '..', 'bin', 'bumpx')
 
-    // In CI, prefer built JS over source TS for better reliability
-    if (process.env.CI) {
-      if (existsSync(builtBin)) {
-        bumpxBin = builtBin
-      }
-      else {
-        bumpxBin = sourceBin
-      }
-    }
-    else if (existsSync(compiledBin)) {
-      bumpxBin = compiledBin
-    }
-    else if (existsSync(builtBin)) {
+    if (existsSync(builtBin)) {
       bumpxBin = builtBin
     }
-    else {
+    else if (existsSync(sourceBin)) {
       bumpxBin = sourceBin
+    }
+    else {
+      bumpxBin = compiledBin
     }
 
     process.chdir(tempDir)
