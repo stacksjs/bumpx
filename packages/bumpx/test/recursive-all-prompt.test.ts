@@ -10,10 +10,14 @@ describe('Recursive All Prompt Integration', () => {
   let mockSpawnSync: any
   let mockExecSync: any
   let mockConfirm: any
+  let mockIsGitRepo: any
 
   beforeEach(() => {
     tempDir = join(tmpdir(), `bumpx-recursive-all-test-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`)
     mkdirSync(tempDir, { recursive: true })
+
+    // Mock isGitRepository to return true so git operations will execute
+    mockIsGitRepo = spyOn(utils, 'isGitRepository').mockReturnValue(true)
 
     // Mock git operations
     mockSpawnSync = spyOn(utils, 'executeGit').mockImplementation((args: string[], _cwd?: string) => {
@@ -51,6 +55,7 @@ describe('Recursive All Prompt Integration', () => {
     mockSpawnSync.mockRestore()
     mockExecSync.mockRestore()
     mockConfirm.mockRestore()
+    mockIsGitRepo.mockRestore()
   })
 
   describe('Recursive All Workflow', () => {

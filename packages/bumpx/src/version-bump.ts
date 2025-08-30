@@ -13,6 +13,7 @@ import {
   findPackageJsonFiles,
   getRecentCommits,
   incrementVersion,
+  isGitRepository,
   pushToRemote,
   readPackageJson,
   symbols,
@@ -52,10 +53,12 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
   // Determine a safe working directory for all git operations
   // Priority: explicit options.cwd -> directory of the first file -> process.cwd()
   const effectiveCwd = cwd || (files && files.length > 0 ? dirname(files[0]) : process.cwd())
+  // Determine if we're inside a Git repository once and reuse
+  const inGitRepo = isGitRepository(effectiveCwd)
 
   try {
     // Print recent commits if requested
-    if (printCommits && !dryRun) {
+    if (printCommits && !dryRun && inGitRepo) {
       try {
         const recentCommits = getRecentCommits(5, effectiveCwd)
         if (recentCommits.length > 0) {
@@ -528,7 +531,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
     }
 
     // Git operations
-    if (commit && updatedFiles.length > 0 && !dryRun) {
+    if (commit && updatedFiles.length > 0 && !dryRun && inGitRepo) {
       hasStartedGitOperations = true
       // Stage all changes (existing dirty files + version updates)
       try {
@@ -559,6 +562,9 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
         })
       }
     }
+    else if (commit && updatedFiles.length > 0 && !inGitRepo && !dryRun) {
+      console.warn('Warning: Requested to create a git commit but current directory is not a Git repository. Skipping commit...')
+    }
     else if (commit && updatedFiles.length > 0 && dryRun) {
       let commitMessage = typeof commit === 'string' ? commit : `chore: release v${lastNewVersion || 'unknown'}`
       if (typeof commit === 'string' && lastNewVersion) {
@@ -568,7 +574,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
     }
 
     // Generate changelog AFTER commit creation (if enabled)
-    if (changelog && lastNewVersion && !dryRun) {
+    if (changelog && lastNewVersion && !dryRun && inGitRepo) {
       try {
         // Generate changelog with specific version range (using HEAD since tag doesn't exist yet)
         const fromVersion = _lastOldVersion ? `v${_lastOldVersion}` : undefined
@@ -603,7 +609,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
     }
 
     // Create git tag AFTER changelog generation (if requested)
-    if (tag && updatedFiles.length > 0 && !dryRun && lastNewVersion) {
+    if (tag && updatedFiles.length > 0 && !dryRun && lastNewVersion && inGitRepo) {
       const tagName = typeof tag === 'string'
         ? tag.replace('{version}', lastNewVersion).replace('%s', lastNewVersion)
         : `v${lastNewVersion}`
@@ -622,6 +628,9 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
         })
       }
     }
+    else if (tag && !dryRun && lastNewVersion && !inGitRepo) {
+      console.warn('Warning: Requested to create a git tag but current directory is not a Git repository. Skipping tag...')
+    }
     else if (tag && dryRun && lastNewVersion) {
       const tagName = typeof tag === 'string'
         ? tag.replace('{version}', lastNewVersion).replace('%s', lastNewVersion)
@@ -634,7 +643,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
 
     // Handle changelog generation for cases where commit is disabled
     // This allows users to generate changelog without committing
-    if (changelog && !commit && lastNewVersion && !dryRun) {
+    if (changelog && !commit && lastNewVersion && !dryRun && inGitRepo) {
       try {
         // Generate changelog with specific version range
         const fromVersion = _lastOldVersion ? `v${_lastOldVersion}` : undefined
@@ -657,7 +666,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
       }
     }
 
-    if (push && !dryRun) {
+    if (push && !dryRun && inGitRepo) {
       pushToRemote(!!tag, effectiveCwd)
 
       if (progress && lastNewVersion && _lastOldVersion) {
@@ -669,6 +678,9 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
           oldVersion: _lastOldVersion,
         })
       }
+    }
+    else if (push && !dryRun && !inGitRepo) {
+      console.warn('Warning: Requested to push to remote but current directory is not a Git repository. Skipping push...')
     }
     else if (push && dryRun) {
       console.log(`[DRY RUN] Would pull latest changes from remote`)

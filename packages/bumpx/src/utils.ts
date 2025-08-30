@@ -386,7 +386,7 @@ export function executeGit(args: string[], cwd?: string): string {
     const result = spawnSync('git', args, {
       encoding: 'utf-8',
       stdio: ['pipe', 'pipe', 'pipe'],
-      cwd: cwd || process.cwd(),
+      cwd: cwd ?? process.cwd(),
     })
 
     if (result.error) {
@@ -419,6 +419,19 @@ export function checkGitStatus(cwd?: string): void {
  */
 export function getCurrentBranch(cwd?: string): string {
   return executeGit(['rev-parse', '--abbrev-ref', 'HEAD'], cwd)
+}
+
+/**
+ * Check if the current directory is a Git repository
+ */
+export function isGitRepository(cwd?: string): boolean {
+  try {
+    const result = executeGit(['rev-parse', '--is-inside-work-tree'], cwd)
+    return result.trim() === 'true'
+  }
+  catch {
+    return false
+  }
 }
 
 /**

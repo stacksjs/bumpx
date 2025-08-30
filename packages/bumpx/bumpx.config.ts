@@ -1,7 +1,6 @@
 import type { VersionBumpOptions } from './src/types'
-import { defineConfig } from './src/config'
 
-const config: VersionBumpOptions = defineConfig({
+const config: VersionBumpOptions = {
   // Git options
   commit: true,
   tag: true,
@@ -34,6 +33,6 @@ const config: VersionBumpOptions = defineConfig({
 
   // Example preid for prereleases
   // preid: 'beta'
-})
+}
 
 export default config

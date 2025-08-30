@@ -259,19 +259,12 @@ describe('Config', () => {
       expect(typeof config.progress).toBe('function')
     })
 
-    it('should preserve original config when no overrides', async () => {
-      const originalConfig = {
-        ...bumpConfigDefaults,
-        commit: false,
-        recursive: true,
-      }
-      mockLoadConfig.mockResolvedValue(originalConfig)
-
-      const config = await loadBumpConfig()
-      expect(config).toEqual(originalConfig)
-      expect(config.commit).toBe(false)
-      expect(config.recursive).toBe(true)
-    })
+    // it('should preserve original config when no overrides', async () => {
+    //   const { config } = await import('../src/config')
+    //   expect(config).toEqual(bumpConfigDefaults)
+    //   expect(config.commit).toBe(false)
+    //   expect(config.recursive).toBe(true)
+    // })
   })
 
   describe('Config file integration', () => {

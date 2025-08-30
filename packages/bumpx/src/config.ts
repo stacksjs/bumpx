@@ -36,16 +36,8 @@ export const config: BumpxConfig = await loadConfig({
   defaultConfig,
 })
 
-/**
- * Load bumpx configuration with overrides
- */
 export async function loadBumpConfig(overrides?: Partial<BumpxConfig>): Promise<BumpxConfig> {
-  const loaded = await loadConfig({
-    name: 'bumpx',
-    defaultConfig,
-  })
-
-  return { ...loaded, ...overrides }
+  return { ...defaultConfig, ...config, ...overrides }
 }
 
 /**

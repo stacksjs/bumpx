@@ -9,10 +9,14 @@ describe('Git Operations (Integration)', () => {
   let tempDir: string
   let mockSpawnSync: any
   let mockExecSync: any
+  let mockIsGitRepo: any
 
   beforeEach(() => {
     tempDir = join(tmpdir(), `bumpx-git-test-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`)
     mkdirSync(tempDir, { recursive: true })
+
+    // Mock isGitRepository to return true so git operations will execute
+    mockIsGitRepo = spyOn(utils, 'isGitRepository').mockReturnValue(true)
 
     // Mock git operations to avoid actual git commands in tests
     mockSpawnSync = spyOn(utils, 'executeGit').mockImplementation((args: string[], _cwd?: string) => {
@@ -50,6 +54,7 @@ describe('Git Operations (Integration)', () => {
     }
     mockSpawnSync.mockRestore()
     mockExecSync.mockRestore()
+    mockIsGitRepo.mockRestore()
   })
 
   describe('Push Functionality', () => {
