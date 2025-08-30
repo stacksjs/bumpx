@@ -694,8 +694,8 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
       process.exit(0)
     }
 
-    // Git operations
-    if (!dryRun && (commit || tag || push) && updatedFiles.length > 0) {
+    // Git operations - only if explicitly enabled and not disabled by noGitCheck
+    if (!dryRun && !noGitCheck && (commit || tag || push) && updatedFiles.length > 0) {
       hasStartedGitOperations = true
       // Stage all changes (existing dirty files + version updates)
       try {
