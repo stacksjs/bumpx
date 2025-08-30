@@ -424,13 +424,25 @@ export function updateVersionInFile(filePath: string, oldVersion: string, newVer
       }
     }
     else {
-      // For non-package.json files, first check if the old version exists in the file
-      const hasOldVersion = content.includes(oldVersion)
-      
-      if (hasOldVersion || forceUpdate) {
-        // Replace all instances of the old version with the new version
-        // Use a global replace to catch all occurrences including @version patterns
-        newContent = content.replace(new RegExp(escapeRegExp(oldVersion), 'g'), newVersion)
+      // For non-package.json files, replace version strings in content
+      if (content.includes(oldVersion) || forceUpdate) {
+        // For README files, be more selective to avoid replacing changelog entries
+        if (filePath.toLowerCase().includes('readme')) {
+          // Replace version strings but avoid changelog entries (lines starting with ### v)
+          const lines = content.split('\n')
+          const updatedLines = lines.map(line => {
+            // Skip changelog entries that start with ### v
+            if (line.trim().match(/^###\s+v\d+\.\d+\.\d+/)) {
+              return line
+            }
+            // Replace version in other contexts
+            return line.replace(new RegExp(escapeRegExp(oldVersion), 'g'), newVersion)
+          })
+          newContent = updatedLines.join('\n')
+        } else {
+          // For other non-JSON files, replace all instances
+          newContent = content.replace(new RegExp(escapeRegExp(oldVersion), 'g'), newVersion)
+        }
         updated = newContent !== content || forceUpdate
       }
     }
