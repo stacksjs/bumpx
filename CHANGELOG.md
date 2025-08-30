@@ -1,4 +1,11 @@
 # Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.36...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+
 [Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.35...HEAD)
 
 ### Contributors
