@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.1.33",
   "private": true,
-  "description": "Like Homebrew, but faster.",
+  "description": "Automatically bump your versions.",
   "author": "Chris Breuer <chris@stacksjs.org>",
   "license": "MIT",
   "homepage": "https://github.com/stacksjs/bumpx#readme",
@@ -15,10 +15,14 @@
     "url": "https://github.com/stacksjs/bumpx/issues"
   },
   "keywords": [
-    "homebrew",
-    "pkgx",
-    "bun",
-    "package"
+    "version",
+    "bump",
+    "semver",
+    "release",
+    "git",
+    "npm",
+    "package",
+    "cli"
   ],
   "bin": {
     "@stacksjs/bumpx": "./dist/bin/cli.js",
@@ -45,11 +49,11 @@
     "@stacksjs/eslint-config": "^4.14.0-beta.3",
     "@stacksjs/gitlint": "^0.1.5",
     "@stacksjs/logsmith": "^0.1.15",
-    "@types/bun": "^1.2.15",
+    "@types/bun": "^1.2.21",
     "buddy-bot": "^0.8.10",
     "bun-git-hooks": "^0.2.19",
     "bun-plugin-dtsx": "0.21.12",
-    "typescript": "^5.8.3"
+    "typescript": "^5.9.2"
   },
   "overrides": {
     "unconfig": "0.3.10"
