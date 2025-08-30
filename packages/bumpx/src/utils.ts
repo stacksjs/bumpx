@@ -386,7 +386,7 @@ export function executeGit(args: string[], cwd?: string): string {
     const result = spawnSync('git', args, {
       encoding: 'utf-8',
       stdio: ['pipe', 'pipe', 'pipe'],
-      cwd: cwd || process.cwd(),
+      cwd: cwd ?? process.cwd(),
     })
 
     if (result.error) {
