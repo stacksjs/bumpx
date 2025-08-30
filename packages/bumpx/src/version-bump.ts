@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import type { FileInfo, VersionBumpOptions } from './types'
 import { dirname, join, resolve } from 'node:path'
-
+import semver from 'semver'
 import process from 'node:process'
 import { ProgressEvent } from './types'
 import {
@@ -14,6 +14,7 @@ import {
   getRecentCommits,
   incrementVersion,
   isGitRepository,
+  isValidVersion,
   pushToRemote,
   readPackageJson,
   symbols,
@@ -43,6 +44,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
     tagMessage,
     cwd,
     changelog = true,
+    respectGitignore = true,
   } = options
 
   // Backup system for rollback on cancellation
@@ -87,7 +89,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
     }
     else if (recursive) {
       // Use workspace-aware discovery
-      filesToUpdate = await findAllPackageFiles(effectiveCwd, recursive)
+      filesToUpdate = await findAllPackageFiles(effectiveCwd, recursive, respectGitignore)
 
       // Find the root package.json for recursive mode
       rootPackagePath = filesToUpdate.find(
@@ -98,7 +100,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
       )
     }
     else {
-      filesToUpdate = await findPackageJsonFiles(effectiveCwd, false)
+      filesToUpdate = await findPackageJsonFiles(effectiveCwd, false, respectGitignore)
     }
 
     if (filesToUpdate.length === 0) {
@@ -235,23 +237,93 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
         }
       }
       catch (error) {
-        throw new Error(`Failed to read root package version: ${error}`)
+        // Capture error for proper error handling
+        throw error
+      }
+
+      // Check if user has interrupted before determining version
+      if (userInterrupted.value) {
+        // Exit immediately on interruption - no need for more messages
+        process.exit(0)
+      }
+
+      // Set up a SIGINT handler at the process level
+      // This is a backup handler if other handlers fail
+      const sigintListener = () => {
+        userInterrupted.value = true
+        // Let the global handler in cli.ts handle the message
+        process.exit(0) // Exit immediately
+      }
+
+      // Add the handler temporarily
+      process.on('SIGINT', sigintListener)
+
+      // Remember to clean up the handler later
+      const cleanupSigintListener = () => {
+        process.removeListener('SIGINT', sigintListener)
       }
 
       // Determine new version for root package (only once)
       let newVersion: string
       if (release === 'prompt') {
+        // Check for early interruption
+        if (userInterrupted.value) {
+          process.exit(0)
+        }
+
         if (dryRun) {
           // In dry run mode, just simulate a patch increment to avoid interactive prompts
           newVersion = incrementVersion(rootCurrentVersion, 'patch', preid)
+          cleanupSigintListener() // Clean up handler even in dry run mode
         }
         else {
-          newVersion = await promptForVersion(rootCurrentVersion, preid)
+          // Use a timeout to ensure the process exits if promptForVersion gets stuck
+          let promptCompleted = false
+          const promptTimeout = setInterval(() => {
+            if (userInterrupted.value) {
+              clearInterval(promptTimeout)
+              console.log('\nPrompt timeout - cancelling operation')
+              process.exit(0)
+            }
+          }, 50) // Check very frequently
+
+          try {
+            newVersion = await promptForVersion(rootCurrentVersion, preid)
+            promptCompleted = true
+            clearInterval(promptTimeout)
+            cleanupSigintListener()
+          } catch (error) {
+            clearInterval(promptTimeout)
+            cleanupSigintListener()
+            // If this was a user interruption, exit gracefully
+            if (userInterrupted.value || (error instanceof Error &&
+                (error.message.includes('cancelled') || error.message.includes('interrupted')))) {
+              // Let the global handler show message
+              process.exit(0)
+            }
+            throw error
+          }
+
+          // Check again after prompt in case user interrupted during version selection
+          if (userInterrupted.value) {
+            // Let global handler show message
+            process.exit(0) // Exit immediately on interruption
+          }
         }
       }
       else {
+        // Clean up in non-prompt case too
+        cleanupSigintListener()
         try {
-          newVersion = incrementVersion(rootCurrentVersion, release, preid)
+          // For non-prompt releases, calculate the new version directly
+          // Check if the release is a valid semver version
+          if (semver.valid(release)) {
+            // If the release is a valid semver version, use it directly
+            newVersion = release
+          } else {
+            // Increment version based on the release type
+            newVersion = incrementVersion(rootCurrentVersion, release, preid)
+          }
         }
         catch {
           throw new Error(`Invalid release type or version: ${release}`)
@@ -273,6 +345,30 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
       lastNewVersion = newVersion
       _lastOldVersion = rootCurrentVersion
 
+      // Check for interruption again before tag check
+      if (userInterrupted.value) {
+        // Let the global handler show message
+        process.exit(0)
+      }
+
+      // Check if tag already exists after version selection but before file changes
+      if (tag && !dryRun && inGitRepo) {
+        const { gitTagExists } = await import('./utils')
+        // Format the tag name - either use the provided format or default to vX.Y.Z
+        const tagName = typeof tag === 'string'
+          ? tag.replace('{version}', newVersion).replace('%s', newVersion)
+          : `v${newVersion}`
+
+        if (gitTagExists(tagName, effectiveCwd)) {
+          // Create error with proper handling flag to prevent duplicate messages
+          const handledError = new Error(`Git tag '${tagName}' already exists. Use a different version.`)
+          // Mark as handled to prevent duplicate error messages
+          const handledSymbol = Symbol.for('bumpx.errorHandled')
+          ;(handledError as any)[handledSymbol] = true
+          throw handledError
+        }
+      }
+
       // Create backups of all files before updating
       for (const filePath of filesToUpdate) {
         try {
@@ -286,6 +382,12 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
         }
       }
       hasStartedUpdates = true
+
+      // Check for interrupt before updating files
+      if (userInterrupted.value) {
+        // Let the global handler show message
+        process.exit(0)
+      }
 
       // Update all files with the same version
       for (const filePath of filesToUpdate) {
@@ -530,8 +632,16 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
       console.log('[DRY RUN] Would install dependencies')
     }
 
+    // Check for interrupt before Git operations
+    if (userInterrupted.value) {
+      // Perform rollback but let global handler show main message
+      await rollbackChanges(fileBackups, hasStartedGitOperations)
+      console.log('Rollback completed due to user interruption.')
+      process.exit(0)
+    }
+
     // Git operations
-    if (commit && updatedFiles.length > 0 && !dryRun && inGitRepo) {
+    if (!dryRun && (commit || tag || push) && updatedFiles.length > 0) {
       hasStartedGitOperations = true
       // Stage all changes (existing dirty files + version updates)
       try {
@@ -540,6 +650,14 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
       }
       catch (error) {
         console.warn('Warning: Failed to stage changes:', error)
+      }
+
+      // Check for interrupt before commit
+      if (userInterrupted.value) {
+        // Perform rollback but let global handler show main message
+        await rollbackChanges(fileBackups, hasStartedGitOperations)
+        console.log('Rollback completed due to user interruption.')
+        process.exit(0)
       }
 
       // Create commit
@@ -609,23 +727,43 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
     }
 
     // Create git tag AFTER changelog generation (if requested)
-    if (tag && updatedFiles.length > 0 && !dryRun && lastNewVersion && inGitRepo) {
-      const tagName = typeof tag === 'string'
-        ? tag.replace('{version}', lastNewVersion).replace('%s', lastNewVersion)
-        : `v${lastNewVersion}`
-      const finalTagMessage = tagMessage
-        ? tagMessage.replace('{version}', lastNewVersion).replace('%s', lastNewVersion)
-        : `Release ${lastNewVersion}`
-      createGitTag(tagName, false, finalTagMessage, effectiveCwd)
+    if (tag && lastNewVersion) {
+      try {
+        // Format the tag name - either use the provided format or default to vX.Y.Z
+        const tagName = typeof tag === 'string'
+          ? tag.replace('{version}', lastNewVersion).replace('%s', lastNewVersion)
+          : `v${lastNewVersion}`
 
-      if (progress && lastNewVersion && _lastOldVersion) {
-        progress({
-          event: ProgressEvent.GitTag,
-          updatedFiles,
-          skippedFiles,
-          newVersion: lastNewVersion,
-          oldVersion: _lastOldVersion,
-        })
+        // Format the tag message if provided
+        const finalTagMessage = tagMessage
+          ? tagMessage.replace('{version}', lastNewVersion).replace('%s', lastNewVersion)
+          : `Release ${lastNewVersion}`
+
+        // Check if tag exists before attempting to create it
+        // We already do this in createGitTag, but we want to catch the error here
+        createGitTag(tagName, false, finalTagMessage, effectiveCwd)
+
+        if (progress && lastNewVersion && _lastOldVersion) {
+          progress({
+            event: ProgressEvent.GitTag,
+            updatedFiles,
+            skippedFiles,
+            newVersion: lastNewVersion,
+            oldVersion: _lastOldVersion,
+          })
+        }
+      } catch (tagError) {
+        // Prevent this error from causing the full rollback handling in the main catch block
+        // Mark this error as already handled
+        const errorMessage = tagError instanceof Error ? tagError.message : String(tagError)
+        const handledError = new Error(`Git tag for version ${lastNewVersion} already exists. Use a different version.`)
+
+        // Mark as handled to prevent duplicate error messages
+        const handledSymbol = Symbol.for('bumpx.errorHandled')
+        ;(handledError as any)[handledSymbol] = true
+
+        // Throw the handled error to stop processing but avoid duplicate messages
+        throw handledError
       }
     }
     else if (tag && !dryRun && lastNewVersion && !inGitRepo) {
@@ -917,85 +1055,267 @@ async function rollbackChanges(fileBackups: Map<string, { content: string, versi
   }
 }
 
+// Import the interrupt flag from cli
+import { userInterrupted } from '../bin/cli'
+
+/**
+ * Enable raw mode for stdin to detect Ctrl+C immediately
+ */
+function enableRawMode() {
+  if (process.stdin.isTTY && typeof process.stdin.setRawMode === 'function') {
+    process.stdin.setRawMode(true)
+    process.stdin.on('data', (data) => {
+      // Detect Ctrl+C (ASCII 3)
+      if (data[0] === 3) {
+        userInterrupted.value = true
+        // Write directly to stderr to ensure message is displayed before exit
+        process.stderr.write('\nOperation cancelled by user \x1B[3m(Ctrl+C)\x1B[0m\n')
+        process.exit(0)
+      }
+    })
+    return true
+  }
+  return false
+}
+
+/**
+ * Disable raw mode for stdin
+ */
+function disableRawMode() {
+  if (process.stdin.isTTY && typeof process.stdin.setRawMode === 'function') {
+    process.stdin.setRawMode(false)
+  }
+}
+
 /**
  * Prompt user for version selection
  */
 async function promptForVersion(currentVersion: string, preid?: string): Promise<string> {
+  // Check for interruption first
+  if (userInterrupted.value) {
+    // Let the global handler show message
+    process.exit(0)
+  }
+
   // Prevent prompting during tests to avoid hanging
   if (process.env.NODE_ENV === 'test' || process.env.BUN_ENV === 'test' || process.argv.includes('test')) {
     // In test mode, just return a simulated patch increment
     return incrementVersion(currentVersion, 'patch', preid)
   }
 
-  try {
-    // Dynamic import to avoid top-level import issues
-    const clappModule: any = await import('@stacksjs/clapp')
-    const select = clappModule.select || clappModule.default?.select || clappModule.CLI?.select
-    const text = clappModule.text || clappModule.default?.text || clappModule.CLI?.text
+  // Default to a patch version increment
+  const patchVersion = incrementVersion(currentVersion, 'patch', preid)
 
-    if (!select || !text) {
-      throw new Error('Unable to import interactive prompt functions from @stacksjs/clapp')
+  // Save original SIGINT handlers
+  const originalSigIntHandlers = process.listeners('SIGINT').slice()
+  let cancelled = false
+  let selectedVersion = patchVersion
+
+  // Enhanced Ctrl+C handling for the prompt
+  // This will completely abort the process
+  const sigintHandler = () => {
+    cancelled = true
+    userInterrupted.value = true
+    // Let the global handler in bin/cli.ts handle the message
+    // Force process exit immediately with success code
+    process.exit(0)
+  }
+
+  try {
+    // Generate options for version selection
+    const options: Array<{ value: string; label: string }> = []
+
+    // Check if tags exist for each version type before offering them
+    const { gitTagExists } = await import('./utils')
+    let inGitRepo = true
+    const effectiveCwd = process.cwd()
+
+    // Helper to check tag existence
+    const checkTagExists = (version: string): boolean => {
+      try {
+        const tagName = `v${version}`
+        return gitTagExists(tagName, effectiveCwd)
+      } catch {
+        // If we can't check, assume it doesn't exist
+        return false
+      }
     }
 
-    console.log(`Current version: ${currentVersion}\n`)
-
-    const releaseTypes = ['patch', 'minor', 'major', 'prepatch', 'preminor', 'premajor', 'prerelease']
-    const suggestions: Array<{ type: string, version: string }> = []
-
-    releaseTypes.forEach((type) => {
+    // Try to add each version type, checking if tags already exist
+    const tryAddVersion = (type: string, versionCalc: () => string) => {
       try {
-        const newVersion = incrementVersion(currentVersion, type as any, preid)
-        suggestions.push({ type, version: newVersion })
-      }
-      catch {
-        // Skip invalid combinations
-      }
-    })
+        const calculatedVersion = versionCalc()
+        const tagExists = checkTagExists(calculatedVersion)
+        if (tagExists) {
+          // Tag exists, mark it as unavailable
+          options.push({ value: `${type}-exists`, label: `${type} ${calculatedVersion} (tag exists)` })
+        } else {
+          // Tag doesn't exist, add as normal option
+          options.push({ value: type, label: `${type} ${calculatedVersion}` })
+        }
+      } catch {}
+    }
 
-    const suggestionsOptions = suggestions.map(suggestion => ({
-      value: suggestion.version,
-      label: `${suggestion.type} ${suggestion.version}`,
-    }))
-    suggestionsOptions.push({
-      value: 'custom',
-      label: 'custom ...',
-    })
+    tryAddVersion('patch', () => incrementVersion(currentVersion, 'patch', preid))
+    tryAddVersion('minor', () => incrementVersion(currentVersion, 'minor', preid))
+    tryAddVersion('major', () => incrementVersion(currentVersion, 'major', preid))
+    tryAddVersion('prepatch', () => incrementVersion(currentVersion, 'prepatch', preid))
+    tryAddVersion('preminor', () => incrementVersion(currentVersion, 'preminor', preid))
+    tryAddVersion('premajor', () => incrementVersion(currentVersion, 'premajor', preid))
+    tryAddVersion('prerelease', () => incrementVersion(currentVersion, 'prerelease', preid))
 
+    // Add custom option
+    options.push({ value: 'custom', label: 'custom...' })
+
+    // Replace default handlers with our aggressive one
+    process.removeAllListeners('SIGINT')
+    process.on('SIGINT', sigintHandler)
+
+    // Check if already interrupted
+    if (userInterrupted.value || cancelled) {
+      // Let the process.exit trigger the global handler
+      process.exit(0)
+    }
+
+    // Show selection prompt with custom cancel handling
+    let choice
     try {
-      const selectedOption = await select({
+      // Dynamic import to avoid top-level import issues
+      const clappModule: any = await import('@stacksjs/clapp')
+      const select = clappModule.select || clappModule.default?.select || clappModule.CLI?.select
+      const text = clappModule.text || clappModule.default?.text || clappModule.CLI?.text
+
+      if (!select || !text) {
+        throw new Error('Unable to import interactive prompt functions from @stacksjs/clapp')
+      }
+
+      choice = await select({
         message: 'Choose an option:',
-        options: suggestionsOptions,
+        options,
+        onCancel: () => {
+          cancelled = true
+          userInterrupted.value = true
+          // Use stderr.write to ensure message is displayed before process exit
+          process.stderr.write('\nOperation cancelled by user \x1B[3m(Ctrl+C)\x1B[0m\n')
+          // Force immediate exit with success code
+          process.exit(0)
+          return undefined // This never executes but is here for type safety
+        },
       })
 
-      if (selectedOption === 'custom') {
-        const customV = await text({
-          message: 'Enter the new version number:',
-          placeholder: `${currentVersion}`,
-        })
-        return customV.trim()
+      // Double-check for interruption
+      if (userInterrupted.value || cancelled) {
+        // Let global handler show message
+        process.exit(0)
       }
 
-      return selectedOption.trim()
-    }
-    catch (promptError: any) {
-      // Check if this is a cancellation/interruption
-      if (promptError.message?.includes('cancelled')
-        || promptError.message?.includes('interrupted')
-        || promptError.message?.includes('SIGINT')
-        || promptError.message?.includes('SIGTERM')) {
+      // Handle null/undefined (cancellation)
+      if (choice === null || choice === undefined) {
+        // No need to log here, just throw the error
         throw new Error('Version bump cancelled by user')
       }
-      throw promptError
+
+      // Handle Symbol or numeric selection
+      if (typeof choice === 'symbol' || typeof choice === 'number') {
+        // This is likely a keyboard selection or symbol
+        const selectedIndex = typeof choice === 'number' ? choice : 0
+        const symbolStr = String(choice)
+
+        // Check for SIGINT symbol
+        if (symbolStr.includes('SIGINT') || symbolStr.includes('interrupt')) {
+          // Let the error propagate, no need for console.log here
+          throw new Error('Version bump cancelled by user')
+        }
+
+        if (selectedIndex >= 0 && selectedIndex < options.length) {
+          const selectedOption = options[selectedIndex]
+          if (selectedOption.value === 'custom') {
+            // Custom version input below
+          } else {
+            // Return directly with calculated version
+            return incrementVersion(currentVersion, selectedOption.value as any, preid)
+          }
+        } else {
+          // Out of bounds or unrecognizable selection
+          console.log('\nInvalid selection, using patch version')
+          return patchVersion
+        }
+      }
+
+      // Handle string-based selections
+      const choiceStr = String(choice)
+
+      // Check if a version with existing tag was selected
+      if (choiceStr.endsWith('-exists')) {
+        console.log('\nError: The selected version has an existing Git tag. Choose a different version.')
+        // Return to prompt recursively
+        return promptForVersion(currentVersion, preid)
+      }
+
+      if (choiceStr === 'custom') {
+        // Custom version input
+        const rawInput = await text({
+          message: 'Enter the new version number:',
+          placeholder: currentVersion,
+          onCancel: () => {
+            cancelled = true
+            userInterrupted.value = true
+            // Use stderr.write to ensure message is displayed before process exit
+            process.stderr.write('\nOperation cancelled by user \x1B[3m(Ctrl+C)\x1B[0m\n')
+            // Force immediate exit with success code
+            process.exit(0)
+            return undefined // This never executes but is here for type safety
+          },
+        })
+
+        const input = rawInput?.trim()
+
+        if (!input) {
+          // Empty input, fall back to patch version
+          return patchVersion
+        }
+
+        // Use semver validation from the incrementVersion function
+        try {
+          // Attempt to parse the version to validate it
+          const semverInstance = semver.parse(input)
+          if (!semverInstance) {
+            console.error(`'${input}' is not a valid semantic version!`)
+            return patchVersion
+          }
+        } catch {
+          console.error(`'${input}' is not a valid semantic version!`)
+          return patchVersion
+        }
+
+        // Set valid custom version
+        selectedVersion = input
+      } else {
+        // Standard version increment based on selection
+        selectedVersion = incrementVersion(currentVersion, choiceStr as any, preid)
+      }
+
+    } catch (promptError) {
+      // Handle errors from the prompt itself
+      // No need to log here, the global handler will handle it
+      throw new Error('Version bump cancelled by user')
     }
-  }
-  catch (error: any) {
+
+    return selectedVersion
+  } catch (error: any) {
     // Don't fallback to patch increment on cancellation - let the error propagate
     if (error.message === 'Version bump cancelled by user') {
       throw error
     }
 
-    // For other errors, provide a helpful message
-    console.warn('Warning: Interactive prompt failed')
-    throw new Error(`Failed to get version selection: ${error.message}`)
+    // For other errors, provide a helpful message and fallback to patch
+    console.warn('Warning: Version selection failed, using patch increment as fallback:', error)
+    return patchVersion
+  } finally {
+    // Always restore original signal handlers
+    process.removeAllListeners('SIGINT')
+    for (const handler of originalSigIntHandlers) {
+      process.on('SIGINT', handler)
+    }
   }
 }

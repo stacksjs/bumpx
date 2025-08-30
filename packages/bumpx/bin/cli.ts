@@ -1,6 +1,19 @@
 #!/usr/bin/env node
 import type { BumpxConfig, VersionBumpProgress } from '../src/types'
 import process from 'node:process'
+
+// Set up global user interrupt flag for handling SIGINT (Ctrl+C)
+export const userInterrupted = { value: false }
+
+// Handle SIGINT (Ctrl+C) globally
+process.on('SIGINT', () => {
+  userInterrupted.value = true
+  // Use stderr.write to ensure message is displayed even during process exit
+  process.stderr.write('\nOperation cancelled by user \x1B[3m(Ctrl+C)\x1B[0m\n')
+  // Exit with success code - this was an intentional cancellation
+  process.exit(0)
+})
+
 import { CLI } from '@stacksjs/clapp'
 import { version } from '../package.json'
 import { defaultConfig as bumpConfigDefaults, loadBumpConfig } from '../src/config'
@@ -37,6 +50,7 @@ interface CLIOptions {
   verbose?: boolean
   forceUpdate?: boolean
   changelog?: boolean
+  respectGitignore?: boolean
 }
 
 /**
@@ -126,6 +140,21 @@ async function promptForRecursiveAll(): Promise<boolean> {
  */
 function errorHandler(error: Error): never {
   let message = error.message || String(error)
+  
+  // Prevent duplicate error handling
+  // This happens when errors get caught and re-thrown
+  const handledSymbol = Symbol.for('bumpx.errorHandled')
+  if ((error as any)[handledSymbol]) {
+    process.exit(ExitCode.FatalError)
+  }
+  (error as any)[handledSymbol] = true
+
+  // Handle cancellation and user interruption gracefully
+  if (message === 'Version bump cancelled by user' || 
+      message === 'Operation cancelled by user') {
+    // Exit cleanly for user cancellations
+    process.exit(0)
+  }
 
   // Always show full error details in CI for debugging
   if (process.env.CI || process.env.DEBUG || process.env.NODE_ENV === 'development') {
@@ -240,6 +269,8 @@ async function prepareConfig(release: string | undefined, files: string[] | unde
     cliOverrides.forceUpdate = options.forceUpdate
   if (options.changelog !== undefined)
     cliOverrides.changelog = options.changelog
+  if (options.respectGitignore !== undefined)
+    cliOverrides.respectGitignore = options.respectGitignore
 
   const loaded = await loadBumpConfig({
     ...cliOverrides,
@@ -298,6 +329,8 @@ cli
   .option('--force-update', 'Force update even if version is the same')
   .option('--changelog', `Generate changelog (default: ${bumpConfigDefaults.changelog})`)
   .option('--no-changelog', 'Skip changelog generation')
+  .option('--respect-gitignore', `Respect .gitignore when finding files (default: ${bumpConfigDefaults.respectGitignore})`)
+  .option('--no-respect-gitignore', 'Ignore .gitignore when finding files')
   .example('bumpx patch')
   .example('bumpx minor --no-git-check')
   .example('bumpx major --no-push')

@@ -25,6 +25,7 @@ export const defaultConfig: BumpxConfig = {
   printCommits: false,
   forceUpdate: true,
   changelog: true, // Enable changelog generation by default
+  respectGitignore: true, // Respect .gitignore by default
 }
 
 /**

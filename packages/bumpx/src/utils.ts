@@ -1,109 +1,63 @@
 import type { FileInfo, PackageJson, ReleaseType } from './types'
 import { execSync, spawnSync } from 'node:child_process'
 import { existsSync, readFileSync, writeFileSync } from 'node:fs'
-import { readdir, stat } from 'node:fs/promises'
-import { join } from 'node:path'
-import process from 'node:process'
 import readline from 'node:readline'
+import { readFile, readdir, stat } from 'node:fs/promises'
+import { join, relative } from 'node:path'
+import { SemVer } from 'semver'
+
+export { SemVer }
 
 /**
- * Semver version manipulation utilities
+ * Load gitignore patterns from .gitignore file
  */
-export class SemVer {
-  major: number
-  minor: number
-  patch: number
-  prerelease: string[]
-  build: string[]
-
-  constructor(version: string) {
-    const parsed = this.parse(version)
-    this.major = parsed.major
-    this.minor = parsed.minor
-    this.patch = parsed.patch
-    this.prerelease = parsed.prerelease
-    this.build = parsed.build
+async function loadGitignorePatterns(dir: string): Promise<string[]> {
+  const gitignorePath = join(dir, '.gitignore')
+  if (!existsSync(gitignorePath)) {
+    return []
   }
 
-  private parse(version: string) {
-    const cleanVersion = version.replace(/^v/, '')
-    const match = cleanVersion.match(/^(\d+)\.(\d+)\.(\d+)(?:-([0-9A-Z-]+(?:\.[0-9A-Z-]+)*))?(?:\+([0-9A-Z-]+(?:\.[0-9A-Z-]+)*))?$/i)
-
-    if (!match) {
-      throw new Error(`Invalid version: ${version}`)
-    }
-
-    return {
-      major: Number.parseInt(match[1], 10),
-      minor: Number.parseInt(match[2], 10),
-      patch: Number.parseInt(match[3], 10),
-      prerelease: match[4] ? match[4].split('.') : [],
-      build: match[5] ? match[5].split('.') : [],
-    }
+  try {
+    const content = await readFile(gitignorePath, 'utf-8')
+    return content
+      .split('\n')
+      .map(line => line.trim())
+      .filter(line => line && !line.startsWith('#'))
+  } catch {
+    return []
   }
+}
 
-  inc(release: ReleaseType, preid?: string): SemVer {
-    const newVersion = new SemVer(this.toString())
+/**
+ * Check if a path should be ignored based on gitignore patterns
+ */
+function shouldIgnorePath(fullPath: string, rootDir: string, patterns: string[]): boolean {
+  const relativePath = relative(rootDir, fullPath)
 
-    switch (release) {
-      case 'major':
-        newVersion.major++
-        newVersion.minor = 0
-        newVersion.patch = 0
-        newVersion.prerelease = []
-        break
-      case 'minor':
-        newVersion.minor++
-        newVersion.patch = 0
-        newVersion.prerelease = []
-        break
-      case 'patch':
-        newVersion.patch++
-        newVersion.prerelease = []
-        break
-      case 'premajor':
-        newVersion.major++
-        newVersion.minor = 0
-        newVersion.patch = 0
-        newVersion.prerelease = [preid || 'alpha', '0']
-        break
-      case 'preminor':
-        newVersion.minor++
-        newVersion.patch = 0
-        newVersion.prerelease = [preid || 'alpha', '0']
-        break
-      case 'prepatch':
-        newVersion.patch++
-        newVersion.prerelease = [preid || 'alpha', '0']
-        break
-      case 'prerelease':
-        if (newVersion.prerelease.length === 0) {
-          newVersion.patch++
-          newVersion.prerelease = [preid || 'alpha', '0']
+  for (const pattern of patterns) {
+    // Simple pattern matching - could be enhanced with proper glob matching
+    if (pattern.endsWith('/')) {
+      // Directory pattern
+      const dirPattern = pattern.slice(0, -1)
+      if (relativePath === dirPattern || relativePath.startsWith(dirPattern + '/')) {
+        return true
+      }
+    } else {
+      // File or directory pattern
+      if (relativePath === pattern || relativePath.includes('/' + pattern)) {
+        return true
+      }
+      // Wildcard support for basic patterns
+      if (pattern.includes('*')) {
+        const regex = new RegExp(pattern.replace(/\*/g, '.*'))
+        if (regex.test(relativePath)) {
+          return true
         }
-        else {
-          const lastIndex = newVersion.prerelease.length - 1
-          const last = newVersion.prerelease[lastIndex]
-          if (/^\d+$/.test(last)) {
-            newVersion.prerelease[lastIndex] = String(Number.parseInt(last, 10) + 1)
-          }
-          else {
-            newVersion.prerelease.push('0')
-          }
-        }
-        break
+      }
     }
-
-    return newVersion
   }
 
-  toString(): string {
-    let version = `${this.major}.${this.minor}.${this.patch}`
-    if (this.prerelease.length > 0) {
-      version += `-${this.prerelease.join('.')}`
-    }
-    return version
-  }
+  return false
 }
 
 /**
@@ -145,7 +99,7 @@ export function incrementVersion(currentVersion: string, release: string | Relea
 /**
  * Find package.json files in the current directory and subdirectories
  */
-export async function findPackageJsonFiles(dir: string = process.cwd(), recursive: boolean = false): Promise<string[]> {
+export async function findPackageJsonFiles(dir: string = process.cwd(), recursive: boolean = false, respectGitignore: boolean = true): Promise<string[]> {
   const packageFiles: string[] = []
 
   const packageJsonPath = join(dir, 'package.json')
@@ -173,15 +127,27 @@ export async function findPackageJsonFiles(dir: string = process.cwd(), recursiv
         '.netlify',
       ])
 
+      // Load gitignore patterns if respectGitignore is true
+      let gitignorePatterns: string[] = []
+      if (respectGitignore) {
+        gitignorePatterns = await loadGitignorePatterns(dir)
+      }
+
       for (const entry of entries) {
         // Skip hidden directories and common build/output directories
         if (entry.startsWith('.') || excludedDirs.has(entry))
           continue
 
         const fullPath = join(dir, entry)
+
+        // Check if this path should be ignored by gitignore
+        if (respectGitignore && shouldIgnorePath(fullPath, dir, gitignorePatterns)) {
+          continue
+        }
+
         const stats = await stat(fullPath)
         if (stats.isDirectory()) {
-          const subPackages = await findPackageJsonFiles(fullPath, true)
+          const subPackages = await findPackageJsonFiles(fullPath, true, respectGitignore)
           packageFiles.push(...subPackages)
         }
       }
@@ -264,7 +230,7 @@ export async function getWorkspacePackages(rootDir: string = process.cwd()): Pro
 /**
  * Find all package.json files, prioritizing workspace-aware discovery
  */
-export async function findAllPackageFiles(dir: string = process.cwd(), recursive: boolean = false): Promise<string[]> {
+export async function findAllPackageFiles(dir: string = process.cwd(), recursive: boolean = false, respectGitignore: boolean = true): Promise<string[]> {
   const packageFiles: string[] = []
 
   // Always include the root package.json
@@ -286,7 +252,7 @@ export async function findAllPackageFiles(dir: string = process.cwd(), recursive
     }
     else {
       // Fallback to recursive directory search
-      const recursivePackages = await findPackageJsonFiles(dir, true)
+      const recursivePackages = await findPackageJsonFiles(dir, true, respectGitignore)
       for (const packagePath of recursivePackages) {
         if (!packageFiles.includes(packagePath)) {
           packageFiles.push(packagePath)
@@ -448,9 +414,27 @@ export function createGitCommit(message: string, sign: boolean = false, noVerify
 }
 
 /**
+ * Check if git tag exists
+ */
+export function gitTagExists(tag: string, cwd?: string): boolean {
+  try {
+    // Use show-ref to check if tag exists
+    executeGit(['show-ref', '--tags', '--quiet', '--verify', `refs/tags/${tag}`], cwd)
+    return true
+  } catch {
+    return false
+  }
+}
+
+/**
  * Create git tag
  */
 export function createGitTag(tag: string, sign: boolean = false, message?: string, cwd?: string): void {
+  // Check if tag already exists
+  if (gitTagExists(tag, cwd)) {
+    throw new Error(`Git tag '${tag}' already exists. Use a different version.`)
+  }
+
   const args = ['tag']
   if (message) {
     args.push('-a', tag, '-m', message)
