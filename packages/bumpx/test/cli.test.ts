@@ -14,23 +14,23 @@ describe('CLI Integration Tests', () => {
     tempDir = join(tmpdir(), `bumpx-cli-test-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`)
     mkdirSync(tempDir, { recursive: true })
 
-    // Get the path to the bumpx binary - prefer built JS in CI, otherwise use what's available
-    const builtBin = join(__dirname, '..', 'dist', 'bin', 'cli.js')
+    // Get the path to the bumpx binary - always prefer source TS for reliability
     const sourceBin = join(__dirname, '..', 'bin', 'cli.ts')
+    const builtBin = join(__dirname, '..', 'dist', 'bin', 'cli.js')
     const compiledBin = join(__dirname, '..', 'bin', 'bumpx')
 
-    // In CI, prioritize built JS version; locally prefer compiled binary for speed
-    if (process.env.CI && existsSync(builtBin)) {
+    // Always use source TS file for maximum compatibility across environments
+    if (existsSync(sourceBin)) {
+      bumpxBin = sourceBin
+    }
+    else if (existsSync(builtBin)) {
       bumpxBin = builtBin
     }
     else if (existsSync(compiledBin)) {
       bumpxBin = compiledBin
     }
-    else if (existsSync(builtBin)) {
-      bumpxBin = builtBin
-    }
     else {
-      bumpxBin = sourceBin
+      throw new Error(`No bumpx binary found. Checked: ${sourceBin}, ${builtBin}, ${compiledBin}`)
     }
 
     process.chdir(tempDir)
@@ -57,34 +57,9 @@ describe('CLI Integration Tests', () => {
 
   const runCLI = (args: string[]): Promise<{ code: number, stdout: string, stderr: string }> => {
     return new Promise((resolve) => {
-      // Determine execution method based on binary type
-      const isCompiledBinary = bumpxBin.endsWith('bumpx') && !bumpxBin.endsWith('.ts') && !bumpxBin.endsWith('.js')
-      const isBuiltJS = bumpxBin.endsWith('.js')
-      const isSourceTS = bumpxBin.endsWith('.ts')
-
-      let command: string
-      let cmdArgs: string[]
-
-      if (isCompiledBinary) {
-        // Standalone binary - run directly
-        command = bumpxBin
-        cmdArgs = args
-      }
-      else if (isBuiltJS) {
-        // Built JS - run with bun
-        command = 'bun'
-        cmdArgs = [bumpxBin, ...args]
-      }
-      else if (isSourceTS) {
-        // Source TS - run with bun
-        command = 'bun'
-        cmdArgs = [bumpxBin, ...args]
-      }
-      else {
-        // Default fallback
-        command = 'bun'
-        cmdArgs = [bumpxBin, ...args]
-      }
+      // Always run with bun for maximum compatibility
+      const command = 'bun'
+      const cmdArgs = [bumpxBin, ...args]
 
       const decoder = new TextDecoder()
       const res = Bun.spawnSync([command, ...cmdArgs], {
@@ -93,11 +68,28 @@ describe('CLI Integration Tests', () => {
         stderr: 'pipe',
         env: sandboxEnv(tempDir),
       })
-      resolve({
+      
+      const result = {
         code: res.exitCode,
         stdout: decoder.decode(res.stdout),
         stderr: decoder.decode(res.stderr),
-      })
+      }
+      
+      // Add debugging info for failures
+      if (result.code !== 0) {
+        console.log(`CLI Test Debug Info:`)
+        console.log(`  Binary: ${bumpxBin}`)
+        console.log(`  Binary exists: ${existsSync(bumpxBin)}`)
+        console.log(`  Command: ${command}`)
+        console.log(`  Args: ${JSON.stringify(cmdArgs)}`)
+        console.log(`  Exit code: ${result.code}`)
+        console.log(`  Stdout: ${result.stdout}`)
+        console.log(`  Stderr: ${result.stderr}`)
+        console.log(`  Working directory: ${tempDir}`)
+        console.log(`  Package.json exists: ${existsSync(join(tempDir, 'package.json'))}`)
+      }
+      
+      resolve(result)
     })
   }
 
