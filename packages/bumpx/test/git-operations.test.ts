@@ -453,7 +453,6 @@ describe('Git Operations (Integration)', () => {
     })
 
     it('should allow opting out with explicit false values', async () => {
-      const fixtureDir = join(__dirname, 'fixtures', 'git-operations')
       const outputDir = join(__dirname, 'output', 'git-operations', 'opt-out')
       const packagePath = join(outputDir, 'package.json')
 
