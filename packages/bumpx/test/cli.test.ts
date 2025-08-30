@@ -19,9 +19,14 @@ describe('CLI Integration Tests', () => {
     const sourceBin = join(__dirname, '..', 'bin', 'cli.ts')
     const compiledBin = join(__dirname, '..', 'bin', 'bumpx')
 
-    // Always use source TS in CI to avoid binary execution issues
+    // In CI, prefer built JS over source TS for better reliability
     if (process.env.CI) {
-      bumpxBin = sourceBin
+      if (existsSync(builtBin)) {
+        bumpxBin = builtBin
+      }
+      else {
+        bumpxBin = sourceBin
+      }
     }
     else if (existsSync(compiledBin)) {
       bumpxBin = compiledBin
@@ -60,7 +65,7 @@ describe('CLI Integration Tests', () => {
       // Always use bun for CI compatibility, determine method for local
       let command: string
       let cmdArgs: string[]
-      
+
       if (process.env.CI) {
         // Always use bun with source TS in CI
         command = 'bun'
@@ -69,7 +74,7 @@ describe('CLI Integration Tests', () => {
       else {
         // Local environment - use appropriate method
         const isCompiledBinary = bumpxBin.endsWith('bumpx') && !bumpxBin.endsWith('.ts') && !bumpxBin.endsWith('.js')
-        
+
         if (isCompiledBinary) {
           // Standalone binary - run directly
           command = bumpxBin
@@ -89,14 +94,13 @@ describe('CLI Integration Tests', () => {
         stderr: 'pipe',
         env: sandboxEnv(tempDir),
       })
-      
+
       const result = {
         code: res.exitCode,
         stdout: decoder.decode(res.stdout),
         stderr: decoder.decode(res.stderr),
       }
-      
-      
+
       resolve(result)
     })
   }

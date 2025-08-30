@@ -127,7 +127,8 @@ async function promptForRecursiveAll(): Promise<boolean> {
 function errorHandler(error: Error): never {
   let message = error.message || String(error)
 
-  if (process.env.DEBUG || process.env.NODE_ENV === 'development') {
+  // Always show full error details in CI for debugging
+  if (process.env.CI || process.env.DEBUG || process.env.NODE_ENV === 'development') {
     message += `\n\n${error.stack || ''}`
   }
 
@@ -324,9 +325,21 @@ cli
   })
 
 // Setup global error handlers
-process.on('uncaughtException', errorHandler)
-process.on('unhandledRejection', errorHandler)
+process.on('uncaughtException', (error) => {
+  console.error('Uncaught Exception:', error)
+  errorHandler(error)
+})
+process.on('unhandledRejection', (reason) => {
+  console.error('Unhandled Rejection:', reason)
+  errorHandler(reason instanceof Error ? reason : new Error(String(reason)))
+})
 
-cli.version(version)
-cli.help()
-cli.parse()
+try {
+  cli.version(version)
+  cli.help()
+  cli.parse()
+}
+catch (error) {
+  console.error('CLI initialization error:', error)
+  errorHandler(error instanceof Error ? error : new Error(String(error)))
+}

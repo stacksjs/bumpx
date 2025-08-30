@@ -30,11 +30,20 @@ export const defaultConfig: BumpxConfig = {
 /**
  * Load bumpx configuration with overrides
  */
-// eslint-disable-next-line antfu/no-top-level-await
-export const config: BumpxConfig = await loadConfig({
-  name: 'bumpx',
-  defaultConfig,
-})
+let _config: BumpxConfig | undefined
+
+export async function getConfig(): Promise<BumpxConfig> {
+  if (!_config) {
+    _config = await loadConfig({
+      name: 'bumpx',
+      defaultConfig,
+    })
+  }
+  return _config
+}
+
+// Legacy export for backward compatibility
+export const config: BumpxConfig = defaultConfig
 
 /**
  * Load bumpx configuration with overrides

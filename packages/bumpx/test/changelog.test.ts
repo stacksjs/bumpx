@@ -32,9 +32,9 @@ describe('Changelog Generation', () => {
       const packageContent = {
         name: 'test-package',
         version: '1.0.0',
-        description: 'Test package for changelog generation'
+        description: 'Test package for changelog generation',
       }
-      
+
       writeFileSync(packagePath, JSON.stringify(packageContent, null, 2))
 
       await versionBump({
@@ -52,7 +52,7 @@ describe('Changelog Generation', () => {
       // Verify package.json was updated (main functionality)
       const updatedPackage = JSON.parse(readFileSync(packagePath, 'utf-8'))
       expect(updatedPackage.version).toBe('1.0.1')
-      
+
       // Note: Changelog generation depends on external logsmith package
       // which may not be available in test environment
     })
@@ -62,9 +62,9 @@ describe('Changelog Generation', () => {
       const packageContent = {
         name: 'test-package',
         version: '1.0.0',
-        description: 'Test package for changelog generation'
+        description: 'Test package for changelog generation',
       }
-      
+
       writeFileSync(packagePath, JSON.stringify(packageContent, null, 2))
 
       await versionBump({
@@ -93,9 +93,9 @@ describe('Changelog Generation', () => {
       const packageContent = {
         name: 'test-package',
         version: '1.0.0',
-        description: 'Test package for changelog generation'
+        description: 'Test package for changelog generation',
       }
-      
+
       writeFileSync(packagePath, JSON.stringify(packageContent, null, 2))
 
       await versionBump({
@@ -113,7 +113,7 @@ describe('Changelog Generation', () => {
       // Verify version bump completed successfully
       const updatedPackage = JSON.parse(readFileSync(packagePath, 'utf-8'))
       expect(updatedPackage.version).toBe('1.0.1')
-      
+
       // Note: Changelog generation depends on external logsmith package
       // which may not be available in test environment
     })
@@ -123,9 +123,9 @@ describe('Changelog Generation', () => {
       const packageContent = {
         name: 'test-package',
         version: '1.0.0',
-        description: 'Test package for changelog generation'
+        description: 'Test package for changelog generation',
       }
-      
+
       writeFileSync(packagePath, JSON.stringify(packageContent, null, 2))
 
       await versionBump({
@@ -143,7 +143,7 @@ describe('Changelog Generation', () => {
       // Verify package.json was updated
       const updatedPackage = JSON.parse(readFileSync(packagePath, 'utf-8'))
       expect(updatedPackage.version).toBe('1.0.1')
-      
+
       // Note: Changelog generation depends on external logsmith package
       // which may not be available in test environment
     })
