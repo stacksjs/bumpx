@@ -424,37 +424,15 @@ export function updateVersionInFile(filePath: string, oldVersion: string, newVer
       }
     }
     else {
-      // For non-package.json files, we need a more comprehensive approach to replace all version instances
+      // For non-package.json files, first check if the old version exists in the file
+      const hasOldVersion = content.includes(oldVersion)
       
-      // 1. Replace all exact matches with word boundaries
-      const versionRegex = new RegExp(`\\b${escapeRegExp(oldVersion)}\\b`, 'g')
-      newContent = newContent.replace(versionRegex, newVersion)
-      
-      // 2. Handle versions with build metadata
-      const oldVersionCore = oldVersion.split('+')[0]
-      const buildMetaRegex = new RegExp(`\\b${escapeRegExp(oldVersionCore)}\\+(\\w+(?:\\.\\w+)*)\\b`, 'g')
-      newContent = newContent.replace(buildMetaRegex, (match, buildMeta) => {
-        return `${newVersion}+${buildMeta}`
-      })
-      
-      // 3. Handle various version reference patterns
-      // This ensures we catch all references to the version in text
-      
-      // Handle exact version without build metadata
-      const exactOldVersion = oldVersion.split('+')[0] // Version without build metadata
-      newContent = newContent.replace(new RegExp(escapeRegExp(exactOldVersion), 'g'), newVersion)
-      
-      // Handle version references with 'version' keyword
-      const versionKeywordPattern = new RegExp(`version\\s+${escapeRegExp(oldVersion)}`, 'gi')
-      newContent = newContent.replace(versionKeywordPattern, `version ${newVersion}`)
-      
-      // Handle references with surrounding text
-      const referencePattern = new RegExp(`(\\w+\\s+)${escapeRegExp(oldVersion)}(\\s+\\w+)`, 'g')
-      newContent = newContent.replace(referencePattern, (match, prefix, suffix) => {
-        return `${prefix}${newVersion}${suffix}`
-      })
-      
-      updated = newContent !== content
+      if (hasOldVersion || forceUpdate) {
+        // Only replace if we found the old version or force update is enabled
+        const versionRegex = new RegExp(`\\b${escapeRegExp(oldVersion)}\\b`, 'g')
+        newContent = content.replace(versionRegex, newVersion)
+        updated = newContent !== content || forceUpdate
+      }
     }
 
     if (updated && !dryRun) {

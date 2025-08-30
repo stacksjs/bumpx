@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import type { FileInfo, VersionBumpOptions } from './types'
 import { dirname, join, resolve } from 'node:path'
-import semver from 'semver'
+import { readFileSync, writeFileSync } from 'node:fs'
 import process from 'node:process'
 import { ProgressEvent } from './types'
 import {
@@ -40,7 +40,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
     printCommits,
     dryRun,
     progress,
-    forceUpdate = true,
+    forceUpdate = false,
     tagMessage,
     cwd,
     changelog = true,
@@ -180,15 +180,40 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
 
       for (const filePath of filesToUpdate) {
         try {
-          let fileInfo: FileInfo
-          // Always call updateVersionInFile to ensure mocks are triggered in tests
-          // Pass dryRun flag to prevent actual file modifications
-          if (dryRun) {
-            // In dry run mode, we still call the function but prevent actual file writes
-            fileInfo = updateVersionInFile(filePath, currentVersion, newVersion, forceUpdate, true)
+          // First, check if the file actually contains the expected current version
+          const originalContent = readFileSync(filePath, 'utf-8')
+          let shouldUpdate = false
+          
+          if (filePath.endsWith('.json')) {
+            try {
+              const packageJson = JSON.parse(originalContent)
+              shouldUpdate = packageJson.version === currentVersion || forceUpdate
+            } catch {
+              // If JSON parsing fails, skip this file
+              shouldUpdate = false
+            }
+          } else {
+            // For non-JSON files, check if the current version exists in the content
+            shouldUpdate = originalContent.includes(currentVersion) || forceUpdate
           }
-          else {
-            fileInfo = updateVersionInFile(filePath, currentVersion, newVersion)
+
+          let fileInfo: FileInfo
+          if (shouldUpdate) {
+            // Always call updateVersionInFile to ensure mocks are triggered in tests
+            fileInfo = updateVersionInFile(filePath, currentVersion, newVersion, forceUpdate)
+            // If in dry run mode, restore the original content after the operation
+            if (dryRun) {
+              writeFileSync(filePath, originalContent, 'utf-8')
+            }
+          } else {
+            // File doesn't contain the expected version, mark as not updated
+            fileInfo = {
+              path: filePath,
+              content: originalContent,
+              updated: false,
+              oldVersion: undefined,
+              newVersion: undefined,
+            }
           }
 
           if (fileInfo.updated) {
@@ -313,7 +338,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
         try {
           // For non-prompt releases, calculate the new version directly
           // Check if the release is a valid semver version
-          if (semver.valid(release)) {
+          if (isValidVersion(release)) {
             // If the release is a valid semver version, use it directly
             newVersion = release
           } else {
@@ -368,10 +393,8 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
       // Create backups of all files before updating
       for (const filePath of filesToUpdate) {
         try {
-          const fs = await import('node:fs')
-          const content = fs.readFileSync(filePath, 'utf-8')
-          const packageJson = JSON.parse(content)
-          fileBackups.set(filePath, { content, version: packageJson.version })
+          const originalContent = readFileSync(filePath, 'utf-8')
+          fileBackups.set(filePath, { content: originalContent, version: rootCurrentVersion })
         }
         catch (error) {
           console.warn(`Warning: Could not backup ${filePath}: ${error}`)
@@ -389,15 +412,26 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
       for (const filePath of filesToUpdate) {
         try {
           let fileInfo: FileInfo
-          // Always call updateVersionInFile to ensure mocks are triggered in tests
-          // Pass dryRun flag to prevent actual file modifications
-          if (dryRun) {
-            // In dry run mode, we still call the function but prevent actual file writes
-            fileInfo = updateVersionInFile(filePath, rootCurrentVersion, newVersion, forceUpdate, true)
+          // Create a backup of the file content before modification
+          const originalContent = readFileSync(filePath, 'utf-8')
+          
+          // In recursive mode, we need to get each file's current version for proper tracking
+          let fileCurrentVersion = rootCurrentVersion
+          if (filePath.endsWith('.json')) {
+            try {
+              const packageJson = JSON.parse(originalContent)
+              fileCurrentVersion = packageJson.version || rootCurrentVersion
+            } catch {
+              fileCurrentVersion = rootCurrentVersion
+            }
           }
-          else {
-            // In recursive mode, update all files to the new version regardless of their current version
-            fileInfo = updateVersionInFile(filePath, rootCurrentVersion, newVersion, forceUpdate)
+          
+          // Always call updateVersionInFile to ensure mocks are triggered in tests
+          // In recursive mode, respect the forceUpdate setting
+          fileInfo = updateVersionInFile(filePath, fileCurrentVersion, newVersion, forceUpdate)
+          // If in dry run mode, restore the original content after the operation
+          if (dryRun) {
+            writeFileSync(filePath, originalContent, 'utf-8')
           }
 
           if (fileInfo.updated) {
@@ -408,7 +442,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
                 updatedFiles: [filePath],
                 skippedFiles: [],
                 newVersion,
-                oldVersion: rootCurrentVersion,
+                oldVersion: fileCurrentVersion,
               })
             }
           }
@@ -420,7 +454,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
                 updatedFiles: [],
                 skippedFiles: [filePath],
                 newVersion,
-                oldVersion: rootCurrentVersion,
+                oldVersion: fileCurrentVersion,
               })
             }
           }
@@ -456,8 +490,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
           }
           else {
             // For non-JSON files, try to extract version from content
-            const fs = await import('node:fs')
-            const content = fs.readFileSync(filePath, 'utf-8')
+            const content = readFileSync(filePath, 'utf-8')
 
             // Try multiple patterns to extract version
             const patterns = [
@@ -515,14 +548,13 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
           console.log(`  ${filePath}: ${fileCurrentVersion} → ${fileNewVersion}`)
 
           let fileInfo: FileInfo
+          // Create a backup of the file content before modification
+          const originalContent = readFileSync(filePath, 'utf-8')
           // Always call updateVersionInFile to ensure mocks are triggered in tests
-          // Pass dryRun flag to prevent actual file modifications
+          fileInfo = updateVersionInFile(filePath, fileCurrentVersion, fileNewVersion, forceUpdate)
+          // If in dry run mode, restore the original content after the operation
           if (dryRun) {
-            // In dry run mode, we still call the function but prevent actual file writes
-            fileInfo = updateVersionInFile(filePath, fileCurrentVersion, fileNewVersion, forceUpdate, true)
-          }
-          else {
-            fileInfo = updateVersionInFile(filePath, fileCurrentVersion, fileNewVersion)
+            writeFileSync(filePath, originalContent, 'utf-8')
           }
 
           if (fileInfo.updated) {
@@ -1263,11 +1295,10 @@ async function promptForVersion(currentVersion: string, preid?: string): Promise
           return patchVersion
         }
 
-        // Use semver validation from the incrementVersion function
+        // Use our own validation from the isValidVersion function
         try {
-          // Attempt to parse the version to validate it
-          const semverInstance = semver.parse(input)
-          if (!semverInstance) {
+          // Attempt to validate the version
+          if (!isValidVersion(input)) {
             console.error(`'${input}' is not a valid semantic version!`)
             return patchVersion
           }
