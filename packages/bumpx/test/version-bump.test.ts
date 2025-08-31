@@ -84,11 +84,8 @@ describe('Version Bump (Integration)', () => {
     }))
 
     // Mock child_process.execSync to prevent real command execution
-    mock.module('node:child_process', async () => {
-      // Get the actual module using dynamic import
-      const original = await import('node:child_process')
+    mock.module('node:child_process', () => {
       return {
-        ...original,
         execSync: (cmd: string, options: any = {}) => {
           // Return mock output for npm commands
           if (cmd.includes('npm') || cmd.includes('install')) {
@@ -107,6 +104,7 @@ describe('Version Bump (Integration)', () => {
           const output = 'Mock command output'
           return options.encoding ? output : Buffer.from(output)
         },
+        spawnSync: () => ({ status: 0, stdout: Buffer.from(''), stderr: Buffer.from('') }),
       }
     })
 
