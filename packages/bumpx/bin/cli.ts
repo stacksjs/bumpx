@@ -214,20 +214,21 @@ async function prepareConfig(release: string | undefined, files: string[] | unde
 
   if (options.preid !== undefined)
     cliOverrides.preid = options.preid
-  if (options.commit !== undefined)
-    cliOverrides.commit = options.commit
+  // Only override boolean flags when explicitly set to true, allowing defaults to work
+  if (options.commit === true)
+    cliOverrides.commit = true
   if (options.commitMessage !== undefined)
     cliOverrides.commit = options.commitMessage
-  if (options.tag !== undefined)
-    cliOverrides.tag = options.tag
+  if (options.tag === true)
+    cliOverrides.tag = true
   if (options.tagName !== undefined)
     cliOverrides.tag = options.tagName
   if (options.tagMessage !== undefined)
     cliOverrides.tagMessage = options.tagMessage
-  if (options.sign !== undefined)
-    cliOverrides.sign = options.sign
-  if (options.push !== undefined)
-    cliOverrides.push = options.push
+  if (options.sign === true)
+    cliOverrides.sign = true
+  if (options.push === true)
+    cliOverrides.push = true
   if (options.all !== undefined)
     cliOverrides.all = options.all
   if (options.gitCheck === false) {
@@ -277,10 +278,12 @@ async function prepareConfig(release: string | undefined, files: string[] | unde
   if (options.respectGitignore !== undefined)
     cliOverrides.respectGitignore = options.respectGitignore
 
+  console.log('DEBUG CLI overrides:', cliOverrides)
   const loaded = await loadBumpConfig({
     ...cliOverrides,
     ...ciOverrides,
   })
+  console.log('DEBUG loaded config:', { commit: loaded.commit, tag: loaded.tag, push: loaded.push, dryRun: loaded.dryRun })
 
   // If no release was provided, always show the prompt by default
   // This gives users the chance to choose their version type
