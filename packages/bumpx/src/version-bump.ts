@@ -133,13 +133,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
       // Determine new version
       let newVersion: string
       if (release === 'prompt') {
-        if (dryRun) {
-          // In dry run mode, just simulate a patch increment to avoid interactive prompts
-          newVersion = incrementVersion(currentVersion, 'patch', preid)
-        }
-        else {
-          newVersion = await promptForVersion(currentVersion, preid, effectiveCwd)
-        }
+        newVersion = await promptForVersion(currentVersion, preid, effectiveCwd, dryRun)
       }
       else {
         try {
@@ -299,50 +293,43 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
           process.exit(0)
         }
 
-        if (dryRun) {
-          // In dry run mode, just simulate a patch increment to avoid interactive prompts
+        // In test environments, avoid setInterval to prevent hanging
+        if (process.env.NODE_ENV === 'test' || process.env.BUN_ENV === 'test' || process.argv.some(arg => arg.includes('test'))) {
           newVersion = incrementVersion(rootCurrentVersion, 'patch', preid)
-          cleanupSigintListener() // Clean up handler even in dry run mode
+          cleanupSigintListener()
         }
         else {
-          // In test environments, avoid setInterval to prevent hanging
-          if (process.env.NODE_ENV === 'test' || process.env.BUN_ENV === 'test' || process.argv.some(arg => arg.includes('test'))) {
-            newVersion = incrementVersion(rootCurrentVersion, 'patch', preid)
+          // Use a timeout to ensure the process exits if promptForVersion gets stuck
+          const promptTimeout = setInterval(() => {
+            if (userInterrupted.value) {
+              clearInterval(promptTimeout)
+              console.log('\nPrompt timeout - cancelling operation')
+              process.exit(0)
+            }
+          }, 50) // Check very frequently
+
+          try {
+            newVersion = await promptForVersion(rootCurrentVersion, preid, effectiveCwd, dryRun)
+            clearInterval(promptTimeout)
             cleanupSigintListener()
           }
-          else {
-            // Use a timeout to ensure the process exits if promptForVersion gets stuck
-            const promptTimeout = setInterval(() => {
-              if (userInterrupted.value) {
-                clearInterval(promptTimeout)
-                console.log('\nPrompt timeout - cancelling operation')
-                process.exit(0)
-              }
-            }, 50) // Check very frequently
-
-            try {
-              newVersion = await promptForVersion(rootCurrentVersion, preid, effectiveCwd)
-              clearInterval(promptTimeout)
-              cleanupSigintListener()
-            }
-            catch (error) {
-              clearInterval(promptTimeout)
-              cleanupSigintListener()
-              // If this was a user interruption, exit gracefully
-              if (userInterrupted.value || (error instanceof Error
-                && (error.message.includes('cancelled') || error.message.includes('interrupted')))) {
+          catch (error) {
+            clearInterval(promptTimeout)
+            cleanupSigintListener()
+            // If this was a user interruption, exit gracefully
+            if (userInterrupted.value || (error instanceof Error
+              && (error.message.includes('cancelled') || error.message.includes('interrupted')))) {
                 // Let the global handler show message
                 process.exit(0)
               }
-              throw error
-            }
+            throw error
           }
+        }
 
-          // Check again after prompt in case user interrupted during version selection
-          if (userInterrupted.value) {
-            // Let global handler show message
-            process.exit(0) // Exit immediately on interruption
-          }
+        // Check again after prompt in case user interrupted during version selection
+        if (userInterrupted.value) {
+          // Let global handler show message
+          process.exit(0) // Exit immediately on interruption
         }
       }
       else {
@@ -552,13 +539,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
           // Determine new version for this file
           let fileNewVersion: string
           if (release === 'prompt') {
-            if (dryRun) {
-              // In dry run mode, just simulate a patch increment to avoid interactive prompts
-              fileNewVersion = incrementVersion(fileCurrentVersion, 'patch', preid)
-            }
-            else {
-              fileNewVersion = await promptForVersion(fileCurrentVersion, preid, effectiveCwd)
-            }
+            fileNewVersion = await promptForVersion(fileCurrentVersion, preid, effectiveCwd, dryRun)
           }
           else {
             try {
@@ -1116,7 +1097,7 @@ async function rollbackChanges(fileBackups: Map<string, { content: string, versi
 /**
  * Prompt user for version selection
  */
-async function promptForVersion(currentVersion: string, preid?: string, cwd?: string): Promise<string> {
+async function promptForVersion(currentVersion: string, preid?: string, cwd?: string, dryRun?: boolean): Promise<string | never> {
   // Check for interruption first
   if (userInterrupted.value) {
     // Let the global handler show message
@@ -1217,8 +1198,9 @@ async function promptForVersion(currentVersion: string, preid?: string, cwd?: st
         throw new Error('Unable to import interactive prompt functions from @stacksjs/clapp')
       }
 
+      const promptMessage = dryRun ? '[DRY RUN] Choose an option:' : 'Choose an option:'
       choice = await select({
-        message: 'Choose an option:',
+        message: promptMessage,
         options,
         onCancel: () => {
           cancelled = true
@@ -1239,8 +1221,9 @@ async function promptForVersion(currentVersion: string, preid?: string, cwd?: st
 
       // Handle null/undefined (cancellation)
       if (choice === null || choice === undefined) {
-        // No need to log here, just throw the error
-        throw new Error('Version bump cancelled by user')
+        // User cancelled - exit immediately
+        process.stderr.write('\nOperation cancelled by user\n')
+        process.exit(0)
       }
 
       // Handle Symbol or numeric selection
@@ -1251,8 +1234,9 @@ async function promptForVersion(currentVersion: string, preid?: string, cwd?: st
 
         // Check for SIGINT symbol
         if (symbolStr.includes('SIGINT') || symbolStr.includes('interrupt')) {
-          // Let the error propagate, no need for console.log here
-          throw new Error('Version bump cancelled by user')
+          // User interrupted - exit immediately
+          process.stderr.write('\nOperation cancelled by user\n')
+          process.exit(0)
         }
 
         if (selectedIndex >= 0 && selectedIndex < options.length) {
@@ -1284,8 +1268,9 @@ async function promptForVersion(currentVersion: string, preid?: string, cwd?: st
 
       if (choiceStr === 'custom') {
         // Custom version input
+        const customMessage = dryRun ? '[DRY RUN] Enter the new version number:' : 'Enter the new version number:'
         const rawInput = await text({
-          message: 'Enter the new version number:',
+          message: customMessage,
           placeholder: currentVersion,
           onCancel: () => {
             cancelled = true
@@ -1301,8 +1286,9 @@ async function promptForVersion(currentVersion: string, preid?: string, cwd?: st
         const input = rawInput?.trim()
 
         if (!input) {
-          // Empty input, fall back to patch version
-          return patchVersion
+          // Empty input - user cancelled
+          process.stderr.write('\nOperation cancelled by user\n')
+          process.exit(0)
         }
 
         // Use our own validation from the isValidVersion function
@@ -1310,12 +1296,12 @@ async function promptForVersion(currentVersion: string, preid?: string, cwd?: st
           // Attempt to validate the version
           if (!isValidVersion(input)) {
             console.error(`'${input}' is not a valid semantic version!`)
-            return patchVersion
+            process.exit(1)
           }
         }
         catch {
           console.error(`'${input}' is not a valid semantic version!`)
-          return patchVersion
+          process.exit(1)
         }
 
         // Set valid custom version
@@ -1326,23 +1312,27 @@ async function promptForVersion(currentVersion: string, preid?: string, cwd?: st
         selectedVersion = incrementVersion(currentVersion, choiceStr as any, preid)
       }
     }
-    catch {
+    catch (error: any) {
       // Handle errors from the prompt itself
-      // No need to log here, the global handler will handle it
-      throw new Error('Version bump cancelled by user')
+      if (error.message?.includes('cancelled') || error.message?.includes('interrupted')) {
+        process.stderr.write('\nOperation cancelled by user\n')
+        process.exit(0)
+      }
+      throw error
     }
 
     return selectedVersion
   }
   catch (error: any) {
-    // Don't fallback to patch increment on cancellation - let the error propagate
-    if (error.message === 'Version bump cancelled by user') {
-      throw error
+    // Don't fallback to patch increment on cancellation - exit immediately
+    if (error.message?.includes('cancelled') || error.message?.includes('interrupted')) {
+      process.stderr.write('\nOperation cancelled by user\n')
+      process.exit(0)
     }
 
-    // For other errors, provide a helpful message and fallback to patch
-    console.warn('Warning: Version selection failed, using patch increment as fallback:', error)
-    return patchVersion
+    // For other errors, provide a helpful message and exit
+    console.error('Error: Version selection failed:', error.message || error)
+    process.exit(1)
   }
   finally {
     // Always restore original signal handlers
