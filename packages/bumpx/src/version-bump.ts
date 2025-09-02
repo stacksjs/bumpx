@@ -61,7 +61,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
 
   try {
     // Print recent commits if requested
-    if (printCommits && !dryRun && inGitRepo) {
+    if (printCommits && inGitRepo) {
       try {
         const recentCommits = getRecentCommits(5, effectiveCwd)
         if (recentCommits.length > 0) {
