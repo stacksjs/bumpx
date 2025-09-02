@@ -47,36 +47,41 @@ Here's how simple version bumping becomes with bumpx:
 
 ```bash
 # Install bumpx
-npm install -g bumpx
+npm install -g @stacksjs/bumpx
+# or
+bun add -g @stacksjs/bumpx
 
-# Basic version bump
+# Basic version bump (recursive workspace detection by default)
 bumpx patch
-# 1.0.0 → 1.0.1
+# 1.0.0 → 1.0.1, automatically finds and updates all workspace packages
 
-# Version bump with Git workflow
-bumpx minor --commit --tag --push
-# 1.0.1 → 1.1.0, creates commit and tag, pushes to remote
+# Version bump with Git workflow (all enabled by default)
+bumpx minor
+# 1.0.1 → 1.1.0, creates commit, tag, and pushes to remote
 
 # Interactive version selection
-bumpx prompt --commits
+bumpx prompt --print-commits
 # Shows recent commits and version options
 
-# Monorepo version management (automatic workspace detection)
+# Monorepo version management with automatic workspace detection
 bumpx patch
-# Updates all workspace packages in your monorepo
+# Updates all workspace packages in your monorepo automatically
 
 # Custom files and post-bump actions
 bumpx major --files "package.json,VERSION.txt,src/version.ts" \
-           --commit --tag \
            --execute "bun run build && bun test"
 
 # Prerelease versions
-bumpx prerelease --preid beta --commit --tag
-# 1.1.0 → 1.1.1-beta.0
+bumpx prerelease --preid beta
+# 1.1.0 → 1.1.1-beta.0, with automatic git operations
 
 # Dry run to preview changes
 bumpx minor --dry-run --verbose
 # Shows what would be changed without making changes
+
+# Changelog generation (enabled by default)
+bumpx patch
+# Automatically generates changelog from git commits
 ```
 
 ## Configuration
@@ -123,25 +128,29 @@ bumpx offers significant advantages over manual version management and other too
 ### Single Package Release
 
 ```bash
-bumpx patch --commit --tag --push
+# Git operations (commit, tag, push) enabled by default
+bumpx patch
 ```
 
 ### Feature Release with Testing
 
 ```bash
-bumpx minor --commit --tag --execute "bun run build && bun test" --push
+# Automatic git workflow with post-bump testing
+bumpx minor --execute "bun run build && bun test"
 ```
 
 ### Monorepo Synchronized Release
 
 ```bash
-bumpx major --current-version 1.0.0 --commit --tag
+# Automatic workspace detection with synchronized versioning
+bumpx major --current-version 1.0.0
 ```
 
 ### CI/CD Automation
 
 ```bash
-bumpx patch --commit --tag --push --no-verify --execute "bun run deploy"
+# Non-interactive CI mode
+bumpx patch --ci --execute "bun run deploy"
 ```
 
 ## Next Steps

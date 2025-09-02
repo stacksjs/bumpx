@@ -81,17 +81,17 @@ bumpx patch --files VERSION.txt,README.md
 
 ### Workspace & Recursive Updates
 
-bumpx now includes automatic workspace detection and recursive updates by default:
+bumpx includes automatic workspace detection and recursive updates enabled by default:
 
 ```bash
-# Update all workspace packages (automatic detection)
+# Update all workspace packages (automatic detection, recursive by default)
 bumpx patch
 
 # Explicitly disable recursive mode
 bumpx patch --no-recursive
 
 # Show what would be updated without making changes
-bumpx patch --dry-run
+bumpx patch --dry-run --verbose
 ```
 
 ### Current Version Override
@@ -99,10 +99,10 @@ bumpx patch --dry-run
 When working with multiple packages that should share the same version:
 
 ```bash
-# Set a common starting version for all files
+# Set a common starting version for all files (recursive is default)
 bumpx patch --current-version 1.2.3
 
-# Useful for monorepos with synchronized versions (recursive is default)
+# Useful for monorepos with synchronized versions
 bumpx minor --current-version 2.0.0
 ```
 
@@ -113,17 +113,17 @@ bumpx minor --current-version 2.0.0
 Commit and tag your version bumps automatically:
 
 ```bash
-# Create git commit with default message
-bumpx patch --commit
+# Default behavior: automatic commit, tag, and push
+bumpx patch
 
-# Create git commit and tag
-bumpx minor --commit --tag
+# Override default behavior to disable specific operations
+bumpx minor --no-push
 
 # Create signed commit and tag
-bumpx major --commit --tag --sign
+bumpx major --sign
 
-# Push to remote after operations
-bumpx patch --commit --tag --push
+# Disable all git operations
+bumpx patch --no-commit --no-tag --no-push
 ```
 
 ### Custom Commit Messages
@@ -132,10 +132,10 @@ Customize your commit and tag messages:
 
 ```bash
 # Custom commit message (use %s for version)
-bumpx patch --commit --message "chore: bump version to %s"
+bumpx patch --commit-message "chore: bump version to %s"
 
 # Custom tag message
-bumpx minor --commit --tag --tag-message "Release v%s"
+bumpx minor --tag-message "Release v%s"
 ```
 
 ### Skip Git Checks
@@ -144,10 +144,10 @@ Bypass git status checks when needed:
 
 ```bash
 # Skip git status check (allows dirty working directory)
-bumpx patch --commit --no-git-check
+bumpx patch --no-git-check
 
 # Skip git hooks
-bumpx minor --commit --no-verify
+bumpx minor --no-verify
 ```
 
 ## Advanced Options
@@ -184,8 +184,8 @@ bumpx minor --dry-run --commit --tag
 Run custom commands after version bump:
 
 ```bash
-# Run npm scripts after bump
-bumpx patch --commit --execute "bun run build"
+# Run scripts after bump (git operations still happen by default)
+bumpx patch --execute "bun run build"
 
 # Multiple commands
 bumpx minor --execute "bun run build && bun run test"
@@ -201,7 +201,7 @@ bumpx patch --install
 Quick patch for bug fixes:
 
 ```bash
-bumpx patch --commit --tag --push
+bumpx patch  # All git operations enabled by default
 ```
 
 ### Feature Release
@@ -209,7 +209,7 @@ bumpx patch --commit --tag --push
 Release with documentation update:
 
 ```bash
-bumpx minor --commit --tag --execute "bun run build:docs" --push
+bumpx minor --execute "bun run build:docs"
 ```
 
 ### Major Release
@@ -217,8 +217,8 @@ bumpx minor --commit --tag --execute "bun run build:docs" --push
 Comprehensive major version release:
 
 ```bash
-# Interactive selection with full git workflow
-bumpx prompt --print-commits --commit --tag --sign --push --execute "bun run build"
+# Interactive selection with full workflow (git operations enabled by default)
+bumpx prompt --print-commits --sign --execute "bun run build"
 ```
 
 ### Prerelease Testing
@@ -226,11 +226,11 @@ bumpx prompt --print-commits --commit --tag --sign --push --execute "bun run bui
 Create prerelease for testing:
 
 ```bash
-# Alpha release
-bumpx prerelease --preid alpha --commit --tag
+# Alpha release (git operations enabled by default)
+bumpx prerelease --preid alpha
 
-# Beta release
-bumpx prerelease --preid beta --commit --tag --push
+# Beta release with no push
+bumpx prerelease --preid beta --no-push
 ```
 
 ### Monorepo Management
@@ -239,10 +239,10 @@ Update all packages in a monorepo with automatic workspace detection:
 
 ```bash
 # Synchronized version across all packages (recursive is default)
-bumpx patch --current-version 1.0.0 --commit --tag
+bumpx patch --current-version 1.0.0
 
 # Independent versioning (each package bumps from its current version)
-bumpx patch --commit
+bumpx patch
 ```
 
 ## Configuration

@@ -35,12 +35,12 @@ bumpx <release-type> [options]
 | `--files` | `string` | Auto-detected | Comma-separated files to update |
 | `--current-version` | `string` | Auto-detected | Override current version |
 | `--preid` | `string` | `undefined` | Prerelease identifier |
-| `--commit` | `boolean` | `false` | Create git commit |
+| `--commit` | `boolean` | `true` | Create git commit |
 | `--commit-message` | `string` | Custom message | Commit message template |
-| `--tag` | `boolean` | `false` | Create git tag |
+| `--tag` | `boolean` | `true` | Create git tag |
 | `--tag-name` | `string` | Custom name | Custom tag name |
 | `--tag-message` | `string` | Custom message | Tag message template |
-| `--push` | `boolean` | `false` | Push to remote |
+| `--push` | `boolean` | `true` | Push to remote |
 | `--sign` | `boolean` | `false` | Sign commits and tags |
 | `--no-git-check` | `boolean` | `false` | Skip git status check |
 | `--no-verify` | `boolean` | `false` | Skip git hooks |
@@ -55,6 +55,9 @@ bumpx <release-type> [options]
 | `--yes` | `boolean` | `false` | Skip confirmation |
 | `--ci` | `boolean` | `false` | CI mode (non-interactive) |
 | `--print-commits` | `boolean` | `false` | Show recent commits |
+| `--changelog` | `boolean` | `true` | Generate changelog |
+| `--force-update` | `boolean` | `true` | Force update files |
+| `--respect-gitignore` | `boolean` | `true` | Respect .gitignore |
 
 ### Command Examples
 
@@ -64,30 +67,30 @@ bumpx <release-type> [options]
 # Patch version bump
 bumpx patch
 
-# Minor version bump with commit
-bumpx minor --commit
+# Minor version bump (git operations enabled by default)
+bumpx minor
 
-# Major version bump with full git workflow
-bumpx major --commit --tag --push
+# Major version bump (git operations enabled by default)  
+bumpx major
 ```
 
 #### Advanced Usage
 
 ```bash
 # Interactive version selection with commit history
-bumpx prompt --commits --commit --tag
+bumpx prompt --print-commits
 
 # Custom files and message
-bumpx patch --files "package.json,VERSION.txt" --message "release: v%s"
+bumpx patch --files "package.json,VERSION.txt" --commit-message "release: v%s"
 
-# Prerelease with custom identifier
-bumpx prerelease --preid beta --commit
+# Prerelease with custom identifier (git operations by default)
+bumpx prerelease --preid beta
 
-# Recursive monorepo update
-bumpx patch --recursive --commit --message "chore: bump all packages to %s"
+# Recursive monorepo update (recursive is default)
+bumpx patch --commit-message "chore: bump all packages to %s"
 
 # Dry run to preview changes
-bumpx minor --recursive --dry-run --verbose
+bumpx minor --dry-run --verbose
 ```
 
 #### Git Integration

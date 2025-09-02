@@ -13,40 +13,60 @@ Create a configuration file in your project root for project-specific defaults. 
 ```typescript
 // bumpx.config.ts
 export default {
+  // Git options (current defaults)
   commit: true,
   tag: true,
-  push: false,
+  push: true,
   sign: false,
   noGitCheck: false,
   noVerify: false,
+  
+  // Execution options
   install: false,
   ignoreScripts: false,
+  
+  // UI options
   confirm: true,
   quiet: false,
   ci: false,
+  
+  // Advanced options
   all: false,
   recursive: true,
-  printCommits: false
+  printCommits: true,
+  forceUpdate: true,
+  changelog: true,
+  respectGitignore: true
 }
 ```
 
 ```javascript
 // bumpx.config.js
 module.exports = {
+  // Git options (current defaults)
   commit: true,
   tag: true,
-  push: false,
+  push: true,
   sign: false,
   noGitCheck: false,
   noVerify: false,
+  
+  // Execution options
   install: false,
   ignoreScripts: false,
+  
+  // UI options
   confirm: true,
   quiet: false,
   ci: false,
+  
+  // Advanced options
   all: false,
   recursive: true,
-  printCommits: false
+  printCommits: true,
+  forceUpdate: true,
+  changelog: true,
+  respectGitignore: true
 }
 ```
 
@@ -59,10 +79,12 @@ module.exports = {
   "bumpx": {
     "commit": true,
     "tag": true,
-    "push": false,
+    "push": true,
     "sign": false,
     "install": false,
-    "recursive": false
+    "recursive": true,
+    "changelog": true,
+    "respectGitignore": true
   }
 }
 ```
@@ -239,7 +261,7 @@ bumpx looks for configuration files in this order:
 #### `recursive` (boolean)
 
 - **Default:** `true`
-- **Description:** Search for package.json files in subdirectories with workspace detection
+- **Description:** Search for package.json files in subdirectories with automatic workspace detection
 - **CLI:** `--recursive` / `--no-recursive`
 
 ```json
@@ -432,6 +454,42 @@ Or with multiple commands:
 }
 ```
 
+#### `changelog` (boolean)
+
+- **Default:** `true`
+- **Description:** Generate changelog from git commits
+- **CLI:** `--changelog` / `--no-changelog`
+
+```json
+{
+  "changelog": true
+}
+```
+
+#### `respectGitignore` (boolean)
+
+- **Default:** `true`
+- **Description:** Respect .gitignore when finding files
+- **CLI:** `--respect-gitignore` / `--no-respect-gitignore`
+
+```json
+{
+  "respectGitignore": true
+}
+```
+
+#### `forceUpdate` (boolean)
+
+- **Default:** `true`
+- **Description:** Force update files even if version is the same
+- **CLI:** `--force-update`
+
+```json
+{
+  "forceUpdate": true
+}
+```
+
 ## Environment Variables
 
 You can also configure bumpx using environment variables:
@@ -450,7 +508,7 @@ export BUMPX_VERBOSE=true
 
 ### Basic Release Workflow
 
-For a simple release workflow with automatic git operations (these are actually the defaults):
+For a simple release workflow with automatic git operations (these are the current defaults):
 
 ```json
 {
@@ -458,7 +516,9 @@ For a simple release workflow with automatic git operations (these are actually 
   "tag": true,
   "push": true,
   "message": "chore: release v%s",
-  "tagMessage": "Release v%s"
+  "tagMessage": "Release v%s",
+  "recursive": true,
+  "changelog": true
 }
 ```
 

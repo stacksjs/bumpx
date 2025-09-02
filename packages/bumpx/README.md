@@ -8,18 +8,20 @@
 
 # bumpx
 
-> A fast, dependency-free version bumping tool similar to bumpp and version-bump-prompt, built for Bun.
+> A powerful, modern version bumping tool with comprehensive Git integration, workspace detection, and monorepo support.
 
 ## Features
 
 - 🚀 **Zero dependencies** - Built using only Node.js built-ins and Bun tooling
 - 📦 **Semver compliant** - Supports all semantic versioning release types
-- 🔄 **Monorepo support** - Recursive bumping with `--recursive` flag
-- 🎯 **Git integration** - Automatic commit, tag, and push
+- 🔄 **Workspace detection** - Automatic workspace/monorepo detection with `recursive` enabled by default
+- 🎯 **Git integration** - Automatic commit, tag, and push (all enabled by default)
 - ⚡ **Fast execution** - Compiled binary for instant startup
 - 🛠 **Highly configurable** - Config file and CLI options
 - 🎨 **Interactive prompts** - Choose version increment interactively
 - 🔧 **Custom commands** - Execute scripts before git operations
+- 📝 **Changelog generation** - Automatic changelog generation enabled by default
+- 🌐 **Cross-platform** - Works seamlessly on macOS, Linux, and Windows
 
 ## Installation
 
@@ -74,10 +76,10 @@ bumpx patch
 bumpx patch --no-commit --no-tag --no-push
 
 # Custom commit message
-bumpx patch --commit "chore: release v{version}"
+bumpx patch --commit-message "chore: release v{version}"
 
-# Custom tag name
-bumpx patch --tag "v{version}"
+# Custom tag message
+bumpx patch --tag-message "Release v{version}"
 
 # Sign commits and tags
 bumpx patch --sign
@@ -86,14 +88,17 @@ bumpx patch --sign
 bumpx patch --no-verify
 ```
 
-### Monorepo Support
+### Workspace & Monorepo Support
 
 ```bash
-# Bump all package.json files recursively
-bumpx patch --recursive
+# Automatic workspace detection (recursive is default)
+bumpx patch
+
+# Explicitly disable recursive mode
+bumpx patch --no-recursive
 
 # Bump specific files
-bumpx patch package.json packages/*/package.json
+bumpx patch --files package.json,packages/*/package.json
 ```
 
 ### Advanced Options
@@ -116,6 +121,15 @@ bumpx patch --print-commits
 
 # Skip git status check
 bumpx patch --no-git-check
+
+# Generate changelog (enabled by default)
+bumpx patch --changelog
+
+# Disable changelog generation
+bumpx patch --no-changelog
+
+# Dry run to preview changes
+bumpx patch --dry-run
 ```
 
 ## CI/CD Integration
@@ -173,7 +187,7 @@ jobs:
         run: bunx bumpx ${{ github.event.inputs.release_type }} --ci
 ```
 
-For more CI/CD examples and configurations, see [CI.md](../../docs/features/CI.md).
+For more CI/CD examples and configurations, see [Automation Guide](../../docs/advanced/automation.md).
 
 ## Configuration
 
@@ -198,8 +212,10 @@ export default defineConfig({
   quiet: false,
 
   // Advanced options
-  recursive: false,
-  printCommits: false
+  recursive: true, // Default is now true with workspace detection
+  printCommits: true,
+  changelog: true, // Changelog generation enabled by default
+  respectGitignore: true
 })
 ```
 
@@ -232,7 +248,7 @@ You can also use JSON configuration in `package.json`:
 | `--sign` | | Sign commits and tags | `false` |
 | `--install` | | Run npm install | `false` |
 | `--execute` | `-x` | Execute command | |
-| `--recursive` | `-r` | Bump recursively | `false` |
+| `--recursive` | `-r` | Bump recursively | `true` |
 | `--yes` | `-y` | Skip confirmation | `false` |
 | `--quiet` | `-q` | Quiet mode | `false` |
 | `--ci` | | CI mode (sets --yes --quiet) | `false` |
