@@ -979,6 +979,54 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
 }
 
 /**
+ * Show the newly generated changelog content
+ */
+function showGeneratedChangelog(newContent: string, existingContent: string): void {
+  try {
+    // Extract only the new content by removing the existing content
+    let freshContent = newContent
+    if (existingContent.trim()) {
+      // Remove existing content to show only the new part
+      freshContent = newContent.replace(existingContent, '').trim()
+    }
+
+    // Split into lines and find the new changelog entry
+    const lines = freshContent.split('\n')
+    const relevantLines: string[] = []
+    let inChangelog = false
+
+    for (const line of lines) {
+      // Look for version headers like "## [1.0.1]" or "### v1.0.1"
+      if (line.match(/^#+\s*(\[?v?\d+\.\d+\.\d+.*?\]?|Release)/i)) {
+        inChangelog = true
+        relevantLines.push(line)
+      }
+      else if (inChangelog) {
+        // Stop at the next version header or empty sections
+        if (line.match(/^#+\s*(\[?v?\d+\.\d+\.\d+.*?\]?|Release)/i)) {
+          break
+        }
+        // Add content lines but limit output
+        if (relevantLines.length < 15) { // Limit to ~15 lines
+          relevantLines.push(line)
+        }
+      }
+    }
+
+    // Show the changelog content if we found any
+    if (relevantLines.length > 0) {
+      console.log(`\n${colors.gray('Generated changelog:')}`)
+      const changelogOutput = relevantLines.join('\n').trim()
+      console.log(colors.gray(changelogOutput))
+      console.log('') // Empty line after changelog
+    }
+  }
+  catch {
+    // Silently fail if we can't parse the changelog
+  }
+}
+
+/**
  * Generate changelog using @stacksjs/logsmith
  */
 async function generateChangelog(cwd: string, fromVersion?: string, toVersion?: string): Promise<void> {
@@ -1097,6 +1145,9 @@ async function generateChangelog(cwd: string, fromVersion?: string, toVersion?: 
 
       // Write the combined content back to the file
       fs.writeFileSync(changelogPath, newContent, 'utf-8')
+
+      // Show the newly generated changelog section
+      showGeneratedChangelog(newContent, existingContent)
     }
   }
   catch (error: any) {
@@ -1131,6 +1182,9 @@ async function generateChangelog(cwd: string, fromVersion?: string, toVersion?: 
 
       // Write the combined content back to the file
       fs.writeFileSync(changelogPath, newContent, 'utf-8')
+
+      // Show the newly generated changelog section
+      showGeneratedChangelog(newContent, existingContent)
     }
     catch (fallbackError) {
       throw new Error(`Changelog generation failed: ${error.message}. Fallback also failed: ${fallbackError}`)

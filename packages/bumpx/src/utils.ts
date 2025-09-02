@@ -712,6 +712,30 @@ export function executeCommand(command: string, cwd?: string): string {
 }
 
 /**
+ * Execute shell command with visible output
+ */
+export function executeCommandWithOutput(command: string, cwd?: string): void {
+  try {
+    // Add a safe timeout in CI to prevent long-hanging commands (e.g., npm install)
+    // Can be overridden via BUMPX_CMD_TIMEOUT_MS env var
+    const timeoutMs = process.env.BUMPX_CMD_TIMEOUT_MS
+      ? Number.parseInt(process.env.BUMPX_CMD_TIMEOUT_MS, 10)
+      : (process.env.CI ? 4000 : undefined)
+
+    execSync(command, {
+      encoding: 'utf-8',
+      stdio: 'inherit', // This allows output to be visible
+      cwd: cwd || process.cwd(),
+      // Only set timeout when defined (Node rejects undefined)
+      ...(timeoutMs !== undefined ? { timeout: timeoutMs } : {}),
+    })
+  }
+  catch (error: any) {
+    throw new Error(`Command failed: ${command}\n${error.message}`)
+  }
+}
+
+/**
  * Simple prompting utility (since we're avoiding dependencies)
  */
 export function prompt(question: string): Promise<string> {
