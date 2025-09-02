@@ -1,4 +1,15 @@
 # Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.77...v0.1.78)
+
+### 🧹 Chores
+
+- release v0.1.78 ([12c1974](https://github.com/stacksjs/bumpx/commit/12c1974))
+- update cloud emoji, because of spacing issues ([8e19768](https://github.com/stacksjs/bumpx/commit/8e19768))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
 [Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.76...v0.1.77)
 
 ### 🧹 Chores
