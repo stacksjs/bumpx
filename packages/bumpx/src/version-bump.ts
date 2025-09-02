@@ -784,7 +784,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
     }
 
     // Create git tag AFTER changelog generation (if requested)
-    if (tag && lastNewVersion) {
+    if (tag && lastNewVersion && !dryRun) {
       try {
         // Format the tag name - either use the provided format or default to vX.Y.Z
         const tagName = typeof tag === 'string'
