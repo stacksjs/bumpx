@@ -1069,7 +1069,7 @@ async function generateChangelog(cwd: string, fromVersion?: string, toVersion?: 
   }
 
   // Use the specified toVersion directly (even if tag doesn't exist yet)
-  let actualToVersion = toVersion
+  const actualToVersion = toVersion
 
   try {
     // In test mode, skip the module import and go straight to CLI
