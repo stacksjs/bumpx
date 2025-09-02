@@ -35,7 +35,7 @@
     "lint:fix": "bunx --bun eslint . --fix",
     "changelog": "bunx logsmith --verbose",
     "changelog:generate": "bunx logsmith --output CHANGELOG.md",
-    "release": "bun run changelog:generate && ./bumpx -r --push",
+    "release": "./bumpx -r --push",
     "postinstall": "bunx git-hooks",
     "test": "bun test",
     "dev:docs": "bun --bun vitepress dev docs",

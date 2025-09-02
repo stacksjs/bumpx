@@ -15,14 +15,14 @@ These companies support Stacks development:
 We welcome partnerships with organizations that:
 
 - Create developer tools or platforms
-- Support open-source development  
+- Support open-source development
 - Want to collaborate on developer experience improvements
 
 ### Partnership Types
 
 **Technology Partners** - Tool and platform integrations
 **Content Partners** - Documentation and educational resources
-**Community Partners** - Developer events and community support  
+**Community Partners** - Developer events and community support
 **Strategic Partners** - Long-term collaboration
 
 ### Contact Us

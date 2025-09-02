@@ -23,9 +23,9 @@ You can include details about your projects, favorite features, or just say than
 
 Send your postcards to:
 
-**Stacks.js**  
-12665 Village Ln #2306  
-Playa Vista, CA 90094  
+**Stacks.js**
+12665 Village Ln #2306
+Playa Vista, CA 90094
 United States 🌎
 
 ## Showcase

@@ -20,16 +20,16 @@ export default {
   sign: false,
   noGitCheck: false,
   noVerify: false,
-  
+
   // Execution options
   install: false,
   ignoreScripts: false,
-  
+
   // UI options
   confirm: true,
   quiet: false,
   ci: false,
-  
+
   // Advanced options
   all: false,
   recursive: true,
@@ -50,16 +50,16 @@ module.exports = {
   sign: false,
   noGitCheck: false,
   noVerify: false,
-  
+
   // Execution options
   install: false,
   ignoreScripts: false,
-  
+
   // UI options
   confirm: true,
   quiet: false,
   ci: false,
-  
+
   // Advanced options
   all: false,
   recursive: true,
