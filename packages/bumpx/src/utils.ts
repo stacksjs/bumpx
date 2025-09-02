@@ -772,8 +772,8 @@ export const symbols = {
   rocket: '🚀',
   checkmark: '✅',
   memo: '📝',
-  tag: '🏷️',
-  cloud: '☁️',
+  tag: '🏷',
+  cloud: '⬆️',
   inbox: '📥',
   party: '🎉',
 }
