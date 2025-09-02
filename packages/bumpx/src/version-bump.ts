@@ -1068,20 +1068,8 @@ async function generateChangelog(cwd: string, fromVersion?: string, toVersion?: 
     }
   }
 
-  // Check if the desired tag exists, otherwise use HEAD
+  // Use the specified toVersion directly (even if tag doesn't exist yet)
   let actualToVersion = toVersion
-  if (toVersion && toVersion !== 'HEAD') {
-    try {
-      // Check if the tag exists
-      await executeGit(['rev-parse', '--verify', toVersion], cwd)
-      // Tag exists, use it
-    }
-    catch {
-      // Tag doesn't exist, use HEAD instead
-      console.warn(`Warning: Tag ${toVersion} doesn't exist yet, using HEAD for changelog generation`)
-      actualToVersion = 'HEAD'
-    }
-  }
 
   try {
     // In test mode, skip the module import and go straight to CLI
