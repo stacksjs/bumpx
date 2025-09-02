@@ -278,12 +278,10 @@ async function prepareConfig(release: string | undefined, files: string[] | unde
   if (options.respectGitignore !== undefined)
     cliOverrides.respectGitignore = options.respectGitignore
 
-  console.log('DEBUG CLI overrides:', cliOverrides)
   const loaded = await loadBumpConfig({
     ...cliOverrides,
     ...ciOverrides,
   })
-  console.log('DEBUG loaded config:', { commit: loaded.commit, tag: loaded.tag, push: loaded.push, dryRun: loaded.dryRun })
 
   // If no release was provided, always show the prompt by default
   // This gives users the chance to choose their version type
