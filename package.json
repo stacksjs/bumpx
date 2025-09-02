@@ -1,7 +1,7 @@
 {
   "name": "@stacksjs/bumpx",
   "type": "module",
-  "version": "0.1.69",
+  "version": "0.1.75",
   "private": true,
   "description": "Automatically bump your versions.",
   "author": "Chris Breuer <chris@stacksjs.org>",
@@ -35,7 +35,7 @@
     "lint:fix": "bunx --bun eslint . --fix",
     "changelog": "bunx logsmith --verbose",
     "changelog:generate": "bunx logsmith --output CHANGELOG.md",
-    "release": "bun run changelog:generate && ./bumpx -r --push",
+    "release": "./bumpx -r --push",
     "postinstall": "bunx git-hooks",
     "test": "bun test",
     "dev:docs": "bun --bun vitepress dev docs",
