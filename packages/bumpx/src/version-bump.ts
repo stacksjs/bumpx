@@ -1206,7 +1206,7 @@ async function promptForVersion(currentVersion: string, preid?: string, cwd?: st
           cancelled = true
           userInterrupted.value = true
           // Use stderr.write to ensure message is displayed before process exit
-          process.stderr.write('\nOperation cancelled by user \x1B[3m(Ctrl+C)\x1B[0m\n')
+          process.stderr.write('\nVersion bump cancelled by user \x1B[3m(Ctrl+C)\x1B[0m\n')
           // Force immediate exit with success code
           process.exit(0)
           return undefined // This never executes but is here for type safety
@@ -1222,7 +1222,13 @@ async function promptForVersion(currentVersion: string, preid?: string, cwd?: st
       // Handle null/undefined (cancellation)
       if (choice === null || choice === undefined) {
         // User cancelled - exit immediately
-        process.stderr.write('\nOperation cancelled by user\n')
+        process.stderr.write('\nVersion bump cancelled by user\n')
+        process.exit(0)
+      }
+
+      // Check for interruption before processing any choice
+      if (userInterrupted.value || cancelled) {
+        process.stderr.write('\nVersion bump cancelled by user\n')
         process.exit(0)
       }
 
@@ -1235,7 +1241,13 @@ async function promptForVersion(currentVersion: string, preid?: string, cwd?: st
         // Check for SIGINT symbol
         if (symbolStr.includes('SIGINT') || symbolStr.includes('interrupt')) {
           // User interrupted - exit immediately
-          process.stderr.write('\nOperation cancelled by user\n')
+          process.stderr.write('\nVersion bump cancelled by user\n')
+          process.exit(0)
+        }
+
+        // Check for interruption again before processing selection
+        if (userInterrupted.value || cancelled) {
+          process.stderr.write('\nVersion bump cancelled by user\n')
           process.exit(0)
         }
 
@@ -1245,15 +1257,26 @@ async function promptForVersion(currentVersion: string, preid?: string, cwd?: st
             // Custom version input below
           }
           else {
+            // Check one more time before returning version
+            if (userInterrupted.value || cancelled) {
+              process.stderr.write('\nVersion bump cancelled by user\n')
+              process.exit(0)
+            }
             // Return directly with calculated version
             return incrementVersion(currentVersion, selectedOption.value as any, preid)
           }
         }
         else {
-          // Out of bounds or unrecognizable selection
-          console.log('\nInvalid selection, using patch version')
-          return patchVersion
+          // Out of bounds or unrecognizable selection - exit instead of fallback
+          process.stderr.write('\nInvalid selection - cancelling operation\n')
+          process.exit(1)
         }
+      }
+
+      // Check for interruption before processing string choices
+      if (userInterrupted.value || cancelled) {
+        process.stderr.write('\nVersion bump cancelled by user\n')
+        process.exit(0)
       }
 
       // Handle string-based selections
@@ -1263,7 +1286,7 @@ async function promptForVersion(currentVersion: string, preid?: string, cwd?: st
       if (choiceStr.endsWith('-exists')) {
         console.log('\nError: The selected version has an existing Git tag. Choose a different version.')
         // Return to prompt recursively
-        return promptForVersion(currentVersion, preid, cwd)
+        return promptForVersion(currentVersion, preid, cwd, dryRun)
       }
 
       if (choiceStr === 'custom') {
@@ -1276,7 +1299,7 @@ async function promptForVersion(currentVersion: string, preid?: string, cwd?: st
             cancelled = true
             userInterrupted.value = true
             // Use stderr.write to ensure message is displayed before process exit
-            process.stderr.write('\nOperation cancelled by user \x1B[3m(Ctrl+C)\x1B[0m\n')
+            process.stderr.write('\nVersion bump cancelled by user \x1B[3m(Ctrl+C)\x1B[0m\n')
             // Force immediate exit with success code
             process.exit(0)
             return undefined // This never executes but is here for type safety
@@ -1287,7 +1310,7 @@ async function promptForVersion(currentVersion: string, preid?: string, cwd?: st
 
         if (!input) {
           // Empty input - user cancelled
-          process.stderr.write('\nOperation cancelled by user\n')
+          process.stderr.write('\nVersion bump cancelled by user\n')
           process.exit(0)
         }
 
@@ -1308,6 +1331,11 @@ async function promptForVersion(currentVersion: string, preid?: string, cwd?: st
         selectedVersion = input
       }
       else {
+        // Check for interruption before final version calculation
+        if (userInterrupted.value || cancelled) {
+          process.stderr.write('\nVersion bump cancelled by user\n')
+          process.exit(0)
+        }
         // Standard version increment based on selection
         selectedVersion = incrementVersion(currentVersion, choiceStr as any, preid)
       }
@@ -1315,7 +1343,7 @@ async function promptForVersion(currentVersion: string, preid?: string, cwd?: st
     catch (error: any) {
       // Handle errors from the prompt itself
       if (error.message?.includes('cancelled') || error.message?.includes('interrupted')) {
-        process.stderr.write('\nOperation cancelled by user\n')
+        process.stderr.write('\nVersion bump cancelled by user\n')
         process.exit(0)
       }
       throw error
@@ -1326,7 +1354,7 @@ async function promptForVersion(currentVersion: string, preid?: string, cwd?: st
   catch (error: any) {
     // Don't fallback to patch increment on cancellation - exit immediately
     if (error.message?.includes('cancelled') || error.message?.includes('interrupted')) {
-      process.stderr.write('\nOperation cancelled by user\n')
+      process.stderr.write('\nVersion bump cancelled by user\n')
       process.exit(0)
     }
 
