@@ -67,10 +67,10 @@ bumpx <release-type> [options]
 # Patch version bump
 bumpx patch
 
-# Minor version bump (git operations enabled by default)
+# Minor version bump
 bumpx minor
 
-# Major version bump (git operations enabled by default)  
+# Major version bump
 bumpx major
 ```
 
@@ -97,34 +97,34 @@ bumpx minor --dry-run --verbose
 
 ```bash
 # Basic git workflow
-bumpx patch --commit --tag --push
+bumpx patch
 
 # Signed releases
-bumpx minor --commit --tag --sign
+bumpx minor --sign
 
 # Custom commit and tag messages
-bumpx patch --commit --tag \
-  --message "release: version %s" \
+bumpx patch \
+  --commit-message "release: version %s" \
   --tag-message "Release v%s"
 
 # Skip git status check
-bumpx patch --commit --no-git-check
+bumpx patch --no-git-check
 
 # Skip git hooks
-bumpx patch --commit --no-verify
+bumpx patch --no-verify
 ```
 
 #### Post-Bump Actions
 
 ```bash
 # Install dependencies after bump
-bumpx patch --commit --install
+bumpx patch --install
 
-# Run custom command after bump
-bumpx minor --commit --execute "npm run build && npm test"
+# Run custom command after bump (git operations by default)
+bumpx minor --execute "npm run build && npm test"
 
-# Complex post-bump workflow
-bumpx major --commit --tag \
+# Complex post-bump workflow (git operations by default)
+bumpx major \
   --execute "npm run build && npm run test && npm publish"
 ```
 

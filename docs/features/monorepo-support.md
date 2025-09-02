@@ -32,10 +32,10 @@ bumpx patch --dry-run --verbose
 
 bumpx intelligently detects workspace configurations from:
 
-- **NPM workspaces**: `"workspaces": ["packages/*"]`
-- **Yarn workspaces**: `"workspaces": { "packages": ["packages/*"] }`
-- **PNPM workspaces**: Automatically works with `pnpm-workspace.yaml`
-- **Fallback**: Traditional recursive directory scanning
+- NPM workspaces: `"workspaces": ["packages/*"]`
+- Yarn workspaces: `"workspaces": { "packages": ["packages/*"] }`
+- PNPM workspaces: Works with `pnpm-workspace.yaml`
+- Fallback: Traditional recursive directory scanning
 
 ### Manual Package Selection
 

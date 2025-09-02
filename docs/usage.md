@@ -217,7 +217,7 @@ bumpx minor --execute "bun run build:docs"
 Comprehensive major version release:
 
 ```bash
-# Interactive selection with full workflow (git operations enabled by default)
+# Interactive selection with full workflow
 bumpx prompt --print-commits --sign --execute "bun run build"
 ```
 
@@ -226,7 +226,7 @@ bumpx prompt --print-commits --sign --execute "bun run build"
 Create prerelease for testing:
 
 ```bash
-# Alpha release (git operations enabled by default)
+# Alpha release
 bumpx prerelease --preid alpha
 
 # Beta release with no push

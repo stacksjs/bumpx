@@ -55,7 +55,7 @@ bun add -g @stacksjs/bumpx
 bumpx patch
 # 1.0.0 → 1.0.1, automatically finds and updates all workspace packages
 
-# Version bump with Git workflow (all enabled by default)
+# Version bump with Git workflow
 bumpx minor
 # 1.0.1 → 1.1.0, creates commit, tag, and pushes to remote
 
@@ -79,7 +79,7 @@ bumpx prerelease --preid beta
 bumpx minor --dry-run --verbose
 # Shows what would be changed without making changes
 
-# Changelog generation (enabled by default)
+# Disable changelog generation
 bumpx patch
 # Automatically generates changelog from git commits
 ```
@@ -116,12 +116,12 @@ Or in package.json:
 
 bumpx offers significant advantages over manual version management and other tools:
 
-- **Comprehensive**: Handles files, Git operations, and post-bump actions
-- **Reliable**: Extensive validation and error handling prevent mistakes
-- **Flexible**: Works with any project structure or workflow
-- **Fast**: Efficient processing even for large monorepos
-- **Modern**: Built with TypeScript and modern Node.js features
-- **Well-documented**: Extensive guides and examples
+- Comprehensive file, Git, and post-bump action handling
+- Reliable validation and error handling
+- Works with any project structure or workflow
+- Efficient processing for large monorepos
+- Built with TypeScript and modern Node.js
+- Extensive guides and examples
 
 ## Real-World Scenarios
 
