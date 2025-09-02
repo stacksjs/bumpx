@@ -27095,3 +27095,27092 @@
 ### Contributors
 
 - Adelino Ngomacha <adelinob335@gmail.com>
+
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.66...HEAD)
+
+### 🚀 Features
+
+- test visual consistency 2 ([db2982b](https://github.com/stacksjs/bumpx/commit/db2982b))
+- test cli defaults ([756da8c](https://github.com/stacksjs/bumpx/commit/756da8c))
+- test change for visual consistency ([2a751df](https://github.com/stacksjs/bumpx/commit/2a751df))
+
+### 🐛 Bug Fixes
+
+- clean up test changes ([f12a9e9](https://github.com/stacksjs/bumpx/commit/f12a9e9))
+
+### 🧹 Chores
+
+- release v0.1.67 ([bd1f880](https://github.com/stacksjs/bumpx/commit/bd1f880))
+- wip ([bccd450](https://github.com/stacksjs/bumpx/commit/bccd450))
+- clean up test files ([584f3f1](https://github.com/stacksjs/bumpx/commit/584f3f1))
+- release v0.2.6 ([cc74572](https://github.com/stacksjs/bumpx/commit/cc74572))
+- release v0.1.66 ([450d26c](https://github.com/stacksjs/bumpx/commit/450d26c))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.65...HEAD)
+
+### 🧹 Chores
+
+- improve UI ([1876380](https://github.com/stacksjs/bumpx/commit/1876380))
+- wip ([dc88e94](https://github.com/stacksjs/bumpx/commit/dc88e94))
+- fix bump cancellation ([3e41dec](https://github.com/stacksjs/bumpx/commit/3e41dec))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.65...HEAD)
+
+### 🧹 Chores
+
+- improve UI ([0eb16e1](https://github.com/stacksjs/bumpx/commit/0eb16e1))
+- wip ([dc88e94](https://github.com/stacksjs/bumpx/commit/dc88e94))
+- fix bump cancellation ([3e41dec](https://github.com/stacksjs/bumpx/commit/3e41dec))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.65...HEAD)
+
+### 🧹 Chores
+
+- improve UI ([1876380](https://github.com/stacksjs/bumpx/commit/1876380))
+- wip ([dc88e94](https://github.com/stacksjs/bumpx/commit/dc88e94))
+- fix bump cancellation ([3e41dec](https://github.com/stacksjs/bumpx/commit/3e41dec))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.65...HEAD)
+
+### 🚀 Features
+
+- add test file for changelog generation ([8e84e9e](https://github.com/stacksjs/bumpx/commit/8e84e9e))
+
+### 🧹 Chores
+
+- release v0.1.66 ([565020f](https://github.com/stacksjs/bumpx/commit/565020f))
+- wip ([07b1fd2](https://github.com/stacksjs/bumpx/commit/07b1fd2))
+- remove test file ([8e5030e](https://github.com/stacksjs/bumpx/commit/8e5030e))
+- improve UI ([a1308ae](https://github.com/stacksjs/bumpx/commit/a1308ae))
+- wip ([dc88e94](https://github.com/stacksjs/bumpx/commit/dc88e94))
+- fix bump cancellation ([3e41dec](https://github.com/stacksjs/bumpx/commit/3e41dec))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.65...HEAD)
+
+### 🧹 Chores
+
+- improve UI ([1876380](https://github.com/stacksjs/bumpx/commit/1876380))
+- wip ([dc88e94](https://github.com/stacksjs/bumpx/commit/dc88e94))
+- fix bump cancellation ([3e41dec](https://github.com/stacksjs/bumpx/commit/3e41dec))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.65...HEAD)
+
+### 🧹 Chores
+
+- improve UI ([0eb16e1](https://github.com/stacksjs/bumpx/commit/0eb16e1))
+- wip ([dc88e94](https://github.com/stacksjs/bumpx/commit/dc88e94))
+- fix bump cancellation ([3e41dec](https://github.com/stacksjs/bumpx/commit/3e41dec))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.65...HEAD)
+
+### 🧹 Chores
+
+- improve UI ([1876380](https://github.com/stacksjs/bumpx/commit/1876380))
+- wip ([dc88e94](https://github.com/stacksjs/bumpx/commit/dc88e94))
+- fix bump cancellation ([3e41dec](https://github.com/stacksjs/bumpx/commit/3e41dec))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.66...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.66 ([8158e4a](https://github.com/stacksjs/bumpx/commit/8158e4a))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.65...HEAD)
+
+### 🧹 Chores
+
+- improve UI ([1876380](https://github.com/stacksjs/bumpx/commit/1876380))
+- wip ([dc88e94](https://github.com/stacksjs/bumpx/commit/dc88e94))
+- fix bump cancellation ([3e41dec](https://github.com/stacksjs/bumpx/commit/3e41dec))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.65...HEAD)
+
+### 🧹 Chores
+
+- improve UI ([0eb16e1](https://github.com/stacksjs/bumpx/commit/0eb16e1))
+- wip ([dc88e94](https://github.com/stacksjs/bumpx/commit/dc88e94))
+- fix bump cancellation ([3e41dec](https://github.com/stacksjs/bumpx/commit/3e41dec))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.65...HEAD)
+
+### 🧹 Chores
+
+- improve UI ([1876380](https://github.com/stacksjs/bumpx/commit/1876380))
+- wip ([dc88e94](https://github.com/stacksjs/bumpx/commit/dc88e94))
+- fix bump cancellation ([3e41dec](https://github.com/stacksjs/bumpx/commit/3e41dec))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.65...HEAD)
+
+### 🚀 Features
+
+- add test file for changelog generation ([8e84e9e](https://github.com/stacksjs/bumpx/commit/8e84e9e))
+
+### 🧹 Chores
+
+- release v0.1.66 ([565020f](https://github.com/stacksjs/bumpx/commit/565020f))
+- wip ([07b1fd2](https://github.com/stacksjs/bumpx/commit/07b1fd2))
+- remove test file ([8e5030e](https://github.com/stacksjs/bumpx/commit/8e5030e))
+- improve UI ([a1308ae](https://github.com/stacksjs/bumpx/commit/a1308ae))
+- wip ([dc88e94](https://github.com/stacksjs/bumpx/commit/dc88e94))
+- fix bump cancellation ([3e41dec](https://github.com/stacksjs/bumpx/commit/3e41dec))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.65...HEAD)
+
+### 🧹 Chores
+
+- improve UI ([1876380](https://github.com/stacksjs/bumpx/commit/1876380))
+- wip ([dc88e94](https://github.com/stacksjs/bumpx/commit/dc88e94))
+- fix bump cancellation ([3e41dec](https://github.com/stacksjs/bumpx/commit/3e41dec))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.65...HEAD)
+
+### 🧹 Chores
+
+- improve UI ([0eb16e1](https://github.com/stacksjs/bumpx/commit/0eb16e1))
+- wip ([dc88e94](https://github.com/stacksjs/bumpx/commit/dc88e94))
+- fix bump cancellation ([3e41dec](https://github.com/stacksjs/bumpx/commit/3e41dec))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.65...HEAD)
+
+### 🧹 Chores
+
+- improve UI ([1876380](https://github.com/stacksjs/bumpx/commit/1876380))
+- wip ([dc88e94](https://github.com/stacksjs/bumpx/commit/dc88e94))
+- fix bump cancellation ([3e41dec](https://github.com/stacksjs/bumpx/commit/3e41dec))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v1.0.1...HEAD)
+
+### 🚀 Features
+
+- test change for visual consistency ([2a751df](https://github.com/stacksjs/bumpx/commit/2a751df))
+- add test file for changelog generation ([8e84e9e](https://github.com/stacksjs/bumpx/commit/8e84e9e))
+
+### 🐛 Bug Fixes
+
+- clean up test changes ([e00e298](https://github.com/stacksjs/bumpx/commit/e00e298))
+- update git-hooks configuration to fix staged linting issues ([78207c7](https://github.com/stacksjs/bumpx/commit/78207c7))
+
+### 🧹 Chores
+
+- release v0.1.66 ([450d26c](https://github.com/stacksjs/bumpx/commit/450d26c))
+- wip ([07b1fd2](https://github.com/stacksjs/bumpx/commit/07b1fd2))
+- remove test file ([8e5030e](https://github.com/stacksjs/bumpx/commit/8e5030e))
+- improve UI ([a1308ae](https://github.com/stacksjs/bumpx/commit/a1308ae))
+- wip ([dc88e94](https://github.com/stacksjs/bumpx/commit/dc88e94))
+- fix bump cancellation ([3e41dec](https://github.com/stacksjs/bumpx/commit/3e41dec))
+- release v0.1.65 ([5259784](https://github.com/stacksjs/bumpx/commit/5259784))
+- wip ([b7ad5d3](https://github.com/stacksjs/bumpx/commit/b7ad5d3))
+- release v0.1.62 ([284036c](https://github.com/stacksjs/bumpx/commit/284036c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+- improve recursive test ([fd725e5](https://github.com/stacksjs/bumpx/commit/fd725e5))
+- several minor improvements ([735afd5](https://github.com/stacksjs/bumpx/commit/735afd5))
+- wip ([649969a](https://github.com/stacksjs/bumpx/commit/649969a))
+- wip ([4ccba21](https://github.com/stacksjs/bumpx/commit/4ccba21))
+- wip ([070c891](https://github.com/stacksjs/bumpx/commit/070c891))
+- wip ([1c0da16](https://github.com/stacksjs/bumpx/commit/1c0da16))
+- wip ([034c6fa](https://github.com/stacksjs/bumpx/commit/034c6fa))
+- wip ([14d2b77](https://github.com/stacksjs/bumpx/commit/14d2b77))
+- wip ([3806f90](https://github.com/stacksjs/bumpx/commit/3806f90))
+- wip ([2c91cd5](https://github.com/stacksjs/bumpx/commit/2c91cd5))
+- fix tests ([6259346](https://github.com/stacksjs/bumpx/commit/6259346))
+- release v1.0.1 ([082c923](https://github.com/stacksjs/bumpx/commit/082c923))
+- release v1.0.1 ([bf30f6e](https://github.com/stacksjs/bumpx/commit/bf30f6e))
+- release v1.0.1 ([02070bd](https://github.com/stacksjs/bumpx/commit/02070bd))
+- wip ([78434ca](https://github.com/stacksjs/bumpx/commit/78434ca))
+- wip ([4d939cc](https://github.com/stacksjs/bumpx/commit/4d939cc))
+- release v0.1.33 ([34ddc90](https://github.com/stacksjs/bumpx/commit/34ddc90))
+- release v0.1.32 ([b558b87](https://github.com/stacksjs/bumpx/commit/b558b87))
+- release v0.1.31 ([2ef2804](https://github.com/stacksjs/bumpx/commit/2ef2804))
+- release v0.1.30 ([e9707eb](https://github.com/stacksjs/bumpx/commit/e9707eb))
+- release v0.1.29 ([80de8be](https://github.com/stacksjs/bumpx/commit/80de8be))
+- release v0.1.28 ([fb80b20](https://github.com/stacksjs/bumpx/commit/fb80b20))
+- wip ([3cc6060](https://github.com/stacksjs/bumpx/commit/3cc6060))
+- release v0.1.27 ([e27a806](https://github.com/stacksjs/bumpx/commit/e27a806))
+- update tests ([c0b5df6](https://github.com/stacksjs/bumpx/commit/c0b5df6))
+- release v0.1.26 ([b63227e](https://github.com/stacksjs/bumpx/commit/b63227e))
+- release v0.1.25 ([f951b27](https://github.com/stacksjs/bumpx/commit/f951b27))
+- release v0.1.24 ([90c956e](https://github.com/stacksjs/bumpx/commit/90c956e))
+- release v0.1.23 ([27a89f0](https://github.com/stacksjs/bumpx/commit/27a89f0))
+- wip ([2ba9bcb](https://github.com/stacksjs/bumpx/commit/2ba9bcb))
+- wip ([70fcb5c](https://github.com/stacksjs/bumpx/commit/70fcb5c))
+- release v0.1.22 ([0ca007c](https://github.com/stacksjs/bumpx/commit/0ca007c))
+- release v0.1.21 ([c1c582b](https://github.com/stacksjs/bumpx/commit/c1c582b))
+- set version manually ([ad766c7](https://github.com/stacksjs/bumpx/commit/ad766c7))
+- release v0.1.20 ([fed6546](https://github.com/stacksjs/bumpx/commit/fed6546))
+- add changelog generation ([6cd150d](https://github.com/stacksjs/bumpx/commit/6cd150d))
+- wip ([36f9b53](https://github.com/stacksjs/bumpx/commit/36f9b53))
+- wip ([9b0ed5a](https://github.com/stacksjs/bumpx/commit/9b0ed5a))
+- wip ([37271c7](https://github.com/stacksjs/bumpx/commit/37271c7))
+- update tests ([35b3097](https://github.com/stacksjs/bumpx/commit/35b3097))
+- release v0.1.19 ([f5a4bfa](https://github.com/stacksjs/bumpx/commit/f5a4bfa))
+- wip ([def2a52](https://github.com/stacksjs/bumpx/commit/def2a52))
+- remove stale tests ([d1c89c7](https://github.com/stacksjs/bumpx/commit/d1c89c7))
+- release v0.1.18 ([a6cfc6f](https://github.com/stacksjs/bumpx/commit/a6cfc6f))
+- minor cli adjustment ([b7ca105](https://github.com/stacksjs/bumpx/commit/b7ca105))
+- several minor updates ([7f7bad8](https://github.com/stacksjs/bumpx/commit/7f7bad8))
+- update tools ([e6f37ed](https://github.com/stacksjs/bumpx/commit/e6f37ed))
+- release 0.1.17 ([edf7363](https://github.com/stacksjs/bumpx/commit/edf7363))
+- wip ([6eafe1d](https://github.com/stacksjs/bumpx/commit/6eafe1d))
+- release 0.1.16 ([06b17f2](https://github.com/stacksjs/bumpx/commit/06b17f2))
+- wip ([b6b2246](https://github.com/stacksjs/bumpx/commit/b6b2246))
+- release 0.1.15 ([a024e53](https://github.com/stacksjs/bumpx/commit/a024e53))
+- wip ([b697202](https://github.com/stacksjs/bumpx/commit/b697202))
+- wip ([ea222fa](https://github.com/stacksjs/bumpx/commit/ea222fa))
+- wip ([cfdb342](https://github.com/stacksjs/bumpx/commit/cfdb342))
+- wip ([ab5fc85](https://github.com/stacksjs/bumpx/commit/ab5fc85))
+- release 1.0.1 ([eba6c46](https://github.com/stacksjs/bumpx/commit/eba6c46))
+- wip ([5575b8c](https://github.com/stacksjs/bumpx/commit/5575b8c))
+- release 1.0.1 ([892b7f9](https://github.com/stacksjs/bumpx/commit/892b7f9))
+- update tools ([5a39399](https://github.com/stacksjs/bumpx/commit/5a39399))
+- release v0.1.13 ([cad1000](https://github.com/stacksjs/bumpx/commit/cad1000))
+- wip ([3c2194f](https://github.com/stacksjs/bumpx/commit/3c2194f))
+- wip ([faa282e](https://github.com/stacksjs/bumpx/commit/faa282e))
+- release v0.1.10 ([0b26014](https://github.com/stacksjs/bumpx/commit/0b26014))
+- release v0.1.9 ([eb66886](https://github.com/stacksjs/bumpx/commit/eb66886))
+- release v0.1.8 ([a5f1f88](https://github.com/stacksjs/bumpx/commit/a5f1f88))
+- update docs ([bd55677](https://github.com/stacksjs/bumpx/commit/bd55677))
+- add recursive version bumpin support ([94b2ae9](https://github.com/stacksjs/bumpx/commit/94b2ae9))
+- wip ([51b62ff](https://github.com/stacksjs/bumpx/commit/51b62ff))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.65...HEAD)
+
+### 🧹 Chores
+
+- improve UI ([1876380](https://github.com/stacksjs/bumpx/commit/1876380))
+- wip ([dc88e94](https://github.com/stacksjs/bumpx/commit/dc88e94))
+- fix bump cancellation ([3e41dec](https://github.com/stacksjs/bumpx/commit/3e41dec))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.65...HEAD)
+
+### 🧹 Chores
+
+- improve UI ([0eb16e1](https://github.com/stacksjs/bumpx/commit/0eb16e1))
+- wip ([dc88e94](https://github.com/stacksjs/bumpx/commit/dc88e94))
+- fix bump cancellation ([3e41dec](https://github.com/stacksjs/bumpx/commit/3e41dec))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.65...HEAD)
+
+### 🧹 Chores
+
+- improve UI ([1876380](https://github.com/stacksjs/bumpx/commit/1876380))
+- wip ([dc88e94](https://github.com/stacksjs/bumpx/commit/dc88e94))
+- fix bump cancellation ([3e41dec](https://github.com/stacksjs/bumpx/commit/3e41dec))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.65...HEAD)
+
+### 🚀 Features
+
+- add test file for changelog generation ([8e84e9e](https://github.com/stacksjs/bumpx/commit/8e84e9e))
+
+### 🧹 Chores
+
+- release v0.1.66 ([565020f](https://github.com/stacksjs/bumpx/commit/565020f))
+- wip ([07b1fd2](https://github.com/stacksjs/bumpx/commit/07b1fd2))
+- remove test file ([8e5030e](https://github.com/stacksjs/bumpx/commit/8e5030e))
+- improve UI ([a1308ae](https://github.com/stacksjs/bumpx/commit/a1308ae))
+- wip ([dc88e94](https://github.com/stacksjs/bumpx/commit/dc88e94))
+- fix bump cancellation ([3e41dec](https://github.com/stacksjs/bumpx/commit/3e41dec))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.65...HEAD)
+
+### 🧹 Chores
+
+- improve UI ([1876380](https://github.com/stacksjs/bumpx/commit/1876380))
+- wip ([dc88e94](https://github.com/stacksjs/bumpx/commit/dc88e94))
+- fix bump cancellation ([3e41dec](https://github.com/stacksjs/bumpx/commit/3e41dec))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.65...HEAD)
+
+### 🧹 Chores
+
+- improve UI ([0eb16e1](https://github.com/stacksjs/bumpx/commit/0eb16e1))
+- wip ([dc88e94](https://github.com/stacksjs/bumpx/commit/dc88e94))
+- fix bump cancellation ([3e41dec](https://github.com/stacksjs/bumpx/commit/3e41dec))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.65...HEAD)
+
+### 🧹 Chores
+
+- improve UI ([1876380](https://github.com/stacksjs/bumpx/commit/1876380))
+- wip ([dc88e94](https://github.com/stacksjs/bumpx/commit/dc88e94))
+- fix bump cancellation ([3e41dec](https://github.com/stacksjs/bumpx/commit/3e41dec))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.66...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.66 ([8158e4a](https://github.com/stacksjs/bumpx/commit/8158e4a))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.65...HEAD)
+
+### 🧹 Chores
+
+- improve UI ([1876380](https://github.com/stacksjs/bumpx/commit/1876380))
+- wip ([dc88e94](https://github.com/stacksjs/bumpx/commit/dc88e94))
+- fix bump cancellation ([3e41dec](https://github.com/stacksjs/bumpx/commit/3e41dec))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.65...HEAD)
+
+### 🧹 Chores
+
+- improve UI ([0eb16e1](https://github.com/stacksjs/bumpx/commit/0eb16e1))
+- wip ([dc88e94](https://github.com/stacksjs/bumpx/commit/dc88e94))
+- fix bump cancellation ([3e41dec](https://github.com/stacksjs/bumpx/commit/3e41dec))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.65...HEAD)
+
+### 🧹 Chores
+
+- improve UI ([1876380](https://github.com/stacksjs/bumpx/commit/1876380))
+- wip ([dc88e94](https://github.com/stacksjs/bumpx/commit/dc88e94))
+- fix bump cancellation ([3e41dec](https://github.com/stacksjs/bumpx/commit/3e41dec))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.65...HEAD)
+
+### 🚀 Features
+
+- add test file for changelog generation ([8e84e9e](https://github.com/stacksjs/bumpx/commit/8e84e9e))
+
+### 🧹 Chores
+
+- release v0.1.66 ([565020f](https://github.com/stacksjs/bumpx/commit/565020f))
+- wip ([07b1fd2](https://github.com/stacksjs/bumpx/commit/07b1fd2))
+- remove test file ([8e5030e](https://github.com/stacksjs/bumpx/commit/8e5030e))
+- improve UI ([a1308ae](https://github.com/stacksjs/bumpx/commit/a1308ae))
+- wip ([dc88e94](https://github.com/stacksjs/bumpx/commit/dc88e94))
+- fix bump cancellation ([3e41dec](https://github.com/stacksjs/bumpx/commit/3e41dec))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.65...HEAD)
+
+### 🧹 Chores
+
+- improve UI ([1876380](https://github.com/stacksjs/bumpx/commit/1876380))
+- wip ([dc88e94](https://github.com/stacksjs/bumpx/commit/dc88e94))
+- fix bump cancellation ([3e41dec](https://github.com/stacksjs/bumpx/commit/3e41dec))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.65...HEAD)
+
+### 🧹 Chores
+
+- improve UI ([0eb16e1](https://github.com/stacksjs/bumpx/commit/0eb16e1))
+- wip ([dc88e94](https://github.com/stacksjs/bumpx/commit/dc88e94))
+- fix bump cancellation ([3e41dec](https://github.com/stacksjs/bumpx/commit/3e41dec))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.65...HEAD)
+
+### 🧹 Chores
+
+- improve UI ([1876380](https://github.com/stacksjs/bumpx/commit/1876380))
+- wip ([dc88e94](https://github.com/stacksjs/bumpx/commit/dc88e94))
+- fix bump cancellation ([3e41dec](https://github.com/stacksjs/bumpx/commit/3e41dec))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v1.0.1...HEAD)
+
+### 🚀 Features
+
+- test change for visual consistency ([2a751df](https://github.com/stacksjs/bumpx/commit/2a751df))
+- add test file for changelog generation ([8e84e9e](https://github.com/stacksjs/bumpx/commit/8e84e9e))
+
+### 🐛 Bug Fixes
+
+- clean up test changes ([f12a9e9](https://github.com/stacksjs/bumpx/commit/f12a9e9))
+- update git-hooks configuration to fix staged linting issues ([78207c7](https://github.com/stacksjs/bumpx/commit/78207c7))
+
+### 🧹 Chores
+
+- release v0.1.66 ([450d26c](https://github.com/stacksjs/bumpx/commit/450d26c))
+- wip ([07b1fd2](https://github.com/stacksjs/bumpx/commit/07b1fd2))
+- remove test file ([8e5030e](https://github.com/stacksjs/bumpx/commit/8e5030e))
+- improve UI ([a1308ae](https://github.com/stacksjs/bumpx/commit/a1308ae))
+- wip ([dc88e94](https://github.com/stacksjs/bumpx/commit/dc88e94))
+- fix bump cancellation ([3e41dec](https://github.com/stacksjs/bumpx/commit/3e41dec))
+- release v0.1.65 ([5259784](https://github.com/stacksjs/bumpx/commit/5259784))
+- wip ([b7ad5d3](https://github.com/stacksjs/bumpx/commit/b7ad5d3))
+- release v0.1.62 ([284036c](https://github.com/stacksjs/bumpx/commit/284036c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+- improve recursive test ([fd725e5](https://github.com/stacksjs/bumpx/commit/fd725e5))
+- several minor improvements ([735afd5](https://github.com/stacksjs/bumpx/commit/735afd5))
+- wip ([649969a](https://github.com/stacksjs/bumpx/commit/649969a))
+- wip ([4ccba21](https://github.com/stacksjs/bumpx/commit/4ccba21))
+- wip ([070c891](https://github.com/stacksjs/bumpx/commit/070c891))
+- wip ([1c0da16](https://github.com/stacksjs/bumpx/commit/1c0da16))
+- wip ([034c6fa](https://github.com/stacksjs/bumpx/commit/034c6fa))
+- wip ([14d2b77](https://github.com/stacksjs/bumpx/commit/14d2b77))
+- wip ([3806f90](https://github.com/stacksjs/bumpx/commit/3806f90))
+- wip ([2c91cd5](https://github.com/stacksjs/bumpx/commit/2c91cd5))
+- fix tests ([6259346](https://github.com/stacksjs/bumpx/commit/6259346))
+- release v1.0.1 ([082c923](https://github.com/stacksjs/bumpx/commit/082c923))
+- release v1.0.1 ([bf30f6e](https://github.com/stacksjs/bumpx/commit/bf30f6e))
+- release v1.0.1 ([02070bd](https://github.com/stacksjs/bumpx/commit/02070bd))
+- wip ([78434ca](https://github.com/stacksjs/bumpx/commit/78434ca))
+- wip ([4d939cc](https://github.com/stacksjs/bumpx/commit/4d939cc))
+- release v0.1.33 ([34ddc90](https://github.com/stacksjs/bumpx/commit/34ddc90))
+- release v0.1.32 ([b558b87](https://github.com/stacksjs/bumpx/commit/b558b87))
+- release v0.1.31 ([2ef2804](https://github.com/stacksjs/bumpx/commit/2ef2804))
+- release v0.1.30 ([e9707eb](https://github.com/stacksjs/bumpx/commit/e9707eb))
+- release v0.1.29 ([80de8be](https://github.com/stacksjs/bumpx/commit/80de8be))
+- release v0.1.28 ([fb80b20](https://github.com/stacksjs/bumpx/commit/fb80b20))
+- wip ([3cc6060](https://github.com/stacksjs/bumpx/commit/3cc6060))
+- release v0.1.27 ([e27a806](https://github.com/stacksjs/bumpx/commit/e27a806))
+- update tests ([c0b5df6](https://github.com/stacksjs/bumpx/commit/c0b5df6))
+- release v0.1.26 ([b63227e](https://github.com/stacksjs/bumpx/commit/b63227e))
+- release v0.1.25 ([f951b27](https://github.com/stacksjs/bumpx/commit/f951b27))
+- release v0.1.24 ([90c956e](https://github.com/stacksjs/bumpx/commit/90c956e))
+- release v0.1.23 ([27a89f0](https://github.com/stacksjs/bumpx/commit/27a89f0))
+- wip ([2ba9bcb](https://github.com/stacksjs/bumpx/commit/2ba9bcb))
+- wip ([70fcb5c](https://github.com/stacksjs/bumpx/commit/70fcb5c))
+- release v0.1.22 ([0ca007c](https://github.com/stacksjs/bumpx/commit/0ca007c))
+- release v0.1.21 ([c1c582b](https://github.com/stacksjs/bumpx/commit/c1c582b))
+- set version manually ([ad766c7](https://github.com/stacksjs/bumpx/commit/ad766c7))
+- release v0.1.20 ([fed6546](https://github.com/stacksjs/bumpx/commit/fed6546))
+- add changelog generation ([6cd150d](https://github.com/stacksjs/bumpx/commit/6cd150d))
+- wip ([36f9b53](https://github.com/stacksjs/bumpx/commit/36f9b53))
+- wip ([9b0ed5a](https://github.com/stacksjs/bumpx/commit/9b0ed5a))
+- wip ([37271c7](https://github.com/stacksjs/bumpx/commit/37271c7))
+- update tests ([35b3097](https://github.com/stacksjs/bumpx/commit/35b3097))
+- release v0.1.19 ([f5a4bfa](https://github.com/stacksjs/bumpx/commit/f5a4bfa))
+- wip ([def2a52](https://github.com/stacksjs/bumpx/commit/def2a52))
+- remove stale tests ([d1c89c7](https://github.com/stacksjs/bumpx/commit/d1c89c7))
+- release v0.1.18 ([a6cfc6f](https://github.com/stacksjs/bumpx/commit/a6cfc6f))
+- minor cli adjustment ([b7ca105](https://github.com/stacksjs/bumpx/commit/b7ca105))
+- several minor updates ([7f7bad8](https://github.com/stacksjs/bumpx/commit/7f7bad8))
+- update tools ([e6f37ed](https://github.com/stacksjs/bumpx/commit/e6f37ed))
+- release 0.1.17 ([edf7363](https://github.com/stacksjs/bumpx/commit/edf7363))
+- wip ([6eafe1d](https://github.com/stacksjs/bumpx/commit/6eafe1d))
+- release 0.1.16 ([06b17f2](https://github.com/stacksjs/bumpx/commit/06b17f2))
+- wip ([b6b2246](https://github.com/stacksjs/bumpx/commit/b6b2246))
+- release 0.1.15 ([a024e53](https://github.com/stacksjs/bumpx/commit/a024e53))
+- wip ([b697202](https://github.com/stacksjs/bumpx/commit/b697202))
+- wip ([ea222fa](https://github.com/stacksjs/bumpx/commit/ea222fa))
+- wip ([cfdb342](https://github.com/stacksjs/bumpx/commit/cfdb342))
+- wip ([ab5fc85](https://github.com/stacksjs/bumpx/commit/ab5fc85))
+- release 1.0.1 ([eba6c46](https://github.com/stacksjs/bumpx/commit/eba6c46))
+- wip ([5575b8c](https://github.com/stacksjs/bumpx/commit/5575b8c))
+- release 1.0.1 ([892b7f9](https://github.com/stacksjs/bumpx/commit/892b7f9))
+- update tools ([5a39399](https://github.com/stacksjs/bumpx/commit/5a39399))
+- release v0.1.13 ([cad1000](https://github.com/stacksjs/bumpx/commit/cad1000))
+- wip ([3c2194f](https://github.com/stacksjs/bumpx/commit/3c2194f))
+- wip ([faa282e](https://github.com/stacksjs/bumpx/commit/faa282e))
+- release v0.1.10 ([0b26014](https://github.com/stacksjs/bumpx/commit/0b26014))
+- release v0.1.9 ([eb66886](https://github.com/stacksjs/bumpx/commit/eb66886))
+- release v0.1.8 ([a5f1f88](https://github.com/stacksjs/bumpx/commit/a5f1f88))
+- update docs ([bd55677](https://github.com/stacksjs/bumpx/commit/bd55677))
+- add recursive version bumpin support ([94b2ae9](https://github.com/stacksjs/bumpx/commit/94b2ae9))
+- wip ([51b62ff](https://github.com/stacksjs/bumpx/commit/51b62ff))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.65...HEAD)
+
+### 🧹 Chores
+
+- improve UI ([1876380](https://github.com/stacksjs/bumpx/commit/1876380))
+- wip ([dc88e94](https://github.com/stacksjs/bumpx/commit/dc88e94))
+- fix bump cancellation ([3e41dec](https://github.com/stacksjs/bumpx/commit/3e41dec))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.65...HEAD)
+
+### 🧹 Chores
+
+- improve UI ([0eb16e1](https://github.com/stacksjs/bumpx/commit/0eb16e1))
+- wip ([dc88e94](https://github.com/stacksjs/bumpx/commit/dc88e94))
+- fix bump cancellation ([3e41dec](https://github.com/stacksjs/bumpx/commit/3e41dec))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.65...HEAD)
+
+### 🧹 Chores
+
+- improve UI ([1876380](https://github.com/stacksjs/bumpx/commit/1876380))
+- wip ([dc88e94](https://github.com/stacksjs/bumpx/commit/dc88e94))
+- fix bump cancellation ([3e41dec](https://github.com/stacksjs/bumpx/commit/3e41dec))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.65...HEAD)
+
+### 🚀 Features
+
+- add test file for changelog generation ([8e84e9e](https://github.com/stacksjs/bumpx/commit/8e84e9e))
+
+### 🧹 Chores
+
+- release v0.1.66 ([565020f](https://github.com/stacksjs/bumpx/commit/565020f))
+- wip ([07b1fd2](https://github.com/stacksjs/bumpx/commit/07b1fd2))
+- remove test file ([8e5030e](https://github.com/stacksjs/bumpx/commit/8e5030e))
+- improve UI ([a1308ae](https://github.com/stacksjs/bumpx/commit/a1308ae))
+- wip ([dc88e94](https://github.com/stacksjs/bumpx/commit/dc88e94))
+- fix bump cancellation ([3e41dec](https://github.com/stacksjs/bumpx/commit/3e41dec))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.65...HEAD)
+
+### 🧹 Chores
+
+- improve UI ([1876380](https://github.com/stacksjs/bumpx/commit/1876380))
+- wip ([dc88e94](https://github.com/stacksjs/bumpx/commit/dc88e94))
+- fix bump cancellation ([3e41dec](https://github.com/stacksjs/bumpx/commit/3e41dec))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.65...HEAD)
+
+### 🧹 Chores
+
+- improve UI ([0eb16e1](https://github.com/stacksjs/bumpx/commit/0eb16e1))
+- wip ([dc88e94](https://github.com/stacksjs/bumpx/commit/dc88e94))
+- fix bump cancellation ([3e41dec](https://github.com/stacksjs/bumpx/commit/3e41dec))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.65...HEAD)
+
+### 🧹 Chores
+
+- improve UI ([1876380](https://github.com/stacksjs/bumpx/commit/1876380))
+- wip ([dc88e94](https://github.com/stacksjs/bumpx/commit/dc88e94))
+- fix bump cancellation ([3e41dec](https://github.com/stacksjs/bumpx/commit/3e41dec))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.66...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.66 ([8158e4a](https://github.com/stacksjs/bumpx/commit/8158e4a))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.65...HEAD)
+
+### 🧹 Chores
+
+- improve UI ([1876380](https://github.com/stacksjs/bumpx/commit/1876380))
+- wip ([dc88e94](https://github.com/stacksjs/bumpx/commit/dc88e94))
+- fix bump cancellation ([3e41dec](https://github.com/stacksjs/bumpx/commit/3e41dec))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.65...HEAD)
+
+### 🧹 Chores
+
+- improve UI ([0eb16e1](https://github.com/stacksjs/bumpx/commit/0eb16e1))
+- wip ([dc88e94](https://github.com/stacksjs/bumpx/commit/dc88e94))
+- fix bump cancellation ([3e41dec](https://github.com/stacksjs/bumpx/commit/3e41dec))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.65...HEAD)
+
+### 🧹 Chores
+
+- improve UI ([1876380](https://github.com/stacksjs/bumpx/commit/1876380))
+- wip ([dc88e94](https://github.com/stacksjs/bumpx/commit/dc88e94))
+- fix bump cancellation ([3e41dec](https://github.com/stacksjs/bumpx/commit/3e41dec))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.65...HEAD)
+
+### 🚀 Features
+
+- add test file for changelog generation ([8e84e9e](https://github.com/stacksjs/bumpx/commit/8e84e9e))
+
+### 🧹 Chores
+
+- release v0.1.66 ([565020f](https://github.com/stacksjs/bumpx/commit/565020f))
+- wip ([07b1fd2](https://github.com/stacksjs/bumpx/commit/07b1fd2))
+- remove test file ([8e5030e](https://github.com/stacksjs/bumpx/commit/8e5030e))
+- improve UI ([a1308ae](https://github.com/stacksjs/bumpx/commit/a1308ae))
+- wip ([dc88e94](https://github.com/stacksjs/bumpx/commit/dc88e94))
+- fix bump cancellation ([3e41dec](https://github.com/stacksjs/bumpx/commit/3e41dec))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.65...HEAD)
+
+### 🧹 Chores
+
+- improve UI ([1876380](https://github.com/stacksjs/bumpx/commit/1876380))
+- wip ([dc88e94](https://github.com/stacksjs/bumpx/commit/dc88e94))
+- fix bump cancellation ([3e41dec](https://github.com/stacksjs/bumpx/commit/3e41dec))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.65...HEAD)
+
+### 🧹 Chores
+
+- improve UI ([0eb16e1](https://github.com/stacksjs/bumpx/commit/0eb16e1))
+- wip ([dc88e94](https://github.com/stacksjs/bumpx/commit/dc88e94))
+- fix bump cancellation ([3e41dec](https://github.com/stacksjs/bumpx/commit/3e41dec))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.65...HEAD)
+
+### 🧹 Chores
+
+- improve UI ([1876380](https://github.com/stacksjs/bumpx/commit/1876380))
+- wip ([dc88e94](https://github.com/stacksjs/bumpx/commit/dc88e94))
+- fix bump cancellation ([3e41dec](https://github.com/stacksjs/bumpx/commit/3e41dec))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v1.0.1...HEAD)
+
+### 🚀 Features
+
+- test change for visual consistency ([2a751df](https://github.com/stacksjs/bumpx/commit/2a751df))
+- add test file for changelog generation ([8e84e9e](https://github.com/stacksjs/bumpx/commit/8e84e9e))
+
+### 🐛 Bug Fixes
+
+- clean up test changes ([e00e298](https://github.com/stacksjs/bumpx/commit/e00e298))
+- update git-hooks configuration to fix staged linting issues ([78207c7](https://github.com/stacksjs/bumpx/commit/78207c7))
+
+### 🧹 Chores
+
+- release v0.1.66 ([450d26c](https://github.com/stacksjs/bumpx/commit/450d26c))
+- wip ([07b1fd2](https://github.com/stacksjs/bumpx/commit/07b1fd2))
+- remove test file ([8e5030e](https://github.com/stacksjs/bumpx/commit/8e5030e))
+- improve UI ([a1308ae](https://github.com/stacksjs/bumpx/commit/a1308ae))
+- wip ([dc88e94](https://github.com/stacksjs/bumpx/commit/dc88e94))
+- fix bump cancellation ([3e41dec](https://github.com/stacksjs/bumpx/commit/3e41dec))
+- release v0.1.65 ([5259784](https://github.com/stacksjs/bumpx/commit/5259784))
+- wip ([b7ad5d3](https://github.com/stacksjs/bumpx/commit/b7ad5d3))
+- release v0.1.62 ([284036c](https://github.com/stacksjs/bumpx/commit/284036c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+- improve recursive test ([fd725e5](https://github.com/stacksjs/bumpx/commit/fd725e5))
+- several minor improvements ([735afd5](https://github.com/stacksjs/bumpx/commit/735afd5))
+- wip ([649969a](https://github.com/stacksjs/bumpx/commit/649969a))
+- wip ([4ccba21](https://github.com/stacksjs/bumpx/commit/4ccba21))
+- wip ([070c891](https://github.com/stacksjs/bumpx/commit/070c891))
+- wip ([1c0da16](https://github.com/stacksjs/bumpx/commit/1c0da16))
+- wip ([034c6fa](https://github.com/stacksjs/bumpx/commit/034c6fa))
+- wip ([14d2b77](https://github.com/stacksjs/bumpx/commit/14d2b77))
+- wip ([3806f90](https://github.com/stacksjs/bumpx/commit/3806f90))
+- wip ([2c91cd5](https://github.com/stacksjs/bumpx/commit/2c91cd5))
+- fix tests ([6259346](https://github.com/stacksjs/bumpx/commit/6259346))
+- release v1.0.1 ([082c923](https://github.com/stacksjs/bumpx/commit/082c923))
+- release v1.0.1 ([bf30f6e](https://github.com/stacksjs/bumpx/commit/bf30f6e))
+- release v1.0.1 ([02070bd](https://github.com/stacksjs/bumpx/commit/02070bd))
+- wip ([78434ca](https://github.com/stacksjs/bumpx/commit/78434ca))
+- wip ([4d939cc](https://github.com/stacksjs/bumpx/commit/4d939cc))
+- release v0.1.33 ([34ddc90](https://github.com/stacksjs/bumpx/commit/34ddc90))
+- release v0.1.32 ([b558b87](https://github.com/stacksjs/bumpx/commit/b558b87))
+- release v0.1.31 ([2ef2804](https://github.com/stacksjs/bumpx/commit/2ef2804))
+- release v0.1.30 ([e9707eb](https://github.com/stacksjs/bumpx/commit/e9707eb))
+- release v0.1.29 ([80de8be](https://github.com/stacksjs/bumpx/commit/80de8be))
+- release v0.1.28 ([fb80b20](https://github.com/stacksjs/bumpx/commit/fb80b20))
+- wip ([3cc6060](https://github.com/stacksjs/bumpx/commit/3cc6060))
+- release v0.1.27 ([e27a806](https://github.com/stacksjs/bumpx/commit/e27a806))
+- update tests ([c0b5df6](https://github.com/stacksjs/bumpx/commit/c0b5df6))
+- release v0.1.26 ([b63227e](https://github.com/stacksjs/bumpx/commit/b63227e))
+- release v0.1.25 ([f951b27](https://github.com/stacksjs/bumpx/commit/f951b27))
+- release v0.1.24 ([90c956e](https://github.com/stacksjs/bumpx/commit/90c956e))
+- release v0.1.23 ([27a89f0](https://github.com/stacksjs/bumpx/commit/27a89f0))
+- wip ([2ba9bcb](https://github.com/stacksjs/bumpx/commit/2ba9bcb))
+- wip ([70fcb5c](https://github.com/stacksjs/bumpx/commit/70fcb5c))
+- release v0.1.22 ([0ca007c](https://github.com/stacksjs/bumpx/commit/0ca007c))
+- release v0.1.21 ([c1c582b](https://github.com/stacksjs/bumpx/commit/c1c582b))
+- set version manually ([ad766c7](https://github.com/stacksjs/bumpx/commit/ad766c7))
+- release v0.1.20 ([fed6546](https://github.com/stacksjs/bumpx/commit/fed6546))
+- add changelog generation ([6cd150d](https://github.com/stacksjs/bumpx/commit/6cd150d))
+- wip ([36f9b53](https://github.com/stacksjs/bumpx/commit/36f9b53))
+- wip ([9b0ed5a](https://github.com/stacksjs/bumpx/commit/9b0ed5a))
+- wip ([37271c7](https://github.com/stacksjs/bumpx/commit/37271c7))
+- update tests ([35b3097](https://github.com/stacksjs/bumpx/commit/35b3097))
+- release v0.1.19 ([f5a4bfa](https://github.com/stacksjs/bumpx/commit/f5a4bfa))
+- wip ([def2a52](https://github.com/stacksjs/bumpx/commit/def2a52))
+- remove stale tests ([d1c89c7](https://github.com/stacksjs/bumpx/commit/d1c89c7))
+- release v0.1.18 ([a6cfc6f](https://github.com/stacksjs/bumpx/commit/a6cfc6f))
+- minor cli adjustment ([b7ca105](https://github.com/stacksjs/bumpx/commit/b7ca105))
+- several minor updates ([7f7bad8](https://github.com/stacksjs/bumpx/commit/7f7bad8))
+- update tools ([e6f37ed](https://github.com/stacksjs/bumpx/commit/e6f37ed))
+- release 0.1.17 ([edf7363](https://github.com/stacksjs/bumpx/commit/edf7363))
+- wip ([6eafe1d](https://github.com/stacksjs/bumpx/commit/6eafe1d))
+- release 0.1.16 ([06b17f2](https://github.com/stacksjs/bumpx/commit/06b17f2))
+- wip ([b6b2246](https://github.com/stacksjs/bumpx/commit/b6b2246))
+- release 0.1.15 ([a024e53](https://github.com/stacksjs/bumpx/commit/a024e53))
+- wip ([b697202](https://github.com/stacksjs/bumpx/commit/b697202))
+- wip ([ea222fa](https://github.com/stacksjs/bumpx/commit/ea222fa))
+- wip ([cfdb342](https://github.com/stacksjs/bumpx/commit/cfdb342))
+- wip ([ab5fc85](https://github.com/stacksjs/bumpx/commit/ab5fc85))
+- release 1.0.1 ([eba6c46](https://github.com/stacksjs/bumpx/commit/eba6c46))
+- wip ([5575b8c](https://github.com/stacksjs/bumpx/commit/5575b8c))
+- release 1.0.1 ([892b7f9](https://github.com/stacksjs/bumpx/commit/892b7f9))
+- update tools ([5a39399](https://github.com/stacksjs/bumpx/commit/5a39399))
+- release v0.1.13 ([cad1000](https://github.com/stacksjs/bumpx/commit/cad1000))
+- wip ([3c2194f](https://github.com/stacksjs/bumpx/commit/3c2194f))
+- wip ([faa282e](https://github.com/stacksjs/bumpx/commit/faa282e))
+- release v0.1.10 ([0b26014](https://github.com/stacksjs/bumpx/commit/0b26014))
+- release v0.1.9 ([eb66886](https://github.com/stacksjs/bumpx/commit/eb66886))
+- release v0.1.8 ([a5f1f88](https://github.com/stacksjs/bumpx/commit/a5f1f88))
+- update docs ([bd55677](https://github.com/stacksjs/bumpx/commit/bd55677))
+- add recursive version bumpin support ([94b2ae9](https://github.com/stacksjs/bumpx/commit/94b2ae9))
+- wip ([51b62ff](https://github.com/stacksjs/bumpx/commit/51b62ff))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.65...HEAD)
+
+### 🧹 Chores
+
+- improve UI ([1876380](https://github.com/stacksjs/bumpx/commit/1876380))
+- wip ([dc88e94](https://github.com/stacksjs/bumpx/commit/dc88e94))
+- fix bump cancellation ([3e41dec](https://github.com/stacksjs/bumpx/commit/3e41dec))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.65...HEAD)
+
+### 🧹 Chores
+
+- improve UI ([0eb16e1](https://github.com/stacksjs/bumpx/commit/0eb16e1))
+- wip ([dc88e94](https://github.com/stacksjs/bumpx/commit/dc88e94))
+- fix bump cancellation ([3e41dec](https://github.com/stacksjs/bumpx/commit/3e41dec))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.65...HEAD)
+
+### 🧹 Chores
+
+- improve UI ([1876380](https://github.com/stacksjs/bumpx/commit/1876380))
+- wip ([dc88e94](https://github.com/stacksjs/bumpx/commit/dc88e94))
+- fix bump cancellation ([3e41dec](https://github.com/stacksjs/bumpx/commit/3e41dec))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.65...HEAD)
+
+### 🚀 Features
+
+- add test file for changelog generation ([8e84e9e](https://github.com/stacksjs/bumpx/commit/8e84e9e))
+
+### 🧹 Chores
+
+- release v0.1.66 ([565020f](https://github.com/stacksjs/bumpx/commit/565020f))
+- wip ([07b1fd2](https://github.com/stacksjs/bumpx/commit/07b1fd2))
+- remove test file ([8e5030e](https://github.com/stacksjs/bumpx/commit/8e5030e))
+- improve UI ([a1308ae](https://github.com/stacksjs/bumpx/commit/a1308ae))
+- wip ([dc88e94](https://github.com/stacksjs/bumpx/commit/dc88e94))
+- fix bump cancellation ([3e41dec](https://github.com/stacksjs/bumpx/commit/3e41dec))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.65...HEAD)
+
+### 🧹 Chores
+
+- improve UI ([1876380](https://github.com/stacksjs/bumpx/commit/1876380))
+- wip ([dc88e94](https://github.com/stacksjs/bumpx/commit/dc88e94))
+- fix bump cancellation ([3e41dec](https://github.com/stacksjs/bumpx/commit/3e41dec))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.65...HEAD)
+
+### 🧹 Chores
+
+- improve UI ([0eb16e1](https://github.com/stacksjs/bumpx/commit/0eb16e1))
+- wip ([dc88e94](https://github.com/stacksjs/bumpx/commit/dc88e94))
+- fix bump cancellation ([3e41dec](https://github.com/stacksjs/bumpx/commit/3e41dec))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.65...HEAD)
+
+### 🧹 Chores
+
+- improve UI ([1876380](https://github.com/stacksjs/bumpx/commit/1876380))
+- wip ([dc88e94](https://github.com/stacksjs/bumpx/commit/dc88e94))
+- fix bump cancellation ([3e41dec](https://github.com/stacksjs/bumpx/commit/3e41dec))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.66...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.66 ([8158e4a](https://github.com/stacksjs/bumpx/commit/8158e4a))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.65...HEAD)
+
+### 🧹 Chores
+
+- improve UI ([1876380](https://github.com/stacksjs/bumpx/commit/1876380))
+- wip ([dc88e94](https://github.com/stacksjs/bumpx/commit/dc88e94))
+- fix bump cancellation ([3e41dec](https://github.com/stacksjs/bumpx/commit/3e41dec))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.65...HEAD)
+
+### 🧹 Chores
+
+- improve UI ([0eb16e1](https://github.com/stacksjs/bumpx/commit/0eb16e1))
+- wip ([dc88e94](https://github.com/stacksjs/bumpx/commit/dc88e94))
+- fix bump cancellation ([3e41dec](https://github.com/stacksjs/bumpx/commit/3e41dec))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.65...HEAD)
+
+### 🧹 Chores
+
+- improve UI ([1876380](https://github.com/stacksjs/bumpx/commit/1876380))
+- wip ([dc88e94](https://github.com/stacksjs/bumpx/commit/dc88e94))
+- fix bump cancellation ([3e41dec](https://github.com/stacksjs/bumpx/commit/3e41dec))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.65...HEAD)
+
+### 🚀 Features
+
+- add test file for changelog generation ([8e84e9e](https://github.com/stacksjs/bumpx/commit/8e84e9e))
+
+### 🧹 Chores
+
+- release v0.1.66 ([565020f](https://github.com/stacksjs/bumpx/commit/565020f))
+- wip ([07b1fd2](https://github.com/stacksjs/bumpx/commit/07b1fd2))
+- remove test file ([8e5030e](https://github.com/stacksjs/bumpx/commit/8e5030e))
+- improve UI ([a1308ae](https://github.com/stacksjs/bumpx/commit/a1308ae))
+- wip ([dc88e94](https://github.com/stacksjs/bumpx/commit/dc88e94))
+- fix bump cancellation ([3e41dec](https://github.com/stacksjs/bumpx/commit/3e41dec))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.65...HEAD)
+
+### 🧹 Chores
+
+- improve UI ([1876380](https://github.com/stacksjs/bumpx/commit/1876380))
+- wip ([dc88e94](https://github.com/stacksjs/bumpx/commit/dc88e94))
+- fix bump cancellation ([3e41dec](https://github.com/stacksjs/bumpx/commit/3e41dec))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.65...HEAD)
+
+### 🧹 Chores
+
+- improve UI ([0eb16e1](https://github.com/stacksjs/bumpx/commit/0eb16e1))
+- wip ([dc88e94](https://github.com/stacksjs/bumpx/commit/dc88e94))
+- fix bump cancellation ([3e41dec](https://github.com/stacksjs/bumpx/commit/3e41dec))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.65...HEAD)
+
+### 🧹 Chores
+
+- improve UI ([1876380](https://github.com/stacksjs/bumpx/commit/1876380))
+- wip ([dc88e94](https://github.com/stacksjs/bumpx/commit/dc88e94))
+- fix bump cancellation ([3e41dec](https://github.com/stacksjs/bumpx/commit/3e41dec))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.61...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.62 ([874599c](https://github.com/stacksjs/bumpx/commit/874599c))
+- fix creating tag on dry run ([d4f9e5a](https://github.com/stacksjs/bumpx/commit/d4f9e5a))
+- show commits on dry run ([ad4ef23](https://github.com/stacksjs/bumpx/commit/ad4ef23))
+- make print commits default ([552d0db](https://github.com/stacksjs/bumpx/commit/552d0db))
+- update tools ([5192c35](https://github.com/stacksjs/bumpx/commit/5192c35))
+- wip ([09363bc](https://github.com/stacksjs/bumpx/commit/09363bc))
+- many minor adjustments ([9b4f6e7](https://github.com/stacksjs/bumpx/commit/9b4f6e7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.60...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.59...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.58...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.57...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.56...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.55...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.54...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.53...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.52...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.45...HEAD)
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.33...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.32...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.31...HEAD)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+# Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.30...v0.1.31)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.25...v0.1.26)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.24...v0.1.25)
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
