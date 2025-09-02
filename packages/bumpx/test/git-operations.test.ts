@@ -150,7 +150,7 @@ describe('Git Operations (Integration)', () => {
       )
       expect(pullCalls.length).toBe(0)
       expect(mockSpawnSync).toHaveBeenCalledWith(['push', '--follow-tags'], tempDir)
-      expect(consoleSpy).toHaveBeenCalledWith('⚠️  No upstream branch configured or in detached HEAD. Skipping pull...')
+      expect(consoleSpy).toHaveBeenCalledWith('⚠️ No upstream branch configured or in detached HEAD. Skipping pull...')
 
       canSafelyPullSpy.mockRestore()
       consoleSpy.mockRestore()

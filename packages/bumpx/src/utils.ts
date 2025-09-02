@@ -665,7 +665,7 @@ export function pushToRemote(tags: boolean = true, cwd?: string): void {
     }
   }
   else {
-    console.warn('⚠️  No upstream branch configured or in detached HEAD. Skipping pull...')
+    console.warn('⚠️ No upstream branch configured or in detached HEAD. Skipping pull...')
   }
 
   // Use atomic push to avoid race conditions between commit and tag pushes

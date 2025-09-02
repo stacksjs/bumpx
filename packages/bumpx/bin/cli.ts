@@ -115,7 +115,7 @@ async function promptForRecursiveAll(): Promise<boolean> {
       throw new Error('Unable to import confirmation prompt from @stacksjs/clapp')
     }
 
-    console.log('\n⚠️  You are about to recursively update ALL packages in the workspace.')
+    console.log('\n⚠️ You are about to recursively update ALL packages in the workspace.')
     console.log('This will commit, tag, and push the changes to the remote repository.')
 
     const shouldProceed = await confirm({

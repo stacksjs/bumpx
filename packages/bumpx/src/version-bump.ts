@@ -789,13 +789,13 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
         const tagName = typeof tag === 'string'
           ? tag.replace('{version}', lastNewVersion).replace('%s', lastNewVersion)
           : `v${lastNewVersion}`
-        
+
         const { executeGit } = await import('./utils')
-        
+
         // Create temporary tag silently (no CLI output)
         executeGit(['tag', tagName], effectiveCwd)
         tempTagCreated = true
-        
+
         // Step 2: Generate changelog with temp tag available
         const fromVersion = _lastOldVersion ? `v${_lastOldVersion}` : undefined
         const toVersion = tagName
@@ -809,7 +809,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
         // Step 3: Delete temporary tag
         executeGit(['tag', '-d', tagName], effectiveCwd)
         tempTagCreated = false
-        
+
         // Step 4: Amend the changelog to the existing commit
         executeGit(['add', 'CHANGELOG.md'], effectiveCwd)
         executeGit(['commit', '--amend', '--no-edit'], effectiveCwd)
@@ -1082,7 +1082,6 @@ function showGeneratedChangelog(newContent: string, existingContent: string): vo
 async function generateChangelog(cwd: string, fromVersion?: string, toVersion?: string): Promise<void> {
   const fs = await import('node:fs')
   const path = await import('node:path')
-  const { executeGit } = await import('./utils')
 
   const changelogPath = path.join(cwd, 'CHANGELOG.md')
   let existingContent = ''
