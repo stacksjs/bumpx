@@ -1,4 +1,16 @@
 # Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.72...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.73 ([b6ee49c](https://github.com/stacksjs/bumpx/commit/b6ee49c))
+- wip ([8d37d32](https://github.com/stacksjs/bumpx/commit/8d37d32))
+- release v0.1.72 ([a568d16](https://github.com/stacksjs/bumpx/commit/a568d16))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
 [Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.71...v0.1.72)
 
 ### 🧹 Chores
