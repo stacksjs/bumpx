@@ -1,4 +1,14 @@
 # Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.75...v0.1.76)
+
+### 🧹 Chores
+
+- release v0.1.76 ([23bfbb9](https://github.com/stacksjs/bumpx/commit/23bfbb9))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
 [Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.72...HEAD)
 
 ### 🧹 Chores

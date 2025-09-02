@@ -781,12 +781,24 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
       // Silent commit creation in dry run mode
     }
 
-    // Generate changelog AFTER commit creation (if enabled)
+    // Generate changelog using temporary tag approach (if enabled)
+    let tempTagCreated = false
     if (changelog && lastNewVersion && !dryRun && inGitRepo) {
       try {
-        // Generate changelog with specific version range (using new version instead of HEAD)
+        // Step 1: Create temporary tag for changelog generation
+        const tagName = typeof tag === 'string'
+          ? tag.replace('{version}', lastNewVersion).replace('%s', lastNewVersion)
+          : `v${lastNewVersion}`
+        
+        const { executeGit } = await import('./utils')
+        
+        // Create temporary tag silently (no CLI output)
+        executeGit(['tag', tagName], effectiveCwd)
+        tempTagCreated = true
+        
+        // Step 2: Generate changelog with temp tag available
         const fromVersion = _lastOldVersion ? `v${_lastOldVersion}` : undefined
-        const toVersion = `v${lastNewVersion}` // Use new version instead of HEAD
+        const toVersion = tagName
 
         if (!options.quiet) {
           const versionRange = fromVersion ? `from ${fromVersion} to ${toVersion}` : `up to ${toVersion}`
@@ -794,8 +806,11 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
         }
         await generateChangelog(effectiveCwd, fromVersion, toVersion)
 
-        // Amend the changelog to the existing commit
-        const { executeGit } = await import('./utils')
+        // Step 3: Delete temporary tag
+        executeGit(['tag', '-d', tagName], effectiveCwd)
+        tempTagCreated = false
+        
+        // Step 4: Amend the changelog to the existing commit
         executeGit(['add', 'CHANGELOG.md'], effectiveCwd)
         executeGit(['commit', '--amend', '--no-edit'], effectiveCwd)
 
@@ -810,6 +825,19 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
         }
       }
       catch (error) {
+        // Clean up temporary tag if it was created
+        if (tempTagCreated && lastNewVersion) {
+          try {
+            const tagName = typeof tag === 'string'
+              ? tag.replace('{version}', lastNewVersion).replace('%s', lastNewVersion)
+              : `v${lastNewVersion}`
+            const { executeGit } = await import('./utils')
+            executeGit(['tag', '-d', tagName], effectiveCwd)
+          }
+          catch {
+            // Ignore cleanup errors
+          }
+        }
         console.warn('Warning: Failed to generate changelog:', error)
       }
     }
@@ -820,7 +848,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
       logStep(symbols.memo, `[DRY RUN] Would generate changelog ${versionRange} and amend to commit`, false)
     }
 
-    // Create git tag AFTER changelog generation (if requested)
+    // Create final git tag (if requested)
     if (tag && lastNewVersion && !dryRun) {
       try {
         // Format the tag name - either use the provided format or default to vX.Y.Z
@@ -834,6 +862,13 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
           : `Release ${lastNewVersion}`
 
         // Check if tag exists before attempting to create it
+        const { gitTagExists } = await import('./utils')
+        if (gitTagExists(tagName, effectiveCwd)) {
+          const handledError = new Error(`Git tag '${tagName}' already exists. Use a different version.`)
+          const handledSymbol = Symbol.for('bumpx.errorHandled')
+          ;(handledError as any)[handledSymbol] = true
+          throw handledError
+        }
 
         if (!options.quiet)
           logStep(symbols.tag, 'Creating tag...', false)
