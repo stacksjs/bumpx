@@ -1,4 +1,15 @@
 # Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.71...v0.1.72)
+
+### 🧹 Chores
+
+- release v0.1.72 ([e054a1b](https://github.com/stacksjs/bumpx/commit/e054a1b))
+- fix changelog generation order ([a92c844](https://github.com/stacksjs/bumpx/commit/a92c844))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
 [Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.70...HEAD)
 
 ### 🧹 Chores

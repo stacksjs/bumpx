@@ -1,6 +1,6 @@
 {
   "name": "bumpx-action",
-  "version": "0.1.71",
+  "version": "0.1.72",
   "description": "GitHub Action for bumpx version bumping tool.",
   "author": "Stacks.js <hello@stacks.js.org>",
   "license": "MIT",
