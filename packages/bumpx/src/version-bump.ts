@@ -312,6 +312,11 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
             newVersion = await promptForVersion(rootCurrentVersion, preid, effectiveCwd, dryRun)
             clearInterval(promptTimeout)
             cleanupSigintListener()
+            
+            // Check immediately after prompt returns
+            if (userInterrupted.value) {
+              process.exit(0)
+            }
           }
           catch (error) {
             clearInterval(promptTimeout)
@@ -356,11 +361,21 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
         throw new Error('Could not determine new version')
       }
 
+      // Final check before proceeding with version bump
+      if (userInterrupted.value) {
+        process.exit(0)
+      }
+
       if (dryRun) {
         console.log(`\n[DRY RUN] Would bump root version from ${rootCurrentVersion} to ${newVersion} and update all workspace packages\n`)
       }
       else {
         console.log(`\nBumping root version from ${rootCurrentVersion} to ${newVersion} and updating all workspace packages\n`)
+      }
+
+      // Check again after logging
+      if (userInterrupted.value) {
+        process.exit(0)
       }
 
       // Track versions for git operations (use root version)
@@ -1110,21 +1125,18 @@ async function promptForVersion(currentVersion: string, preid?: string, cwd?: st
     return incrementVersion(currentVersion, 'patch', preid)
   }
 
-  // Default to a patch version increment
-  const patchVersion = incrementVersion(currentVersion, 'patch', preid)
-
   // Save original SIGINT handlers
   const originalSigIntHandlers = process.listeners('SIGINT').slice()
   let cancelled = false
-  let selectedVersion = patchVersion
+  let selectedVersion: string | undefined = undefined
 
   // Enhanced Ctrl+C handling for the prompt
   // This will completely abort the process
   const sigintHandler = () => {
     cancelled = true
     userInterrupted.value = true
-    // Let the global handler in bin/cli.ts handle the message
-    // Force process exit immediately with success code
+    // Force immediate exit with message
+    process.stderr.write('\nVersion bump cancelled by user \x1B[3m(Ctrl+C)\x1B[0m\n')
     process.exit(0)
   }
 
@@ -1199,29 +1211,43 @@ async function promptForVersion(currentVersion: string, preid?: string, cwd?: st
       }
 
       const promptMessage = dryRun ? '[DRY RUN] Choose an option:' : 'Choose an option:'
+      
+      // Override process SIGINT completely during prompt
+      process.removeAllListeners('SIGINT')
+      process.on('SIGINT', () => {
+        process.stderr.write('\nVersion bump cancelled by user \x1B[3m(Ctrl+C)\x1B[0m\n')
+        process.exit(0)
+      })
+      
       choice = await select({
         message: promptMessage,
         options,
         onCancel: () => {
-          cancelled = true
-          userInterrupted.value = true
-          // Use stderr.write to ensure message is displayed before process exit
           process.stderr.write('\nVersion bump cancelled by user \x1B[3m(Ctrl+C)\x1B[0m\n')
-          // Force immediate exit with success code
           process.exit(0)
-          return undefined // This never executes but is here for type safety
         },
       })
-
-      // Double-check for interruption
+      
+      // If we get here and choice is the first option, check if it was due to interruption
       if (userInterrupted.value || cancelled) {
-        // Let global handler show message
+        process.stderr.write('\nVersion bump cancelled by user\n')
+        process.exit(0)
+      }
+
+      // Double-check for interruption after prompt returns
+      if (userInterrupted.value || cancelled) {
+        process.stderr.write('\nVersion bump cancelled by user\n')
         process.exit(0)
       }
 
       // Handle null/undefined (cancellation)
       if (choice === null || choice === undefined) {
-        // User cancelled - exit immediately
+        process.stderr.write('\nVersion bump cancelled by user\n')
+        process.exit(0)
+      }
+      
+      // Additional safety check - if choice is the first option and we detect rapid selection, it might be auto-selection due to cancellation
+      if (typeof choice === 'number' && choice === 0 && (userInterrupted.value || cancelled)) {
         process.stderr.write('\nVersion bump cancelled by user\n')
         process.exit(0)
       }
@@ -1349,6 +1375,11 @@ async function promptForVersion(currentVersion: string, preid?: string, cwd?: st
       throw error
     }
 
+    // Ensure we have a valid selected version before returning
+    if (!selectedVersion) {
+      process.stderr.write('\nNo version selected - cancelling operation\n')
+      process.exit(0)
+    }
     return selectedVersion
   }
   catch (error: any) {
