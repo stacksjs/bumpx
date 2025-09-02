@@ -1,4 +1,18 @@
 # Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.70...HEAD)
+
+### 🧹 Chores
+
+- release v0.1.71 ([cb17685](https://github.com/stacksjs/bumpx/commit/cb17685))
+- wip ([17cdf67](https://github.com/stacksjs/bumpx/commit/17cdf67))
+- update docs ([1c099c7](https://github.com/stacksjs/bumpx/commit/1c099c7))
+- wip ([f1de0b1](https://github.com/stacksjs/bumpx/commit/f1de0b1))
+- adjust wording ([d4678eb](https://github.com/stacksjs/bumpx/commit/d4678eb))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+- Chris <chrisbreuer93@gmail.com>
 
 [Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.70...HEAD)
 
