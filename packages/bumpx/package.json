@@ -64,7 +64,7 @@
     "test": "bun test"
   },
   "dependencies": {
-    "@stacksjs/clapp": "^0.1.16",
+    "@stacksjs/clapp": "^0.2.0",
     "@stacksjs/logsmith": "^0.1.15",
     "bunfig": "^0.14.1"
   },
