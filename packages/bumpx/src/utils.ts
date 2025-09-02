@@ -742,6 +742,15 @@ export const symbols = {
   warning: '⚠',
   info: 'ℹ',
   question: '?',
+  // New animated step symbols
+  search: '🔍',
+  package: '📦',
+  rocket: '🚀',
+  checkmark: '✅',
+  memo: '📝',
+  tag: '🏷️',
+  cloud: '☁️',
+  party: '🎉',
 }
 
 /**
@@ -754,4 +763,20 @@ export const colors = {
   blue: (text: string) => `\x1B[34m${text}\x1B[0m`,
   gray: (text: string) => `\x1B[90m${text}\x1B[0m`,
   bold: (text: string) => `\x1B[1m${text}\x1B[0m`,
+  italic: (text: string) => `\x1B[3m${text}\x1B[0m`,
+}
+
+/**
+ * Animated step logger for better UX
+ */
+export function logStep(emoji: string, message: string, isDryRun = false): void {
+  const prefix = isDryRun ? '[DRY RUN] ' : ''
+  console.log(`${emoji} ${prefix}${message}`)
+}
+
+/**
+ * Sleep function for animation delays
+ */
+export function sleep(ms: number): Promise<void> {
+  return new Promise(resolve => setTimeout(resolve, ms))
 }

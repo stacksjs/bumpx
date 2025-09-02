@@ -1,12 +1,13 @@
 /* eslint-disable no-console */
 import type { FileInfo, VersionBumpOptions } from './types'
 import { readFileSync, writeFileSync } from 'node:fs'
-import { dirname, join, resolve } from 'node:path'
+import { dirname, join, relative, resolve } from 'node:path'
 import process from 'node:process'
 import { userInterrupted } from './interrupt'
 import { ProgressEvent } from './types'
 import {
   checkGitStatus,
+  colors,
   createGitCommit,
   createGitTag,
   executeCommand,
@@ -16,6 +17,7 @@ import {
   incrementVersion,
   isGitRepository,
   isValidVersion,
+  logStep,
   pushToRemote,
   readPackageJson,
   symbols,
@@ -216,6 +218,9 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
 
           if (fileInfo.updated) {
             updatedFiles.push(filePath)
+            // Log animated step for each file update
+            const relativePath = relative(effectiveCwd, filePath)
+            logStep(symbols.checkmark, `Updated ${relativePath}`, dryRun)
             if (progress) {
               progress({
                 event: ProgressEvent.FileUpdated,
@@ -312,7 +317,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
             newVersion = await promptForVersion(rootCurrentVersion, preid, effectiveCwd, dryRun)
             clearInterval(promptTimeout)
             cleanupSigintListener()
-            
+
             // Check immediately after prompt returns
             if (userInterrupted.value) {
               process.exit(0)
@@ -324,9 +329,9 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
             // If this was a user interruption, exit gracefully
             if (userInterrupted.value || (error instanceof Error
               && (error.message.includes('cancelled') || error.message.includes('interrupted')))) {
-                // Let the global handler show message
-                process.exit(0)
-              }
+              // Let the global handler show message
+              process.exit(0)
+            }
             throw error
           }
         }
@@ -367,10 +372,10 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
       }
 
       if (dryRun) {
-        console.log(`\n[DRY RUN] Would bump root version from ${rootCurrentVersion} to ${newVersion} and update all workspace packages\n`)
+        console.log(`\n${colors.italic(`[DRY RUN] Would bump root version from ${rootCurrentVersion} to ${newVersion} and update all workspace packages`)}\n`)
       }
       else {
-        console.log(`\nBumping root version from ${rootCurrentVersion} to ${newVersion} and updating all workspace packages\n`)
+        console.log(`\n${colors.italic(`Bumping root version from ${rootCurrentVersion} to ${newVersion} and updating all workspace packages`)}\n`)
       }
 
       // Check again after logging
@@ -875,8 +880,8 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
       console.warn('Warning: Requested to push to remote but current directory is not a Git repository. Skipping push...')
     }
     else if (push && dryRun) {
-      console.log(`[DRY RUN] Would pull latest changes from remote`)
-      console.log(`[DRY RUN] Would push to remote${tag ? ' (including tags)' : ''}`)
+      logStep(symbols.cloud, `Would pull latest changes from remote`, true)
+      logStep(symbols.cloud, `Would push to remote${tag ? ' (including tags)' : ''}`, true)
     }
 
     // Helper function for proper pluralization
@@ -884,15 +889,15 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
       count === 1 ? `${count} ${singular}` : `${count} ${plural}`
 
     if (dryRun) {
-      console.log(`\n${symbols.success} [DRY RUN] Would bump version${lastNewVersion ? ` to ${lastNewVersion}` : 's'}`)
+      logStep(symbols.party, `[DRY RUN] Would bump version${lastNewVersion ? ` to ${lastNewVersion}` : 's'}!`, false)
       if (updatedFiles.length > 0) {
-        console.log(`${symbols.success} Would update ${pluralize(updatedFiles.length, 'file')}`)
+        logStep(symbols.success, `Would update ${pluralize(updatedFiles.length, 'file')}`, true)
       }
     }
     else {
-      console.log(`\n${symbols.success} Successfully bumped version${lastNewVersion ? ` to ${lastNewVersion}` : 's'}`)
+      logStep(symbols.party, `Successfully bumped version${lastNewVersion ? ` to ${lastNewVersion}` : 's'}!`, false)
       if (updatedFiles.length > 0) {
-        console.log(`${symbols.success} Updated ${pluralize(updatedFiles.length, 'file')}`)
+        logStep(symbols.success, `Updated ${pluralize(updatedFiles.length, 'file')}`, false)
       }
     }
 
@@ -1112,7 +1117,7 @@ async function rollbackChanges(fileBackups: Map<string, { content: string, versi
 /**
  * Prompt user for version selection
  */
-async function promptForVersion(currentVersion: string, preid?: string, cwd?: string, dryRun?: boolean): Promise<string | never> {
+async function promptForVersion(currentVersion: string, preid?: string, cwd?: string, dryRun?: boolean): Promise<string> {
   // Check for interruption first
   if (userInterrupted.value) {
     // Let the global handler show message
@@ -1128,7 +1133,7 @@ async function promptForVersion(currentVersion: string, preid?: string, cwd?: st
   // Save original SIGINT handlers
   const originalSigIntHandlers = process.listeners('SIGINT').slice()
   let cancelled = false
-  let selectedVersion: string | undefined = undefined
+  let selectedVersion: string | undefined
 
   // Enhanced Ctrl+C handling for the prompt
   // This will completely abort the process
@@ -1211,11 +1216,11 @@ async function promptForVersion(currentVersion: string, preid?: string, cwd?: st
       }
 
       const promptMessage = dryRun ? '[DRY RUN] Choose an option:' : 'Choose an option:'
-      
+
       // Store the time when prompt starts
-      const promptStartTime = Date.now()
+      const _promptStartTime = Date.now()
       let wasInterrupted = false
-      
+
       // Override ALL SIGINT handlers with immediate exit
       process.removeAllListeners('SIGINT')
       process.on('SIGINT', () => {
@@ -1223,7 +1228,7 @@ async function promptForVersion(currentVersion: string, preid?: string, cwd?: st
         process.stderr.write('\nVersion bump cancelled by user \x1B[3m(Ctrl+C)\x1B[0m\n')
         process.exit(0)
       })
-      
+
       choice = await select({
         message: promptMessage,
         options,
@@ -1233,13 +1238,13 @@ async function promptForVersion(currentVersion: string, preid?: string, cwd?: st
           process.exit(0)
         },
       })
-      
+
       // Check for cancellation - the prompt returns a Symbol with undefined value when cancelled
       if (typeof choice === 'symbol' || choice === null || choice === undefined || String(choice) === 'undefined') {
         process.stderr.write('\nVersion bump cancelled by user\n')
         process.exit(0)
       }
-      
+
       // Final safety checks
       if (wasInterrupted || userInterrupted.value || cancelled) {
         process.stderr.write('\nVersion bump cancelled by user\n')
@@ -1388,4 +1393,7 @@ async function promptForVersion(currentVersion: string, preid?: string, cwd?: st
       process.on('SIGINT', handler)
     }
   }
+
+  // This should never be reached, but TypeScript requires a return
+  return 'patch'
 }
