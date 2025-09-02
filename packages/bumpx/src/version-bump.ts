@@ -760,7 +760,8 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
         commitMessage = commitMessage.replace(/\{version\}/g, lastNewVersion).replace(/%s/g, lastNewVersion)
       }
 
-      if (!options.quiet) logStep(symbols.memo, 'Committing changes...', false)
+      if (!options.quiet)
+        logStep(symbols.memo, 'Committing changes...', false)
       createGitCommit(commitMessage, false, false, effectiveCwd)
 
       if (progress && lastNewVersion && _lastOldVersion) {
@@ -834,7 +835,8 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
 
         // Check if tag exists before attempting to create it
 
-        if (!options.quiet) logStep(symbols.tag, 'Creating tag...', false)
+        if (!options.quiet)
+          logStep(symbols.tag, 'Creating tag...', false)
         createGitTag(tagName, false, finalTagMessage, effectiveCwd)
 
         if (progress && lastNewVersion && _lastOldVersion) {
@@ -898,8 +900,10 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
     }
 
     if (push && !dryRun && inGitRepo) {
-      if (!options.quiet) logStep(symbols.inbox, 'Pulling latest changes from remote', false)
-      if (!options.quiet) logStep(symbols.cloud, 'Pushing changes and tag...', false)
+      if (!options.quiet)
+        logStep(symbols.inbox, 'Pulling latest changes from remote', false)
+      if (!options.quiet)
+        logStep(symbols.cloud, 'Pushing changes and tag...', false)
       // Show remote lines always (not just verbose), git output printed by executeGit is suppressed.
       // We will manually emit concise lines after push to mimic git output style.
       const beforeBranch = getCurrentBranch(effectiveCwd)
