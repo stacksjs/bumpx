@@ -781,9 +781,46 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
       // Silent commit creation in dry run mode
     }
 
-    // Note: Changelog will be generated AFTER tag creation for proper version range
+    // Generate changelog AFTER commit creation (if enabled)
+    if (changelog && lastNewVersion && !dryRun && inGitRepo) {
+      try {
+        // Generate changelog with specific version range (using new version instead of HEAD)
+        const fromVersion = _lastOldVersion ? `v${_lastOldVersion}` : undefined
+        const toVersion = `v${lastNewVersion}` // Use new version instead of HEAD
 
-    // Create git tag (if requested)
+        if (!options.quiet) {
+          const versionRange = fromVersion ? `from ${fromVersion} to ${toVersion}` : `up to ${toVersion}`
+          logStep(symbols.memo, `Generating changelog ${versionRange} and amend to commit`, false)
+        }
+        await generateChangelog(effectiveCwd, fromVersion, toVersion)
+
+        // Amend the changelog to the existing commit
+        const { executeGit } = await import('./utils')
+        executeGit(['add', 'CHANGELOG.md'], effectiveCwd)
+        executeGit(['commit', '--amend', '--no-edit'], effectiveCwd)
+
+        if (progress && _lastOldVersion) {
+          progress({
+            event: ProgressEvent.ChangelogGenerated,
+            updatedFiles,
+            skippedFiles,
+            newVersion: lastNewVersion,
+            oldVersion: _lastOldVersion,
+          })
+        }
+      }
+      catch (error) {
+        console.warn('Warning: Failed to generate changelog:', error)
+      }
+    }
+    else if (changelog && lastNewVersion && dryRun) {
+      const fromVersion = _lastOldVersion ? `v${_lastOldVersion}` : undefined
+      const toVersion = `v${lastNewVersion}`
+      const versionRange = fromVersion ? `from ${fromVersion} to ${toVersion}` : `up to ${toVersion}`
+      logStep(symbols.memo, `[DRY RUN] Would generate changelog ${versionRange} and amend to commit`, false)
+    }
+
+    // Create git tag AFTER changelog generation (if requested)
     if (tag && lastNewVersion && !dryRun) {
       try {
         // Format the tag name - either use the provided format or default to vX.Y.Z
@@ -833,45 +870,6 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
       // Silent tag creation in dry run mode
     }
 
-    // Generate changelog AFTER tag creation (if enabled)
-    if (changelog && lastNewVersion && !dryRun && inGitRepo) {
-      try {
-        // Generate changelog with specific version range (now using actual tag)
-        const fromVersion = _lastOldVersion ? `v${_lastOldVersion}` : undefined
-        const toVersion = `v${lastNewVersion}` // Use actual tag now that it exists
-
-        if (!options.quiet) {
-          const versionRange = fromVersion ? `from ${fromVersion} to ${toVersion}` : `up to ${toVersion}`
-          logStep(symbols.memo, `Generating changelog ${versionRange} and amend to commit`, false)
-        }
-        await generateChangelog(effectiveCwd, fromVersion, toVersion)
-
-        // Amend the changelog to the existing commit
-        const { executeGit } = await import('./utils')
-        executeGit(['add', 'CHANGELOG.md'], effectiveCwd)
-        executeGit(['commit', '--amend', '--no-edit'], effectiveCwd)
-
-        if (progress && _lastOldVersion) {
-          progress({
-            event: ProgressEvent.ChangelogGenerated,
-            updatedFiles,
-            skippedFiles,
-            newVersion: lastNewVersion,
-            oldVersion: _lastOldVersion,
-          })
-        }
-      }
-      catch (error) {
-        console.warn('Warning: Failed to generate changelog:', error)
-      }
-    }
-    else if (changelog && lastNewVersion && dryRun) {
-      const fromVersion = _lastOldVersion ? `v${_lastOldVersion}` : undefined
-      const toVersion = `v${lastNewVersion}`
-      const versionRange = fromVersion ? `from ${fromVersion} to ${toVersion}` : `up to ${toVersion}`
-      logStep(symbols.memo, `[DRY RUN] Would generate changelog ${versionRange} and amend to commit`, false)
-    }
-
     // Handle changelog generation for cases where commit is disabled
     // This allows users to generate changelog without committing
     // Note: This only runs if changelog hasn't been generated above (when commit is enabled)
@@ -879,7 +877,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
       try {
         // Generate changelog with specific version range
         const fromVersion = _lastOldVersion ? `v${_lastOldVersion}` : undefined
-        const toVersion = tag ? `v${lastNewVersion}` : 'HEAD' // Use tag if available, otherwise HEAD
+        const toVersion = `v${lastNewVersion}` // Use new version instead of HEAD
 
         if (!options.quiet) {
           const versionRange = fromVersion ? `from ${fromVersion} to ${toVersion}` : `up to ${toVersion}`
