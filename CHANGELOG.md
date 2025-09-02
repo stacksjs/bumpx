@@ -1,4 +1,15 @@
 # Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.76...v0.1.77)
+
+### 🧹 Chores
+
+- release v0.1.77 ([ab998a9](https://github.com/stacksjs/bumpx/commit/ab998a9))
+- keep text consistency ([2a427c2](https://github.com/stacksjs/bumpx/commit/2a427c2))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
 [Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.75...v0.1.76)
 
 ### 🧹 Chores
