@@ -88,7 +88,7 @@ bumpx patch --no-verify
 bumpx now has **first-class workspace support** with automatic workspace detection:
 
 ```bash
-# Bump all workspace packages (recursive is now default)
+# Bump all workspace packages
 bumpx patch
 
 # Explicitly use recursive mode (detects workspaces automatically)

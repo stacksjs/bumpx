@@ -20,7 +20,7 @@ bumpx handles these scenarios with sophisticated detection and management capabi
 bumpx now includes **first-class workspace support** with automatic detection from your `workspaces` field in package.json:
 
 ```bash
-# Automatic workspace detection (recursive is now default)
+# Automatic workspace detection
 bumpx patch
 
 # Explicit recursive mode with workspace detection
