@@ -1212,9 +1212,14 @@ async function promptForVersion(currentVersion: string, preid?: string, cwd?: st
 
       const promptMessage = dryRun ? '[DRY RUN] Choose an option:' : 'Choose an option:'
       
-      // Override process SIGINT completely during prompt
+      // Store the time when prompt starts
+      const promptStartTime = Date.now()
+      let wasInterrupted = false
+      
+      // Override ALL SIGINT handlers with immediate exit
       process.removeAllListeners('SIGINT')
       process.on('SIGINT', () => {
+        wasInterrupted = true
         process.stderr.write('\nVersion bump cancelled by user \x1B[3m(Ctrl+C)\x1B[0m\n')
         process.exit(0)
       })
@@ -1223,37 +1228,20 @@ async function promptForVersion(currentVersion: string, preid?: string, cwd?: st
         message: promptMessage,
         options,
         onCancel: () => {
+          wasInterrupted = true
           process.stderr.write('\nVersion bump cancelled by user \x1B[3m(Ctrl+C)\x1B[0m\n')
           process.exit(0)
         },
       })
       
-      // If we get here and choice is the first option, check if it was due to interruption
-      if (userInterrupted.value || cancelled) {
-        process.stderr.write('\nVersion bump cancelled by user\n')
-        process.exit(0)
-      }
-
-      // Double-check for interruption after prompt returns
-      if (userInterrupted.value || cancelled) {
-        process.stderr.write('\nVersion bump cancelled by user\n')
-        process.exit(0)
-      }
-
-      // Handle null/undefined (cancellation)
-      if (choice === null || choice === undefined) {
+      // Check for cancellation - the prompt returns a Symbol with undefined value when cancelled
+      if (typeof choice === 'symbol' || choice === null || choice === undefined || String(choice) === 'undefined') {
         process.stderr.write('\nVersion bump cancelled by user\n')
         process.exit(0)
       }
       
-      // Additional safety check - if choice is the first option and we detect rapid selection, it might be auto-selection due to cancellation
-      if (typeof choice === 'number' && choice === 0 && (userInterrupted.value || cancelled)) {
-        process.stderr.write('\nVersion bump cancelled by user\n')
-        process.exit(0)
-      }
-
-      // Check for interruption before processing any choice
-      if (userInterrupted.value || cancelled) {
+      // Final safety checks
+      if (wasInterrupted || userInterrupted.value || cancelled) {
         process.stderr.write('\nVersion bump cancelled by user\n')
         process.exit(0)
       }
