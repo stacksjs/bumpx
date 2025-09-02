@@ -22,7 +22,7 @@ export const defaultConfig: BumpxConfig = {
   // Advanced options
   all: false,
   recursive: true,
-  printCommits: false,
+  printCommits: true,
   forceUpdate: true,
   changelog: true, // Enable changelog generation by default
   respectGitignore: true, // Respect .gitignore by default
