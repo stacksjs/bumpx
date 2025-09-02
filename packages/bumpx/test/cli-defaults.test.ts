@@ -6,7 +6,7 @@ describe('CLI Default Configuration', () => {
     // Verify defaultConfig exists and is an object
     expect(defaultConfig).toBeDefined()
     expect(typeof defaultConfig).toBe('object')
-    
+
     // Define expected defaults
     const expectedDefaults = {
       // Git options
@@ -16,16 +16,16 @@ describe('CLI Default Configuration', () => {
       sign: false,
       noGitCheck: false,
       noVerify: false,
-      
+
       // Execution options
       install: false,
       ignoreScripts: false,
-      
+
       // UI options
       confirm: true,
       quiet: false,
       ci: false,
-      
+
       // Advanced options
       all: false,
       recursive: true,
@@ -34,45 +34,19 @@ describe('CLI Default Configuration', () => {
       changelog: true,
       respectGitignore: true,
     }
-    
+
     // Verify all expected properties exist and have correct values
     const config = defaultConfig as Record<string, unknown>
     Object.entries(expectedDefaults).forEach(([key, expectedValue]) => {
       expect(config).toHaveProperty(key)
       expect(config[key]).toBe(expectedValue)
     })
-    
+
     // Verify no extra properties exist
     expect(Object.keys(defaultConfig).sort()).toEqual(Object.keys(expectedDefaults).sort())
-    
+
     // Ensure all properties are present and have the correct type
-    const expectedProps = {
-      // Git options
-      commit: 'boolean',
-      tag: 'boolean',
-      push: 'boolean',
-      sign: 'boolean',
-      noGitCheck: 'boolean',
-      noVerify: 'boolean',
-      
-      // Execution options
-      install: 'boolean',
-      ignoreScripts: 'boolean',
-      
-      // UI options
-      confirm: 'boolean',
-      quiet: 'boolean',
-      ci: 'boolean',
-      
-      // Advanced options
-      all: 'boolean',
-      recursive: 'boolean',
-      printCommits: 'boolean',
-      forceUpdate: 'boolean',
-      changelog: 'boolean',
-      respectGitignore: 'boolean',
-    }
-    
+
     // Check each property exists and has the correct type
     expect(defaultConfig.commit).toBe(true)
     expect(defaultConfig.tag).toBe(true)

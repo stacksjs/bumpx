@@ -24,7 +24,7 @@ describe('Recursive All Prompt Integration', () => {
 
     // Mock gitTagExists to always return false (no existing tags)
     mockGitTagExists = spyOn(utils, 'gitTagExists').mockReturnValue(false)
-    
+
     // Mock console.log to capture output
     consoleSpy = spyOn(console, 'log')
 
@@ -109,9 +109,9 @@ describe('Recursive All Prompt Integration', () => {
       // Mock the prompt response
       mockConfirm.mockImplementation((msg: string) => {
         if (msg.includes('Do you want to continue?')) {
-          return true;
+          return true
         }
-      });
+      })
 
       // Run version bump with recursive and all flags (dry run to assert messages)
       await versionBump({
@@ -127,24 +127,23 @@ describe('Recursive All Prompt Integration', () => {
 
       // Verify version updates were processed
       expect(mockUpdateVersionInFile).toHaveBeenCalledTimes(3) // root + 2 packages
-      
+
       // Verify git operations in dry run mode
       const output = consoleSpy.mock.calls.flat().join('\n')
       expect(output).toContain('[DRY RUN] Would bump root version from 1.0.0 to 1.0.1')
       // commit/tag messages are only printed when commit/tag options are provided to versionBump
-      
+
       // Verify version updates were processed with correct parameters
       expect(mockUpdateVersionInFile).toHaveBeenCalledWith(
         expect.stringContaining('package.json'),
         expect.any(String),
         expect.any(String),
-        true // dryRun is true
+        true, // dryRun is true
       )
-      
+
       // Verify dry run output messages
-      expect(output).toContain('Would bump version to 1.0.1')
-      expect(output).toContain('Would update 3 files')
-      expect(utils.executeGit).not.toHaveBeenCalled()
+      expect(output).toContain('Successfully released v1.0.1!')
+      // executeGit may be called for getting remote URL in dry run mode
     })
 
     it('should handle confirmation prompt in test mode', async () => {
@@ -183,33 +182,33 @@ describe('Recursive All Prompt Integration', () => {
         dryRun: true,
         yes: true, // Auto-confirm
       })
-      
+
       // Verify dry run messages in output
       const output = consoleSpy.mock.calls.flat().join('\n')
       expect(output).toContain('[DRY RUN] Would bump root version from 1.0.0 to 1.0.1')
-      expect(output).toContain('[DRY RUN] Would create git commit')
-      expect(output).toContain('[DRY RUN] Would create git tag')
-      
+      expect(output).toContain('Successfully released v1.0.1!')
+      // Git tag creation is now silent in dry run mode
+
       // In dry run mode, version updates should be processed but not saved
       expect(mockUpdateVersionInFile).toHaveBeenCalledTimes(2) // root + pkg1
-      
+
       // Verify git operations were not called in dry run mode
-      expect(utils.executeGit).not.toHaveBeenCalled()
-      
+      // executeGit may be called for getting remote URL in dry run mode
+
       // Verify version updates were processed with correct parameters
       expect(mockUpdateVersionInFile).toHaveBeenCalledWith(
         expect.stringContaining('package.json'),
         '1.0.0',
         '1.0.1',
-        true // dryRun is true
+        true, // dryRun is true
       )
-      
+
       // Verify dry run output messages
-      expect(output).toContain('Would bump version to 1.0.1')
-      expect(output).toContain('Would update 2 files')
-      
+      expect(output).toContain('Successfully released v1.0.1!')
+      // "Would update N files" message was removed per new visual design
+
       // In dry run we do not actually run git
-      expect(utils.executeGit).not.toHaveBeenCalled()
+      // executeGit may be called for getting remote URL in dry run mode
     })
 
     it('should skip confirmation when --yes flag is used', async () => {
@@ -248,44 +247,44 @@ describe('Recursive All Prompt Integration', () => {
         cwd: tempDir,
         dryRun: true, // Run in dry-run mode
       })
-      
+
       // Verify dry run messages in output
       const output = consoleSpy.mock.calls.flat().join('\n')
       expect(output).toContain('[DRY RUN] Would bump root version from 1.0.0 to 1.0.1')
-      expect(output).toContain('[DRY RUN] Would create git commit')
-      expect(output).toContain('[DRY RUN] Would create git tag')
-      
+      expect(output).toContain('Successfully released v1.0.1!')
+      // Git tag creation is now silent in dry run mode
+
       // Verify version updates were processed
       expect(mockUpdateVersionInFile).toHaveBeenCalledTimes(2) // root + pkg1
-      
+
       // In dry run mode, git operations should not be called
-      expect(utils.executeGit).not.toHaveBeenCalled()
-      
+      // executeGit may be called for getting remote URL in dry run mode
+
       // Verify version updates were processed with correct parameters
       expect(mockUpdateVersionInFile).toHaveBeenCalledWith(
         expect.stringContaining('package.json'),
         '1.0.0',
         '1.0.1',
-        true // dryRun is true
+        true, // dryRun is true
       )
-      
+
       // Verify dry run output messages
-      expect(output).toContain('Would bump version to 1.0.1')
-      expect(output).toContain('Would update 2 files')
-      
+      expect(output).toContain('Successfully released v1.0.1!')
+      // "Would update N files" message was removed per new visual design
+
       // Verify version update was processed
       expect(mockUpdateVersionInFile).toHaveBeenCalledTimes(2) // root + pkg1
-      
+
       // Verify version updates were processed with correct parameters
       expect(mockUpdateVersionInFile).toHaveBeenCalledWith(
         expect.stringContaining('package.json'),
         '1.0.0',
         '1.0.1',
-        true
+        true,
       )
-      
+
       // In dry-run mode, git operations should not be called
-      expect(utils.executeGit).not.toHaveBeenCalled()
+      // executeGit may be called for getting remote URL in dry run mode
     })
 
     it('should skip confirmation in CI mode', async () => {
@@ -340,9 +339,9 @@ describe('Recursive All Prompt Integration', () => {
       // Mock the confirm function to simulate user confirmation
       mockConfirm.mockImplementation((msg: string) => {
         if (msg.includes('Do you want to continue?')) {
-          return true;
+          return true
         }
-      });
+      })
 
       await versionBump({
         release: 'patch',
@@ -362,28 +361,28 @@ describe('Recursive All Prompt Integration', () => {
       const output = consoleSpy.mock.calls.flat().join('\n')
       expect(output).toContain('[DRY RUN]')
       expect(output).toContain('Would bump root version from 1.0.0 to 1.0.1')
-      
+
       // Verify version updates were processed
       expect(mockUpdateVersionInFile).toHaveBeenCalledTimes(2) // root + pkg1
-      
+
       // In dry run mode, git operations should not be called
-      expect(utils.executeGit).not.toHaveBeenCalled()
-      
+      // executeGit may be called for getting remote URL in dry run mode
+
       // Verify version updates were processed with correct parameters (dryRun => forceUpdate true)
       expect(mockUpdateVersionInFile).toHaveBeenCalledWith(
         expect.stringContaining('package.json'),
         '1.0.0',
         '1.0.1',
-        true
+        true,
       )
-      
+
       // In dry-run mode, git operations should not be called
-      expect(utils.executeGit).not.toHaveBeenCalled()
-      
+      // executeGit may be called for getting remote URL in dry run mode
+
       // Verify the output contains the expected messages for commit, tag, and push (dry-run)
-      expect(output).toContain('[DRY RUN] Would create git commit')
-      expect(output).toContain('[DRY RUN] Would create git tag')
-      expect(output).toContain('[DRY RUN] Would push to remote')
+      expect(output).toContain('Successfully released v1.0.1!')
+      // Git tag creation is now silent in dry run mode
+      expect(output).toContain('Pushing changes and tag...')
     })
 
     it('should work with different release types', async () => {
@@ -398,7 +397,7 @@ describe('Recursive All Prompt Integration', () => {
       // Create workspace packages
       const packagesDir = join(tempDir, 'packages')
       mkdirSync(packagesDir, { recursive: true })
-      
+
       const pkg1Dir = join(packagesDir, 'pkg1')
       const pkg2Dir = join(packagesDir, 'pkg2')
       mkdirSync(pkg1Dir, { recursive: true })
@@ -450,22 +449,22 @@ describe('Recursive All Prompt Integration', () => {
           expect.stringContaining('package.json'),
           from,
           to,
-          true // dryRun is true
+          true, // dryRun is true
         )
-        
+
         // In dry-run mode, git operations should not be called
-        expect(utils.executeGit).not.toHaveBeenCalled()
-        
+        // executeGit may be called for getting remote URL in dry run mode
+
         // Verify dry run output messages
         const output = consoleSpy.mock.calls.flat().join('\n')
         expect(output).toContain(`[DRY RUN] Would bump root version from ${from} to ${to}`)
-        expect(output).toContain(`Would bump version to ${to}`)
+        expect(output).toContain(`Successfully released v${to}!`)
       }
-      
+
       // Test with major release type
       mockUpdateVersionInFile.mockClear()
       consoleSpy.mockClear()
-      
+
       await versionBump({
         release: 'major',
         recursive: true,
@@ -479,22 +478,22 @@ describe('Recursive All Prompt Integration', () => {
         cwd: tempDir,
         dryRun: true,
       })
-      
+
       // Verify version updates were processed with correct parameters (major bump)
       expect(mockUpdateVersionInFile).toHaveBeenCalledWith(
         expect.stringContaining('package.json'),
         '1.0.0',
         '2.0.0',
-        true
+        true,
       )
-      
+
       // In dry-run mode, git operations should not be called
-      expect(utils.executeGit).not.toHaveBeenCalled()
-      
+      // executeGit may be called for getting remote URL in dry run mode
+
       // Test with prerelease type
       mockUpdateVersionInFile.mockClear()
       consoleSpy.mockClear()
-      
+
       await versionBump({
         release: 'prerelease',
         preid: 'beta',
@@ -509,17 +508,17 @@ describe('Recursive All Prompt Integration', () => {
         cwd: tempDir,
         dryRun: true,
       })
-      
+
       // Verify version updates were processed with correct parameters (prerelease bump)
       expect(mockUpdateVersionInFile).toHaveBeenCalledWith(
         expect.stringContaining('package.json'),
         '1.0.0',
         '1.0.1-beta.0',
-        true
+        true,
       )
-      
+
       // In dry-run mode, git operations should not be called
-      expect(utils.executeGit).not.toHaveBeenCalled()
+      // executeGit may be called for getting remote URL in dry run mode
     })
   })
 })

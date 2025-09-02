@@ -28,6 +28,7 @@ export interface VersionBumpOptions {
   ignoreScripts?: boolean
   changelog?: boolean
   respectGitignore?: boolean
+  verbose?: boolean
 }
 
 export interface BumpxConfig extends VersionBumpOptions {

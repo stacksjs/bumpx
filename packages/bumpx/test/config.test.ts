@@ -36,18 +36,18 @@ describe('Config', () => {
         sign: false,
         noGitCheck: false,
         noVerify: false,
-        
+
         // Execution options
         install: false,
         ignoreScripts: false,
-        
+
         // UI options
         confirm: true,
         quiet: false,
         ci: false,
-        
+
         // Version options (not part of defaults in current implementation)
-        
+
         // Advanced options
         all: false,
         recursive: true,
@@ -56,17 +56,30 @@ describe('Config', () => {
         changelog: true,
         respectGitignore: true,
       })
-      
+
       // Verify all expected properties exist
       const expectedProps = [
         // Git options
-        'commit', 'tag', 'push', 'sign', 'noGitCheck', 'noVerify',
+        'commit',
+        'tag',
+        'push',
+        'sign',
+        'noGitCheck',
+        'noVerify',
         // Execution options
-        'install', 'ignoreScripts',
+        'install',
+        'ignoreScripts',
         // UI options
-        'confirm', 'quiet', 'ci',
+        'confirm',
+        'quiet',
+        'ci',
         // Advanced options
-        'all', 'recursive', 'printCommits', 'forceUpdate', 'changelog', 'respectGitignore'
+        'all',
+        'recursive',
+        'printCommits',
+        'forceUpdate',
+        'changelog',
+        'respectGitignore',
       ]
       expect(Object.keys(bumpConfigDefaults).sort()).toEqual(expect.arrayContaining(expectedProps))
     })
@@ -80,21 +93,21 @@ describe('Config', () => {
       expect(bumpConfigDefaults).toHaveProperty('sign')
       expect(bumpConfigDefaults).toHaveProperty('noGitCheck')
       expect(bumpConfigDefaults).toHaveProperty('noVerify')
-      
+
       // Execution options
       expect(bumpConfigDefaults).toHaveProperty('install')
       expect(bumpConfigDefaults).toHaveProperty('ignoreScripts')
       // no 'yes' flag in defaults; it's derived behavior
-      
+
       // UI options
       expect(bumpConfigDefaults).toHaveProperty('confirm')
       expect(bumpConfigDefaults).toHaveProperty('quiet')
       expect(bumpConfigDefaults).toHaveProperty('ci')
       // no explicit dryRun in defaults
-      
+
       // Version options
       // version-related fields are not in defaults
-      
+
       // Advanced options
       expect(bumpConfigDefaults).toHaveProperty('all')
       expect(bumpConfigDefaults).toHaveProperty('recursive')
@@ -119,16 +132,16 @@ describe('Config', () => {
       expect(bumpConfigDefaults.install).toBe(false)
       expect(bumpConfigDefaults.ignoreScripts).toBe(false)
       // no 'yes' boolean default
-      
+
       // Confirmation is enabled by default for safety
       expect(bumpConfigDefaults.confirm).toBe(true)
       expect(bumpConfigDefaults.quiet).toBe(false)
       expect(bumpConfigDefaults.ci).toBe(false)
       // no dryRun default in config object
-      
+
       // Version defaults
       // version-related defaults are not present in current implementation
-      
+
       // Advanced options
       expect(bumpConfigDefaults.all).toBe(false)
       expect(bumpConfigDefaults.recursive).toBe(true)
@@ -145,7 +158,7 @@ describe('Config', () => {
 
       // Quiet mode is disabled by default (users want feedback)
       expect(bumpConfigDefaults.quiet).toBe(false)
-      
+
       // Advanced options have safe defaults
       expect(bumpConfigDefaults.all).toBe(false)
       expect(bumpConfigDefaults.recursive).toBe(true)
@@ -196,7 +209,7 @@ describe('Config', () => {
         preid: 'beta',
         currentVersion: '1.0.0',
         files: ['package.json'],
-        
+
         // Git options
         commit: true,
         tag: 'v{version}',
@@ -204,17 +217,17 @@ describe('Config', () => {
         sign: false,
         noGitCheck: false,
         noVerify: false,
-        
+
         // Execution options
         install: false,
         ignoreScripts: false,
         execute: ['npm run build'],
-        
+
         // UI options
         confirm: true,
         quiet: false,
         ci: false,
-        
+
         // Advanced options
         all: false,
         recursive: false,
@@ -237,28 +250,42 @@ describe('Config', () => {
       mockLoadConfig.mockResolvedValue(mockConfig)
 
       const config = await loadBumpConfig()
-      
+
       // Verify the returned config has all the expected properties
       expect(config).toBeDefined()
       expect(config).toMatchObject({ ...bumpConfigDefaults, printCommits: config.printCommits })
-      
+
       // In this environment, loader may be inlined; just ensure config resolved
       expect(config).toBeDefined()
-      
+
       // Verify the config is a new object (not a reference to the defaults)
       expect(config).not.toBe(bumpConfigDefaults)
       expect(config).not.toBe(mockConfig)
-      
+
       // Verify config has all expected properties
       const expectedProps = [
         // Git options
-        'commit', 'tag', 'push', 'sign', 'noGitCheck', 'noVerify',
+        'commit',
+        'tag',
+        'push',
+        'sign',
+        'noGitCheck',
+        'noVerify',
         // Execution options
-        'install', 'ignoreScripts', 'noVerify',
+        'install',
+        'ignoreScripts',
+        'noVerify',
         // UI options
-        'confirm', 'quiet', 'ci',
+        'confirm',
+        'quiet',
+        'ci',
         // Advanced options
-        'all', 'recursive', 'printCommits', 'forceUpdate', 'changelog', 'respectGitignore',
+        'all',
+        'recursive',
+        'printCommits',
+        'forceUpdate',
+        'changelog',
+        'respectGitignore',
         // Version options
         // intentionally not asserting version-related fields in defaults
       ]
@@ -275,12 +302,12 @@ describe('Config', () => {
         commit: false,
         tag: false,
         quiet: true,
-        recursive: true
+        recursive: true,
       }
 
       // Load config with overrides
       const config = await loadBumpConfig(overrides)
-      
+
       // Verify overrides were applied
       expect(config.commit).toBe(false)
       expect(config.tag).toBe(false)
@@ -291,7 +318,7 @@ describe('Config', () => {
       expect(config.push).toBe(true)
       expect(config.noVerify).toBe(false)
       expect(config.sign).toBe(false)
-      
+
       // Verify other defaults are preserved
       expect(config.install).toBe(false)
     })
@@ -300,11 +327,11 @@ describe('Config', () => {
       mockLoadConfig.mockResolvedValue(bumpConfigDefaults)
 
       const config = await loadBumpConfig({})
-      
+
       // Verify the returned config has all the expected properties
       expect(config).toBeDefined()
       expect(config).toMatchObject({ ...bumpConfigDefaults, printCommits: config.printCommits })
-      
+
       // Verify the config is a new object (not a reference to the defaults)
       expect(config).not.toBe(bumpConfigDefaults)
     })

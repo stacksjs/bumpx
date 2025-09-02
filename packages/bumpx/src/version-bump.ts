@@ -13,6 +13,7 @@ import {
   executeCommand,
   findAllPackageFiles,
   findPackageJsonFiles,
+  getCurrentBranch,
   getRecentCommits,
   incrementVersion,
   isGitRepository,
@@ -48,6 +49,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
     cwd,
     changelog = true,
     respectGitignore = true,
+    verbose,
   } = options
 
   // Backup system for rollback on cancellation
@@ -84,6 +86,9 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
     }
 
     // Determine files to update
+    if (!options.quiet) {
+      logStep(symbols.search, `${dryRun ? '[DRY RUN] ' : ''}Reading package.json...`, false)
+    }
     let filesToUpdate: string[] = []
     let rootPackagePath: string | undefined
 
@@ -132,6 +137,15 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
         throw new Error('Current version cannot be empty')
       }
 
+      // Show current version from root package.json (first file)
+      if (!options.quiet) {
+        try {
+          const rootPkg = readPackageJson(filesToUpdate[0])
+          logStep(symbols.package, `Current version: ${rootPkg.version}`, false)
+        }
+        catch {}
+      }
+
       // Determine new version
       let newVersion: string
       if (release === 'prompt') {
@@ -155,6 +169,11 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
       }
       else {
         console.log(`\nBumping version from ${currentVersion} to ${newVersion}\n`)
+      }
+
+      if (!options.quiet) {
+        const rel = isValidVersion(release as any) ? 'custom' : String(release)
+        logStep(symbols.rocket, `New ${rel} version: ${newVersion}`, false)
       }
 
       // Track versions for git operations
@@ -218,9 +237,11 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
 
           if (fileInfo.updated) {
             updatedFiles.push(filePath)
-            // Log animated step for each file update
-            const relativePath = relative(effectiveCwd, filePath)
-            logStep(symbols.checkmark, `Updated ${relativePath}`, dryRun)
+            // Log per-file only in verbose; otherwise single summary later
+            if (verbose) {
+              const relativePath = relative(effectiveCwd, filePath)
+              logStep(symbols.checkmark, `Updated ${relativePath}`, dryRun)
+            }
             if (progress) {
               progress({
                 event: ProgressEvent.FileUpdated,
@@ -376,6 +397,12 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
       }
       else {
         console.log(`\n${colors.italic(`Bumping root version from ${rootCurrentVersion} to ${newVersion} and updating all workspace packages`)}\n`)
+      }
+
+      if (!options.quiet) {
+        logStep(symbols.package, `Current version: ${rootCurrentVersion}`, false)
+        const rel = isValidVersion(release as any) ? 'custom' : String(release)
+        logStep(symbols.rocket, `New ${rel} version: ${newVersion}`, false)
       }
 
       // Check again after logging
@@ -574,7 +601,9 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
             throw new Error(`Could not determine new version for ${filePath}`)
           }
 
-          console.log(`  ${filePath}: ${fileCurrentVersion} → ${fileNewVersion}`)
+          if (verbose) {
+            console.log(`  ${filePath}: ${fileCurrentVersion} → ${fileNewVersion}`)
+          }
 
           // Create a backup of the file content before modification
           const originalContent = readFileSync(filePath, 'utf-8')
@@ -634,6 +663,11 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
     // If there were critical errors and no files were updated, throw an error
     if (errors.length > 0 && updatedFiles.length === 0) {
       throw new Error(errors.length > 0 ? errors.join('; ') : 'Failed to update any files')
+    }
+
+    // Show updated package.json confirmation
+    if (updatedFiles.length > 0 && !options.quiet) {
+      logStep(symbols.checkmark, 'Updated package.json', false)
     }
 
     // Execute custom commands before git operations
@@ -742,11 +776,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
       console.warn('Warning: Requested to create a git commit but current directory is not a Git repository. Skipping commit...')
     }
     else if (commit && updatedFiles.length > 0 && dryRun) {
-      let commitMessage = typeof commit === 'string' ? commit : `chore: release v${lastNewVersion || 'unknown'}`
-      if (typeof commit === 'string' && lastNewVersion) {
-        commitMessage = commitMessage.replace(/\{version\}/g, lastNewVersion).replace(/%s/g, lastNewVersion)
-      }
-      console.log(`[DRY RUN] Would create git commit: "${commitMessage}"`)
+      // Silent commit creation in dry run mode
     }
 
     // Generate changelog AFTER commit creation (if enabled)
@@ -781,7 +811,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
       const fromVersion = _lastOldVersion ? `v${_lastOldVersion}` : undefined
       const toVersion = `v${lastNewVersion}`
       const versionRange = fromVersion ? `from ${fromVersion} to ${toVersion}` : `up to ${toVersion}`
-      console.log(`[DRY RUN] Would generate changelog ${versionRange} and amend to commit`)
+      logStep(symbols.memo, `[DRY RUN] Would generate changelog ${versionRange} and amend to commit`, false)
     }
 
     // Create git tag AFTER changelog generation (if requested)
@@ -798,7 +828,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
           : `Release ${lastNewVersion}`
 
         // Check if tag exists before attempting to create it
-        // We already do this in createGitTag, but we want to catch the error here
+
         createGitTag(tagName, false, finalTagMessage, effectiveCwd)
 
         if (progress && lastNewVersion && _lastOldVersion) {
@@ -829,13 +859,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
       console.warn('Warning: Requested to create a git tag but current directory is not a Git repository. Skipping tag...')
     }
     else if (tag && dryRun && lastNewVersion) {
-      const tagName = typeof tag === 'string'
-        ? tag.replace('{version}', lastNewVersion).replace('%s', lastNewVersion)
-        : `v${lastNewVersion}`
-      const finalTagMessage = tagMessage
-        ? tagMessage.replace('{version}', lastNewVersion).replace('%s', lastNewVersion)
-        : `Release ${lastNewVersion}`
-      console.log(`[DRY RUN] Would create git tag: "${tagName}" with message: "${finalTagMessage}"`)
+      // Silent tag creation in dry run mode
     }
 
     // Handle changelog generation for cases where commit is disabled
@@ -864,7 +888,24 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
     }
 
     if (push && !dryRun && inGitRepo) {
+      if (!options.quiet)
+        logStep(symbols.cloud, 'Pushing changes and tag...', false)
+      // Show remote lines always (not just verbose), git output printed by executeGit is suppressed.
+      // We will manually emit concise lines after push to mimic git output style.
+      const beforeBranch = getCurrentBranch(effectiveCwd)
       pushToRemote(!!tag, effectiveCwd)
+      try {
+        const { executeGit } = await import('./utils')
+        const remoteUrl = executeGit(['config', '--get', 'remote.origin.url'], effectiveCwd).trim()
+        const latestCommit = executeGit(['rev-parse', '--short', 'HEAD'], effectiveCwd).trim()
+        const previousCommit = executeGit(['rev-parse', '--short', 'HEAD~1'], effectiveCwd).trim()
+        console.log(`To ${remoteUrl}`)
+        console.log(`   ${previousCommit}..${latestCommit}  ${beforeBranch} -> ${beforeBranch}`)
+        if (tag && (typeof tag === 'string' ? tag : true) && lastNewVersion) {
+          console.log(` * [new tag]         v${lastNewVersion} -> v${lastNewVersion}`)
+        }
+      }
+      catch {}
 
       if (progress && lastNewVersion && _lastOldVersion) {
         progress({
@@ -880,8 +921,21 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
       console.warn('Warning: Requested to push to remote but current directory is not a Git repository. Skipping push...')
     }
     else if (push && dryRun) {
-      logStep(symbols.cloud, `Would pull latest changes from remote`, true)
-      logStep(symbols.cloud, `Would push to remote${tag ? ' (including tags)' : ''}`, true)
+      logStep(symbols.inbox, `Pulling latest changes from remote`, true)
+      logStep(symbols.cloud, `Pushing changes and tag...`, true)
+      try {
+        const { executeGit } = await import('./utils')
+        const remoteUrl = executeGit(['config', '--get', 'remote.origin.url'], effectiveCwd).trim()
+        const beforeBranch = getCurrentBranch(effectiveCwd).trim()
+        const latestCommit = executeGit(['rev-parse', '--short', 'HEAD'], effectiveCwd).trim()
+        const previousCommit = executeGit(['rev-parse', '--short', 'HEAD~1'], effectiveCwd).trim()
+        console.log(`To ${remoteUrl}`)
+        console.log(`   ${previousCommit}..${latestCommit}  ${beforeBranch} -> ${beforeBranch}`)
+        if (tag && lastNewVersion) {
+          console.log(` * [new tag]         v${lastNewVersion} -> v${lastNewVersion}`)
+        }
+      }
+      catch {}
     }
 
     // Helper function for proper pluralization
@@ -889,15 +943,13 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
       count === 1 ? `${count} ${singular}` : `${count} ${plural}`
 
     if (dryRun) {
-      logStep(symbols.party, `[DRY RUN] Would bump version${lastNewVersion ? ` to ${lastNewVersion}` : 's'}!`, false)
-      if (updatedFiles.length > 0) {
-        logStep(symbols.success, `Would update ${pluralize(updatedFiles.length, 'file')}`, true)
-      }
+      logStep(symbols.party, `[DRY RUN] Successfully released${lastNewVersion ? ` v${lastNewVersion}` : ''}!`, false)
     }
     else {
-      logStep(symbols.party, `Successfully bumped version${lastNewVersion ? ` to ${lastNewVersion}` : 's'}!`, false)
-      if (updatedFiles.length > 0) {
-        logStep(symbols.success, `Updated ${pluralize(updatedFiles.length, 'file')}`, false)
+      logStep(symbols.party, `Successfully released${lastNewVersion ? ` v${lastNewVersion}` : ''}!`, false)
+
+      if (!options.quiet && lastNewVersion) {
+        console.log(colors.gray(`v${lastNewVersion}`))
       }
     }
 

@@ -55,38 +55,44 @@ interface CLIOptions {
 /**
  * Progress callback for CLI output
  */
-function progress({ event, script, updatedFiles, skippedFiles, newVersion }: VersionBumpProgress): void {
+function progress({ event, script, updatedFiles, skippedFiles, newVersion }: VersionBumpProgress, verbose: boolean = false): void {
   switch (event) {
     case ProgressEvent.FileUpdated:
-      console.log(colors.gray(`${symbols.success} Updated ${updatedFiles[updatedFiles.length - 1]} to ${newVersion}`))
+      // Only show individual file updates in verbose mode
+      if (verbose) {
+        console.log(colors.gray(`${symbols.checkmark} Updated ${updatedFiles[updatedFiles.length - 1]} to ${newVersion}`))
+      }
       break
 
     case ProgressEvent.FileSkipped:
-      console.log(colors.gray(`${symbols.info} ${skippedFiles[skippedFiles.length - 1]} did not need to be updated`))
+      // Only show individual file skips in verbose mode
+      if (verbose) {
+        console.log(colors.gray(`${symbols.info} ${skippedFiles[skippedFiles.length - 1]} did not need to be updated`))
+      }
       break
 
     case ProgressEvent.GitCommit:
-      console.log(colors.gray(`${symbols.success} Git commit`))
+      console.log(colors.gray(`${symbols.checkmark} Git commit`))
       break
 
     case ProgressEvent.GitTag:
-      console.log(colors.gray(`${symbols.success} Git tag`))
+      console.log(colors.gray(`${symbols.checkmark} Git tag`))
       break
 
     case ProgressEvent.GitPush:
-      console.log(colors.gray(`${symbols.success} Git push`))
+      console.log(colors.gray(`${symbols.checkmark} Git push`))
       break
 
     case ProgressEvent.NpmScript:
-      console.log(colors.green(`${symbols.success} Npm run ${script}`))
+      console.log(colors.green(`${symbols.checkmark} Npm run ${script}`))
       break
 
     case ProgressEvent.Execute:
-      console.log(colors.gray(`${symbols.success} Execute ${script}`))
+      console.log(colors.gray(`${symbols.checkmark} Execute ${script}`))
       break
 
     case ProgressEvent.ChangelogGenerated:
-      console.log(colors.gray(`${symbols.success} Generated changelog`))
+      console.log(colors.gray(`${symbols.checkmark} Generated changelog`))
       break
   }
 }
@@ -345,7 +351,8 @@ cli
       const config = await prepareConfig(release, files, options)
 
       if (!options.quiet) {
-        config.progress = config.progress || progress
+        // Create progress callback that respects verbose mode
+        config.progress = config.progress || ((progressData: VersionBumpProgress) => progress(progressData, options.verbose || false))
       }
 
       await versionBump(config)

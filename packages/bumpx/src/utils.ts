@@ -750,6 +750,7 @@ export const symbols = {
   memo: '📝',
   tag: '🏷️',
   cloud: '☁️',
+  inbox: '📥',
   party: '🎉',
 }
 
