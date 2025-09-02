@@ -180,6 +180,8 @@ function errorHandler(error: Error): never {
     || message.includes('Release type or version must be specified')
     || message.includes('Could not determine')
     || message.includes('working tree is not clean')
+    || message.includes('Git working tree is not clean')
+    || message.includes('Git command failed: git status')
     || message.includes('Unknown option')) {
     process.exit(ExitCode.InvalidArgument)
   }
@@ -217,10 +219,14 @@ async function prepareConfig(release: string | undefined, files: string[] | unde
   // Only override boolean flags when explicitly set to true, allowing defaults to work
   if (options.commit === true)
     cliOverrides.commit = true
+  if (options.commit === false)
+    cliOverrides.commit = false
   if (options.commitMessage !== undefined)
     cliOverrides.commit = options.commitMessage
   if (options.tag === true)
     cliOverrides.tag = true
+  if (options.tag === false)
+    cliOverrides.tag = false
   if (options.tagName !== undefined)
     cliOverrides.tag = options.tagName
   if (options.tagMessage !== undefined)
@@ -229,14 +235,13 @@ async function prepareConfig(release: string | undefined, files: string[] | unde
     cliOverrides.sign = true
   if (options.push === true)
     cliOverrides.push = true
+  if (options.push === false)
+    cliOverrides.push = false
   if (options.all !== undefined)
     cliOverrides.all = options.all
   if (options.gitCheck === false) {
     cliOverrides.noGitCheck = true
-    // When --no-git-check is used, disable all git operations
-    cliOverrides.commit = false
-    cliOverrides.tag = false
-    cliOverrides.push = false
+    // --no-git-check only skips git status checks, not git operations
   }
   if (options.yes !== undefined) {
     cliOverrides.confirm = !options.yes
@@ -311,8 +316,10 @@ cli
   .option('--all', `Include all files (default: ${bumpConfigDefaults.all})`)
   .option('--no-git-check, --git-check, --gitCheck', 'Toggle git check')
   .option('-c, --commit', 'Create git commit')
+  .option('--no-commit', 'Skip git commit')
   .option('--commit-message <msg>', 'Custom commit message')
   .option('-t, --tag', 'Create git tag')
+  .option('--no-tag', 'Skip git tag')
   .option('--tag-name <name>', 'Custom tag name')
   .option('--tag-message <message>', 'Tag message')
   .option('--sign', 'Sign commit and tag')
