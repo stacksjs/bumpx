@@ -602,11 +602,14 @@ export function createGitTag(tag: string, sign: boolean = false, message?: strin
   }
 
   const args = ['tag']
+  // Always create an annotated tag with -a flag
+  // This ensures GitHub will use the tag message for release notes
   if (message) {
     args.push('-a', tag, '-m', message)
   }
   else {
-    args.push(tag)
+    // Use a default message if none provided, to ensure an annotated tag
+    args.push('-a', tag, '-m', `Release ${tag}`)
   }
   if (sign)
     args.push('--sign')
