@@ -922,7 +922,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
         }
 
         if (!options.quiet)
-          logStep(symbols.tag, 'Creating tag...', false)
+          logStep(symbols.tag, ' Creating tag...', false)
         createGitTag(tagName, false, finalTagMessage, effectiveCwd)
 
         if (progress && lastNewVersion && _lastOldVersion) {
@@ -990,7 +990,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
       if (!options.quiet)
         logStep(symbols.inbox, 'Pulling latest changes from remote', false)
       if (!options.quiet)
-        logStep(symbols.cloud, 'Pushing changes and tag...', false)
+        logStep(symbols.cloud, ' Pushing changes and tag...', false)
       // Show remote lines always (not just verbose), git output printed by executeGit is suppressed.
       // We will manually emit concise lines after push to mimic git output style.
       const beforeBranch = getCurrentBranch(effectiveCwd)
@@ -1023,7 +1023,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
     }
     else if (push && dryRun) {
       logStep(symbols.inbox, `Pulling latest changes from remote`, true)
-      logStep(symbols.cloud, `Pushing changes and tag...`, true)
+      logStep(symbols.cloud, ` Pushing changes and tag...`, true)
       try {
         const { executeGit } = await import('./utils')
         const remoteUrl = executeGit(['config', '--get', 'remote.origin.url'], effectiveCwd).trim()
