@@ -877,10 +877,40 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
           ? tag.replace('{version}', lastNewVersion).replace('%s', lastNewVersion)
           : `v${lastNewVersion}`
 
-        // Format the tag message if provided
-        const finalTagMessage = tagMessage
+        // Format the tag message if provided or extract from changelog
+        let finalTagMessage = tagMessage
           ? tagMessage.replace('{version}', lastNewVersion).replace('%s', lastNewVersion)
           : `Release ${lastNewVersion}`
+
+        // Try to get changelog content to include in the tag message (GitHub uses this for releases)
+        try {
+          const fs = await import('node:fs')
+          const path = await import('node:path')
+          const changelogPath = path.join(effectiveCwd, 'CHANGELOG.md')
+
+          if (fs.existsSync(changelogPath)) {
+            const changelogContent = fs.readFileSync(changelogPath, 'utf-8')
+
+            // Extract the latest release section from the changelog
+            const versionWithoutV = lastNewVersion // Without v prefix
+            const releasePattern = new RegExp(`##\s*(?:\[?v?${versionWithoutV}\]?|v?${versionWithoutV}).*?(?:##|$)`, 's')
+            const match = changelogContent.match(releasePattern)
+
+            if (match) {
+              // Extract the matched section content
+              let changelogEntry = match[0].trim()
+
+              // Remove the next section header if captured
+              changelogEntry = changelogEntry.replace(/##.*$/, '').trim()
+
+              // Use changelog content for tag message
+              finalTagMessage = changelogEntry
+            }
+          }
+        }
+        catch (error) {
+          console.warn(`Warning: Could not extract changelog content for tag message: ${error}`)
+        }
 
         // Check if tag exists before attempting to create it
         const { gitTagExists } = await import('./utils')
@@ -987,6 +1017,58 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
           oldVersion: _lastOldVersion,
         })
       }
+
+      // Create GitHub release if enabled and tag was pushed
+      if (options.createGitHubRelease && tag && lastNewVersion && options.githubToken) {
+        try {
+          if (!options.quiet)
+            logStep(symbols.party, 'Creating GitHub release...', false)
+
+          const { createGitHubRelease } = await import('./utils')
+          const tagName = typeof tag === 'string'
+            ? tag.replace('{version}', lastNewVersion).replace('%s', lastNewVersion)
+            : `v${lastNewVersion}`
+
+          const releaseOptions = {
+            token: options.githubToken,
+            owner: options.githubReleaseOptions?.owner,
+            repo: options.githubReleaseOptions?.repo,
+            name: options.githubReleaseOptions?.name || tagName,
+            body: options.githubReleaseOptions?.body,
+            draft: options.githubReleaseOptions?.draft === true,
+            prerelease: options.githubReleaseOptions?.prerelease === true,
+            generateReleaseNotes: options.githubReleaseOptions?.generateReleaseNotes !== false, // Default to true
+            changelogPath: 'CHANGELOG.md',
+            cwd: effectiveCwd,
+          }
+
+          const releaseUrl = await createGitHubRelease(tagName, releaseOptions)
+
+          if (releaseUrl) {
+            if (!options.quiet)
+              logStep(symbols.party, `GitHub release created: ${releaseUrl}`, false)
+
+            if (progress && lastNewVersion && _lastOldVersion) {
+              progress({
+                event: ProgressEvent.GitHubRelease,
+                updatedFiles,
+                skippedFiles,
+                newVersion: lastNewVersion,
+                oldVersion: _lastOldVersion,
+              })
+            }
+          }
+          else {
+            console.warn('Warning: Failed to create GitHub release')
+          }
+        }
+        catch (error) {
+          console.warn(`Warning: Failed to create GitHub release: ${error}`)
+        }
+      }
+      else if (options.createGitHubRelease && tag && lastNewVersion && !options.githubToken) {
+        console.warn('Warning: GitHub release creation was enabled but no GitHub token was provided. Skipping release creation...')
+      }
     }
     else if (push && !dryRun && !inGitRepo) {
       console.warn('Warning: Requested to push to remote but current directory is not a Git repository. Skipping push...')
@@ -1007,6 +1089,11 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
         }
       }
       catch {}
+
+      // Show dry run message for GitHub release creation
+      if (options.createGitHubRelease && tag && lastNewVersion) {
+        logStep(symbols.party, `[DRY RUN] Would create GitHub release for tag v${lastNewVersion}`, true)
+      }
     }
 
     // Helper function for proper pluralization
