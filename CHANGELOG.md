@@ -1,4 +1,15 @@
 # Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.80...v0.1.81)
+
+### 🧹 Chores
+
+- release v0.1.81 ([8fd4c95](https://github.com/stacksjs/bumpx/commit/8fd4c95))
+- lint fix ([debf64d](https://github.com/stacksjs/bumpx/commit/debf64d))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
 [Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.79...v0.1.80)
 
 ### 🧹 Chores
