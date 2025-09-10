@@ -1,4 +1,15 @@
 # Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.82...v0.1.83)
+
+### 🧹 Chores
+
+- release v0.1.83 ([0c14254](https://github.com/stacksjs/bumpx/commit/0c14254))
+- add spaces ([e7817ef](https://github.com/stacksjs/bumpx/commit/e7817ef))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
 [Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.81...v0.1.82)
 
 ### 🧹 Chores
