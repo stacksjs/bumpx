@@ -121,4 +121,3 @@ export interface MonorepoInfo {
   workspaceConfig?: WorkspaceConfig
   packageManager?: 'npm' | 'yarn' | 'pnpm' | 'bun'
 }
-

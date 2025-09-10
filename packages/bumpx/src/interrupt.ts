@@ -1,3 +1,5 @@
+import process from 'node:process'
+
 /**
  * Global flag to track user interrupt status
  */
