@@ -4,12 +4,10 @@ import process from 'node:process'
 import { CLI } from '@stacksjs/clapp'
 import { version } from '../package.json'
 import { defaultConfig as bumpConfigDefaults, loadBumpConfig } from '../src/config'
+import { checkInterruption, userInterrupted } from '../src/interrupt'
 import { ExitCode, ProgressEvent } from '../src/types'
 import { colors, isReleaseType, isValidVersion, symbols } from '../src/utils'
 import { versionBump } from '../src/version-bump'
-
-// Set up global user interrupt flag for handling SIGINT (Ctrl+C)
-export const userInterrupted = { value: false }
 
 // Handle SIGINT (Ctrl+C) globally
 process.on('SIGINT', () => {
@@ -101,6 +99,9 @@ function progress({ event, script, updatedFiles, skippedFiles, newVersion }: Ver
  * Prompt user for confirmation when using -r --all
  */
 async function promptForRecursiveAll(): Promise<boolean> {
+  // Check for interruption before prompting
+  checkInterruption()
+
   // Prevent prompting during tests to avoid hanging
   if (process.env.NODE_ENV === 'test' || process.env.BUN_ENV === 'test' || process.argv.includes('test')) {
     return true // Auto-confirm in test mode
@@ -193,6 +194,9 @@ function errorHandler(error: Error): never {
  * Parse and prepare config from CLI options
  */
 async function prepareConfig(release: string | undefined, files: string[] | undefined, options: CLIOptions): Promise<BumpxConfig> {
+  // Check for interruption before starting
+  checkInterruption()
+
   // Handle CI mode - override other settings for non-interactive operation
   const isCiMode = options.ci || process.env.CI === 'true'
   const ciOverrides = isCiMode
@@ -283,10 +287,16 @@ async function prepareConfig(release: string | undefined, files: string[] | unde
   if (options.respectGitignore !== undefined)
     cliOverrides.respectGitignore = options.respectGitignore
 
+  // Check for interruption before loading config
+  checkInterruption()
+
   const loaded = await loadBumpConfig({
     ...cliOverrides,
     ...ciOverrides,
   })
+
+  // Check again after loading config
+  checkInterruption()
 
   // If no release was provided, always show the prompt by default
   // This gives users the chance to choose their version type
@@ -356,13 +366,26 @@ cli
         throw new Error(`Invalid release type or version: ${release}`)
       }
 
+      // Check for interruption before config preparation
+      checkInterruption()
       const config = await prepareConfig(release, files, options)
+
+      // Check for interruption after config preparation
+      checkInterruption()
 
       if (!options.quiet) {
         // Create progress callback that respects verbose mode
-        config.progress = config.progress || ((progressData: VersionBumpProgress) => progress(progressData, options.verbose || false))
+        config.progress = config.progress || ((progressData: VersionBumpProgress) => {
+          // Check for interruption before each progress update
+          if (userInterrupted.value) {
+            checkInterruption()
+            return
+          }
+          progress(progressData, options.verbose || false)
+        })
       }
 
+      // Run the version bump with interruption checking
       await versionBump(config)
     }
     catch (error) {

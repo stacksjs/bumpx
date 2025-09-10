@@ -3,7 +3,7 @@ import type { FileInfo, VersionBumpOptions } from './types'
 import { readFileSync, writeFileSync } from 'node:fs'
 import { dirname, join, relative, resolve } from 'node:path'
 import process from 'node:process'
-import { userInterrupted } from './interrupt'
+import { checkInterruption, userInterrupted } from './interrupt'
 import { ProgressEvent } from './types'
 import {
   checkGitStatus,
@@ -64,6 +64,9 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
   const inGitRepo = isGitRepository(effectiveCwd)
 
   try {
+    // Check for interruption at the start
+    checkInterruption()
+
     // Print recent commits if requested
     if (printCommits && inGitRepo) {
       try {
@@ -78,17 +81,24 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
       catch {
         // Ignore failures when not in a git repository
       }
+      // Check for interruption after getting commits
+      checkInterruption()
     }
 
     // Check git status only when needed
     if (!noGitCheck && (tag || push) && !commit) {
       await checkGitStatus(effectiveCwd)
+      // Check for interruption after git status check
+      checkInterruption()
     }
 
     // Determine files to update
     if (!options.quiet) {
       logStep(symbols.search, `${dryRun ? '[DRY RUN] ' : ''}Reading package.json...`, false)
     }
+
+    // Check for interruption before file operations
+    checkInterruption()
     let filesToUpdate: string[] = []
     let rootPackagePath: string | undefined
 
@@ -119,6 +129,9 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
     if (!release) {
       throw new Error('Release type or version must be specified')
     }
+
+    // Check for interruption before updating files
+    checkInterruption()
 
     // Update files
     const updatedFiles: string[] = []
@@ -670,11 +683,16 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
       logStep(symbols.checkmark, 'Updated package.json', false)
     }
 
+    // Check for interruption before executing custom commands
+    checkInterruption()
+
     // Execute custom commands before git operations
     if (execute && !dryRun) {
       try {
         const commands = Array.isArray(execute) ? execute : [execute]
         for (const command of commands) {
+          // Check for interruption before each command
+          checkInterruption()
           if (progress) {
             // Provide full payload to satisfy VersionBumpProgress typing
             progress({
@@ -731,6 +749,9 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
       console.log('Rollback completed due to user interruption.')
       process.exit(0)
     }
+
+    // Check for interruption before Git operations
+    checkInterruption()
 
     // Git operations
     if (!dryRun && (commit || tag || push) && updatedFiles.length > 0) {
