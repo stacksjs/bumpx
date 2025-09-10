@@ -1,4 +1,15 @@
 # Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.81...v0.1.82)
+
+### 🧹 Chores
+
+- release v0.1.82 ([bdff108](https://github.com/stacksjs/bumpx/commit/bdff108))
+- wip ([abeaddd](https://github.com/stacksjs/bumpx/commit/abeaddd))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
 [Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.80...v0.1.81)
 
 ### 🧹 Chores
