@@ -29,9 +29,6 @@ export interface VersionBumpOptions {
   changelog?: boolean
   respectGitignore?: boolean
   verbose?: boolean
-  createGitHubRelease?: boolean
-  githubToken?: string
-  githubReleaseOptions?: GitHubReleaseOptions
 }
 
 export interface BumpxConfig extends VersionBumpOptions {
@@ -57,7 +54,6 @@ export enum ProgressEvent {
   NpmScript = 'npmScript',
   Execute = 'execute',
   ChangelogGenerated = 'changelogGenerated',
-  GitHubRelease = 'githubRelease',
 }
 
 export interface VersionBumpProgress {
@@ -126,40 +122,3 @@ export interface MonorepoInfo {
   packageManager?: 'npm' | 'yarn' | 'pnpm' | 'bun'
 }
 
-export interface GitHubReleaseOptions {
-  /**
-   * Owner of the GitHub repository
-   */
-  owner?: string
-
-  /**
-   * Name of the GitHub repository
-   */
-  repo?: string
-
-  /**
-   * Whether to mark the release as a draft (unpublished)
-   */
-  draft?: boolean
-
-  /**
-   * Whether to mark the release as a prerelease
-   */
-  prerelease?: boolean
-
-  /**
-   * Whether to generate release notes automatically using GitHub's API
-   */
-  generateReleaseNotes?: boolean
-
-  /**
-   * Custom release title. If not provided, the tag name will be used
-   */
-  name?: string
-
-  /**
-   * Custom release body content. If not provided and generateReleaseNotes is false,
-   * content from CHANGELOG.md will be used
-   */
-  body?: string
-}

@@ -26,14 +26,6 @@ export const defaultConfig: BumpxConfig = {
   forceUpdate: true,
   changelog: true, // Enable changelog generation by default
   respectGitignore: true, // Respect .gitignore by default
-
-  // GitHub Release options
-  createGitHubRelease: false, // Disabled by default since it requires a token
-  githubReleaseOptions: {
-    draft: false,
-    prerelease: false,
-    generateReleaseNotes: true, // Use GitHub's auto-generated release notes by default
-  },
 }
 
 /**

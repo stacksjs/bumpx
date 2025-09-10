@@ -1017,58 +1017,6 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
           oldVersion: _lastOldVersion,
         })
       }
-
-      // Create GitHub release if enabled and tag was pushed
-      if (options.createGitHubRelease && tag && lastNewVersion && options.githubToken) {
-        try {
-          if (!options.quiet)
-            logStep(symbols.party, 'Creating GitHub release...', false)
-
-          const { createGitHubRelease } = await import('./utils')
-          const tagName = typeof tag === 'string'
-            ? tag.replace('{version}', lastNewVersion).replace('%s', lastNewVersion)
-            : `v${lastNewVersion}`
-
-          const releaseOptions = {
-            token: options.githubToken,
-            owner: options.githubReleaseOptions?.owner,
-            repo: options.githubReleaseOptions?.repo,
-            name: options.githubReleaseOptions?.name || tagName,
-            body: options.githubReleaseOptions?.body,
-            draft: options.githubReleaseOptions?.draft === true,
-            prerelease: options.githubReleaseOptions?.prerelease === true,
-            generateReleaseNotes: options.githubReleaseOptions?.generateReleaseNotes !== false, // Default to true
-            changelogPath: 'CHANGELOG.md',
-            cwd: effectiveCwd,
-          }
-
-          const releaseUrl = await createGitHubRelease(tagName, releaseOptions)
-
-          if (releaseUrl) {
-            if (!options.quiet)
-              logStep(symbols.party, `GitHub release created: ${releaseUrl}`, false)
-
-            if (progress && lastNewVersion && _lastOldVersion) {
-              progress({
-                event: ProgressEvent.GitHubRelease,
-                updatedFiles,
-                skippedFiles,
-                newVersion: lastNewVersion,
-                oldVersion: _lastOldVersion,
-              })
-            }
-          }
-          else {
-            console.warn('Warning: Failed to create GitHub release')
-          }
-        }
-        catch (error) {
-          console.warn(`Warning: Failed to create GitHub release: ${error}`)
-        }
-      }
-      else if (options.createGitHubRelease && tag && lastNewVersion && !options.githubToken) {
-        console.warn('Warning: GitHub release creation was enabled but no GitHub token was provided. Skipping release creation...')
-      }
     }
     else if (push && !dryRun && !inGitRepo) {
       console.warn('Warning: Requested to push to remote but current directory is not a Git repository. Skipping push...')
@@ -1089,11 +1037,6 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
         }
       }
       catch {}
-
-      // Show dry run message for GitHub release creation
-      if (options.createGitHubRelease && tag && lastNewVersion) {
-        logStep(symbols.party, `[DRY RUN] Would create GitHub release for tag v${lastNewVersion}`, true)
-      }
     }
 
     // Helper function for proper pluralization
