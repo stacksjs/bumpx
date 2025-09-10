@@ -1,4 +1,15 @@
 # Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.78...v0.1.79)
+
+### 🧹 Chores
+
+- release v0.1.79 ([383a15d](https://github.com/stacksjs/bumpx/commit/383a15d))
+- improve interruptions ([4dfc8f8](https://github.com/stacksjs/bumpx/commit/4dfc8f8))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
 [Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.77...v0.1.78)
 
 ### 🧹 Chores
