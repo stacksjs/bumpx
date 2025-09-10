@@ -1,4 +1,16 @@
 # Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.79...v0.1.80)
+
+### 🧹 Chores
+
+- release v0.1.80 ([3282a69](https://github.com/stacksjs/bumpx/commit/3282a69))
+- remove unused old code ([b4f4874](https://github.com/stacksjs/bumpx/commit/b4f4874))
+- wip ([f0d81b6](https://github.com/stacksjs/bumpx/commit/f0d81b6))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
 [Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.78...v0.1.79)
 
 ### 🧹 Chores
