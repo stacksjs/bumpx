@@ -1048,10 +1048,6 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
     }
     else {
       logStep(symbols.party, `Successfully released${lastNewVersion ? ` v${lastNewVersion}` : ''}!`, false)
-
-      if (!options.quiet && lastNewVersion) {
-        console.log(colors.gray(`v${lastNewVersion}`))
-      }
     }
 
     if (skippedFiles.length > 0) {
