@@ -58,27 +58,33 @@ function progress({ event, script, updatedFiles, skippedFiles, newVersion }: Ver
     case ProgressEvent.FileUpdated:
       // Only show individual file updates in verbose mode
       if (verbose) {
-        console.log(colors.gray(`${symbols.checkmark} Updated ${updatedFiles[updatedFiles.length - 1]} to ${newVersion}`))
+        console.log(colors.gray(`🔎 ${symbols.checkmark} Updated ${updatedFiles[updatedFiles.length - 1]} to ${newVersion}`))
       }
       break
 
     case ProgressEvent.FileSkipped:
       // Only show individual file skips in verbose mode
       if (verbose) {
-        console.log(colors.gray(`${symbols.info} ${skippedFiles[skippedFiles.length - 1]} did not need to be updated`))
+        console.log(colors.gray(`🔎 ${symbols.info} ${skippedFiles[skippedFiles.length - 1]} did not need to be updated`))
       }
       break
 
     case ProgressEvent.GitCommit:
-      console.log(colors.gray(`${symbols.checkmark} Git commit`))
+      if (verbose) {
+        console.log(colors.gray(`🔎 ${symbols.checkmark} Git commit`))
+      }
       break
 
     case ProgressEvent.GitTag:
-      console.log(colors.gray(`${symbols.checkmark} Git tag`))
+      if (verbose) {
+        console.log(colors.gray(`🔎 ${symbols.checkmark} Git tag`))
+      }
       break
 
     case ProgressEvent.GitPush:
-      console.log(colors.gray(`${symbols.checkmark} Git push`))
+      if (verbose) {
+        console.log(colors.gray(`🔎 ${symbols.checkmark} Git push`))
+      }
       break
 
     case ProgressEvent.NpmScript:
@@ -86,11 +92,15 @@ function progress({ event, script, updatedFiles, skippedFiles, newVersion }: Ver
       break
 
     case ProgressEvent.Execute:
-      console.log(colors.gray(`${symbols.checkmark} Execute ${script}`))
+      if (verbose) {
+        console.log(colors.gray(`🔎 ${symbols.checkmark} Execute ${script}`))
+      }
       break
 
     case ProgressEvent.ChangelogGenerated:
-      console.log(colors.gray(`${symbols.checkmark} Generated changelog`))
+      if (verbose) {
+        console.log(colors.gray(`🔎 ${symbols.checkmark} Generated changelog`))
+      }
       break
   }
 }
