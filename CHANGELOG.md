@@ -1,4 +1,15 @@
 # Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.85...v0.1.86)
+
+### 🧹 Chores
+
+- release v0.1.86 ([159d703](https://github.com/stacksjs/bumpx/commit/159d703))
+- wip ([f6029b7](https://github.com/stacksjs/bumpx/commit/f6029b7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
 [Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.84...v0.1.85)
 
 ### 🐛 Bug Fixes
