@@ -1,4 +1,23 @@
 # Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.84...v0.1.85)
+
+### 🐛 Bug Fixes
+
+- update dependencies and fix test type annotations ([985dd43](https://github.com/stacksjs/bumpx/commit/985dd43))
+- update changelog display and fix typescript issues ([5647dec](https://github.com/stacksjs/bumpx/commit/5647dec))
+
+### 🧹 Chores
+
+- release v0.1.85 ([97f7b79](https://github.com/stacksjs/bumpx/commit/97f7b79))
+- improve verbose mode ([185986a](https://github.com/stacksjs/bumpx/commit/185986a))
+- wip ([5db5c56](https://github.com/stacksjs/bumpx/commit/5db5c56))
+- wip ([611738f](https://github.com/stacksjs/bumpx/commit/611738f))
+- wip ([25b71cf](https://github.com/stacksjs/bumpx/commit/25b71cf))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
 [Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.83...v0.1.84)
 
 ### 🐛 Bug Fixes
