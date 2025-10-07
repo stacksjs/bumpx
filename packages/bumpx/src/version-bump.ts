@@ -1305,9 +1305,9 @@ async function rollbackChanges(fileBackups: Map<string, { content: string, versi
   Array.from(fileBackups.entries()).forEach(([filePath, backup]) => {
     try {
       // Use a dynamic import for fs
-      import('node:fs').then(fs => {
+      import('node:fs').then((fs) => {
         fs.writeFileSync(filePath, backup.content, 'utf-8')
-      }).catch(importError => {
+      }).catch((importError) => {
         console.warn(`Warning: Failed to import fs module: ${importError}`)
       })
     }

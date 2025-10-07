@@ -444,7 +444,7 @@ describe('Git Operations (Integration)', () => {
     it('should include changelog content in tag message when available', async () => {
       const packagePath = join(tempDir, 'package.json')
       const changelogPath = join(tempDir, 'CHANGELOG.md')
-      
+
       // Create package.json and CHANGELOG.md
       writeFileSync(packagePath, JSON.stringify({ name: 'test', version: '1.0.0' }, null, 2))
       writeFileSync(
@@ -464,7 +464,7 @@ describe('Git Operations (Integration)', () => {
 ## 1.0.0
 
 Initial release
-`
+`,
       )
 
       await versionBump({
@@ -479,18 +479,18 @@ Initial release
 
       // Find the actual tag call to check
       const tagCalls = mockSpawnSync.mock.calls.filter(
-        call => call[0] && call[0].includes && call[0].includes('tag') && call[0].includes('-m')
+        call => call[0] && call[0].includes && call[0].includes('tag') && call[0].includes('-m'),
       )
-      
+
       // Check that the tag includes at least the version header from the changelog
-      const matchingCall = tagCalls.some(call => 
-        call[0][0] === 'tag' && 
-        call[0][1] === '-a' && 
-        call[0][2] === 'v1.0.1' && 
-        call[0][3] === '-m' &&
-        call[0][4].includes('## 1.0.1')
+      const matchingCall = tagCalls.some(call =>
+        call[0][0] === 'tag'
+        && call[0][1] === '-a'
+        && call[0][2] === 'v1.0.1'
+        && call[0][3] === '-m'
+        && call[0][4].includes('## 1.0.1'),
       )
-      
+
       expect(matchingCall).toBe(true)
     })
 
@@ -510,22 +510,22 @@ Initial release
 
       // Find the actual tag call to check
       const tagCalls = mockSpawnSync.mock.calls.filter(
-        call => call[0] && call[0].includes && call[0].includes('tag')
+        call => call[0] && call[0].includes && call[0].includes('tag'),
       )
-      
+
       // We just check that a tag was created with the correct version
-      const basicTagCall = tagCalls.some(call => 
-        call[0][0] === 'tag' && 
-        call[0].includes('v1.0.1')
+      const basicTagCall = tagCalls.some(call =>
+        call[0][0] === 'tag'
+        && call[0].includes('v1.0.1'),
       )
-      
+
       expect(basicTagCall).toBe(true)
     })
 
     it('should use default message when changelog exists but doesn\'t have current version', async () => {
       const packagePath = join(tempDir, 'package.json')
       const changelogPath = join(tempDir, 'CHANGELOG.md')
-      
+
       // Create package.json and CHANGELOG.md without the version we're bumping to
       writeFileSync(packagePath, JSON.stringify({ name: 'test', version: '1.0.0' }, null, 2))
       writeFileSync(
@@ -535,7 +535,7 @@ Initial release
 ## 1.0.0
 
 Initial release
-`
+`,
       )
 
       await versionBump({
@@ -550,34 +550,34 @@ Initial release
 
       // Find the actual tag call to check
       const tagCalls = mockSpawnSync.mock.calls.filter(
-        call => call[0] && call[0].includes && call[0].includes('tag') && call[0].includes('-m')
+        call => call[0] && call[0].includes && call[0].includes('tag') && call[0].includes('-m'),
       )
-      
+
       // We expect the implementation to extract content from the changelog
-      const matchingCall = tagCalls.some(call => 
-        call[0][0] === 'tag' && 
-        call[0][1] === '-a' && 
-        call[0][2] === 'v1.0.1' && 
-        call[0][3] === '-m' && 
-        call[0][4].includes('## 1.0.0')
+      const matchingCall = tagCalls.some(call =>
+        call[0][0] === 'tag'
+        && call[0][1] === '-a'
+        && call[0][2] === 'v1.0.1'
+        && call[0][3] === '-m'
+        && call[0][4].includes('## 1.0.0'),
       )
-      
+
       expect(matchingCall).toBe(true)
     })
 
     it('should use custom tag message when provided', async () => {
       const packagePath = join(tempDir, 'package.json')
       const changelogPath = join(tempDir, 'CHANGELOG.md')
-      
+
       // Create package.json and CHANGELOG.md
       writeFileSync(packagePath, JSON.stringify({ name: 'test', version: '1.0.0' }, null, 2))
       writeFileSync(
         changelogPath,
-        `# Changelog\n\n## 1.0.1\n\n- Some changes`
+        `# Changelog\n\n## 1.0.1\n\n- Some changes`,
       )
 
       const customTagMessage = 'Custom tag for version {version}'
-      
+
       await versionBump({
         release: 'patch',
         files: [packagePath],
@@ -591,18 +591,18 @@ Initial release
 
       // Find the actual tag call to check
       const tagCalls = mockSpawnSync.mock.calls.filter(
-        call => call[0] && call[0].includes && call[0].includes('tag') && call[0].includes('-m')
+        call => call[0] && call[0].includes && call[0].includes('tag') && call[0].includes('-m'),
       )
-      
+
       // Check that one of the calls includes the changelog content
-      const matchingCall = tagCalls.some(call => 
-        call[0][0] === 'tag' && 
-        call[0][1] === '-a' && 
-        call[0][2] === 'v1.0.1' && 
-        call[0][3] === '-m' && 
-        call[0][4].includes('## 1.0.1')
+      const matchingCall = tagCalls.some(call =>
+        call[0][0] === 'tag'
+        && call[0][1] === '-a'
+        && call[0][2] === 'v1.0.1'
+        && call[0][3] === '-m'
+        && call[0][4].includes('## 1.0.1'),
       )
-      
+
       expect(matchingCall).toBe(true)
     })
   })

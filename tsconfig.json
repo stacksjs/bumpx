@@ -30,6 +30,7 @@
     "noEmit": true,
     "outDir": "./dist",
     "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "isolatedDeclarations": true,
     "verbatimModuleSyntax": true,
