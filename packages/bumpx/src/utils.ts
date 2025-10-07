@@ -4,8 +4,8 @@ import { execSync, spawnSync } from 'node:child_process'
 import { existsSync, readFileSync, writeFileSync } from 'node:fs'
 import { readdir, readFile, stat } from 'node:fs/promises'
 import { join, relative } from 'node:path'
-import process from 'node:process'
-import readline from 'node:readline'
+import * as process from 'node:process'
+import * as readline from 'node:readline'
 
 /**
  * Custom SemVer implementation to handle version parsing and manipulation
