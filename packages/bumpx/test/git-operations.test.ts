@@ -479,11 +479,11 @@ Initial release
 
       // Find the actual tag call to check
       const tagCalls = mockSpawnSync.mock.calls.filter(
-        call => call[0] && call[0].includes && call[0].includes('tag') && call[0].includes('-m'),
+        (call: any) => call[0] && call[0].includes && call[0].includes('tag') && call[0].includes('-m'),
       )
 
       // Check that the tag includes at least the version header from the changelog
-      const matchingCall = tagCalls.some(call =>
+      const matchingCall = tagCalls.some((call: any) =>
         call[0][0] === 'tag'
         && call[0][1] === '-a'
         && call[0][2] === 'v1.0.1'
@@ -510,11 +510,11 @@ Initial release
 
       // Find the actual tag call to check
       const tagCalls = mockSpawnSync.mock.calls.filter(
-        call => call[0] && call[0].includes && call[0].includes('tag'),
+        (call: any) => call[0] && call[0].includes && call[0].includes('tag'),
       )
 
       // We just check that a tag was created with the correct version
-      const basicTagCall = tagCalls.some(call =>
+      const basicTagCall = tagCalls.some((call: any) =>
         call[0][0] === 'tag'
         && call[0].includes('v1.0.1'),
       )
@@ -550,11 +550,11 @@ Initial release
 
       // Find the actual tag call to check
       const tagCalls = mockSpawnSync.mock.calls.filter(
-        call => call[0] && call[0].includes && call[0].includes('tag') && call[0].includes('-m'),
+        (call: any) => call[0] && call[0].includes && call[0].includes('tag') && call[0].includes('-m'),
       )
 
       // We expect the implementation to extract content from the changelog
-      const matchingCall = tagCalls.some(call =>
+      const matchingCall = tagCalls.some((call: any) =>
         call[0][0] === 'tag'
         && call[0][1] === '-a'
         && call[0][2] === 'v1.0.1'
@@ -591,11 +591,11 @@ Initial release
 
       // Find the actual tag call to check
       const tagCalls = mockSpawnSync.mock.calls.filter(
-        call => call[0] && call[0].includes && call[0].includes('tag') && call[0].includes('-m'),
+        (call: any) => call[0] && call[0].includes && call[0].includes('tag') && call[0].includes('-m'),
       )
 
       // Check that one of the calls includes the changelog content
-      const matchingCall = tagCalls.some(call =>
+      const matchingCall = tagCalls.some((call: any) =>
         call[0][0] === 'tag'
         && call[0][1] === '-a'
         && call[0][2] === 'v1.0.1'

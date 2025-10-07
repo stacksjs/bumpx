@@ -43,8 +43,8 @@
         "bumpx": "./dist/bin/cli.js",
       },
       "dependencies": {
-        "@stacksjs/clapp": "^0.1.16",
-        "@stacksjs/logsmith": "^0.1.15",
+        "@stacksjs/clapp": "^0.1.18",
+        "@stacksjs/logsmith": "^0.1.18",
         "bunfig": "^0.14.1",
       },
       "devDependencies": {
