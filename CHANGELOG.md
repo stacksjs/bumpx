@@ -1,4 +1,15 @@
 # Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.0...v0.2.1)
+
+### 🧹 Chores
+
+- release v0.2.1 ([f8221e9](https://github.com/stacksjs/bumpx/commit/f8221e9))
+- lint ([201e14f](https://github.com/stacksjs/bumpx/commit/201e14f))
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
 [Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.86...v0.2.0)
 
 ### 🧹 Chores
