@@ -479,6 +479,7 @@ describe('Interactive Prompt Tests', () => {
         push: false,
         noGitCheck: true,
         quiet: true,
+        cwd: tempDir,
       })
 
       // Both packages should be updated to the same version

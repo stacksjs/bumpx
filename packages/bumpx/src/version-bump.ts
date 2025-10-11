@@ -11,6 +11,7 @@ import {
   createGitCommit,
   createGitTag,
   executeCommand,
+  executeCommandWithOutput,
   findAllPackageFiles,
   findPackageJsonFiles,
   getCurrentBranch,
@@ -666,7 +667,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
           )) {
             throw error
           }
-          console.log(`Warning: Failed to process ${filePath}: ${error}`)
+          console.error(`Warning: Failed to process ${filePath}: ${error}`)
           errors.push(`Failed to process ${filePath}: ${error}`)
           skippedFiles.push(filePath)
         }
@@ -704,7 +705,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
               oldVersion: _lastOldVersion,
             })
           }
-          executeCommand(command, effectiveCwd)
+          executeCommandWithOutput(command, effectiveCwd)
         }
       }
       catch (error) {

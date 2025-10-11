@@ -9,6 +9,7 @@ describe('Git Operations (Integration)', () => {
   let tempDir: string
   let mockSpawnSync: any
   let mockExecSync: any
+  let mockExecSyncWithOutput: any
   let mockIsGitRepo: any
   let mockGitTagExists: any
 
@@ -50,6 +51,17 @@ describe('Git Operations (Integration)', () => {
         return command.replace('echo ', '').replace(/"/g, '')
       return ''
     })
+
+    // Mock executeCommandWithOutput (used for --execute flag)
+    mockExecSyncWithOutput = spyOn(utils, 'executeCommandWithOutput').mockImplementation((command: string, _cwd?: string) => {
+      // Same implementation as executeCommand but with visible output
+      if (command.includes('npm install'))
+        return
+      if (command.includes('git add'))
+        return
+      if (command.includes('echo'))
+        return
+    })
   })
 
   afterEach(() => {
@@ -58,6 +70,7 @@ describe('Git Operations (Integration)', () => {
     }
     mockSpawnSync.mockRestore()
     mockExecSync.mockRestore()
+    mockExecSyncWithOutput.mockRestore()
     mockIsGitRepo.mockRestore()
     mockGitTagExists.mockRestore()
   })
@@ -323,8 +336,8 @@ describe('Git Operations (Integration)', () => {
         noGitCheck: true,
       })
 
-      // Verify command was executed
-      expect(mockExecSync).toHaveBeenCalledWith('echo "test command"', expect.any(String))
+      // Verify command was executed (now uses executeCommandWithOutput)
+      expect(mockExecSyncWithOutput).toHaveBeenCalledWith('echo "test command"', expect.any(String))
 
       // Verify commit happened after execute (actual format includes 'v' prefix)
       expect(mockSpawnSync).toHaveBeenCalledWith(['commit', '-m', 'chore: release v1.0.1'], expect.any(String))
@@ -345,22 +358,21 @@ describe('Git Operations (Integration)', () => {
         noGitCheck: true,
       })
 
-      // Verify all commands were executed in order
-      expect(mockExecSync).toHaveBeenCalledWith('echo "first"', expect.any(String))
-      expect(mockExecSync).toHaveBeenCalledWith('echo "second"', expect.any(String))
-      expect(mockExecSync).toHaveBeenCalledWith('echo "third"', expect.any(String))
+      // Verify all commands were executed in order (now uses executeCommandWithOutput)
+      expect(mockExecSyncWithOutput).toHaveBeenCalledWith('echo "first"', expect.any(String))
+      expect(mockExecSyncWithOutput).toHaveBeenCalledWith('echo "second"', expect.any(String))
+      expect(mockExecSyncWithOutput).toHaveBeenCalledWith('echo "third"', expect.any(String))
     })
 
     it('should handle command execution failures gracefully', async () => {
       const packagePath = join(tempDir, 'package.json')
       writeFileSync(packagePath, JSON.stringify({ name: 'test', version: '1.0.0' }, null, 2))
 
-      // Mock a failing command
-      mockExecSync.mockImplementation((command: string) => {
+      // Mock a failing command (now using executeCommandWithOutput)
+      mockExecSyncWithOutput.mockImplementation((command: string) => {
         if (command.includes('failing-command')) {
           throw new Error('Command failed')
         }
-        return ''
       })
 
       const consoleSpy = spyOn(console, 'warn').mockImplementation(() => {})
@@ -404,8 +416,8 @@ describe('Git Operations (Integration)', () => {
         dryRun: true,
       })
 
-      // Command should not be executed, but dry run message should be shown
-      const executeCalls = mockExecSync.mock.calls.filter((call: any) =>
+      // Command should not be executed, but dry run message should be shown (check executeCommandWithOutput)
+      const executeCalls = mockExecSyncWithOutput.mock.calls.filter((call: any) =>
         call[0] && call[0].includes('echo "test"'),
       )
       expect(executeCalls.length).toBe(0)
@@ -435,8 +447,8 @@ describe('Git Operations (Integration)', () => {
         cwd: tempDir,
       })
 
-      // Verify command was executed with correct cwd
-      expect(mockExecSync).toHaveBeenCalledWith('pwd', tempDir)
+      // Verify command was executed with correct cwd (now using executeCommandWithOutput)
+      expect(mockExecSyncWithOutput).toHaveBeenCalledWith('pwd', tempDir)
     })
   })
 
@@ -694,8 +706,8 @@ Initial release
       expect(updatedRoot.version).toBe('1.1.0')
       expect(updatedPkg1.version).toBe('1.1.0')
 
-      // Verify execute command was called
-      expect(mockExecSync).toHaveBeenCalledWith('echo "building workspace"', tempDir)
+      // Verify execute command was called (now using executeCommandWithOutput)
+      expect(mockExecSyncWithOutput).toHaveBeenCalledWith('echo "building workspace"', tempDir)
 
       // Verify git operations were performed
       expect(mockSpawnSync).toHaveBeenCalledWith(['commit', '-m', 'chore: release v1.1.0'], tempDir)

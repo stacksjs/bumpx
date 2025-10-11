@@ -2067,6 +2067,7 @@ describe('Version Bump (Integration)', () => {
         quiet: true,
         noGitCheck: true,
         dryRun: true,
+        cwd: tempDir,
       })
 
       // Check that no files were actually modified in dry run
@@ -2157,6 +2158,7 @@ describe('Version Bump (Integration)', () => {
         push: false,
         noGitCheck: true,
         dryRun: true, // Use dry run to avoid actual git operations
+        cwd: tempDir,
       })
 
       // In dry run mode, files should not be modified
@@ -2205,6 +2207,7 @@ describe('Version Bump (Integration)', () => {
         push: false,
         noGitCheck: true,
         dryRun: true, // Use dry run to avoid actual git operations
+        cwd: tempDir,
       })
 
       // In dry run mode, files should not be modified
