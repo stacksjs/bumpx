@@ -1,4 +1,16 @@
 # Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.86...v0.2.0)
+
+### 🧹 Chores
+
+- release v0.2.0 ([8887909](https://github.com/stacksjs/bumpx/commit/8887909))
+- minor improvements ([4d32640](https://github.com/stacksjs/bumpx/commit/4d32640))
+- improve recursive mode ([d5c49ab](https://github.com/stacksjs/bumpx/commit/d5c49ab))
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
 [Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.85...v0.1.86)
 
 ### 🧹 Chores
