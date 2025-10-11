@@ -282,6 +282,58 @@ export async function findPackageJsonFiles(dir: string = process.cwd(), recursiv
 }
 
 /**
+ * Recursively find all package.json files in nested directories
+ */
+async function findNestedPackages(dir: string): Promise<string[]> {
+  const packages: string[] = []
+
+  try {
+    const entries = await readdir(dir)
+    const excludedDirs = new Set([
+      'node_modules',
+      'dist',
+      'coverage',
+      'lib',
+      'out',
+      'target',
+      '.git',
+      '.svn',
+      '.hg',
+      '.next',
+      '.nuxt',
+      '.output',
+      '.vercel',
+      '.netlify',
+    ])
+
+    for (const entry of entries) {
+      // Skip hidden directories and common build/output directories
+      if (entry.startsWith('.') || excludedDirs.has(entry))
+        continue
+
+      const entryPath = join(dir, entry)
+      const stats = await stat(entryPath)
+
+      if (stats.isDirectory()) {
+        const packageJsonPath = join(entryPath, 'package.json')
+        if (existsSync(packageJsonPath)) {
+          packages.push(packageJsonPath)
+        }
+
+        // Always recursively check for deeply nested packages
+        const nestedPackages = await findNestedPackages(entryPath)
+        packages.push(...nestedPackages)
+      }
+    }
+  }
+  catch {
+    // Ignore errors reading directory
+  }
+
+  return packages
+}
+
+/**
  * Get workspace packages from package.json workspaces field
  */
 export async function getWorkspacePackages(rootDir: string = process.cwd()): Promise<string[]> {
@@ -323,6 +375,10 @@ export async function getWorkspacePackages(rootDir: string = process.cwd()): Pro
                 if (existsSync(packageJsonPath)) {
                   workspacePackages.push(packageJsonPath)
                 }
+
+                // Recursively search for any deeply nested packages
+                const nestedPackages = await findNestedPackages(entryPath)
+                workspacePackages.push(...nestedPackages)
               }
             }
           }
