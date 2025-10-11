@@ -60,6 +60,7 @@ describe('Git Operations (Integration)', () => {
       if (command.includes('git add'))
         return
       if (command.includes('echo'))
+        // eslint-disable-next-line no-useless-return
         return
     })
   })
