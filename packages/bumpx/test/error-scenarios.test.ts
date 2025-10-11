@@ -390,8 +390,12 @@ describe('Error Scenarios and Edge Cases', () => {
 
     it('should handle git command failures when git is not available', async () => {
       // This is hard to simulate, but we can test the error handling
+      const packagePath = join(tempDir, 'package.json')
+      writeFileSync(packagePath, JSON.stringify({ name: 'test', version: '1.0.0' }, null, 2))
+
       await versionBump({
         release: 'patch',
+        files: [packagePath],
         commit: false,
         tag: false,
         push: false,

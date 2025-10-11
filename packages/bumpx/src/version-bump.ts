@@ -11,6 +11,7 @@ import {
   createGitCommit,
   createGitTag,
   executeCommand,
+  executeCommandWithOutput,
   findAllPackageFiles,
   findPackageJsonFiles,
   getCurrentBranch,
@@ -666,7 +667,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
           )) {
             throw error
           }
-          console.log(`Warning: Failed to process ${filePath}: ${error}`)
+          console.error(`Warning: Failed to process ${filePath}: ${error}`)
           errors.push(`Failed to process ${filePath}: ${error}`)
           skippedFiles.push(filePath)
         }
@@ -674,6 +675,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
     }
 
     // If there were critical errors and no files were updated, throw an error
+    console.error(`DEBUG: errors.length=${errors.length}, updatedFiles.length=${updatedFiles.length}, errors=${JSON.stringify(errors)}`)
     if (errors.length > 0 && updatedFiles.length === 0) {
       throw new Error(errors.length > 0 ? errors.join('; ') : 'Failed to update any files')
     }
@@ -704,7 +706,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
               oldVersion: _lastOldVersion,
             })
           }
-          executeCommand(command, effectiveCwd)
+          executeCommandWithOutput(command, effectiveCwd)
         }
       }
       catch (error) {
