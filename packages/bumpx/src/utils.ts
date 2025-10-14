@@ -356,9 +356,9 @@ export async function getWorkspacePackages(rootDir: string = process.cwd()): Pro
     const workspacePackages: string[] = []
 
     for (const pattern of workspacePatterns) {
-      // Simple pattern matching for common cases like "packages/*"
-      if (pattern.endsWith('/*')) {
-        const baseDir = pattern.slice(0, -2) // Remove /*
+      // Simple pattern matching for common cases like "packages/*" and "packages/**"
+      if (pattern.endsWith('/*') || pattern.endsWith('/**')) {
+        const baseDir = pattern.slice(0, -2) // Remove /* or /**
         const fullBaseDir = join(rootDir, baseDir)
 
         if (existsSync(fullBaseDir)) {
@@ -376,7 +376,7 @@ export async function getWorkspacePackages(rootDir: string = process.cwd()): Pro
                   workspacePackages.push(packageJsonPath)
                 }
 
-                // Recursively search for any deeply nested packages
+                // Recursively search for any deeply nested packages (for ** patterns)
                 const nestedPackages = await findNestedPackages(entryPath)
                 workspacePackages.push(...nestedPackages)
               }
