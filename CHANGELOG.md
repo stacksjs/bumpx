@@ -1,4 +1,15 @@
 # Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.1...v0.2.2)
+
+### 🧹 Chores
+
+- release v0.2.2 ([980a895](https://github.com/stacksjs/bumpx/commit/980a895))
+- wip ([d325494](https://github.com/stacksjs/bumpx/commit/d325494))
+
+### Contributors
+
+- glennmichael123 <gtorregosa@gmail.com>
+
 [Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.0...v0.2.1)
 
 ### 🧹 Chores
