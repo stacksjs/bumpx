@@ -5,7 +5,6 @@ await Bun.build({
   outdir: './dist',
   target: 'bun',
   format: 'esm',
-  // @ts-expect-error this exists, unsure why it is an issue
   splitting: true,
   minify: true,
   plugins: [dts()],

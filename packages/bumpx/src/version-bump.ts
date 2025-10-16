@@ -2,7 +2,7 @@
 import type { FileInfo, VersionBumpOptions } from './types'
 import { readFileSync, writeFileSync } from 'node:fs'
 import { dirname, join, relative, resolve } from 'node:path'
-import process from 'node:process'
+import * as process from 'node:process'
 import { checkInterruption, userInterrupted } from './interrupt'
 import { ProgressEvent } from './types'
 import {
@@ -11,6 +11,7 @@ import {
   createGitCommit,
   createGitTag,
   executeCommand,
+  executeCommandWithOutput,
   findAllPackageFiles,
   findPackageJsonFiles,
   getCurrentBranch,
@@ -666,7 +667,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
           )) {
             throw error
           }
-          console.log(`Warning: Failed to process ${filePath}: ${error}`)
+          console.error(`Warning: Failed to process ${filePath}: ${error}`)
           errors.push(`Failed to process ${filePath}: ${error}`)
           skippedFiles.push(filePath)
         }
@@ -704,7 +705,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
               oldVersion: _lastOldVersion,
             })
           }
-          executeCommand(command, effectiveCwd)
+          executeCommandWithOutput(command, effectiveCwd)
         }
       }
       catch (error) {
@@ -825,7 +826,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
           const versionRange = fromVersion ? `from ${fromVersion} to ${toVersion}` : `up to ${toVersion}`
           logStep(symbols.memo, `Generating changelog ${versionRange} and amend to commit`, false)
         }
-        await generateChangelog(effectiveCwd, fromVersion, toVersion)
+        await generateChangelog(effectiveCwd, fromVersion, toVersion, verbose)
 
         // Step 3: Delete temporary tag
         executeGit(['tag', '-d', tagName], effectiveCwd)
@@ -969,7 +970,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
           const versionRange = fromVersion ? `from ${fromVersion} to ${toVersion}` : `up to ${toVersion}`
           logStep(symbols.memo, `Generating changelog ${versionRange}`, false)
         }
-        await generateChangelog(effectiveCwd, fromVersion, toVersion)
+        await generateChangelog(effectiveCwd, fromVersion, toVersion, verbose)
 
         if (progress && _lastOldVersion) {
           progress({
@@ -1048,10 +1049,6 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
     }
     else {
       logStep(symbols.party, `Successfully released${lastNewVersion ? ` v${lastNewVersion}` : ''}!`, false)
-
-      if (!options.quiet && lastNewVersion) {
-        console.log(colors.gray(`v${lastNewVersion}`))
-      }
     }
 
     if (skippedFiles.length > 0) {
@@ -1082,7 +1079,12 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
 /**
  * Show the newly generated changelog content
  */
-function showGeneratedChangelog(newContent: string, existingContent: string): void {
+function showGeneratedChangelog(newContent: string, existingContent: string, verbose: boolean = false): void {
+  // Only show changelog content in verbose mode
+  if (!verbose) {
+    return
+  }
+
   try {
     // Extract only the new content by removing the existing content
     let freshContent = newContent
@@ -1099,16 +1101,17 @@ function showGeneratedChangelog(newContent: string, existingContent: string): vo
     for (const line of lines) {
       // Look for version headers like "## [1.0.1]" or "### v1.0.1"
       if (line.match(/^#+\s*(\[?v?\d+\.\d+\.\d+.*?\]?|Release)/i)) {
+        // If we already found a changelog entry and now hit another header, stop processing
+        // This ensures we only get the first/latest entry
+        if (inChangelog) {
+          break
+        }
         inChangelog = true
         relevantLines.push(line)
       }
       else if (inChangelog) {
-        // Stop at the next version header or empty sections
-        if (line.match(/^#+\s*(\[?v?\d+\.\d+\.\d+.*?\]?|Release)/i)) {
-          break
-        }
         // Add content lines but limit output
-        if (relevantLines.length < 15) { // Limit to ~15 lines
+        if (relevantLines.length < 30) { // Allow for a bit more content
           relevantLines.push(line)
         }
       }
@@ -1116,7 +1119,7 @@ function showGeneratedChangelog(newContent: string, existingContent: string): vo
 
     // Show the changelog content if we found any
     if (relevantLines.length > 0) {
-      console.log(`\n${colors.gray('Generated changelog:')}`)
+      console.log(`\n${colors.gray('🔎 Generated changelog:')}`)
       const changelogOutput = relevantLines.join('\n').trim()
       console.log(colors.gray(changelogOutput))
       console.log('') // Empty line after changelog
@@ -1130,7 +1133,7 @@ function showGeneratedChangelog(newContent: string, existingContent: string): vo
 /**
  * Generate changelog using @stacksjs/logsmith
  */
-async function generateChangelog(cwd: string, fromVersion?: string, toVersion?: string): Promise<void> {
+async function generateChangelog(cwd: string, fromVersion?: string, toVersion?: string, verbose: boolean = false): Promise<void> {
   const fs = await import('node:fs')
   const path = await import('node:path')
 
@@ -1201,6 +1204,9 @@ async function generateChangelog(cwd: string, fromVersion?: string, toVersion?: 
 
       // Write the combined content back to the file
       fs.writeFileSync(changelogPath, newContent, 'utf-8')
+
+      // Show the newly generated changelog section
+      showGeneratedChangelog(newContent, existingContent, verbose)
     }
     else {
       // Use CLI approach in test mode
@@ -1235,7 +1241,7 @@ async function generateChangelog(cwd: string, fromVersion?: string, toVersion?: 
       fs.writeFileSync(changelogPath, newContent, 'utf-8')
 
       // Show the newly generated changelog section
-      showGeneratedChangelog(newContent, existingContent)
+      showGeneratedChangelog(newContent, existingContent, verbose)
     }
   }
   catch (error: any) {
@@ -1272,7 +1278,7 @@ async function generateChangelog(cwd: string, fromVersion?: string, toVersion?: 
       fs.writeFileSync(changelogPath, newContent, 'utf-8')
 
       // Show the newly generated changelog section
-      showGeneratedChangelog(newContent, existingContent)
+      showGeneratedChangelog(newContent, existingContent, verbose)
     }
     catch (fallbackError) {
       throw new Error(`Changelog generation failed: ${error.message}. Fallback also failed: ${fallbackError}`)
@@ -1297,15 +1303,20 @@ async function rollbackChanges(fileBackups: Map<string, { content: string, versi
   }
 
   // Then restore file contents to their original state
-  for (const [filePath, backup] of fileBackups) {
+  // Use Array.from to convert Map entries to an array for compatibility
+  Array.from(fileBackups.entries()).forEach(([filePath, backup]) => {
     try {
-      const fs = await import('node:fs')
-      fs.writeFileSync(filePath, backup.content, 'utf-8')
+      // Use a dynamic import for fs
+      import('node:fs').then((fs) => {
+        fs.writeFileSync(filePath, backup.content, 'utf-8')
+      }).catch((importError) => {
+        console.warn(`Warning: Failed to import fs module: ${importError}`)
+      })
     }
     catch (rollbackError) {
       console.warn(`Warning: Failed to rollback ${filePath}: ${rollbackError}`)
     }
-  }
+  })
 }
 
 /**

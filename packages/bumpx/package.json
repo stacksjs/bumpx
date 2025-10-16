@@ -1,7 +1,7 @@
 {
   "name": "@stacksjs/bumpx",
   "type": "module",
-  "version": "0.1.86",
+  "version": "0.2.2",
   "description": "Automatically bump your versions.",
   "author": "Chris Breuer <chris@stacksjs.org>",
   "license": "MIT",

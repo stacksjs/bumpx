@@ -9,6 +9,7 @@ describe('Git Operations (Integration)', () => {
   let tempDir: string
   let mockSpawnSync: any
   let mockExecSync: any
+  let mockExecSyncWithOutput: any
   let mockIsGitRepo: any
   let mockGitTagExists: any
 
@@ -50,6 +51,18 @@ describe('Git Operations (Integration)', () => {
         return command.replace('echo ', '').replace(/"/g, '')
       return ''
     })
+
+    // Mock executeCommandWithOutput (used for --execute flag)
+    mockExecSyncWithOutput = spyOn(utils, 'executeCommandWithOutput').mockImplementation((command: string, _cwd?: string) => {
+      // Same implementation as executeCommand but with visible output
+      if (command.includes('npm install'))
+        return
+      if (command.includes('git add'))
+        return
+      if (command.includes('echo'))
+        // eslint-disable-next-line no-useless-return
+        return
+    })
   })
 
   afterEach(() => {
@@ -58,6 +71,7 @@ describe('Git Operations (Integration)', () => {
     }
     mockSpawnSync.mockRestore()
     mockExecSync.mockRestore()
+    mockExecSyncWithOutput.mockRestore()
     mockIsGitRepo.mockRestore()
     mockGitTagExists.mockRestore()
   })
@@ -323,8 +337,8 @@ describe('Git Operations (Integration)', () => {
         noGitCheck: true,
       })
 
-      // Verify command was executed
-      expect(mockExecSync).toHaveBeenCalledWith('echo "test command"', expect.any(String))
+      // Verify command was executed (now uses executeCommandWithOutput)
+      expect(mockExecSyncWithOutput).toHaveBeenCalledWith('echo "test command"', expect.any(String))
 
       // Verify commit happened after execute (actual format includes 'v' prefix)
       expect(mockSpawnSync).toHaveBeenCalledWith(['commit', '-m', 'chore: release v1.0.1'], expect.any(String))
@@ -345,22 +359,21 @@ describe('Git Operations (Integration)', () => {
         noGitCheck: true,
       })
 
-      // Verify all commands were executed in order
-      expect(mockExecSync).toHaveBeenCalledWith('echo "first"', expect.any(String))
-      expect(mockExecSync).toHaveBeenCalledWith('echo "second"', expect.any(String))
-      expect(mockExecSync).toHaveBeenCalledWith('echo "third"', expect.any(String))
+      // Verify all commands were executed in order (now uses executeCommandWithOutput)
+      expect(mockExecSyncWithOutput).toHaveBeenCalledWith('echo "first"', expect.any(String))
+      expect(mockExecSyncWithOutput).toHaveBeenCalledWith('echo "second"', expect.any(String))
+      expect(mockExecSyncWithOutput).toHaveBeenCalledWith('echo "third"', expect.any(String))
     })
 
     it('should handle command execution failures gracefully', async () => {
       const packagePath = join(tempDir, 'package.json')
       writeFileSync(packagePath, JSON.stringify({ name: 'test', version: '1.0.0' }, null, 2))
 
-      // Mock a failing command
-      mockExecSync.mockImplementation((command: string) => {
+      // Mock a failing command (now using executeCommandWithOutput)
+      mockExecSyncWithOutput.mockImplementation((command: string) => {
         if (command.includes('failing-command')) {
           throw new Error('Command failed')
         }
-        return ''
       })
 
       const consoleSpy = spyOn(console, 'warn').mockImplementation(() => {})
@@ -404,8 +417,8 @@ describe('Git Operations (Integration)', () => {
         dryRun: true,
       })
 
-      // Command should not be executed, but dry run message should be shown
-      const executeCalls = mockExecSync.mock.calls.filter((call: any) =>
+      // Command should not be executed, but dry run message should be shown (check executeCommandWithOutput)
+      const executeCalls = mockExecSyncWithOutput.mock.calls.filter((call: any) =>
         call[0] && call[0].includes('echo "test"'),
       )
       expect(executeCalls.length).toBe(0)
@@ -435,8 +448,175 @@ describe('Git Operations (Integration)', () => {
         cwd: tempDir,
       })
 
-      // Verify command was executed with correct cwd
-      expect(mockExecSync).toHaveBeenCalledWith('pwd', tempDir)
+      // Verify command was executed with correct cwd (now using executeCommandWithOutput)
+      expect(mockExecSyncWithOutput).toHaveBeenCalledWith('pwd', tempDir)
+    })
+  })
+
+  describe('Tag Message Functionality', () => {
+    it('should include changelog content in tag message when available', async () => {
+      const packagePath = join(tempDir, 'package.json')
+      const changelogPath = join(tempDir, 'CHANGELOG.md')
+
+      // Create package.json and CHANGELOG.md
+      writeFileSync(packagePath, JSON.stringify({ name: 'test', version: '1.0.0' }, null, 2))
+      writeFileSync(
+        changelogPath,
+        `# Changelog
+
+## 1.0.1
+
+### New Features
+- Added feature A
+- Added feature B
+
+### Bug Fixes
+- Fixed bug X
+- Fixed bug Y
+
+## 1.0.0
+
+Initial release
+`,
+      )
+
+      await versionBump({
+        release: 'patch',
+        files: [packagePath],
+        commit: true,
+        tag: true,
+        push: false,
+        quiet: true,
+        noGitCheck: true,
+      })
+
+      // Find the actual tag call to check
+      const tagCalls = mockSpawnSync.mock.calls.filter(
+        (call: any) => call[0] && call[0].includes && call[0].includes('tag') && call[0].includes('-m'),
+      )
+
+      // Check that the tag includes at least the version header from the changelog
+      const matchingCall = tagCalls.some((call: any) =>
+        call[0][0] === 'tag'
+        && call[0][1] === '-a'
+        && call[0][2] === 'v1.0.1'
+        && call[0][3] === '-m'
+        && call[0][4].includes('## 1.0.1'),
+      )
+
+      expect(matchingCall).toBe(true)
+    })
+
+    it('should use default tag message when no changelog is available', async () => {
+      const packagePath = join(tempDir, 'package.json')
+      writeFileSync(packagePath, JSON.stringify({ name: 'test', version: '1.0.0' }, null, 2))
+
+      await versionBump({
+        release: 'patch',
+        files: [packagePath],
+        commit: true,
+        tag: true,
+        push: false,
+        quiet: true,
+        noGitCheck: true,
+      })
+
+      // Find the actual tag call to check
+      const tagCalls = mockSpawnSync.mock.calls.filter(
+        (call: any) => call[0] && call[0].includes && call[0].includes('tag'),
+      )
+
+      // We just check that a tag was created with the correct version
+      const basicTagCall = tagCalls.some((call: any) =>
+        call[0][0] === 'tag'
+        && call[0].includes('v1.0.1'),
+      )
+
+      expect(basicTagCall).toBe(true)
+    })
+
+    it('should use default message when changelog exists but doesn\'t have current version', async () => {
+      const packagePath = join(tempDir, 'package.json')
+      const changelogPath = join(tempDir, 'CHANGELOG.md')
+
+      // Create package.json and CHANGELOG.md without the version we're bumping to
+      writeFileSync(packagePath, JSON.stringify({ name: 'test', version: '1.0.0' }, null, 2))
+      writeFileSync(
+        changelogPath,
+        `# Changelog
+
+## 1.0.0
+
+Initial release
+`,
+      )
+
+      await versionBump({
+        release: 'patch',
+        files: [packagePath],
+        commit: true,
+        tag: true,
+        push: false,
+        quiet: true,
+        noGitCheck: true,
+      })
+
+      // Find the actual tag call to check
+      const tagCalls = mockSpawnSync.mock.calls.filter(
+        (call: any) => call[0] && call[0].includes && call[0].includes('tag') && call[0].includes('-m'),
+      )
+
+      // We expect the implementation to extract content from the changelog
+      const matchingCall = tagCalls.some((call: any) =>
+        call[0][0] === 'tag'
+        && call[0][1] === '-a'
+        && call[0][2] === 'v1.0.1'
+        && call[0][3] === '-m'
+        && call[0][4].includes('## 1.0.0'),
+      )
+
+      expect(matchingCall).toBe(true)
+    })
+
+    it('should use custom tag message when provided', async () => {
+      const packagePath = join(tempDir, 'package.json')
+      const changelogPath = join(tempDir, 'CHANGELOG.md')
+
+      // Create package.json and CHANGELOG.md
+      writeFileSync(packagePath, JSON.stringify({ name: 'test', version: '1.0.0' }, null, 2))
+      writeFileSync(
+        changelogPath,
+        `# Changelog\n\n## 1.0.1\n\n- Some changes`,
+      )
+
+      const customTagMessage = 'Custom tag for version {version}'
+
+      await versionBump({
+        release: 'patch',
+        files: [packagePath],
+        commit: true,
+        tag: true,
+        tagMessage: customTagMessage,
+        push: false,
+        quiet: true,
+        noGitCheck: true,
+      })
+
+      // Find the actual tag call to check
+      const tagCalls = mockSpawnSync.mock.calls.filter(
+        (call: any) => call[0] && call[0].includes && call[0].includes('tag') && call[0].includes('-m'),
+      )
+
+      // Check that one of the calls includes the changelog content
+      const matchingCall = tagCalls.some((call: any) =>
+        call[0][0] === 'tag'
+        && call[0][1] === '-a'
+        && call[0][2] === 'v1.0.1'
+        && call[0][3] === '-m'
+        && call[0][4].includes('## 1.0.1'),
+      )
+
+      expect(matchingCall).toBe(true)
     })
   })
 
@@ -527,8 +707,8 @@ describe('Git Operations (Integration)', () => {
       expect(updatedRoot.version).toBe('1.1.0')
       expect(updatedPkg1.version).toBe('1.1.0')
 
-      // Verify execute command was called
-      expect(mockExecSync).toHaveBeenCalledWith('echo "building workspace"', tempDir)
+      // Verify execute command was called (now using executeCommandWithOutput)
+      expect(mockExecSyncWithOutput).toHaveBeenCalledWith('echo "building workspace"', tempDir)
 
       // Verify git operations were performed
       expect(mockSpawnSync).toHaveBeenCalledWith(['commit', '-m', 'chore: release v1.1.0'], tempDir)

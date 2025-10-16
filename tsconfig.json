@@ -29,6 +29,7 @@
     "declaration": true,
     "noEmit": true,
     "outDir": "./dist",
+    "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "isolatedDeclarations": true,

@@ -4,8 +4,8 @@ import { execSync, spawnSync } from 'node:child_process'
 import { existsSync, readFileSync, writeFileSync } from 'node:fs'
 import { readdir, readFile, stat } from 'node:fs/promises'
 import { join, relative } from 'node:path'
-import process from 'node:process'
-import readline from 'node:readline'
+import * as process from 'node:process'
+import * as readline from 'node:readline'
 
 /**
  * Custom SemVer implementation to handle version parsing and manipulation
@@ -282,6 +282,58 @@ export async function findPackageJsonFiles(dir: string = process.cwd(), recursiv
 }
 
 /**
+ * Recursively find all package.json files in nested directories
+ */
+async function findNestedPackages(dir: string): Promise<string[]> {
+  const packages: string[] = []
+
+  try {
+    const entries = await readdir(dir)
+    const excludedDirs = new Set([
+      'node_modules',
+      'dist',
+      'coverage',
+      'lib',
+      'out',
+      'target',
+      '.git',
+      '.svn',
+      '.hg',
+      '.next',
+      '.nuxt',
+      '.output',
+      '.vercel',
+      '.netlify',
+    ])
+
+    for (const entry of entries) {
+      // Skip hidden directories and common build/output directories
+      if (entry.startsWith('.') || excludedDirs.has(entry))
+        continue
+
+      const entryPath = join(dir, entry)
+      const stats = await stat(entryPath)
+
+      if (stats.isDirectory()) {
+        const packageJsonPath = join(entryPath, 'package.json')
+        if (existsSync(packageJsonPath)) {
+          packages.push(packageJsonPath)
+        }
+
+        // Always recursively check for deeply nested packages
+        const nestedPackages = await findNestedPackages(entryPath)
+        packages.push(...nestedPackages)
+      }
+    }
+  }
+  catch {
+    // Ignore errors reading directory
+  }
+
+  return packages
+}
+
+/**
  * Get workspace packages from package.json workspaces field
  */
 export async function getWorkspacePackages(rootDir: string = process.cwd()): Promise<string[]> {
@@ -304,9 +356,9 @@ export async function getWorkspacePackages(rootDir: string = process.cwd()): Pro
     const workspacePackages: string[] = []
 
     for (const pattern of workspacePatterns) {
-      // Simple pattern matching for common cases like "packages/*"
-      if (pattern.endsWith('/*')) {
-        const baseDir = pattern.slice(0, -2) // Remove /*
+      // Simple pattern matching for common cases like "packages/*" and "packages/**"
+      if (pattern.endsWith('/*') || pattern.endsWith('/**')) {
+        const baseDir = pattern.slice(0, -2) // Remove /* or /**
         const fullBaseDir = join(rootDir, baseDir)
 
         if (existsSync(fullBaseDir)) {
@@ -323,6 +375,10 @@ export async function getWorkspacePackages(rootDir: string = process.cwd()): Pro
                 if (existsSync(packageJsonPath)) {
                   workspacePackages.push(packageJsonPath)
                 }
+
+                // Recursively search for any deeply nested packages (for ** patterns)
+                const nestedPackages = await findNestedPackages(entryPath)
+                workspacePackages.push(...nestedPackages)
               }
             }
           }

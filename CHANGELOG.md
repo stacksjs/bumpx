@@ -1,4 +1,82 @@
 # Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.1...v0.2.2)
+
+### 🧹 Chores
+
+- release v0.2.2 ([980a895](https://github.com/stacksjs/bumpx/commit/980a895))
+- wip ([d325494](https://github.com/stacksjs/bumpx/commit/d325494))
+
+### Contributors
+
+- glennmichael123 <gtorregosa@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.0...v0.2.1)
+
+### 🧹 Chores
+
+- release v0.2.1 ([f8221e9](https://github.com/stacksjs/bumpx/commit/f8221e9))
+- lint ([201e14f](https://github.com/stacksjs/bumpx/commit/201e14f))
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.86...v0.2.0)
+
+### 🧹 Chores
+
+- release v0.2.0 ([8887909](https://github.com/stacksjs/bumpx/commit/8887909))
+- minor improvements ([4d32640](https://github.com/stacksjs/bumpx/commit/4d32640))
+- improve recursive mode ([d5c49ab](https://github.com/stacksjs/bumpx/commit/d5c49ab))
+
+### Contributors
+
+- Chris <chrisbreuer93@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.85...v0.1.86)
+
+### 🧹 Chores
+
+- release v0.1.86 ([159d703](https://github.com/stacksjs/bumpx/commit/159d703))
+- wip ([f6029b7](https://github.com/stacksjs/bumpx/commit/f6029b7))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.84...v0.1.85)
+
+### 🐛 Bug Fixes
+
+- update dependencies and fix test type annotations ([985dd43](https://github.com/stacksjs/bumpx/commit/985dd43))
+- update changelog display and fix typescript issues ([5647dec](https://github.com/stacksjs/bumpx/commit/5647dec))
+
+### 🧹 Chores
+
+- release v0.1.85 ([97f7b79](https://github.com/stacksjs/bumpx/commit/97f7b79))
+- improve verbose mode ([185986a](https://github.com/stacksjs/bumpx/commit/185986a))
+- wip ([5db5c56](https://github.com/stacksjs/bumpx/commit/5db5c56))
+- wip ([611738f](https://github.com/stacksjs/bumpx/commit/611738f))
+- wip ([25b71cf](https://github.com/stacksjs/bumpx/commit/25b71cf))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.83...v0.1.84)
+
+### 🐛 Bug Fixes
+
+- update tests ([c456739](https://github.com/stacksjs/bumpx/commit/c456739))
+
+### 🧹 Chores
+
+- release v0.1.84 ([0730af9](https://github.com/stacksjs/bumpx/commit/0730af9))
+
+### Contributors
+
+- Adelino Ngomacha <adelinob335@gmail.com>
+
 [Compare changes](https://github.com/stacksjs/bumpx/compare/v0.1.82...v0.1.83)
 
 ### 🧹 Chores
