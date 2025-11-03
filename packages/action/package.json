@@ -37,7 +37,7 @@
     "@actions/io": "^2.0.0"
   },
   "devDependencies": {
-    "bun-plugin-dtsx": "^0.21.16",
+    "bun-plugin-dtsx": "^0.21.17",
     "typescript": "^5.9.3"
   }
 }
