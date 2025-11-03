@@ -69,6 +69,6 @@
     "bunfig": "^0.15.6"
   },
   "devDependencies": {
-    "bun-plugin-dtsx": "^0.21.16"
+    "bun-plugin-dtsx": "^0.21.17"
   }
 }
