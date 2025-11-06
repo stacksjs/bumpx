@@ -67,8 +67,5 @@
     "@stacksjs/clapp": "^0.2.0",
     "@stacksjs/logsmith": "^0.2.1",
     "bunfig": "^0.15.6"
-  },
-  "devDependencies": {
-    "bun-plugin-dtsx": "^0.21.17"
   }
 }
