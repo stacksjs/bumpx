@@ -35,9 +35,5 @@
     "@actions/exec": "^1.1.1",
     "@actions/github": "^6.0.1",
     "@actions/io": "^2.0.0"
-  },
-  "devDependencies": {
-    "better-dx": "^0.2.3",
-    "typescript": "^5.9.3"
   }
 }
