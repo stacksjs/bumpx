@@ -37,7 +37,6 @@ mock.module('node:child_process', () => ({
 // Tests that need process mocking should handle it locally
 
 describe('SemVer', () => {
-
   describe('constructor and parsing', () => {
     it('should parse valid semver versions', () => {
       const v1 = new SemVer('1.2.3')

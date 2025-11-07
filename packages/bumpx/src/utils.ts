@@ -428,8 +428,8 @@ async function findAdditionalPackageFiles(dir: string): Promise<string[]> {
       }
       else if (entry.isFile()) {
         // Check for pantry.json, pantry.jsonc, package.jsonc, or build.zig.zon
-        if (entry.name === 'pantry.json' || entry.name === 'pantry.jsonc' ||
-            entry.name === 'package.jsonc' || entry.name === 'build.zig.zon') {
+        if (entry.name === 'pantry.json' || entry.name === 'pantry.jsonc'
+          || entry.name === 'package.jsonc' || entry.name === 'build.zig.zon') {
           files.push(fullPath)
         }
       }
