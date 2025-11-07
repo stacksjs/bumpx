@@ -1,4 +1,44 @@
 # Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.2...v0.2.3)
+
+### 🚀 Features
+
+- add pantry and zig support ([65e8d27](https://github.com/stacksjs/bumpx/commit/65e8d27)) _(by Chris <chrisbreuer93@gmail.com>)_
+
+### 🧹 Chores
+
+- release v0.2.3 ([120a843](https://github.com/stacksjs/bumpx/commit/120a843)) _(by Chris <chrisbreuer93@gmail.com>)_
+- wip ([fa14352](https://github.com/stacksjs/bumpx/commit/fa14352)) _(by Chris <chrisbreuer93@gmail.com>)_
+- wip ([5ae2414](https://github.com/stacksjs/bumpx/commit/5ae2414)) _(by Chris <chrisbreuer93@gmail.com>)_
+- wip ([70540f6](https://github.com/stacksjs/bumpx/commit/70540f6)) _(by Chris <chrisbreuer93@gmail.com>)_
+- wip ([aa859ed](https://github.com/stacksjs/bumpx/commit/aa859ed)) _(by Chris <chrisbreuer93@gmail.com>)_
+- wip ([4e5fbb0](https://github.com/stacksjs/bumpx/commit/4e5fbb0)) _(by Chris <chrisbreuer93@gmail.com>)_
+- **deps**: update all non-major dependencies (#29) ([b2e9201](https://github.com/stacksjs/bumpx/commit/b2e9201)) _(by Chris <chrisbreuer93@gmail.com>)_ ([#29](https://github.com/stacksjs/bumpx/issues/29), [#29](https://github.com/stacksjs/bumpx/issues/29))
+- wip ([48f405f](https://github.com/stacksjs/bumpx/commit/48f405f)) _(by Chris <chrisbreuer93@gmail.com>)_
+- wip ([04dd970](https://github.com/stacksjs/bumpx/commit/04dd970)) _(by Chris <chrisbreuer93@gmail.com>)_
+- wip ([53d4903](https://github.com/stacksjs/bumpx/commit/53d4903)) _(by Chris <chrisbreuer93@gmail.com>)_
+- wip ([3fe2c27](https://github.com/stacksjs/bumpx/commit/3fe2c27)) _(by Chris <chrisbreuer93@gmail.com>)_
+- wip ([781d648](https://github.com/stacksjs/bumpx/commit/781d648)) _(by Chris <chrisbreuer93@gmail.com>)_
+- wip ([812369e](https://github.com/stacksjs/bumpx/commit/812369e)) _(by Chris <chrisbreuer93@gmail.com>)_
+- wip ([d9a5071](https://github.com/stacksjs/bumpx/commit/d9a5071)) _(by Chris <chrisbreuer93@gmail.com>)_
+- wip ([a68c7d9](https://github.com/stacksjs/bumpx/commit/a68c7d9)) _(by glennmichael123 <gtorregosa@gmail.com>)_
+- **deps**: update stacksjs/action-releaser action to v1.2.7 (#26) ([9e4834c](https://github.com/stacksjs/bumpx/commit/9e4834c)) _(by [renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>](https://github.com/renovate[bot]))_ ([#26](https://github.com/stacksjs/bumpx/issues/26), [#26](https://github.com/stacksjs/bumpx/issues/26))
+- **deps**: update all non-major dependencies (#25) ([d4669df](https://github.com/stacksjs/bumpx/commit/d4669df)) _(by Chris <chrisbreuer93@gmail.com>)_ ([#25](https://github.com/stacksjs/bumpx/issues/25), [#25](https://github.com/stacksjs/bumpx/issues/25))
+- **deps**: update dependency bun-plugin-dtsx to v0.21.17 (#24) ([c469f5f](https://github.com/stacksjs/bumpx/commit/c469f5f)) _(by [renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>](https://github.com/renovate[bot]))_ ([#24](https://github.com/stacksjs/bumpx/issues/24), [#24](https://github.com/stacksjs/bumpx/issues/24))
+- wip ([630b159](https://github.com/stacksjs/bumpx/commit/630b159)) _(by glennmichael123 <gtorregosa@gmail.com>)_
+- **deps**: update dependency @actions/io to v2 (#22) ([ccdca2c](https://github.com/stacksjs/bumpx/commit/ccdca2c)) _(by [renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>](https://github.com/renovate[bot]))_ ([#22](https://github.com/stacksjs/bumpx/issues/22), [#22](https://github.com/stacksjs/bumpx/issues/22))
+- **deps**: update all non-major dependencies (#21) ([9b89f4a](https://github.com/stacksjs/bumpx/commit/9b89f4a)) _(by [renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>](https://github.com/renovate[bot]))_ ([#21](https://github.com/stacksjs/bumpx/issues/21), [#21](https://github.com/stacksjs/bumpx/issues/21))
+- wip ([de68274](https://github.com/stacksjs/bumpx/commit/de68274)) _(by glennmichael123 <gtorregosa@gmail.com>)_
+- **deps**: update all non-major dependencies (#5) ([6ccb3fb](https://github.com/stacksjs/bumpx/commit/6ccb3fb)) _(by [renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>](https://github.com/renovate[bot]))_ ([#5](https://github.com/stacksjs/bumpx/issues/5), [#5](https://github.com/stacksjs/bumpx/issues/5))
+- **deps**: update actions/checkout action to v5 (#8) ([be5788e](https://github.com/stacksjs/bumpx/commit/be5788e)) _(by [renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>](https://github.com/renovate[bot]))_ ([#8](https://github.com/stacksjs/bumpx/issues/8), [#8](https://github.com/stacksjs/bumpx/issues/8))
+- **deps**: update dependency bunfig to 0.15.0 (#16) ([751433d](https://github.com/stacksjs/bumpx/commit/751433d)) _(by Chris <chrisbreuer93@gmail.com>)_ ([#16](https://github.com/stacksjs/bumpx/issues/16), [#16](https://github.com/stacksjs/bumpx/issues/16))
+
+### Contributors
+
+- _Chris <chrisbreuer93@gmail.com>_
+- _[renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>](https://github.com/renovate[bot])_
+- _glennmichael123 <gtorregosa@gmail.com>_
+
 [Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.1...v0.2.2)
 
 ### 🧹 Chores
