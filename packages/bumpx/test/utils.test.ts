@@ -33,15 +33,11 @@ mock.module('node:child_process', () => ({
   execSync: mockExecSync,
 }))
 
-// Mock process for testing
-const mockProcess = {
-  cwd: () => '/test/dir',
-  stdout: { write: mock(() => {}) },
-  stdin: { once: mock(() => {}) },
-}
-mock.module('node:process', () => mockProcess)
+// Don't mock the entire process module globally - it interferes with other tests
+// Tests that need process mocking should handle it locally
 
 describe('SemVer', () => {
+
   describe('constructor and parsing', () => {
     it('should parse valid semver versions', () => {
       const v1 = new SemVer('1.2.3')

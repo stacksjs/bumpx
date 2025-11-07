@@ -1,6 +1,5 @@
 /* eslint-disable no-console */
 import type { FileInfo, PackageJson, ReleaseType } from './types'
-import { Glob } from 'bun'
 import { execSync, spawnSync } from 'node:child_process'
 import { existsSync, readFileSync, writeFileSync } from 'node:fs'
 import { readdir, readFile, stat } from 'node:fs/promises'
@@ -406,6 +405,44 @@ export async function getWorkspacePackages(rootDir: string = process.cwd()): Pro
 }
 
 /**
+ * Recursively find additional package files (pantry.json, pantry.jsonc, package.jsonc, build.zig.zon)
+ */
+async function findAdditionalPackageFiles(dir: string): Promise<string[]> {
+  const files: string[] = []
+
+  try {
+    const entries = await readdir(dir, { withFileTypes: true })
+
+    for (const entry of entries) {
+      const fullPath = join(dir, entry.name)
+
+      // Skip common directories that should be ignored
+      if (entry.isDirectory()) {
+        if (entry.name === 'node_modules' || entry.name === '.git' || entry.name.startsWith('.')) {
+          continue
+        }
+
+        // Recursively search subdirectories
+        const nestedFiles = await findAdditionalPackageFiles(fullPath)
+        files.push(...nestedFiles)
+      }
+      else if (entry.isFile()) {
+        // Check for pantry.json, pantry.jsonc, package.jsonc, or build.zig.zon
+        if (entry.name === 'pantry.json' || entry.name === 'pantry.jsonc' ||
+            entry.name === 'package.jsonc' || entry.name === 'build.zig.zon') {
+          files.push(fullPath)
+        }
+      }
+    }
+  }
+  catch {
+    // Ignore errors reading directory (permission issues, etc.)
+  }
+
+  return files
+}
+
+/**
  * Find all package.json files, prioritizing workspace-aware discovery
  */
 export async function findAllPackageFiles(dir: string = process.cwd(), recursive: boolean = false, respectGitignore: boolean = true): Promise<string[]> {
@@ -454,49 +491,11 @@ export async function findAllPackageFiles(dir: string = process.cwd(), recursive
       }
     }
 
-    // Also find pantry.json and pantry.jsonc files recursively
-    if (existsSync(dir)) {
-      try {
-        const pantryJsonGlob = new Glob('**/pantry.json')
-        const pantryFiles = await Array.fromAsync(pantryJsonGlob.scan({ cwd: dir, onlyFiles: true }))
-        for (const pantryFile of pantryFiles) {
-          const pantryPath = join(dir, pantryFile)
-          if (!packageFiles.includes(pantryPath)) {
-            packageFiles.push(pantryPath)
-          }
-        }
-
-        const pantryJsoncGlob = new Glob('**/pantry.jsonc')
-        const pantryJsoncFiles = await Array.fromAsync(pantryJsoncGlob.scan({ cwd: dir, onlyFiles: true }))
-        for (const pantryFile of pantryJsoncFiles) {
-          const pantryPath = join(dir, pantryFile)
-          if (!packageFiles.includes(pantryPath)) {
-            packageFiles.push(pantryPath)
-          }
-        }
-
-        // Also find package.jsonc files recursively
-        const packageJsoncGlob = new Glob('**/package.jsonc')
-        const packageJsoncFiles = await Array.fromAsync(packageJsoncGlob.scan({ cwd: dir, onlyFiles: true }))
-        for (const packageFile of packageJsoncFiles) {
-          const packagePath = join(dir, packageFile)
-          if (!packageFiles.includes(packagePath)) {
-            packageFiles.push(packagePath)
-          }
-        }
-
-        // Also find build.zig.zon files recursively (Zig package manifests)
-        const zigZonGlob = new Glob('**/build.zig.zon')
-        const zigZonFiles = await Array.fromAsync(zigZonGlob.scan({ cwd: dir, onlyFiles: true }))
-        for (const zigFile of zigZonFiles) {
-          const zigPath = join(dir, zigFile)
-          if (!packageFiles.includes(zigPath)) {
-            packageFiles.push(zigPath)
-          }
-        }
-      }
-      catch {
-        // Ignore glob errors, they may occur in test environments or with non-existent directories
+    // Also find pantry.json, pantry.jsonc, package.jsonc, and build.zig.zon files recursively
+    const additionalFiles = await findAdditionalPackageFiles(dir)
+    for (const filePath of additionalFiles) {
+      if (!packageFiles.includes(filePath)) {
+        packageFiles.push(filePath)
       }
     }
   }
