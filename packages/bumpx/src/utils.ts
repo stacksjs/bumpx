@@ -1,12 +1,12 @@
 /* eslint-disable no-console */
 import type { FileInfo, PackageJson, ReleaseType } from './types'
+import { Glob } from 'bun'
 import { execSync, spawnSync } from 'node:child_process'
 import { existsSync, readFileSync, writeFileSync } from 'node:fs'
 import { readdir, readFile, stat } from 'node:fs/promises'
 import { join, relative } from 'node:path'
 import * as process from 'node:process'
 import * as readline from 'node:readline'
-import { Glob } from 'bun'
 
 /**
  * Custom SemVer implementation to handle version parsing and manipulation
@@ -495,7 +495,7 @@ export async function findAllPackageFiles(dir: string = process.cwd(), recursive
           }
         }
       }
-      catch (error) {
+      catch {
         // Ignore glob errors, they may occur in test environments or with non-existent directories
       }
     }
