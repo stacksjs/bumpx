@@ -416,6 +416,22 @@ export async function findAllPackageFiles(dir: string = process.cwd(), recursive
     packageFiles.push(rootPackageJsonPath)
   }
 
+  // Also check for pantry.json/pantry.jsonc in root
+  const rootPantryJsonPath = join(dir, 'pantry.json')
+  if (existsSync(rootPantryJsonPath)) {
+    packageFiles.push(rootPantryJsonPath)
+  }
+  const rootPantryJsoncPath = join(dir, 'pantry.jsonc')
+  if (existsSync(rootPantryJsoncPath)) {
+    packageFiles.push(rootPantryJsoncPath)
+  }
+
+  // Also check for package.jsonc in root
+  const rootPackageJsoncPath = join(dir, 'package.jsonc')
+  if (existsSync(rootPackageJsoncPath)) {
+    packageFiles.push(rootPackageJsoncPath)
+  }
+
   if (recursive) {
     // First try workspace-aware discovery
     const workspacePackages = await getWorkspacePackages(dir)
@@ -434,6 +450,49 @@ export async function findAllPackageFiles(dir: string = process.cwd(), recursive
         if (!packageFiles.includes(packagePath)) {
           packageFiles.push(packagePath)
         }
+      }
+    }
+
+    // Also find pantry.json and pantry.jsonc files recursively
+    const pantryJsonGlob = join(dir, '**/pantry.json')
+    const pantryFiles = await glob(pantryJsonGlob, {
+      ignore: respectGitignore ? ['**/node_modules/**', '**/.git/**'] : [],
+    })
+    for (const pantryPath of pantryFiles) {
+      if (!packageFiles.includes(pantryPath)) {
+        packageFiles.push(pantryPath)
+      }
+    }
+
+    const pantryJsoncGlob = join(dir, '**/pantry.jsonc')
+    const pantryJsoncFiles = await glob(pantryJsoncGlob, {
+      ignore: respectGitignore ? ['**/node_modules/**', '**/.git/**'] : [],
+    })
+    for (const pantryPath of pantryJsoncFiles) {
+      if (!packageFiles.includes(pantryPath)) {
+        packageFiles.push(pantryPath)
+      }
+    }
+
+    // Also find package.jsonc files recursively
+    const packageJsoncGlob = join(dir, '**/package.jsonc')
+    const packageJsoncFiles = await glob(packageJsoncGlob, {
+      ignore: respectGitignore ? ['**/node_modules/**', '**/.git/**'] : [],
+    })
+    for (const packagePath of packageJsoncFiles) {
+      if (!packageFiles.includes(packagePath)) {
+        packageFiles.push(packagePath)
+      }
+    }
+
+    // Also find build.zig.zon files recursively (Zig package manifests)
+    const zigZonGlob = join(dir, '**/build.zig.zon')
+    const zigZonFiles = await glob(zigZonGlob, {
+      ignore: respectGitignore ? ['**/node_modules/**', '**/.git/**'] : [],
+    })
+    for (const zigPath of zigZonFiles) {
+      if (!packageFiles.includes(zigPath)) {
+        packageFiles.push(zigPath)
       }
     }
   }
@@ -473,17 +532,54 @@ export function writePackageJson(filePath: string, packageJson: PackageJson): vo
 export function updateVersionInFile(filePath: string, oldVersion: string, newVersion: string, forceUpdate: boolean = false, dryRun: boolean = false): FileInfo {
   try {
     const content = readFileSync(filePath, 'utf-8')
-    const isPackageJson = filePath.endsWith('package.json')
+    const isPackageJson = filePath.endsWith('package.json') || filePath.endsWith('package.jsonc')
+    const isPantryJson = filePath.endsWith('pantry.json') || filePath.endsWith('pantry.jsonc')
+    const isJsonc = filePath.endsWith('.jsonc')
+    const isZigZon = filePath.endsWith('build.zig.zon')
 
     let newContent: string = content
     let updated = false
 
-    if (isPackageJson) {
-      const packageJson = JSON.parse(content)
+    if (isZigZon) {
+      // Handle Zig build.zig.zon files
+      // Format: .version = "0.0.0",
+      const versionRegex = new RegExp(
+        `(\\.version\\s*=\\s*")${oldVersion.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}("\\s*,)`,
+        'g'
+      )
+      if (content.match(versionRegex) || forceUpdate) {
+        newContent = content.replace(versionRegex, `$1${newVersion}$2`)
+        updated = true
+      }
+    }
+    else if (isPackageJson || isPantryJson) {
+      // For JSONC files, we need to strip comments before parsing
+      let jsonContent = content
+      if (isJsonc) {
+        // Simple comment removal (handles // and /* */ comments)
+        jsonContent = content
+          .replace(/\/\*[\s\S]*?\*\//g, '') // Remove /* */ comments
+          .replace(/\/\/.*/g, '') // Remove // comments
+      }
+
+      const packageJson = JSON.parse(jsonContent)
       if (packageJson.version === oldVersion || forceUpdate) {
         packageJson.version = newVersion
-        newContent = `${JSON.stringify(packageJson, null, 2)}\n`
-        updated = true
+
+        // For JSONC files, preserve the original formatting with comments
+        if (isJsonc) {
+          // Replace the version value while preserving comments and formatting
+          const versionRegex = new RegExp(
+            `(["']version["']\\s*:\\s*)["']${oldVersion.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}["']`,
+            'g'
+          )
+          newContent = content.replace(versionRegex, `$1"${newVersion}"`)
+          updated = true
+        } else {
+          // For regular JSON, use standard formatting
+          newContent = `${JSON.stringify(packageJson, null, 2)}\n`
+          updated = true
+        }
       }
     }
     else {
