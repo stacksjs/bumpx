@@ -29,12 +29,14 @@ import {
 // Mock the execSync for git operations
 const mockExecSync = mock(() => '')
 
+// Import spawnSync before mocking so we can preserve it
+import { spawnSync as originalSpawnSync } from 'node:child_process'
+
 mock.module('node:child_process', () => ({
   execSync: mockExecSync,
+  // Preserve spawnSync for other parts of the codebase
+  spawnSync: originalSpawnSync,
 }))
-
-// Don't mock the entire process module globally - it interferes with other tests
-// Tests that need process mocking should handle it locally
 
 describe('SemVer', () => {
   describe('constructor and parsing', () => {
