@@ -6,6 +6,7 @@ import { readdir, readFile, stat } from 'node:fs/promises'
 import { join, relative } from 'node:path'
 import * as process from 'node:process'
 import * as readline from 'node:readline'
+import { Glob } from 'bun'
 
 /**
  * Custom SemVer implementation to handle version parsing and manipulation
@@ -454,45 +455,48 @@ export async function findAllPackageFiles(dir: string = process.cwd(), recursive
     }
 
     // Also find pantry.json and pantry.jsonc files recursively
-    const pantryJsonGlob = join(dir, '**/pantry.json')
-    const pantryFiles = await glob(pantryJsonGlob, {
-      ignore: respectGitignore ? ['**/node_modules/**', '**/.git/**'] : [],
-    })
-    for (const pantryPath of pantryFiles) {
-      if (!packageFiles.includes(pantryPath)) {
-        packageFiles.push(pantryPath)
-      }
-    }
+    if (existsSync(dir)) {
+      try {
+        const pantryJsonGlob = new Glob('**/pantry.json')
+        const pantryFiles = await Array.fromAsync(pantryJsonGlob.scan({ cwd: dir, onlyFiles: true }))
+        for (const pantryFile of pantryFiles) {
+          const pantryPath = join(dir, pantryFile)
+          if (!packageFiles.includes(pantryPath)) {
+            packageFiles.push(pantryPath)
+          }
+        }
 
-    const pantryJsoncGlob = join(dir, '**/pantry.jsonc')
-    const pantryJsoncFiles = await glob(pantryJsoncGlob, {
-      ignore: respectGitignore ? ['**/node_modules/**', '**/.git/**'] : [],
-    })
-    for (const pantryPath of pantryJsoncFiles) {
-      if (!packageFiles.includes(pantryPath)) {
-        packageFiles.push(pantryPath)
-      }
-    }
+        const pantryJsoncGlob = new Glob('**/pantry.jsonc')
+        const pantryJsoncFiles = await Array.fromAsync(pantryJsoncGlob.scan({ cwd: dir, onlyFiles: true }))
+        for (const pantryFile of pantryJsoncFiles) {
+          const pantryPath = join(dir, pantryFile)
+          if (!packageFiles.includes(pantryPath)) {
+            packageFiles.push(pantryPath)
+          }
+        }
 
-    // Also find package.jsonc files recursively
-    const packageJsoncGlob = join(dir, '**/package.jsonc')
-    const packageJsoncFiles = await glob(packageJsoncGlob, {
-      ignore: respectGitignore ? ['**/node_modules/**', '**/.git/**'] : [],
-    })
-    for (const packagePath of packageJsoncFiles) {
-      if (!packageFiles.includes(packagePath)) {
-        packageFiles.push(packagePath)
-      }
-    }
+        // Also find package.jsonc files recursively
+        const packageJsoncGlob = new Glob('**/package.jsonc')
+        const packageJsoncFiles = await Array.fromAsync(packageJsoncGlob.scan({ cwd: dir, onlyFiles: true }))
+        for (const packageFile of packageJsoncFiles) {
+          const packagePath = join(dir, packageFile)
+          if (!packageFiles.includes(packagePath)) {
+            packageFiles.push(packagePath)
+          }
+        }
 
-    // Also find build.zig.zon files recursively (Zig package manifests)
-    const zigZonGlob = join(dir, '**/build.zig.zon')
-    const zigZonFiles = await glob(zigZonGlob, {
-      ignore: respectGitignore ? ['**/node_modules/**', '**/.git/**'] : [],
-    })
-    for (const zigPath of zigZonFiles) {
-      if (!packageFiles.includes(zigPath)) {
-        packageFiles.push(zigPath)
+        // Also find build.zig.zon files recursively (Zig package manifests)
+        const zigZonGlob = new Glob('**/build.zig.zon')
+        const zigZonFiles = await Array.fromAsync(zigZonGlob.scan({ cwd: dir, onlyFiles: true }))
+        for (const zigFile of zigZonFiles) {
+          const zigPath = join(dir, zigFile)
+          if (!packageFiles.includes(zigPath)) {
+            packageFiles.push(zigPath)
+          }
+        }
+      }
+      catch (error) {
+        // Ignore glob errors, they may occur in test environments or with non-existent directories
       }
     }
   }
