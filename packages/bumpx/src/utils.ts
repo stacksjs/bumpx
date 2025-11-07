@@ -545,7 +545,7 @@ export function updateVersionInFile(filePath: string, oldVersion: string, newVer
       // Format: .version = "0.0.0",
       const versionRegex = new RegExp(
         `(\\.version\\s*=\\s*")${oldVersion.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}("\\s*,)`,
-        'g'
+        'g',
       )
       if (content.match(versionRegex) || forceUpdate) {
         newContent = content.replace(versionRegex, `$1${newVersion}$2`)
@@ -571,11 +571,12 @@ export function updateVersionInFile(filePath: string, oldVersion: string, newVer
           // Replace the version value while preserving comments and formatting
           const versionRegex = new RegExp(
             `(["']version["']\\s*:\\s*)["']${oldVersion.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}["']`,
-            'g'
+            'g',
           )
           newContent = content.replace(versionRegex, `$1"${newVersion}"`)
           updated = true
-        } else {
+        }
+        else {
           // For regular JSON, use standard formatting
           newContent = `${JSON.stringify(packageJson, null, 2)}\n`
           updated = true
