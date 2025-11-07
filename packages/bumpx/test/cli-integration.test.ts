@@ -96,7 +96,22 @@ describe('CLI Integration Tests', () => {
         stderr += data.toString()
       })
 
+      child.on('error', (error) => {
+        child.stdout?.removeAllListeners()
+        child.stderr?.removeAllListeners()
+        child.removeAllListeners()
+        child.stdout?.destroy()
+        child.stderr?.destroy()
+        resolve({ code: 1, stdout, stderr: `${stderr}\nProcess error: ${error.message}` })
+      })
+
       child.on('close', (code) => {
+        // Ensure all event listeners are removed and streams are destroyed
+        child.stdout?.removeAllListeners()
+        child.stderr?.removeAllListeners()
+        child.removeAllListeners()
+        child.stdout?.destroy()
+        child.stderr?.destroy()
         resolve({ code: code || 0, stdout, stderr })
       })
     })

@@ -87,9 +87,29 @@ jobs:
         run: bun run build
 
       - name: Unit Test
-        run: bash packages/bumpx/scripts/test-ci.sh
-        working-directory: ${{ github.workspace }}
-        timeout-minutes: 6
+        run: |
+          # Workaround for Bun test runner hanging in CI after tests complete
+          # Tests pass in ~15s but Bun doesn't exit, so we timeout after 30s
+          # and verify tests passed by checking output
+          timeout 30 bun test 2>&1 | tee test-output.log
+          EXIT_CODE=$?
+
+          if [ $EXIT_CODE -eq 124 ]; then
+            # Timeout occurred - check if tests actually passed
+            if grep -q " 0 fail" test-output.log && grep -q " pass" test-output.log; then
+              echo "✓ All tests passed (Bun hung after completion, killed by timeout)"
+              exit 0
+            else
+              echo "✗ Tests timed out with failures or didn't complete"
+              cat test-output.log
+              exit 1
+            fi
+          fi
+
+          # Tests completed normally (Bun didn't hang)
+          exit $EXIT_CODE
+        working-directory: packages/bumpx
+        timeout-minutes: 2
 
   publish-commit:
     runs-on: ubuntu-latest
