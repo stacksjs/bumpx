@@ -87,8 +87,9 @@ jobs:
         run: bun run build
 
       - name: Unit Test
-        run: bun test --verbose
-        timeout-minutes: 5
+        run: bash packages/bumpx/scripts/test-ci.sh
+        working-directory: ${{ github.workspace }}
+        timeout-minutes: 6
 
   publish-commit:
     runs-on: ubuntu-latest
