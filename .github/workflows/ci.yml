@@ -87,7 +87,8 @@ jobs:
         run: bun run build
 
       - name: Unit Test
-        run: bun test --verbose --timeout=120000
+        run: bun test --verbose
+        timeout-minutes: 5
 
   publish-commit:
     runs-on: ubuntu-latest

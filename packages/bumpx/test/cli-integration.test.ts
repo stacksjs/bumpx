@@ -36,10 +36,16 @@ describe('CLI Integration Tests', () => {
     process.chdir(tempDir)
   })
 
-  afterEach(() => {
+  afterEach(async () => {
     process.chdir(originalCwd)
     if (existsSync(tempDir)) {
-      rmSync(tempDir, { recursive: true, force: true })
+      // Add a small delay to ensure all file handles are closed
+      await new Promise(resolve => setTimeout(resolve, 10))
+      try {
+        rmSync(tempDir, { recursive: true, force: true, maxRetries: 3, retryDelay: 100 })
+      } catch (error) {
+        console.warn(`Failed to clean up temp dir ${tempDir}:`, error)
+      }
     }
   })
 
