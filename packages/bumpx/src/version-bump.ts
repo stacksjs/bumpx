@@ -13,7 +13,6 @@ import {
   executeCommand,
   executeCommandWithOutput,
   findAllPackageFiles,
-  findPackageJsonFiles,
   getCurrentBranch,
   getRecentCommits,
   incrementVersion,
@@ -119,7 +118,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
       )
     }
     else {
-      filesToUpdate = await findPackageJsonFiles(effectiveCwd, false, respectGitignore)
+      filesToUpdate = await findAllPackageFiles(effectiveCwd, false, respectGitignore)
     }
 
     if (filesToUpdate.length === 0) {
@@ -551,10 +550,20 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
         try {
           // Get current version from this specific file
           let fileCurrentVersion: string | undefined
-          if (filePath.endsWith('.json')) {
-            // Try to read as JSON file (package.json or similar)
+          if (filePath.endsWith('.json') || filePath.endsWith('.jsonc')) {
+            // Try to read as JSON/JSONC file
             try {
-              const packageJson = readPackageJson(filePath)
+              const content = readFileSync(filePath, 'utf-8')
+              let jsonContent = content
+
+              // For JSONC files, strip comments before parsing
+              if (filePath.endsWith('.jsonc')) {
+                jsonContent = content
+                  .replace(/\/\*[\s\S]*?\*\//g, '') // Remove /* */ comments
+                  .replace(/\/\/.*/g, '') // Remove // comments
+              }
+
+              const packageJson = JSON.parse(jsonContent)
               fileCurrentVersion = packageJson.version
               if (!fileCurrentVersion) {
                 throw new Error('Could not determine current version')

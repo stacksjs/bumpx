@@ -470,6 +470,12 @@ export async function findAllPackageFiles(dir: string = process.cwd(), recursive
     packageFiles.push(rootPackageJsoncPath)
   }
 
+  // Also check for build.zig.zon in root
+  const rootZigZonPath = join(dir, 'build.zig.zon')
+  if (existsSync(rootZigZonPath)) {
+    packageFiles.push(rootZigZonPath)
+  }
+
   if (recursive) {
     // First try workspace-aware discovery
     const workspacePackages = await getWorkspacePackages(dir)
