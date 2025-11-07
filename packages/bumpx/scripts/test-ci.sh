@@ -5,34 +5,27 @@
 
 set -e
 
-# Start tests in background
-bun test --verbose &
-TEST_PID=$!
+# Change to package directory
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PACKAGE_DIR="$(dirname "$SCRIPT_DIR")"
+cd "$PACKAGE_DIR"
 
-# Wait for tests with timeout
-TIMEOUT=300  # 5 minutes
-ELAPSED=0
-INTERVAL=1
+echo "Starting tests from: $PACKAGE_DIR"
+echo "Using timeout protection (180s)..."
 
-while kill -0 $TEST_PID 2>/dev/null; do
-  sleep $INTERVAL
-  ELAPSED=$((ELAPSED + INTERVAL))
-
-  if [ $ELAPSED -ge $TIMEOUT ]; then
-    echo "Tests exceeded ${TIMEOUT}s timeout, killing process..."
-    kill -9 $TEST_PID 2>/dev/null || true
-    exit 124  # Standard timeout exit code
+# Use timeout command directly - more reliable than background job monitoring
+# Kill after 180 seconds (3 minutes) to give buffer before GitHub Actions timeout
+if timeout --foreground 180 bun test; then
+  echo "✓ Tests completed successfully"
+  exit 0
+else
+  EXIT_CODE=$?
+  if [ $EXIT_CODE -eq 124 ]; then
+    echo "✗ Tests timed out after 180 seconds"
+    echo "This likely indicates the Bun test runner hung after tests completed"
+    exit 124
+  else
+    echo "✗ Tests failed with exit code $EXIT_CODE"
+    exit $EXIT_CODE
   fi
-done
-
-# Get exit code
-wait $TEST_PID
-EXIT_CODE=$?
-
-if [ $EXIT_CODE -ne 0 ]; then
-  echo "Tests failed with exit code $EXIT_CODE"
-  exit $EXIT_CODE
 fi
-
-echo "Tests completed successfully"
-exit 0
