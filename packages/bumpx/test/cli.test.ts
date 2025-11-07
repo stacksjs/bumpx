@@ -58,7 +58,8 @@ describe('CLI Integration Tests', () => {
       await new Promise(resolve => setTimeout(resolve, 10))
       try {
         rmSync(tempDir, { recursive: true, force: true, maxRetries: 3, retryDelay: 100 })
-      } catch (error) {
+      }
+      catch (error) {
         console.warn(`Failed to clean up temp dir ${tempDir}:`, error)
       }
     }

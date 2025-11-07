@@ -1,7 +1,10 @@
 import { afterEach, beforeEach, describe, expect, it, mock } from 'bun:test'
+// Import spawnSync before mocking so we can preserve it
+import { spawnSync as originalSpawnSync } from 'node:child_process'
 import { chmodSync, existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
+
 import {
   canSafelyPull,
   checkGitStatus,
@@ -28,9 +31,6 @@ import {
 
 // Mock the execSync for git operations
 const mockExecSync = mock(() => '')
-
-// Import spawnSync before mocking so we can preserve it
-import { spawnSync as originalSpawnSync } from 'node:child_process'
 
 mock.module('node:child_process', () => ({
   execSync: mockExecSync,
