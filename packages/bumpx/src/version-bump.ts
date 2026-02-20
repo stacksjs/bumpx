@@ -28,6 +28,7 @@ import {
 /**
  * Main version bump function
  */
+// eslint-disable-next-line no-unused-vars
 export async function versionBump(options: VersionBumpOptions): Promise<void> {
   const {
     release,
@@ -580,8 +581,8 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
             // Try multiple patterns to extract version
             const patterns = [
               // version: 1.2.3 (with optional quotes)
-              /version\s*[:=]\s*['"]?(\d+\.\d+\.\d+(?:-[a-z0-9.-]+)?(?:\+[a-z0-9.-]+)?)['"]?/i,
-              /VERSION\s*=\s*['"]?(\d+\.\d+\.\d+(?:-[a-z0-9.-]+)?(?:\+[a-z0.9\-]+)?)['"]?/i,
+              /version\s*[:=]\s*['\x22]?(\d+\.\d+\.\d+(?:-[a-z0-9.-]+)?(?:\+[a-z0-9.-]+)?)['\x22]?/i,
+              /VERSION\s*=\s*['\x22]?(\d+\.\d+\.\d+(?:-[a-z0-9.-]+)?(?:\+[a-z0.9\-]+)?)['\x22]?/i,
               // VERSION = '1.2.3' (with optional quotes)
               /^(\d+\.\d+\.\d+(?:-[a-z0-9.-]+)?(?:\+[a-z0.9\-]+)?)$/m,
             ]

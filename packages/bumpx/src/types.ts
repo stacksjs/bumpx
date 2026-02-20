@@ -65,7 +65,7 @@ export interface VersionBumpProgress {
   oldVersion?: string
 }
 
-export type ProgressCallback = (progress: VersionBumpProgress) => void
+export type ProgressCallback = (_progress: VersionBumpProgress) => void
 
 export interface ParsedArgs {
   help?: boolean
