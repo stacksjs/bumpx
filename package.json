@@ -33,6 +33,8 @@
     "fresh": "bunx rimraf node_modules/ bun.lock && bun i",
     "lint": "bunx --bun pickier .",
     "lint:fix": "bunx --bun pickier . --fix",
+    "format": "bunx --bun pickier . --format",
+    "format:fix": "bunx --bun pickier . --format --write",
     "changelog": "bunx logsmith --verbose",
     "changelog:generate": "bunx logsmith --output CHANGELOG.md",
     "release": "./bumpx -r --push",
