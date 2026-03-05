@@ -31,8 +31,8 @@
   "scripts": {
     "build": "for dir in packages/*; do if [ -f \"$dir/package.json\" ]; then echo \"Building $dir\" && bun run --cwd $dir build; fi; done",
     "fresh": "bunx rimraf node_modules/ bun.lock && bun i",
-    "lint": "bunx --bun pickier lint .",
-    "lint:fix": "bunx --bun pickier lint . --fix",
+    "lint": "bunx --bun pickier .",
+    "lint:fix": "bunx --bun pickier . --fix",
     "changelog": "bunx logsmith --verbose",
     "changelog:generate": "bunx logsmith --output CHANGELOG.md",
     "release": "./bumpx -r --push",
@@ -40,9 +40,7 @@
     "dev:docs": "bun --bun vitepress dev docs",
     "build:docs": "bun --bun vitepress build docs",
     "preview:docs": "bun --bun vitepress preview docs",
-    "typecheck": "bun --bun tsc --noEmit",
-    "format": "bunx --bun pickier format .",
-    "format:fix": "bunx --bun pickier format . --write"
+    "typecheck": "bun --bun tsc --noEmit"
   },
   "dependencies": {
     "@stacksjs/clapp": "^0.2.0"
