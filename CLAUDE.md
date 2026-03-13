@@ -2,7 +2,7 @@
 
 ## About
 
-A fast, zero-dependency version bumping tool for Bun, similar to bumpp and version-bump-prompt. It supports all semver release types (including prereleases), monorepo/workspace recursive bumping, interactive prompts, git integration (commit, tag, push, signing), custom pre-bump commands, and CI mode for automated pipelines. Configurable via `bumpx.config.ts` or `package.json`.
+bumpx is a fast, zero-dependency version bumping tool for Bun, similar to bumpp and version-bump-prompt. It supports all semver release types (including prereleases), monorepo/workspace recursive bumping, interactive prompts, and Git integration (commit, tag, push, signing). It can be used as both a CLI (`bumpx patch`) and a library (`versionBump()`), and is configurable via `bumpx.config.ts` or `package.json`.
 
 ## Linting
 
