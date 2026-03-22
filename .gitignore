@@ -13,3 +13,5 @@ docs/.vitepress/cache
 .env
 packages/bumpx/bin/bumpx
 packages/logsmith/bin/logsmith
+.zed
+.cursor
