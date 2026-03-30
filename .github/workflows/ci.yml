@@ -131,6 +131,6 @@ jobs:
 
       - name: Publish Commit
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        run: pantry publish:commit './packages/action' './packages/bumpx'
+        run: pantry publish:commit './packages/action' && pantry publish:commit './packages/bumpx'
         env:
           PANTRY_REGISTRY_TOKEN: ${{ secrets.PANTRY_TOKEN }}
