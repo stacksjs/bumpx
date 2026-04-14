@@ -417,32 +417,39 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
+
       - uses: actions/checkout@v4
+
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB*TOKEN }}
           fetch-depth: 0
 
       - name: Setup Node.js
+
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
 
       - name: Install dependencies
+
         run: npm ci
 
       - name: Install bumpx
+
         run: npm install -g bumpx
 
       - name: Configure git
+
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Bump version and release
+
         run: bumpx patch --commit --tag --push
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB*TOKEN: ${{ secrets.GITHUB*TOKEN }}
 ```
 
 ### Environment Variables for CI/CD
@@ -451,11 +458,11 @@ Configure bumpx behavior using environment variables:
 
 ```yaml
 env:
-  BUMPX_COMMIT: true
-  BUMPX_TAG: true
-  BUMPX_PUSH: true
-  BUMPX_MESSAGE: "chore: release v%s [skip ci]"
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  BUMPX*COMMIT: true
+  BUMPX*TAG: true
+  BUMPX*PUSH: true
+  BUMPX*MESSAGE: "chore: release v%s [skip ci]"
+  GITHUB*TOKEN: ${{ secrets.GITHUB*TOKEN }}
 ```
 
 ## Environment Variables
@@ -464,40 +471,40 @@ env:
 
 ```bash
 # Git options
-export BUMPX_COMMIT=true
-export BUMPX_TAG=true
-export BUMPX_PUSH=false
-export BUMPX_SIGN=true
+export BUMPX*COMMIT=true
+export BUMPX*TAG=true
+export BUMPX*PUSH=false
+export BUMPX*SIGN=true
 
 # Message templates
-export BUMPX_MESSAGE="chore: release v%s"
-export BUMPX_TAG_MESSAGE="Release v%s"
+export BUMPX*MESSAGE="chore: release v%s"
+export BUMPX*TAG*MESSAGE="Release v%s"
 
 # File options
-export BUMPX_FILES="package.json,package-lock.json"
-export BUMPX_RECURSIVE=true
+export BUMPX*FILES="package.json,package-lock.json"
+export BUMPX*RECURSIVE=true
 
 # Output options
-export BUMPX_VERBOSE=true
-export BUMPX_DRY_RUN=false
+export BUMPX*VERBOSE=true
+export BUMPX*DRY*RUN=false
 ```
 
 ### CI/CD Environment Variables
 
 ```bash
 # GitHub Actions
-export GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
-export GITHUB_ACTOR=${{ github.actor }}
-export GITHUB_REPOSITORY=${{ github.repository }}
+export GITHUB*TOKEN=${{ secrets.GITHUB*TOKEN }}
+export GITHUB*ACTOR=${{ github.actor }}
+export GITHUB*REPOSITORY=${{ github.repository }}
 
 # GitLab CI
-export CI_COMMIT_SHA=$CI_COMMIT_SHA
-export CI_COMMIT_REF_NAME=$CI_COMMIT_REF_NAME
-export GITLAB_TOKEN=$GITLAB_TOKEN
+export CI*COMMIT*SHA=$CI*COMMIT*SHA
+export CI*COMMIT*REF*NAME=$CI*COMMIT*REF*NAME
+export GITLAB*TOKEN=$GITLAB*TOKEN
 
 # General CI
 export CI=true
-export NODE_ENV=production
+export NODE*ENV=production
 ```
 
 ## Exit Codes
@@ -518,7 +525,7 @@ bumpx uses standard exit codes:
 ### Example Error Handling
 
 ```bash
-#!/bin/bash
+# !/bin/bash
 bumpx patch --commit --tag --push
 
 case $? in
@@ -579,16 +586,16 @@ try {
   await versionBump({ release: 'patch' })
 } catch (error) {
   switch (error.code) {
-    case 'DIRTY_WORKING_DIRECTORY':
+    case 'DIRTY*WORKING*DIRECTORY':
       console.error('Commit your changes first')
       break
-    case 'NO_PACKAGE_JSON':
+    case 'NO*PACKAGE*JSON':
       console.error('No package.json found')
       break
-    case 'INVALID_VERSION':
+    case 'INVALID*VERSION':
       console.error('Invalid version format')
       break
-    case 'GIT_ERROR':
+    case 'GIT*ERROR':
       console.error('Git operation failed:', error.details)
       break
     default:
@@ -651,7 +658,7 @@ app.post('/api/release', async (req, res) => {
 ### CLI Tool Integration
 
 ```typescript
-#!/usr/bin/env node
+# !/usr/bin/env node
 import { program } from 'commander'
 import { versionBump } from '@stacksjs/bumpx'
 

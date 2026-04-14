@@ -13,6 +13,7 @@ bumpx officially supports:
 ### Runtime Requirements
 
 All platforms require:
+
 - Node.js 16+ or Bun 1.0+
 - Git (for version control operations)
 - NPM, Yarn, or PNPM (for dependency installation)
@@ -84,7 +85,7 @@ bumpx handles path differences automatically:
 # Works on all platforms
 bumpx patch --files "packages/*/package.json"
 
-# Platform-specific examples (handled internally):
+# Platform-specific examples (handled internally)
 # Windows: packages\core\package.json
 # Unix:    packages/core/package.json
 ```
@@ -123,12 +124,14 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 bumpx works with various shells:
 
 **macOS/Linux:**
+
 - Bash
 - Zsh (default on macOS)
 - Fish
 - Dash
 
 **Windows:**
+
 - PowerShell (recommended)
 - Command Prompt
 - Git Bash
@@ -260,12 +263,16 @@ strategy:
 
 runs-on: ${{ matrix.os }}
 steps:
+
   - uses: actions/checkout@v4
   - uses: actions/setup-node@v4
+
     with:
       node-version: ${{ matrix.node-version }}
+
   - run: npm ci
   - run: bumpx patch --dry-run # Test on all platforms
+
 ```
 
 ### Platform-Specific CI
@@ -273,7 +280,9 @@ steps:
 **Windows-specific considerations:**
 ```yaml
 # GitHub Actions - Windows
+
 - name: Setup Git (Windows)
+
   if: runner.os == 'Windows'
   run: |
     git config --global core.autocrlf true
@@ -283,7 +292,9 @@ steps:
 **macOS-specific considerations:**
 ```yaml
 # GitHub Actions - macOS
+
 - name: Setup Git (macOS)
+
   if: runner.os == 'macOS'
   run: |
     git config --global core.autocrlf input
@@ -320,7 +331,7 @@ Create scripts that work everywhere:
 
 **Cross-platform shell script:**
 ```bash
-#!/bin/bash
+# !/bin/bash
 # scripts/release.sh - Works on Unix and Git Bash on Windows
 
 set -e
@@ -355,11 +366,11 @@ param(
 Write-Host "Starting release process..." -ForegroundColor Green
 
 try {
-    # Run tests
+# Run tests
     npm test
     if ($LASTEXITCODE -ne 0) { throw "Tests failed" }
 
-    # Create release
+# Create release
     & bumpx $ReleaseType --commit --tag --push
     if ($LASTEXITCODE -ne 0) { throw "Release failed" }
 
@@ -378,20 +389,20 @@ catch {
 bumpx looks for configuration files in standard locations:
 
 ```bash
-# All platforms - bumpx checks these locations in order:
+# All platforms - bumpx checks these locations in order
 # 1. ./bumpx.config.ts
 # 2. ./bumpx.config.js
 # 3. ./bumpx.config.mjs
 # 4. ./bumpx.config.cjs
-# 5. ./.config/bumpx.*
-# 6. ./config/bumpx.*
+# 5. ./.config/bumpx._
+# 6. ./config/bumpx._
 # 7. ./package.json (bumpx section)
 # 8. ~/.config/bumpx.* (user home directory)
 ```
 
 **Home directory resolution:**
 ```bash
-# Automatically resolved on all platforms:
+# Automatically resolved on all platforms
 # Windows: C:\Users\username\.config\bumpx.ts
 # macOS:   /Users/username/.config/bumpx.ts
 # Linux:   /home/username/.config/bumpx.ts
@@ -402,13 +413,13 @@ bumpx looks for configuration files in standard locations:
 Cross-platform file matching:
 
 ```bash
-# These patterns work on all platforms:
+# These patterns work on all platforms
 bumpx patch --files "packages/*/package.json"
 bumpx patch --files "apps/**/package.json"
-bumpx patch --files "{packages,apps}/*/package.json"
+bumpx patch --files "{packages,apps}/_/package.json"
 
 # Avoid platform-specific separators in patterns
-# Good: "packages/*/package.json"
+# Good: "packages/_/package.json"
 # Bad:  "packages\*\package.json"  # Windows-only
 ```
 
@@ -419,15 +430,18 @@ bumpx patch --files "{packages,apps}/*/package.json"
 Performance characteristics by platform:
 
 **Windows:**
+
 - File I/O may be slower due to antivirus scanning
 - Use SSD for best performance
 - Consider excluding `node_modules` from antivirus scans
 
 **macOS:**
+
 - Generally fast across all operations
 - Apple Silicon Macs show excellent performance
 
 **Linux:**
+
 - Typically fastest for I/O operations
 - Varies by distribution and system configuration
 
@@ -561,11 +575,17 @@ strategy:
   matrix:
     os: [ubuntu-latest, windows-latest, macos-latest]
     include:
+
       - os: windows-latest
+
         script-ext: .ps1
+
       - os: ubuntu-latest
+
         script-ext: .sh
+
       - os: macos-latest
+
         script-ext: .sh
 ```
 

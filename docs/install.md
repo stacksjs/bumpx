@@ -83,7 +83,7 @@ bun link
 
 bumpx requires:
 
-- **Node.js 16+** or **Bun 1.0+**
+- **Node.js 16+**or**Bun 1.0+**
 - **Git** (for version control operations)
 - A project with a `package.json` file (or other version files)
 

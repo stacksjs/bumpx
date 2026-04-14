@@ -171,9 +171,11 @@ Works with pnpm workspace setups:
 ```yaml
 # pnpm-workspace.yaml
 packages:
+
   - 'packages/*'
   - 'apps/*'
   - '!**/test/**'
+
 ```
 
 ```bash
@@ -240,7 +242,7 @@ packages.forEach(pkgPath => {
   if (pkg.dependencies) {
     Object.keys(pkg.dependencies).forEach(dep => {
       if (dep.startsWith('@myorg/')) {
-        pkg.dependencies[dep] = '^' + process.env.NEW_VERSION;
+        pkg.dependencies[dep] = '^' + process.env.NEW*VERSION;
       }
     });
   }
@@ -250,8 +252,8 @@ packages.forEach(pkgPath => {
 EOF
 
 # Use in version bump workflow
-NEW_VERSION=$(bumpx patch --dry-run | grep "→" | head -1 | awk '{print $3}')
-bumpx patch --recursive --execute "NEW_VERSION=$NEW_VERSION node scripts/update-deps.js"
+NEW*VERSION=$(bumpx patch --dry-run | grep "→" | head -1 | awk '{print $3}')
+bumpx patch --recursive --execute "NEW*VERSION=$NEW*VERSION node scripts/update-deps.js"
 ```
 
 ## Git Operations in Monorepos
@@ -301,7 +303,7 @@ bumpx patch --files packages/cli/package.json --tag --tag-message "cli-v%s"
 Release all packages together:
 
 ```bash
-#!/bin/bash
+# !/bin/bash
 # scripts/release.sh
 
 set -e
@@ -331,16 +333,16 @@ echo "✅ Release complete!"
 Release only changed packages:
 
 ```bash
-#!/bin/bash
+# !/bin/bash
 # scripts/selective-release.sh
 
 # Find packages with changes since last release
-CHANGED_PACKAGES=$(git diff --name-only HEAD~1 | grep "packages/" | cut -d'/' -f1-2 | sort -u)
+CHANGED*PACKAGES=$(git diff --name-only HEAD~1 | grep "packages/" | cut -d'/' -f1-2 | sort -u)
 
-for package_dir in $CHANGED_PACKAGES; do
-  if [ -f "$package_dir/package.json" ]; then
-    echo "Releasing $package_dir..."
-    bumpx patch --files "$package_dir/package.json" --commit --tag
+for package*dir in $CHANGED*PACKAGES; do
+  if [ -f "$package*dir/package.json" ]; then
+    echo "Releasing $package*dir..."
+    bumpx patch --files "$package*dir/package.json" --commit --tag
   fi
 done
 
@@ -367,20 +369,20 @@ bumpx prerelease --preid "alpha.$TIMESTAMP" --recursive --commit
 Update packages based on conditions:
 
 ```bash
-#!/bin/bash
+# !/bin/bash
 # Only update packages that have changes
 
 git diff --name-only HEAD~1 | while read file; do
   if [[ $file == packages/*/package.json ]]; then
-    package_dir=$(dirname "$file")
-    echo "Updating $package_dir due to changes"
+    package*dir=$(dirname "$file")
+    echo "Updating $package*dir due to changes"
     bumpx patch --files "$file" --commit
   elif [[ $file == packages/*/* ]]; then
-    package_dir=$(echo "$file" | cut -d'/' -f1-2)
-    package_json="$package_dir/package.json"
-    if [ -f "$package_json" ]; then
-      echo "Updating $package_dir due to file changes"
-      bumpx patch --files "$package_json" --commit
+    package*dir=$(echo "$file" | cut -d'/' -f1-2)
+    package*json="$package*dir/package.json"
+    if [ -f "$package*json" ]; then
+      echo "Updating $package*dir due to file changes"
+      bumpx patch --files "$package*json" --commit
     fi
   fi
 done
@@ -391,20 +393,20 @@ done
 Ensure version relationships:
 
 ```bash
-#!/bin/bash
+# !/bin/bash
 # Ensure core package version >= other packages
 
-CORE_VERSION=$(jq -r '.version' packages/core/package.json)
+CORE*VERSION=$(jq -r '.version' packages/core/package.json)
 
 for package in packages/*/package.json; do
   if [[ $package != "packages/core/package.json" ]]; then
-    PACKAGE_VERSION=$(jq -r '.version' "$package")
+    PACKAGE*VERSION=$(jq -r '.version' "$package")
 
-    # Compare versions (simplified)
-    if [[ "$PACKAGE_VERSION" > "$CORE_VERSION" ]]; then
-      echo "Warning: $package version $PACKAGE_VERSION > core version $CORE_VERSION"
-      # Optionally fix the constraint
-      bumpx "$CORE_VERSION" --files "$package"
+# Compare versions (simplified)
+    if [[ "$PACKAGE*VERSION" > "$CORE*VERSION" ]]; then
+      echo "Warning: $package version $PACKAGE*VERSION > core version $CORE*VERSION"
+# Optionally fix the constraint
+      bumpx "$CORE*VERSION" --files "$package"
     fi
   fi
 done
@@ -415,23 +417,23 @@ done
 Handle build order requirements:
 
 ```bash
-#!/bin/bash
+# !/bin/bash
 # Release packages in dependency order
 
 # Define build order
 PACKAGES=("packages/utils" "packages/core" "packages/cli" "apps/web")
 
-for package_dir in "${PACKAGES[@]}"; do
-  if [ -f "$package_dir/package.json" ]; then
-    echo "Building and releasing $package_dir..."
+for package*dir in "${PACKAGES[@]}"; do
+  if [ -f "$package*dir/package.json" ]; then
+    echo "Building and releasing $package*dir..."
 
-    # Build package
-    cd "$package_dir"
+# Build package
+    cd "$package*dir"
     npm run build
     cd - > /dev/null
 
-    # Update version
-    bumpx patch --files "$package_dir/package.json" --commit
+# Update version
+    bumpx patch --files "$package*dir/package.json" --commit
   fi
 done
 

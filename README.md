@@ -159,7 +159,9 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
+
       - uses: actions/checkout@v4
+
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
@@ -167,14 +169,17 @@ jobs:
       - uses: oven-sh/setup-bun@v1
 
       - name: Install dependencies
+
         run: bun install
 
       - name: Configure git
+
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Version bump and release
+
         run: bunx bumpx ${{ github.event.inputs.release_type }} --ci
 ```
 

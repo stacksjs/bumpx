@@ -5,17 +5,20 @@ Thank you for your interest in contributing to the bumpx Installer! This documen
 ## Development Setup
 
 1. **Clone the repository:**
+
    ```bash
    git clone https://github.com/stacksjs/bumpx.git
    cd bumpx/packages/action
    ```
 
 2. **Install dependencies:**
+
    ```bash
    bun install
    ```
 
 3. **Build the action:**
+
    ```bash
    bun run build
    ```
@@ -23,6 +26,7 @@ Thank you for your interest in contributing to the bumpx Installer! This documen
 ## Development Workflow
 
 1. **Create a feature branch:**
+
    ```bash
    git checkout -b feature/your-feature-name
    ```
@@ -30,6 +34,7 @@ Thank you for your interest in contributing to the bumpx Installer! This documen
 2. **Make your changes**
 
 3. **Run the build to ensure everything compiles:**
+
    ```bash
    bun run build
    ```
@@ -39,6 +44,7 @@ Thank you for your interest in contributing to the bumpx Installer! This documen
    - For GitHub Actions testing, you can set up a test workflow in a test repository
 
 5. **Commit your changes:**
+
    ```bash
    git add .
    git commit -m "feat: add your feature"

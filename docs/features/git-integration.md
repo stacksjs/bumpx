@@ -177,7 +177,7 @@ git push origin main --tags
 Validate versions before committing:
 
 ```bash
-#!/bin/sh
+# !/bin/sh
 # .git/hooks/pre-commit
 echo "Validating version consistency..."
 bumpx --dry-run --verbose
@@ -192,7 +192,7 @@ fi
 Automate post-release tasks:
 
 ```bash
-#!/bin/sh
+# !/bin/sh
 # .git/hooks/post-commit
 # Check if this was a version bump commit
 if git log -1 --pretty=%B | grep -q "bump version to"; then
@@ -272,22 +272,28 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
+
       - uses: actions/checkout@v3
+
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Node.js
+
         uses: actions/setup-node@v3
         with:
           node-version: '18'
 
       - name: Install dependencies
+
         run: npm ci
 
       - name: Run tests
+
         run: npm test
 
       - name: Bump version and push
+
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -304,11 +310,15 @@ Integration with GitLab pipelines:
 release:
   stage: release
   script:
+
     - git config user.name "GitLab CI"
     - git config user.email "ci@gitlab.com"
     - bumpx patch --commit --tag --push
+
   only:
+
     - main
+
 ```
 
 ### Authentication

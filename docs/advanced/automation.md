@@ -23,6 +23,7 @@ on:
         default: patch
         type: choice
         options:
+
           - patch
           - minor
           - major
@@ -35,30 +36,37 @@ jobs:
       pull-requests: write
 
     steps:
+
       - name: Checkout
+
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
 
       - name: Setup Node.js
+
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: npm
 
       - name: Install dependencies
+
         run: npm ci
 
       - name: Run tests
+
         run: npm test
 
       - name: Configure git
+
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Bump version
+
         run: |
           RELEASE_TYPE="${{ github.event.inputs.release_type || 'patch' }}"
           bumpx $RELEASE_TYPE --commit --tag --push
@@ -66,9 +74,11 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build
+
         run: npm run build
 
       - name: Create GitHub Release
+
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -100,8 +110,10 @@ jobs:
         node-version: [18, 20, 22]
 
     steps:
+
       - uses: actions/checkout@v4
       - name: Use Node.js ${{ matrix.node-version }}
+
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
@@ -121,12 +133,15 @@ jobs:
       version: ${{ steps.release.outputs.version }}
 
     steps:
+
       - uses: actions/checkout@v4
+
         with:
           token: ${{ secrets.PAT_TOKEN }}
           fetch-depth: 0
 
       - name: Setup Node.js
+
         uses: actions/setup-node@v4
         with:
           node-version: '20'
@@ -135,14 +150,16 @@ jobs:
       - run: npm ci
 
       - name: Configure git
+
         run: |
           git config user.name "Release Bot"
           git config user.email "release-bot@yourcompany.com"
 
       - name: Determine release type
+
         id: release-type
         run: |
-          # Check commit messages for conventional commit patterns
+# Check commit messages for conventional commit patterns
           if git log --format=%B -n 1 | grep -q "BREAKING CHANGE:"; then
             echo "type=major" >> $GITHUB_OUTPUT
           elif git log --format=%B -n 1 | grep -q "^feat"; then
@@ -152,6 +169,7 @@ jobs:
           fi
 
       - name: Release
+
         id: release
         run: |
           TYPE="${{ steps.release-type.outputs.type }}"
@@ -166,11 +184,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+
       - uses: actions/checkout@v4
+
         with:
           ref: main
 
       - name: Setup Node.js
+
         uses: actions/setup-node@v4
         with:
           node-version: '20'
@@ -179,6 +200,7 @@ jobs:
       - run: npm ci
       - run: npm run build
       - run: npm publish
+
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
@@ -188,8 +210,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+
       - uses: actions/checkout@v4
       - name: Build and push Docker image
+
         run: |
           docker build -t myapp:${{ needs.release.outputs.version }} .
           docker push myapp:${{ needs.release.outputs.version }}
@@ -211,29 +235,36 @@ jobs:
   bump:
     runs-on: ubuntu-latest
     steps:
+
       - uses: actions/checkout@v4
+
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
 
       - name: Setup Node.js
+
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: npm
 
       - name: Install dependencies
+
         run: npm ci
 
       - name: Install bumpx
+
         run: npm install -g bumpx
 
       - name: Configure git
+
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Bump version
+
         run: bumpx patch --commit --tag --push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -246,6 +277,7 @@ jobs:
 ```yaml
 # .gitlab-ci.yml
 stages:
+
   - test
   - release
   - deploy
@@ -257,41 +289,57 @@ test:
   stage: test
   image: node:$NODE_VERSION
   script:
+
     - npm ci
     - npm run lint
     - npm test
     - npm run build
+
   artifacts:
     reports:
       junit: test-results.xml
     paths:
+
       - dist/
 
 release:
   stage: release
   image: node:$NODE_VERSION
   only:
+
     - main
+
   before_script:
+
     - npm ci
     - git config user.name "GitLab CI"
     - git config user.email "ci@gitlab.com"
+
   script:
+
     - npm test
     - bumpx patch --commit --tag --push
     - npm run build
+
   after_script:
+
     - git push origin --tags
+
   artifacts:
     paths:
+
       - dist/
 
 deploy:
   stage: deploy
   script:
+
     - npm publish
+
   only:
+
     - tags
+
   environment:
     name: production
 ```
@@ -301,10 +349,12 @@ deploy:
 ```yaml
 # .gitlab-ci.yml
 include:
+
   - template: Security/SAST.gitlab-ci.yml
   - template: Security/Dependency-Scanning.gitlab-ci.yml
 
 stages:
+
   - validate
   - test
   - security
@@ -320,27 +370,35 @@ variables:
   cache:
     key: $CI_COMMIT_REF_SLUG
     paths:
+
       - node_modules/
       - .npm/
+
   before_script:
+
     - npm ci --cache .npm --prefer-offline
 
 validate:
-  <<: *node_template
+  <<: _node_template
   stage: validate
   script:
+
     - npm run lint
     - npm run type-check
+
   rules:
+
     - if: $CI_PIPELINE_SOURCE == "merge_request_event"
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
 
 test:unit:
-  <<: *node_template
+  <<: _node_template
   stage: test
   script:
+
     - npm run test:unit
-  coverage: '/Lines\s*:\s*(\d+\.\d+)%/'
+
+  coverage: '/Lines\s_:\s_(\d+\.\d+)%/'
   artifacts:
     reports:
       coverage_report:
@@ -349,24 +407,31 @@ test:unit:
       junit: junit.xml
 
 test:integration:
-  <<: *node_template
+  <<: _node_template
   stage: test
   script:
+
     - npm run test:integration
+
   services:
+
     - postgres:13
     - redis:6
 
 release:
-  <<: *node_template
+  <<: _node_template
   stage: release
   only:
+
     - main
+
   script:
+
     - git config user.name "GitLab CI"
     - git config user.email "ci@gitlab.com"
     - |
-      # Determine release type from commit messages
+
+# Determine release type from commit messages
       if git log --format=%B -n 20 | grep -q "BREAKING CHANGE:"; then
         RELEASE_TYPE="major"
       elif git log --format=%B -n 5 | grep -q "^feat:"; then
@@ -374,19 +439,27 @@ release:
       else
         RELEASE_TYPE="patch"
       fi
+
     - bumpx $RELEASE_TYPE --commit --tag --push
     - npm run build
+
   artifacts:
     paths:
+
       - dist/
+
     expire_in: 1 hour
 
 deploy:production:
   stage: deploy
   script:
+
     - npm publish --registry $NPM_REGISTRY
+
   only:
+
     - tags
+
   environment:
     name: production
     url: https://www.npmjs.com/package/your-package
@@ -399,6 +472,7 @@ deploy:production:
 ```yaml
 # azure-pipelines.yml
 trigger:
+
   - main
 
 pool:
@@ -408,32 +482,48 @@ variables:
   nodeVersion: 20.x
 
 stages:
+
   - stage: Test
+
     jobs:
+
       - job: TestJob
+
         steps:
+
           - task: NodeTool@0
+
             inputs:
               versionSpec: $(nodeVersion)
+
           - script: npm ci
           - script: npm test
           - script: npm run build
 
   - stage: Release
+
     condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main'))
     jobs:
+
       - job: ReleaseJob
+
         steps:
+
           - task: NodeTool@0
+
             inputs:
               versionSpec: $(nodeVersion)
+
           - script: npm ci
           - script: |
+
               git config user.name "Azure DevOps"
               git config user.email "devops@company.com"
               bumpx patch --commit --tag --push
+
           - script: npm run build
           - script: npm publish
+
             env:
               NPM_TOKEN: $(NPM_TOKEN)
 ```
@@ -519,10 +609,14 @@ orbs:
 workflows:
   test-and-release:
     jobs:
+
       - test
       - release:
+
           requires:
+
             - test
+
           filters:
             branches:
               only: main
@@ -530,11 +624,15 @@ workflows:
 jobs:
   test:
     docker:
+
       - image: cimg/node:20.0
+
     steps:
+
       - checkout
       - node/install-packages
       - run:
+
           name: Run tests
           command: |
             npm run lint
@@ -543,21 +641,29 @@ jobs:
 
   release:
     docker:
+
       - image: cimg/node:20.0
+
     steps:
+
       - checkout
       - node/install-packages
       - run:
+
           name: Configure git
           command: |
             git config user.name "CircleCI"
             git config user.email "ci@circleci.com"
+
       - run:
+
           name: Release
           command: |
             bumpx patch --commit --tag --push
             npm run build
+
       - run:
+
           name: Publish
           command: npm publish
 ```
@@ -569,13 +675,13 @@ jobs:
 Release only when specific conditions are met:
 
 ```bash
-#!/bin/bash
+# !/bin/bash
 # scripts/conditional-release.sh
 
 set -e
 
 # Check if this is a release branch or main
-if [[ "$GITHUB_REF" != "refs/heads/main" && "$GITHUB_REF" != "refs/heads/release/"* ]]; then
+if [[ "$GITHUB_REF" != "refs/heads/main" && "$GITHUB_REF" != "refs/heads/release/"_ ]]; then
     echo "Not a release branch, skipping release"
     exit 0
 fi
@@ -610,7 +716,7 @@ bumpx $RELEASE_TYPE --commit --tag --push
 Integrate with conventional commits:
 
 ```bash
-#!/bin/bash
+# !/bin/bash
 # scripts/semantic-release.sh
 
 # Parse conventional commits to determine release type
@@ -646,7 +752,7 @@ name: Multi-Environment Deploy
 
 on:
   push:
-    tags: ['v*']
+    tags: ['v_']
 
 jobs:
   parse-version:
@@ -656,13 +762,15 @@ jobs:
       is-prerelease: ${{ steps.version.outputs.is-prerelease }}
       environment: ${{ steps.version.outputs.environment }}
     steps:
+
       - name: Parse version
+
         id: version
         run: |
           VERSION=${GITHUB_REF#refs/tags/v}
           echo "version=$VERSION" >> $GITHUB_OUTPUT
 
-          if [[ $VERSION == *"-"* ]]; then
+          if [[ $VERSION == _"-"_ ]]; then
             echo "is-prerelease=true" >> $GITHUB_OUTPUT
             echo "environment=staging" >> $GITHUB_OUTPUT
           else
@@ -676,7 +784,9 @@ jobs:
     runs-on: ubuntu-latest
     environment: staging
     steps:
+
       - name: Deploy to staging
+
         run: echo "Deploying ${{ needs.parse-version.outputs.version }} to staging"
 
   deploy-production:
@@ -685,7 +795,9 @@ jobs:
     runs-on: ubuntu-latest
     environment: production
     steps:
+
       - name: Deploy to production
+
         run: echo "Deploying ${{ needs.parse-version.outputs.version }} to production"
 ```
 
@@ -698,13 +810,15 @@ Best practices for handling authentication tokens:
 ```yaml
 # Secure GitHub Actions setup
 env:
-  # Use fine-grained personal access tokens
+# Use fine-grained personal access tokens
   GITHUB_TOKEN: ${{ secrets.FINE_GRAINED_PAT }}
   NPM_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
 
 steps:
-  # Configure git with token
+# Configure git with token
+
   - name: Configure git authentication
+
     run: |
       git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
       git config user.name "github-actions[bot]"
@@ -716,7 +830,7 @@ steps:
 Ensure release integrity with signed commits and tags:
 
 ```bash
-#!/bin/bash
+# !/bin/bash
 # scripts/secure-release.sh
 
 # Import GPG key for signing
@@ -746,9 +860,11 @@ deploy-production:
   environment:
     name: production
     protection_rules:
+
       - required_reviewers: 2
       - prevent_self_review: true
       - dismiss_stale_reviews: true
+
 ```
 
 ## Monitoring and Notifications
@@ -758,7 +874,9 @@ deploy-production:
 Send release notifications to Slack:
 
 ```yaml
+
 - name: Notify Slack
+
   uses: 8398a7/action-slack@v3
   with:
     status: success
@@ -785,7 +903,9 @@ Send release notifications to Slack:
 ### Discord Notifications
 
 ```yaml
+
 - name: Notify Discord
+
   uses: sarisia/actions-status-discord@v1
   with:
     webhook: ${{ secrets.DISCORD_WEBHOOK }}
@@ -797,7 +917,9 @@ Send release notifications to Slack:
 ### Email Notifications
 
 ```yaml
+
 - name: Send email notification
+
   uses: dawidd6/action-send-mail@v3
   with:
     server_address: smtp.gmail.com
@@ -850,14 +972,14 @@ Keep your automation configuration maintainable:
 Robust error handling in automation scripts:
 
 ```bash
-#!/bin/bash
+# !/bin/bash
 set -euo pipefail  # Exit on error, undefined vars, pipe failures
 
 # Trap errors and cleanup
 trap 'echo "Error on line $LINENO"; cleanup' ERR
 
 cleanup() {
-    # Cleanup operations
+# Cleanup operations
     git reset --hard HEAD
     exit 1
 }

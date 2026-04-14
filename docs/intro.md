@@ -4,7 +4,7 @@
 
 > A powerful, modern version bumping tool with comprehensive Git integration and monorepo support.
 
-## What is bumpx?
+## What is bumpx
 
 bumpx is a version management tool that simplifies the process of bumping versions across your projects. It focuses on:
 
@@ -112,7 +112,7 @@ Or in package.json:
 }
 ```
 
-## Why Choose bumpx?
+## Why Choose bumpx
 
 bumpx offers significant advantages over manual version management and other tools:
 

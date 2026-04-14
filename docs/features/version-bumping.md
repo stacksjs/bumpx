@@ -65,6 +65,7 @@ bumpx prompt --commits
 ```
 
 The interactive mode shows:
+
 - Current version
 - Available bump types
 - Recent commits (if `--commits` flag used)
@@ -109,7 +110,7 @@ export const VERSION = '1.2.3'
 ```
 
 ```python
-__version__ = '1.2.3'
+**version** = '1.2.3'
 ```
 
 **YAML Files (pubspec.yaml, Chart.yaml):**
@@ -263,7 +264,9 @@ Automated version bumping in CI:
 
 ```yaml
 # GitHub Actions example
+
 - name: Bump version
+
   run: |
     bumpx patch --commit --tag --push
     npm publish
@@ -274,7 +277,7 @@ Automated version bumping in CI:
 Pre-commit version validation:
 
 ```bash
-#!/bin/sh
+# !/bin/sh
 # .git/hooks/pre-commit
 bumpx --dry-run --verbose || exit 1
 ```
@@ -294,7 +297,7 @@ bumpx --dry-run --verbose || exit 1
 git checkout -b feature/new-feature
 
 # 2. Development and testing
-# ... make changes ...
+# ... make changes
 
 # 3. Ready for release
 git checkout main

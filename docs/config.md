@@ -534,7 +534,7 @@ For managing multiple packages in a monorepo:
   "message": "chore: bump all packages to v%s",
   "files": [
     "package.json",
-    "packages/*/package.json"
+    "packages/_/package.json"
   ]
 }
 ```
@@ -594,7 +594,7 @@ Support for complex file patterns:
 {
   "files": [
     "package.json",
-    "apps/*/package.json",
+    "apps/_/package.json",
     "libs/*/package.json",
     "VERSION",
     "src/constants/version.ts",

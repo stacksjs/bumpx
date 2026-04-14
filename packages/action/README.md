@@ -15,13 +15,15 @@ A GitHub Action to install system dependencies using bumpx.
 This action allows you to easily install dependencies with bumpx in your GitHub Actions workflows.
 
 ```yaml
+
 - name: Install Dependencies with bumpx
+
   uses: stacksjs/bumpx-installer@v1
-  # Automatically detects and installs project dependencies
-  # Optional parameters:
-  # with:
-  #   packages: node python go # override auto-detection
-  #   config-path: bumpx.config.ts
+# Automatically detects and installs project dependencies
+# Optional parameters
+# with
+# packages: node python go # override auto-detection
+# config-path: bumpx.config.ts
 ```
 
 ## Inputs
@@ -56,12 +58,14 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+
       - uses: actions/checkout@v4
 
       - name: Install Dependencies
+
         uses: stacksjs/bumpx-installer@v1
-        # Automatically detects Node.js from package.json
-        # and installs node + any other detected dependencies
+# Automatically detects Node.js from package.json
+# and installs node + any other detected dependencies
 ```
 
 ### Using with Config File
@@ -79,11 +83,13 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+
       - uses: actions/checkout@v4
 
       - name: Install Dependencies from Config
+
         uses: stacksjs/bumpx-installer@v1
-        # Will automatically detect packages from bumpx.config.ts
+# Will automatically detect packages from bumpx.config.ts
 ```
 
 ### Multi-platform Workflow
@@ -104,11 +110,13 @@ jobs:
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
     steps:
+
       - uses: actions/checkout@v4
 
       - name: Install Dependencies
+
         uses: stacksjs/bumpx-installer@v1
-        # Auto-detects dependencies across all platforms
+# Auto-detects dependencies across all platforms
 ```
 
 ### Manual Package Override
@@ -124,15 +132,18 @@ jobs:
   setup:
     runs-on: ubuntu-latest
     steps:
+
       - uses: actions/checkout@v4
 
       - name: Install Specific Dependencies
+
         uses: stacksjs/bumpx-installer@v1
         with:
           packages: node python go rust
-          # Override auto-detection with specific packages
+# Override auto-detection with specific packages
 
       - name: Run Tests
+
         run: npm test
 ```
 
@@ -149,14 +160,17 @@ jobs:
   setup:
     runs-on: ubuntu-latest
     steps:
+
       - uses: actions/checkout@v4
 
       - name: Install Dependencies from Custom Config
+
         uses: stacksjs/bumpx-installer@v1
         with:
           config-path: .github/bumpx.config.ts
 
       - name: Run Tests
+
         run: npm test
 ```
 

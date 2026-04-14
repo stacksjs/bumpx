@@ -35,5 +35,3 @@ features:
     icon: "🚀"
     details: "Built for automation with GitHub Actions support and comprehensive CI/CD platform integration."
 ---
-
-<Home />
