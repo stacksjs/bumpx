@@ -1,4 +1,71 @@
 # Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.4...v0.2.5)
+
+### 🚀 Features
+
+- **recursive**: --only-changed-since to skip unchanged leaf packages ([805146c](https://github.com/stacksjs/bumpx/commit/805146c)) _(by Chris <chrisbreuer93@gmail.com>)_
+
+### 🐛 Bug Fixes
+
+- chain pantry publish:commit calls for single-arg CLI ([8af054b](https://github.com/stacksjs/bumpx/commit/8af054b)) _(by chrisbreuer <chrisbreuer93@gmail.com>)_
+
+### 🧹 Chores
+
+- release v0.2.5 ([583ca76](https://github.com/stacksjs/bumpx/commit/583ca76)) _(by Chris <chrisbreuer93@gmail.com>)_
+- add more docs ([85d71e7](https://github.com/stacksjs/bumpx/commit/85d71e7)) _(by Chris <chrisbreuer93@gmail.com>)_
+- fresh install to pick up pickier 0.1.21 ([04b26bf](https://github.com/stacksjs/bumpx/commit/04b26bf)) _(by chrisbreuer <chrisbreuer93@gmail.com>)_
+- fix lint errors ([dd1af77](https://github.com/stacksjs/bumpx/commit/dd1af77)) _(by chrisbreuer <chrisbreuer93@gmail.com>)_
+- auto-fix lint errors ([129dce3](https://github.com/stacksjs/bumpx/commit/129dce3)) _(by chrisbreuer <chrisbreuer93@gmail.com>)_
+- include md in pickier lint extensions ([02e905a](https://github.com/stacksjs/bumpx/commit/02e905a)) _(by chrisbreuer <chrisbreuer93@gmail.com>)_
+- update vscode config ([bb10b99](https://github.com/stacksjs/bumpx/commit/bb10b99)) _(by chrisbreuer <chrisbreuer93@gmail.com>)_
+- update dependencies ([8e6fa86](https://github.com/stacksjs/bumpx/commit/8e6fa86)) _(by chrisbreuer <chrisbreuer93@gmail.com>)_
+- repo cleanup and modernization ([333b90e](https://github.com/stacksjs/bumpx/commit/333b90e)) _(by chrisbreuer <chrisbreuer93@gmail.com>)_
+- repo cleanup and modernization ([0a40ac1](https://github.com/stacksjs/bumpx/commit/0a40ac1)) _(by chrisbreuer <chrisbreuer93@gmail.com>)_
+- remove @stacksjs/docs ([64272e4](https://github.com/stacksjs/bumpx/commit/64272e4)) _(by chrisbreuer <chrisbreuer93@gmail.com>)_
+- remove redundant docs/.vitepress ([e9d5fe0](https://github.com/stacksjs/bumpx/commit/e9d5fe0)) _(by chrisbreuer <chrisbreuer93@gmail.com>)_
+- remove .zed and .cursor folders ([3074f15](https://github.com/stacksjs/bumpx/commit/3074f15)) _(by chrisbreuer <chrisbreuer93@gmail.com>)_
+- use Pantry action for publish-commit and add job dependencies ([138ccf1](https://github.com/stacksjs/bumpx/commit/138ccf1)) _(by Chris <chrisbreuer93@gmail.com>)_
+- remove file ignores from pickier config ([ec99c35](https://github.com/stacksjs/bumpx/commit/ec99c35)) _(by chrisbreuer <chrisbreuer93@gmail.com>)_
+- add CLAUDE.md and CHANGELOG.md to pickier ignores ([4699180](https://github.com/stacksjs/bumpx/commit/4699180)) _(by chrisbreuer <chrisbreuer93@gmail.com>)_
+- remove .pickierignore ([a2c7d1d](https://github.com/stacksjs/bumpx/commit/a2c7d1d)) _(by glennmichael123 <gtorregosa@gmail.com>)_
+- update better-dx to ^0.2.7 ([c8fb485](https://github.com/stacksjs/bumpx/commit/c8fb485)) _(by glennmichael123 <gtorregosa@gmail.com>)_
+- enrich CLAUDE.md with detailed project context from README ([3424961](https://github.com/stacksjs/bumpx/commit/3424961)) _(by glennmichael123 <gtorregosa@gmail.com>)_
+- enrich CLAUDE.md with detailed project context from README ([76853cf](https://github.com/stacksjs/bumpx/commit/76853cf)) _(by chrisbreuer <chrisbreuer93@gmail.com>)_
+- update CLAUDE.md with project context and crosswind details ([dd62ef7](https://github.com/stacksjs/bumpx/commit/dd62ef7)) _(by chrisbreuer <chrisbreuer93@gmail.com>)_
+- add proper claude code guidelines ([2a01d87](https://github.com/stacksjs/bumpx/commit/2a01d87)) _(by chrisbreuer <chrisbreuer93@gmail.com>)_
+- use pantry monorepo action instead of pantry-setup ([3a64b32](https://github.com/stacksjs/bumpx/commit/3a64b32)) _(by chrisbreuer <chrisbreuer93@gmail.com>)_
+- ignore claude config in linter ([80dbcd9](https://github.com/stacksjs/bumpx/commit/80dbcd9)) _(by chrisbreuer <chrisbreuer93@gmail.com>)_
+- add claude code guidelines ([998216b](https://github.com/stacksjs/bumpx/commit/998216b)) _(by chrisbreuer <chrisbreuer93@gmail.com>)_
+- wip ([2bd5766](https://github.com/stacksjs/bumpx/commit/2bd5766)) _(by glennmichael123 <gtorregosa@gmail.com>)_
+- wip ([de3b4a5](https://github.com/stacksjs/bumpx/commit/de3b4a5)) _(by chrisbreuer <chrisbreuer93@gmail.com>)_
+- wip ([7c3011f](https://github.com/stacksjs/bumpx/commit/7c3011f)) _(by chrisbreuer <chrisbreuer93@gmail.com>)_
+- wip ([7e6ce47](https://github.com/stacksjs/bumpx/commit/7e6ce47)) _(by chrisbreuer <chrisbreuer93@gmail.com>)_
+- wip ([99f17fa](https://github.com/stacksjs/bumpx/commit/99f17fa)) _(by chrisbreuer <chrisbreuer93@gmail.com>)_
+- wip ([807af3d](https://github.com/stacksjs/bumpx/commit/807af3d)) _(by glennmichael123 <gtorregosa@gmail.com>)_
+- wip ([b7b7e16](https://github.com/stacksjs/bumpx/commit/b7b7e16)) _(by chrisbreuer <chrisbreuer93@gmail.com>)_
+- wip ([7a6927e](https://github.com/stacksjs/bumpx/commit/7a6927e)) _(by glennmichael123 <gtorregosa@gmail.com>)_
+- wip ([f160557](https://github.com/stacksjs/bumpx/commit/f160557)) _(by glennmichael123 <gtorregosa@gmail.com>)_
+- wip ([84cf35f](https://github.com/stacksjs/bumpx/commit/84cf35f)) _(by glennmichael123 <gtorregosa@gmail.com>)_
+- wip ([8fb07f5](https://github.com/stacksjs/bumpx/commit/8fb07f5)) _(by glennmichael123 <gtorregosa@gmail.com>)_
+- wip ([be16d00](https://github.com/stacksjs/bumpx/commit/be16d00)) _(by glennmichael123 <gtorregosa@gmail.com>)_
+- wip ([aaf4b3d](https://github.com/stacksjs/bumpx/commit/aaf4b3d)) _(by glennmichael123 <gtorregosa@gmail.com>)_
+- wip ([bcde243](https://github.com/stacksjs/bumpx/commit/bcde243)) _(by glennmichael123 <gtorregosa@gmail.com>)_
+- wip ([45b85d4](https://github.com/stacksjs/bumpx/commit/45b85d4)) _(by glennmichael123 <gtorregosa@gmail.com>)_
+- wip ([7c1b6d8](https://github.com/stacksjs/bumpx/commit/7c1b6d8)) _(by glennmichael123 <gtorregosa@gmail.com>)_
+- wip ([af0e242](https://github.com/stacksjs/bumpx/commit/af0e242)) _(by glennmichael123 <gtorregosa@gmail.com>)_
+- wip ([fe013a4](https://github.com/stacksjs/bumpx/commit/fe013a4)) _(by glennmichael123 <gtorregosa@gmail.com>)_
+- wip ([da9f5e7](https://github.com/stacksjs/bumpx/commit/da9f5e7)) _(by glennmichael123 <gtorregosa@gmail.com>)_
+- **deps**: update dependency buddy-bot to ^0.9.12 (#32) ([fe964af](https://github.com/stacksjs/bumpx/commit/fe964af)) _(by [renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>](https://github.com/renovate[bot]))_ ([#32](https://github.com/stacksjs/bumpx/issues/32), [#32](https://github.com/stacksjs/bumpx/issues/32))
+- **deps**: update actions/checkout action to v6 (#34) ([97276b6](https://github.com/stacksjs/bumpx/commit/97276b6)) _(by [renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>](https://github.com/renovate[bot]))_ ([#34](https://github.com/stacksjs/bumpx/issues/34), [#34](https://github.com/stacksjs/bumpx/issues/34))
+- wip ([496e92e](https://github.com/stacksjs/bumpx/commit/496e92e)) _(by glennmichael123 <gtorregosa@gmail.com>)_
+- **deps**: update all non-major dependencies (#30) ([69f48e0](https://github.com/stacksjs/bumpx/commit/69f48e0)) _(by [renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>](https://github.com/renovate[bot]))_ ([#30](https://github.com/stacksjs/bumpx/issues/30), [#30](https://github.com/stacksjs/bumpx/issues/30))
+
+### Contributors
+
+- _Chris <chrisbreuer93@gmail.com>_
+- _[renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>](https://github.com/renovate[bot])_
+- _chrisbreuer <chrisbreuer93@gmail.com>_
+- _glennmichael123 <gtorregosa@gmail.com>_
 
 [Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.3...v0.2.4)
 
