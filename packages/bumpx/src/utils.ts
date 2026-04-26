@@ -698,6 +698,56 @@ export function executeGit(args: string[], cwd?: string): string {
 }
 
 /**
+ * Resolve `onlyChangedSince` to a concrete git ref.
+ *
+ * `true` → most recent annotated/lightweight `v*.*.*` tag (semver
+ * release tags). String values pass through unchanged. Returns `null`
+ * when no suitable tag exists (first release / unreleased repo) so
+ * callers can skip the filter entirely instead of erroring out.
+ */
+export function resolveChangedSinceRef(value: boolean | string, cwd?: string): string | null {
+  if (typeof value === 'string')
+    return value
+  try {
+    return executeGit(['describe', '--tags', '--abbrev=0', '--match=v*.*.*'], cwd)
+  }
+  catch {
+    return null
+  }
+}
+
+/**
+ * Whether the working tree under `dir` differs from `ref`.
+ *
+ * Treats *anything* committed under the directory as a change, including
+ * deletions, renames, and mode changes. Files outside the directory
+ * (root README, lockfile, etc.) don't count toward a leaf package's
+ * "changed" status, so a release that only updates the root README
+ * doesn't accidentally re-bump every leaf.
+ *
+ * On any git error we conservatively return `true` (treat as changed)
+ * so the worst case is "we bumped something we didn't strictly need to"
+ * rather than "we silently skipped a real change".
+ */
+export function hasChangedSince(ref: string, dir: string, cwd?: string): boolean {
+  try {
+    const result = spawnSync('git', ['diff', '--quiet', ref, '--', dir], {
+      cwd: cwd ?? process.cwd(),
+      stdio: 'ignore',
+    })
+    // Exit 0 = no changes, 1 = changes, anything else = error → assume changed.
+    if (result.status === 0)
+      return false
+    if (result.status === 1)
+      return true
+    return true
+  }
+  catch {
+    return true
+  }
+}
+
+/**
  * Check git status
  */
 export function checkGitStatus(cwd?: string): void {

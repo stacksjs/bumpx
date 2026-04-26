@@ -15,12 +15,14 @@ import {
   findAllPackageFiles,
   getCurrentBranch,
   getRecentCommits,
+  hasChangedSince,
   incrementVersion,
   isGitRepository,
   isValidVersion,
   logStep,
   pushToRemote,
   readPackageJson,
+  resolveChangedSinceRef,
   symbols,
   updateVersionInFile,
 } from './utils'
@@ -51,6 +53,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
     changelog = true,
     respectGitignore = true,
     verbose,
+    onlyChangedSince,
   } = options
 
   // Backup system for rollback on cancellation
@@ -117,6 +120,41 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
           && (file === join(effectiveCwd, 'package.json')
             || file === resolve(effectiveCwd, 'package.json')),
       )
+
+      // --only-changed-since: drop leaf packages whose source hasn't moved
+      // since the given ref. Root package.json is always kept (it represents
+      // the release itself, not a publishable artifact).
+      if (onlyChangedSince) {
+        const ref = resolveChangedSinceRef(onlyChangedSince, effectiveCwd)
+        if (!ref) {
+          if (!options.quiet)
+            logStep(symbols.info ?? symbols.package, 'No prior release tag found — bumping all packages', false)
+        }
+        else {
+          const before = filesToUpdate.length
+          const kept: string[] = []
+          let skipped = 0
+          for (const f of filesToUpdate) {
+            if (f === rootPackagePath) {
+              kept.push(f)
+              continue
+            }
+            const dir = dirname(f)
+            if (hasChangedSince(ref, dir, effectiveCwd))
+              kept.push(f)
+            else
+              skipped += 1
+          }
+          filesToUpdate = kept
+          if (!options.quiet) {
+            logStep(
+              symbols.package,
+              `--only-changed-since ${ref}: bumping ${kept.length}/${before} packages (${skipped} unchanged, skipped)`,
+              false,
+            )
+          }
+        }
+      }
     }
     else {
       filesToUpdate = await findAllPackageFiles(effectiveCwd, false, respectGitignore)

@@ -29,6 +29,21 @@ export interface VersionBumpOptions {
   changelog?: boolean
   respectGitignore?: boolean
   verbose?: boolean
+  /**
+   * In recursive (workspace) mode, only bump packages whose source has
+   * changed since the given git ref. Set to `true` to use the latest
+   * `v*.*.*` tag, or pass an explicit ref ("v0.2.20", "main", a SHA).
+   *
+   * The root package.json is always bumped — it represents the release
+   * itself, not a publishable package.
+   *
+   * Useful for monorepos with hundreds of leaf packages (icon
+   * collections, language data, etc.) that rarely change but currently
+   * get republished on every release. Pairs with pantry's
+   * skip-if-already-published precheck: skipped here means no version
+   * change, so pantry's GET-precheck short-circuits the publish too.
+   */
+  onlyChangedSince?: boolean | string
 }
 
 export interface BumpxConfig extends VersionBumpOptions {

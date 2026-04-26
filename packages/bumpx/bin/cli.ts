@@ -48,6 +48,7 @@ interface CLIOptions {
   forceUpdate?: boolean
   changelog?: boolean
   respectGitignore?: boolean
+  onlyChangedSince?: boolean | string
 }
 
 /**
@@ -296,6 +297,8 @@ async function prepareConfig(release: string | undefined, files: string[] | unde
     cliOverrides.changelog = options.changelog
   if (options.respectGitignore !== undefined)
     cliOverrides.respectGitignore = options.respectGitignore
+  if (options.onlyChangedSince !== undefined)
+    cliOverrides.onlyChangedSince = options.onlyChangedSince
 
   // Check for interruption before loading config
   checkInterruption()
@@ -364,6 +367,7 @@ cli
   .option('--no-changelog', 'Skip changelog generation')
   .option('--respect-gitignore', `Respect .gitignore when finding files (default: ${bumpConfigDefaults.respectGitignore})`)
   .option('--no-respect-gitignore', 'Ignore .gitignore when finding files')
+  .option('--only-changed-since [ref]', 'In recursive mode, only bump leaf packages that changed since <ref> (defaults to latest v*.*.* tag if no ref given)')
   .example('bumpx patch')
   .example('bumpx minor --no-git-check')
   .example('bumpx major --no-push')
