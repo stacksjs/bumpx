@@ -48,8 +48,8 @@
     "@stacksjs/clapp": "^0.2.0"
   },
   "devDependencies": {
-    "better-dx": "^0.2.7",
-    "typescript": "^5.9.3"
+    "@stacksjs/bunpress": "^0.1.4",
+    "better-dx": "^0.2.7"
   },
   "git-hooks": {
     "pre-commit": {

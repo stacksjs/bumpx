@@ -42,7 +42,6 @@
     "**/node_modules/**",
     "**/*.d.ts",
     "buddy-bot.config.ts",
-    "pickier.config.ts",
-    "docs/**"
+    "pickier.config.ts"
   ]
 }

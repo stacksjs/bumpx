@@ -8,13 +8,13 @@
         "@stacksjs/clapp": "^0.2.0",
       },
       "devDependencies": {
+        "@stacksjs/bunpress": "^0.1.4",
         "better-dx": "^0.2.7",
-        "typescript": "^5.9.3",
       },
     },
     "packages/action": {
       "name": "bumpx-action",
-      "version": "0.2.4",
+      "version": "0.2.5",
       "bin": {
         "bumpx-action": "dist/index.js",
       },
@@ -27,7 +27,7 @@
     },
     "packages/bumpx": {
       "name": "@stacksjs/bumpx",
-      "version": "0.2.4",
+      "version": "0.2.5",
       "bin": {
         "bumpx": "./dist/bin/cli.js",
       },
