@@ -17,6 +17,7 @@ bumpx prompt --commits
 ```
 
 This helps you decide which version bump is appropriate:
+
 - Bug fixes and patches -> `patch`
 - New features -> `minor`
 - Breaking changes -> `major`
@@ -141,27 +142,34 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 
 ### Added
+
 - New feature X
 
 ### Changed
+
 - Modified behavior Y
 
 ### Fixed
+
 - Bug fix Z
 
 ## [1.2.0] - 2024-01-15
 
 ### Added
+
 - Feature A
 - Feature B
 
 ### Changed
+
 - Updated dependency X
 
 ## [1.1.0] - 2024-01-01
 
 ### Added
+
 - Initial release features
+
 ```
 
 ### Automating Changelog Updates
@@ -292,17 +300,21 @@ name: Release
 on:
   push:
     tags:
+
       - 'v*'
 
 jobs:
   release:
     runs-on: ubuntu-latest
     steps:
+
       - uses: actions/checkout@v4
+
         with:
           fetch-depth: 0
 
       - name: Generate changelog
+
         id: changelog
         run: |
           PREV_TAG=$(git describe --tags --abbrev=0 HEAD~1 2>/dev/null || echo "")
@@ -316,10 +328,11 @@ jobs:
           echo "EOF" >> $GITHUB_OUTPUT
 
       - name: Create Release
+
         uses: softprops/action-gh-release@v1
         with:
           body: |
-            ## What's Changed
+## What's Changed
             ${{ steps.changelog.outputs.changes }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

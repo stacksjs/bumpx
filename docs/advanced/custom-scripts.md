@@ -50,12 +50,14 @@ export default defineConfig({
 Commands execute before commit/tag:
 
 ```
+
 1. Version bump in files
 2. Execute commands <-- here
 3. Git add (if --all)
 4. Git commit
 5. Git tag
 6. Git push
+
 ```
 
 This ensures built artifacts are included in the commit.
@@ -347,7 +349,9 @@ notifyRelease()
 ### GitHub Actions Script
 
 ```yaml
+
 - name: Release
+
   run: |
     bumpx ${{ inputs.version_type }} \
       --execute "bun run build && bun run test" \

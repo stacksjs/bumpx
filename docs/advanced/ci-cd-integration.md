@@ -20,6 +20,7 @@ bumpx patch --ci
 ### CI Mode Behavior
 
 When `--ci` is enabled:
+
 - Confirmation prompts are skipped (`--yes`)
 - Output is minimized (`--quiet`)
 - Interactive features are disabled
@@ -40,6 +41,7 @@ on:
         default: 'patch'
         type: choice
         options:
+
           - patch
           - minor
           - major
@@ -54,23 +56,29 @@ jobs:
       contents: write
 
     steps:
+
       - uses: actions/checkout@v4
+
         with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Bun
+
         uses: oven-sh/setup-bun@v1
 
       - name: Configure Git
+
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Install bumpx
+
         run: bun add -g @stacksjs/bumpx
 
       - name: Version bump
+
         run: bumpx ${{ inputs.version }} --commit --tag --push --ci
 ```
 
@@ -83,6 +91,7 @@ on:
   push:
     branches: [main]
     paths-ignore:
+
       - '*.md'
       - 'docs/**'
 
@@ -94,15 +103,18 @@ jobs:
       release_type: ${{ steps.check.outputs.release_type }}
 
     steps:
+
       - uses: actions/checkout@v4
+
         with:
           fetch-depth: 0
 
       - name: Check for release trigger
+
         id: check
         run: |
           COMMIT_MSG=$(git log -1 --pretty=%B)
-          if [[ "$COMMIT_MSG" == *"[release:"* ]]; then
+          if [[ "$COMMIT_MSG" == _"[release:"_ ]]; then
             TYPE=$(echo "$COMMIT_MSG" | grep -oP '\[release:\s*\K[^\]]+')
             echo "should_release=true" >> $GITHUB_OUTPUT
             echo "release_type=$TYPE" >> $GITHUB_OUTPUT
@@ -118,7 +130,9 @@ jobs:
       contents: write
 
     steps:
+
       - uses: actions/checkout@v4
+
         with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -126,11 +140,13 @@ jobs:
       - uses: oven-sh/setup-bun@v1
 
       - name: Configure Git
+
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Release
+
         run: |
           bun add -g @stacksjs/bumpx
           bumpx ${{ needs.check-release.outputs.release_type }} \
@@ -153,21 +169,26 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
+
       - uses: actions/checkout@v4
+
         with:
           fetch-depth: 0
 
       - uses: oven-sh/setup-bun@v1
 
       - name: Install dependencies
+
         run: bun install
 
       - name: Configure Git
+
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Version bump and build
+
         run: |
           bun add -g @stacksjs/bumpx
           bumpx ${{ inputs.version }} \
@@ -178,11 +199,13 @@ jobs:
             --ci
 
       - name: Publish to npm
+
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Create GitHub Release
+
         run: |
           VERSION=$(jq -r .version package.json)
           gh release create "v$VERSION" \
@@ -211,18 +234,22 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
+
       - uses: actions/checkout@v4
+
         with:
           fetch-depth: 0
 
       - uses: oven-sh/setup-bun@v1
 
       - name: Configure Git
+
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Release all packages
+
         if: inputs.package == 'all'
         run: |
           bun add -g @stacksjs/bumpx
@@ -234,6 +261,7 @@ jobs:
             --ci
 
       - name: Release single package
+
         if: inputs.package != 'all'
         run: |
           bun add -g @stacksjs/bumpx
@@ -252,21 +280,26 @@ jobs:
 ```yaml
 # .gitlab-ci.yml
 stages:
+
   - release
 
 release:
   stage: release
   image: oven/bun:latest
   only:
+
     - triggers
+
   variables:
     VERSION_TYPE: patch
   script:
+
     - git config user.name "GitLab CI"
     - git config user.email "ci@gitlab.com"
     - bun add -g @stacksjs/bumpx
     - bumpx $VERSION_TYPE --commit --tag --ci
     - git push origin HEAD:$CI_COMMIT_REF_NAME --tags
+
 ```
 
 ### Scheduled Release
@@ -275,13 +308,17 @@ release:
 release:scheduled:
   stage: release
   only:
+
     - schedules
+
   script:
+
     - git config user.name "GitLab CI"
     - git config user.email "ci@gitlab.com"
     - bun add -g @stacksjs/bumpx
     - |
-      # Check for changes since last tag
+
+# Check for changes since last tag
       LAST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "")
       if [ -n "$LAST_TAG" ]; then
         CHANGES=$(git log $LAST_TAG..HEAD --oneline | wc -l)
@@ -302,15 +339,21 @@ version: 2.1
 jobs:
   release:
     docker:
+
       - image: oven/bun:latest
+
     steps:
+
       - checkout
       - run:
+
           name: Configure Git
           command: |
             git config user.name "CircleCI"
             git config user.email "ci@circleci.com"
+
       - run:
+
           name: Release
           command: |
             bun add -g @stacksjs/bumpx
@@ -319,7 +362,9 @@ jobs:
 workflows:
   release:
     jobs:
+
       - release:
+
           filters:
             branches:
               only: main
@@ -362,10 +407,13 @@ pipeline {
 trigger: none
 
 parameters:
+
   - name: versionType
+
     type: string
     default: patch
     values:
+
       - patch
       - minor
       - major
@@ -374,16 +422,20 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+
   - task: UseNode@1
+
     inputs:
       version: '20.x'
 
   - script: |
+
       npm install -g bun
       bun add -g @stacksjs/bumpx
     displayName: Install tools
 
   - script: |
+
       git config user.name "Azure Pipelines"
       git config user.email "ci@azure.com"
       bumpx ${{ parameters.versionType }} --commit --tag --push --ci
@@ -425,7 +477,9 @@ permissions:
 
 ```yaml
 # Use a PAT or GitHub App for protected branches
+
 - uses: actions/checkout@v4
+
   with:
     token: ${{ secrets.RELEASE_TOKEN }}  # PAT with push access
 ```
@@ -434,13 +488,16 @@ permissions:
 
 ```yaml
 # GPG signing in CI
+
 - name: Import GPG key
+
   run: |
     echo "${{ secrets.GPG_PRIVATE_KEY }}" | gpg --import
     git config user.signingkey ${{ secrets.GPG_KEY_ID }}
     git config commit.gpgsign true
 
 - name: Release with signing
+
   run: bumpx patch --commit --tag --push --sign --ci
 ```
 

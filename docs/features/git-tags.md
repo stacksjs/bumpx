@@ -97,7 +97,7 @@ Sign commits and tags for security:
 # Sign commit and tag
 bumpx patch --commit --tag --sign
 
-# Requires GPG key configured in Git:
+# Requires GPG key configured in Git
 # git config --global user.signingkey YOUR_KEY_ID
 # git config --global commit.gpgsign true
 ```
@@ -135,7 +135,7 @@ Hooks run automatically after bumpx commits:
 
 ```bash
 # .git/hooks/post-commit
-#!/bin/sh
+# !/bin/sh
 echo "Version bumped: $(git describe --tags --abbrev=0)"
 ```
 
@@ -241,20 +241,25 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
+
       - uses: actions/checkout@v4
+
         with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Git
+
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Setup Bun
+
         uses: oven-sh/setup-bun@v1
 
       - name: Version Bump
+
         run: |
           bun add -g @stacksjs/bumpx
           bumpx ${{ github.event.inputs.version }} --commit --tag --push
@@ -266,12 +271,16 @@ jobs:
 release:
   stage: release
   script:
+
     - git config user.name "GitLab CI"
     - git config user.email "ci@gitlab.com"
     - bumpx patch --commit --tag
     - git push origin HEAD:$CI_COMMIT_REF_NAME --tags
+
   only:
+
     - main
+
 ```
 
 ## Commit Message Formatting

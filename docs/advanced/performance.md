@@ -154,13 +154,16 @@ For very large files:
 Cache bumpx for faster CI runs:
 
 ```yaml
+
 - name: Cache bumpx
+
   uses: actions/cache@v3
   with:
     path: ~/.bun/bin/bumpx
     key: bumpx-${{ runner.os }}
 
 - name: Install bumpx
+
   run: |
     if [ ! -f ~/.bun/bin/bumpx ]; then
       bun add -g @stacksjs/bumpx
@@ -170,7 +173,9 @@ Cache bumpx for faster CI runs:
 ### Optimized CI Configuration
 
 ```yaml
+
 - name: Fast version bump
+
   run: |
     bumpx ${{ inputs.version }} \
       --ci \
@@ -191,7 +196,9 @@ jobs:
     outputs:
       version: ${{ steps.bump.outputs.version }}
     steps:
+
       - name: Bump version
+
         id: bump
         run: |
           bumpx patch --commit --tag
@@ -201,14 +208,18 @@ jobs:
     needs: bump
     runs-on: ubuntu-latest
     steps:
+
       - name: Build with new version
+
         run: bun run build
 
   test:
     needs: bump
     runs-on: ubuntu-latest
     steps:
+
       - name: Run tests
+
         run: bun test
 ```
 
