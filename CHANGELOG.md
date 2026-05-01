@@ -2,7 +2,7 @@
 
 [Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.4...v0.2.5)
 
-### 🚀 Features
+## 🚀 Features
 
 - **recursive**: --only-changed-since to skip unchanged leaf packages ([805146c](https://github.com/stacksjs/bumpx/commit/805146c)) _(by Chris <chrisbreuer93@gmail.com>)_
 
