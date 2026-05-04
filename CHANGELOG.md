@@ -1,4 +1,35 @@
 # Changelog
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.5...v0.2.6)
+
+### 🚀 Features
+
+- **version-bump**: --only-changed-since pulls in transitive dependents ([545e92a](https://github.com/stacksjs/bumpx/commit/545e92a)) _(by Chris <chrisbreuer93@gmail.com>)_
+
+### 🐛 Bug Fixes
+
+- align docs config with @stacksjs/bunpress schema ([5004804](https://github.com/stacksjs/bumpx/commit/5004804)) _(by glennmichael123 <gtorregosa@gmail.com>)_
+- **ts**: exclude docs/ from typecheck (bunpress not a dep) ([1d57c43](https://github.com/stacksjs/bumpx/commit/1d57c43)) _(by glennmichael123 <gtorregosa@gmail.com>)_
+- add setup-bun to publish-commit job ([5f56e92](https://github.com/stacksjs/bumpx/commit/5f56e92)) _(by chrisbreuer <chrisbreuer93@gmail.com>)_
+
+### 🤖 Continuous Integration
+
+- drop redundant setup-bun (pantry installs bun via deps.yaml) ([f2be1e8](https://github.com/stacksjs/bumpx/commit/f2be1e8)) _(by glennmichael123 <gtorregosa@gmail.com>)_
+
+### 🧹 Chores
+
+- release v0.2.6 ([1a60b7a](https://github.com/stacksjs/bumpx/commit/1a60b7a)) _(by Chris <chrisbreuer93@gmail.com>)_
+- refresh bun.lock and apply pickier --fix ([1dcd6bf](https://github.com/stacksjs/bumpx/commit/1dcd6bf)) _(by glennmichael123 <gtorregosa@gmail.com>)_
+- refresh bun.lock ([5c78e5e](https://github.com/stacksjs/bumpx/commit/5c78e5e)) _(by glennmichael123 <gtorregosa@gmail.com>)_
+- refresh bun.lock ([0c89c2b](https://github.com/stacksjs/bumpx/commit/0c89c2b)) _(by glennmichael123 <gtorregosa@gmail.com>)_
+- lint:fix ([a87190e](https://github.com/stacksjs/bumpx/commit/a87190e)) _(by glennmichael123 <gtorregosa@gmail.com>)_
+- refresh bun.lock to pick up latest pickier ([f26d473](https://github.com/stacksjs/bumpx/commit/f26d473)) _(by glennmichael123 <gtorregosa@gmail.com>)_
+- fresh install to pick up dtsx 0.9.14 and bunfig 0.15.9 ([286f792](https://github.com/stacksjs/bumpx/commit/286f792)) _(by chrisbreuer <chrisbreuer93@gmail.com>)_
+
+### Contributors
+
+- _Chris <chrisbreuer93@gmail.com>_
+- _chrisbreuer <chrisbreuer93@gmail.com>_
+- _glennmichael123 <gtorregosa@gmail.com>_
 
 [Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.4...v0.2.5)
 
