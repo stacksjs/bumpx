@@ -12,6 +12,7 @@ import {
   createGitTag,
   executeCommand,
   executeCommandWithOutput,
+  expandToTransitiveDependents,
   findAllPackageFiles,
   getCurrentBranch,
   getRecentCommits,
@@ -122,8 +123,14 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
       )
 
       // --only-changed-since: drop leaf packages whose source hasn't moved
-      // since the given ref. Root package.json is always kept (it represents
-      // the release itself, not a publishable artifact).
+      // since the given ref, then propagate the "changed" mark forward
+      // through workspace dependency edges. A change to package A also
+      // bumps every package that depends on A — when A's version changes
+      // the dependents' resolved package.json (workspace:* gets pinned at
+      // publish) effectively changes too, and shipping them at the old
+      // version would leave them pinned to the prior A on npm.
+      // Root package.json is always kept (it represents the release
+      // itself, not a publishable artifact).
       if (onlyChangedSince) {
         const ref = resolveChangedSinceRef(onlyChangedSince, effectiveCwd)
         if (!ref) {
@@ -132,19 +139,22 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
         }
         else {
           const before = filesToUpdate.length
-          const kept: string[] = []
-          let skipped = 0
+
+          // Phase 1: literal source changes since `ref`. Root is always kept.
+          const changed = new Set<string>([rootPackagePath])
           for (const f of filesToUpdate) {
-            if (f === rootPackagePath) {
-              kept.push(f)
-              continue
-            }
-            const dir = dirname(f)
-            if (hasChangedSince(ref, dir, effectiveCwd))
-              kept.push(f)
-            else
-              skipped += 1
+            if (f === rootPackagePath) continue
+            if (hasChangedSince(ref, dirname(f), effectiveCwd))
+              changed.add(f)
           }
+
+          // Phase 2: pull in every package whose workspace deps reference
+          // a changed package. Without this a single-package edit would
+          // leave its dependents pinned to the prior version on npm.
+          const expanded = expandToTransitiveDependents(changed, filesToUpdate)
+
+          const kept = filesToUpdate.filter(f => expanded.has(f))
+          const skipped = before - kept.length
           filesToUpdate = kept
           if (!options.quiet) {
             logStep(

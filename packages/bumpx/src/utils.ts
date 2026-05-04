@@ -717,6 +717,60 @@ export function resolveChangedSinceRef(value: boolean | string, cwd?: string): s
 }
 
 /**
+ * Expand a set of "changed" workspace packages forward through their
+ * dependency edges. If A is in `changed` and B depends on A
+ * (dependencies / peerDependencies / optionalDependencies /
+ * devDependencies), B gets pulled in too — repeated until the set
+ * stabilizes.
+ *
+ * `files` is the full list of workspace package.json paths considered
+ * for bumping. The returned set is always a superset of `changed`.
+ */
+export function expandToTransitiveDependents(changed: Set<string>, files: string[]): Set<string> {
+  const result = new Set<string>(changed)
+
+  // Build name → file map across all known workspace packages.
+  const nameToFile = new Map<string, string>()
+  for (const f of files) {
+    try {
+      const pkg = JSON.parse(readFileSync(f, 'utf8'))
+      if (typeof pkg?.name === 'string')
+        nameToFile.set(pkg.name, f)
+    }
+    catch {}
+  }
+
+  const depFields = ['dependencies', 'peerDependencies', 'optionalDependencies', 'devDependencies'] as const
+
+  let added = true
+  while (added) {
+    added = false
+    for (const f of files) {
+      if (result.has(f)) continue
+      try {
+        const pkg = JSON.parse(readFileSync(f, 'utf8'))
+        for (const field of depFields) {
+          const deps = pkg[field]
+          if (!deps || typeof deps !== 'object') continue
+          for (const depName of Object.keys(deps)) {
+            const depFile = nameToFile.get(depName)
+            if (depFile && result.has(depFile)) {
+              result.add(f)
+              added = true
+              break
+            }
+          }
+          if (result.has(f)) break
+        }
+      }
+      catch {}
+    }
+  }
+
+  return result
+}
+
+/**
  * Whether the working tree under `dir` differs from `ref`.
  *
  * Treats *anything* committed under the directory as a change, including

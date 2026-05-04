@@ -674,3 +674,84 @@ function dirname(path: string): string {
   const parts = path.split('/')
   return parts.slice(0, -1).join('/')
 }
+
+describe('expandToTransitiveDependents', () => {
+  let tempDir: string
+
+  beforeEach(() => {
+    tempDir = join(tmpdir(), `bumpx-transitive-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`)
+    mkdirSync(tempDir, { recursive: true })
+  })
+
+  afterEach(() => {
+    if (existsSync(tempDir)) rmSync(tempDir, { recursive: true, force: true })
+  })
+
+  function pkg(dir: string, name: string, deps?: Record<string, string>, peerDeps?: Record<string, string>): string {
+    mkdirSync(dir, { recursive: true })
+    const path = join(dir, 'package.json')
+    writeFileSync(path, JSON.stringify({
+      name,
+      version: '1.0.0',
+      ...(deps ? { dependencies: deps } : {}),
+      ...(peerDeps ? { peerDependencies: peerDeps } : {}),
+    }, null, 2))
+    return path
+  }
+
+  it('pulls in a direct dependent of a changed package', async () => {
+    const { expandToTransitiveDependents } = await import('../src/utils')
+    const core = pkg(join(tempDir, 'core'), '@s/core')
+    const bridge = pkg(join(tempDir, 'bridge'), '@s/bridge', { '@s/core': 'workspace:*' })
+    const unrelated = pkg(join(tempDir, 'unrelated'), '@s/unrelated')
+
+    const out = expandToTransitiveDependents(new Set([core]), [core, bridge, unrelated])
+    expect(out.has(core)).toBe(true)
+    expect(out.has(bridge)).toBe(true)
+    expect(out.has(unrelated)).toBe(false)
+  })
+
+  it('expands transitively (A → B → C all bump when A changes)', async () => {
+    const { expandToTransitiveDependents } = await import('../src/utils')
+    const a = pkg(join(tempDir, 'a'), '@s/a')
+    const b = pkg(join(tempDir, 'b'), '@s/b', { '@s/a': 'workspace:*' })
+    const c = pkg(join(tempDir, 'c'), '@s/c', { '@s/b': 'workspace:*' })
+    const d = pkg(join(tempDir, 'd'), '@s/d') // no edge
+
+    const out = expandToTransitiveDependents(new Set([a]), [a, b, c, d])
+    expect(out.has(a)).toBe(true)
+    expect(out.has(b)).toBe(true)
+    expect(out.has(c)).toBe(true)
+    expect(out.has(d)).toBe(false)
+  })
+
+  it('catches peerDependencies edges as well as dependencies', async () => {
+    const { expandToTransitiveDependents } = await import('../src/utils')
+    const core = pkg(join(tempDir, 'core'), '@s/core')
+    const peer = pkg(join(tempDir, 'peer'), '@s/peer', undefined, { '@s/core': 'workspace:*' })
+
+    const out = expandToTransitiveDependents(new Set([core]), [core, peer])
+    expect(out.has(peer)).toBe(true)
+  })
+
+  it('terminates on dependency cycles without exploding', async () => {
+    const { expandToTransitiveDependents } = await import('../src/utils')
+    const a = pkg(join(tempDir, 'a'), '@s/a', { '@s/b': 'workspace:*' })
+    const b = pkg(join(tempDir, 'b'), '@s/b', { '@s/a': 'workspace:*' })
+
+    const out = expandToTransitiveDependents(new Set([a]), [a, b])
+    expect(out.has(a)).toBe(true)
+    expect(out.has(b)).toBe(true)
+  })
+
+  it('passes through unchanged when nothing depends on the changed packages', async () => {
+    const { expandToTransitiveDependents } = await import('../src/utils')
+    const a = pkg(join(tempDir, 'a'), '@s/a')
+    const b = pkg(join(tempDir, 'b'), '@s/b')
+    const c = pkg(join(tempDir, 'c'), '@s/c')
+
+    const out = expandToTransitiveDependents(new Set([a]), [a, b, c])
+    expect(out.size).toBe(1)
+    expect(out.has(a)).toBe(true)
+  })
+})
