@@ -140,8 +140,11 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
         else {
           const before = filesToUpdate.length
 
-          // Phase 1: literal source changes since `ref`. Root is always kept.
-          const changed = new Set<string>([rootPackagePath])
+          // Phase 1: literal source changes since `ref`. Root is always kept
+          // when present. `rootPackagePath` is undefined when the cwd has no
+          // root package.json — in that case the seed is empty and only
+          // truly-changed packages get added below.
+          const changed = new Set<string>(rootPackagePath ? [rootPackagePath] : [])
           for (const f of filesToUpdate) {
             if (f === rootPackagePath) continue
             if (hasChangedSince(ref, dirname(f), effectiveCwd))

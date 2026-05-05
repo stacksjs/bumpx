@@ -1,7 +1,8 @@
 # Changelog
+
 [Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.5...v0.2.6)
 
-### 🚀 Features
+## 🚀 Features
 
 - **version-bump**: --only-changed-since pulls in transitive dependents ([545e92a](https://github.com/stacksjs/bumpx/commit/545e92a)) _(by Chris <chrisbreuer93@gmail.com>)_
 
