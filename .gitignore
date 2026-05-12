@@ -15,3 +15,4 @@ packages/bumpx/bin/bumpx
 packages/logsmith/bin/logsmith
 .zed
 .cursor
+pantry
