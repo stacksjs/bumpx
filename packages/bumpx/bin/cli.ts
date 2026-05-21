@@ -217,10 +217,73 @@ async function prepareConfig(release: string | undefined, files: string[] | unde
       }
     : {}
 
-  // Handle --files flag which can be comma-separated
+  // Handle --files flag (comma-separated). Entries may be literal paths
+  // OR globs (`packages/*/package.json`, `./**/package.json`); expand the
+  // globs here using Bun.Glob so users don't need to rely on shell globbing,
+  // which gets dropped when bumpx is invoked through layers like buddy
+  // → runCommand. Literal paths fall through unchanged.
   let finalFiles = files
+  //
+  // Dedupe by absolute path so `./package.json` + `./**/package.json` don't
+  // double-update the same file (bumpx applies the bump per match, so a
+  // duplicate match would bump 0.1.0 → 0.1.2 instead of 0.1.1).
+  //
+  // Skip the well-known noise directories (node_modules, dist, pantry, …)
+  // so a `**/package.json` glob doesn't crawl into transitive deps and bump
+  // typescript's vendored package.json to a new major.
   if (options.files) {
-    finalFiles = options.files.split(',').map((f: string) => f.trim())
+    const { resolve: resolvePath } = await import('node:path')
+    const ignorePatterns = [
+      '**/node_modules/**',
+      '**/dist/**',
+      '**/pantry/**',
+      '**/.git/**',
+      '**/.bun-cache/**',
+      '**/coverage/**',
+      '**/.next/**',
+      '**/.turbo/**',
+      '**/.zig-cache/**',
+      '**/zig-out/**',
+    ]
+    const isIgnored = (path: string): boolean => {
+      const normalized = path.replace(/\\/g, '/')
+      return ignorePatterns.some((p) => {
+        // Cheap prefix-segment check — every pattern is `**/<dir>/**`, so
+        // any path containing `/<dir>/` (or starting with `<dir>/`) matches.
+        const segment = p.replace(/^\*\*\//, '/').replace(/\/\*\*$/, '/')
+        return normalized.includes(segment) || normalized.startsWith(segment.slice(1))
+      })
+    }
+
+    const entries = options.files.split(',').map((f: string) => f.trim()).filter(Boolean)
+    const expanded = new Set<string>()
+    const cwd = process.cwd()
+    for (const entry of entries) {
+      if (entry.includes('*') || entry.includes('?') || entry.includes('[') || entry.includes('{')) {
+        try {
+          // Strip a leading ./ so Bun.Glob's relative-to-cwd matching works
+          // identically to how the shell would have expanded it.
+          const pattern = entry.replace(/^\.\//, '')
+          const glob = new Bun.Glob(pattern)
+          let matched = 0
+          for (const match of glob.scanSync({ cwd, onlyFiles: true, dot: false })) {
+            if (isIgnored(match)) continue
+            expanded.add(resolvePath(cwd, match))
+            matched++
+          }
+          if (matched === 0 && options.verbose) {
+            console.warn(colors.yellow(`${symbols.warning} No files matched glob: ${entry}`))
+          }
+        }
+        catch (err) {
+          console.warn(colors.yellow(`${symbols.warning} Failed to expand glob "${entry}": ${(err as Error).message}`))
+        }
+      }
+      else {
+        expanded.add(resolvePath(cwd, entry))
+      }
+    }
+    finalFiles = Array.from(expanded)
   }
 
   // Check for -r --all combination that requires special prompting

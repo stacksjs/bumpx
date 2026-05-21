@@ -32,17 +32,20 @@ describe('CLI Integration Tests', () => {
       console.error('Failed to initialize git repository:', error)
     }
 
-    // Resolve bumpx entry for tests: prefer current source over compiled binary
-    // Order: built JS -> source TS -> compiled binary (fallback)
+    // Resolve bumpx entry for tests: CI verifies the built artifact; local
+    // tests prefer source so stale generated binaries cannot hide CLI changes.
     const builtBin = join(__dirname, '..', 'dist', 'bin', 'cli.js')
     const sourceBin = join(__dirname, '..', 'bin', 'cli.ts')
     const compiledBin = join(__dirname, '..', 'bin', 'bumpx')
 
-    if (existsSync(builtBin)) {
+    if (process.env.CI && existsSync(builtBin)) {
       bumpxBin = builtBin
     }
     else if (existsSync(sourceBin)) {
       bumpxBin = sourceBin
+    }
+    else if (existsSync(builtBin)) {
+      bumpxBin = builtBin
     }
     else {
       bumpxBin = compiledBin

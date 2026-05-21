@@ -14,23 +14,23 @@ describe('CLI Integration Tests', () => {
     tempDir = join(tmpdir(), `bumpx-cli-test-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`)
     mkdirSync(tempDir, { recursive: true })
 
-    // Get the path to the bumpx binary - prefer built JS in CI, otherwise use what's available
+    // Get the path to the bumpx binary. CI verifies the built artifact;
+    // local tests prefer source so stale generated binaries cannot hide CLI changes.
     const builtBin = join(__dirname, '..', 'dist', 'bin', 'cli.js')
     const sourceBin = join(__dirname, '..', 'bin', 'cli.ts')
     const compiledBin = join(__dirname, '..', 'bin', 'bumpx')
 
-    // In CI, prioritize built JS version; locally prefer compiled binary for speed
     if (process.env.CI && existsSync(builtBin)) {
       bumpxBin = builtBin
     }
-    else if (existsSync(compiledBin)) {
-      bumpxBin = compiledBin
+    else if (existsSync(sourceBin)) {
+      bumpxBin = sourceBin
     }
     else if (existsSync(builtBin)) {
       bumpxBin = builtBin
     }
     else {
-      bumpxBin = sourceBin
+      bumpxBin = compiledBin
     }
 
     process.chdir(tempDir)
@@ -247,6 +247,37 @@ describe('CLI Integration Tests', () => {
 
       const versionContent = readFileSync(join(tempDir, 'VERSION.txt'), 'utf-8')
       expect(versionContent.trim()).toBe('1.0.1')
+    })
+
+    it('should expand globs passed through --files without touching ignored package.json files', async () => {
+      writeFileSync(join(tempDir, 'package.json'), JSON.stringify({ name: 'root', version: '1.0.0' }, null, 2))
+
+      const coreDir = join(tempDir, 'packages', 'core')
+      const utilsDir = join(tempDir, 'packages', 'utils')
+      const vendoredDir = join(tempDir, 'node_modules', 'vendored')
+      mkdirSync(coreDir, { recursive: true })
+      mkdirSync(utilsDir, { recursive: true })
+      mkdirSync(vendoredDir, { recursive: true })
+
+      writeFileSync(join(coreDir, 'package.json'), JSON.stringify({ name: '@test/core', version: '1.0.0' }, null, 2))
+      writeFileSync(join(utilsDir, 'package.json'), JSON.stringify({ name: '@test/utils', version: '1.0.0' }, null, 2))
+      writeFileSync(join(vendoredDir, 'package.json'), JSON.stringify({ name: 'vendored', version: '1.0.0' }, null, 2))
+
+      const result = await runCLI([
+        'patch',
+        '--files',
+        'package.json,packages/*/package.json,node_modules/*/package.json',
+        '--no-git-check',
+        '--no-commit',
+        '--no-tag',
+        '--no-push',
+      ])
+
+      expect(result.code).toBe(0)
+      expect(JSON.parse(readFileSync(join(tempDir, 'package.json'), 'utf-8')).version).toBe('1.0.1')
+      expect(JSON.parse(readFileSync(join(coreDir, 'package.json'), 'utf-8')).version).toBe('1.0.1')
+      expect(JSON.parse(readFileSync(join(utilsDir, 'package.json'), 'utf-8')).version).toBe('1.0.1')
+      expect(JSON.parse(readFileSync(join(vendoredDir, 'package.json'), 'utf-8')).version).toBe('1.0.0')
     })
 
     it('should work with --recursive flag', async () => {
