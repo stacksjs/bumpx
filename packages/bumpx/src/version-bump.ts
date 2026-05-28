@@ -1273,7 +1273,7 @@ async function generateChangelog(cwd: string, fromVersion?: string, toVersion?: 
     }
     else {
       // Use CLI approach in test mode
-      let command = 'bunx logsmith --output CHANGELOG.md'
+      let command = 'bunx --bun @stacksjs/logsmith --output CHANGELOG.md'
 
       // Add version range parameters to CLI command
       if (fromVersion) {
@@ -1310,7 +1310,7 @@ async function generateChangelog(cwd: string, fromVersion?: string, toVersion?: 
   catch (error: any) {
     // If logsmith is not available or fails, try using the CLI command as fallback
     try {
-      let command = 'bunx logsmith --output CHANGELOG.md'
+      let command = 'bunx --bun @stacksjs/logsmith --output CHANGELOG.md'
 
       // Add version range parameters to CLI command
       if (fromVersion) {
