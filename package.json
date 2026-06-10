@@ -45,10 +45,10 @@
     "typecheck": "bun --bun tsc --noEmit"
   },
   "dependencies": {
-    "@stacksjs/clapp": "^0.2.0"
+    "@stacksjs/clapp": "^0.2.10"
   },
   "devDependencies": {
-    "@stacksjs/bunpress": "^0.1.4",
+    "@stacksjs/bunpress": "^0.1.9",
     "better-dx": "^0.2.15"
   },
   "git-hooks": {
