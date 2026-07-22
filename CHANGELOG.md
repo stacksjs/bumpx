@@ -1,5 +1,19 @@
 # Changelog
 
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.8...v0.2.9)
+
+## 🤖 Continuous Integration
+
+- **release**: use Node 24 releaser ([6e5c830](https://github.com/stacksjs/bumpx/commit/6e5c830)) _(by Chris <chrisbreuer93@gmail.com>)_
+
+## 🧹 Chores
+
+- release v0.2.9 ([b8fe0c2](https://github.com/stacksjs/bumpx/commit/b8fe0c2)) _(by Chris <chrisbreuer93@gmail.com>)_
+
+## Contributors
+
+- _Chris <chrisbreuer93@gmail.com>_
+
 [Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.7...v0.2.8)
 
 ## 🐛 Bug Fixes
