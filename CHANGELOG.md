@@ -1,5 +1,39 @@
 # Changelog
 
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.6...v0.2.7)
+
+## 🐛 Bug Fixes
+
+- **release**: atomically publish branch and tag ([c13ff25](https://github.com/stacksjs/bumpx/commit/c13ff25)) _(by Chris <chrisbreuer93@gmail.com>)_
+- **changelog**: shell fallback uses @stacksjs/logsmith, not unscoped logsmith ([aca4092](https://github.com/stacksjs/bumpx/commit/aca4092)) _(by glennmichael123 <gtorregosa@gmail.com>)_
+- **version-bump**: handle missing workspace root ([7e156a9](https://github.com/stacksjs/bumpx/commit/7e156a9)) _(by Chris <chrisbreuer93@gmail.com>)_
+- **cli**: expand files globs safely ([ef2b984](https://github.com/stacksjs/bumpx/commit/ef2b984)) _(by Chris <chrisbreuer93@gmail.com>)_
+- **version-bump**: handle missing root package.json in --only-changed-since ([b88a47e](https://github.com/stacksjs/bumpx/commit/b88a47e)) _(by glennmichael123 <gtorregosa@gmail.com>)_
+
+## 🧹 Chores
+
+- release v0.2.7 ([f52fa02](https://github.com/stacksjs/bumpx/commit/f52fa02)) _(by Chris <chrisbreuer93@gmail.com>)_
+- **deps**: declare bun ^1.3.14 in deps.yaml ([e7eda0e](https://github.com/stacksjs/bumpx/commit/e7eda0e)) _(by Chris <chrisbreuer93@gmail.com>)_
+- **deps**: refresh bun.lock to pick up pickier 0.1.37 ([59775b4](https://github.com/stacksjs/bumpx/commit/59775b4)) _(by glennmichael123 <gtorregosa@gmail.com>)_
+- **deps**: refresh bun.lock to pick up pickier 0.1.35 ([279ee07](https://github.com/stacksjs/bumpx/commit/279ee07)) _(by glennmichael123 <gtorregosa@gmail.com>)_
+- **deps**: refresh bun.lock to pick up pickier 0.1.33 ([c5639cc](https://github.com/stacksjs/bumpx/commit/c5639cc)) _(by glennmichael123 <gtorregosa@gmail.com>)_
+- **deps**: refresh bun.lock to pick up @stacksjs/logsmith 0.2.3 ([36585bd](https://github.com/stacksjs/bumpx/commit/36585bd)) _(by glennmichael123 <gtorregosa@gmail.com>)_
+- **deps**: refresh bun.lock to pick up buddy-bot 0.9.20 ([86cc0f4](https://github.com/stacksjs/bumpx/commit/86cc0f4)) _(by glennmichael123 <gtorregosa@gmail.com>)_
+- **deps**: bump better-dx to ^0.2.15 ([dbccd9c](https://github.com/stacksjs/bumpx/commit/dbccd9c)) _(by glennmichael123 <gtorregosa@gmail.com>)_
+- ignore pantry directory ([a3021dd](https://github.com/stacksjs/bumpx/commit/a3021dd)) _(by glennmichael123 <gtorregosa@gmail.com>)_
+- switch lint scripts from eslint to pickier ([a7a8659](https://github.com/stacksjs/bumpx/commit/a7a8659)) _(by glennmichael123 <gtorregosa@gmail.com>)_
+- **ci**: bump actions/checkout to v6, actions/cache to v5 ([5ac21ff](https://github.com/stacksjs/bumpx/commit/5ac21ff)) _(by glennmichael123 <gtorregosa@gmail.com>)_
+- refresh bun.lock to pick up bun-plugin-dtsx@0.9.18 ([72ab788](https://github.com/stacksjs/bumpx/commit/72ab788)) _(by glennmichael123 <gtorregosa@gmail.com>)_
+
+## ⏪ Reverts
+
+- keep staged-lint kebab + bunx gitlint shorthand ([6684a81](https://github.com/stacksjs/bumpx/commit/6684a81)) _(by glennmichael123 <gtorregosa@gmail.com>)_
+
+## Contributors
+
+- _Chris <chrisbreuer93@gmail.com>_
+- _glennmichael123 <gtorregosa@gmail.com>_
+
 [Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.5...v0.2.6)
 
 ## 🚀 Features
