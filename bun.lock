@@ -14,7 +14,7 @@
     },
     "packages/action": {
       "name": "bumpx-action",
-      "version": "0.2.6",
+      "version": "0.2.10",
       "bin": {
         "bumpx-action": "dist/index.js",
       },
@@ -27,7 +27,7 @@
     },
     "packages/bumpx": {
       "name": "@stacksjs/bumpx",
-      "version": "0.2.6",
+      "version": "0.2.10",
       "bin": {
         "bumpx": "./dist/bin/cli.js",
       },

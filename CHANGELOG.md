@@ -1,5 +1,19 @@
 # Changelog
 
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.9...v0.2.10)
+
+## 🐛 Bug Fixes
+
+- **release**: synchronize Bun workspace locks ([5bb0c4e](https://github.com/stacksjs/bumpx/commit/5bb0c4e)) _(by Chris <chrisbreuer93@gmail.com>)_
+
+## 🧹 Chores
+
+- release v0.2.10 ([5b357c4](https://github.com/stacksjs/bumpx/commit/5b357c4)) _(by Chris <chrisbreuer93@gmail.com>)_
+
+## Contributors
+
+- _Chris <chrisbreuer93@gmail.com>_
+
 [Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.8...v0.2.9)
 
 ## 🤖 Continuous Integration
