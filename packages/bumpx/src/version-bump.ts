@@ -1,9 +1,10 @@
 /* eslint-disable no-console */
 import type { FileInfo, VersionBumpOptions } from './types'
-import { readFileSync, writeFileSync } from 'node:fs'
+import { existsSync, readFileSync, writeFileSync } from 'node:fs'
 import { dirname, join, relative, resolve } from 'node:path'
 import * as process from 'node:process'
 import { checkInterruption, userInterrupted } from './interrupt'
+import { updatePantryWorkspaceLock } from './pantry-lock'
 import { ProgressEvent } from './types'
 import {
   checkGitStatus,
@@ -202,6 +203,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
     const updatedFiles: string[] = []
     const skippedFiles: string[] = []
     const versionsProcessed = new Set<string>()
+    const releasedWorkspaceVersions = new Map<string, string>()
     const errors: string[] = []
 
     // Variables for tracking versions (needed for git operations and progress)
@@ -316,6 +318,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
 
           if (fileInfo.updated) {
             updatedFiles.push(filePath)
+            releasedWorkspaceVersions.set(relative(effectiveCwd, dirname(filePath)).replaceAll('\\', '/'), newVersion)
             // Log per-file only in verbose; otherwise single summary later
             if (verbose) {
               const relativePath = relative(effectiveCwd, filePath)
@@ -567,6 +570,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
 
           if (fileInfo.updated) {
             updatedFiles.push(filePath)
+            releasedWorkspaceVersions.set(relative(effectiveCwd, dirname(filePath)).replaceAll('\\', '/'), newVersion)
             if (progress) {
               progress({
                 event: ProgressEvent.FileUpdated,
@@ -705,6 +709,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
 
           if (fileInfo.updated) {
             updatedFiles.push(filePath)
+            releasedWorkspaceVersions.set(relative(effectiveCwd, dirname(filePath)).replaceAll('\\', '/'), fileNewVersion)
             // Track the last processed version for git operations
             lastNewVersion = fileNewVersion
             _lastOldVersion = fileCurrentVersion
@@ -745,6 +750,17 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
           console.error(`Warning: Failed to process ${filePath}: ${error}`)
           errors.push(`Failed to process ${filePath}: ${error}`)
           skippedFiles.push(filePath)
+        }
+      }
+    }
+
+    if (recursive && rootPackagePath) {
+      const pantryLockPath = join(effectiveCwd, 'pantry.lock')
+      if (existsSync(pantryLockPath)) {
+        const result = updatePantryWorkspaceLock(pantryLockPath, releasedWorkspaceVersions, dryRun)
+        if (result.updated && !dryRun) {
+          fileBackups.set(pantryLockPath, { content: result.originalContent, version: _lastOldVersion || 'unknown' })
+          updatedFiles.push(pantryLockPath)
         }
       }
     }
