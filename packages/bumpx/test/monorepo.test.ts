@@ -242,6 +242,14 @@ describe('Monorepo Integration Tests', () => {
         },
         packages: { 'external@2.0.0': { version: '2.0.0' } },
       }, null, 2))
+      writeFileSync(join(tempDir, 'bun.lock'), `{
+  "lockfileVersion": 1,
+  "workspaces": {
+    "": { "name": "root" },
+    "packages/core": { "name": "@scope/core", "version": "1.0.0", },
+  },
+  "packages": { "external": ["external@2.0.0", "", {}, "unchanged"], },
+}\n`)
 
       await versionBump({
         release: 'patch',
@@ -258,6 +266,8 @@ describe('Monorepo Integration Tests', () => {
       expect(lock.workspaces[''].version).toBeUndefined()
       expect(lock.workspaces['packages/core'].version).toBe('1.0.1')
       expect(lock.packages['external@2.0.0'].version).toBe('2.0.0')
+      expect(readFileSync(join(tempDir, 'bun.lock'), 'utf8')).toContain('"version": "1.0.1"')
+      expect(readFileSync(join(tempDir, 'bun.lock'), 'utf8')).toContain('"unchanged"')
     })
 
     it('rolls back workspace manifests when the Pantry lock is malformed', async () => {
@@ -290,6 +300,42 @@ describe('Monorepo Integration Tests', () => {
       expect(readFileSync(rootPackagePath, 'utf8')).toBe(rootPackage)
       expect(readFileSync(workspacePackagePath, 'utf8')).toBe(workspacePackage)
       expect(readFileSync(join(tempDir, 'pantry.lock'), 'utf8')).toBe('{ invalid')
+    })
+
+    it('rolls back manifests and Pantry lock changes when the Bun lock is malformed', async () => {
+      const rootPackagePath = join(tempDir, 'package.json')
+      const workspacePackagePath = join(tempDir, 'packages/core/package.json')
+      const pantryLockPath = join(tempDir, 'pantry.lock')
+      const rootPackage = JSON.stringify({
+        name: 'root',
+        version: '1.0.0',
+        private: true,
+        workspaces: ['packages/*'],
+      }, null, 2)
+      const workspacePackage = JSON.stringify({ name: '@scope/core', version: '1.0.0' }, null, 2)
+      const pantryLock = `${JSON.stringify({ workspaces: { 'packages/core': { version: '1.0.0' } } }, null, 2)}\n`
+
+      writeFileSync(rootPackagePath, rootPackage)
+      mkdirSync(join(tempDir, 'packages/core'), { recursive: true })
+      writeFileSync(workspacePackagePath, workspacePackage)
+      writeFileSync(pantryLockPath, pantryLock)
+      writeFileSync(join(tempDir, 'bun.lock'), '{ "workspaces": {')
+
+      await expect(versionBump({
+        release: 'patch',
+        currentVersion: '1.0.0',
+        recursive: true,
+        commit: false,
+        tag: false,
+        push: false,
+        quiet: true,
+        noGitCheck: true,
+      })).rejects.toThrow('Malformed bun.lock')
+
+      expect(readFileSync(rootPackagePath, 'utf8')).toBe(rootPackage)
+      expect(readFileSync(workspacePackagePath, 'utf8')).toBe(workspacePackage)
+      expect(readFileSync(pantryLockPath, 'utf8')).toBe(pantryLock)
+      expect(readFileSync(join(tempDir, 'bun.lock'), 'utf8')).toBe('{ "workspaces": {')
     })
 
     it('should set all packages to the same version', async () => {

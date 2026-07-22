@@ -3,6 +3,7 @@ import type { FileInfo, VersionBumpOptions } from './types'
 import { existsSync, readFileSync, writeFileSync } from 'node:fs'
 import { dirname, join, relative, resolve } from 'node:path'
 import * as process from 'node:process'
+import { updateBunWorkspaceLock } from './bun-lock'
 import { checkInterruption, userInterrupted } from './interrupt'
 import { updatePantryWorkspaceLock } from './pantry-lock'
 import { ProgressEvent } from './types'
@@ -761,6 +762,15 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
         if (result.updated && !dryRun) {
           fileBackups.set(pantryLockPath, { content: result.originalContent, version: _lastOldVersion || 'unknown' })
           updatedFiles.push(pantryLockPath)
+        }
+      }
+
+      const bunLockPath = join(effectiveCwd, 'bun.lock')
+      if (existsSync(bunLockPath)) {
+        const result = updateBunWorkspaceLock(bunLockPath, releasedWorkspaceVersions, dryRun)
+        if (result.updated && !dryRun) {
+          fileBackups.set(bunLockPath, { content: result.originalContent, version: _lastOldVersion || 'unknown' })
+          updatedFiles.push(bunLockPath)
         }
       }
     }
