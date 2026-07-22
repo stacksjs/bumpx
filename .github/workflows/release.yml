@@ -31,7 +31,7 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Create GitHub Release
-        uses: stacksjs/action-releaser@v1.2.9
+        uses: stacksjs/action-releaser@cc6cd61791cf7556459ca35ad536800561277e3e # v1.2.11
         with:
           files: |
             packages/bumpx/bin/bumpx-linux-x64.zip
