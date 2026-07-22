@@ -25,6 +25,7 @@ import {
   readPackageJson,
   SemVer,
   symbols,
+  syncWithRemote,
   updateVersionInFile,
   writePackageJson,
 } from '../src/utils'
@@ -557,6 +558,7 @@ describe('Git operations', () => {
       expect(typeof createGitCommit).toBe('function')
       expect(typeof createGitTag).toBe('function')
       expect(typeof pushToRemote).toBe('function')
+      expect(typeof syncWithRemote).toBe('function')
       expect(typeof getRecentCommits).toBe('function')
       expect(typeof canSafelyPull).toBe('function')
     })

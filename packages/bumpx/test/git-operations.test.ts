@@ -28,6 +28,12 @@ describe('Git Operations (Integration)', () => {
       // Simulate successful git operations
       if (args.includes('status'))
         return ''
+      if (args[0] === 'rev-parse' && args.includes('--abbrev-ref'))
+        return 'main'
+      if (args[0] === 'config' && args.includes('branch.main.remote'))
+        return 'origin'
+      if (args[0] === 'config' && args.includes('branch.main.merge'))
+        return 'refs/heads/main'
       if (args.includes('pull'))
         return 'Already up to date.'
       if (args.includes('push'))
@@ -92,7 +98,13 @@ describe('Git Operations (Integration)', () => {
       })
 
       // Verify push was called with correct arguments
-      expect(mockSpawnSync).toHaveBeenCalledWith(['push', '--follow-tags'], tempDir)
+      expect(mockSpawnSync).toHaveBeenCalledWith([
+        'push',
+        '--atomic',
+        'origin',
+        'HEAD:refs/heads/main',
+        'refs/tags/v1.0.1:refs/tags/v1.0.1',
+      ], tempDir)
     })
 
     it('should not push when push: false', async () => {
@@ -134,8 +146,14 @@ describe('Git Operations (Integration)', () => {
       })
 
       // Verify pull was called before push
-      expect(mockSpawnSync).toHaveBeenCalledWith(['pull'], tempDir)
-      expect(mockSpawnSync).toHaveBeenCalledWith(['push', '--follow-tags'], tempDir)
+      expect(mockSpawnSync).toHaveBeenCalledWith(['pull', '--ff-only'], tempDir)
+      expect(mockSpawnSync).toHaveBeenCalledWith([
+        'push',
+        '--atomic',
+        'origin',
+        'HEAD:refs/heads/main',
+        'refs/tags/v1.0.1:refs/tags/v1.0.1',
+      ], tempDir)
 
       canSafelyPullSpy.mockRestore()
     })
@@ -163,7 +181,13 @@ describe('Git Operations (Integration)', () => {
         call[0] && call[0].includes && call[0].includes('pull'),
       )
       expect(pullCalls.length).toBe(0)
-      expect(mockSpawnSync).toHaveBeenCalledWith(['push', '--follow-tags'], tempDir)
+      expect(mockSpawnSync).toHaveBeenCalledWith([
+        'push',
+        '--atomic',
+        'origin',
+        'HEAD:refs/heads/main',
+        'refs/tags/v1.0.1:refs/tags/v1.0.1',
+      ], tempDir)
       expect(consoleSpy).toHaveBeenCalledWith('⚠️ No upstream branch configured or in detached HEAD. Skipping pull...')
 
       canSafelyPullSpy.mockRestore()
@@ -639,7 +663,13 @@ Initial release
       // Verify all git operations were performed (defaults use 'v' prefix in commit message)
       expect(mockSpawnSync).toHaveBeenCalledWith(['commit', '-m', 'chore: release v1.0.1'], expect.any(String))
       expect(mockSpawnSync).toHaveBeenCalledWith(['tag', '-a', 'v1.0.1', '-m', 'Release 1.0.1'], expect.any(String))
-      expect(mockSpawnSync).toHaveBeenCalledWith(['push', '--follow-tags'], expect.any(String))
+      expect(mockSpawnSync).toHaveBeenCalledWith([
+        'push',
+        '--atomic',
+        'origin',
+        'HEAD:refs/heads/main',
+        'refs/tags/v1.0.1:refs/tags/v1.0.1',
+      ], expect.any(String))
     })
 
     it('should allow opting out with explicit false values', async () => {
@@ -713,7 +743,13 @@ Initial release
       // Verify git operations were performed
       expect(mockSpawnSync).toHaveBeenCalledWith(['commit', '-m', 'chore: release v1.1.0'], tempDir)
       expect(mockSpawnSync).toHaveBeenCalledWith(['tag', '-a', 'v1.1.0', '-m', 'Release 1.1.0'], tempDir)
-      expect(mockSpawnSync).toHaveBeenCalledWith(['push', '--follow-tags'], tempDir)
+      expect(mockSpawnSync).toHaveBeenCalledWith([
+        'push',
+        '--atomic',
+        'origin',
+        'HEAD:refs/heads/main',
+        'refs/tags/v1.1.0:refs/tags/v1.1.0',
+      ], tempDir)
     })
   })
 })

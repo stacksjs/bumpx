@@ -913,14 +913,16 @@ export function canSafelyPull(cwd?: string): boolean {
 }
 
 /**
- * Push to git remote (with pull-before-push safety)
+ * Synchronize the current branch with its configured upstream before a release.
+ *
+ * This must run before release files, commits, or tags are created. Pulling after
+ * tag creation can rebase the release commit while leaving an annotated tag on
+ * the abandoned pre-rebase commit.
  */
-export function pushToRemote(tags: boolean = true, cwd?: string): void {
-  // First, pull to ensure we have the latest changes (if safe to do so)
+export function syncWithRemote(cwd?: string): void {
   if (canSafelyPull(cwd)) {
     try {
-      // Pull latest changes from remote
-      executeGit(['pull'], cwd)
+      executeGit(['pull', '--ff-only'], cwd)
     }
     catch (error: any) {
       const errorMessage = error.message.toLowerCase()
@@ -936,16 +938,55 @@ export function pushToRemote(tags: boolean = true, cwd?: string): void {
   else {
     console.warn('⚠️ No upstream branch configured or in detached HEAD. Skipping pull...')
   }
+}
 
-  // Use atomic push to avoid race conditions between commit and tag pushes
-  if (tags) {
-    // Pushing commits and tags to remote
-    executeGit(['push', '--follow-tags'], cwd)
-  }
-  else {
-    // Pushing commits to remote
+/**
+ * Push the current branch and optional release tag.
+ *
+ * The exact release tag is sent with the branch in one atomic transaction. A
+ * concurrent upstream update therefore rejects both refs instead of publishing
+ * a tag that does not identify the remote release commit.
+ */
+export function pushToRemote(tags: boolean = true, cwd?: string, tagName?: string): void {
+  if (!tags) {
     executeGit(['push'], cwd)
+    return
   }
+
+  if (!tagName) {
+    // Preserve the public helper's previous behavior for callers that do not
+    // know the release tag. The release workflow itself always passes the exact
+    // tag so it cannot publish an unrelated annotated tag.
+    executeGit(['push', '--atomic', '--follow-tags'], cwd)
+    return
+  }
+
+  const currentBranch = getCurrentBranch(cwd)
+  if (currentBranch === 'HEAD')
+    throw new Error('Cannot atomically publish a release from a detached HEAD')
+
+  let remote = 'origin'
+  let remoteBranchRef = `refs/heads/${currentBranch}`
+
+  try {
+    const configuredRemote = executeGit(['config', '--get', `branch.${currentBranch}.remote`], cwd).trim()
+    const configuredMergeRef = executeGit(['config', '--get', `branch.${currentBranch}.merge`], cwd).trim()
+    if (configuredRemote)
+      remote = configuredRemote
+    if (configuredMergeRef)
+      remoteBranchRef = configuredMergeRef
+  }
+  catch {
+    // Fall back to origin and the same branch name for repositories without an upstream.
+  }
+
+  executeGit([
+    'push',
+    '--atomic',
+    remote,
+    `HEAD:${remoteBranchRef}`,
+    `refs/tags/${tagName}:refs/tags/${tagName}`,
+  ], cwd)
 }
 
 /**

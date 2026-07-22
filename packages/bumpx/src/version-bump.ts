@@ -24,6 +24,7 @@ import {
   pushToRemote,
   readPackageJson,
   resolveChangedSinceRef,
+  syncWithRemote,
   symbols,
   updateVersionInFile,
 } from './utils'
@@ -90,10 +91,20 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
       checkInterruption()
     }
 
-    // Check git status only when needed
-    if (!noGitCheck && (tag || push) && !commit) {
+    // A release must start from a clean tree so synchronizing cannot mix local
+    // work into the upstream update or the generated release commit.
+    if (!noGitCheck && (commit || tag || push) && inGitRepo) {
       await checkGitStatus(effectiveCwd)
-      // Check for interruption after git status check
+      checkInterruption()
+    }
+
+    // Synchronize before reading or changing package files. Pulling after the
+    // release tag exists can move HEAD while leaving the tag on an orphaned
+    // pre-rebase commit.
+    if (push && !dryRun && inGitRepo) {
+      if (!options.quiet)
+        logStep(symbols.inbox, 'Synchronizing with remote before release', false)
+      syncWithRemote(effectiveCwd)
       checkInterruption()
     }
 
@@ -196,6 +207,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
     // Variables for tracking versions (needed for git operations and progress)
     let lastNewVersion: string | undefined
     let _lastOldVersion: string | undefined
+    let createdTagName: string | undefined
 
     // If currentVersion is specified, use single-version mode
     if (currentVersion !== undefined) {
@@ -988,6 +1000,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
         if (!options.quiet)
           logStep(symbols.tag, ' Creating tag...', false)
         createGitTag(tagName, false, finalTagMessage, effectiveCwd)
+        createdTagName = tagName
 
         if (progress && lastNewVersion && _lastOldVersion) {
           progress({
@@ -1052,13 +1065,11 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
 
     if (push && !dryRun && inGitRepo) {
       if (!options.quiet)
-        logStep(symbols.inbox, 'Pulling latest changes from remote', false)
-      if (!options.quiet)
         logStep(symbols.cloud, ' Pushing changes and tag...', false)
       // Show remote lines always (not just verbose), git output printed by executeGit is suppressed.
       // We will manually emit concise lines after push to mimic git output style.
       const beforeBranch = getCurrentBranch(effectiveCwd)
-      pushToRemote(!!tag, effectiveCwd)
+      pushToRemote(!!tag, effectiveCwd, createdTagName)
       try {
         const { executeGit } = await import('./utils')
         const remoteUrl = executeGit(['config', '--get', 'remote.origin.url'], effectiveCwd).trim()
@@ -1066,9 +1077,8 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
         const previousCommit = executeGit(['rev-parse', '--short', 'HEAD~1'], effectiveCwd).trim()
         console.log(`To ${remoteUrl}`)
         console.log(`   ${previousCommit}..${latestCommit}  ${beforeBranch} -> ${beforeBranch}`)
-        if (tag && (typeof tag === 'string' ? tag : true) && lastNewVersion && _lastOldVersion) {
-          console.log(` * [new tag]         v${_lastOldVersion} -> v${lastNewVersion}`)
-        }
+        if (createdTagName)
+          console.log(` * [new tag]         ${createdTagName}`)
       }
       catch {}
 
@@ -1086,7 +1096,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
       console.warn('Warning: Requested to push to remote but current directory is not a Git repository. Skipping push...')
     }
     else if (push && dryRun) {
-      logStep(symbols.inbox, `Pulling latest changes from remote`, true)
+      logStep(symbols.inbox, `Synchronizing with remote before release`, true)
       logStep(symbols.cloud, ` Pushing changes and tag...`, true)
       try {
         const { executeGit } = await import('./utils')

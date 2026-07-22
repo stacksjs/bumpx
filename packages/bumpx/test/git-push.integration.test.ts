@@ -135,6 +135,64 @@ describe('Git push & tag integration (local bare remote)', () => {
     const heads = run('git', ['--git-dir', bareDir, 'show-ref', '--heads'], tempDir)
     expect(heads.status).toBe(0)
     expect(heads.stdout).toMatch(/refs\/heads\/main/)
+
+    const remoteBranchCommit = runGit(['--git-dir', bareDir, 'rev-parse', 'refs/heads/main'], tempDir).trim()
+    const remoteTagCommit = runGit(['--git-dir', bareDir, 'rev-parse', 'refs/tags/v0.2.0^{}'], tempDir).trim()
+    expect(remoteTagCommit).toBe(remoteBranchCommit)
+  })
+
+  it('synchronizes an upstream update before creating the release commit and tag', async () => {
+    const peerDir = join(tempDir, 'peer-before-release')
+    runGit(['clone', bareDir, peerDir], tempDir)
+    runGit(['config', 'user.email', 'peer@example.com'], peerDir)
+    runGit(['config', 'user.name', 'release peer'], peerDir)
+    runGit(['checkout', 'main'], peerDir)
+    writeFileSync(join(peerDir, 'upstream.txt'), 'upstream change before release\n')
+    runGit(['add', 'upstream.txt'], peerDir)
+    runGit(['commit', '-m', 'docs: upstream update'], peerDir)
+    const upstreamCommit = runGit(['rev-parse', 'HEAD'], peerDir).trim()
+    runGit(['push', 'origin', 'main'], peerDir)
+
+    const res = await runCLI(['patch', '--commit', '--tag', '--push', '--yes'], workDir)
+    expect(res.code).toBe(0)
+
+    const remoteBranchCommit = runGit(['--git-dir', bareDir, 'rev-parse', 'refs/heads/main'], tempDir).trim()
+    const remoteTagCommit = runGit(['--git-dir', bareDir, 'rev-parse', 'refs/tags/v0.1.1^{}'], tempDir).trim()
+    expect(remoteTagCommit).toBe(remoteBranchCommit)
+    expect(run('git', ['--git-dir', bareDir, 'merge-base', '--is-ancestor', upstreamCommit, remoteBranchCommit], tempDir).status).toBe(0)
+  })
+
+  it('publishes neither ref when the upstream advances before atomic publication', async () => {
+    const peerDir = join(tempDir, 'peer-during-push')
+    runGit(['clone', bareDir, peerDir], tempDir)
+    runGit(['config', 'user.email', 'peer@example.com'], peerDir)
+    runGit(['config', 'user.name', 'release peer'], peerDir)
+    runGit(['checkout', 'main'], peerDir)
+    writeFileSync(join(peerDir, 'late-upstream.txt'), 'late upstream change\n')
+    runGit(['add', 'late-upstream.txt'], peerDir)
+    runGit(['commit', '-m', 'docs: late upstream update'], peerDir)
+    const peerCommit = runGit(['rev-parse', 'HEAD'], peerDir).trim()
+
+    writeFileSync(join(workDir, 'package.json'), JSON.stringify({ name: 'pkg', version: '0.1.1' }, null, 2))
+    runGit(['add', 'package.json'], workDir)
+    runGit(['commit', '-m', 'chore: release v0.1.1'], workDir)
+    runGit(['tag', '-a', 'v0.1.1', '-m', 'Release 0.1.1'], workDir)
+
+    // Simulate the upstream moving after pre-release synchronization but before
+    // the atomic publication begins.
+    runGit(['push', 'origin', 'main'], peerDir)
+
+    const utilsPath = join(__dirname, '..', 'src', 'utils.ts')
+    const atomicPush = run('bun', [
+      '-e',
+      `import { pushToRemote } from ${JSON.stringify(utilsPath)}; pushToRemote(true, ${JSON.stringify(workDir)}, 'v0.1.1')`,
+    ], workDir)
+    expect(atomicPush.status).not.toBe(0)
+
+    const remoteBranchCommit = runGit(['--git-dir', bareDir, 'rev-parse', 'refs/heads/main'], tempDir).trim()
+    expect(remoteBranchCommit).toBe(peerCommit)
+    const remoteTag = run('git', ['--git-dir', bareDir, 'show-ref', '--verify', '--quiet', 'refs/tags/v0.1.1'], tempDir)
+    expect(remoteTag.status).not.toBe(0)
   })
 
   it('pushes commit and tag in recursive monorepo mode with -r', async () => {

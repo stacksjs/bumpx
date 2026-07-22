@@ -1,9 +1,14 @@
 /* eslint-disable no-console */
 import { afterEach, beforeEach, describe, expect, it } from 'bun:test'
-import { execSync } from 'node:child_process'
 import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
+
+function runSetupGit(args: string[], cwd: string): void {
+  const result = Bun.spawnSync(['git', ...args], { cwd, stdout: 'ignore', stderr: 'pipe' })
+  if (result.exitCode !== 0)
+    throw new Error(new TextDecoder().decode(result.stderr))
+}
 
 describe('CLI Integration Tests', () => {
   let tempDir: string
@@ -17,16 +22,16 @@ describe('CLI Integration Tests', () => {
 
     // Initialize git repository in temp directory for tests
     try {
-      execSync('git init', { cwd: tempDir, stdio: 'ignore' })
+      runSetupGit(['init'], tempDir)
 
       // Configure git for tests
-      execSync('git config user.name "Test User"', { cwd: tempDir, stdio: 'ignore' })
-      execSync('git config user.email "test@example.com"', { cwd: tempDir, stdio: 'ignore' })
+      runSetupGit(['config', 'user.name', 'Test User'], tempDir)
+      runSetupGit(['config', 'user.email', 'test@example.com'], tempDir)
 
       // Create an initial commit so that git operations work
       writeFileSync(join(tempDir, 'README.md'), '# Test Repository')
-      execSync('git add README.md', { cwd: tempDir, stdio: 'ignore' })
-      execSync('git commit -m "Initial commit"', { cwd: tempDir, stdio: 'ignore' })
+      runSetupGit(['add', 'README.md'], tempDir)
+      runSetupGit(['commit', '-m', 'Initial commit'], tempDir)
     }
     catch (error) {
       console.error('Failed to initialize git repository:', error)
@@ -66,6 +71,9 @@ describe('CLI Integration Tests', () => {
         console.warn(`Failed to clean up temp dir ${tempDir}:`, error)
       }
     }
+    const homeDir = `${tempDir}-home`
+    if (existsSync(homeDir))
+      rmSync(homeDir, { recursive: true, force: true })
 
     // No need to restore mocks as we're using real git now
   })
@@ -75,7 +83,9 @@ describe('CLI Integration Tests', () => {
     ...process.env,
     GIT_DIR: join(cwd, '.git'),
     GIT_WORK_TREE: cwd,
-    HOME: cwd,
+    // Keep runtime caches outside the repository so a clean-tree check only
+    // observes files created by the release fixture itself.
+    HOME: `${cwd}-home`,
     HUSKY: '0',
     // Prevent git from walking above the tmp root and block interactive prompts
     GIT_CEILING_DIRECTORIES: tmpdir(),
@@ -756,11 +766,11 @@ export default {
       writeFileSync(join(tempDir, 'CHANGELOG.md'), '# Changelog\n\nSome changes...')
 
       try {
-        execSync('git init', { cwd: tempDir, stdio: 'ignore', env: sandboxEnv(tempDir) })
-        execSync('git config user.name "Test User"', { cwd: tempDir, stdio: 'ignore', env: sandboxEnv(tempDir) })
-        execSync('git config user.email "test@example.com"', { cwd: tempDir, stdio: 'ignore', env: sandboxEnv(tempDir) })
-        execSync('git add package.json', { cwd: tempDir, stdio: 'ignore', env: sandboxEnv(tempDir) })
-        execSync('git commit -m "Initial commit"', { cwd: tempDir, stdio: 'ignore', env: sandboxEnv(tempDir) })
+        runSetupGit(['init'], tempDir)
+        runSetupGit(['config', 'user.name', 'Test User'], tempDir)
+        runSetupGit(['config', 'user.email', 'test@example.com'], tempDir)
+        runSetupGit(['add', 'package.json'], tempDir)
+        runSetupGit(['commit', '-m', 'Initial commit'], tempDir)
 
         // Leave CHANGELOG.md uncommitted to simulate dirty working tree
 
