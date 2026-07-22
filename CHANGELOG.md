@@ -1,5 +1,20 @@
 # Changelog
 
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.7...v0.2.8)
+
+## 🐛 Bug Fixes
+
+- **release**: keep Pantry workspace locks atomic ([1cba9f7](https://github.com/stacksjs/bumpx/commit/1cba9f7)) _(by Chris <chrisbreuer93@gmail.com>)_
+
+## 🧹 Chores
+
+- release v0.2.8 ([5b4b4c2](https://github.com/stacksjs/bumpx/commit/5b4b4c2)) _(by Chris <chrisbreuer93@gmail.com>)_
+- **release**: add deterministic release scripts ([53ec738](https://github.com/stacksjs/bumpx/commit/53ec738)) _(by Chris <chrisbreuer93@gmail.com>)_
+
+## Contributors
+
+- _Chris <chrisbreuer93@gmail.com>_
+
 [Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.6...v0.2.7)
 
 ## 🐛 Bug Fixes
