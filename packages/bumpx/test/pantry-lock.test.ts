@@ -75,6 +75,26 @@ describe('Pantry workspace lock updates', () => {
     expect(readFileSync(lockPath, 'utf8')).toBe(content)
   })
 
+  it('accepts Pantry v1 package locks identified by version', () => {
+    const content = `${JSON.stringify({
+      version: '1.0',
+      packages: {
+        'bun.sh@1.3.14': {
+          name: 'bun.sh',
+          version: '1.3.14',
+          resolved: 'registry:bun.sh@1.3.14',
+        },
+      },
+    }, null, 2)}\n`
+    writeFileSync(lockPath, content)
+
+    expect(updatePantryWorkspaceLock(lockPath, new Map([['', '0.3.0']]))).toEqual({
+      updated: false,
+      originalContent: content,
+    })
+    expect(readFileSync(lockPath, 'utf8')).toBe(content)
+  })
+
   it('fails closed on malformed lock data', () => {
     writeFileSync(lockPath, '{ invalid')
     expect(() => updatePantryWorkspaceLock(lockPath, new Map())).toThrow('Malformed pantry.lock')

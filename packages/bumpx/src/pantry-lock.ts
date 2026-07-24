@@ -26,7 +26,8 @@ export function updatePantryWorkspaceLock(
   // packages map and do not contain local workspace versions. They are valid,
   // but there is nothing for a version bump to rewrite.
   if (lock.workspaces === undefined) {
-    if (lock.lockfileVersion === 1 && lock.packages && typeof lock.packages === 'object' && !Array.isArray(lock.packages))
+    const isV1Lock = lock.lockfileVersion === 1 || lock.version === '1.0'
+    if (isV1Lock && lock.packages && typeof lock.packages === 'object' && !Array.isArray(lock.packages))
       return { updated: false, originalContent }
     throw new Error('Malformed pantry.lock: expected a workspaces or packages object')
   }

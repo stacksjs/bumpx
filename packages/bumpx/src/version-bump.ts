@@ -1402,21 +1402,16 @@ async function rollbackChanges(fileBackups: Map<string, { content: string, versi
     }
   }
 
-  // Then restore file contents to their original state
-  // Use Array.from to convert Map entries to an array for compatibility
-  Array.from(fileBackups.entries()).forEach(([filePath, backup]) => {
+  // Restore synchronously so callers cannot observe or exit with a partially
+  // rolled-back release.
+  for (const [filePath, backup] of fileBackups) {
     try {
-      // Use a dynamic import for fs
-      import('node:fs').then((fs) => {
-        fs.writeFileSync(filePath, backup.content, 'utf-8')
-      }).catch((importError) => {
-        console.warn(`Warning: Failed to import fs module: ${importError}`)
-      })
+      writeFileSync(filePath, backup.content, 'utf-8')
     }
     catch (rollbackError) {
       console.warn(`Warning: Failed to rollback ${filePath}: ${rollbackError}`)
     }
-  })
+  }
 }
 
 /**
