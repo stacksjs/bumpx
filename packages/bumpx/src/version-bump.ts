@@ -858,14 +858,12 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
     // Git operations
     if (!dryRun && (commit || tag || push) && updatedFiles.length > 0) {
       hasStartedGitOperations = true
-      // Stage all changes (existing dirty files + version updates)
-      try {
-        const { executeGit } = await import('./utils')
-        executeGit(['add', '-A'], effectiveCwd)
-      }
-      catch (error) {
-        console.warn('Warning: Failed to stage changes:', error)
-      }
+      // Stage only files changed by this release. In particular, do not sweep
+      // unrelated untracked files into a release commit.
+      const releaseFiles = [...new Set(updatedFiles)]
+        .map(file => relative(effectiveCwd, file))
+      const { executeGit } = await import('./utils')
+      executeGit(['add', '--', ...releaseFiles], effectiveCwd)
 
       // Check for interrupt before commit
       if (userInterrupted.value) {

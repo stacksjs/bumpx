@@ -42,11 +42,11 @@ describe('Git push & tag integration (local bare remote)', () => {
 
     if (process.env.CI && existsSync(builtBin))
       bumpxBin = builtBin
-    else if (existsSync(compiledBin))
-      bumpxBin = compiledBin
+    else if (existsSync(sourceBin))
+      bumpxBin = sourceBin
     else if (existsSync(builtBin))
       bumpxBin = builtBin
-    else bumpxBin = sourceBin
+    else bumpxBin = compiledBin
 
     // Setup bare remote
     mkdirSync(bareDir, { recursive: true })
@@ -122,6 +122,8 @@ describe('Git push & tag integration (local bare remote)', () => {
   }
 
   it('pushes commit and tag to local bare remote (single package)', async () => {
+    writeFileSync(join(workDir, 'settings.local.json'), '{"local":true}\n')
+
     // Run bumpx to minor bump, with commit, tag, and push
     const res = await runCLI(['minor', '--commit', '--tag', '--push', '--yes'], workDir)
 
@@ -139,6 +141,9 @@ describe('Git push & tag integration (local bare remote)', () => {
     const remoteBranchCommit = runGit(['--git-dir', bareDir, 'rev-parse', 'refs/heads/main'], tempDir).trim()
     const remoteTagCommit = runGit(['--git-dir', bareDir, 'rev-parse', 'refs/tags/v0.2.0^{}'], tempDir).trim()
     expect(remoteTagCommit).toBe(remoteBranchCommit)
+    expect(run('git', ['ls-files', '--error-unmatch', 'settings.local.json'], workDir).status).not.toBe(0)
+    expect(existsSync(join(workDir, 'settings.local.json'))).toBe(true)
+    expect(runGit(['show', '--format=', '--name-only', 'HEAD'], workDir)).not.toContain('settings.local.json')
   })
 
   it('synchronizes an upstream update before creating the release commit and tag', async () => {

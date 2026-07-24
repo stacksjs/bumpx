@@ -1698,7 +1698,7 @@ describe('Version Bump (Integration)', () => {
   })
 
   describe('Git Status Check Logic', () => {
-    it('should skip git status check when commit is enabled (to allow committing dirty tree)', async () => {
+    it('should allow unrelated untracked files during a release', async () => {
       const testDir = join(tmpdir(), `bumpx-git-test-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`)
       mkdirSync(testDir, { recursive: true })
       const packagePath = join(testDir, 'package.json')
@@ -1722,14 +1722,14 @@ describe('Version Bump (Integration)', () => {
         // Git operations might fail in test environment, which is fine for this test
       }
 
-      // This should work even with dirty working tree when commit is enabled
+      // Untracked files are safe because release files are staged explicitly.
       const result = await versionBump({
         release: 'patch',
         files: [packagePath],
-        commit: true, // Commit is enabled - should work with dirty tree
+        commit: true,
         tag: false,
         push: false,
-        noGitCheck: false, // Git check is enabled but should be skipped when commit=true
+        noGitCheck: false,
         dryRun: true,
       })
 
@@ -1737,7 +1737,7 @@ describe('Version Bump (Integration)', () => {
       expect(result).toBeUndefined() // versionBump returns void on success
     })
 
-    it('should perform git status check when tag/push operations are enabled without commit', async () => {
+    it('should allow untracked files when tag or push operations are enabled without commit', async () => {
       const testDir = join(tmpdir(), `bumpx-git-test-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`)
       mkdirSync(testDir, { recursive: true })
       const packagePath = join(testDir, 'package.json')
@@ -1757,16 +1757,15 @@ describe('Version Bump (Integration)', () => {
         execSync('git commit -m "initial"', { cwd: testDir, stdio: 'ignore' })
         // Leave uncommitted.txt untracked to make working tree dirty
 
-        // This should fail with git status error when tag is enabled without commit
         await expect(versionBump({
           release: 'patch',
           files: [packagePath],
-          commit: false, // No commit - can't handle dirty tree
-          tag: true, // Tag enabled - requires clean tree
+          commit: false,
+          tag: true,
           push: false,
           noGitCheck: false,
           dryRun: true,
-        })).rejects.toThrow(/Git working tree is not clean/)
+        })).resolves.toBeUndefined()
       }
       catch {
         // If git operations fail in test environment, this test becomes less meaningful

@@ -805,7 +805,10 @@ export function hasChangedSince(ref: string, dir: string, cwd?: string): boolean
  * Check git status
  */
 export function checkGitStatus(cwd?: string): void {
-  const status = executeGit(['status', '--porcelain'], cwd)
+  // Release-owned files are staged explicitly, so unrelated untracked files
+  // can safely remain in the worktree. Tracked or staged changes are still a
+  // hard error because they could be overwritten or mixed into the release.
+  const status = executeGit(['status', '--porcelain', '--untracked-files=no'], cwd)
   if (status.trim()) {
     throw new Error(`Git working tree is not clean:\n${status}`)
   }
