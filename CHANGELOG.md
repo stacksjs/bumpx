@@ -1,5 +1,23 @@
 # Changelog
 
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.12...v0.2.13)
+
+## 🐛 Bug Fixes
+
+- **changelog**: target configured repository ([73f3dab](https://github.com/stacksjs/bumpx/commit/73f3dab)) _(by Chris <chrisbreuer93@gmail.com>)_
+
+## 📝 Documentation
+
+- improve sponsorship link text ([bae5d2b](https://github.com/stacksjs/bumpx/commit/bae5d2b)) _(by Chris <chrisbreuer93@gmail.com>)_
+
+## 🔧 Chores
+
+- release v0.2.13 ([8139020](https://github.com/stacksjs/bumpx/commit/8139020)) _(by Chris <chrisbreuer93@gmail.com>)_
+
+## Contributors
+
+- _Chris <chrisbreuer93@gmail.com>_
+
 [Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.11...v0.2.12)
 
 ## 🐛 Bug Fixes
