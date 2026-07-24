@@ -1,5 +1,19 @@
 # Changelog
 
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.10...v0.2.11)
+
+## 🐛 Bug Fixes
+
+- **release**: commit only generated release files ([ef00442](https://github.com/stacksjs/bumpx/commit/ef00442)) _(by Chris <chrisbreuer93@gmail.com>)_
+
+## 🧹 Chores
+
+- release v0.2.11 ([5293f82](https://github.com/stacksjs/bumpx/commit/5293f82)) _(by Chris <chrisbreuer93@gmail.com>)_
+
+## Contributors
+
+- _Chris <chrisbreuer93@gmail.com>_
+
 [Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.9...v0.2.10)
 
 ## 🐛 Bug Fixes
