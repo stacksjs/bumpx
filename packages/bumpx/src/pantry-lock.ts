@@ -19,7 +19,19 @@ export function updatePantryWorkspaceLock(
     throw new Error(`Malformed pantry.lock: ${error instanceof Error ? error.message : String(error)}`)
   }
 
-  if (!lock || typeof lock !== 'object' || !lock.workspaces || typeof lock.workspaces !== 'object' || Array.isArray(lock.workspaces))
+  if (!lock || typeof lock !== 'object')
+    throw new Error('Malformed pantry.lock: expected an object')
+
+  // Pantry v1 lockfiles describe installed dependencies in a top-level
+  // packages map and do not contain local workspace versions. They are valid,
+  // but there is nothing for a version bump to rewrite.
+  if (lock.workspaces === undefined) {
+    if (lock.lockfileVersion === 1 && lock.packages && typeof lock.packages === 'object' && !Array.isArray(lock.packages))
+      return { updated: false, originalContent }
+    throw new Error('Malformed pantry.lock: expected a workspaces or packages object')
+  }
+
+  if (!lock.workspaces || typeof lock.workspaces !== 'object' || Array.isArray(lock.workspaces))
     throw new Error('Malformed pantry.lock: expected a workspaces object')
 
   let updated = false
