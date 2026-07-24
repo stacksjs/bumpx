@@ -3,7 +3,7 @@ import { spawnSync } from 'node:child_process'
 import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
-import { versionBump } from '../src/version-bump'
+import { createLogsmithOptions, versionBump } from '../src/version-bump'
 
 describe('Changelog Generation', () => {
   let tempDir: string
@@ -150,6 +150,15 @@ describe('Changelog Generation', () => {
   })
 
   describe('Configuration Integration', () => {
+    it('should pass the target repository as Logsmith dir', () => {
+      expect(createLogsmithOptions('/tmp/project', 'v1.0.0', 'v1.0.1')).toEqual({
+        output: 'CHANGELOG.md',
+        dir: '/tmp/project',
+        from: 'v1.0.0',
+        to: 'v1.0.1',
+      })
+    })
+
     it('should use default changelog setting from config', async () => {
       const { defaultConfig } = await import('../src/config')
 

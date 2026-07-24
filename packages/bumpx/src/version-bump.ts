@@ -1230,6 +1230,20 @@ function showGeneratedChangelog(newContent: string, existingContent: string, ver
 /**
  * Generate changelog using @stacksjs/logsmith
  */
+export function createLogsmithOptions(cwd: string, fromVersion?: string, toVersion?: string): {
+  output: string
+  dir: string
+  from?: string
+  to?: string
+} {
+  return {
+    output: 'CHANGELOG.md',
+    dir: cwd,
+    ...(fromVersion ? { from: fromVersion } : {}),
+    ...(toVersion ? { to: toVersion } : {}),
+  }
+}
+
 async function generateChangelog(cwd: string, fromVersion?: string, toVersion?: string, verbose: boolean = false): Promise<void> {
   const fs = await import('node:fs')
   const path = await import('node:path')
@@ -1269,18 +1283,7 @@ async function generateChangelog(cwd: string, fromVersion?: string, toVersion?: 
       }
 
       // Generate changelog with logsmith
-      const options: any = {
-        output: 'CHANGELOG.md',
-        cwd,
-      }
-
-      // Add version range if specified
-      if (fromVersion) {
-        options.from = fromVersion
-      }
-      if (actualToVersion) {
-        options.to = actualToVersion
-      }
+      const options = createLogsmithOptions(cwd, fromVersion, actualToVersion)
 
       await generateChangelogFn(options)
 
