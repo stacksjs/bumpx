@@ -1,5 +1,19 @@
 # Changelog
 
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.13...v0.2.14)
+
+## 🐛 Bug Fixes
+
+- **release**: handle v1 locks and rollback synchronously ([ca87da4](https://github.com/stacksjs/bumpx/commit/ca87da4)) _(by Chris <chrisbreuer93@gmail.com>)_
+
+## 🔧 Chores
+
+- release v0.2.14 ([c8bde7f](https://github.com/stacksjs/bumpx/commit/c8bde7f)) _(by Chris <chrisbreuer93@gmail.com>)_
+
+## Contributors
+
+- _Chris <chrisbreuer93@gmail.com>_
+
 [Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.12...v0.2.13)
 
 ## 🐛 Bug Fixes
