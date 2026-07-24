@@ -1,5 +1,19 @@
 # Changelog
 
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.11...v0.2.12)
+
+## 🐛 Bug Fixes
+
+- **pantry**: accept v1 package lockfiles ([026de81](https://github.com/stacksjs/bumpx/commit/026de81)) _(by Chris <chrisbreuer93@gmail.com>)_
+
+## 🧹 Chores
+
+- release v0.2.12 ([96e7b73](https://github.com/stacksjs/bumpx/commit/96e7b73)) _(by Chris <chrisbreuer93@gmail.com>)_
+
+## Contributors
+
+- _Chris <chrisbreuer93@gmail.com>_
+
 [Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.10...v0.2.11)
 
 ## 🐛 Bug Fixes
