@@ -293,7 +293,7 @@ Please see [CONTRIBUTING](https://github.com/stacksjs/stacks/blob/main/.github/C
 For help or discussion:
 
 - [Discussions on GitHub](https://github.com/stacksjs/bumpx/discussions)
-- [Join the Stacks Discord Server](https://discord.gg/stacksjs)
+- [Join the Stacks Discord Server](https://stacksjs.com/discord)
 
 ## Postcardware
 

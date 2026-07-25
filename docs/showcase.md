@@ -22,7 +22,7 @@ Teams choose bumpx for automated workflows, monorepo support, zero dependencies,
 
 To get featured, contact us via:
 
-- Discord: [community Discord](https://discord.gg/stacksjs)
+- Discord: [community Discord](https://stacksjs.com/discord)
 - Social Media: Tag [@stacksjs](https://twitter.com/stacksjs) on Twitter
 - GitHub: Open a PR to add your project
 - Email: [hello@stacksjs.org](mailto:hello@stacksjs.org)

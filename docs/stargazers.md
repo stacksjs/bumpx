@@ -25,7 +25,7 @@ Help grow the community by sharing bumpx with other developers through social me
 ## Stay Connected
 
 - GitHub: Follow repository updates and releases
-- Discord: Join our [community Discord](https://discord.gg/stacksjs)
+- Discord: Join our [community Discord](https://stacksjs.com/discord)
 - Twitter: Follow [@stacksjs](https://twitter.com/stacksjs) for updates
 
 Every star counts! Thank you for being part of the bumpx community.
