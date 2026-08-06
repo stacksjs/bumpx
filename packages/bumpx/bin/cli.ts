@@ -322,11 +322,18 @@ async function prepareConfig(release: string | undefined, files: string[] | unde
     // --no-git-check only skips git status checks, not git operations
   }
   if (options.yes !== undefined) {
+    // `--yes` answers prompts. It does NOT waive the clean-tree check.
+    //
+    // It used to set `noGitCheck` as well, "for smoother workflow" — and since
+    // every release script in this org is `bumpx <bump> --recursive --yes`,
+    // that meant the check effectively did not exist. A release could be cut
+    // from a tree with modified tracked files, producing a tag whose contents
+    // are not what anyone built or tested, and leaving the release commit
+    // sitting on top of unrelated work-in-progress.
+    //
+    // Not prompting and not checking are different things. `--no-git-check` is
+    // still there for anyone who genuinely wants the second one.
     cliOverrides.confirm = !options.yes
-    // If --yes is used and commit/tag operations are enabled, skip git checks for smoother workflow
-    if (options.yes && (cliOverrides.commit !== false || (cliOverrides.commit === undefined && bumpConfigDefaults.commit))) {
-      cliOverrides.noGitCheck = true
-    }
   }
   if (options.verify === false)
     cliOverrides.noVerify = true

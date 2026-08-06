@@ -810,7 +810,15 @@ export function checkGitStatus(cwd?: string): void {
   // hard error because they could be overwritten or mixed into the release.
   const status = executeGit(['status', '--porcelain', '--untracked-files=no'], cwd)
   if (status.trim()) {
-    throw new Error(`Git working tree is not clean:\n${status}`)
+    // Say what to do about it. This fires in the middle of a release script,
+    // often on someone else's machine, and "not clean" alone leaves the reader
+    // guessing whether the tool is about to commit their changes (it will not
+    // — release files are staged by path) or refusing for some other reason.
+    throw new Error(
+      `Git working tree is not clean, so this release would tag a commit whose contents `
+      + `are not what is on disk:\n${status}\n`
+      + `Commit or stash these changes first, or pass --no-git-check to release anyway.`,
+    )
   }
 }
 
