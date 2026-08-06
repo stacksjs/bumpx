@@ -1,5 +1,23 @@
 # Changelog
 
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.14...v0.2.15)
+
+## 🐛 Bug Fixes
+
+- **cli**: stop --yes from waiving the clean-tree check ([7fb31ee](https://github.com/stacksjs/bumpx/commit/7fb31ee)) _(by Chris <chrisbreuer93@gmail.com>)_
+
+## 📝 Documentation
+
+- link the community as stacksjs.com/discord ([3031141](https://github.com/stacksjs/bumpx/commit/3031141)) _(by Chris <chrisbreuer93@gmail.com>)_
+
+## 🔧 Chores
+
+- release v0.2.15 ([2f7cadd](https://github.com/stacksjs/bumpx/commit/2f7cadd)) _(by Chris <chrisbreuer93@gmail.com>)_
+
+## Contributors
+
+- _Chris <chrisbreuer93@gmail.com>_
+
 [Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.13...v0.2.14)
 
 ## 🐛 Bug Fixes
