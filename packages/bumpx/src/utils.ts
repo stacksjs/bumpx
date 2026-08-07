@@ -407,11 +407,21 @@ export async function getWorkspacePackages(rootDir: string = process.cwd()): Pro
 /**
  * Recursively find additional package files (pantry.json, pantry.jsonc, package.jsonc, build.zig.zon)
  */
-async function findAdditionalPackageFiles(dir: string): Promise<string[]> {
+async function findAdditionalPackageFiles(
+  dir: string,
+  respectGitignore: boolean = true,
+  rootDir: string = dir,
+  patterns?: string[],
+): Promise<string[]> {
   const files: string[] = []
 
   try {
     const entries = await readdir(dir, { withFileTypes: true })
+
+    // Patterns are loaded once from the root and threaded down, so a nested
+    // directory is still judged against the repository's .gitignore rather
+    // than against a .gitignore that happens to sit beside it.
+    const gitignorePatterns = patterns ?? (respectGitignore ? await loadGitignorePatterns(rootDir) : [])
 
     for (const entry of entries) {
       const fullPath = join(dir, entry.name)
@@ -422,14 +432,26 @@ async function findAdditionalPackageFiles(dir: string): Promise<string[]> {
           continue
         }
 
+        // The package.json walk beside this one has always honoured
+        // .gitignore; this one did not, so `--recursive` reached into ignored
+        // trees. In a repo whose .gitignore hides a package cache, that meant
+        // bumping the version of every vendored manifest inside it and then
+        // handing those paths to `git add`, which refuses ignored paths and
+        // failed the entire release.
+        if (respectGitignore && shouldIgnorePath(fullPath, rootDir, gitignorePatterns)) {
+          continue
+        }
+
         // Recursively search subdirectories
-        const nestedFiles = await findAdditionalPackageFiles(fullPath)
+        const nestedFiles = await findAdditionalPackageFiles(fullPath, respectGitignore, rootDir, gitignorePatterns)
         files.push(...nestedFiles)
       }
       else if (entry.isFile()) {
         // Check for pantry.json, pantry.jsonc, package.jsonc, or build.zig.zon
         if (entry.name === 'pantry.json' || entry.name === 'pantry.jsonc'
           || entry.name === 'package.jsonc' || entry.name === 'build.zig.zon') {
+          if (respectGitignore && shouldIgnorePath(fullPath, rootDir, gitignorePatterns))
+            continue
           files.push(fullPath)
         }
       }
@@ -498,7 +520,7 @@ export async function findAllPackageFiles(dir: string = process.cwd(), recursive
     }
 
     // Also find pantry.json, pantry.jsonc, package.jsonc, and build.zig.zon files recursively
-    const additionalFiles = await findAdditionalPackageFiles(dir)
+    const additionalFiles = await findAdditionalPackageFiles(dir, respectGitignore, dir)
     for (const filePath of additionalFiles) {
       if (!packageFiles.includes(filePath)) {
         packageFiles.push(filePath)
