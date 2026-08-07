@@ -1,5 +1,19 @@
 # Changelog
 
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.15...v0.2.16)
+
+## 🐛 Bug Fixes
+
+- **recursive**: do not bump files git ignores ([c421dd8](https://github.com/stacksjs/bumpx/commit/c421dd8)) _(by Chris <chrisbreuer93@gmail.com>)_
+
+## 🔧 Chores
+
+- release v0.2.16 ([87ccfb5](https://github.com/stacksjs/bumpx/commit/87ccfb5)) _(by Chris <chrisbreuer93@gmail.com>)_
+
+## Contributors
+
+- _Chris <chrisbreuer93@gmail.com>_
+
 [Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.14...v0.2.15)
 
 ## 🐛 Bug Fixes
