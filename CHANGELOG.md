@@ -1,5 +1,23 @@
 # Changelog
 
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.16...v0.2.17)
+
+## 🐛 Bug Fixes
+
+- **release**: check the tag reached the remote instead of asserting it ([ba743aa](https://github.com/stacksjs/bumpx/commit/ba743aa)) _(by Chris <chrisbreuer93@gmail.com>)_
+
+## ⚡ Performance Improvements
+
+- **build**: share chunks between the library and the CLI ([25a0959](https://github.com/stacksjs/bumpx/commit/25a0959)) _(by Chris <chrisbreuer93@gmail.com>)_
+
+## 🔧 Chores
+
+- release v0.2.17 ([4484384](https://github.com/stacksjs/bumpx/commit/4484384)) _(by Chris <chrisbreuer93@gmail.com>)_
+
+## Contributors
+
+- _Chris <chrisbreuer93@gmail.com>_
+
 [Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.15...v0.2.16)
 
 ## 🐛 Bug Fixes
