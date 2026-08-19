@@ -1101,8 +1101,26 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
         const previousCommit = executeGit(['rev-parse', '--short', 'HEAD~1'], effectiveCwd).trim()
         console.log(`To ${remoteUrl}`)
         console.log(`   ${previousCommit}..${latestCommit}  ${beforeBranch} -> ${beforeBranch}`)
-        if (createdTagName)
-          console.log(` * [new tag]         ${createdTagName}`)
+
+        /*
+         * The tag line is a check, not a claim.
+         *
+         * git writes its push report to stderr, which `executeGit` captures and
+         * discards on success, so these lines are reconstructed rather than
+         * echoed - and a reconstruction says the tag shipped whether or not it
+         * did. One release reported a tag it had not pushed; the branch was on
+         * the remote, the tag was not, and nothing published because the tag is
+         * what the release workflow triggers on. Asking the remote what it has
+         * costs one call and cannot be wrong.
+         */
+        if (createdTagName) {
+          const onRemote = executeGit(['ls-remote', '--tags', 'origin', `refs/tags/${createdTagName}`], effectiveCwd).trim()
+
+          if (onRemote)
+            console.log(` * [new tag]         ${createdTagName}`)
+          else
+            console.warn(`Warning: ${createdTagName} was not found on the remote after pushing. Push it with \`git push origin ${createdTagName}\`, or nothing will publish.`)
+        }
       }
       catch {}
 
@@ -1128,10 +1146,17 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
         const beforeBranch = getCurrentBranch(effectiveCwd).trim()
         const latestCommit = executeGit(['rev-parse', '--short', 'HEAD'], effectiveCwd).trim()
         const previousCommit = executeGit(['rev-parse', '--short', 'HEAD~1'], effectiveCwd).trim()
-        console.log(`To ${remoteUrl}`)
-        console.log(`   ${previousCommit}..${latestCommit}  ${beforeBranch} -> ${beforeBranch}`)
+        /*
+         * Marked, because this half prints a push that did not happen.
+         *
+         * Unmarked it is indistinguishable from the real thing above - same
+         * "To <remote>", same ref line - and a dry run read as a release is
+         * how somebody waits for a publish that was never going to come.
+         */
+        console.log(`dry run: To ${remoteUrl}`)
+        console.log(`dry run:    ${previousCommit}..${latestCommit}  ${beforeBranch} -> ${beforeBranch}`)
         if (tag && lastNewVersion && _lastOldVersion) {
-          console.log(` * [new tag]         v${_lastOldVersion} -> v${lastNewVersion}`)
+          console.log(`dry run:  * [new tag]         v${lastNewVersion}`)
         }
       }
       catch {}
