@@ -28,6 +28,7 @@ import {
   resolveChangedSinceRef,
   syncWithRemote,
   symbols,
+  detectVersionInText,
   updateVersionInFile,
 } from './utils'
 
@@ -648,22 +649,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
             // For non-JSON files, try to extract version from content
             const content = readFileSync(filePath, 'utf-8')
 
-            // Try multiple patterns to extract version
-            const patterns = [
-              // version: 1.2.3 (with optional quotes)
-              /version\s*[:=]\s*['\x22]?(\d+\.\d+\.\d+(?:-[a-z0-9.-]+)?(?:\+[a-z0-9.-]+)?)['\x22]?/i,
-              /VERSION\s*=\s*['\x22]?(\d+\.\d+\.\d+(?:-[a-z0-9.-]+)?(?:\+[a-z0.9\-]+)?)['\x22]?/i,
-              // VERSION = '1.2.3' (with optional quotes)
-              /^(\d+\.\d+\.\d+(?:-[a-z0-9.-]+)?(?:\+[a-z0.9\-]+)?)$/m,
-            ]
-
-            for (const pattern of patterns) {
-              const match = content.match(pattern)
-              if (match) {
-                fileCurrentVersion = match[1]
-                break
-              }
-            }
+            fileCurrentVersion = detectVersionInText(content)
           }
 
           if (!fileCurrentVersion) {

@@ -560,6 +560,33 @@ export function writePackageJson(filePath: string, packageJson: PackageJson): vo
 /**
  * Update version in a file (supports various file types)
  */
+const SEMVER = String.raw`(\d+\.\d+\.\d+(?:-[a-z0-9.-]+)?(?:\+[a-z0-9.-]+)?)`
+
+/**
+ * Patterns that name a version in a file that is not JSON, most specific first.
+ *
+ * The first allows a TypeScript annotation between the name and the `=`:
+ * `export const TRACKER_VERSION: string = '0.1.15'` read as no version at
+ * all, so bumpx skipped the file and a release shipped with package.json and
+ * the constant disagreeing. It is case-insensitive, which also covers
+ * `VERSION = '1.2.3'`, so the separate VERSION pattern is gone. Build
+ * metadata is `[a-z0-9.-]`; the old `[a-z0.9\-]` was a typo for it.
+ */
+const VERSION_PATTERNS: RegExp[] = [
+  new RegExp(String.raw`version\s*(?::\s*[A-Za-z_$][\w$.<>[\]| ]*?)?\s*[:=]\s*['"]?${SEMVER}['"]?`, 'i'),
+  new RegExp(String.raw`^${SEMVER}$`, 'm'),
+]
+
+/** The version a non-JSON file declares, or undefined when it names none. */
+export function detectVersionInText(content: string): string | undefined {
+  for (const pattern of VERSION_PATTERNS) {
+    const match = content.match(pattern)
+    if (match)
+      return match[1]
+  }
+  return undefined
+}
+
 export function updateVersionInFile(filePath: string, oldVersion: string, newVersion: string, forceUpdate: boolean = false, dryRun: boolean = false): FileInfo {
   try {
     const content = readFileSync(filePath, 'utf-8')
