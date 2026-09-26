@@ -1,5 +1,19 @@
 # Changelog
 
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.17...v0.2.18)
+
+## 🐛 Bug Fixes
+
+- **version**: read a version constant that has a type annotation ([a7297b8](https://github.com/stacksjs/bumpx/commit/a7297b8)) _(by Chris <chrisbreuer93@gmail.com>)_
+
+## 🧹 Chores
+
+- release v0.2.18 ([c513079](https://github.com/stacksjs/bumpx/commit/c513079)) _(by Chris <chrisbreuer93@gmail.com>)_
+
+## Contributors
+
+- _Chris <chrisbreuer93@gmail.com>_
+
 [Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.16...v0.2.17)
 
 ## 🐛 Bug Fixes
