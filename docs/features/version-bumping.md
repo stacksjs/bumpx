@@ -37,6 +37,39 @@ bumpx preminor --preid beta      # → 1.1.0-beta.0
 bumpx prepatch --preid rc        # → 1.0.1-rc.0
 ```
 
+### Iterating an unreleased target
+
+Use `pre` to test the current target version. `prerelease` on a stable version
+starts testing the next patch; `pre` leaves major, minor and patch unchanged.
+Changing `--preid` switches the channel and starts its counter at 0.
+
+```bash
+bumpx pre --preid beta # 1.0.0 → 1.0.0-beta.0
+bumpx pre              # 1.0.0-beta.0 → 1.0.0-beta.1
+bumpx pre --preid rc   # 1.0.0-beta.1 → 1.0.0-rc.0
+bumpx release          # 1.0.0-rc.0 → 1.0.0
+```
+
+Semantic bumps promote a prerelease at their boundary: `patch`, `minor` and
+`major` on `1.0.0-beta.1` all produce `1.0.0`. `release` explicitly graduates
+the current target and rejects an already stable version.
+
+### Build counters
+
+`bumpx build` produces `1.0.0+build.1`, then `1.0.0+build.2`. It preserves
+prerelease identifiers and existing metadata labels. Build metadata is
+preserved in serialization and does not affect [SemVer precedence](https://semver.org/).
+It does not create a distinct npm package version.
+
+Native apps use a separate build counter rather than adding metadata to their
+marketing version. Include failed or in-flight runs with the exported helper:
+
+```typescript
+import { nextBuildNumber } from '@stacksjs/bumpx'
+
+nextBuildNumber(10, [11, 12]) // 13; marketing version remains 1.0.0
+```
+
 ### Exact Version Setting
 
 Set specific versions when needed:

@@ -7,125 +7,8 @@ import { join, relative } from 'node:path'
 import * as process from 'node:process'
 import * as readline from 'node:readline'
 
-/**
- * Custom SemVer implementation to handle version parsing and manipulation
- */
-export class SemVer {
-  major: number
-  minor: number
-  patch: number
-  prerelease: string[]
-  build: string[]
-  version: string
-
-  constructor(version: string) {
-    // Remove v prefix if present
-    if (version.startsWith('v')) {
-      version = version.slice(1)
-    }
-
-    const semverRegex = /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-z-][0-9a-z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-z-][0-9a-z-]*))*))?(?:\+([0-9a-z-]+(?:\.[0-9a-z-]+)*))?$/i
-    const match = version.match(semverRegex)
-
-    if (!match) {
-      throw new Error(`Invalid version: ${version}`)
-    }
-
-    this.major = Number.parseInt(match[1], 10)
-    this.minor = Number.parseInt(match[2], 10)
-    this.patch = Number.parseInt(match[3], 10)
-    this.prerelease = match[4] ? match[4].split('.') : []
-    this.build = match[5] ? match[5].split('.') : []
-    this.version = version
-  }
-
-  /**
-   * Increment version based on release type
-   */
-  inc(release: string, preid?: string): SemVer {
-    const newVersion = { ...this }
-
-    switch (release) {
-      case 'major':
-        newVersion.major++
-        newVersion.minor = 0
-        newVersion.patch = 0
-        newVersion.prerelease = []
-        newVersion.build = [] // Clear build metadata on increment
-        break
-      case 'minor':
-        newVersion.minor++
-        newVersion.patch = 0
-        newVersion.prerelease = []
-        newVersion.build = [] // Clear build metadata on increment
-        break
-      case 'patch':
-        newVersion.patch++
-        newVersion.prerelease = []
-        newVersion.build = [] // Clear build metadata on increment
-        break
-      case 'premajor':
-        newVersion.major++
-        newVersion.minor = 0
-        newVersion.patch = 0
-        newVersion.prerelease = [preid || 'alpha', '0']
-        newVersion.build = [] // Clear build metadata on increment
-        break
-      case 'preminor':
-        newVersion.minor++
-        newVersion.patch = 0
-        newVersion.prerelease = [preid || 'alpha', '0']
-        newVersion.build = [] // Clear build metadata on increment
-        break
-      case 'prepatch':
-        newVersion.patch++
-        newVersion.prerelease = [preid || 'alpha', '0']
-        newVersion.build = [] // Clear build metadata on increment
-        break
-      case 'prerelease':
-        if (newVersion.prerelease.length === 0) {
-          // For non-prerelease versions, increment patch and add prerelease identifier
-          newVersion.patch++
-          newVersion.prerelease = [preid || 'alpha', '0']
-        }
-        else {
-          let id = 0
-          // If last item is numeric, increment it
-          const lastId = newVersion.prerelease[newVersion.prerelease.length - 1]
-          if (/^\d+$/.test(lastId)) {
-            id = Number.parseInt(lastId, 10) + 1
-            newVersion.prerelease[newVersion.prerelease.length - 1] = String(id)
-          }
-          else {
-            // Otherwise add a numeric identifier
-            newVersion.prerelease.push('0')
-          }
-        }
-        newVersion.build = [] // Clear build metadata on increment
-        break
-      default:
-        throw new Error(`Invalid release type: ${release}`)
-    }
-
-    // Update version string
-    let versionStr = `${newVersion.major}.${newVersion.minor}.${newVersion.patch}`
-    if (newVersion.prerelease.length > 0) {
-      versionStr += `-${newVersion.prerelease.join('.')}`
-    }
-    // Build metadata is intentionally not included in the new version
-
-    return new SemVer(versionStr)
-  }
-
-  toString(): string {
-    // Return version without build metadata as per SemVer spec for comparison
-    let versionStr = `${this.major}.${this.minor}.${this.patch}`
-    if (this.prerelease.length > 0) {
-      versionStr += `-${this.prerelease.join('.')}`
-    }
-    return versionStr
-  }
-}
+import { SemVer } from './semver'
+export { SemVer, nextBuildNumber } from './semver'
 
 /**
  * Load gitignore patterns from .gitignore file
@@ -185,7 +68,7 @@ function shouldIgnorePath(fullPath: string, rootDir: string, patterns: string[])
  * Check if a string is a valid release type
  */
 export function isReleaseType(value: string): value is ReleaseType {
-  return ['major', 'minor', 'patch', 'premajor', 'preminor', 'prepatch', 'prerelease'].includes(value)
+  return ['major', 'minor', 'patch', 'premajor', 'preminor', 'prepatch', 'prerelease', 'pre', 'release', 'build'].includes(value)
 }
 
 /**
@@ -206,7 +89,7 @@ export function isValidVersion(version: string): boolean {
  */
 export function incrementVersion(currentVersion: string, release: string | ReleaseType, preid?: string): string {
   if (isValidVersion(release)) {
-    return release
+    return new SemVer(release).toString()
   }
 
   if (isReleaseType(release)) {

@@ -404,7 +404,7 @@ async function prepareConfig(release: string | undefined, files: string[] | unde
 
 // Main version bump command (default)
 cli
-  .command('[release] [...files]', 'Bump version of package.json files')
+  .command('[release] [...files]', 'Bump versions: patch | minor | major | pre | prerelease | release | build | x.y.z')
   .option('--preid <preid>', 'ID for prerelease')
   .option('--all', `Include all files (default: ${bumpConfigDefaults.all})`)
   .option('--no-git-check, --git-check, --gitCheck', 'Toggle git check')
@@ -439,6 +439,9 @@ cli
   .option('--no-respect-gitignore', 'Ignore .gitignore when finding files')
   .option('--only-changed-since [ref]', 'In recursive mode, only bump leaf packages that changed since <ref> (defaults to latest v*.*.* tag if no ref given)')
   .example('bumpx patch')
+  .example('bumpx pre --preid beta')
+  .example('bumpx build')
+  .example('bumpx release')
   .example('bumpx minor --no-git-check')
   .example('bumpx major --no-push')
   .example('bumpx 1.2.3')

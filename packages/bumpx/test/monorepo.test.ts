@@ -179,7 +179,7 @@ describe('Monorepo Integration Tests', () => {
       expect(uiContent.version).toBe('2.1.1')
 
       const cliContent = JSON.parse(readFileSync(join(tempDir, 'packages/cli/package.json'), 'utf-8'))
-      expect(cliContent.version).toBe('1.0.1')
+      expect(cliContent.version).toBe('1.0.0')
 
       // Verify progress events
       const fileUpdatedEvents = progressEvents.filter(e => e.event === ProgressEvent.FileUpdated)
@@ -217,10 +217,10 @@ describe('Monorepo Integration Tests', () => {
       expect(stableContent.version).toBe('1.1.0')
 
       const betaContent = JSON.parse(readFileSync(join(tempDir, 'packages/beta/package.json'), 'utf-8'))
-      expect(betaContent.version).toBe('2.1.0')
+      expect(betaContent.version).toBe('2.0.0')
 
       const alphaContent = JSON.parse(readFileSync(join(tempDir, 'packages/alpha/package.json'), 'utf-8'))
-      expect(alphaContent.version).toBe('3.1.0')
+      expect(alphaContent.version).toBe('3.0.0')
     })
   })
 

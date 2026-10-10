@@ -1,4 +1,4 @@
-export type ReleaseType = 'major' | 'minor' | 'patch' | 'premajor' | 'preminor' | 'prepatch' | 'prerelease'
+export type ReleaseType = 'major' | 'minor' | 'patch' | 'premajor' | 'preminor' | 'prepatch' | 'prerelease' | 'pre' | 'release' | 'build'
 
 export interface VersionBumpOptions {
   release?: ReleaseType | string

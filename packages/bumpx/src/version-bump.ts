@@ -452,15 +452,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
         cleanupSigintListener()
         try {
           // For non-prompt releases, calculate the new version directly
-          // Check if the release is a valid semver version
-          if (isValidVersion(release)) {
-            // If the release is a valid semver version, use it directly
-            newVersion = release
-          }
-          else {
-            // Increment version based on the release type
-            newVersion = incrementVersion(rootCurrentVersion, release, preid)
-          }
+          newVersion = incrementVersion(rootCurrentVersion, release, preid)
         }
         catch {
           throw new Error(`Invalid release type or version: ${release}`)
@@ -1500,6 +1492,9 @@ async function promptForVersion(currentVersion: string, preid?: string, cwd?: st
     tryAddVersion('preminor', () => incrementVersion(currentVersion, 'preminor', preid))
     tryAddVersion('premajor', () => incrementVersion(currentVersion, 'premajor', preid))
     tryAddVersion('prerelease', () => incrementVersion(currentVersion, 'prerelease', preid))
+    tryAddVersion('pre', () => incrementVersion(currentVersion, 'pre', preid))
+    tryAddVersion('build', () => incrementVersion(currentVersion, 'build', preid))
+    tryAddVersion('release', () => incrementVersion(currentVersion, 'release', preid))
 
     // Add custom option
     options.push({ value: 'custom', label: 'custom...' })

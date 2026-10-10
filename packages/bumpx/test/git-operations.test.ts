@@ -673,7 +673,7 @@ Initial release
     })
 
     it('should allow opting out with explicit false values', async () => {
-      const outputDir = join(__dirname, 'output', 'git-operations', 'opt-out')
+      const outputDir = join(tempDir, 'git-operations', 'opt-out')
       const packagePath = join(outputDir, 'package.json')
 
       // Create output directory

@@ -380,7 +380,7 @@ describe('Interactive Prompt Tests', () => {
       })
 
       updatedPackage = JSON.parse(readFileSync(packagePath, 'utf-8'))
-      expect(updatedPackage.version).toBe('1.0.1')
+      expect(updatedPackage.version).toBe('1.0.0')
     })
 
     it('should handle complex prerelease versions', async () => {
@@ -449,7 +449,7 @@ describe('Interactive Prompt Tests', () => {
       })
 
       const updatedPackage = JSON.parse(readFileSync(packagePath, 'utf-8'))
-      expect(updatedPackage.version).toBe('v3.0.0')
+      expect(updatedPackage.version).toBe('3.0.0')
     })
   })
 

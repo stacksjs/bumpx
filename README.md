@@ -64,6 +64,21 @@ bumpx premajor --preid rc    # 1.0.0 → 2.0.0-rc.0
 bumpx prerelease  # 1.0.1-beta.0 → 1.0.1-beta.1
 ```
 
+Keep an unreleased target at the same version while testing it:
+
+```bash
+bumpx pre --preid beta      # 1.0.0 → 1.0.0-beta.0
+bumpx pre                  # 1.0.0-beta.0 → 1.0.0-beta.1
+bumpx pre --preid rc        # 1.0.0-beta.1 → 1.0.0-rc.0
+bumpx release              # 1.0.0-rc.0 → 1.0.0
+bumpx build                # 1.0.0 → 1.0.0+build.1
+```
+
+`build` increments SemVer metadata without changing the core version. Native
+apps keep their marketing version and build counter in separate fields; use
+the exported `nextBuildNumber(current, allocatedRuns)` for that counter.
+SemVer metadata is not an Apple marketing version or a distinct npm version.
+
 ### Git Integration
 
 ```bash

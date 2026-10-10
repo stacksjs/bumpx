@@ -175,7 +175,7 @@ describe('SemVer', () => {
     it('should preserve and clear prerelease correctly on regular increments', () => {
       const v = new SemVer('1.2.3-alpha.1')
 
-      expect(v.inc('patch').toString()).toBe('1.2.4')
+      expect(v.inc('patch').toString()).toBe('1.2.3')
       expect(v.inc('minor').toString()).toBe('1.3.0')
       expect(v.inc('major').toString()).toBe('2.0.0')
     })
@@ -197,10 +197,9 @@ describe('SemVer', () => {
       expect(new SemVer('1.0.0-alpha.beta.1.rc.2').toString()).toBe('1.0.0-alpha.beta.1.rc.2')
     })
 
-    it('should not include build metadata in toString', () => {
-      // Build metadata should not be included in toString as per SemVer spec for comparison
+    it('should preserve build metadata when serializing', () => {
       const v = new SemVer('1.0.0+build.1')
-      expect(v.toString()).toBe('1.0.0')
+      expect(v.toString()).toBe('1.0.0+build.1')
     })
   })
 
