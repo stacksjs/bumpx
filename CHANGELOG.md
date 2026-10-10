@@ -1,5 +1,19 @@
 # Changelog
 
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.19...v0.2.20)
+
+## 🐛 Bug Fixes
+
+- honor workspace glob boundaries when bumping versions ([48805aa](https://github.com/stacksjs/bumpx/commit/48805aa)) _(by Chris <chrisbreuer93@gmail.com>)_
+
+## 🔧 Chores
+
+- release v0.2.20 ([0d8481b](https://github.com/stacksjs/bumpx/commit/0d8481b)) _(by Chris <chrisbreuer93@gmail.com>)_
+
+## Contributors
+
+- _Chris <chrisbreuer93@gmail.com>_
+
 [Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.18...v0.2.19)
 
 ## 🐛 Bug Fixes
