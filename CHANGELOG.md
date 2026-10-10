@@ -1,5 +1,20 @@
 # Changelog
 
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.18...v0.2.19)
+
+## 🐛 Bug Fixes
+
+- preserve prerelease targets and add build bumping ([314fbe5](https://github.com/stacksjs/bumpx/commit/314fbe5)) _(by Chris <chrisbreuer93@gmail.com>)_
+
+## 🔧 Chores
+
+- release v0.2.19 ([7df4800](https://github.com/stacksjs/bumpx/commit/7df4800)) _(by Chris <chrisbreuer93@gmail.com>)_
+- run @stacksjs/logsmith, not the unrelated npm 'logsmith' ([e59e926](https://github.com/stacksjs/bumpx/commit/e59e926)) _(by Chris <chrisbreuer93@gmail.com>)_
+
+## Contributors
+
+- _Chris <chrisbreuer93@gmail.com>_
+
 [Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.17...v0.2.18)
 
 ## 🐛 Bug Fixes
