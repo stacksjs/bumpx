@@ -1038,6 +1038,46 @@ describe('Advanced Error Handling', () => {
     })
 
     describe('getWorkspacePackages', () => {
+      it('matches workspace glob depth, exclusions and overlapping patterns exactly', async () => {
+        for (const directory of ['packages/core', 'packages/core/test/fixture', 'packages/excluded', 'libs/shared/ui', 'unrelated']) {
+          mkdirSync(join(tempDir, directory), { recursive: true })
+          writeFileSync(join(tempDir, directory, 'package.json'), JSON.stringify({ name: directory, version: '1.0.0' }))
+        }
+        const rootPath = join(tempDir, 'package.json')
+        writeFileSync(rootPath, JSON.stringify({ workspaces: ['packages/*', 'packages/core', 'libs/*/*', '!packages/excluded'] }))
+        expect(await getWorkspacePackages(tempDir)).toEqual([
+          join(tempDir, 'libs/shared/ui/package.json'),
+          join(tempDir, 'packages/core/package.json'),
+        ])
+        writeFileSync(rootPath, JSON.stringify({ workspaces: ['packages/**', '!packages/excluded'] }))
+        expect(await getWorkspacePackages(tempDir)).toEqual([
+          join(tempDir, 'packages/core/package.json'),
+          join(tempDir, 'packages/core/test/fixture/package.json'),
+        ])
+      })
+
+      it('does not fall back to unrelated packages when declared workspaces have no matches', async () => {
+        mkdirSync(join(tempDir, 'unrelated'), { recursive: true })
+        writeFileSync(join(tempDir, 'unrelated/package.json'), JSON.stringify({ version: '1.0.0' }))
+        const rootPath = join(tempDir, 'package.json')
+        for (const workspaces of [[], ['missing/*'], ['unrelated', '!unrelated']]) {
+          writeFileSync(rootPath, JSON.stringify({ workspaces, version: '1.0.0' }))
+          expect(await findAllPackageFiles(tempDir, true)).toEqual([rootPath])
+        }
+      })
+
+      it('honors gitignore for workspace discovery and the explicit opt-out', async () => {
+        const packagePath = join(tempDir, 'packages/ignored/package.json')
+        mkdirSync(join(tempDir, 'packages/ignored'), { recursive: true })
+        writeFileSync(packagePath, JSON.stringify({ version: '1.0.0' }))
+        const rootPath = join(tempDir, 'package.json')
+        writeFileSync(rootPath, JSON.stringify({ workspaces: ['packages/*'], version: '1.0.0' }))
+        writeFileSync(join(tempDir, '.gitignore'), 'packages/ignored/\n')
+        expect(await getWorkspacePackages(tempDir)).toEqual([])
+        expect(await findAllPackageFiles(tempDir, true)).toEqual([rootPath])
+        expect(await findAllPackageFiles(tempDir, true, false)).toEqual([rootPath, packagePath])
+      })
+
       it('should return empty array when no package.json exists', async () => {
         const packages = await getWorkspacePackages(tempDir)
         expect(packages).toEqual([])

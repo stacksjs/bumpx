@@ -165,61 +165,9 @@ export async function findPackageJsonFiles(dir: string = process.cwd(), recursiv
 }
 
 /**
- * Recursively find all package.json files in nested directories
- */
-async function findNestedPackages(dir: string): Promise<string[]> {
-  const packages: string[] = []
-
-  try {
-    const entries = await readdir(dir)
-    const excludedDirs = new Set([
-      'node_modules',
-      'dist',
-      'coverage',
-      'lib',
-      'out',
-      'target',
-      '.git',
-      '.svn',
-      '.hg',
-      '.next',
-      '.nuxt',
-      '.output',
-      '.vercel',
-      '.netlify',
-    ])
-
-    for (const entry of entries) {
-      // Skip hidden directories and common build/output directories
-      if (entry.startsWith('.') || excludedDirs.has(entry))
-        continue
-
-      const entryPath = join(dir, entry)
-      const stats = await stat(entryPath)
-
-      if (stats.isDirectory()) {
-        const packageJsonPath = join(entryPath, 'package.json')
-        if (existsSync(packageJsonPath)) {
-          packages.push(packageJsonPath)
-        }
-
-        // Always recursively check for deeply nested packages
-        const nestedPackages = await findNestedPackages(entryPath)
-        packages.push(...nestedPackages)
-      }
-    }
-  }
-  catch {
-    // Ignore errors reading directory
-  }
-
-  return packages
-}
-
-/**
  * Get workspace packages from package.json workspaces field
  */
-export async function getWorkspacePackages(rootDir: string = process.cwd()): Promise<string[]> {
+export async function getWorkspacePackages(rootDir: string = process.cwd(), respectGitignore: boolean = true): Promise<string[]> {
   try {
     const rootPackageJsonPath = join(rootDir, 'package.json')
     if (!existsSync(rootPackageJsonPath)) {
@@ -236,50 +184,30 @@ export async function getWorkspacePackages(rootDir: string = process.cwd()): Pro
       ? rootPackageJson.workspaces
       : rootPackageJson.workspaces.packages || []
 
-    const workspacePackages: string[] = []
+    const workspacePackages = new Set<string>()
+    const manifestPattern = (pattern: string) => {
+      const directory = pattern.replace(/^\.\//, '').replace(/\/+$/, '')
+      return directory === '.' ? 'package.json' : `${directory}/package.json`
+    }
+    const exclusions = workspacePatterns.filter(pattern => pattern.startsWith('!'))
+      .map(pattern => new Bun.Glob(manifestPattern(pattern.slice(1))))
+    const gitignorePatterns = respectGitignore ? await loadGitignorePatterns(rootDir) : []
 
-    for (const pattern of workspacePatterns) {
-      // Simple pattern matching for common cases like "packages/*" and "packages/**"
-      if (pattern.endsWith('/*') || pattern.endsWith('/**')) {
-        const baseDir = pattern.slice(0, -2) // Remove /* or /**
-        const fullBaseDir = join(rootDir, baseDir)
-
-        if (existsSync(fullBaseDir)) {
-          try {
-            const entries = await readdir(fullBaseDir)
-            for (const entry of entries) {
-              if (entry.startsWith('.'))
-                continue // Skip hidden directories
-
-              const entryPath = join(fullBaseDir, entry)
-              const stats = await stat(entryPath)
-              if (stats.isDirectory()) {
-                const packageJsonPath = join(entryPath, 'package.json')
-                if (existsSync(packageJsonPath)) {
-                  workspacePackages.push(packageJsonPath)
-                }
-
-                // Recursively search for any deeply nested packages (for ** patterns)
-                const nestedPackages = await findNestedPackages(entryPath)
-                workspacePackages.push(...nestedPackages)
-              }
-            }
-          }
-          catch {
-            // Ignore errors reading directory
-          }
-        }
-      }
-      else {
-        // Handle exact paths like "packages/specific-package"
-        const packageJsonPath = join(rootDir, pattern, 'package.json')
-        if (existsSync(packageJsonPath)) {
-          workspacePackages.push(packageJsonPath)
-        }
+    for (const pattern of workspacePatterns.filter(pattern => !pattern.startsWith('!'))) {
+      const glob = new Bun.Glob(manifestPattern(pattern))
+      for await (const manifest of glob.scan({ cwd: rootDir, onlyFiles: true, followSymlinks: false, dot: false })) {
+        if (manifest.split('/').some(part => part === 'node_modules' || part.startsWith('.')))
+          continue
+        if (exclusions.some(exclusion => exclusion.match(manifest)))
+          continue
+        const fullPath = join(rootDir, manifest)
+        if (respectGitignore && shouldIgnorePath(fullPath, rootDir, gitignorePatterns))
+          continue
+        workspacePackages.add(fullPath)
       }
     }
 
-    return workspacePackages
+    return [...workspacePackages].sort()
   }
   catch (error) {
     console.warn(`Warning: Failed to get workspace packages: ${error}`)
@@ -383,8 +311,9 @@ export async function findAllPackageFiles(dir: string = process.cwd(), recursive
 
   if (recursive) {
     // First try workspace-aware discovery
-    const workspacePackages = await getWorkspacePackages(dir)
-    if (workspacePackages.length > 0) {
+    const workspacePackages = await getWorkspacePackages(dir, respectGitignore)
+    const hasWorkspaces = existsSync(rootPackageJsonPath) && readPackageJson(rootPackageJsonPath).workspaces !== undefined
+    if (hasWorkspaces) {
       // Use workspace-defined packages
       for (const packagePath of workspacePackages) {
         if (!packageFiles.includes(packagePath)) {

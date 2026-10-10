@@ -21,6 +21,9 @@ bumpx <release-type> [options]
 - `premajor` - Prerelease major (1.0.0 → 2.0.0-alpha.0)
 - `preminor` - Prerelease minor (1.0.0 → 1.1.0-alpha.0)
 - `prepatch` - Prerelease patch (1.0.0 → 1.0.1-alpha.0)
+- `pre` - Test the current target (1.0.0 → 1.0.0-alpha.0)
+- `release` - Graduate the current prerelease (1.0.0-beta.2 → 1.0.0)
+- `build` - Increment build metadata (1.0.0 → 1.0.0+build.1)
 - `<version>` - Specific version (e.g., "2.1.0")
 - `prompt` - Interactive version selection
 
@@ -209,6 +212,9 @@ type ReleaseType =
   | 'preminor'
   | 'prepatch'
   | 'prerelease'
+  | 'pre'
+  | 'release'
+  | 'build'
 
 interface VersionBumpProgress {
   event: ProgressEvent

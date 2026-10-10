@@ -19,6 +19,13 @@ bumpx handles these scenarios with sophisticated detection and management capabi
 
 bumpx now includes **first-class workspace support** with automatic detection from your `workspaces` field in package.json:
 
+Workspace patterns select package manifests at their declared depth: `packages/*`
+selects direct children, `packages/**` includes nested packages, and `libs/*/*`
+selects two levels. Negated patterns such as `!packages/experimental` exclude
+matches, overlapping patterns do not duplicate packages, and ignored paths stay
+excluded unless `--no-respect-gitignore` is supplied. A declared workspace set
+with no matches does not fall back to bumping unrelated package manifests.
+
 ```bash
 # Automatic workspace detection
 bumpx patch
