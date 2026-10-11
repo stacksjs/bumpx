@@ -1,5 +1,20 @@
 # Changelog
 
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.20...v0.2.21)
+
+## ✨ Features
+
+- include explicit release manifests alongside workspaces ([832f637](https://github.com/stacksjs/bumpx/commit/832f637)) _(by Chris Breuer <chrisbreuer93@gmail.com>)_
+
+## 🔧 Chores
+
+- release v0.2.21 ([f64f151](https://github.com/stacksjs/bumpx/commit/f64f151)) _(by Chris <chrisbreuer93@gmail.com>)_
+
+## Contributors
+
+- _Chris <chrisbreuer93@gmail.com>_
+- _Chris Breuer <chrisbreuer93@gmail.com>_
+
 [Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.19...v0.2.20)
 
 ## 🐛 Bug Fixes
