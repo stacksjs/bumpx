@@ -3,6 +3,9 @@ export type ReleaseType = 'major' | 'minor' | 'patch' | 'premajor' | 'preminor' 
 export interface VersionBumpOptions {
   release?: ReleaseType | string
   files?: string[]
+  /** Literal release manifests to include alongside workspace discovery, even
+   * when they are intentionally excluded from the package-manager workspace. */
+  additionalFiles?: string[]
   recursive?: boolean
   commit?: boolean | string
   tag?: boolean | string

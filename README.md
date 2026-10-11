@@ -116,6 +116,18 @@ bumpx patch package.json packages/*/package.json
 bumpx patch --current-version 1.0.0
 ```
 
+To release a manifest intentionally excluded from your package-manager workspace
+(for example, a VS Code extension), add literal paths to `additionalFiles` in
+`bumpx.config.ts`. They join normal workspace discovery and participate in
+`onlyChangedSince` and dependency propagation; overlapping paths are bumped once.
+
+```typescript
+export default {
+  recursive: true,
+  additionalFiles: ['packages/vscode/package.json'],
+}
+```
+
 ### Advanced Options
 
 ```bash

@@ -42,6 +42,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
     preid,
     currentVersion,
     files,
+    additionalFiles = [],
     commit,
     tag,
     push,
@@ -120,13 +121,17 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
     checkInterruption()
     let filesToUpdate: string[] = []
     let rootPackagePath: string | undefined
+    const includeAdditionalFiles = (discovered: string[]) => [...new Set([
+      ...discovered,
+      ...additionalFiles.map(file => resolve(effectiveCwd, file)),
+    ])]
 
     if (files && files.length > 0) {
-      filesToUpdate = files.map(file => resolve(effectiveCwd, file))
+      filesToUpdate = includeAdditionalFiles(files.map(file => resolve(effectiveCwd, file)))
     }
     else if (recursive) {
       // Use workspace-aware discovery
-      filesToUpdate = await findAllPackageFiles(effectiveCwd, recursive, respectGitignore)
+      filesToUpdate = includeAdditionalFiles(await findAllPackageFiles(effectiveCwd, recursive, respectGitignore))
 
       // Find the root package.json for recursive mode
       rootPackagePath = filesToUpdate.find(
@@ -186,7 +191,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
       }
     }
     else {
-      filesToUpdate = await findAllPackageFiles(effectiveCwd, false, respectGitignore)
+      filesToUpdate = includeAdditionalFiles(await findAllPackageFiles(effectiveCwd, false, respectGitignore))
     }
 
     if (filesToUpdate.length === 0) {
