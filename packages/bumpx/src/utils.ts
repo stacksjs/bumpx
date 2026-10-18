@@ -436,13 +436,13 @@ export function updateVersionInFile(filePath: string, oldVersion: string, newVer
       }
 
       const packageJson = JSON.parse(jsonContent)
+      const declaredVersion = forceUpdate ? String(packageJson.version) : oldVersion
       if (packageJson.version === oldVersion || forceUpdate) {
         packageJson.version = newVersion
 
         // For JSONC files, preserve the original formatting with comments
         if (isJsonc) {
           // Replace the version value while preserving comments and formatting
-          const declaredVersion = forceUpdate ? String(packageJson.version) : oldVersion
           const versionRegex = new RegExp(
             `(["']version["']\\s*:\\s*)["']${declaredVersion.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}["']`,
             'g',
