@@ -389,7 +389,7 @@ describe('Git Operations (Integration)', () => {
       expect(mockExecSyncWithOutput).toHaveBeenCalledWith('echo "third"', expect.any(String))
     })
 
-    it('should handle command execution failures gracefully', async () => {
+    it('rejects failed release commands and rolls back the version', async () => {
       const packagePath = join(tempDir, 'package.json')
       writeFileSync(packagePath, JSON.stringify({ name: 'test', version: '1.0.0' }, null, 2))
 
@@ -400,27 +400,20 @@ describe('Git Operations (Integration)', () => {
         }
       })
 
-      const consoleSpy = spyOn(console, 'warn').mockImplementation(() => {})
-
-      await versionBump({
+      await expect(versionBump({
         release: 'patch',
         files: [packagePath],
-        execute: 'failing-command',
+        execute: ['failing-command', 'echo "must not run"'],
         commit: false,
         tag: false,
         push: false,
         quiet: true,
         noGitCheck: true,
-      })
+      })).rejects.toThrow('Command failed')
 
-      // Version should still be updated despite command failure
       const updatedContent = JSON.parse(readFileSync(packagePath, 'utf-8'))
-      expect(updatedContent.version).toBe('1.0.1')
-
-      // Warning should be shown
-      expect(consoleSpy).toHaveBeenCalledWith('Warning: Command execution failed: Error: Command failed')
-
-      consoleSpy.mockRestore()
+      expect(updatedContent.version).toBe('1.0.0')
+      expect(mockExecSyncWithOutput).not.toHaveBeenCalledWith('echo "must not run"', expect.any(String))
     })
 
     it('should not execute commands in dry run mode', async () => {
