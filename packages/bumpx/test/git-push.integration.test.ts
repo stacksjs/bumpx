@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it } from 'bun:test'
-import { existsSync, mkdirSync, rmSync, writeFileSync } from 'node:fs'
+import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 
@@ -120,6 +120,22 @@ describe('Git push & tag integration (local bare remote)', () => {
       resolve({ code: res.exitCode, stdout: decoder.decode(res.stdout), stderr: decoder.decode(res.stderr) })
     })
   }
+
+  it('does not commit, tag or push when a required release command fails', async () => {
+    const localHead = runGit(['rev-parse', 'HEAD'], workDir).trim()
+    const remoteHead = runGit(['--git-dir', bareDir, 'rev-parse', 'refs/heads/main'], tempDir).trim()
+    const manifest = readFileSync(join(workDir, 'package.json'), 'utf8')
+    const res = await runCLI(['patch', '--commit', '--tag', '--push', '--yes', '--no-changelog', '--execute', 'bun -e "process.exit(23)"'], workDir)
+
+    expect({
+      succeeded: res.code === 0,
+      manifest: readFileSync(join(workDir, 'package.json'), 'utf8'),
+      localHead: runGit(['rev-parse', 'HEAD'], workDir).trim(),
+      remoteHead: runGit(['--git-dir', bareDir, 'rev-parse', 'refs/heads/main'], tempDir).trim(),
+      localTags: runGit(['tag', '--list'], workDir).trim(),
+      remoteTags: runGit(['--git-dir', bareDir, 'tag', '--list'], tempDir).trim(),
+    }).toEqual({ succeeded: false, manifest, localHead, remoteHead, localTags: '', remoteTags: '' })
+  })
 
   it('pushes commit and tag to local bare remote (single package)', async () => {
     writeFileSync(join(workDir, 'settings.local.json'), '{"local":true}\n')

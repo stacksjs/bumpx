@@ -684,6 +684,8 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
 
           // Create a backup of the file content before modification
           const originalContent = readFileSync(filePath, 'utf-8')
+          fileBackups.set(filePath, { content: originalContent, version: fileCurrentVersion })
+          hasStartedUpdates = true
           // Always call updateVersionInFile to ensure mocks are triggered in tests
           const fileInfo = updateVersionInFile(filePath, fileCurrentVersion, fileNewVersion, forceUpdate)
           // If in dry run mode, restore the original content after the operation
@@ -773,27 +775,22 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
 
     // Execute custom commands before git operations
     if (execute && !dryRun) {
-      try {
-        const commands = Array.isArray(execute) ? execute : [execute]
-        for (const command of commands) {
-          // Check for interruption before each command
-          checkInterruption()
-          if (progress) {
-            // Provide full payload to satisfy VersionBumpProgress typing
-            progress({
-              event: ProgressEvent.Execute,
-              script: command,
-              updatedFiles,
-              skippedFiles,
-              newVersion: lastNewVersion || '',
-              oldVersion: _lastOldVersion,
-            })
-          }
-          executeCommandWithOutput(command, effectiveCwd)
+      const commands = Array.isArray(execute) ? execute : [execute]
+      for (const command of commands) {
+        // A failed release prerequisite must reach the outer rollback handler
+        // before any commit, tag or push can publish incomplete artifacts.
+        checkInterruption()
+        if (progress) {
+          progress({
+            event: ProgressEvent.Execute,
+            script: command,
+            updatedFiles,
+            skippedFiles,
+            newVersion: lastNewVersion || '',
+            oldVersion: _lastOldVersion,
+          })
         }
-      }
-      catch (error) {
-        console.warn(`Warning: Command execution failed: ${error}`)
+        executeCommandWithOutput(command, effectiveCwd)
       }
     }
     else if (execute && dryRun) {
