@@ -1,5 +1,25 @@
 # Changelog
 
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.22...v0.2.23)
+
+## 🐛 Bug Fixes
+
+- synchronize drifted native manifest versions ([be8092c](https://github.com/stacksjs/bumpx/commit/be8092c)) _(by Chris <chrisbreuer93@gmail.com>)_
+- retain the parsed JSONC version before replacement ([80873c0](https://github.com/stacksjs/bumpx/commit/80873c0)) _(by Chris <chris@stacksjs.com>)_
+- honor forced native manifest versions during recursive releases ([49a5c24](https://github.com/stacksjs/bumpx/commit/49a5c24)) _(by Chris <chris@stacksjs.com>)_
+
+## ✅ Tests
+
+- synchronize recursive native manifests with different versions ([26aa2b4](https://github.com/stacksjs/bumpx/commit/26aa2b4)) _(by Chris <chris@stacksjs.com>)_
+
+## 🔧 Chores
+
+- release v0.2.23 ([75a846b](https://github.com/stacksjs/bumpx/commit/75a846b)) _(by Chris <chris@stacksjs.com>)_
+
+## Contributors
+
+- _Chris <chris@stacksjs.com>_
+
 [Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.21...v0.2.22)
 
 ## 🐛 Bug Fixes
