@@ -684,6 +684,8 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
 
           // Create a backup of the file content before modification
           const originalContent = readFileSync(filePath, 'utf-8')
+          fileBackups.set(filePath, { content: originalContent, version: fileCurrentVersion })
+          hasStartedUpdates = true
           // Always call updateVersionInFile to ensure mocks are triggered in tests
           const fileInfo = updateVersionInFile(filePath, fileCurrentVersion, fileNewVersion, forceUpdate)
           // If in dry run mode, restore the original content after the operation
