@@ -1,5 +1,25 @@
 # Changelog
 
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.21...v0.2.22)
+
+## 🐛 Bug Fixes
+
+- abort incomplete releases before commit and tag ([bc59825](https://github.com/stacksjs/bumpx/commit/bc59825)) _(by Chris <chrisbreuer93@gmail.com>)_
+- restore single-package versions after release failure ([a89fd83](https://github.com/stacksjs/bumpx/commit/a89fd83)) _(by Chris <chris@stacksjs.com>)_
+- abort releases when a required command fails ([3557bd8](https://github.com/stacksjs/bumpx/commit/3557bd8)) _(by Chris <chris@stacksjs.com>)_
+
+## ✅ Tests
+
+- prevent release publication after a failed command ([5e2455c](https://github.com/stacksjs/bumpx/commit/5e2455c)) _(by Chris <chris@stacksjs.com>)_
+
+## 🔧 Chores
+
+- release v0.2.22 ([1cd5b62](https://github.com/stacksjs/bumpx/commit/1cd5b62)) _(by Chris <chris@stacksjs.com>)_
+
+## Contributors
+
+- _Chris <chris@stacksjs.com>_
+
 [Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.20...v0.2.21)
 
 ## ✨ Features
