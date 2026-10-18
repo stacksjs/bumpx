@@ -413,8 +413,11 @@ export function updateVersionInFile(filePath: string, oldVersion: string, newVer
     if (isZigZon) {
       // Handle Zig build.zig.zon files
       // Format: .version = "0.0.0",
+      const declaredVersion = forceUpdate
+        ? content.match(/\.version\s*=\s*"([^"]+)"/)?.[1] ?? oldVersion
+        : oldVersion
       const versionRegex = new RegExp(
-        `(\\.version\\s*=\\s*")${oldVersion.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}("\\s*,)`,
+        `(\\.version\\s*=\\s*")${declaredVersion.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}("\\s*,)`,
         'g',
       )
       if (content.match(versionRegex) || forceUpdate) {
@@ -433,6 +436,7 @@ export function updateVersionInFile(filePath: string, oldVersion: string, newVer
       }
 
       const packageJson = JSON.parse(jsonContent)
+      const declaredVersion = forceUpdate ? String(packageJson.version) : oldVersion
       if (packageJson.version === oldVersion || forceUpdate) {
         packageJson.version = newVersion
 
@@ -440,7 +444,7 @@ export function updateVersionInFile(filePath: string, oldVersion: string, newVer
         if (isJsonc) {
           // Replace the version value while preserving comments and formatting
           const versionRegex = new RegExp(
-            `(["']version["']\\s*:\\s*)["']${oldVersion.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}["']`,
+            `(["']version["']\\s*:\\s*)["']${declaredVersion.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}["']`,
             'g',
           )
           newContent = content.replace(versionRegex, `$1"${newVersion}"`)

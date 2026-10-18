@@ -68,3 +68,23 @@ test('additional manifests participate in changed-package dependency propagation
     rmSync(root, { recursive: true, force: true })
   }
 })
+
+test('recursive CLI synchronizes native metadata whose starting version differs from the root', () => {
+  const root = fixture()
+  try {
+    mkdirSync(join(root, 'packages/zig'), { recursive: true })
+    writeFileSync(join(root, 'packages/zig/build.zig.zon'), '.{ .version = "0.8.0", }\n')
+    writeFileSync(join(root, 'packages/zig/pantry.json'), '{"version":"0.7.0"}\n')
+    writeFileSync(join(root, 'packages/zig/package.jsonc'), '{/* metadata */ "version":"0.6.0"}\n')
+    writeFileSync(join(root, 'bumpx.config.ts'), `export default {
+      additionalFiles: ['packages/zig/build.zig.zon', 'packages/zig/pantry.json', 'packages/zig/package.jsonc'],
+    }\n`)
+    bump(root)
+    expect(version(root, '.')).toBe('1.0.1')
+    expect(version(root, 'packages/runtime')).toBe('1.0.1')
+    expect(readFileSync(join(root, 'packages/zig/build.zig.zon'), 'utf8')).toContain('.version = "1.0.1"')
+    expect(JSON.parse(readFileSync(join(root, 'packages/zig/pantry.json'), 'utf8')).version).toBe('1.0.1')
+    expect(readFileSync(join(root, 'packages/zig/package.jsonc'), 'utf8')).toContain('"version":"1.0.1"')
+  }
+  finally { rmSync(root, { recursive: true, force: true }) }
+})
