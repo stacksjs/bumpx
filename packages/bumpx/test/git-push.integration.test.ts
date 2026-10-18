@@ -121,6 +121,20 @@ describe('Git push & tag integration (local bare remote)', () => {
     })
   }
 
+  it('does not commit, tag or push when a required release command fails', async () => {
+    const localHead = runGit(['rev-parse', 'HEAD'], workDir).trim()
+    const remoteHead = runGit(['--git-dir', bareDir, 'rev-parse', 'refs/heads/main'], tempDir).trim()
+    const res = await runCLI(['patch', '--commit', '--tag', '--push', '--yes', '--no-changelog', '--execute', 'bun -e "process.exit(23)"'], workDir)
+
+    expect({
+      succeeded: res.code === 0,
+      localHead: runGit(['rev-parse', 'HEAD'], workDir).trim(),
+      remoteHead: runGit(['--git-dir', bareDir, 'rev-parse', 'refs/heads/main'], tempDir).trim(),
+      localTags: runGit(['tag', '--list'], workDir).trim(),
+      remoteTags: runGit(['--git-dir', bareDir, 'tag', '--list'], tempDir).trim(),
+    }).toEqual({ succeeded: false, localHead, remoteHead, localTags: '', remoteTags: '' })
+  })
+
   it('pushes commit and tag to local bare remote (single package)', async () => {
     writeFileSync(join(workDir, 'settings.local.json'), '{"local":true}\n')
 
