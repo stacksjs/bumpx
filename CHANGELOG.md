@@ -1,5 +1,29 @@
 # Changelog
 
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.24...v0.2.25)
+
+## ✨ Features
+
+- **release**: prepare qualified patch versions on repository runners ([1d68ecc](https://github.com/stacksjs/bumpx/commit/1d68ecc)) _(by Chris Breuer <chrisbreuer93@gmail.com>)_
+
+## 🐛 Bug Fixes
+
+- **release**: require qualified source before release mutation ([bdada8e](https://github.com/stacksjs/bumpx/commit/bdada8e)) _(by Chris Breuer <chrisbreuer93@gmail.com>)_
+- **release**: rebuild immutable tag assets when npm skips publication ([6be74d8](https://github.com/stacksjs/bumpx/commit/6be74d8)) _(by Chris <chris@stacksjs.com>)_
+
+## 📝 Documentation
+
+- **release**: document qualified runner publication and frozen CI ([62814d4](https://github.com/stacksjs/bumpx/commit/62814d4)) _(by Chris Breuer <chrisbreuer93@gmail.com>)_
+
+## 🔧 Chores
+
+- release v0.2.25 ([22c12b8](https://github.com/stacksjs/bumpx/commit/22c12b8)) _(by Chris Breuer <chrisbreuer93@gmail.com>)_
+
+## Contributors
+
+- _Chris <chris@stacksjs.com>_
+- _Chris Breuer <chrisbreuer93@gmail.com>_
+
 [Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.23...v0.2.24)
 
 ## 🐛 Bug Fixes
