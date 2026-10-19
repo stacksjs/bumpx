@@ -1,5 +1,19 @@
 # Changelog
 
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.23...v0.2.24)
+
+## 🐛 Bug Fixes
+
+- keep dry runs read-only in every version bump mode ([0b804a7](https://github.com/stacksjs/bumpx/commit/0b804a7)) _(by Chris <chris@stacksjs.com>)_
+
+## 🔧 Chores
+
+- release v0.2.24 ([e02c64a](https://github.com/stacksjs/bumpx/commit/e02c64a)) _(by Chris <chris@stacksjs.com>)_
+
+## Contributors
+
+- _Chris <chris@stacksjs.com>_
+
 [Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.22...v0.2.23)
 
 ## 🐛 Bug Fixes
