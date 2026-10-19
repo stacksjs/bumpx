@@ -184,6 +184,12 @@ when a preview fails. They also work with readable, read-only manifests. This
 applies to independent versions, an explicit current version and recursive
 workspace releases.
 
+Maintainers can resume the Releaser with its existing release tag. It checks out
+and verifies that tag, then builds the native ZIPs independently of npm publishing.
+An already public npm version is skipped without uploading it again. If an
+earlier upload was accepted but pending, verify its original archive checksums
+and public bytes before resuming. Preserve the tag and the accepted archives.
+
 ### Post-Bump Scripts
 
 Run custom commands after version bump:
