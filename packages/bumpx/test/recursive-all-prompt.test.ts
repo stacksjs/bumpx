@@ -138,7 +138,8 @@ describe('Recursive All Prompt Integration', () => {
         expect.stringContaining('package.json'),
         expect.any(String),
         expect.any(String),
-        true, // dryRun is true
+        true, // force workspace versions to the root version
+        true, // preview without writing
       )
 
       // Verify dry run output messages
@@ -200,7 +201,8 @@ describe('Recursive All Prompt Integration', () => {
         expect.stringContaining('package.json'),
         '1.0.0',
         '1.0.1',
-        true, // dryRun is true
+        true, // force workspace versions to the root version
+        true, // preview without writing
       )
 
       // Verify dry run output messages
@@ -265,7 +267,8 @@ describe('Recursive All Prompt Integration', () => {
         expect.stringContaining('package.json'),
         '1.0.0',
         '1.0.1',
-        true, // dryRun is true
+        true, // force workspace versions to the root version
+        true, // preview without writing
       )
 
       // Verify dry run output messages
@@ -280,7 +283,8 @@ describe('Recursive All Prompt Integration', () => {
         expect.stringContaining('package.json'),
         '1.0.0',
         '1.0.1',
-        true,
+        true, // force workspace versions to the root version
+        true, // preview without writing
       )
 
       // In dry-run mode, git operations should not be called
@@ -373,7 +377,8 @@ describe('Recursive All Prompt Integration', () => {
         expect.stringContaining('package.json'),
         '1.0.0',
         '1.0.1',
-        true,
+        true, // force workspace versions to the root version
+        true, // preview without writing
       )
 
       // In dry-run mode, git operations should not be called
@@ -449,7 +454,8 @@ describe('Recursive All Prompt Integration', () => {
           expect.stringContaining('package.json'),
           from,
           to,
-          true, // dryRun is true
+          true, // force workspace versions to the root version
+          true, // preview without writing
         )
 
         // In dry-run mode, git operations should not be called
@@ -484,7 +490,8 @@ describe('Recursive All Prompt Integration', () => {
         expect.stringContaining('package.json'),
         '1.0.0',
         '2.0.0',
-        true,
+        true, // force workspace versions to the root version
+        true, // preview without writing
       )
 
       // In dry-run mode, git operations should not be called
@@ -514,7 +521,8 @@ describe('Recursive All Prompt Integration', () => {
         expect.stringContaining('package.json'),
         '1.0.0',
         '1.0.1-beta.0',
-        true,
+        true, // force workspace versions to the root version
+        true, // preview without writing
       )
 
       // In dry-run mode, git operations should not be called

@@ -274,13 +274,13 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
           const fs = await import('node:fs')
           const content = fs.readFileSync(filePath, 'utf-8')
           const packageJson = JSON.parse(content)
-          fileBackups.set(filePath, { content, version: packageJson.version })
+          if (!dryRun) fileBackups.set(filePath, { content, version: packageJson.version })
         }
         catch (error) {
           console.warn(`Warning: Could not backup ${filePath}: ${error}`)
         }
       }
-      hasStartedUpdates = true
+      hasStartedUpdates = !dryRun
 
       for (const filePath of filesToUpdate) {
         try {
@@ -305,12 +305,8 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
 
           let fileInfo: FileInfo
           if (shouldUpdate) {
-            // Always call updateVersionInFile to ensure mocks are triggered in tests
-            fileInfo = updateVersionInFile(filePath, currentVersion, newVersion, forceUpdate || false)
-            // If in dry run mode, restore the original content after the operation
-            if (dryRun) {
-              writeFileSync(filePath, originalContent, 'utf-8')
-            }
+            // Preview the same update without writing, including read-only manifests.
+            fileInfo = updateVersionInFile(filePath, currentVersion, newVersion, forceUpdate || false, dryRun)
           }
           else {
             // File doesn't contain the expected version, mark as not updated
@@ -523,13 +519,13 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
       for (const filePath of filesToUpdate) {
         try {
           const originalContent = readFileSync(filePath, 'utf-8')
-          fileBackups.set(filePath, { content: originalContent, version: rootCurrentVersion })
+          if (!dryRun) fileBackups.set(filePath, { content: originalContent, version: rootCurrentVersion })
         }
         catch (error) {
           console.warn(`Warning: Could not backup ${filePath}: ${error}`)
         }
       }
-      hasStartedUpdates = true
+      hasStartedUpdates = !dryRun
 
       // Check for interrupt before updating files
       if (userInterrupted.value) {
@@ -555,17 +551,13 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
             }
           }
 
-          // Always call updateVersionInFile to ensure mocks are triggered in tests
+          // Preview the same update without writing, including read-only manifests.
           // In recursive mode, default to forcing updates unless explicitly set to false
           const shouldForceInRecursive = forceUpdate === undefined ? true : forceUpdate
 
           // When forceUpdate is false, only update files that match the root version
           const versionToMatch = shouldForceInRecursive ? fileCurrentVersion : rootCurrentVersion
-          const fileInfo = updateVersionInFile(filePath, versionToMatch, newVersion, shouldForceInRecursive)
-          // If in dry run mode, restore the original content after the operation
-          if (dryRun) {
-            writeFileSync(filePath, originalContent, 'utf-8')
-          }
+          const fileInfo = updateVersionInFile(filePath, versionToMatch, newVersion, shouldForceInRecursive, dryRun)
 
           if (fileInfo.updated) {
             updatedFiles.push(filePath)
@@ -684,14 +676,10 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
 
           // Create a backup of the file content before modification
           const originalContent = readFileSync(filePath, 'utf-8')
-          fileBackups.set(filePath, { content: originalContent, version: fileCurrentVersion })
-          hasStartedUpdates = true
-          // Always call updateVersionInFile to ensure mocks are triggered in tests
-          const fileInfo = updateVersionInFile(filePath, fileCurrentVersion, fileNewVersion, forceUpdate)
-          // If in dry run mode, restore the original content after the operation
-          if (dryRun) {
-            writeFileSync(filePath, originalContent, 'utf-8')
-          }
+          if (!dryRun) fileBackups.set(filePath, { content: originalContent, version: fileCurrentVersion })
+          hasStartedUpdates = !dryRun
+          // Preview the same update without writing, including read-only manifests.
+          const fileInfo = updateVersionInFile(filePath, fileCurrentVersion, fileNewVersion, forceUpdate, dryRun)
 
           if (fileInfo.updated) {
             updatedFiles.push(filePath)

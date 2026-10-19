@@ -179,6 +179,11 @@ bumpx patch --dry-run
 bumpx minor --dry-run --commit --tag
 ```
 
+Dry runs leave manifest contents, timestamps and permissions unchanged, including
+when a preview fails. They also work with readable, read-only manifests. This
+applies to independent versions, an explicit current version and recursive
+workspace releases.
+
 ### Post-Bump Scripts
 
 Run custom commands after version bump:

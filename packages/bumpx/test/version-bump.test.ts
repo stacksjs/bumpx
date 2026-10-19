@@ -109,7 +109,7 @@ describe('Version Bump (Integration)', () => {
     })
 
     // Create a spy for updateVersionInFile that actually updates the files
-    updateVersionInFileSpy = spyOn(utils, 'updateVersionInFile').mockImplementation((filePath, oldVersion, newVersion, forceUpdate = false) => {
+    updateVersionInFileSpy = spyOn(utils, 'updateVersionInFile').mockImplementation((filePath, oldVersion, newVersion, forceUpdate = false, dryRun = false) => {
       if (!existsSync(filePath)) {
         return {
           path: filePath,
@@ -138,7 +138,7 @@ describe('Version Bump (Integration)', () => {
             json.version = newVersion
             newContent = JSON.stringify(json, null, 2)
             updated = true
-            writeFileSync(filePath, newContent, 'utf-8')
+            if (!dryRun) writeFileSync(filePath, newContent, 'utf-8')
           }
         }
         else {
@@ -187,7 +187,7 @@ describe('Version Bump (Integration)', () => {
           if (hasChanges || forceUpdate) {
             newContent = updatedContent
             updated = true
-            writeFileSync(filePath, newContent, 'utf-8')
+            if (!dryRun) writeFileSync(filePath, newContent, 'utf-8')
           }
           else {
             // For tests that expect non-JSON files to be updated even without pattern matches
@@ -195,7 +195,7 @@ describe('Version Bump (Integration)', () => {
             newContent = content.replace(oldVersion, newVersion)
             if (newContent !== content || forceUpdate) {
               updated = true
-              writeFileSync(filePath, newContent, 'utf-8')
+              if (!dryRun) writeFileSync(filePath, newContent, 'utf-8')
             }
           }
         }

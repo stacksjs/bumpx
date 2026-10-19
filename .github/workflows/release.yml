@@ -20,7 +20,11 @@ jobs:
           fetch-depth: 0
 
       - name: Setup Pantry
-        uses: home-lang/pantry/packages/action@main
+        uses: pantry-pm/pantry/packages/action@368bc91e4bc5bb1c42b7c4abc7f910b79743733c # v0.11.97
+        with:
+          version: '0.11.97'
+          install: 'false'
+          packages: 'bun.com@1.4.2 git-scm.org@2.53.0 curl.se@8.22.0'
 
       - name: Install Dependencies
         run: bun install
