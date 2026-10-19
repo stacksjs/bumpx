@@ -430,7 +430,7 @@ cli
   .option('--ignore-scripts', 'Ignore scripts')
   .option('-q, --quiet', 'Quiet mode')
   .option('--dry-run', 'Show what would be changed without making changes')
-  .option('--ci', 'CI mode (non-interactive, sets --yes --quiet --no-git-check)')
+  .option('--ci', 'CI mode (non-interactive, sets --yes --quiet)')
   .option('--current-version <version>', 'Current version')
   .option('--print-commits', 'Print recent commits')
   .option('-x, --execute <command>', 'Commands to execute after version bumps')

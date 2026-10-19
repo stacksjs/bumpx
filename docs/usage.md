@@ -388,3 +388,23 @@ git log --oneline -5
 - [Git Integration](./features/git-integration.md) - Learn about Git workflow automation
 - [Monorepo Support](./features/monorepo-support.md) - Manage multiple packages
 - [Advanced Usage](./advanced/cross-platform.md) - Cross-platform considerations
+
+
+## Releasing Bumpx from CI
+
+Maintainers can run this repository's **Prepare Patch Release** workflow on Main
+with `expected_source_sha` set to the complete commit hash from a successful CI
+run. The workflow installs the locked source toolchain through Pantry, runs the
+existing `release:patch` script once, and retains the original producer outcome
+and the exact pushed commit and tag in `patch-release-original-receipt`.
+
+The source must pass lint, typecheck, tests and commit publication. If Main moves
+before Bumpx synchronizes, the expected-source guard stops before any release
+mutation. Qualify the new source before starting another release attempt.
+
+A version commit made with the workflow's repository token does not trigger
+another push workflow. After verifying the original receipt, a maintainer must
+run **Releaser** on the exact new tag with its `tag` input set to the same tag,
+and run **CI** on Main. Verify the original npm archive and all native archives
+before consumers adopt the version. Preserve accepted versions and tags; never
+repeat a producer to recover a delayed public readback.
