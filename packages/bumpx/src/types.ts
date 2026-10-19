@@ -10,6 +10,9 @@ export interface VersionBumpOptions {
   commit?: boolean | string
   tag?: boolean | string
   push?: boolean
+  /** Require this exact Git commit after synchronization and before release
+   * mutations. Also supported through BUMPX_EXPECTED_SOURCE. */
+  expectedSource?: string
   yes?: boolean
   dryRun?: boolean
   noGitCheck?: boolean

@@ -14,6 +14,7 @@ import {
   createGitTag,
   executeCommand,
   executeCommandWithOutput,
+  executeGit,
   expandToTransitiveDependents,
   findAllPackageFiles,
   getCurrentBranch,
@@ -72,10 +73,17 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
   const effectiveCwd = cwd || (files && files.length > 0 ? dirname(files[0]) : process.cwd())
   // Determine if we're inside a Git repository once and reuse
   const inGitRepo = isGitRepository(effectiveCwd)
+  const expectedSource = options.expectedSource ?? process.env.BUMPX_EXPECTED_SOURCE
 
   try {
     // Check for interruption at the start
     checkInterruption()
+    if (expectedSource !== undefined) {
+      if (!/^(?:[a-f0-9]{40}|[a-f0-9]{64})$/i.test(expectedSource))
+        throw new Error('Expected source must be a full Git commit hash')
+      if (!inGitRepo)
+        throw new Error('Expected source requires a Git repository')
+    }
 
     // Print recent commits if requested
     if (printCommits && inGitRepo) {
@@ -110,6 +118,16 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
         logStep(symbols.inbox, 'Synchronizing with remote before release', false)
       syncWithRemote(effectiveCwd)
       checkInterruption()
+    }
+
+    // A successful CI run qualifies one source commit. Synchronization may
+    // fast-forward to a newer, unqualified commit, so check the required source
+    // here, before discovering or changing any release files or refs. Explicit
+    // --no-git-check/CI mode cannot waive this independent precondition.
+    if (expectedSource !== undefined) {
+      const actualSource = executeGit(['rev-parse', 'HEAD'], effectiveCwd).trim()
+      if (actualSource.toLowerCase() !== expectedSource.toLowerCase())
+        throw new Error(`Expected source ${expectedSource}, but synchronized HEAD is ${actualSource}. Release mutation was not started.`)
     }
 
     // Determine files to update

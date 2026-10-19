@@ -30,6 +30,7 @@ interface CLIOptions {
   tag?: boolean
   tagName?: string
   tagMessage?: string
+  expectedSource?: string
   sign?: boolean
   install?: boolean
   push?: boolean
@@ -309,6 +310,8 @@ async function prepareConfig(release: string | undefined, files: string[] | unde
     cliOverrides.tag = options.tagName
   if (options.tagMessage !== undefined)
     cliOverrides.tagMessage = options.tagMessage
+  if (options.expectedSource !== undefined)
+    cliOverrides.expectedSource = options.expectedSource
   if (options.sign === true)
     cliOverrides.sign = true
   if (options.push === true)
@@ -415,6 +418,7 @@ cli
   .option('--no-tag', 'Skip git tag')
   .option('--tag-name <name>', 'Custom tag name')
   .option('--tag-message <message>', 'Tag message')
+  .option('--expected-source <sha>', 'Require exact synchronized Git source before changing release files (or BUMPX_EXPECTED_SOURCE)')
   .option('--sign', 'Sign commit and tag')
   .option('--install', 'Run \'npm install\' after bumping version')
   .option('-p, --push', `Push to remote (default: ${bumpConfigDefaults.push})`)

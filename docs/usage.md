@@ -108,6 +108,21 @@ bumpx minor --current-version 2.0.0
 
 ## Git Integration
 
+For a release qualified by CI, pass the exact commit from the successful CI
+result. Bumpx checks it after synchronizing with the upstream branch and before
+changing release files, creating a release commit, or tagging. A newer Main
+commit requires its own qualification.
+
+```bash
+bumpx patch --expected-source "$QUALIFIED_SOURCE_SHA" --push --yes
+# Keep an existing release script unchanged:
+BUMPX_EXPECTED_SOURCE="$QUALIFIED_SOURCE_SHA" bun run release:patch
+```
+
+The library and configuration option is `expectedSource`. The CLI option takes
+precedence over the environment variable. Full Git commit hashes are required;
+CI mode and `--no-git-check` keep this precondition enabled.
+
 ### Automatic Git Operations
 
 Commit and tag your version bumps automatically:
