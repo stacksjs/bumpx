@@ -1,5 +1,19 @@
 # Changelog
 
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.25...v0.2.26)
+
+## 🐛 Bug Fixes
+
+- **release**: reject shallow changelog history before mutation ([fffd845](https://github.com/stacksjs/bumpx/commit/fffd845)) _(by Chris <chris@stacksjs.com>)_
+
+## 🔧 Chores
+
+- release v0.2.26 ([a243d55](https://github.com/stacksjs/bumpx/commit/a243d55)) _(by Chris <chris@stacksjs.com>)_
+
+## Contributors
+
+- _Chris <chris@stacksjs.com>_
+
 [Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.24...v0.2.25)
 
 ## ✨ Features
