@@ -130,6 +130,12 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
         throw new Error(`Expected source ${expectedSource}, but synchronized HEAD is ${actualSource}. Release mutation was not started.`)
     }
 
+    // Changelog ranges are incomplete in a shallow checkout even when a pull
+    // succeeds. Refuse before package files, commits or temporary tags change.
+    if (changelog && !dryRun && inGitRepo && executeGit(['rev-parse', '--is-shallow-repository'], effectiveCwd).trim() === 'true') {
+      throw new Error('Changelog generation requires complete Git history. Run git fetch --unshallow --tags before releasing. Release mutation was not started.')
+    }
+
     // Determine files to update
     if (!options.quiet) {
       logStep(symbols.search, `${dryRun ? '[DRY RUN] ' : ''}Reading package.json...`, false)

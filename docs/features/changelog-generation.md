@@ -385,3 +385,11 @@ export default defineConfig({
 6. **Date Your Releases**: Include release dates in the changelog
 7. **Review Before Release**: Always review auto-generated changelogs before publishing
 8. **Link to Issues/PRs**: Reference related issues and pull requests
+
+## Complete release history
+
+Changelog generation needs complete Git history. Bumpx rejects shallow
+checkouts before changing package files, release commits or tags. This
+precondition also applies with `--no-git-check`. Use `fetch-depth: 0` in CI.
+For an existing shallow checkout, run `git fetch --unshallow --tags` before
+retrying the normal release command.
