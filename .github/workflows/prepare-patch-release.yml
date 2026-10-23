@@ -62,7 +62,7 @@ jobs:
         env:
           BUMPX_PATCH_PRODUCER_OUTCOME: ${{ steps.producer.outcome }}
         run: bun .github/scripts/prepare-patch-release.ts record
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: patch-release-original-receipt
