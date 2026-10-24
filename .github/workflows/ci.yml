@@ -22,10 +22,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v6.0.0
+      - uses: actions/checkout@v6.1.0
 
       - name: Set up system dependencies with Pantry
-        uses: pantry-pm/pantry/packages/action@368bc91e4bc5bb1c42b7c4abc7f910b79743733c # v0.11.97
+        uses: pantry-pm/pantry/packages/action@91ded221f8de3badd9fc5ab1d4072d561c1eb1d4 # v0.11.126
         with:
           version: '0.11.97'
           install: 'false'
@@ -49,10 +49,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v6.0.0
+      - uses: actions/checkout@v6.1.0
 
       - name: Set up system dependencies with Pantry
-        uses: pantry-pm/pantry/packages/action@368bc91e4bc5bb1c42b7c4abc7f910b79743733c # v0.11.97
+        uses: pantry-pm/pantry/packages/action@91ded221f8de3badd9fc5ab1d4072d561c1eb1d4 # v0.11.126
         with:
           version: '0.11.97'
           install: 'false'
@@ -77,10 +77,10 @@ jobs:
     timeout-minutes: 10
 
     steps:
-      - uses: actions/checkout@v6.0.0
+      - uses: actions/checkout@v6.1.0
 
       - name: Set up system dependencies with Pantry
-        uses: pantry-pm/pantry/packages/action@368bc91e4bc5bb1c42b7c4abc7f910b79743733c # v0.11.97
+        uses: pantry-pm/pantry/packages/action@91ded221f8de3badd9fc5ab1d4072d561c1eb1d4 # v0.11.126
         with:
           version: '0.11.97'
           install: 'false'
@@ -115,7 +115,7 @@ jobs:
           fetch-depth: 0
 
       - name: Setup Pantry
-        uses: pantry-pm/pantry/packages/action@368bc91e4bc5bb1c42b7c4abc7f910b79743733c # v0.11.97
+        uses: pantry-pm/pantry/packages/action@91ded221f8de3badd9fc5ab1d4072d561c1eb1d4 # v0.11.126
         with:
           version: '0.11.97'
           install: 'false'
