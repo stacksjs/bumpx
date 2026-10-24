@@ -88,3 +88,21 @@ test('recursive CLI synchronizes native metadata whose starting version differs 
   }
   finally { rmSync(root, { recursive: true, force: true }) }
 })
+
+test('recursive releases leave slashless ignored dependency directories untouched at any depth', () => {
+  const root = fixture()
+  try {
+    writeFileSync(join(root, '.gitignore'), 'zig-pkg/\n')
+    const cache = join(root, 'packages/zig/zig-pkg/vendor')
+    mkdirSync(cache, {recursive:true})
+    const native = join(cache, 'build.zig.zon')
+    const original = '.{ .version = "0.0.1", }\n'
+    writeFileSync(native, original)
+    writeFileSync(join(cache, 'pantry.json'), '{"version":"0.0.1"}\n')
+    bump(root)
+    expect(version(root, '.')).toBe('1.0.1')
+    expect(readFileSync(native, 'utf8')).toBe(original)
+    expect(JSON.parse(readFileSync(join(cache, 'pantry.json'),'utf8')).version).toBe('0.0.1')
+  }
+  finally { rmSync(root,{recursive:true,force:true}) }
+})

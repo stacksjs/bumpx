@@ -45,6 +45,10 @@ function shouldIgnorePath(fullPath: string, rootDir: string, patterns: string[])
       if (relativePath === dirPattern || relativePath.startsWith(`${dirPattern}/`)) {
         return true
       }
+      // Git matches a slashless directory pattern at every depth, including
+      // dependency caches such as packages/zig/zig-pkg/.
+      if (!dirPattern.includes('/') && relativePath.split('/').includes(dirPattern))
+        return true
     }
     else {
       // File or directory pattern
