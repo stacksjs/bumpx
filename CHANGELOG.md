@@ -1,5 +1,15 @@
 # Changelog
 
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.27...HEAD)
+
+## 🐛 Bug Fixes
+
+- **release**: preserve history and index when commits are disabled ([e2f5ec7](https://github.com/stacksjs/bumpx/commit/e2f5ec7)) _(by Chris Breuer <chrisbreuer93@gmail.com>)_
+
+## Contributors
+
+- _Chris Breuer <chrisbreuer93@gmail.com>_
+
 [Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.25...v0.2.26)
 
 ## 🐛 Bug Fixes
