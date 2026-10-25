@@ -81,6 +81,10 @@ SemVer metadata is not an Apple marketing version or a distinct npm version.
 
 ### Git Integration
 
+With `--no-commit`, version changes and the generated changelog stay uncommitted.
+Bumpx preserves your existing HEAD and index. `--no-tag` also avoids temporary
+tags during changelog generation.
+
 ```bash
 # Disable git operations
 bumpx patch --no-commit --no-tag --no-push

@@ -848,7 +848,8 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
     checkInterruption()
 
     // Git operations
-    if (!dryRun && (commit || tag || push) && updatedFiles.length > 0) {
+    let releaseCommitCreated = false
+    if (!dryRun && commit && inGitRepo && updatedFiles.length > 0) {
       hasStartedGitOperations = true
       // Stage only files changed by this release. In particular, do not sweep
       // unrelated untracked files into a release commit.
@@ -876,6 +877,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
       if (!options.quiet)
         logStep(symbols.memo, 'Committing changes...', false)
       createGitCommit(commitMessage, false, false, effectiveCwd)
+      releaseCommitCreated = true
 
       if (progress && lastNewVersion && _lastOldVersion) {
         progress({
@@ -905,27 +907,35 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
 
         const { executeGit } = await import('./utils')
 
-        // Create temporary tag silently (no CLI output)
-        executeGit(['tag', tagName], effectiveCwd)
-        tempTagCreated = true
+        // With tags disabled, generate from HEAD without touching tag refs.
+        if (tag) {
+          executeGit(['tag', tagName], effectiveCwd)
+          tempTagCreated = true
+        }
 
         // Step 2: Generate changelog with temp tag available
         const fromVersion = _lastOldVersion ? `v${_lastOldVersion}` : undefined
-        const toVersion = tagName
+        const toVersion = tag ? tagName : 'HEAD'
 
         if (!options.quiet) {
           const versionRange = fromVersion ? `from ${fromVersion} to ${toVersion}` : `up to ${toVersion}`
-          logStep(symbols.memo, `Generating changelog ${versionRange} and amend to commit`, false)
+          const amendment = releaseCommitCreated ? ' and amend to release commit' : ''
+          logStep(symbols.memo, `Generating changelog ${versionRange}${amendment}`, false)
         }
         await generateChangelog(effectiveCwd, fromVersion, toVersion, verbose)
 
         // Step 3: Delete temporary tag
-        executeGit(['tag', '-d', tagName], effectiveCwd)
-        tempTagCreated = false
+        if (tempTagCreated) {
+          executeGit(['tag', '-d', tagName], effectiveCwd)
+          tempTagCreated = false
+        }
 
-        // Step 4: Amend the changelog to the existing commit
-        executeGit(['add', 'CHANGELOG.md'], effectiveCwd)
-        executeGit(['commit', '--amend', '--no-edit'], effectiveCwd)
+        // Amend only the release commit this invocation created. Preparation
+        // must leave the user's existing HEAD and index untouched.
+        if (releaseCommitCreated) {
+          executeGit(['add', 'CHANGELOG.md'], effectiveCwd)
+          executeGit(['commit', '--amend', '--no-edit'], effectiveCwd)
+        }
 
         if (progress && _lastOldVersion) {
           progress({
