@@ -1,5 +1,19 @@
 # Changelog
 
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.28...v0.2.29)
+
+## 🐛 Bug Fixes
+
+- **release**: include history on the first tagged release ([611a07a](https://github.com/stacksjs/bumpx/commit/611a07a)) _(by Chris Breuer <chris@stacksjs.com>)_
+
+## 🔧 Chores
+
+- release v0.2.29 ([b5e21d4](https://github.com/stacksjs/bumpx/commit/b5e21d4)) _(by Chris Breuer <chrisbreuer93@gmail.com>)_
+
+## Contributors
+
+- _Chris Breuer <chrisbreuer93@gmail.com>_
+
 [Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.27...HEAD)
 
 ## 🐛 Bug Fixes
