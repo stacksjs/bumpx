@@ -3,6 +3,7 @@ import { spawnSync } from 'node:child_process'
 import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
+import { fileURLToPath } from 'node:url'
 import { createLogsmithOptions, versionBump } from '../src/version-bump'
 
 describe('Changelog Generation', () => {
@@ -27,6 +28,22 @@ describe('Changelog Generation', () => {
   })
 
   describe('Changelog Flag Behavior', () => {
+    it('records the first feature in the actual first release tag', () => {
+      const run = (args: string[]) => Bun.spawnSync(args, { cwd: tempDir, env: { ...process.env, NODE_ENV: 'production', BUN_ENV: 'production' }, timeout: 30000 })
+      run(['git', 'init'])
+      run(['git', 'config', 'user.name', 'Fixture'])
+      run(['git', 'config', 'user.email', 'fixture@example.com'])
+      writeFileSync(join(tempDir, 'package.json'), JSON.stringify({ name: 'first-release', version: '0.1.0' }))
+      run(['git', 'add', '.'])
+      expect(run(['git', 'commit', '-m', 'feat: ship native palette']).exitCode).toBe(0)
+      const released = run([process.execPath, fileURLToPath(new URL('../bin/cli.ts', import.meta.url)), 'patch', '--commit', '--tag', '--yes', '--no-push'])
+      expect(released.exitCode).toBe(0)
+      const committed = run(['git', 'show', 'v0.1.1:CHANGELOG.md'])
+      expect(committed.exitCode).toBe(0)
+      expect(committed.stdout.toString()).toContain('ship native palette')
+      expect(committed.stdout.toString()).toEndWith('\n')
+    })
+
     it('should generate changelog when flag is enabled (default)', async () => {
       const packagePath = join(tempDir, 'package.json')
       const packageContent = {

@@ -624,13 +624,13 @@ Initial release
         (call: any) => call[0] && call[0].includes && call[0].includes('tag') && call[0].includes('-m'),
       )
 
-      // Check that one of the calls includes the changelog content
+      // An explicit annotation takes precedence over generated changelog content.
       const matchingCall = tagCalls.some((call: any) =>
         call[0][0] === 'tag'
         && call[0][1] === '-a'
         && call[0][2] === 'v1.0.1'
         && call[0][3] === '-m'
-        && call[0][4].includes('## 1.0.1'),
+        && call[0][4] === 'Custom tag for version 1.0.1',
       )
 
       expect(matchingCall).toBe(true)

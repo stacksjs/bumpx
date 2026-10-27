@@ -19,6 +19,7 @@ import {
   findAllPackageFiles,
   getCurrentBranch,
   getRecentCommits,
+  gitTagExists,
   hasChangedSince,
   incrementVersion,
   isGitRepository,
@@ -914,7 +915,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
         }
 
         // Step 2: Generate changelog with temp tag available
-        const fromVersion = _lastOldVersion ? `v${_lastOldVersion}` : undefined
+        const fromVersion = resolveChangelogFromVersion(effectiveCwd, _lastOldVersion)
         const toVersion = tag ? tagName : 'HEAD'
 
         if (!options.quiet) {
@@ -990,7 +991,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
           const path = await import('node:path')
           const changelogPath = path.join(effectiveCwd, 'CHANGELOG.md')
 
-          if (fs.existsSync(changelogPath)) {
+          if (!tagMessage && fs.existsSync(changelogPath)) {
             const changelogContent = fs.readFileSync(changelogPath, 'utf-8')
 
             // Extract the latest release section from the changelog
@@ -1065,7 +1066,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
     if (changelog && !commit && lastNewVersion && !dryRun && inGitRepo) {
       try {
         // Generate changelog with specific version range
-        const fromVersion = _lastOldVersion ? `v${_lastOldVersion}` : undefined
+        const fromVersion = resolveChangelogFromVersion(effectiveCwd, _lastOldVersion)
         const toVersion = `v${lastNewVersion}` // Use new version instead of HEAD
 
         if (!options.quiet) {
@@ -1257,6 +1258,12 @@ function showGeneratedChangelog(newContent: string, existingContent: string, ver
 /**
  * Generate changelog using @stacksjs/logsmith
  */
+/** A package version is not evidence of a release tag, especially on first release. */
+export function resolveChangelogFromVersion(cwd: string, version?: string): string | undefined {
+  const tag = version ? `v${version}` : undefined
+  return tag && gitTagExists(tag, cwd) ? tag : undefined
+}
+
 export function createLogsmithOptions(cwd: string, fromVersion?: string, toVersion?: string): {
   output: string
   dir: string

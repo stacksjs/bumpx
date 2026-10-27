@@ -181,7 +181,7 @@ describe('Git push & tag integration (local bare remote)', () => {
     const remoteTagCommit = runGit(['--git-dir', bareDir, 'rev-parse', 'refs/tags/v0.1.1^{}'], tempDir).trim()
     expect(remoteTagCommit).toBe(remoteBranchCommit)
     expect(run('git', ['--git-dir', bareDir, 'merge-base', '--is-ancestor', upstreamCommit, remoteBranchCommit], tempDir).status).toBe(0)
-  })
+  }, 15000)
 
   it('publishes neither ref when the upstream advances before atomic publication', async () => {
     const peerDir = join(tempDir, 'peer-during-push')

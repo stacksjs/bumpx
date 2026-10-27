@@ -65,7 +65,7 @@
   },
   "dependencies": {
     "@stacksjs/clapp": "^0.2.0",
-    "@stacksjs/logsmith": "^0.2.6",
+    "@stacksjs/logsmith": "^0.2.14",
     "bunfig": "^0.15.6"
   }
 }
