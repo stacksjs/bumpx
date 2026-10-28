@@ -32,7 +32,7 @@ jobs:
           packages: 'bun.com@${{ env.BUN_VERSION }} git-scm.org@2.53.0 curl.se@8.22.0'
 
       - name: Use cached node_modules
-        uses: actions/cache@v5
+        uses: actions/cache@v6
         with:
           path: node_modules
           key: node-modules-${{ hashFiles('**/bun.lock') }}
@@ -59,7 +59,7 @@ jobs:
           packages: 'bun.com@${{ env.BUN_VERSION }} git-scm.org@2.53.0 curl.se@8.22.0'
 
       - name: Use cached node_modules
-        uses: actions/cache@v5
+        uses: actions/cache@v6
         with:
           path: node_modules
           key: node-modules-${{ hashFiles('**/bun.lock') }}
@@ -87,7 +87,7 @@ jobs:
           packages: 'bun.com@${{ env.BUN_VERSION }} git-scm.org@2.53.0 curl.se@8.22.0'
 
       - name: Use cached node_modules
-        uses: actions/cache@v5
+        uses: actions/cache@v6
         with:
           path: node_modules
           key: node-modules-${{ hashFiles('**/bun.lock') }}
