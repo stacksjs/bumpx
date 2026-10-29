@@ -106,3 +106,19 @@ test('recursive releases leave slashless ignored dependency directories untouche
   }
   finally { rmSync(root,{recursive:true,force:true}) }
 })
+
+test('recursive releases preserve root-anchored native dependency caches', () => {
+  const root = fixture()
+  try {
+    writeFileSync(join(root, '.gitignore'), '/packages/zig/zig-pkg\n')
+    const cache = join(root, 'packages/zig/zig-pkg/vendor')
+    mkdirSync(cache, { recursive: true })
+    const native = join(cache, 'build.zig.zon')
+    const original = '.{ .version = "0.0.1", }\n'
+    writeFileSync(native, original)
+    bump(root)
+    expect(version(root, '.')).toBe('1.0.1')
+    expect(readFileSync(native, 'utf8')).toBe(original)
+  }
+  finally { rmSync(root, { recursive: true, force: true }) }
+})

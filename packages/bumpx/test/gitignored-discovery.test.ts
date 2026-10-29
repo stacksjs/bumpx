@@ -68,6 +68,16 @@ describe('recursive discovery vs .gitignore', () => {
     expect(found.some(f => f.startsWith('cache'))).toBe(true)
   })
 
+  it('does not confuse a matching directory name with a longer package name', async () => {
+    const packageDir = path.join(dir, 'packages', 'cacheable')
+    fs.mkdirSync(packageDir, { recursive: true })
+    fs.writeFileSync(path.join(packageDir, 'package.json'), '{"version":"1.0.0"}\n')
+    fs.writeFileSync(path.join(packageDir, 'build.zig.zon'), '.{ .version = "1.0.0" }\n')
+    const found = (await findAllPackageFiles(dir, true, true)).map(file => path.relative(dir, file))
+    expect(found).toContain(path.join('packages', 'cacheable', 'package.json'))
+    expect(found).toContain(path.join('packages', 'cacheable', 'build.zig.zon'))
+  })
+
   it('the ignored tree is exactly what git would refuse to add', async () => {
     // Guard the guard: assert the fixture really is ignored, so a broken
     // .gitignore fixture cannot make this suite pass vacuously.
@@ -77,4 +87,40 @@ describe('recursive discovery vs .gitignore', () => {
     const check = Bun.spawnSync(['git', '-C', dir, 'check-ignore', 'cache/pantry.json'])
     expect(check.exitCode).toBe(0)
   })
+})
+
+for (const pattern of ['/packages/zig/zig-pkg', '/packages/zig/zig-pkg/', '/packages/*/zig-pkg/']) {
+  it(`keeps rooted ignore ${pattern} anchored through nested discovery`, async () => {
+    fs.writeFileSync(path.join(dir, '.gitignore'), `${pattern}\n`)
+    for (const parent of ['packages/zig/zig-pkg/vendor', 'examples/packages/zig/zig-pkg/real']) {
+      fs.mkdirSync(path.join(dir, parent), { recursive: true })
+      fs.writeFileSync(path.join(dir, parent, 'package.json'), '{"version":"0.1.0"}\n')
+      fs.writeFileSync(path.join(dir, parent, 'build.zig.zon'), '.{ .version = "0.1.0" }\n')
+    }
+    const found = (await findAllPackageFiles(dir, true, true)).map(file => path.relative(dir, file).split(path.sep).join('/'))
+    expect(found.filter(file => file.startsWith('packages/zig/zig-pkg/'))).toEqual([])
+    expect(found).toContain('examples/packages/zig/zig-pkg/real/package.json')
+    expect(found).toContain('examples/packages/zig/zig-pkg/real/build.zig.zon')
+  })
+}
+
+it('keeps nested ignore anchors relative to their own directory', async () => {
+  const local = path.join(dir, 'packages', 'real')
+  fs.writeFileSync(path.join(local, '.gitignore'), '/vendor/\n')
+  for (const parent of ['vendor/dependency', 'src/vendor/owned']) {
+    fs.mkdirSync(path.join(local, parent), { recursive: true })
+    fs.writeFileSync(path.join(local, parent, 'package.json'), '{"version":"0.1.0"}\n')
+    fs.writeFileSync(path.join(local, parent, 'build.zig.zon'), '.{ .version = "0.1.0" }\n')
+  }
+  const found = (await findAllPackageFiles(dir, true, true)).map(file => path.relative(local, file).split(path.sep).join('/'))
+  expect(found.some(file => file.startsWith('vendor/'))).toBe(false)
+  expect(found).toContain('src/vendor/owned/package.json')
+  expect(found).toContain('src/vendor/owned/build.zig.zon')
+})
+
+it('does not treat a file as a directory-only workspace exclusion', async () => {
+  fs.writeFileSync(path.join(dir, '.gitignore'), '/packages/real/package.json/\n')
+  fs.writeFileSync(path.join(dir, 'package.json'), '{"version":"1.0.0","workspaces":["packages/*"]}\n')
+  const found = await findAllPackageFiles(dir, true, true)
+  expect(found).toContain(path.join(dir, 'packages', 'real', 'package.json'))
 })

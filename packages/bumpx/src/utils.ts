@@ -3,7 +3,7 @@ import type { FileInfo, PackageJson, ReleaseType } from './types'
 import { execSync, spawnSync } from 'node:child_process'
 import { existsSync, readFileSync, writeFileSync } from 'node:fs'
 import { readdir, readFile, stat } from 'node:fs/promises'
-import { join, relative } from 'node:path'
+import { join, relative, sep } from 'node:path'
 import * as process from 'node:process'
 import * as readline from 'node:readline'
 
@@ -34,25 +34,39 @@ async function loadGitignorePatterns(dir: string): Promise<string[]> {
 /**
  * Check if a path should be ignored based on gitignore patterns
  */
-function shouldIgnorePath(fullPath: string, rootDir: string, patterns: string[]): boolean {
-  const relativePath = relative(rootDir, fullPath)
+function shouldIgnorePath(fullPath: string, rootDir: string, patterns: string[], isDirectory = false): boolean {
+  const relativePath = relative(rootDir, fullPath).split(sep).join('/')
 
   for (const pattern of patterns) {
+    if (pattern.startsWith('/')) {
+      const matcher = new Bun.Glob(pattern.slice(1).replace(/\/$/, ''))
+      const segments = relativePath.split('/')
+      const last = segments.length - (pattern.endsWith('/') && !isDirectory ? 1 : 0)
+      for (let length = 1; length <= last; length++) {
+        if (matcher.match(segments.slice(0, length).join('/')))
+          return true
+      }
+      continue
+    }
     // Simple pattern matching - could be enhanced with proper glob matching
     if (pattern.endsWith('/')) {
       // Directory pattern
       const dirPattern = pattern.slice(0, -1)
-      if (relativePath === dirPattern || relativePath.startsWith(`${dirPattern}/`)) {
+      if ((isDirectory && relativePath === dirPattern) || relativePath.startsWith(`${dirPattern}/`)) {
         return true
       }
       // Git matches a slashless directory pattern at every depth, including
       // dependency caches such as packages/zig/zig-pkg/.
-      if (!dirPattern.includes('/') && relativePath.split('/').includes(dirPattern))
+      const directoryNames = relativePath.split('/').slice(0, isDirectory ? undefined : -1)
+      if (!dirPattern.includes('/') && directoryNames.includes(dirPattern))
         return true
     }
     else {
       // File or directory pattern
-      if (relativePath === pattern || relativePath.includes(`/${pattern}`)) {
+      const matchesLiteral = pattern.includes('/')
+        ? relativePath === pattern || relativePath.startsWith(`${pattern}/`)
+        : relativePath.split('/').includes(pattern)
+      if (matchesLiteral) {
         return true
       }
       // Wildcard support for basic patterns
@@ -66,6 +80,11 @@ function shouldIgnorePath(fullPath: string, rootDir: string, patterns: string[])
   }
 
   return false
+}
+
+interface IgnoreContext {
+  rootDir: string
+  patterns: string[]
 }
 
 /**
@@ -107,7 +126,7 @@ export function incrementVersion(currentVersion: string, release: string | Relea
 /**
  * Find package.json files in the current directory and subdirectories
  */
-export async function findPackageJsonFiles(dir: string = process.cwd(), recursive: boolean = false, respectGitignore: boolean = true): Promise<string[]> {
+export async function findPackageJsonFiles(dir: string = process.cwd(), recursive: boolean = false, respectGitignore: boolean = true, inheritedIgnores: readonly IgnoreContext[] = []): Promise<string[]> {
   const packageFiles: string[] = []
 
   const packageJsonPath = join(dir, 'package.json')
@@ -135,11 +154,8 @@ export async function findPackageJsonFiles(dir: string = process.cwd(), recursiv
         '.netlify',
       ])
 
-      // Load gitignore patterns if respectGitignore is true
-      let gitignorePatterns: string[] = []
-      if (respectGitignore) {
-        gitignorePatterns = await loadGitignorePatterns(dir)
-      }
+      const localPatterns = respectGitignore ? await loadGitignorePatterns(dir) : []
+      const ignoreContexts = localPatterns.length ? [...inheritedIgnores, { rootDir: dir, patterns: localPatterns }] : inheritedIgnores
 
       for (const entry of entries) {
         // Skip hidden directories and common build/output directories
@@ -147,15 +163,15 @@ export async function findPackageJsonFiles(dir: string = process.cwd(), recursiv
           continue
 
         const fullPath = join(dir, entry)
+        const stats = await stat(fullPath)
 
         // Check if this path should be ignored by gitignore
-        if (respectGitignore && shouldIgnorePath(fullPath, dir, gitignorePatterns)) {
+        if (respectGitignore && ignoreContexts.some(context => shouldIgnorePath(fullPath, context.rootDir, context.patterns, stats.isDirectory()))) {
           continue
         }
 
-        const stats = await stat(fullPath)
         if (stats.isDirectory()) {
-          const subPackages = await findPackageJsonFiles(fullPath, true, respectGitignore)
+          const subPackages = await findPackageJsonFiles(fullPath, true, respectGitignore, ignoreContexts)
           packageFiles.push(...subPackages)
         }
       }
@@ -225,18 +241,17 @@ export async function getWorkspacePackages(rootDir: string = process.cwd(), resp
 async function findAdditionalPackageFiles(
   dir: string,
   respectGitignore: boolean = true,
-  rootDir: string = dir,
-  patterns?: string[],
+  inheritedIgnores: readonly IgnoreContext[] = [],
 ): Promise<string[]> {
   const files: string[] = []
 
   try {
     const entries = await readdir(dir, { withFileTypes: true })
 
-    // Patterns are loaded once from the root and threaded down, so a nested
-    // directory is still judged against the repository's .gitignore rather
-    // than against a .gitignore that happens to sit beside it.
-    const gitignorePatterns = patterns ?? (respectGitignore ? await loadGitignorePatterns(rootDir) : [])
+    // Keep each ignore file's base directory while descending, including the
+    // repository's root rules and any more local ignore files.
+    const localPatterns = respectGitignore ? await loadGitignorePatterns(dir) : []
+    const ignoreContexts = localPatterns.length ? [...inheritedIgnores, { rootDir: dir, patterns: localPatterns }] : inheritedIgnores
 
     for (const entry of entries) {
       const fullPath = join(dir, entry.name)
@@ -253,19 +268,19 @@ async function findAdditionalPackageFiles(
         // bumping the version of every vendored manifest inside it and then
         // handing those paths to `git add`, which refuses ignored paths and
         // failed the entire release.
-        if (respectGitignore && shouldIgnorePath(fullPath, rootDir, gitignorePatterns)) {
+        if (respectGitignore && ignoreContexts.some(context => shouldIgnorePath(fullPath, context.rootDir, context.patterns, true))) {
           continue
         }
 
         // Recursively search subdirectories
-        const nestedFiles = await findAdditionalPackageFiles(fullPath, respectGitignore, rootDir, gitignorePatterns)
+        const nestedFiles = await findAdditionalPackageFiles(fullPath, respectGitignore, ignoreContexts)
         files.push(...nestedFiles)
       }
       else if (entry.isFile()) {
         // Check for pantry.json, pantry.jsonc, package.jsonc, or build.zig.zon
         if (entry.name === 'pantry.json' || entry.name === 'pantry.jsonc'
           || entry.name === 'package.jsonc' || entry.name === 'build.zig.zon') {
-          if (respectGitignore && shouldIgnorePath(fullPath, rootDir, gitignorePatterns))
+          if (respectGitignore && ignoreContexts.some(context => shouldIgnorePath(fullPath, context.rootDir, context.patterns)))
             continue
           files.push(fullPath)
         }
@@ -336,7 +351,7 @@ export async function findAllPackageFiles(dir: string = process.cwd(), recursive
     }
 
     // Also find pantry.json, pantry.jsonc, package.jsonc, and build.zig.zon files recursively
-    const additionalFiles = await findAdditionalPackageFiles(dir, respectGitignore, dir)
+    const additionalFiles = await findAdditionalPackageFiles(dir, respectGitignore)
     for (const filePath of additionalFiles) {
       if (!packageFiles.includes(filePath)) {
         packageFiles.push(filePath)

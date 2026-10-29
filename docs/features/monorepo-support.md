@@ -590,3 +590,8 @@ npm audit fix
 # Verify workspace consistency
 npm ls --workspaces
 ```
+
+Root-anchored cache rules such as `/packages/native/zig-pkg/` stay anchored
+through recursive discovery. They exclude that dependency tree while preserving
+a similarly named tree below another directory. Nested `.gitignore` paths remain
+relative to the directory containing their ignore file.
