@@ -5,6 +5,8 @@ import { join } from 'node:path'
 import * as utils from '../src/utils'
 import { versionBump } from '../src/version-bump'
 
+// These fixtures mock Git operations; real changelog history is covered by the
+// changelog integration suites, which initialize actual repositories.
 describe('Git Operations (Integration)', () => {
   let tempDir: string
   let mockSpawnSync: any
@@ -88,6 +90,7 @@ describe('Git Operations (Integration)', () => {
       writeFileSync(packagePath, JSON.stringify({ name: 'test', version: '1.0.0' }, null, 2))
 
       await versionBump({
+        changelog: false,
         release: 'patch',
         files: [packagePath],
         commit: true,
@@ -112,6 +115,7 @@ describe('Git Operations (Integration)', () => {
       writeFileSync(packagePath, JSON.stringify({ name: 'test', version: '1.0.0' }, null, 2))
 
       await versionBump({
+        changelog: false,
         release: 'patch',
         files: [packagePath],
         commit: true,
@@ -136,6 +140,7 @@ describe('Git Operations (Integration)', () => {
       const canSafelyPullSpy = spyOn(utils, 'canSafelyPull').mockReturnValue(true)
 
       await versionBump({
+        changelog: false,
         release: 'patch',
         files: [packagePath],
         commit: true,
@@ -167,6 +172,7 @@ describe('Git Operations (Integration)', () => {
       const consoleSpy = spyOn(console, 'warn').mockImplementation(() => {})
 
       await versionBump({
+        changelog: false,
         release: 'patch',
         files: [packagePath],
         commit: true,
@@ -199,6 +205,7 @@ describe('Git Operations (Integration)', () => {
       writeFileSync(packagePath, JSON.stringify({ name: 'test', version: '1.0.0' }, null, 2))
 
       await versionBump({
+        changelog: false,
         release: 'patch',
         files: [packagePath],
         commit: true,
@@ -239,6 +246,7 @@ describe('Git Operations (Integration)', () => {
       writeFileSync(pkg2Path, JSON.stringify({ name: 'pkg2', version: '0.5.0' }, null, 2))
 
       await versionBump({
+        changelog: false,
         release: 'patch',
         recursive: true,
         commit: false,
@@ -279,6 +287,7 @@ describe('Git Operations (Integration)', () => {
       writeFileSync(pkg1Path, JSON.stringify({ name: 'pkg1', version: '1.0.0' }, null, 2))
 
       await versionBump({
+        changelog: false,
         release: 'patch',
         files: [join(tempDir, 'package.json')], // Only root package
         recursive: false,
@@ -324,6 +333,7 @@ describe('Git Operations (Integration)', () => {
       writeFileSync(app1Path, JSON.stringify({ name: 'app1', version: '1.0.0' }, null, 2))
 
       await versionBump({
+        changelog: false,
         release: 'minor',
         recursive: true,
         commit: false,
@@ -351,6 +361,7 @@ describe('Git Operations (Integration)', () => {
       writeFileSync(packagePath, JSON.stringify({ name: 'test', version: '1.0.0' }, null, 2))
 
       await versionBump({
+        changelog: false,
         release: 'patch',
         files: [packagePath],
         execute: 'echo "test command"',
@@ -373,6 +384,7 @@ describe('Git Operations (Integration)', () => {
       writeFileSync(packagePath, JSON.stringify({ name: 'test', version: '1.0.0' }, null, 2))
 
       await versionBump({
+        changelog: false,
         release: 'patch',
         files: [packagePath],
         execute: ['echo "first"', 'echo "second"', 'echo "third"'],
@@ -401,6 +413,7 @@ describe('Git Operations (Integration)', () => {
       })
 
       await expect(versionBump({
+        changelog: false,
         release: 'patch',
         files: [packagePath],
         execute: ['failing-command', 'echo "must not run"'],
@@ -423,6 +436,7 @@ describe('Git Operations (Integration)', () => {
       const consoleSpy = spyOn(console, 'log').mockImplementation(() => {})
 
       await versionBump({
+        changelog: false,
         release: 'patch',
         files: [packagePath],
         execute: 'echo "test"',
@@ -454,6 +468,7 @@ describe('Git Operations (Integration)', () => {
       writeFileSync(packagePath, JSON.stringify({ name: 'test', version: '1.0.0' }, null, 2))
 
       await versionBump({
+        changelog: false,
         release: 'patch',
         files: [packagePath],
         execute: 'pwd',
@@ -498,6 +513,7 @@ Initial release
       )
 
       await versionBump({
+        changelog: false,
         release: 'patch',
         files: [packagePath],
         commit: true,
@@ -529,6 +545,7 @@ Initial release
       writeFileSync(packagePath, JSON.stringify({ name: 'test', version: '1.0.0' }, null, 2))
 
       await versionBump({
+        changelog: false,
         release: 'patch',
         files: [packagePath],
         commit: true,
@@ -569,6 +586,7 @@ Initial release
       )
 
       await versionBump({
+        changelog: false,
         release: 'patch',
         files: [packagePath],
         commit: true,
@@ -609,6 +627,7 @@ Initial release
       const customTagMessage = 'Custom tag for version {version}'
 
       await versionBump({
+        changelog: false,
         release: 'patch',
         files: [packagePath],
         commit: true,
@@ -644,6 +663,7 @@ Initial release
 
       // Test the function with explicit defaults that match config
       await versionBump({
+        changelog: false,
         release: 'patch',
         files: [packagePath],
         commit: true, // Explicitly set to test git operations
@@ -676,6 +696,7 @@ Initial release
       writeFileSync(packagePath, JSON.stringify({ name: 'test', version: '1.0.0' }, null, 2))
 
       await versionBump({
+        changelog: false,
         release: 'patch',
         files: [packagePath],
         commit: false,
@@ -712,6 +733,7 @@ Initial release
       writeFileSync(pkg1Path, JSON.stringify({ name: 'pkg1', version: '2.0.0' }, null, 2))
 
       await versionBump({
+        changelog: false,
         release: 'minor',
         recursive: true,
         execute: 'echo "building workspace"',
