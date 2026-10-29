@@ -1,5 +1,19 @@
 # Changelog
 
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.29...v0.2.30)
+
+## 🐛 Bug Fixes
+
+- preserve rooted ignore rules during recursive releases ([2b2b235](https://github.com/stacksjs/bumpx/commit/2b2b235)) _(by Chris Breuer <chrisbreuer93@gmail.com>)_
+
+## 🔧 Chores
+
+- release v0.2.30 ([a769e9c](https://github.com/stacksjs/bumpx/commit/a769e9c)) _(by Chris Breuer <chrisbreuer93@gmail.com>)_
+
+## Contributors
+
+- _Chris Breuer <chrisbreuer93@gmail.com>_
+
 [Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.28...v0.2.29)
 
 ## 🐛 Bug Fixes
