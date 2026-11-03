@@ -34,6 +34,55 @@ async function loadGitignorePatterns(dir: string): Promise<string[]> {
 /**
  * Check if a path should be ignored based on gitignore patterns
  */
+function hasGlob(pattern: string): boolean {
+  return /[*?[]/.test(pattern)
+}
+
+/**
+ * Match a gitignore wildcard the way git does, through Bun.Glob.
+ *
+ * This used to compile the pattern by replacing every asterisk with dot-star
+ * and testing the result against the whole relative path. That is wrong twice
+ * over: the pattern's own regex metacharacters were never escaped, and the
+ * regex was never anchored. The pattern for log files therefore became the
+ * regex dot-star-dot-log, whose middle dot matches ANY character, so it
+ * matched every path merely CONTAINING "log" - packages/logger,
+ * packages/catalog, packages/blog, packages/dialog.
+ *
+ * It cost stacksjs/stx two published packages. The icon collections
+ * iconify-logos and iconify-streamline-logos were dropped from discovery by
+ * the root ignore entry for log files and sat 334 releases behind, at 0.2.461
+ * while every sibling reached 0.2.795. Nothing failed and nothing was
+ * reported: the files were never offered to the version bump, so they were not
+ * even counted as skipped.
+ *
+ * Bun.Glob is already how the rooted branch above matches, and its asterisk
+ * stops at a path separator, so a pattern matches a NAME and not a substring
+ * of one.
+ */
+function matchesIgnoreGlob(pattern: string, relativePath: string, isDirectory: boolean, directoryOnly: boolean): boolean {
+  const matcher = new Bun.Glob(pattern)
+  const segments = relativePath.split('/')
+
+  // A slashless pattern applies to a name at any depth. Matching an ancestor
+  // directory ignores everything beneath it, so testing each candidate segment
+  // covers the path itself and its parents alike.
+  if (!pattern.includes('/')) {
+    const candidates = directoryOnly ? segments.slice(0, isDirectory ? undefined : -1) : segments
+    return candidates.some(segment => matcher.match(segment))
+  }
+
+  // A pattern carrying a slash is relative to the directory whose .gitignore
+  // declared it, so test the path and each of its ancestor prefixes.
+  const last = segments.length - (directoryOnly && !isDirectory ? 1 : 0)
+  for (let length = 1; length <= last; length++) {
+    if (matcher.match(segments.slice(0, length).join('/')))
+      return true
+  }
+
+  return false
+}
+
 function shouldIgnorePath(fullPath: string, rootDir: string, patterns: string[], isDirectory = false): boolean {
   const relativePath = relative(rootDir, fullPath).split(sep).join('/')
 
@@ -48,7 +97,6 @@ function shouldIgnorePath(fullPath: string, rootDir: string, patterns: string[],
       }
       continue
     }
-    // Simple pattern matching - could be enhanced with proper glob matching
     if (pattern.endsWith('/')) {
       // Directory pattern
       const dirPattern = pattern.slice(0, -1)
@@ -60,6 +108,8 @@ function shouldIgnorePath(fullPath: string, rootDir: string, patterns: string[],
       const directoryNames = relativePath.split('/').slice(0, isDirectory ? undefined : -1)
       if (!dirPattern.includes('/') && directoryNames.includes(dirPattern))
         return true
+      if (hasGlob(dirPattern) && matchesIgnoreGlob(dirPattern, relativePath, isDirectory, true))
+        return true
     }
     else {
       // File or directory pattern
@@ -69,13 +119,8 @@ function shouldIgnorePath(fullPath: string, rootDir: string, patterns: string[],
       if (matchesLiteral) {
         return true
       }
-      // Wildcard support for basic patterns
-      if (pattern.includes('*')) {
-        const regex = new RegExp(pattern.replace(/\*/g, '.*'))
-        if (regex.test(relativePath)) {
-          return true
-        }
-      }
+      if (hasGlob(pattern) && matchesIgnoreGlob(pattern, relativePath, isDirectory, false))
+        return true
     }
   }
 

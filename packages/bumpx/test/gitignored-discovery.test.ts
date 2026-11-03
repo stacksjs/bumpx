@@ -124,3 +124,67 @@ it('does not treat a file as a directory-only workspace exclusion', async () => 
   const found = await findAllPackageFiles(dir, true, true)
   expect(found).toContain(path.join(dir, 'packages', 'real', 'package.json'))
 })
+
+/**
+ * A wildcard ignore entry must match a NAME, not a substring of one.
+ *
+ * The wildcard branch of shouldIgnorePath compiled its pattern by swapping
+ * every asterisk for dot-star and testing the result, unescaped and
+ * unanchored, against the whole relative path. The entry for log files became
+ * the regex dot-star-dot-log, and its middle dot matches any character, so it
+ * matched every path merely CONTAINING "log".
+ *
+ * stacksjs/stx paid for it: the icon collections iconify-logos and
+ * iconify-streamline-logos were dropped from recursive discovery by the root
+ * ignore entry for log files and sat 334 releases behind, at 0.2.461 while all
+ * 232 of their siblings reached 0.2.795. The failure was silent in the worst
+ * way -- the files were never offered to the bump at all, so they were not
+ * reported as skipped either, and publishing saw local and published versions
+ * agree and correctly did nothing.
+ */
+describe('wildcard ignore entries match names, not substrings', () => {
+  const ignoredByLogPattern = ['logger', 'catalog', 'blog', 'dialog', 'iconify-logos', 'iconify-streamline-logos']
+
+  beforeEach(() => {
+    fs.writeFileSync(path.join(dir, '.gitignore'), '*.log\n')
+    for (const name of [...ignoredByLogPattern, 'lucide']) {
+      const packageDir = path.join(dir, 'packages', name)
+      fs.mkdirSync(packageDir, { recursive: true })
+      fs.writeFileSync(path.join(packageDir, 'package.json'), `{"name":"${name}","version":"1.0.0"}\n`)
+    }
+  })
+
+  it('still finds a package whose name merely contains the pattern text', async () => {
+    const found = (await findAllPackageFiles(dir, true, true)).map(file => path.relative(dir, file).split(path.sep).join('/'))
+
+    for (const name of ignoredByLogPattern)
+      expect(found).toContain(`packages/${name}/package.json`)
+  })
+
+  it('still ignores a file the pattern genuinely names', async () => {
+    fs.mkdirSync(path.join(dir, 'packages', 'debug.log'), { recursive: true })
+    fs.writeFileSync(path.join(dir, 'packages', 'debug.log', 'package.json'), '{"version":"1.0.0"}\n')
+
+    const found = (await findAllPackageFiles(dir, true, true)).map(file => path.relative(dir, file).split(path.sep).join('/'))
+
+    expect(found).not.toContain('packages/debug.log/package.json')
+    expect(found).toContain('packages/lucide/package.json')
+  })
+
+  it('does not let a wildcard cross a path separator', async () => {
+    // The old unanchored regex for the pattern below matched any path whose
+    // text happened to contain the two halves in order, however many
+    // directories lay between them.
+    fs.writeFileSync(path.join(dir, '.gitignore'), 'a*z\n')
+    for (const name of ['abz', 'a-mid/then-z']) {
+      const packageDir = path.join(dir, 'packages', name)
+      fs.mkdirSync(packageDir, { recursive: true })
+      fs.writeFileSync(path.join(packageDir, 'package.json'), '{"version":"1.0.0"}\n')
+    }
+
+    const found = (await findAllPackageFiles(dir, true, true)).map(file => path.relative(dir, file).split(path.sep).join('/'))
+
+    expect(found).not.toContain('packages/abz/package.json')
+    expect(found).toContain('packages/a-mid/then-z/package.json')
+  })
+})
