@@ -1,5 +1,24 @@
 # Changelog
 
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.30...v0.2.31)
+
+## 🐛 Bug Fixes
+
+- preserve release candidates after post-commit failures ([7ab4d75](https://github.com/stacksjs/bumpx/commit/7ab4d75)) _(by Chris <chris@stacksjs.com>)_ ([#2018](https://github.com/stacksjs/bumpx/issues/2018))
+
+## ✅ Tests
+
+- keep mocked git fixtures independent of changelog generation ([c5db681](https://github.com/stacksjs/bumpx/commit/c5db681)) _(by Chris Breuer <chrisbreuer93@gmail.com>)_
+
+## 🔧 Chores
+
+- release v0.2.31 ([2514ffb](https://github.com/stacksjs/bumpx/commit/2514ffb)) _(by Chris <chris@stacksjs.com>)_
+
+## Contributors
+
+- _Chris <chris@stacksjs.com>_
+- _Chris Breuer <chrisbreuer93@gmail.com>_
+
 [Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.29...v0.2.30)
 
 ## 🐛 Bug Fixes
