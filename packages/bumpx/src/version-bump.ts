@@ -68,6 +68,10 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
   const fileBackups = new Map<string, { content: string, version: string }>()
   let hasStartedUpdates = false
   let hasStartedGitOperations = false
+  let releaseCommitCreated = false
+  let createdTagName: string | undefined
+  let releasePhase = 'pre-release preparation'
+  let pushSucceeded = false
 
   // Determine a safe working directory for all git operations
   // Priority: explicit options.cwd -> directory of the first file -> process.cwd()
@@ -241,7 +245,6 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
     // Variables for tracking versions (needed for git operations and progress)
     let lastNewVersion: string | undefined
     let _lastOldVersion: string | undefined
-    let createdTagName: string | undefined
 
     // If currentVersion is specified, use single-version mode
     if (currentVersion !== undefined) {
@@ -788,6 +791,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
 
     // Execute custom commands before git operations
     if (execute && !dryRun) {
+      releasePhase = 'required release command'
       const commands = Array.isArray(execute) ? execute : [execute]
       for (const command of commands) {
         // A failed release prerequisite must reach the outer rollback handler
@@ -840,8 +844,8 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
     // Check for interrupt before Git operations
     if (userInterrupted.value) {
       // Perform rollback but let global handler show main message
-      await rollbackChanges(fileBackups, hasStartedGitOperations, effectiveCwd)
-      console.log('Rollback completed due to user interruption.')
+      const restored = await rollbackChanges(fileBackups, hasStartedGitOperations, effectiveCwd)
+      console.log(restored ? 'Rollback completed due to user interruption.' : 'Rollback incomplete. Some local changes may remain.')
       process.exit(0)
     }
 
@@ -849,8 +853,8 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
     checkInterruption()
 
     // Git operations
-    let releaseCommitCreated = false
     if (!dryRun && commit && inGitRepo && updatedFiles.length > 0) {
+      releasePhase = 'local release commit'
       hasStartedGitOperations = true
       // Stage only files changed by this release. In particular, do not sweep
       // unrelated untracked files into a release commit.
@@ -862,8 +866,8 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
       // Check for interrupt before commit
       if (userInterrupted.value) {
         // Perform rollback but let global handler show main message
-        await rollbackChanges(fileBackups, hasStartedGitOperations, effectiveCwd)
-        console.log('Rollback completed due to user interruption.')
+        const restored = await rollbackChanges(fileBackups, hasStartedGitOperations, effectiveCwd)
+        console.log(restored ? 'Rollback completed due to user interruption.' : 'Rollback incomplete. Some local changes may remain.')
         process.exit(0)
       }
 
@@ -974,6 +978,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
 
     // Create final git tag (if requested)
     if (tag && lastNewVersion && !dryRun) {
+      releasePhase = 'local release tag'
       try {
         // Format the tag name - either use the provided format or default to vX.Y.Z
         const tagName = typeof tag === 'string'
@@ -1028,29 +1033,23 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
           logStep(symbols.tag, ' Creating tag...', false)
         createGitTag(tagName, false, finalTagMessage, effectiveCwd)
         createdTagName = tagName
-
-        if (progress && lastNewVersion && _lastOldVersion) {
-          progress({
-            event: ProgressEvent.GitTag,
-            updatedFiles,
-            skippedFiles,
-            newVersion: lastNewVersion,
-            oldVersion: _lastOldVersion,
-          })
-        }
       }
-      catch {
-        // Prevent this error from causing the full rollback handling in the main catch block
-        // Mark this error as already handled
-        // const errorMessage = tagError instanceof Error ? tagError.message : String(tagError)
-        const handledError = new Error(`Git tag for version ${lastNewVersion} already exists. Use a different version.`)
-
-        // Mark as handled to prevent duplicate error messages
-        const handledSymbol = Symbol.for('bumpx.errorHandled')
-        ;(handledError as any)[handledSymbol] = true
-
-        // Throw the handled error to stop processing but avoid duplicate messages
-        throw handledError
+      catch (tagError) {
+        // Preserve the actual tag failure and avoid printing it twice in the
+        // CLI. Progress callbacks stay outside this handler so a caught user
+        // cancellation retains the CLI's existing cancellation exit policy.
+        if (tagError instanceof Error)
+          Object.defineProperty(tagError, Symbol.for('bumpx.errorHandled'), { value: true })
+        throw tagError
+      }
+      if (progress && lastNewVersion && _lastOldVersion) {
+        progress({
+          event: ProgressEvent.GitTag,
+          updatedFiles,
+          skippedFiles,
+          newVersion: lastNewVersion,
+          oldVersion: _lastOldVersion,
+        })
       }
     }
     else if (tag && !dryRun && lastNewVersion && !inGitRepo) {
@@ -1091,12 +1090,14 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
     }
 
     if (push && !dryRun && inGitRepo) {
+      releasePhase = 'Git push'
       if (!options.quiet)
         logStep(symbols.cloud, ' Pushing changes and tag...', false)
       // Show remote lines always (not just verbose), git output printed by executeGit is suppressed.
       // We will manually emit concise lines after push to mimic git output style.
       const beforeBranch = getCurrentBranch(effectiveCwd)
       pushToRemote(!!tag, effectiveCwd, createdTagName)
+      pushSucceeded = true
       try {
         const { executeGit } = await import('./utils')
         const remoteUrl = executeGit(['config', '--get', 'remote.origin.url'], effectiveCwd).trim()
@@ -1181,19 +1182,40 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
     }
   }
   catch (error) {
+    // File restoration cannot undo a release commit/tag. Once either exists,
+    // leave its candidate state intact instead of mixing old files with new
+    // refs. In particular, a failed transport does not prove remote rejection.
+    if (releaseCommitCreated || createdTagName) {
+      console.error(`Release failed during ${releasePhase}. Candidate files, index and local refs were retained.`)
+      if (releaseCommitCreated) {
+        let head = 'HEAD (commit hash unavailable)'
+        try { head = executeGit(['rev-parse', 'HEAD'], effectiveCwd).trim() }
+        catch { /* Keep the original release error if local Git inspection fails. */ }
+        console.error(`Local release commit: ${head}`)
+      }
+      if (createdTagName) console.error(`Local release tag: ${createdTagName}`)
+      if (releasePhase === 'Git push') {
+        console.error(pushSucceeded
+          ? 'Git push completed before this error. No remote rollback was attempted.'
+          : 'Remote publication is unconfirmed. No local or remote refs were reset or deleted.')
+      }
+      console.error(`${symbols.error} ${error}`)
+      throw error
+    }
+
     // If we've started updates and this is a cancellation, rollback changes
     if (hasStartedUpdates && error instanceof Error && error.message === 'Version bump cancelled by user') {
       console.log('\nRolling back changes due to cancellation...')
-      await rollbackChanges(fileBackups, hasStartedGitOperations, effectiveCwd)
-      console.log('Rollback completed. No changes were made.')
+      const restored = await rollbackChanges(fileBackups, hasStartedGitOperations, effectiveCwd)
+      console.log(restored ? 'Rollback completed. No changes were made.' : 'Rollback incomplete. Some local changes may remain.')
       throw error
     }
 
     // For other errors, attempt rollback if we've made changes
     if (hasStartedUpdates && fileBackups.size > 0) {
       console.log('\nRolling back changes due to error...')
-      await rollbackChanges(fileBackups, hasStartedGitOperations, effectiveCwd)
-      console.log('Rollback completed due to error.')
+      const restored = await rollbackChanges(fileBackups, hasStartedGitOperations, effectiveCwd)
+      console.log(restored ? 'Rollback completed due to error.' : 'Rollback incomplete. Some local changes may remain.')
     }
 
     console.error(`${symbols.error} ${error}`)
@@ -1423,7 +1445,8 @@ async function generateChangelog(cwd: string, fromVersion?: string, toVersion?: 
 /**
  * Rollback file changes to their original state and unstage Git changes
  */
-async function rollbackChanges(fileBackups: Map<string, { content: string, version: string }>, hasStartedGitOperations: boolean = false, cwd?: string): Promise<void> {
+async function rollbackChanges(fileBackups: Map<string, { content: string, version: string }>, hasStartedGitOperations: boolean = false, cwd?: string): Promise<boolean> {
+  let restored = true
   // First, unstage any staged changes if Git operations were started
   if (hasStartedGitOperations) {
     try {
@@ -1432,6 +1455,7 @@ async function rollbackChanges(fileBackups: Map<string, { content: string, versi
       console.log('Unstaged all Git changes')
     }
     catch (unstageError) {
+      restored = false
       console.warn(`Warning: Failed to unstage Git changes: ${unstageError}`)
     }
   }
@@ -1443,9 +1467,11 @@ async function rollbackChanges(fileBackups: Map<string, { content: string, versi
       writeFileSync(filePath, backup.content, 'utf-8')
     }
     catch (rollbackError) {
+      restored = false
       console.warn(`Warning: Failed to rollback ${filePath}: ${rollbackError}`)
     }
   }
+  return restored
 }
 
 /**

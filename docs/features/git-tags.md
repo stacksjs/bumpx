@@ -338,7 +338,16 @@ git push origin :refs/tags/v1.2.3
 
 ### Recovery from Failed Push
 
-Handle push failures:
+If a release fails before creating a local release commit or final tag, bumpx
+attempts to restore the files it changed and reports any incomplete restoration.
+After either ref is created, bumpx retains the candidate files, index and local
+refs, and reports the failed phase and known release refs. This also applies to
+caught cancellation. It does not guarantee recovery after abrupt process death.
+
+A failed push leaves remote publication unconfirmed. bumpx does not reset or
+delete local or remote refs. Inspect the reported candidate and remote state
+before choosing a recovery command. For example, when the remote rejected the
+release and the candidate is ready to publish:
 
 ```bash
 # If push failed after commit and tag
