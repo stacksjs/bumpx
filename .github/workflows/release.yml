@@ -21,7 +21,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v6.0.1
+        uses: actions/checkout@v6.1.0
         with:
           fetch-depth: 0
           ref: ${{ inputs.tag || github.ref }}
@@ -34,7 +34,7 @@ jobs:
           test "$(git rev-parse "refs/tags/$RELEASE_TAG^{commit}")" = "$(git rev-parse HEAD)"
 
       - name: Setup Pantry
-        uses: pantry-pm/pantry/packages/action@368bc91e4bc5bb1c42b7c4abc7f910b79743733c # v0.11.97
+        uses: pantry-pm/pantry/packages/action@d86f88f8ad0f3b608386c7acb68e527ecd85ae56 # v0.11.167
         with:
           version: '0.11.97'
           install: 'false'
