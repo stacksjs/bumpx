@@ -8,11 +8,11 @@
 
 # bumpx
 
-> A fast, dependency-free version bumping tool similar to bumpp and version-bump-prompt, built for Bun.
+> A fast, lightweight version bumping tool similar to bumpp and version-bump-prompt, built for Bun.
 
 ## Features
 
-- 🚀 **Zero dependencies** - Built using only Node.js built-ins and Bun tooling
+- 🚀 **Lightweight** - Three small runtime dependencies (`@stacksjs/clapp`, `@stacksjs/logsmith`, `bunfig`), otherwise Node.js built-ins and Bun tooling
 - 📦 **Semver compliant** - Supports all semantic versioning release types
 - 🔄 **Monorepo support** - Recursive bumping with `--recursive` flag
 - 🎯 **Git integration** - Automatic commit, tag, and push

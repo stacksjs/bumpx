@@ -1,12 +1,12 @@
 # Performance
 
-Bumpx is designed for fast execution with zero dependencies. This guide covers performance characteristics and optimization strategies.
+Bumpx is designed for fast execution with a light dependency footprint. This guide covers performance characteristics and optimization strategies.
 
 ## Performance Characteristics
 
-### Zero Dependencies
+### Few Dependencies
 
-Bumpx is built with minimal dependencies for fast startup:
+Bumpx ships three small runtime dependencies (`@stacksjs/clapp`, `@stacksjs/logsmith`, `bunfig`) and otherwise relies on Node.js built-ins, which keeps startup fast:
 
 ```bash
 # Fast startup time

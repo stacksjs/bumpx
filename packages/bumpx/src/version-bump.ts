@@ -2,7 +2,10 @@
 import type { FileInfo, VersionBumpOptions } from './types'
 import { existsSync, readFileSync, writeFileSync } from 'node:fs'
 import { dirname, join, relative, resolve } from 'node:path'
-import * as process from 'node:process'
+// Default import, not `* as`: process's EventEmitter methods (on,
+// listeners, removeListener) live on its prototype, so an ESM namespace
+// drops them under Node — which the bin's shebang selects.
+import process from 'node:process'
 import { updateBunWorkspaceLock } from './bun-lock'
 import { checkInterruption, userInterrupted } from './interrupt'
 import { updatePantryWorkspaceLock } from './pantry-lock'
@@ -119,8 +122,11 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
         throw new Error('Expected source requires a Git repository')
     }
 
-    // Print recent commits if requested
-    if (printCommits && inGitRepo) {
+    // Print recent commits if requested. They are context for the release —
+    // and `printCommits` defaults to true, so a --quiet or --ci run used to
+    // print a commit listing and nothing else, which reads as odd when the
+    // whole point of those flags is to say nothing.
+    if (printCommits && inGitRepo && !options.quiet) {
       try {
         const recentCommits = getRecentCommits(5, effectiveCwd)
         if (recentCommits.length > 0) {

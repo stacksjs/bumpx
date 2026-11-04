@@ -8,7 +8,7 @@ Your project could be featured here! If you're using bumpx and would like to be 
 
 ## Why Teams Choose bumpx
 
-Teams choose bumpx for automated workflows, monorepo support, zero dependencies, built-in Git integration, and flexible configuration that adapts to any project structure.
+Teams choose bumpx for automated workflows, monorepo support, a light dependency footprint, built-in Git integration, and flexible configuration that adapts to any project structure.
 
 ## Use Cases
 
