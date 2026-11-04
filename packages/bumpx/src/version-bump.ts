@@ -122,11 +122,9 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
         throw new Error('Expected source requires a Git repository')
     }
 
-    // Print recent commits if requested. They are context for the release —
-    // and `printCommits` defaults to true, so a --quiet or --ci run used to
-    // print a commit listing and nothing else, which reads as odd when the
-    // whole point of those flags is to say nothing.
-    if (printCommits && inGitRepo && !options.quiet) {
+    // Print recent commits if requested. Whether a quiet run still counts as
+    // "requested" is resolved where the flags are, in prepareConfig.
+    if (printCommits && inGitRepo) {
       try {
         const recentCommits = getRecentCommits(5, effectiveCwd)
         if (recentCommits.length > 0) {

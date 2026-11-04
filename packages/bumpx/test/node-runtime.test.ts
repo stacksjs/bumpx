@@ -109,4 +109,21 @@ describe('running the built CLI under Node', () => {
     expect(result.code).toBe(0)
     expect(result.output).toContain('Recent commits:')
   })
+
+  /**
+   * The combination that matters, and the one a first attempt at this got
+   * wrong: suppressing the listing whenever the run is quiet also suppressed
+   * it for somebody who asked for it by name. `--ci` implies quiet, and every
+   * CI provider sets `CI`, so that turned an explicit flag into a no-op on the
+   * exact machines people pass it on.
+   */
+  it.skipIf(!runnable)('prints the listing when asked, even in a quiet run', () => {
+    const result = node(
+      ['patch', '--ci', '--print-commits', '--no-commit', '--no-tag', '--no-push'],
+      tempDir,
+    )
+
+    expect(result.code).toBe(0)
+    expect(result.output).toContain('Recent commits:')
+  })
 })
