@@ -1,5 +1,24 @@
 # Changelog
 
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.31...v0.2.32)
+
+## 🐛 Bug Fixes
+
+- import process by default export so the bin works on node, and smoke-test it there (#2025) ([2c21a81](https://github.com/stacksjs/bumpx/commit/2c21a81)) _(by Glenn Michael Torregosa <gtorregosa@gmail.com>)_ ([#2013](https://github.com/stacksjs/bumpx/issues/2013), [#2025](https://github.com/stacksjs/bumpx/issues/2025))
+- **cli**: honour --ci, --yes and CI=true instead of drawing a picker (#2024) ([96bcc24](https://github.com/stacksjs/bumpx/commit/96bcc24)) _(by Glenn Michael Torregosa <gtorregosa@gmail.com>)_ ([#2021](https://github.com/stacksjs/bumpx/issues/2021), [#2024](https://github.com/stacksjs/bumpx/issues/2024))
+- **cli**: report argument errors without a page of bundle (#2022) ([afa2fe5](https://github.com/stacksjs/bumpx/commit/afa2fe5)) _(by Glenn Michael Torregosa <gtorregosa@gmail.com>)_ ([#2020](https://github.com/stacksjs/bumpx/issues/2020), [#2022](https://github.com/stacksjs/bumpx/issues/2022))
+- **ignore**: match a wildcard ignore entry against a name, not a substring ([d785c5a](https://github.com/stacksjs/bumpx/commit/d785c5a)) _(by glennmichael123 <gtorregosa@gmail.com>)_
+
+## 🔧 Chores
+
+- release v0.2.32 ([ecfab4f](https://github.com/stacksjs/bumpx/commit/ecfab4f)) _(by Chris Breuer <chrisbreuer93@gmail.com>)_
+
+## Contributors
+
+- _Chris Breuer <chrisbreuer93@gmail.com>_
+- _Glenn Michael Torregosa <gtorregosa@gmail.com>_
+- _glennmichael123 <gtorregosa@gmail.com>_
+
 [Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.30...v0.2.31)
 
 ## 🐛 Bug Fixes
