@@ -368,12 +368,20 @@ describe('Error Scenarios and Edge Cases', () => {
       writeFileSync(packagePath, JSON.stringify({ name: 'test', version: '1.0.0' }, null, 2))
     })
 
-    it('should handle system command failures', async () => {
+    it('aborts and rolls back when a required command fails', async () => {
       const packagePath = join(tempDir, 'package.json')
 
-      // Execute command failures should be handled gracefully (like install failures)
-      // The version bump should succeed but log a warning
-      await versionBump({
+      // A failed --execute is a failed release prerequisite: it has to reach
+      // the rollback handler rather than let a commit, tag or push publish
+      // artifacts built on top of it. See the comment at the call site in
+      // src/version-bump.ts, and the end-to-end versions of this contract in
+      // git-push.integration.test.ts and release-recovery.integration.test.ts.
+      //
+      // This asserted the opposite until #2026 — that the bump succeeds and a
+      // failed command is merely a warning. It passed only when another test
+      // file had left a stubbed node:child_process behind, making `false`
+      // succeed.
+      await expect(versionBump({
         release: 'patch',
         execute: 'false', // 'false' command always exits with code 1
         files: [packagePath],
@@ -381,11 +389,11 @@ describe('Error Scenarios and Edge Cases', () => {
         tag: false,
         push: false,
         noGitCheck: true,
-      })
+      })).rejects.toThrow('Command failed: false')
 
-      // Version should still be updated despite command failure
+      // Rolled back, so nothing is left half-released.
       const packageContent = JSON.parse(readFileSync(packagePath, 'utf-8'))
-      expect(packageContent.version).toBe('1.0.1')
+      expect(packageContent.version).toBe('1.0.0')
     })
 
     it('should handle git command failures when git is not available', async () => {

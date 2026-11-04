@@ -1,14 +1,25 @@
-import { afterEach, beforeEach, describe, expect, it, mock } from 'bun:test'
+import { afterAll, afterEach, beforeEach, describe, expect, it, mock } from 'bun:test'
+import * as bunfig from 'bunfig'
 import { existsSync, mkdirSync, rmSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { defaultConfig as bumpConfigDefaults, defineConfig, loadBumpConfig } from '../src/config'
+
+// A snapshot of the real module, by value: `mock.module` rewrites the module
+// record in place, so holding the live namespace would hand back the mock.
+const realBunfig = { ...bunfig }
 
 // Mock bunfig module
 const mockLoadConfig = mock(() => Promise.resolve(bumpConfigDefaults))
 mock.module('bunfig', () => ({
   loadConfig: mockLoadConfig,
 }))
+
+// Put the real module back; `mock.module` is global and outlives this file.
+// See #2026.
+afterAll(() => {
+  mock.module('bunfig', () => realBunfig)
+})
 
 describe('Config', () => {
   let tempDir: string
