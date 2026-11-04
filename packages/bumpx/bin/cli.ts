@@ -482,6 +482,15 @@ async function prepareConfig(release: string | undefined, files: string[] | unde
   // Check again after loading config
   checkInterruption()
 
+  // `printCommits` defaults to true, and --ci — or CI in the environment —
+  // forces quiet, so a quiet release printed a commit listing and nothing
+  // else. Drop the default there. An explicit --print-commits is a request
+  // rather than a default, and still prints: this is the one place that can
+  // tell the two apart, which is why the decision lives here and not in
+  // versionBump.
+  if (options.printCommits === undefined && loaded.quiet)
+    loaded.printCommits = false
+
   // If no release was provided, always show the prompt by default
   // This gives users the chance to choose their version type
   if (!loaded.release && (!files || files.length === 0)) {

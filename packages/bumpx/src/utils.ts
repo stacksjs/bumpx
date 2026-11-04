@@ -4,7 +4,10 @@ import { execSync, spawnSync } from 'node:child_process'
 import { existsSync, readFileSync, writeFileSync } from 'node:fs'
 import { readdir, readFile, stat } from 'node:fs/promises'
 import { join, relative, sep } from 'node:path'
-import * as process from 'node:process'
+// Default import, not `* as`: process's EventEmitter methods (on,
+// listeners, removeListener) live on its prototype, so an ESM namespace
+// drops them under Node — which the bin's shebang selects.
+import process from 'node:process'
 import * as readline from 'node:readline'
 
 import { SemVer } from './semver'

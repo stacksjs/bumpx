@@ -12,7 +12,7 @@
 
 ## Features
 
-- 🚀 **Zero dependencies** - Built using only Node.js built-ins and Bun tooling
+- 🚀 **Lightweight** - Three small runtime dependencies (`@stacksjs/clapp`, `@stacksjs/logsmith`, `bunfig`), otherwise Node.js built-ins and Bun tooling
 - 📦 **Semver compliant** - Supports all semantic versioning release types
 - 🔄 **Workspace detection** - Automatic workspace/monorepo detection with `recursive` enabled by default
 - 🎯 **Git integration** - Automatic commit, tag, and push (all enabled by default)

@@ -1,4 +1,7 @@
-import * as process from 'node:process'
+// Default import, not `* as`: process's EventEmitter methods (on,
+// listeners, removeListener) live on its prototype, so an ESM namespace
+// drops them under Node — which the bin's shebang selects.
+import process from 'node:process'
 
 /**
  * Global flag to track user interrupt status
