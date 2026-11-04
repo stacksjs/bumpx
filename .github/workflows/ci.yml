@@ -107,10 +107,13 @@ jobs:
         working-directory: packages/bumpx
         timeout-minutes: 2
 
+      # The suite runs in well under a minute; the headroom is so that a
+      # wedged subprocess is reported by the test that wedged, rather than by
+      # this job being killed with nothing to point at.
       - name: Unit Test
         run: bun test
         working-directory: packages/bumpx
-        timeout-minutes: 2
+        timeout-minutes: 5
 
   publish-commit:
     needs: [lint, typecheck, test]
