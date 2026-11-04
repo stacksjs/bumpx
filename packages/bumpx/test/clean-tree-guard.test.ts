@@ -1,8 +1,22 @@
-import { afterEach, beforeEach, describe, expect, it } from 'bun:test'
+import { afterEach, beforeEach, describe, expect, it, setDefaultTimeout } from 'bun:test'
 import { execFileSync } from 'node:child_process'
 import fs from 'node:fs'
 import os from 'node:os'
 import path from 'node:path'
+
+/**
+ * These tests drive real `git` and real bumpx subprocesses, so their duration
+ * is whatever the machine gives them on the day. On an idle laptop the slowest
+ * here takes about 2s, against Bun's default 5s per-test deadline — under 3x
+ * headroom, which a loaded CI runner eats without trying. The result was a red
+ * build with a different test in it each time, and nothing wrong with the code.
+ *
+ * A per-test deadline is a backstop against a wedged process, not a
+ * performance assertion. The job-level timeout in .github/workflows/ci.yml
+ * bounds a true hang, so this one only has to be out of the way of honest
+ * slowness.
+ */
+setDefaultTimeout(60_000)
 
 /**
  * A release must not be cut from a dirty working tree.

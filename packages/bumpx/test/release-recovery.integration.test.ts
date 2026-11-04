@@ -1,8 +1,32 @@
-import { afterAll, beforeAll, expect, test } from 'bun:test'
+import { afterAll, beforeAll, expect, setDefaultTimeout, test } from 'bun:test'
 import { mkdir, mkdtemp, readFile, rm, stat, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join, resolve } from 'node:path'
 import process from 'node:process'
+
+/**
+ * These tests drive real `git` and real bumpx subprocesses, so their duration
+ * is whatever the machine gives them on the day. The slowest here takes about
+ * 4s on an idle laptop, against Bun's default 5s per-test deadline — under 1.3x
+ * headroom, which a loaded CI runner eats without trying. The result was a red
+ * build with a different test in it each time, and nothing wrong with the code.
+ *
+ * A per-test deadline is a backstop against a wedged process, not a
+ * performance assertion. The job-level timeout in .github/workflows/ci.yml
+ * bounds a true hang, so this one only has to be out of the way of honest
+ * slowness.
+ */
+setDefaultTimeout(60_000)
+
+/*
+ * Deadlines for the subprocesses below. Unlike the backstop above these carry
+ * meaning — `timedOut` is asserted, so they are how a hang is caught — but
+ * they were sized as if the machine were always idle. They now sit well clear
+ * of honest slowness, and still below the per-test backstop, so a hang is
+ * reported here with the captured output rather than by Bun killing the test.
+ */
+const CLI_TIMEOUT_MS = 20_000
+const GIT_TIMEOUT_MS = 10_000
 
 const evidence = process.env.BUMPX_RECOVERY_EVIDENCE
 const cli = resolve(import.meta.dir, '../bin/cli.ts')
@@ -17,7 +41,16 @@ function stop(child: Bun.Subprocess<'ignore', 'pipe', 'pipe'>) {
     if (process.platform === 'win32') child.kill('SIGKILL')
     else process.kill(-child.pid, 'SIGKILL')
   }
-  catch (error) { if ((error as NodeJS.ErrnoException).code !== 'ESRCH') throw error }
+  catch (error) {
+    const code = (error as NodeJS.ErrnoException).code
+    // ESRCH: the group is already gone. EPERM: it is gone too, and the pid has
+    // been recycled by a process that is not ours — which is precisely when we
+    // must not signal it. Neither says the child we care about is still alive;
+    // the `await child.exited` in run()'s finally settles that. Letting EPERM
+    // escape here took the whole test down, and the afterAll with it, because
+    // it jumped past the children.delete() that follows.
+    if (code !== 'ESRCH' && code !== 'EPERM') throw error
+  }
 }
 
 async function run(label: string, argv: string[], cwd: string, timeoutMs: number) {
@@ -70,7 +103,7 @@ async function run(label: string, argv: string[], cwd: string, timeoutMs: number
 }
 
 async function git(args: string[], cwd: string) {
-  const result = await run('git', ['git', ...args], cwd, 2_000)
+  const result = await run('git', ['git', ...args], cwd, GIT_TIMEOUT_MS)
   expect(result, JSON.stringify(result)).toMatchObject({ exitCode: 0, timedOut: false, overflow: false })
   return result.stdout.trim()
 }
@@ -140,14 +173,14 @@ catch (error) {
   console.log(JSON.stringify({ sameOriginalError: true, message: expected.message }))
 }
 `)
-  return run('public-api-callback', [process.execPath, driver], f.work, 5_000)
+  return run('public-api-callback', [process.execPath, driver], f.work, CLI_TIMEOUT_MS)
 }
 
 test('preserves a consistent release candidate and reports late transport failure', async () => {
   const f = await fixture('late-rejection')
   const marker = await rejectPush(f)
   const before = await snapshot(f)
-  const result = await run('late-public-cli', [process.execPath, cli, 'patch', '--commit', '--tag', '--push', '--yes', '--no-changelog'], f.work, 5_000)
+  const result = await run('late-public-cli', [process.execPath, cli, 'patch', '--commit', '--tag', '--push', '--yes', '--no-changelog'], f.work, CLI_TIMEOUT_MS)
   const after = await snapshot(f)
   const observedMarker = await readFile(marker, 'utf8')
   await record('late-rejection.json', { fixture: f, before, result, after, observedMarker })
@@ -172,7 +205,7 @@ test('preserves a consistent release candidate and reports late transport failur
 test('ordinary success publishes matching release commit and tag without unrelated files', async () => {
   const f = await fixture('success')
   const before = await snapshot(f)
-  const result = await run('successful-public-cli', [process.execPath, cli, 'patch', '--commit', '--tag', '--push', '--yes', '--no-changelog'], f.work, 5_000)
+  const result = await run('successful-public-cli', [process.execPath, cli, 'patch', '--commit', '--tag', '--push', '--yes', '--no-changelog'], f.work, CLI_TIMEOUT_MS)
   const after = await snapshot(f)
   await record('success.json', { fixture: f, before, result, after })
   expect(result).toMatchObject({ exitCode: 0, timedOut: false, overflow: false })
@@ -187,7 +220,7 @@ test('ordinary success publishes matching release commit and tag without unrelat
 test('precommit required-command failure restores files without creating release refs', async () => {
   const f = await fixture('precommit-rejection')
   const before = await snapshot(f)
-  const result = await run('precommit-public-cli', [process.execPath, cli, 'patch', '--commit', '--tag', '--push', '--yes', '--no-changelog', '--execute', 'bun -e "process.exit(23)"'], f.work, 5_000)
+  const result = await run('precommit-public-cli', [process.execPath, cli, 'patch', '--commit', '--tag', '--push', '--yes', '--no-changelog', '--execute', 'bun -e "process.exit(23)"'], f.work, CLI_TIMEOUT_MS)
   const after = await snapshot(f)
   await record('precommit-rejection.json', { fixture: f, before, result, after })
   expect(result).toMatchObject({ timedOut: false, overflow: false })
@@ -201,7 +234,7 @@ test('a rejected tag-only release preserves no-commit and unrelated index owners
   await writeFile(join(f.work, 'notes.txt'), 'unrelated staged notes\n')
   await git(['add', 'notes.txt'], f.work)
   const before = await snapshot(f)
-  const result = await run('tag-only-public-cli', [process.execPath, cli, 'patch', '--no-commit', '--tag', '--push', '--yes', '--no-changelog', '--no-git-check'], f.work, 5_000)
+  const result = await run('tag-only-public-cli', [process.execPath, cli, 'patch', '--no-commit', '--tag', '--push', '--yes', '--no-changelog', '--no-git-check'], f.work, CLI_TIMEOUT_MS)
   const after = await snapshot(f)
   await record('tag-only.json', { fixture: f, before, result, after })
   expect(result).toMatchObject({ timedOut: false, overflow: false })
@@ -279,7 +312,7 @@ test('an error after a successful push does not claim remote rollback or uncerta
 test('a tag creation failure preserves the partial release commit and original Git error', async () => {
   const f = await fixture('invalid-tag')
   const before = await snapshot(f)
-  const result = await run('invalid-tag-public-cli', [process.execPath, cli, 'patch', '--commit', '--tag', '--tag-name', 'invalid tag', '--yes', '--no-changelog'], f.work, 5_000)
+  const result = await run('invalid-tag-public-cli', [process.execPath, cli, 'patch', '--commit', '--tag', '--tag-name', 'invalid tag', '--yes', '--no-changelog'], f.work, CLI_TIMEOUT_MS)
   const after = await snapshot(f)
   await record('invalid-tag.json', { fixture: f, before, result, after })
   expect(result).toMatchObject({ timedOut: false, overflow: false })
@@ -302,7 +335,7 @@ test('an existing foreign tag is not reported as a tag created by the failed rel
   await mkdir(join(f.work, '.git/hooks'), { recursive: true })
   await writeFile(join(f.work, '.git/hooks/post-commit'), '#!/bin/sh\ngit tag -a v0.1.1 -m "foreign post-commit tag" || exit\ngit for-each-ref --format="%(refname) %(objectname) %(*objectname)" refs/tags > .git/foreign-tag.marker\n', { mode: 0o755 })
   const before = await snapshot(f)
-  const result = await run('foreign-tag-public-cli', [process.execPath, cli, 'patch', '--commit', '--tag', '--yes', '--no-changelog'], f.work, 5_000)
+  const result = await run('foreign-tag-public-cli', [process.execPath, cli, 'patch', '--commit', '--tag', '--yes', '--no-changelog'], f.work, CLI_TIMEOUT_MS)
   const after = await snapshot(f)
   const foreignTag = (await readFile(join(f.work, '.git/foreign-tag.marker'), 'utf8')).trim()
   await record('foreign-tag.json', { fixture: f, before, result, after, foreignTag })
@@ -322,7 +355,7 @@ test('incomplete precommit file restoration never reports completed rollback', a
   const f = await fixture('blocked-restoration')
   const before = await snapshot(f)
   const command = 'bun -e "import { rmSync, mkdirSync, writeFileSync } from \'node:fs\'; rmSync(\'package.json\'); mkdirSync(\'package.json\'); writeFileSync(\'package.json/foreign\', \'retain\'); console.log(\'BUMPX_RESTORE_BLOCKED\'); process.exit(23)"'
-  const result = await run('blocked-restoration-public-cli', [process.execPath, cli, 'patch', '--commit', '--tag', '--yes', '--no-changelog', '--execute', command], f.work, 5_000)
+  const result = await run('blocked-restoration-public-cli', [process.execPath, cli, 'patch', '--commit', '--tag', '--yes', '--no-changelog', '--execute', command], f.work, CLI_TIMEOUT_MS)
   const after = { HEAD: await git(['rev-parse', 'HEAD'], f.work), tags: await git(['tag', '--list'], f.work), index: await git(['ls-files', '--stage'], f.work), foreign: await readFile(join(f.work, 'package.json/foreign'), 'utf8') }
   await record('blocked-restoration.json', { fixture: f, before, result, after })
   expect(result).toMatchObject({ timedOut: false, overflow: false })
