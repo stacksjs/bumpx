@@ -1,5 +1,6 @@
-import { afterEach, beforeEach, describe, expect, it, mock, spyOn } from 'bun:test'
+import { afterAll, afterEach, beforeEach, describe, expect, it, mock, spyOn } from 'bun:test'
 import { Buffer } from 'node:buffer'
+import * as childProcess from 'node:child_process'
 import { execSync } from 'node:child_process'
 import { chmodSync, existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
@@ -22,6 +23,21 @@ interface ProgressEvent {
   event?: any
   script?: string
 }
+
+// Snapshots of the real modules, taken by value before anything is mocked.
+// Copies, not the live namespaces: `mock.module` rewrites the module record
+// in place, so a namespace held here would become the stub as soon as the
+// beforeEach below runs, and restoring from it would restore the stub.
+const realUtils = { ...utils }
+const realChildProcess = { ...childProcess }
+
+// Put both modules back. This file mocks them in a beforeEach and never used
+// to undo it, and `mock.module` is global: everything that ran afterwards
+// inherited stubbed git helpers and an execSync that cannot fail. See #2026.
+afterAll(() => {
+  mock.module('../src/utils', () => realUtils)
+  mock.module('node:child_process', () => realChildProcess)
+})
 
 describe('Version Bump (Integration)', () => {
   let tempDir: string
@@ -66,7 +82,7 @@ describe('Version Bump (Integration)', () => {
     // Setup global mocks for all tests
     // Mock Git operations to prevent tag conflicts and actual Git commands
     mock.module('../src/utils', () => ({
-      ...utils,
+      ...realUtils,
       gitTagExists: () => false,
       executeGit: () => ({ stdout: '', stderr: '', exitCode: 0 }),
       checkGitStatus: () => ({ clean: true, branch: 'main' }),
@@ -263,7 +279,7 @@ describe('Version Bump (Integration)', () => {
 
       // Apply mocks
       mock.module('../src/utils', () => ({
-        ...utils,
+        ...realUtils,
         updateVersionInFile: updateVersionInFileSpy,
         execCommand: () => ({ stdout: '', stderr: '', exitCode: 0 }),
         checkGitStatus: () => ({ clean: true, branch: 'main' }),
@@ -272,6 +288,7 @@ describe('Version Bump (Integration)', () => {
       }))
 
       mock.module('node:child_process', () => ({
+        ...realChildProcess,
         execSync: execSyncSpy,
       }))
 

@@ -1,6 +1,5 @@
-import { afterEach, beforeEach, describe, expect, it, mock } from 'bun:test'
-// Import spawnSync before mocking so we can preserve it
-import { spawnSync as originalSpawnSync } from 'node:child_process'
+import { afterAll, afterEach, beforeEach, describe, expect, it, mock } from 'bun:test'
+import * as childProcess from 'node:child_process'
 import { chmodSync, existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
@@ -30,14 +29,30 @@ import {
   writePackageJson,
 } from '../src/utils'
 
+// A snapshot of the real module, taken by value before anything is mocked.
+//
+// It has to be a copy. `import * as` gives a live namespace and `mock.module`
+// rewrites the module record in place, so a namespace captured up here would
+// turn into the stub the moment the mock below is installed, and restoring
+// from it would restore the stub. Spreading now copies the real function
+// references out of reach of that.
+const realChildProcess = { ...childProcess }
+
 // Mock the execSync for git operations
 const mockExecSync = mock(() => '')
 
 mock.module('node:child_process', () => ({
+  ...realChildProcess,
   execSync: mockExecSync,
-  // Preserve spawnSync for other parts of the codebase
-  spawnSync: originalSpawnSync,
 }))
+
+// Put the real module back. Without this, every test file that runs after
+// this one inherits an execSync that cannot fail, so tests exercising real
+// command failures quietly pass for the wrong reason — or fail, depending on
+// the order Bun read the directory in. See #2026.
+afterAll(() => {
+  mock.module('node:child_process', () => realChildProcess)
+})
 
 describe('SemVer', () => {
   describe('constructor and parsing', () => {
