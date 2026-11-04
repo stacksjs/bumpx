@@ -35,6 +35,26 @@ import {
 } from './utils'
 
 /**
+ * Print an error on its way out, and mark it as printed.
+ *
+ * Library callers get the message even if they only log the rejection, and the
+ * CLI's own handler reads the mark to avoid putting the same sentence on screen
+ * a second time.
+ */
+function reportError(error: unknown): void {
+  console.error(`${symbols.error} ${error}`)
+  // Non-enumerable, or a runtime that dumps the rejected error prints the
+  // bookkeeping along with it.
+  if (error !== null && typeof error === 'object') {
+    Object.defineProperty(error, Symbol.for('bumpx.errorReported'), {
+      value: true,
+      enumerable: false,
+      configurable: true,
+    })
+  }
+}
+
+/**
  * Main version bump function
  */
 // eslint-disable-next-line no-unused-vars
@@ -83,6 +103,15 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
   try {
     // Check for interruption at the start
     checkInterruption()
+
+    // Argument validation first, before anything prints, synchronizes with a
+    // remote or reads a manifest. There is no work that a missing release type
+    // does not invalidate, and reaching this conclusion after a pull means a
+    // one-line mistake arrives underneath a screen of release progress.
+    if (!release) {
+      throw new Error('Release type or version must be specified')
+    }
+
     if (expectedSource !== undefined) {
       if (!/^(?:[a-f0-9]{40}|[a-f0-9]{64})$/i.test(expectedSource))
         throw new Error('Expected source must be a full Git commit hash')
@@ -225,11 +254,6 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
 
     if (filesToUpdate.length === 0) {
       throw new Error('No package.json files found to update')
-    }
-
-    // Validate release parameter early
-    if (!release) {
-      throw new Error('Release type or version must be specified')
     }
 
     // Check for interruption before updating files
@@ -1199,7 +1223,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
           ? 'Git push completed before this error. No remote rollback was attempted.'
           : 'Remote publication is unconfirmed. No local or remote refs were reset or deleted.')
       }
-      console.error(`${symbols.error} ${error}`)
+      reportError(error)
       throw error
     }
 
@@ -1218,7 +1242,7 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
       console.log(restored ? 'Rollback completed due to error.' : 'Rollback incomplete. Some local changes may remain.')
     }
 
-    console.error(`${symbols.error} ${error}`)
+    reportError(error)
     throw error
   }
 }
@@ -1488,6 +1512,13 @@ async function promptForVersion(currentVersion: string, preid?: string, cwd?: st
   if (process.env.NODE_ENV === 'test' || process.env.BUN_ENV === 'test' || process.argv.includes('test') || process.argv.some(arg => arg.includes('test'))) {
     // In test mode, just return a simulated patch increment
     return incrementVersion(currentVersion, 'patch', preid)
+  }
+
+  // A prompt needs somebody to answer it. Without a TTY — a CI job, a pipeline,
+  // stdin redirected from /dev/null — the selection below waits forever, so the
+  // step hangs until something times out instead of failing with a reason.
+  if (!process.stdin.isTTY) {
+    throw new Error('Release type or version must be specified: stdin is not a TTY, so the interactive prompt cannot be answered')
   }
 
   // Save original SIGINT handlers
