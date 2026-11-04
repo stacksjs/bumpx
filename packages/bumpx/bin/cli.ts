@@ -119,6 +119,14 @@ async function promptForRecursiveAll(): Promise<boolean> {
     return true // Auto-confirm in test mode
   }
 
+  // Nobody is there to answer without a TTY (a CI job, a pipeline, stdin
+  // redirected). Refusing beats blocking on a prompt until the step times out.
+  if (!process.stdin.isTTY) {
+    console.error(colors.red(`${symbols.error} --recursive --all needs confirmation, but stdin is not a TTY.`))
+    console.error(colors.gray('Pass --yes to confirm non-interactively.'))
+    return false
+  }
+
   try {
     // Dynamic import to avoid top-level import issues
     const clappModule: any = await import('@stacksjs/clapp')
@@ -154,6 +162,33 @@ async function promptForRecursiveAll(): Promise<boolean> {
 }
 
 /**
+ * Shown alongside an argument error, so somebody who mistyped or forgot the
+ * release type gets the fix in the same output as the complaint.
+ */
+const releaseUsage = [
+  'Release types: patch | minor | major | prepatch | preminor | premajor | prerelease | pre | build | release',
+  'Or an exact version: bumpx 1.2.3',
+  'Run `bumpx --help` for every option.',
+].join('\n')
+
+/**
+ * Report a bad invocation and exit.
+ *
+ * Argument validation is settled before any work starts, so it is reported
+ * here instead of thrown. A throw travels back out through the runtime's error
+ * reporter, which prints a code frame from the bundled dist — and a bundle
+ * holds ~20 KB lines, so six lines of context around a one-line user mistake
+ * arrive as tens of kilobytes of JavaScript that scroll the actual message off
+ * the screen. Nothing about a forgotten release type is a stack trace.
+ */
+function fail(message: string, hint?: string): never {
+  console.error(colors.red(`${symbols.error} ${message}`))
+  if (hint)
+    console.error(colors.gray(hint))
+  process.exit(ExitCode.InvalidArgument)
+}
+
+/**
  * Error handler
  */
 function errorHandler(error: Error): never {
@@ -174,14 +209,25 @@ function errorHandler(error: Error): never {
     process.exit(0)
   }
 
-  // Always show full error details in CI for debugging
-  if (process.env.CI || process.env.DEBUG || process.env.NODE_ENV === 'development') {
+  // Full error details, including the stack, are for CI and debugging only
+  const debugging = Boolean(process.env.CI || process.env.DEBUG || process.env.NODE_ENV === 'development')
+
+  // Avoid duplicating error messages if the message already contains the error
+  // symbol, or if whatever threw it already printed the same line itself —
+  // version-bump reports the errors it rethrows so library callers see them,
+  // which would otherwise put the same sentence on screen twice here.
+  const reportedSymbol = Symbol.for('bumpx.errorReported')
+  const alreadyPrinted = message.includes(symbols.error) || Boolean((error as any)[reportedSymbol])
+
+  if (debugging) {
     message += `\n\n${error.stack || ''}`
   }
 
-  // Avoid duplicating error messages if the message already contains the error symbol
-  if (!message.includes(symbols.error)) {
+  if (!alreadyPrinted) {
     console.error(colors.red(`${symbols.error} ${message}`))
+  }
+  else if (debugging && error.stack) {
+    console.error(error.stack)
   }
 
   // Use more specific exit codes based on error type
@@ -454,12 +500,30 @@ cli
     try {
       // Validate release type before proceeding
       if (release && !isReleaseType(release) && !isValidVersion(release) && release !== 'prompt') {
-        throw new Error(`Invalid release type or version: ${release}`)
+        fail(`Invalid release type or version: ${release}`, releaseUsage)
       }
 
       // Check for interruption before config preparation
       checkInterruption()
       const config = await prepareConfig(release, files, options)
+
+      // Nothing left to resolve this from: no release type on the command line,
+      // none in the config, and no prompt to fall back to. Say so here, before
+      // versionBump starts synchronizing with the remote and reading manifests
+      // on the way to the same conclusion.
+      if (!config.release) {
+        fail('Release type or version must be specified', releaseUsage)
+      }
+
+      // The release prompt is the default when no type is given, and without a
+      // TTY there is nobody to answer it: in a CI job or any piped invocation
+      // it would block until the step times out. Ask for the argument instead.
+      if (config.release === 'prompt' && !process.stdin.isTTY) {
+        fail(
+          'Release type or version must be specified: stdin is not a TTY, so the release prompt cannot be answered',
+          releaseUsage,
+        )
+      }
 
       // Check for interruption after config preparation
       checkInterruption()
