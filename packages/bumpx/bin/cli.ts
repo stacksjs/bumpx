@@ -6,7 +6,7 @@ import { version } from '../package.json'
 import { defaultConfig as bumpConfigDefaults, loadBumpConfig } from '../src/config'
 import { checkInterruption, userInterrupted } from '../src/interrupt'
 import { ExitCode, ProgressEvent } from '../src/types'
-import { colors, isReleaseType, isValidVersion, symbols } from '../src/utils'
+import { colors, isCiEnvironment, isReleaseType, isValidVersion, symbols } from '../src/utils'
 import { versionBump } from '../src/version-bump'
 
 // Handle SIGINT (Ctrl+C) globally
@@ -50,6 +50,41 @@ interface CLIOptions {
   changelog?: boolean
   respectGitignore?: boolean
   onlyChangedSince?: boolean | string
+  interaction?: boolean
+}
+
+/**
+ * Whether there is anybody to answer a prompt.
+ *
+ * Four ways to say no, and bumpx used to honour none of them: stdin is not a
+ * terminal (a CI job, a pipe, `< /dev/null`), the environment announces itself
+ * as CI, or the invocation asked for non-interactive behaviour with `--ci`,
+ * `--yes` or `--no-interaction`. Rendering a picker into a log that nobody can
+ * answer blocks until the job's timeout kills it, with nothing in the output
+ * to explain why.
+ */
+function canPrompt(options: CLIOptions): boolean {
+  if (options.ci || options.yes || options.interaction === false)
+    return false
+  if (isCiEnvironment())
+    return false
+  return Boolean(process.stdin.isTTY)
+}
+
+/**
+ * Name the reason there is nobody to ask, so the error says which of the four
+ * applies rather than leaving the user to guess which one bumpx noticed.
+ */
+function describeNonInteractive(options: CLIOptions): string {
+  if (options.ci)
+    return '--ci is non-interactive'
+  if (options.yes)
+    return '--yes asked for no prompts'
+  if (options.interaction === false)
+    return '--no-interaction was passed'
+  if (isCiEnvironment())
+    return 'CI is set in the environment'
+  return 'stdin is not a TTY'
 }
 
 /**
@@ -110,7 +145,7 @@ function progress({ event, script, updatedFiles, skippedFiles, newVersion }: Ver
 /**
  * Prompt user for confirmation when using -r --all
  */
-async function promptForRecursiveAll(): Promise<boolean> {
+async function promptForRecursiveAll(options: CLIOptions): Promise<boolean> {
   // Check for interruption before prompting
   checkInterruption()
 
@@ -119,10 +154,10 @@ async function promptForRecursiveAll(): Promise<boolean> {
     return true // Auto-confirm in test mode
   }
 
-  // Nobody is there to answer without a TTY (a CI job, a pipeline, stdin
-  // redirected). Refusing beats blocking on a prompt until the step times out.
-  if (!process.stdin.isTTY) {
-    console.error(colors.red(`${symbols.error} --recursive --all needs confirmation, but stdin is not a TTY.`))
+  // Nobody is there to answer. Refusing beats blocking on a confirmation
+  // prompt until the step times out.
+  if (!canPrompt(options)) {
+    console.error(colors.red(`${symbols.error} --recursive --all needs confirmation, but ${describeNonInteractive(options)}.`))
     console.error(colors.gray('Pass --yes to confirm non-interactively.'))
     return false
   }
@@ -189,9 +224,33 @@ function fail(message: string, hint?: string): never {
 }
 
 /**
- * Error handler
+ * Messages that describe something the user typed, rather than something that
+ * went wrong inside bumpx. They exit 1, and they are reported as plainly as
+ * `fail()` reports the ones caught earlier.
  */
-function errorHandler(error: Error): never {
+const userErrorPatterns = [
+  'No package.json files found',
+  'Failed to read',
+  'Invalid release type',
+  'invalid command',
+  'Invalid',
+  'Release type or version must be specified',
+  'Could not determine',
+  'working tree is not clean',
+  'Git working tree is not clean',
+  'Git command failed: git status',
+  'Unknown option',
+]
+
+/**
+ * Error handler
+ *
+ * `context` names the handler that caught it. It is printed only for errors
+ * that are genuinely unexpected: an unknown option arrives here as a rejected
+ * promise from the argument parser, and announcing "Unhandled Rejection" above
+ * a typo makes a mistyped flag read like a crash in bumpx.
+ */
+function errorHandler(error: Error, context?: string): never {
   let message = error.message || String(error)
 
   // Prevent duplicate error handling
@@ -208,6 +267,13 @@ function errorHandler(error: Error): never {
     // Exit cleanly for user cancellations
     process.exit(0)
   }
+
+  // Decided from the message as thrown, before the stack is appended below:
+  // a stack mentioning, say, an `Invalid` identifier is not a user error.
+  const userError = userErrorPatterns.some(pattern => message.includes(pattern))
+
+  if (context && !userError)
+    console.error(`${context}:`)
 
   // Full error details, including the stack, are for CI and debugging only
   const debugging = Boolean(process.env.CI || process.env.DEBUG || process.env.NODE_ENV === 'development')
@@ -231,21 +297,7 @@ function errorHandler(error: Error): never {
   }
 
   // Use more specific exit codes based on error type
-  if (message.includes('No package.json files found')
-    || message.includes('Failed to read')
-    || message.includes('Invalid release type')
-    || message.includes('invalid command')
-    || message.includes('Invalid')
-    || message.includes('Release type or version must be specified')
-    || message.includes('Could not determine')
-    || message.includes('working tree is not clean')
-    || message.includes('Git working tree is not clean')
-    || message.includes('Git command failed: git status')
-    || message.includes('Unknown option')) {
-    process.exit(ExitCode.InvalidArgument)
-  }
-
-  process.exit(ExitCode.FatalError)
+  process.exit(userError ? ExitCode.InvalidArgument : ExitCode.FatalError)
 }
 
 /**
@@ -438,7 +490,7 @@ async function prepareConfig(release: string | undefined, files: string[] | unde
 
   // Handle -r --all combination with special prompting
   if (isRecursiveAll && loaded.confirm && !isCiMode && !options.yes) {
-    const shouldProceed = await promptForRecursiveAll()
+    const shouldProceed = await promptForRecursiveAll(options)
     if (!shouldProceed) {
       throw new Error('Operation cancelled by user')
     }
@@ -477,6 +529,7 @@ cli
   .option('-q, --quiet', 'Quiet mode')
   .option('--dry-run', 'Show what would be changed without making changes')
   .option('--ci', 'CI mode (non-interactive, sets --yes --quiet)')
+  .option('--no-interaction', 'Never prompt; fail instead of asking (implied by --ci, --yes, CI=true, or a non-TTY stdin)')
   .option('--current-version <version>', 'Current version')
   .option('--print-commits', 'Print recent commits')
   .option('-x, --execute <command>', 'Commands to execute after version bumps')
@@ -515,12 +568,14 @@ cli
         fail('Release type or version must be specified', releaseUsage)
       }
 
-      // The release prompt is the default when no type is given, and without a
-      // TTY there is nobody to answer it: in a CI job or any piped invocation
-      // it would block until the step times out. Ask for the argument instead.
-      if (config.release === 'prompt' && !process.stdin.isTTY) {
+      // The release prompt is the default when no type is given. With nobody
+      // to answer it, bumpx used to draw the picker anyway and block there
+      // until the job's timeout killed it — including under --ci, which says
+      // non-interactive, and --yes, which says stop asking. Ask for the
+      // argument instead, which is the error bumpx already has for this.
+      if (config.release === 'prompt' && !canPrompt(options)) {
         fail(
-          'Release type or version must be specified: stdin is not a TTY, so the release prompt cannot be answered',
+          `Release type or version must be specified: ${describeNonInteractive(options)}, so the release prompt cannot be answered`,
           releaseUsage,
         )
       }
@@ -557,12 +612,10 @@ cli
 
 // Setup global error handlers
 process.on('uncaughtException', (error) => {
-  console.error('Uncaught Exception:')
-  errorHandler(error)
+  errorHandler(error, 'Uncaught Exception')
 })
 process.on('unhandledRejection', (reason) => {
-  console.error('Unhandled Rejection:')
-  errorHandler(reason instanceof Error ? reason : new Error(String(reason)))
+  errorHandler(reason instanceof Error ? reason : new Error(String(reason)), 'Unhandled Rejection')
 })
 
 cli.version(version)

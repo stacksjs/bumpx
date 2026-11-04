@@ -27,7 +27,7 @@ describe('user-input error output', () => {
 
   // Keep the child's environment free of NODE_ENV=test: the prompt paths
   // short-circuit under it, and these cases are about what a user sees.
-  const runCLI = async (args: string[], timeoutMs = 20_000) => {
+  const runCLI = async (args: string[], extraEnv: Record<string, string> = {}, timeoutMs = 20_000) => {
     const child = Bun.spawn([process.execPath, cli, ...args], {
       cwd: tempDir,
       // Not a TTY, exactly as in a CI job or any piped invocation.
@@ -39,6 +39,7 @@ describe('user-input error output', () => {
         PATH: process.env.PATH!,
         TMPDIR: tempDir,
         GIT_TERMINAL_PROMPT: '0',
+        ...extraEnv,
       },
     })
 
@@ -133,5 +134,64 @@ describe('user-input error output', () => {
 
     const occurrences = result.output.split('Release type or version must be specified').length - 1
     expect(occurrences).toBe(1)
+  })
+
+  /**
+   * Every one of these used to draw the interactive release-type picker into a
+   * log nobody could answer and block there until the runner's timeout killed
+   * the job — including under the two flags `--help` advertises as the way out.
+   */
+  describe('non-interactive invocations', () => {
+    const cases: Array<[label: string, args: string[], env: Record<string, string>, reason: string]> = [
+      ['--ci', ['--ci'], {}, '--ci is non-interactive'],
+      ['--yes', ['--yes'], {}, '--yes asked for no prompts'],
+      ['-y', ['-y'], {}, '--yes asked for no prompts'],
+      ['--no-interaction', ['--no-interaction'], {}, '--no-interaction was passed'],
+      ['CI=true', [], { CI: 'true' }, 'CI is set in the environment'],
+      ['CI=1', [], { CI: '1' }, 'CI is set in the environment'],
+      ['no flag at all', [], {}, 'stdin is not a TTY'],
+    ]
+
+    for (const [label, args, env, reason] of cases) {
+      it(`fails fast under ${label} instead of hanging`, async () => {
+        const result = await runCLI(args, env, 12_000)
+
+        expect(result.timedOut).toBe(false)
+        expect(result.exitCode).toBe(1)
+        expect(result.stderr).toContain('Release type or version must be specified')
+        // Say which of the four reasons applied, rather than leaving the user
+        // to guess which one bumpx noticed.
+        expect(result.stderr).toContain(reason)
+        // No picker drawn, and no cursor hidden on the way to drawing one.
+        expect(result.output).not.toContain('Choose an option')
+        expect(result.output).not.toContain('\u001B[?25l')
+      })
+    }
+
+    it('still runs a release that was given a version', async () => {
+      const result = await runCLI(['patch', '--dry-run', '--no-git-check'], {}, 12_000)
+
+      expect(result.timedOut).toBe(false)
+      expect(result.exitCode).toBe(0)
+    })
+  })
+
+  describe('argument parsing', () => {
+    it('accepts --no-interaction rather than rejecting --interaction', async () => {
+      const result = await runCLI(['--no-interaction'])
+
+      expect(result.output).not.toContain('Unknown option')
+    })
+
+    it('reports an unknown option without dressing it up as a crash', async () => {
+      const result = await runCLI(['--bogus', 'patch'])
+
+      expect(result.exitCode).toBe(1)
+      expect(result.stderr).toContain('Unknown option')
+      // It arrives as a rejected promise from the parser, but a mistyped flag
+      // is not a crash in bumpx and should not read like one.
+      expect(result.output).not.toContain('Unhandled Rejection')
+      expect(result.output).not.toContain('Uncaught Exception')
+    })
   })
 })
