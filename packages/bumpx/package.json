@@ -60,6 +60,7 @@
     "lint": "bunx --bun pickier .",
     "lint:fix": "bunx --bun pickier . --fix",
     "typecheck": "bunx tsc --noEmit",
+    "smoke:node": "bun scripts/smoke-node.ts",
     "prepublishOnly": "bun --bun run build && bun run compile:all && bun run zip",
     "test": "bun test"
   },

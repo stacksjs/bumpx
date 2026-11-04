@@ -100,6 +100,13 @@ jobs:
       - name: Build
         run: bun run build
 
+      # The bin ships with a node shebang, so an npm install runs bumpx on
+      # node while the suite runs it on bun. #2013 lived in exactly that gap.
+      - name: Smoke Test on Node
+        run: bun run smoke:node
+        working-directory: packages/bumpx
+        timeout-minutes: 2
+
       - name: Unit Test
         run: bun test
         working-directory: packages/bumpx
