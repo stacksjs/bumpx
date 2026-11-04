@@ -22,6 +22,7 @@ import {
   gitTagExists,
   hasChangedSince,
   incrementVersion,
+  isCiEnvironment,
   isGitRepository,
   isValidVersion,
   logStep,
@@ -1515,10 +1516,12 @@ async function promptForVersion(currentVersion: string, preid?: string, cwd?: st
   }
 
   // A prompt needs somebody to answer it. Without a TTY — a CI job, a pipeline,
-  // stdin redirected from /dev/null — the selection below waits forever, so the
-  // step hangs until something times out instead of failing with a reason.
-  if (!process.stdin.isTTY) {
-    throw new Error('Release type or version must be specified: stdin is not a TTY, so the interactive prompt cannot be answered')
+  // stdin redirected from /dev/null — or in an environment that announces
+  // itself as CI, the selection below waits forever, so the step hangs until
+  // something times out instead of failing with a reason.
+  if (!process.stdin.isTTY || isCiEnvironment()) {
+    const reason = process.stdin.isTTY ? 'CI is set in the environment' : 'stdin is not a TTY'
+    throw new Error(`Release type or version must be specified: ${reason}, so the interactive prompt cannot be answered`)
   }
 
   // Save original SIGINT handlers

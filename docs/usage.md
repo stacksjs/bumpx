@@ -62,15 +62,22 @@ bumpx prompt
 bumpx prompt --print-commits
 ```
 
-Running `bumpx` with no release type opens the same prompt. That needs a
-terminal to answer it, so without a TTY — a CI job, a pipeline, stdin
-redirected — bumpx asks for the release type as an argument instead of waiting
-on a prompt nobody can reach:
+Running `bumpx` with no release type opens the same prompt. That needs somebody
+to answer it, so bumpx asks for the release type as an argument instead
+whenever nobody can:
+
+- stdin is not a terminal (a CI job, a pipe, `< /dev/null`)
+- `CI` is set in the environment, as every CI provider sets it
+- the invocation said not to ask: `--ci`, `--yes`/`-y`, or `--no-interaction`
 
 ```bash
-# Fails immediately rather than hanging until the step times out
+# Each of these fails immediately rather than hanging until the step times out
 bumpx < /dev/null
+bumpx --ci
+bumpx --no-interaction
 ```
+
+Pass the release type and they run as usual: `bumpx patch --ci`.
 
 ## File Operations
 

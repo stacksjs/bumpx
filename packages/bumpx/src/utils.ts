@@ -133,6 +133,20 @@ interface IgnoreContext {
 }
 
 /**
+ * Whether the environment announces itself as CI.
+ *
+ * Every provider sets CI, and the convention every tool follows is that its
+ * presence means nobody is watching. `CI=false` and `CI=0` are honoured as
+ * opt-outs, since some images set the variable unconditionally.
+ */
+export function isCiEnvironment(): boolean {
+  const ci = process.env.CI
+  if (ci === undefined || ci === '')
+    return false
+  return ci !== 'false' && ci !== '0'
+}
+
+/**
  * Check if a string is a valid release type
  */
 export function isReleaseType(value: string): value is ReleaseType {
