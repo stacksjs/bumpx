@@ -34,9 +34,9 @@ jobs:
           test "$(git rev-parse "refs/tags/$RELEASE_TAG^{commit}")" = "$(git rev-parse HEAD)"
 
       - name: Setup Pantry
-        uses: pantry-pm/pantry/packages/action@368bc91e4bc5bb1c42b7c4abc7f910b79743733c # v0.11.97
+        uses: pantry-pm/pantry/packages/action@624cd6674f8c5c2d4e4204c11ece62a00d7fac0a # v0.11.184
         with:
-          version: '0.11.97'
+          version: '0.11.184'
           install: 'false'
           packages: 'bun.com@1.4.2 git-scm.org@2.53.0 curl.se@8.22.0 info-zip.org/zip@3.0.0'
 
@@ -48,6 +48,9 @@ jobs:
       - name: Build the release artifacts
         run: bun run --cwd packages/bumpx prepublishOnly
 
+      # From pantry 0.11.146 an upload npm accepted completes even when npm has
+      # not shown it yet; 0.11.97 exited 1 there, which skipped the GitHub release
+      # of a version that went live seconds later (v0.2.33).
       - name: Publish
         run: pantry publish --npm --access public
         env:

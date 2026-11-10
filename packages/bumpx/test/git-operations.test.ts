@@ -675,7 +675,7 @@ Initial release
 
       // Verify all git operations were performed (defaults use 'v' prefix in commit message)
       expect(mockSpawnSync).toHaveBeenCalledWith(['commit', '-m', 'chore: release v1.0.1'], expect.any(String))
-      expect(mockSpawnSync).toHaveBeenCalledWith(['tag', '-a', 'v1.0.1', '-m', 'Release 1.0.1'], expect.any(String))
+      expect(mockSpawnSync).toHaveBeenCalledWith(['tag', '-a', 'v1.0.1', '-m', 'Release 1.0.1', '--cleanup=whitespace'], expect.any(String))
       expect(mockSpawnSync).toHaveBeenCalledWith([
         'push',
         '--atomic',
@@ -757,7 +757,7 @@ Initial release
 
       // Verify git operations were performed
       expect(mockSpawnSync).toHaveBeenCalledWith(['commit', '-m', 'chore: release v1.1.0'], tempDir)
-      expect(mockSpawnSync).toHaveBeenCalledWith(['tag', '-a', 'v1.1.0', '-m', 'Release 1.1.0'], tempDir)
+      expect(mockSpawnSync).toHaveBeenCalledWith(['tag', '-a', 'v1.1.0', '-m', 'Release 1.1.0', '--cleanup=whitespace'], tempDir)
       expect(mockSpawnSync).toHaveBeenCalledWith([
         'push',
         '--atomic',

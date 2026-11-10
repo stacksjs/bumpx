@@ -112,6 +112,8 @@ describe('a release in a repository whose changelog has its own title', () => {
       const message = run(['git', 'tag', '-l', '--format=%(contents)', 'v1.0.0-build.20']).stdout
       expect(message).toContain('open the hatch')
       expect(message).not.toContain('keep the door closed')
+      // git drops lines starting with # from a tag message unless told otherwise.
+      expect(message).toMatch(/^## .*Features/m)
     }
     finally { rmSync(dir, { recursive: true, force: true }) }
   })

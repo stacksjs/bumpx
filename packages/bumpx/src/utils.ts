@@ -824,6 +824,9 @@ export function createGitTag(tag: string, sign: boolean = false, message?: strin
     throw new Error(`Git tag '${tag}' already exists. Use a different version.`)
   }
 
+  // git reads a line starting with # as a comment and drops it, which took every
+  // "## Features" heading out of release notes carried in a tag message.
+  // whitespace cleanup keeps those lines and still trims blank edges.
   const args = ['tag']
   // Always create an annotated tag with -a flag
   // This ensures GitHub will use the tag message for release notes
@@ -834,6 +837,7 @@ export function createGitTag(tag: string, sign: boolean = false, message?: strin
     // Use a default message if none provided, to ensure an annotated tag
     args.push('-a', tag, '-m', `Release ${tag}`)
   }
+  args.push('--cleanup=whitespace')
   if (sign)
     args.push('--sign')
 
