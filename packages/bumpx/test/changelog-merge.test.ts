@@ -114,6 +114,9 @@ describe('a release in a repository whose changelog has its own title', () => {
       expect(message).not.toContain('keep the door closed')
       // git drops lines starting with # from a tag message unless told otherwise.
       expect(message).toMatch(/^## .*Features/m)
+      // A release does not list its own commit: bumpx builds logsmith in, so this holds only on a logsmith that leaves it out.
+      expect(changelog).not.toContain('v1.0.0-build.20 (')
+      expect(changelog).not.toMatch(/\*\*release\*\*: v1\.0\.0-build\.20/)
     }
     finally { rmSync(dir, { recursive: true, force: true }) }
   })
