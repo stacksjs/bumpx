@@ -1028,21 +1028,11 @@ export async function versionBump(options: VersionBumpOptions): Promise<void> {
           if (!tagMessage && fs.existsSync(changelogPath)) {
             const changelogContent = fs.readFileSync(changelogPath, 'utf-8')
 
-            // Extract the latest release section from the changelog
-            const versionWithoutV = lastNewVersion // Without v prefix
-            const releasePattern = new RegExp(`##\s*(?:\[?v?${versionWithoutV}\]?|v?${versionWithoutV}).*?(?:##|$)`, 's')
-            const match = changelogContent.match(releasePattern)
-
-            if (match) {
-              // Extract the matched section content
-              let changelogEntry = match[0].trim()
-
-              // Remove the next section header if captured
-              changelogEntry = changelogEntry.replace(/##.*$/, '').trim()
-
-              // Use changelog content for tag message
+            // The section logsmith wrote for this release, which is also what a
+            // GitHub release created from the tag shows.
+            const changelogEntry = extractReleaseNotes(changelogContent, lastNewVersion, tagName)
+            if (changelogEntry)
               finalTagMessage = changelogEntry
-            }
           }
         }
         catch (error) {
@@ -1309,6 +1299,64 @@ function showGeneratedChangelog(newContent: string, existingContent: string, ver
 /**
  * Generate changelog using @stacksjs/logsmith
  */
+/** A changelog without its leading `# Title` line, so two files can be compared by their entries. */
+function changelogBody(content: string): string {
+  return content.replace(/^\uFEFF?\s*# [^\n]*\n+/, '').trim()
+}
+
+/**
+ * The changelog to keep after a generator has run.
+ *
+ * logsmith writes the new section under the file's title and keeps everything
+ * that was there, so its output is already the whole changelog. Putting the old
+ * file in front of it again doubled every entry, and it was only avoided for a
+ * file titled exactly `# Changelog`: the comparison failed for any other title
+ * (`# Stacks Changelog`), because the new section sits between the title and
+ * the history. Entries are compared without the title instead. Only when the
+ * generator did not keep the history is it appended, newest release first.
+ */
+export function mergeChangelog(existing: string, generated: string): string {
+  const history = changelogBody(existing)
+  if (!history || generated.includes(history))
+    return generated
+  return `${generated.trimEnd()}\n\n${history}\n`
+}
+
+/**
+ * The notes of one release, cut out of a changelog: what an annotated tag
+ * carries and what a GitHub release shows.
+ *
+ * logsmith opens each release with a `[Compare changes](.../compare/<from>...<to>)`
+ * line and groups the commits under `##` headings, so a release runs from its
+ * own compare line to the next one. A changelog that titles each release
+ * instead (`## v1.2.3`, `## [1.2.3] - date`) is read from that heading up to the
+ * next release heading. Returns an empty string when the release is not there,
+ * never another release's notes.
+ */
+export function extractReleaseNotes(content: string, version: string, tagName?: string): string {
+  const bare = version.replace(/^v/, '')
+  const names = [...new Set([tagName, `v${bare}`, bare].filter((name): name is string => Boolean(name)))]
+  const lines = content.split('\n')
+  const isCompare = (line: string) => line.toLowerCase().includes('[compare changes]')
+  // `...v1.2.3)` ends the range; `v1.2.3` alone would also match `v1.2.30`.
+  const closesWith = (line: string) => names.some(name => line.includes(`...${name})`) || line.includes(`/tag/${name})`))
+  const start = lines.findIndex(line => isCompare(line) && closesWith(line))
+  if (start !== -1) {
+    const rest = lines.slice(start + 1)
+    const next = rest.findIndex(isCompare)
+    return [lines[start], ...(next === -1 ? rest : rest.slice(0, next))].join('\n').trim()
+  }
+  const escaped = bare.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+  const heading = new RegExp(`^##\\s*\\[?v?${escaped}\\]?(?:\\s|$)`)
+  const anyRelease = /^##\s*\[?v?\d+\.\d+\.\d+/
+  const titled = lines.findIndex(line => heading.test(line))
+  if (titled === -1)
+    return ''
+  const rest = lines.slice(titled + 1)
+  const next = rest.findIndex(line => anyRelease.test(line))
+  return [lines[titled], ...(next === -1 ? rest : rest.slice(0, next))].join('\n').trim()
+}
+
 /** A package version is not evidence of a release tag, especially on first release. */
 export function resolveChangelogFromVersion(cwd: string, version?: string): string | undefined {
   const tag = version ? `v${version}` : undefined
@@ -1344,8 +1392,6 @@ async function generateChangelog(cwd: string, fromVersion?: string, toVersion?: 
       if (existingContent.trim() && !existingContent.endsWith('\n\n')) {
         existingContent += '\n\n'
       }
-      // Remove the "# Changelog" header from existing content to avoid duplication
-      existingContent = existingContent.replace(/^# Changelog\s*\n/, '')
     }
     catch (error) {
       console.warn('Warning: Could not read existing CHANGELOG.md:', error)
@@ -1378,14 +1424,9 @@ async function generateChangelog(cwd: string, fromVersion?: string, toVersion?: 
         newContent = fs.readFileSync(changelogPath, 'utf-8')
       }
 
-      // If we have existing content, prepend it to the new content
-      if (existingContent.trim()) {
-        // Check if the new content already contains some of the existing content
-        // to avoid duplication
-        if (!newContent.includes(existingContent.trim())) {
-          newContent = existingContent + newContent
-        }
-      }
+      // logsmith keeps the file's history under the new section; only a
+      // generator that overwrote the file needs the history put back.
+      newContent = mergeChangelog(existingContent, newContent)
 
       // Write the combined content back to the file
       fs.writeFileSync(changelogPath, newContent, 'utf-8')
@@ -1413,14 +1454,9 @@ async function generateChangelog(cwd: string, fromVersion?: string, toVersion?: 
         newContent = fs.readFileSync(changelogPath, 'utf-8')
       }
 
-      // If we have existing content, prepend it to the new content
-      if (existingContent.trim()) {
-        // Check if the new content already contains some of the existing content
-        // to avoid duplication
-        if (!newContent.includes(existingContent.trim())) {
-          newContent = existingContent + newContent
-        }
-      }
+      // logsmith keeps the file's history under the new section; only a
+      // generator that overwrote the file needs the history put back.
+      newContent = mergeChangelog(existingContent, newContent)
 
       // Write the combined content back to the file
       fs.writeFileSync(changelogPath, newContent, 'utf-8')
@@ -1450,14 +1486,9 @@ async function generateChangelog(cwd: string, fromVersion?: string, toVersion?: 
         newContent = fs.readFileSync(changelogPath, 'utf-8')
       }
 
-      // If we have existing content, prepend it to the new content
-      if (existingContent.trim()) {
-        // Check if the new content already contains some of the existing content
-        // to avoid duplication
-        if (!newContent.includes(existingContent.trim())) {
-          newContent = existingContent + newContent
-        }
-      }
+      // logsmith keeps the file's history under the new section; only a
+      // generator that overwrote the file needs the history put back.
+      newContent = mergeChangelog(existingContent, newContent)
 
       // Write the combined content back to the file
       fs.writeFileSync(changelogPath, newContent, 'utf-8')

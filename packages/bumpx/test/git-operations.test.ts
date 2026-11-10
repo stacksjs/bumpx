@@ -601,13 +601,13 @@ Initial release
         (call: any) => call[0] && call[0].includes && call[0].includes('tag') && call[0].includes('-m'),
       )
 
-      // We expect the implementation to extract content from the changelog
+      // 1.0.0's notes are not 1.0.1's: the tag says only which release it is.
       const matchingCall = tagCalls.some((call: any) =>
         call[0][0] === 'tag'
         && call[0][1] === '-a'
         && call[0][2] === 'v1.0.1'
         && call[0][3] === '-m'
-        && call[0][4].includes('## 1.0.0'),
+        && call[0][4] === 'Release 1.0.1',
       )
 
       expect(matchingCall).toBe(true)
