@@ -1,5 +1,24 @@
 # Changelog
 
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.32...v0.2.33)
+
+## 🐛 Bug Fixes
+
+- **changelog**: add one section to a titled changelog, and tag a release with its own notes ([3ecb6f6](https://github.com/stacksjs/bumpx/commit/3ecb6f6)) _(by Chris Breuer <chrisbreuer93@gmail.com>)_
+
+## ✅ Tests
+
+- restore mocked modules so the suite stops depending on file order (#2027) ([49ff3d6](https://github.com/stacksjs/bumpx/commit/49ff3d6)) _(by Glenn Michael Torregosa <gtorregosa@gmail.com>)_ ([#2026](https://github.com/stacksjs/bumpx/issues/2026), [#2027](https://github.com/stacksjs/bumpx/issues/2027))
+
+## 🔧 Chores
+
+- release v0.2.33 ([48e9f5a](https://github.com/stacksjs/bumpx/commit/48e9f5a)) _(by Chris Breuer <chrisbreuer93@gmail.com>)_
+
+## Contributors
+
+- _Chris Breuer <chrisbreuer93@gmail.com>_
+- _Glenn Michael Torregosa <gtorregosa@gmail.com>_
+
 [Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.31...v0.2.32)
 
 ## 🐛 Bug Fixes
