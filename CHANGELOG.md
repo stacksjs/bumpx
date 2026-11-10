@@ -1,5 +1,16 @@
 # Changelog
 
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.33...v0.2.34)
+
+## 🐛 Bug Fixes
+
+- **changelog**: build on logsmith 0.2.15, so a release no longer lists its own commit ([ec3f64c](https://github.com/stacksjs/bumpx/commit/ec3f64c)) _(by Chris Breuer <chrisbreuer93@gmail.com>)_
+- **release**: keep headings in tag messages, and publish with a pantry that completes an accepted upload ([00cfdea](https://github.com/stacksjs/bumpx/commit/00cfdea)) _(by Chris Breuer <chrisbreuer93@gmail.com>)_
+
+## Contributors
+
+- _Chris Breuer <chrisbreuer93@gmail.com>_
+
 [Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.32...v0.2.33)
 
 ## 🐛 Bug Fixes
