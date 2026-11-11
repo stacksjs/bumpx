@@ -1,5 +1,15 @@
 # Changelog
 
+[Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.34...v0.2.35)
+
+## 🐛 Bug Fixes
+
+- **changelog**: build on logsmith 0.2.16, which leaves author email addresses out by default ([86f5d6b](https://github.com/stacksjs/bumpx/commit/86f5d6b)) _(by Chris Breuer)_
+
+## Contributors
+
+- _Chris Breuer_
+
 [Compare changes](https://github.com/stacksjs/bumpx/compare/v0.2.33...v0.2.34)
 
 ## 🐛 Bug Fixes
